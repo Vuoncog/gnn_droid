@@ -1,0 +1,22 @@
+# Lcom/isnowstudio/common/widget/ImagesLayout;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:android.util.AttributeSet
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-direct        v2, v3, v4, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V
+	2       (00000008) iput                 v1, v2, Lcom/isnowstudio/common/widget/ImagesLayout;->a I
+	3       (0000000c) new-instance         v0, Ljava/util/ArrayList;
+	4       (00000010) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	5       (00000016) iput-object          v0, v2, Lcom/isnowstudio/common/widget/ImagesLayout;->b Ljava/util/List;
+	6       (0000001a) invoke-virtual       v2, v1, Lcom/isnowstudio/common/widget/ImagesLayout;->setBackgroundColor(I)V
+	7       (00000020) invoke-virtual       v2, v1, Lcom/isnowstudio/common/widget/ImagesLayout;->setOrientation(I)V
+	8       (00000026) const/16             v0, 17
+	9       (0000002a) invoke-virtual       v2, v0, Lcom/isnowstudio/common/widget/ImagesLayout;->setGravity(I)V
+	10      (00000030) return-void          
+

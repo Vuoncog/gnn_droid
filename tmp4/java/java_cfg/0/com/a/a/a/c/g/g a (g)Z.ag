@@ -1,0 +1,46 @@
+# Lcom/a/a/a/c/g;->a(Lcom/a/a/a/c/g;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.a.a.a.c.g
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x26 a-BB@0x3e ]
+	0       (00000000) iget                 v0, v3, Lcom/a/a/a/c/g;->e I
+	1       (00000004) sget-object          v1, Lcom/a/a/a/c/d;->b [[I
+	2       (00000008) iget                 v2, v3, Lcom/a/a/a/c/g;->b I
+	3       (0000000c) aget-object          v1, v1, v2
+	4       (00000010) iget                 v2, v4, Lcom/a/a/a/c/g;->b I
+	5       (00000014) aget                 v1, v1, v2
+	6       (00000018) shr-int/lit8         v1, v1, 16
+	7       (0000001c) add-int/2addr        v0, v1
+	8       (0000001e) iget                 v1, v4, Lcom/a/a/a/c/g;->d I
+	9       (00000022) if-lez               v1, +e
+
+a-BB@0x26 : [ a-BB@0x2e a-BB@0x3a ]
+	10      (00000026) iget                 v1, v3, Lcom/a/a/a/c/g;->d I
+	11      (0000002a) if-eqz               v1, +8
+
+a-BB@0x2e : [ a-BB@0x3a a-BB@0x3e ]
+	12      (0000002e) iget                 v1, v3, Lcom/a/a/a/c/g;->d I
+	13      (00000032) iget                 v2, v4, Lcom/a/a/a/c/g;->d I
+	14      (00000036) if-le                v1, v2, +4
+
+a-BB@0x3a : [ a-BB@0x3e ]
+	15      (0000003a) add-int/lit8         v0, v0, 10
+
+a-BB@0x3e : [ a-BB@0x46 a-BB@0x4a ]
+	16      (0000003e) iget                 v1, v4, Lcom/a/a/a/c/g;->e I
+	17      (00000042) if-gt                v0, v1, +4
+
+a-BB@0x46 : [ a-BB@0x48 ]
+	18      (00000046) const/4              v0, 1
+
+a-BB@0x48 : 
+	19      (00000048) return               v0
+
+a-BB@0x4a : [ a-BB@0x48 ]
+	20      (0000004a) const/4              v0, 0
+	21      (0000004c) goto                 -2
+

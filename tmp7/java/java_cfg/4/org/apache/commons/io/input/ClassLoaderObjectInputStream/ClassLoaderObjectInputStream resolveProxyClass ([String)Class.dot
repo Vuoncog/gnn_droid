@@ -1,0 +1,102 @@
+digraph {
+	graph [bb="0,0,1842,783",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_3ffb690504adeca453317b0f3d940b83 {
+		graph [bb="64.985,8,1834,775",
+			label="Lorg/apache/commons/io/input/ClassLoaderObjectInputStream;.resolveProxyClass->([Ljava/lang/String;)Ljava/lang/Class;\nLocal registers \
+v0 ... v5\nparam v6 = java.lang.String[]\nreturn = java.lang.Class",
+			lheight=0.83,
+			lp="949.49,741",
+			lwidth=11.08
+		];
+		struct_2a75ccb2c2fad0aa860e4375bb153d99	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v1</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">array-length </FONT> <FONT color="#919150">v0</FONT>, <FONT color="#8A8A6D">v6</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-array </FONT> <FONT color="#83838A">v2</FONT>, <FONT color="#919150">v0</FONT>, <FONT color="#0000FF">[Ljava/lang/Class;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#919150">v0</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="231.99,642.5",
+			width=4.0972];
+		struct_5856cdec5634d14d0fbdb824be7bbc2a	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">array-length </FONT> <FONT color="#7B7BA7">v3</FONT>, <FONT color="#8A8A6D">v6</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ge </FONT> <FONT color="#919150">v0</FONT>, <FONT color="#7B7BA7">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xf</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="177.99,514.5",
+			width=2.5972];
+		struct_2a75ccb2c2fad0aa860e4375bb153d99:tail -> struct_5856cdec5634d14d0fbdb824be7bbc2a:header	[color=blue,
+			pos="e,105.99,542.5 105.99,591.5 105.99,573.64 105.99,566.76 105.99,552.85"];
+		struct_7627a9f2d2061a12b5a79df1020dd478	[height=2.4861,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aget-object </FONT> <FONT color="#7B7BA7">v3</FONT>, <FONT color="#8A8A6D">v6</FONT>, <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7474C4">v4</FONT>, <FONT color="#6D6DE1">v5</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/ClassLoaderObjectInputStream;-&gt;classLoader Ljava/lang/ClassLoader;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7B7BA7">v3</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#7474C4">v4</FONT>, <FONT color="#DF3A01">Ljava/lang/Class;-&gt;forName(Ljava/lang/String; Z Ljava/lang/ClassLoader;)Ljava/lang/Class;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7B7BA7">v3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aput-object </FONT> <FONT color="#7B7BA7">v3</FONT>, <FONT color="#83838A">v2</FONT>, <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#919150">v0</FONT>, <FONT color="#919150">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-f</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="506.99,353.5",
+			width=12.042];
+		struct_5856cdec5634d14d0fbdb824be7bbc2a:tail -> struct_7627a9f2d2061a12b5a79df1020dd478:header	[color=red,
+			pos="e,98.985,436.5 105.99,485.5 105.99,467.28 101.18,460.72 99.535,446.51"];
+		struct_05cb12d007e6e7b0b7747bc6624ca1b4	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#919150">v0</FONT>, <FONT color="#6D6DE1">v5</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/ClassLoaderObjectInputStream;-&gt;classLoader Ljava/lang/ClassLoader;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#919150">v0</FONT>, <FONT color="#83838A">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/reflect/Proxy;-&gt;getProxyClass(Ljava/lang/ClassLoader; [Ljava/lang/Class;)Ljava/lang/Class;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1392,353.5",
+			width=12.042];
+		struct_5856cdec5634d14d0fbdb824be7bbc2a:tail -> struct_05cb12d007e6e7b0b7747bc6624ca1b4:header	[color=green,
+			pos="e,968.99,389.5 105.99,485.5 105.99,391.6 874.67,499.07 949.99,443 966.43,430.76 952.04,403.09 959.6,393.15"];
+		struct_7627a9f2d2061a12b5a79df1020dd478:tail -> struct_5856cdec5634d14d0fbdb824be7bbc2a:header	[color=blue,
+			pos="e,94.985,539.5 83.985,272.5 -31.303,272.5 -24.315,524.08 84.825,538.83"];
+		struct_7d5e299abb787e22f32179691ceb1785	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1044,39.5",
+			width=2.4722];
+		struct_05cb12d007e6e7b0b7747bc6624ca1b4:tail -> struct_7d5e299abb787e22f32179691ceb1785:header	[color=blue,
+			pos="e,964.99,53.5 968.99,316.5 942.56,316.5 936.76,101.43 957.5,60.265"];
+		struct_2e3b1f0b3ca463f07833c7d69fedeced	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-super </FONT> <FONT color="#6D6DE1">v5</FONT>, <FONT color="#8A8A6D">v6</FONT>, <FONT color="#DF3A01">Ljava/io/ObjectInputStream;-&gt;resolveProxyClass([Ljava/lang/String;)Ljava/lang/Class;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">40</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1368,156.5",
+			width=10.611];
+		struct_05cb12d007e6e7b0b7747bc6624ca1b4:tail -> struct_2e3b1f0b3ca463f07833c7d69fedeced:header	[color=black,
+			label="Ljava/lang/IllegalArgumentException;",
+			lp="1132,238.5",
+			pos="e,1011,206.5 983.99,313.5 983.99,268 1007.2,257.04 1010.6,216.53"];
+		struct_2e3b1f0b3ca463f07833c7d69fedeced:tail -> struct_7d5e299abb787e22f32179691ceb1785:header	[color=blue,
+			pos="e,979.99,56.5 995.99,108.5 975.11,108.5 978.35,87.767 979.63,66.541"];
+	}
+}

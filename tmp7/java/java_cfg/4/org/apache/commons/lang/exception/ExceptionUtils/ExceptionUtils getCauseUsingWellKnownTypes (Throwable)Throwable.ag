@@ -1,0 +1,44 @@
+# Lorg/apache/commons/lang/exception/ExceptionUtils;->getCauseUsingWellKnownTypes(Ljava/lang/Throwable;)Ljava/lang/Throwable; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Throwable
+#
+# - return:java.lang.Throwable
+
+getCauseUsingWellKnownTypes-BB@0x0 : [ getCauseUsingWellKnownTypes-BB@0x8 getCauseUsingWellKnownTypes-BB@0x16 ]
+	0       (00000000) instance-of          v0, v1, Lorg/apache/commons/lang/exception/Nestable;
+	1       (00000004) if-eqz               v0, +9
+
+getCauseUsingWellKnownTypes-BB@0x8 : [ getCauseUsingWellKnownTypes-BB@0x14 ]
+	2       (00000008) check-cast           v1, Lorg/apache/commons/lang/exception/Nestable;
+	3       (0000000c) invoke-interface     v1, Lorg/apache/commons/lang/exception/Nestable;->getCause()Ljava/lang/Throwable;
+	4       (00000012) move-result-object   v0
+
+getCauseUsingWellKnownTypes-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+getCauseUsingWellKnownTypes-BB@0x16 : [ getCauseUsingWellKnownTypes-BB@0x1e getCauseUsingWellKnownTypes-BB@0x2c ]
+	6       (00000016) instance-of          v0, v1, Ljava/sql/SQLException;
+	7       (0000001a) if-eqz               v0, +9
+
+getCauseUsingWellKnownTypes-BB@0x1e : [ getCauseUsingWellKnownTypes-BB@0x14 ]
+	8       (0000001e) check-cast           v1, Ljava/sql/SQLException;
+	9       (00000022) invoke-virtual       v1, Ljava/sql/SQLException;->getNextException()Ljava/sql/SQLException;
+	10      (00000028) move-result-object   v0
+	11      (0000002a) goto                 -b
+
+getCauseUsingWellKnownTypes-BB@0x2c : [ getCauseUsingWellKnownTypes-BB@0x34 getCauseUsingWellKnownTypes-BB@0x42 ]
+	12      (0000002c) instance-of          v0, v1, Ljava/lang/reflect/InvocationTargetException;
+	13      (00000030) if-eqz               v0, +9
+
+getCauseUsingWellKnownTypes-BB@0x34 : [ getCauseUsingWellKnownTypes-BB@0x14 ]
+	14      (00000034) check-cast           v1, Ljava/lang/reflect/InvocationTargetException;
+	15      (00000038) invoke-virtual       v1, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
+	16      (0000003e) move-result-object   v0
+	17      (00000040) goto                 -16
+
+getCauseUsingWellKnownTypes-BB@0x42 : [ getCauseUsingWellKnownTypes-BB@0x14 ]
+	18      (00000042) const/4              v0, 0
+	19      (00000044) goto                 -18
+

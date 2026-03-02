@@ -1,0 +1,22 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->receive(Ljava/io/Writer;)Lio/fabric/sdk/android/services/network/HttpRequest; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.io.Writer
+#
+# - return:io.fabric.sdk.android.services.network.HttpRequest
+
+receive-BB@0x0 : 
+	0       (00000000) invoke-virtual       v6, Lio/fabric/sdk/android/services/network/HttpRequest;->bufferedReader()Ljava/io/BufferedReader;
+	1       (00000006) move-result-object   v2
+	2       (00000008) new-instance         v0, Lio/fabric/sdk/android/services/network/HttpRequest$5;
+	3       (0000000c) iget-boolean         v3, v6, Lio/fabric/sdk/android/services/network/HttpRequest;->ignoreCloseExceptions Z
+	4       (00000010) move-object          v1, v6
+	5       (00000012) move-object          v4, v2
+	6       (00000014) move-object          v5, v7
+	7       (00000016) invoke-direct/range  v0 ... v5, Lio/fabric/sdk/android/services/network/HttpRequest$5;-><init>(Lio/fabric/sdk/android/services/network/HttpRequest; Ljava/io/Closeable; Z Ljava/io/BufferedReader; Ljava/io/Writer;)V
+	8       (0000001c) invoke-virtual       v0, Lio/fabric/sdk/android/services/network/HttpRequest$5;->call()Ljava/lang/Object;
+	9       (00000022) move-result-object   v0
+	10      (00000024) check-cast           v0, Lio/fabric/sdk/android/services/network/HttpRequest;
+	11      (00000028) return-object        v0
+

@@ -1,0 +1,45 @@
+digraph {
+	graph [bb="0,0,1338,580",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_081075014ee99bd758f50b497cbf449d {
+		graph [bb="8,8,1330,572",
+			label="Lcom/crashlytics/android/core/SessionProtobufHelper;.writeSessionOS->(Lcom/crashlytics/android/core/CodedOutputStream; Z)V\nLocal \
+registers v0 ... v4\nparam v5 = com.crashlytics.android.core.CodedOutputStream\nparam v6 = boolean\nreturn = void",
+			lheight=1.04,
+			lp="669,530.5",
+			lwidth=11.86
+		];
+		struct_285e7e68f24736fe74457e054c023427	[height=6.4583,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v4</FONT>, <FONT color="green">0x3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#919150">v3</FONT>, <FONT color="green">0x2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#8A8A6D">v0</FONT>, <FONT color="#088A08">Landroid/os/Build$VERSION;-&gt;RELEASE Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#8A8A6D">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/ByteString;-&gt;copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#088A08">Landroid/os/Build$VERSION;-&gt;CODENAME Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/ByteString;-&gt;copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#83838A">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/16 </FONT> <FONT color="#7B7BA7">v2</FONT>, <FONT color="green">0x8</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7474C4">v5</FONT>, <FONT color="#7B7BA7">v2</FONT>, <FONT color="#919150">v3</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeTag(I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#8A8A6D">v0</FONT>, <FONT color="#83838A">v1</FONT>, <FONT color="#6D6DE1">v6</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/SessionProtobufHelper;-&gt;getSessionOSSize(Lcom/crashlytics/android/core/ByteString; Lcom/crashlytics/android/core/ByteString; Z)I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7B7BA7">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7474C4">v5</FONT>, <FONT color="#7B7BA7">v2</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeRawVarint32(I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7B7BA7">v2</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7474C4">v5</FONT>, <FONT color="#7B7BA7">v2</FONT>, <FONT color="#999933">v4</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeEnum(I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7474C4">v5</FONT>, <FONT color="#919150">v3</FONT>, <FONT color="#8A8A6D">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeBytes(I Lcom/crashlytics/android/core/ByteString;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7474C4">v5</FONT>, <FONT color="#999933">v4</FONT>, <FONT color="#83838A">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeBytes(I Lcom/crashlytics/android/core/ByteString;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">48</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#8A8A6D">v0</FONT>, <FONT color="green">0x4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7474C4">v5</FONT>, <FONT color="#8A8A6D">v0</FONT>, <FONT color="#6D6DE1">v6</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeBool(I Z)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">50</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="669,248.5",
+			width=18.125];
+	}
+}

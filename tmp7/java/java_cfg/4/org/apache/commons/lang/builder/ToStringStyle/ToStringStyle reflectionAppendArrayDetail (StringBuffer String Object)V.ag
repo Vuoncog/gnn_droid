@@ -1,0 +1,49 @@
+# Lorg/apache/commons/lang/builder/ToStringStyle;->reflectionAppendArrayDetail(Ljava/lang/StringBuffer; Ljava/lang/String; Ljava/lang/Object;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.StringBuffer
+# - v6:java.lang.String
+# - v7:java.lang.Object
+#
+# - return:void
+
+reflectionAppendArrayDetail-BB@0x0 : [ reflectionAppendArrayDetail-BB@0x14 ]
+	0       (00000000) iget-object          v0, v4, Lorg/apache/commons/lang/builder/ToStringStyle;->arrayStart Ljava/lang/String;
+	1       (00000004) invoke-virtual       v5, v0, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	2       (0000000a) invoke-static        v7, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+	3       (00000010) move-result          v1
+	4       (00000012) const/4              v0, 0
+
+reflectionAppendArrayDetail-BB@0x14 : [ reflectionAppendArrayDetail-BB@0x18 reflectionAppendArrayDetail-BB@0x4a ]
+	5       (00000014) if-ge                v0, v1, +1b
+
+reflectionAppendArrayDetail-BB@0x18 : [ reflectionAppendArrayDetail-BB@0x24 reflectionAppendArrayDetail-BB@0x2e ]
+	6       (00000018) invoke-static        v7, v0, Ljava/lang/reflect/Array;->get(Ljava/lang/Object; I)Ljava/lang/Object;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) if-lez               v0, +7
+
+reflectionAppendArrayDetail-BB@0x24 : [ reflectionAppendArrayDetail-BB@0x2e ]
+	9       (00000024) iget-object          v3, v4, Lorg/apache/commons/lang/builder/ToStringStyle;->arraySeparator Ljava/lang/String;
+	10      (00000028) invoke-virtual       v5, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+reflectionAppendArrayDetail-BB@0x2e : [ reflectionAppendArrayDetail-BB@0x32 reflectionAppendArrayDetail-BB@0x3e ]
+	11      (0000002e) if-nez               v2, +8
+
+reflectionAppendArrayDetail-BB@0x32 : [ reflectionAppendArrayDetail-BB@0x38 ]
+	12      (00000032) invoke-virtual       v4, v5, v6, Lorg/apache/commons/lang/builder/ToStringStyle;->appendNullText(Ljava/lang/StringBuffer; Ljava/lang/String;)V
+
+reflectionAppendArrayDetail-BB@0x38 : [ reflectionAppendArrayDetail-BB@0x14 ]
+	13      (00000038) add-int/lit8         v0, v0, 1
+	14      (0000003c) goto                 -14
+
+reflectionAppendArrayDetail-BB@0x3e : [ reflectionAppendArrayDetail-BB@0x38 ]
+	15      (0000003e) iget-boolean         v3, v4, Lorg/apache/commons/lang/builder/ToStringStyle;->arrayContentDetail Z
+	16      (00000042) invoke-virtual       v4, v5, v6, v2, v3, Lorg/apache/commons/lang/builder/ToStringStyle;->appendInternal(Ljava/lang/StringBuffer; Ljava/lang/String; Ljava/lang/Object; Z)V
+	17      (00000048) goto                 -8
+
+reflectionAppendArrayDetail-BB@0x4a : 
+	18      (0000004a) iget-object          v0, v4, Lorg/apache/commons/lang/builder/ToStringStyle;->arrayEnd Ljava/lang/String;
+	19      (0000004e) invoke-virtual       v5, v0, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	20      (00000054) return-void          
+

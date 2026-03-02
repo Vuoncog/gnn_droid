@@ -1,0 +1,14 @@
+# Lcom/crashlytics/android/core/CodedOutputStream;->writeFloatNoTag(F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:float
+#
+# - return:void
+
+writeFloatNoTag-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Ljava/lang/Float;->floatToRawIntBits(F)I
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-virtual       v1, v0, Lcom/crashlytics/android/core/CodedOutputStream;->writeRawLittleEndian32(I)V
+	3       (0000000e) return-void          
+

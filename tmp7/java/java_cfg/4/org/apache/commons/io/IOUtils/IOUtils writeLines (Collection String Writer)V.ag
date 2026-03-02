@@ -1,0 +1,45 @@
+# Lorg/apache/commons/io/IOUtils;->writeLines(Ljava/util/Collection; Ljava/lang/String; Ljava/io/Writer;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.Collection
+# - v3:java.lang.String
+# - v4:java.io.Writer
+#
+# - return:void
+
+writeLines-BB@0x0 : [ writeLines-BB@0x4 writeLines-BB@0x6 ]
+	0       (00000000) if-nez               v2, +3
+
+writeLines-BB@0x4 : 
+	1       (00000004) return-void          
+
+writeLines-BB@0x6 : [ writeLines-BB@0xa writeLines-BB@0xe ]
+	2       (00000006) if-nez               v3, +4
+
+writeLines-BB@0xa : [ writeLines-BB@0xe ]
+	3       (0000000a) sget-object          v3, Lorg/apache/commons/io/IOUtils;->LINE_SEPARATOR Ljava/lang/String;
+
+writeLines-BB@0xe : [ writeLines-BB@0x16 ]
+	4       (0000000e) invoke-interface     v2, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+	5       (00000014) move-result-object   v0
+
+writeLines-BB@0x16 : [ writeLines-BB@0x22 writeLines-BB@0x4 ]
+	6       (00000016) invoke-interface     v0, Ljava/util/Iterator;->hasNext()Z
+	7       (0000001c) move-result          v1
+	8       (0000001e) if-eqz               v1, -d
+
+writeLines-BB@0x22 : [ writeLines-BB@0x2e writeLines-BB@0x3c ]
+	9       (00000022) invoke-interface     v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	10      (00000028) move-result-object   v1
+	11      (0000002a) if-eqz               v1, +9
+
+writeLines-BB@0x2e : [ writeLines-BB@0x3c ]
+	12      (0000002e) invoke-virtual       v1, Ljava/lang/Object;->toString()Ljava/lang/String;
+	13      (00000034) move-result-object   v1
+	14      (00000036) invoke-virtual       v4, v1, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+writeLines-BB@0x3c : [ writeLines-BB@0x16 ]
+	15      (0000003c) invoke-virtual       v4, v3, Ljava/io/Writer;->write(Ljava/lang/String;)V
+	16      (00000042) goto                 -16
+

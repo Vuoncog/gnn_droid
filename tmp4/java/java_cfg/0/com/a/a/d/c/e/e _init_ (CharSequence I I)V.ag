@@ -1,0 +1,23 @@
+# Lcom/a/a/d/c/e;-><init>(Ljava/lang/CharSequence; I I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.CharSequence
+# - v4:int
+# - v5:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v3, v2, Lcom/a/a/d/c/e;->a Ljava/lang/CharSequence;
+	2       (0000000a) iput                 v4, v2, Lcom/a/a/d/c/e;->c I
+	3       (0000000e) iput                 v5, v2, Lcom/a/a/d/c/e;->b I
+	4       (00000012) mul-int              v0, v4, v5
+	5       (00000016) new-array            v0, v0, [B
+	6       (0000001a) iput-object          v0, v2, Lcom/a/a/d/c/e;->d [B
+	7       (0000001e) iget-object          v0, v2, Lcom/a/a/d/c/e;->d [B
+	8       (00000022) const/4              v1, -1
+	9       (00000024) invoke-static        v0, v1, Ljava/util/Arrays;->fill([B B)V
+	10      (0000002a) return-void          
+

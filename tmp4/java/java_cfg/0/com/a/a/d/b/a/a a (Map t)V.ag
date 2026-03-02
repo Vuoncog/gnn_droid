@@ -1,0 +1,30 @@
+# Lcom/a/a/d/b/a;->a(Ljava/util/Map; Lcom/a/a/t;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.util.Map
+# - v2:com.a.a.t
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x10 a-BB@0x22 ]
+	0       (00000000) invoke-interface     v1, v2, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	1       (00000006) move-result-object   v0
+	2       (00000008) check-cast           v0, Ljava/lang/Integer;
+	3       (0000000c) if-nez               v0, +b
+
+a-BB@0x10 : [ a-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+a-BB@0x12 : 
+	5       (00000012) invoke-static        v0, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-interface     v1, v2, v0, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	8       (00000020) return-void          
+
+a-BB@0x22 : [ a-BB@0x12 ]
+	9       (00000022) invoke-virtual       v0, Ljava/lang/Integer;->intValue()I
+	10      (00000028) move-result          v0
+	11      (0000002a) add-int/lit8         v0, v0, 1
+	12      (0000002e) goto                 -e
+

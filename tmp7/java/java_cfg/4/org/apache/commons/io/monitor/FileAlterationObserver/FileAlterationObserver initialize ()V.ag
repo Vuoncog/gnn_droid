@@ -1,0 +1,50 @@
+# Lorg/apache/commons/io/monitor/FileAlterationObserver;->initialize()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+initialize-BB@0x0 : [ initialize-BB@0x30 initialize-BB@0x58 ]
+	0       (00000000) iget-object          v0, v5, Lorg/apache/commons/io/monitor/FileAlterationObserver;->rootEntry Lorg/apache/commons/io/monitor/FileEntry;
+	1       (00000004) iget-object          v1, v5, Lorg/apache/commons/io/monitor/FileAlterationObserver;->rootEntry Lorg/apache/commons/io/monitor/FileEntry;
+	2       (00000008) invoke-virtual       v1, Lorg/apache/commons/io/monitor/FileEntry;->getFile()Ljava/io/File;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v0, v1, Lorg/apache/commons/io/monitor/FileEntry;->refresh(Ljava/io/File;)Z
+	5       (00000016) iget-object          v0, v5, Lorg/apache/commons/io/monitor/FileAlterationObserver;->rootEntry Lorg/apache/commons/io/monitor/FileEntry;
+	6       (0000001a) invoke-virtual       v0, Lorg/apache/commons/io/monitor/FileEntry;->getFile()Ljava/io/File;
+	7       (00000020) move-result-object   v0
+	8       (00000022) invoke-direct        v5, v0, Lorg/apache/commons/io/monitor/FileAlterationObserver;->listFiles(Ljava/io/File;)[Ljava/io/File;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) array-length         v0, v2
+	11      (0000002c) if-lez               v0, +16
+
+initialize-BB@0x30 : [ initialize-BB@0x36 ]
+	12      (00000030) array-length         v0, v2
+	13      (00000032) new-array            v0, v0, [Lorg/apache/commons/io/monitor/FileEntry;
+
+initialize-BB@0x36 : [ initialize-BB@0x38 ]
+	14      (00000036) const/4              v1, 0
+
+initialize-BB@0x38 : [ initialize-BB@0x3e initialize-BB@0x5e ]
+	15      (00000038) array-length         v3, v2
+	16      (0000003a) if-ge                v1, v3, +12
+
+initialize-BB@0x3e : [ initialize-BB@0x38 ]
+	17      (0000003e) iget-object          v3, v5, Lorg/apache/commons/io/monitor/FileAlterationObserver;->rootEntry Lorg/apache/commons/io/monitor/FileEntry;
+	18      (00000042) aget-object          v4, v2, v1
+	19      (00000046) invoke-direct        v5, v3, v4, Lorg/apache/commons/io/monitor/FileAlterationObserver;->createFileEntry(Lorg/apache/commons/io/monitor/FileEntry; Ljava/io/File;)Lorg/apache/commons/io/monitor/FileEntry;
+	20      (0000004c) move-result-object   v3
+	21      (0000004e) aput-object          v3, v0, v1
+	22      (00000052) add-int/lit8         v1, v1, 1
+	23      (00000056) goto                 -f
+
+initialize-BB@0x58 : [ initialize-BB@0x36 ]
+	24      (00000058) sget-object          v0, Lorg/apache/commons/io/monitor/FileEntry;->EMPTY_ENTRIES [Lorg/apache/commons/io/monitor/FileEntry;
+	25      (0000005c) goto                 -13
+
+initialize-BB@0x5e : 
+	26      (0000005e) iget-object          v1, v5, Lorg/apache/commons/io/monitor/FileAlterationObserver;->rootEntry Lorg/apache/commons/io/monitor/FileEntry;
+	27      (00000062) invoke-virtual       v1, v0, Lorg/apache/commons/io/monitor/FileEntry;->setChildren([Lorg/apache/commons/io/monitor/FileEntry;)V
+	28      (00000068) return-void          
+

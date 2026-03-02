@@ -1,0 +1,65 @@
+# Lorg/apache/commons/io/FileUtils;->moveToDirectory(Ljava/io/File; Ljava/io/File; Z)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.File
+# - v4:java.io.File
+# - v5:boolean
+#
+# - return:void
+
+moveToDirectory-BB@0x0 : [ moveToDirectory-BB@0x4 moveToDirectory-BB@0x14 ]
+	0       (00000000) if-nez               v3, +a
+
+moveToDirectory-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/NullPointerException;
+	2       (00000008) const-string         v1, 'Source must not be null'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+moveToDirectory-BB@0x14 : [ moveToDirectory-BB@0x18 moveToDirectory-BB@0x28 ]
+	5       (00000014) if-nez               v4, +a
+
+moveToDirectory-BB@0x18 : 
+	6       (00000018) new-instance         v0, Ljava/lang/NullPointerException;
+	7       (0000001c) const-string         v1, 'Destination must not be null'
+	8       (00000020) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	9       (00000026) throw                v0
+
+moveToDirectory-BB@0x28 : [ moveToDirectory-BB@0x34 moveToDirectory-BB@0x72 ]
+	10      (00000028) invoke-virtual       v3, Ljava/io/File;->exists()Z
+	11      (0000002e) move-result          v0
+	12      (00000030) if-nez               v0, +21
+
+moveToDirectory-BB@0x34 : 
+	13      (00000034) new-instance         v0, Ljava/io/FileNotFoundException;
+	14      (00000038) new-instance         v1, Ljava/lang/StringBuilder;
+	15      (0000003c) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	16      (00000042) const-string         v2, "Source '"
+	17      (00000046) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004c) move-result-object   v1
+	19      (0000004e) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	20      (00000054) move-result-object   v1
+	21      (00000056) const-string         v2, "' does not exist"
+	22      (0000005a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000060) move-result-object   v1
+	24      (00000062) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	25      (00000068) move-result-object   v1
+	26      (0000006a) invoke-direct        v0, v1, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
+	27      (00000070) throw                v0
+
+moveToDirectory-BB@0x72 : [ moveToDirectory-BB@0x7e moveToDirectory-BB@0x86 ]
+	28      (00000072) invoke-virtual       v3, Ljava/io/File;->isDirectory()Z
+	29      (00000078) move-result          v0
+	30      (0000007a) if-eqz               v0, +6
+
+moveToDirectory-BB@0x7e : [ moveToDirectory-BB@0x84 ]
+	31      (0000007e) invoke-static        v3, v4, v5, Lorg/apache/commons/io/FileUtils;->moveDirectoryToDirectory(Ljava/io/File; Ljava/io/File; Z)V
+
+moveToDirectory-BB@0x84 : 
+	32      (00000084) return-void          
+
+moveToDirectory-BB@0x86 : [ moveToDirectory-BB@0x84 ]
+	33      (00000086) invoke-static        v3, v4, v5, Lorg/apache/commons/io/FileUtils;->moveFileToDirectory(Ljava/io/File; Ljava/io/File; Z)V
+	34      (0000008c) goto                 -4
+

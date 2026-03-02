@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/SystemUtils;->isJavaAwtHeadless()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isJavaAwtHeadless-BB@0x0 : [ isJavaAwtHeadless-BB@0x8 isJavaAwtHeadless-BB@0x22 ]
+	0       (00000000) sget-object          v0, Lorg/apache/commons/lang/SystemUtils;->JAVA_AWT_HEADLESS Ljava/lang/String;
+	1       (00000004) if-eqz               v0, +f
+
+isJavaAwtHeadless-BB@0x8 : [ isJavaAwtHeadless-BB@0x20 ]
+	2       (00000008) sget-object          v0, Lorg/apache/commons/lang/SystemUtils;->JAVA_AWT_HEADLESS Ljava/lang/String;
+	3       (0000000c) sget-object          v1, Ljava/lang/Boolean;->TRUE Ljava/lang/Boolean;
+	4       (00000010) invoke-virtual       v1, Ljava/lang/Boolean;->toString()Ljava/lang/String;
+	5       (00000016) move-result-object   v1
+	6       (00000018) invoke-virtual       v0, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	7       (0000001e) move-result          v0
+
+isJavaAwtHeadless-BB@0x20 : 
+	8       (00000020) return               v0
+
+isJavaAwtHeadless-BB@0x22 : [ isJavaAwtHeadless-BB@0x20 ]
+	9       (00000022) const/4              v0, 0
+	10      (00000024) goto                 -2
+

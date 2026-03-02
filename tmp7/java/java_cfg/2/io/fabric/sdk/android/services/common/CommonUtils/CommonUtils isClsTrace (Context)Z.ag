@@ -1,0 +1,27 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->isClsTrace(Landroid/content/Context;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:boolean
+
+isClsTrace-BB@0x0 : [ isClsTrace-BB@0x8 isClsTrace-BB@0x22 ]
+	0       (00000000) sget-object          v0, Lio/fabric/sdk/android/services/common/CommonUtils;->clsTrace Ljava/lang/Boolean;
+	1       (00000004) if-nez               v0, +f
+
+isClsTrace-BB@0x8 : [ isClsTrace-BB@0x22 ]
+	2       (00000008) const-string         v0, 'com.crashlytics.Trace'
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) invoke-static        v2, v0, v1, Lio/fabric/sdk/android/services/common/CommonUtils;->getBooleanResourceValue(Landroid/content/Context; Ljava/lang/String; Z)Z
+	5       (00000014) move-result          v0
+	6       (00000016) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) sput-object          v0, Lio/fabric/sdk/android/services/common/CommonUtils;->clsTrace Ljava/lang/Boolean;
+
+isClsTrace-BB@0x22 : 
+	9       (00000022) sget-object          v0, Lio/fabric/sdk/android/services/common/CommonUtils;->clsTrace Ljava/lang/Boolean;
+	10      (00000026) invoke-virtual       v0, Ljava/lang/Boolean;->booleanValue()Z
+	11      (0000002c) move-result          v0
+	12      (0000002e) return               v0
+

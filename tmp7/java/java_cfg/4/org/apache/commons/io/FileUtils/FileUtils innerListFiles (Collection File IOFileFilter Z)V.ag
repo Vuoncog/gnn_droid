@@ -1,0 +1,49 @@
+# Lorg/apache/commons/io/FileUtils;->innerListFiles(Ljava/util/Collection; Ljava/io/File; Lorg/apache/commons/io/filefilter/IOFileFilter; Z)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.Collection
+# - v6:java.io.File
+# - v7:org.apache.commons.io.filefilter.IOFileFilter
+# - v8:boolean
+#
+# - return:void
+
+innerListFiles-BB@0x0 : [ innerListFiles-BB@0xc innerListFiles-BB@0x42 ]
+	0       (00000000) invoke-virtual       v6, v7, Ljava/io/File;->listFiles(Ljava/io/FileFilter;)[Ljava/io/File;
+	1       (00000006) move-result-object   v1
+	2       (00000008) if-eqz               v1, +1d
+
+innerListFiles-BB@0xc : [ innerListFiles-BB@0x10 ]
+	3       (0000000c) array-length         v2, v1
+	4       (0000000e) const/4              v0, 0
+
+innerListFiles-BB@0x10 : [ innerListFiles-BB@0x14 innerListFiles-BB@0x42 ]
+	5       (00000010) if-ge                v0, v2, +19
+
+innerListFiles-BB@0x14 : [ innerListFiles-BB@0x24 innerListFiles-BB@0x3a ]
+	6       (00000014) aget-object          v3, v1, v0
+	7       (00000018) invoke-virtual       v3, Ljava/io/File;->isDirectory()Z
+	8       (0000001e) move-result          v4
+	9       (00000020) if-eqz               v4, +d
+
+innerListFiles-BB@0x24 : [ innerListFiles-BB@0x28 innerListFiles-BB@0x2e ]
+	10      (00000024) if-eqz               v8, +5
+
+innerListFiles-BB@0x28 : [ innerListFiles-BB@0x2e ]
+	11      (00000028) invoke-interface     v5, v3, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+innerListFiles-BB@0x2e : [ innerListFiles-BB@0x34 ]
+	12      (0000002e) invoke-static        v5, v3, v7, v8, Lorg/apache/commons/io/FileUtils;->innerListFiles(Ljava/util/Collection; Ljava/io/File; Lorg/apache/commons/io/filefilter/IOFileFilter; Z)V
+
+innerListFiles-BB@0x34 : [ innerListFiles-BB@0x10 ]
+	13      (00000034) add-int/lit8         v0, v0, 1
+	14      (00000038) goto                 -14
+
+innerListFiles-BB@0x3a : [ innerListFiles-BB@0x34 ]
+	15      (0000003a) invoke-interface     v5, v3, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+	16      (00000040) goto                 -6
+
+innerListFiles-BB@0x42 : 
+	17      (00000042) return-void          
+

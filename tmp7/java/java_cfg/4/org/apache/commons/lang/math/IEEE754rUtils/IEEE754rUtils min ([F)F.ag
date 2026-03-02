@@ -1,0 +1,46 @@
+# Lorg/apache/commons/lang/math/IEEE754rUtils;->min([F)F [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:float[]
+#
+# - return:float
+
+min-BB@0x0 : [ min-BB@0x4 min-BB@0x14 ]
+	0       (00000000) if-nez               v3, +a
+
+min-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) const-string         v1, 'The Array must not be null'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+min-BB@0x14 : [ min-BB@0x1a min-BB@0x2a ]
+	5       (00000014) array-length         v0, v3
+	6       (00000016) if-nez               v0, +a
+
+min-BB@0x1a : 
+	7       (0000001a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	8       (0000001e) const-string         v1, 'Array cannot be empty.'
+	9       (00000022) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	10      (00000028) throw                v0
+
+min-BB@0x2a : [ min-BB@0x32 ]
+	11      (0000002a) const/4              v0, 0
+	12      (0000002c) aget                 v1, v3, v0
+	13      (00000030) const/4              v0, 1
+
+min-BB@0x32 : [ min-BB@0x38 min-BB@0x4a ]
+	14      (00000032) array-length         v2, v3
+	15      (00000034) if-ge                v0, v2, +b
+
+min-BB@0x38 : [ min-BB@0x32 ]
+	16      (00000038) aget                 v2, v3, v0
+	17      (0000003c) invoke-static        v2, v1, Lorg/apache/commons/lang/math/IEEE754rUtils;->min(F F)F
+	18      (00000042) move-result          v1
+	19      (00000044) add-int/lit8         v0, v0, 1
+	20      (00000048) goto                 -b
+
+min-BB@0x4a : 
+	21      (0000004a) return               v1
+

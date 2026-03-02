@@ -1,0 +1,44 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->hash([B Ljava/lang/String;)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:byte[]
+# - v6:java.lang.String
+#
+# - return:java.lang.String
+
+hash-BB@0x0 : [ hash-BB@0x1e ]
+	0       (00000000) invoke-static        v6, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, v5, Ljava/security/MessageDigest;->update([B)V
+	3       (0000000e) invoke-virtual       v0, Ljava/security/MessageDigest;->digest()[B
+	4       (00000014) move-result-object   v0
+	5       (00000016) invoke-static        v0, Lio/fabric/sdk/android/services/common/CommonUtils;->hexify([B)Ljava/lang/String;
+	6       (0000001c) move-result-object   v0
+	0:5
+	(Ljava/security/NoSuchAlgorithmException; -> 20 hash-BB@0x20)
+
+hash-BB@0x1e : 
+	7       (0000001e) return-object        v0
+
+hash-BB@0x20 : [ hash-BB@0x1e ]
+	8       (00000020) move-exception       v0
+	9       (00000022) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	10      (00000028) move-result-object   v1
+	11      (0000002a) const-string         v2, 'Fabric'
+	12      (0000002e) new-instance         v3, Ljava/lang/StringBuilder;
+	13      (00000032) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	14      (00000038) const-string         v4, 'Could not create hashing algorithm: '
+	15      (0000003c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000042) move-result-object   v3
+	17      (00000044) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004a) move-result-object   v3
+	19      (0000004c) const-string         v4, ', returning empty string.'
+	20      (00000050) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000056) move-result-object   v3
+	22      (00000058) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (0000005e) move-result-object   v3
+	24      (00000060) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	25      (00000066) const-string         v0, ''
+	26      (0000006a) goto                 -26
+

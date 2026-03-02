@@ -1,0 +1,19 @@
+# Lcom/a/a/g/a/a/a/b;->a(I)I [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0xa ]
+	0       (00000000) const/16             v0, 10000
+	1       (00000004) if-ge                v2, v0, +3
+
+a-BB@0x8 : 
+	2       (00000008) return               v2
+
+a-BB@0xa : [ a-BB@0x8 ]
+	3       (0000000a) add-int/lit16        v2, v2, -10000
+	4       (0000000e) goto                 -3
+

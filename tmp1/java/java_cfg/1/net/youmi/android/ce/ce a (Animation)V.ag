@@ -1,0 +1,20 @@
+# Lnet/youmi/android/ce;->a(Landroid/view/animation/Animation;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.animation.Animation
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x6 ]
+	0       (00000000) invoke-virtual       v1, v2, Lnet/youmi/android/ce;->startAnimation(Landroid/view/animation/Animation;)V
+	0:5
+	(Ljava/lang/Exception; -> 8 a-BB@0x8)
+
+a-BB@0x6 : 
+	1       (00000006) return-void          
+
+a-BB@0x8 : [ a-BB@0x6 ]
+	2       (00000008) move-exception       v0
+	3       (0000000a) goto                 -2
+

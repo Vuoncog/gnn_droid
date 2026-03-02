@@ -1,0 +1,99 @@
+# Lcom/a/a/d/a/a;->d(I I)I [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:int
+#
+# - return:int
+
+d-BB@0x0 : [ d-BB@0x14 d-BB@0xc4 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) add-int/lit8         v0, v5, -3
+	3       (00000008) invoke-virtual       v4, v0, v2, v5, v6, Lcom/a/a/d/a/a;->a(I I I I)Z
+	4       (0000000e) move-result          v0
+	5       (00000010) if-eqz               v0, +5a
+
+d-BB@0x14 : [ d-BB@0x16 ]
+	6       (00000014) move                 v0, v1
+
+d-BB@0x16 : [ d-BB@0x2a d-BB@0x2e ]
+	7       (00000016) shl-int/lit8         v0, v0, 1
+	8       (0000001a) add-int/lit8         v3, v5, -2
+	9       (0000001e) invoke-virtual       v4, v3, v2, v5, v6, Lcom/a/a/d/a/a;->a(I I I I)Z
+	10      (00000024) move-result          v3
+	11      (00000026) if-eqz               v3, +4
+
+d-BB@0x2a : [ d-BB@0x2e ]
+	12      (0000002a) or-int/lit8          v0, v0, 1
+
+d-BB@0x2e : [ d-BB@0x42 d-BB@0x46 ]
+	13      (0000002e) shl-int/lit8         v0, v0, 1
+	14      (00000032) add-int/lit8         v3, v5, -1
+	15      (00000036) invoke-virtual       v4, v3, v2, v5, v6, Lcom/a/a/d/a/a;->a(I I I I)Z
+	16      (0000003c) move-result          v3
+	17      (0000003e) if-eqz               v3, +4
+
+d-BB@0x42 : [ d-BB@0x46 ]
+	18      (00000042) or-int/lit8          v0, v0, 1
+
+d-BB@0x46 : [ d-BB@0x5a d-BB@0x5e ]
+	19      (00000046) shl-int/lit8         v0, v0, 1
+	20      (0000004a) add-int/lit8         v3, v6, -2
+	21      (0000004e) invoke-virtual       v4, v2, v3, v5, v6, Lcom/a/a/d/a/a;->a(I I I I)Z
+	22      (00000054) move-result          v3
+	23      (00000056) if-eqz               v3, +4
+
+d-BB@0x5a : [ d-BB@0x5e ]
+	24      (0000005a) or-int/lit8          v0, v0, 1
+
+d-BB@0x5e : [ d-BB@0x72 d-BB@0x76 ]
+	25      (0000005e) shl-int/lit8         v0, v0, 1
+	26      (00000062) add-int/lit8         v3, v6, -1
+	27      (00000066) invoke-virtual       v4, v2, v3, v5, v6, Lcom/a/a/d/a/a;->a(I I I I)Z
+	28      (0000006c) move-result          v2
+	29      (0000006e) if-eqz               v2, +4
+
+d-BB@0x72 : [ d-BB@0x76 ]
+	30      (00000072) or-int/lit8          v0, v0, 1
+
+d-BB@0x76 : [ d-BB@0x8a d-BB@0x8e ]
+	31      (00000076) shl-int/lit8         v0, v0, 1
+	32      (0000007a) add-int/lit8         v2, v6, -1
+	33      (0000007e) invoke-virtual       v4, v1, v2, v5, v6, Lcom/a/a/d/a/a;->a(I I I I)Z
+	34      (00000084) move-result          v1
+	35      (00000086) if-eqz               v1, +4
+
+d-BB@0x8a : [ d-BB@0x8e ]
+	36      (0000008a) or-int/lit8          v0, v0, 1
+
+d-BB@0x8e : [ d-BB@0xa4 d-BB@0xa8 ]
+	37      (0000008e) shl-int/lit8         v0, v0, 1
+	38      (00000092) const/4              v1, 2
+	39      (00000094) add-int/lit8         v2, v6, -1
+	40      (00000098) invoke-virtual       v4, v1, v2, v5, v6, Lcom/a/a/d/a/a;->a(I I I I)Z
+	41      (0000009e) move-result          v1
+	42      (000000a0) if-eqz               v1, +4
+
+d-BB@0xa4 : [ d-BB@0xa8 ]
+	43      (000000a4) or-int/lit8          v0, v0, 1
+
+d-BB@0xa8 : [ d-BB@0xbe d-BB@0xc2 ]
+	44      (000000a8) shl-int/lit8         v0, v0, 1
+	45      (000000ac) const/4              v1, 3
+	46      (000000ae) add-int/lit8         v2, v6, -1
+	47      (000000b2) invoke-virtual       v4, v1, v2, v5, v6, Lcom/a/a/d/a/a;->a(I I I I)Z
+	48      (000000b8) move-result          v1
+	49      (000000ba) if-eqz               v1, +4
+
+d-BB@0xbe : [ d-BB@0xc2 ]
+	50      (000000be) or-int/lit8          v0, v0, 1
+
+d-BB@0xc2 : 
+	51      (000000c2) return               v0
+
+d-BB@0xc4 : [ d-BB@0x16 ]
+	52      (000000c4) move                 v0, v2
+	53      (000000c6) goto                 -58
+

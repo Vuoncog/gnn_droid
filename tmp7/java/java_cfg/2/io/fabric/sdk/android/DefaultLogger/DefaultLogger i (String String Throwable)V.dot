@@ -1,0 +1,53 @@
+digraph {
+	graph [bb="0,0,806,409",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_9359693f51d33175f5a08c02a41786d1 {
+		graph [bb="8,8,798,401",
+			label="Lio/fabric/sdk/android/DefaultLogger;.i->(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V\nLocal registers v0 ... \
+v1\nparam v2 = java.lang.String\nparam v3 = java.lang.String\nparam v4 = java.lang.Throwable\nreturn = void",
+			lheight=1.25,
+			lp="403,352",
+			lwidth=9.31
+		];
+		struct_d0a730a86c3ed754299002cb381101ff	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8E8E5B">v1</FONT>, <FONT color="#848484">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/DefaultLogger;-&gt;isLoggable(Ljava/lang/String; I)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="403,238.5",
+			width=9.75];
+		struct_1aa29bbcc9a2a63d53552296ebbf2cfe	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#848484">v2</FONT>, <FONT color="#7A7AAD">v3</FONT>, <FONT color="#7070D6">v4</FONT>, <FONT color="#DF3A01">Landroid/util/Log;-&gt;i(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="393,122.5",
+			width=10.472];
+		struct_d0a730a86c3ed754299002cb381101ff:tail -> struct_1aa29bbcc9a2a63d53552296ebbf2cfe:header	[color=red,
+			pos="e,37,139.5 73,187.5 73,164.79 46.894,165.29 39.144,149.47"];
+		struct_2e7a074eb8d757df94b442899abfd5b9	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="403,39.5",
+			width=2.0694];
+		struct_d0a730a86c3ed754299002cb381101ff:tail -> struct_2e7a074eb8d757df94b442899abfd5b9:header	[color=green,
+			pos="e,354,56.5 73,187.5 73,108.92 725.09,203.17 779,146 793.33,130.8 793.02,114.49 779,99 717.8,31.374 381.77,142.12 355.61,66.651"];
+		struct_1aa29bbcc9a2a63d53552296ebbf2cfe:tail -> struct_2e7a074eb8d757df94b442899abfd5b9:header	[color=blue,
+			pos="e,354,56.5 37,104.5 37,-34.377 338.11,187.2 353.4,66.633"];
+	}
+}

@@ -1,0 +1,15 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->buffer()Ljava/io/BufferedInputStream; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.io.BufferedInputStream
+
+buffer-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/io/BufferedInputStream;
+	1       (00000004) invoke-virtual       v3, Lio/fabric/sdk/android/services/network/HttpRequest;->stream()Ljava/io/InputStream;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) iget                 v2, v3, Lio/fabric/sdk/android/services/network/HttpRequest;->bufferSize I
+	4       (00000010) invoke-direct        v0, v1, v2, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream; I)V
+	5       (00000016) return-object        v0
+

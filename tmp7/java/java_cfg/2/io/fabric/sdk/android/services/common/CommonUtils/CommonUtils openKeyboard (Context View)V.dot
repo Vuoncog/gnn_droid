@@ -1,0 +1,57 @@
+digraph {
+	graph [bb="0,0,1022,482",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_423a72fc5cce53b97d37af0373a51e62 {
+		graph [bb="8,8,1014,474",
+			label="Lio/fabric/sdk/android/services/common/CommonUtils;.openKeyboard->(Landroid/content/Context; Landroid/view/View;)V\nLocal registers \
+v0 ... v2\nparam v3 = android.content.Context\nparam v4 = android.view.View\nreturn = void",
+			lheight=1.04,
+			lp="511,432.5",
+			lwidth=11.19
+		];
+		struct_9fe4062ad355a8bec6af60c57539ba1d	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#999933">v0</FONT>, <FONT color="red">'input_method'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8E8E5B">v3</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Landroid/content/Context;-&gt;getSystemService(Ljava/lang/String;)Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Landroid/view/inputmethod/InputMethodManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="511,315.5",
+			width=10.583];
+		struct_4a6791a058fa9dd8427aff7eb6370d0d	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#848484">v4</FONT>, <FONT color="#DF3A01">Landroid/view/View;-&gt;getWindowToken()Landroid/os/IBinder;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7A7AAD">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7070D6">v2</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7A7AAD">v1</FONT>, <FONT color="#7070D6">v2</FONT>, <FONT color="#DF3A01">Landroid/view/inputmethod/InputMethodManager;-&gt;showSoftInputFromInputMethod(Landroid/os/IBinder; I)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="501,155.5",
+			width=13.458];
+		struct_9fe4062ad355a8bec6af60c57539ba1d:tail -> struct_4a6791a058fa9dd8427aff7eb6370d0d:header	[color=red,
+			pos="e,42,205.5 155,253.5 155,202.77 57.332,252.04 43.597,215.37"];
+		struct_5905513bd3234bd5c25f1f7482c0b164	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="511,39.5",
+			width=2.0694];
+		struct_9fe4062ad355a8bec6af60c57539ba1d:tail -> struct_5905513bd3234bd5c25f1f7482c0b164:header	[color=green,
+			pos="e,462,56.5 155,253.5 155,160.05 930.57,279.69 995,212 1029.6,175.62 1029.1,135.9 995,99 956.98,57.825 516.36,109.38 466.57,65.481"];
+		struct_4a6791a058fa9dd8427aff7eb6370d0d:tail -> struct_5905513bd3234bd5c25f1f7482c0b164:header	[color=blue,
+			pos="e,462,56.5 42,104.5 42,-79.712 445.75,231.78 461.53,66.926"];
+	}
+}

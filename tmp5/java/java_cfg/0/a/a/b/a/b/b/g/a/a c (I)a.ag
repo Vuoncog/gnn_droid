@@ -1,0 +1,43 @@
+# La/a/b/a/b/b/g/a;->c(I)La/a/b/a/b/b/b/a; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:a.a.b.a.b.b.b.a
+
+c-BB@0x0 : [ c-BB@0xe ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v0, v4, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	2       (00000006) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	3       (0000000c) move-result-object   v2
+
+c-BB@0xe : [ c-BB@0x1a c-BB@0x36 ]
+	4       (0000000e) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	5       (00000014) move-result          v0
+	6       (00000016) if-eqz               v0, +10
+
+c-BB@0x1a : [ c-BB@0x2e c-BB@0xe ]
+	7       (0000001a) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	8       (00000020) move-result-object   v0
+	9       (00000022) check-cast           v0, La/a/b/a/b/b/g/a/b;
+	10      (00000026) iget                 v3, v0, La/a/b/a/b/b/g/a/b;->b I
+	11      (0000002a) if-ne                v3, v5, -e
+
+c-BB@0x2e : [ c-BB@0x32 c-BB@0x3a ]
+	12      (0000002e) if-nez               v0, +6
+
+c-BB@0x32 : [ c-BB@0x34 ]
+	13      (00000032) move-object          v0, v1
+
+c-BB@0x34 : 
+	14      (00000034) return-object        v0
+
+c-BB@0x36 : [ c-BB@0x2e ]
+	15      (00000036) move-object          v0, v1
+	16      (00000038) goto                 -5
+
+c-BB@0x3a : [ c-BB@0x34 ]
+	17      (0000003a) iget-object          v0, v0, La/a/b/a/b/b/g/a/b;->a La/a/b/a/b/b/b/a;
+	18      (0000003e) goto                 -5
+

@@ -1,0 +1,151 @@
+digraph {
+	graph [bb="0,0,2176.7,890",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_b6bef32affae97be179ef864913fa3bd {
+		graph [bb="19.728,8,2113.7,882",
+			label="Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;.executeSyncLoggingException->(Ljava/util/concurrent/Callable;)Ljava/\
+lang/Object;\nLocal registers v0 ... v5\nparam v6 = java.util.concurrent.Callable\nreturn = java.lang.Object",
+			lheight=0.83,
+			lp="1066.7,848",
+			lwidth=13.71
+		];
+		struct_ba4b952818eedc9eae2e1ee4cb5d9613	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="519.73,782.5",
+			width=2.2917];
+		struct_e5609439154351895f8529ed71ae8f52	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Landroid/os/Looper;-&gt;getMainLooper()Landroid/os/Looper;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#919150">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Landroid/os/Looper;-&gt;myLooper()Landroid/os/Looper;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8A8A6D">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ne </FONT> <FONT color="#919150">v1</FONT>, <FONT color="#8A8A6D">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x11</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="707.73,654.5",
+			width=7.625];
+		struct_ba4b952818eedc9eae2e1ee4cb5d9613:tail -> struct_e5609439154351895f8529ed71ae8f52:header	[color=blue,
+			pos="e,458.73,715.5 458.73,764.5 458.73,746.64 458.73,739.76 458.73,725.85"];
+		struct_4a32bab73b75160672da35169a2ce817	[height=2.4861,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#919150">v1</FONT>, <FONT color="#83838A">v5</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;-&gt;executorService Ljava/util/concurrent/ExecutorService;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#919150">v1</FONT>, <FONT color="#7B7BA7">v6</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/ExecutorService;-&gt;submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#919150">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-wide/16 </FONT> <FONT color="#8A8A6D">v2</FONT>, <FONT color="green">0x4</FONT> ; [4.0] </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#7474C4">v4</FONT>, <FONT color="#088A08">Ljava/util/concurrent/TimeUnit;-&gt;SECONDS Ljava/util/concurrent/TimeUnit;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#919150">v1</FONT>, <FONT color="#8A8A6D">v2</FONT>, <FONT color="#6D6DE1">v3</FONT>, <FONT color="#7474C4">v4</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/Future;-&gt;get(J Ljava/util/concurrent/TimeUnit;)Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1580.7,460.5",
+			width=14.028];
+		struct_e5609439154351895f8529ed71ae8f52:tail -> struct_4a32bab73b75160672da35169a2ce817:header	[color=red,
+			pos="e,1085.7,540.5 458.73,592.5 458.73,524.78 1001.4,567.85 1066.7,550 1071.3,548.76 1073.7,546.38 1076.1,544.32"];
+		struct_76c90bfe5e0d9863eee786d6bc87a452	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#919150">v1</FONT>, <FONT color="#83838A">v5</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;-&gt;executorService Ljava/util/concurrent/ExecutorService;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#919150">v1</FONT>, <FONT color="#7B7BA7">v6</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/ExecutorService;-&gt;submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#919150">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">40</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#919150">v1</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/Future;-&gt;get()Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">46</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">48</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-b</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="552.73,460.5",
+			width=14.028];
+		struct_e5609439154351895f8529ed71ae8f52:tail -> struct_76c90bfe5e0d9863eee786d6bc87a452:header	[color=green,
+			pos="e,72.728,532.5 443.73,595.5 404.94,595.5 118.8,577.26 77.652,541.24"];
+		struct_ed0ddaa0d884ec89fbcd00d825fa006a	[height=2.8611,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#919150">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">52</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#919150">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">54</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#8A8A6D">v2</FONT>, <FONT color="red">'CrashlyticsCore'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">58</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#6D6DE1">v3</FONT>, <FONT color="red"><br/>"Executor is shut down because<br/>we're handling a fatal crash."</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#919150">v1</FONT>, <FONT color="#8A8A6D">v2</FONT>, <FONT color="#6D6DE1">v3</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;d(Ljava/lang/String; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">62</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-18</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="758.73,119",
+			width=10.111];
+		struct_e5609439154351895f8529ed71ae8f52:tail -> struct_ed0ddaa0d884ec89fbcd00d825fa006a:header	[color=black,
+			label="Ljava/util/concurrent/RejectedExecutionException;",
+			lp="227.73,345.5",
+			pos="e,404.73,213 443.73,595.5 398.44,595.5 68.223,584.36 38.728,550 -103.12,384.76 174.96,218.12 394.64,213.12"];
+		struct_f23afd6f97e1f8fa36a76d7c5a1ac255	[height=2.4861,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">64</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#919150">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">66</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8A8A6D">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#6D6DE1">v3</FONT>, <FONT color="red">'CrashlyticsCore'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">72</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7474C4">v4</FONT>, <FONT color="red">'Failed to execute task.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">76</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#8A8A6D">v2</FONT>, <FONT color="#6D6DE1">v3</FONT>, <FONT color="#7474C4">v4</FONT>, <FONT color="#919150">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-25</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1590.7,119",
+			width=12.5];
+		struct_e5609439154351895f8529ed71ae8f52:tail -> struct_f23afd6f97e1f8fa36a76d7c5a1ac255:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="2106.2,345.5",
+			pos="e,1165.7,202 458.73,592.5 458.73,501.58 2031.3,615.12 2094.7,550 2150.2,493.02 2145.7,432.08 2094.7,371 2062.8,332.69 1251.1,261.82 \
+1171.9,209.85"];
+		struct_139a3cb8ec19edb2eeadad01987f4d0b	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="995.73,296.5",
+			width=2.4722];
+		struct_4a32bab73b75160672da35169a2ce817:tail -> struct_139a3cb8ec19edb2eeadad01987f4d0b:header	[color=blue,
+			pos="e,931.73,313.5 1085.7,379.5 1076.5,379.5 1075.2,374.7 1066.7,371 1010.3,346.38 940.2,375.08 932.44,323.66"];
+		struct_4a32bab73b75160672da35169a2ce817:tail -> struct_ed0ddaa0d884ec89fbcd00d825fa006a:header	[color=black,
+			label="Ljava/util/concurrent/RejectedExecutionException;",
+			lp="729.73,296.5",
+			pos="e,419.73,216 1085.7,379.5 1076.5,379.5 1075.7,373.38 1066.7,371 957.74,341.93 667.03,360.41 561.73,320 491.97,293.23 425.93,294.09 \
+420.14,226.07"];
+		struct_4a32bab73b75160672da35169a2ce817:tail -> struct_f23afd6f97e1f8fa36a76d7c5a1ac255:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="1189.2,296.5",
+			pos="e,1150.7,199 1100.7,376.5 1100.7,358.49 1123.5,235.02 1143,205.39"];
+		struct_139a3cb8ec19edb2eeadad01987f4d0b:tail -> struct_ed0ddaa0d884ec89fbcd00d825fa006a:header	[color=black,
+			label="Ljava/util/concurrent/RejectedExecutionException;",
+			lp="740.73,247.5",
+			pos="e,419.73,216 916.73,281.5 895.06,281.5 890.24,275.55 868.73,273 737.85,257.48 701.52,282.98 572.73,255 554.58,251.06 551.54,245.26 \
+533.73,240 512.39,233.69 443.54,239.62 424.59,224.98"];
+		struct_139a3cb8ec19edb2eeadad01987f4d0b:tail -> struct_f23afd6f97e1f8fa36a76d7c5a1ac255:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="1040.2,247.5",
+			pos="e,1150.7,199 931.73,278.5 931.73,254.46 948.09,250.49 969.73,240 1034.9,208.41 1068,256.44 1131.7,222 1139.2,217.96 1139.5,209.66 \
+1142.2,204.21"];
+		struct_76c90bfe5e0d9863eee786d6bc87a452:tail -> struct_139a3cb8ec19edb2eeadad01987f4d0b:header	[color=blue,
+			pos="e,916.73,310.5 72.728,387.5 72.728,376.4 857.74,321.55 868.73,320 886.39,317.51 892.74,312.71 906.46,311.07"];
+		struct_ed0ddaa0d884ec89fbcd00d825fa006a:tail -> struct_139a3cb8ec19edb2eeadad01987f4d0b:header	[color=blue,
+			pos="e,916.73,310.5 419.73,22 419.73,-2.0385 152.72,-28.627 394.73,222 434.42,263.11 866.77,201.2 908.73,240 928.26,258.07 898.08,295.84 \
+907.11,307.2"];
+		struct_f23afd6f97e1f8fa36a76d7c5a1ac255:tail -> struct_139a3cb8ec19edb2eeadad01987f4d0b:header	[color=blue,
+			pos="e,931.73,313.5 1150.7,38 1130.2,38 1138.5,202.59 1131.7,222 1126,238.42 1125.6,245.97 1110.7,255 1071.8,278.63 937.46,239.44 906.73,\
+273 894.87,285.95 894.56,299.84 906.73,312.5 911.06,317.01 918.43,320.28 924.05,320.3"];
+	}
+}

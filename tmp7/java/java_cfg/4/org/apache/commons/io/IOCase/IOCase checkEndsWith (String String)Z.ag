@@ -1,0 +1,33 @@
+# Lorg/apache/commons/io/IOCase;->checkEndsWith(Ljava/lang/String; Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+# - v8:java.lang.String
+#
+# - return:boolean
+
+checkEndsWith-BB@0x0 : [ checkEndsWith-BB@0x12 checkEndsWith-BB@0x2e ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) invoke-virtual       v8, Ljava/lang/String;->length()I
+	2       (00000008) move-result          v5
+	3       (0000000a) iget-boolean         v0, v6, Lorg/apache/commons/io/IOCase;->sensitive Z
+	4       (0000000e) if-nez               v0, +10
+
+checkEndsWith-BB@0x12 : [ checkEndsWith-BB@0x14 ]
+	5       (00000012) const/4              v1, 1
+
+checkEndsWith-BB@0x14 : 
+	6       (00000014) invoke-virtual       v7, Ljava/lang/String;->length()I
+	7       (0000001a) move-result          v0
+	8       (0000001c) sub-int              v2, v0, v5
+	9       (00000020) move-object          v0, v7
+	10      (00000022) move-object          v3, v8
+	11      (00000024) invoke-virtual/range v0 ... v5, Ljava/lang/String;->regionMatches(Z I Ljava/lang/String; I I)Z
+	12      (0000002a) move-result          v0
+	13      (0000002c) return               v0
+
+checkEndsWith-BB@0x2e : [ checkEndsWith-BB@0x14 ]
+	14      (0000002e) move                 v1, v4
+	15      (00000030) goto                 -e
+

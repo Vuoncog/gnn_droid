@@ -1,0 +1,16 @@
+# Lcom/mangosoft/android/wallpapers/service/RotateWallpaperReceiver;->onReceive(Landroid/content/Context; Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:android.content.Intent
+#
+# - return:void
+
+onReceive-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/content/Intent;
+	1       (00000004) const-class          v1, Lcom/mangosoft/android/wallpapers/service/RotateWallpaperService;
+	2       (00000008) invoke-direct        v0, v3, v1, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	3       (0000000e) invoke-virtual       v3, v0, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+	4       (00000014) return-void          
+

@@ -1,0 +1,16 @@
+# Lorg/apache/commons/io/CopyUtils;->copy(Ljava/io/Reader; Ljava/io/OutputStream;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.Reader
+# - v2:java.io.OutputStream
+#
+# - return:void
+
+copy-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/io/OutputStreamWriter;
+	1       (00000004) invoke-direct        v0, v2, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;)V
+	2       (0000000a) invoke-static        v1, v0, Lorg/apache/commons/io/CopyUtils;->copy(Ljava/io/Reader; Ljava/io/Writer;)I
+	3       (00000010) invoke-virtual       v0, Ljava/io/OutputStreamWriter;->flush()V
+	4       (00000016) return-void          
+

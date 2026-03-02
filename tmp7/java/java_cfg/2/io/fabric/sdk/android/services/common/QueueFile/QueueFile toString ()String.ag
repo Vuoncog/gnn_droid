@@ -1,0 +1,63 @@
+# Lio/fabric/sdk/android/services/common/QueueFile;->toString()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : [ toString-BB@0x8e ]
+	0       (00000000) new-instance         v1, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	3       (00000010) move-result-object   v0
+	4       (00000012) invoke-virtual       v0, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v0
+	8       (00000022) const/16             v2, 91
+	9       (00000026) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	10      (0000002c) const-string         v0, 'fileLength='
+	11      (00000030) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000036) move-result-object   v0
+	13      (00000038) iget                 v2, v5, Lio/fabric/sdk/android/services/common/QueueFile;->fileLength I
+	14      (0000003c) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	15      (00000042) const-string         v0, ', size='
+	16      (00000046) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004c) move-result-object   v0
+	18      (0000004e) iget                 v2, v5, Lio/fabric/sdk/android/services/common/QueueFile;->elementCount I
+	19      (00000052) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	20      (00000058) const-string         v0, ', first='
+	21      (0000005c) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (00000062) move-result-object   v0
+	23      (00000064) iget-object          v2, v5, Lio/fabric/sdk/android/services/common/QueueFile;->first Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	24      (00000068) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	25      (0000006e) const-string         v0, ', last='
+	26      (00000072) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (00000078) move-result-object   v0
+	28      (0000007a) iget-object          v2, v5, Lio/fabric/sdk/android/services/common/QueueFile;->last Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	29      (0000007e) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	30      (00000084) const-string         v0, ', element lengths=['
+	31      (00000088) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+toString-BB@0x8e : [ toString-BB@0x9e ]
+	32      (0000008e) new-instance         v0, Lio/fabric/sdk/android/services/common/QueueFile$1;
+	33      (00000092) invoke-direct        v0, v5, v1, Lio/fabric/sdk/android/services/common/QueueFile$1;-><init>(Lio/fabric/sdk/android/services/common/QueueFile; Ljava/lang/StringBuilder;)V
+	34      (00000098) invoke-virtual       v5, v0, Lio/fabric/sdk/android/services/common/QueueFile;->forEach(Lio/fabric/sdk/android/services/common/QueueFile$ElementReader;)V
+	8e:9d
+	(Ljava/io/IOException; -> b2 toString-BB@0xb2)
+
+toString-BB@0x9e : 
+	35      (0000009e) const-string         v0, ']]'
+	36      (000000a2) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	37      (000000a8) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	38      (000000ae) move-result-object   v0
+	39      (000000b0) return-object        v0
+
+toString-BB@0xb2 : [ toString-BB@0x9e ]
+	40      (000000b2) move-exception       v0
+	41      (000000b4) sget-object          v2, Lio/fabric/sdk/android/services/common/QueueFile;->LOGGER Ljava/util/logging/Logger;
+	42      (000000b8) sget-object          v3, Ljava/util/logging/Level;->WARNING Ljava/util/logging/Level;
+	43      (000000bc) const-string         v4, 'read error'
+	44      (000000c0) invoke-virtual       v2, v3, v4, v0, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level; Ljava/lang/String; Ljava/lang/Throwable;)V
+	45      (000000c6) goto                 -14
+

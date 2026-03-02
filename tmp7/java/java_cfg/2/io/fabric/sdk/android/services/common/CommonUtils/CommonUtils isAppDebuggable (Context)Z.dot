@@ -1,0 +1,66 @@
+digraph {
+	graph [bb="0,0,790,423",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_903d747f97ca468817ff8b4e1a2456d3 {
+		graph [bb="8,8,782,415",
+			label="Lio/fabric/sdk/android/services/common/CommonUtils;.isAppDebuggable->(Landroid/content/Context;)Z\nLocal registers v0 ... v0\nparam \
+v1 = android.content.Context\nreturn = boolean",
+			lheight=0.83,
+			lp="395,381",
+			lwidth=9.60
+		];
+		struct_8e78c9411dd14355195b0fb0be3600b7	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Landroid/content/Context;-&gt;getApplicationInfo()Landroid/content/pm/ApplicationInfo;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#088A08">Landroid/content/pm/ApplicationInfo;-&gt;flags I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">and-int/lit8 </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="green">0x2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="395,271.5",
+			width=10.514];
+		struct_6d2277191522150cc4d1e50c2555e027	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="103,133.5",
+			width=2.4028];
+		struct_8e78c9411dd14355195b0fb0be3600b7:tail -> struct_6d2277191522150cc4d1e50c2555e027:header	[color=red,
+			pos="e,42,150.5 42,209.5 42,186.97 42,178.95 42,160.51"];
+		struct_b928a8f00c15001fe75cf4b9ee3486d0	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="294,133.5",
+			width=2.4028];
+		struct_8e78c9411dd14355195b0fb0be3600b7:tail -> struct_b928a8f00c15001fe75cf4b9ee3486d0:header	[color=green,
+			pos="e,233,161.5 42,209.5 42,125.73 216.94,238.51 231.97,171.63"];
+		struct_d9de0b48e31413cc78ddcfe872e27477	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="178,39.5",
+			width=1.8472];
+		struct_6d2277191522150cc4d1e50c2555e027:tail -> struct_d9de0b48e31413cc78ddcfe872e27477:header	[color=blue,
+			pos="e,122,53.5 42,115.5 42,73.943 71.885,56.255 111.91,53.801"];
+		struct_b928a8f00c15001fe75cf4b9ee3486d0:tail -> struct_d9de0b48e31413cc78ddcfe872e27477:header	[color=blue,
+			pos="e,137,56.5 218,107.5 213.7,107.5 163.39,77.632 144.29,63.387"];
+	}
+}

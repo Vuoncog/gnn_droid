@@ -1,0 +1,80 @@
+digraph {
+	graph [bb="0,0,1143,528",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_c97b18130de802b4cff8a2005c15e228 {
+		graph [bb="8,8,1135,520",
+			label="Lorg/apache/commons/lang/exception/ExceptionUtils;.getThrowableList->(Ljava/lang/Throwable;)Ljava/util/List;\nLocal registers v0 \
+... v1\nparam v2 = java.lang.Throwable\nreturn = java.util.List",
+			lheight=0.83,
+			lp="571.5,486",
+			lwidth=10.22
+		];
+		struct_67a31057a3cc37cee99f211d23f99930	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/util/ArrayList;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/util/ArrayList;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="480,409.5",
+			width=5.1667];
+		struct_8916e87516f1fff83eb34bc18b636c6b	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#888877">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x10</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="373,315.5",
+			width=2.1944];
+		struct_67a31057a3cc37cee99f211d23f99930:tail -> struct_8916e87516f1fff83eb34bc18b636c6b:header	[color=blue,
+			pos="e,315,332.5 315,380.5 315,363 315,356.27 315,342.64"];
+		struct_af0318dfee7df74b7a5d7d3804dc77b2	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;contains(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7777BB">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7777BB">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="554,210.5",
+			width=7.3333];
+		struct_8916e87516f1fff83eb34bc18b636c6b:tail -> struct_af0318dfee7df74b7a5d7d3804dc77b2:header	[color=red,
+			pos="e,315,249.5 315,297.5 315,280 315,273.27 315,259.64"];
+		struct_2a8c7736aa916d3e1246faf616f92e25	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1038,72.5",
+			width=2.4583];
+		struct_8916e87516f1fff83eb34bc18b636c6b:tail -> struct_2a8c7736aa916d3e1246faf616f92e25:header	[color=green,
+			pos="e,960,86.5 315,297.5 315,240.42 775.86,281.34 827,256 894.96,222.32 899.69,192.61 941,129 949.63,115.71 944.05,97.86 950.25,90.22"];
+		struct_7ef270f096fd3742e0f3e90c592ea632	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;add(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#888877">v2</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/exception/ExceptionUtils;-&gt;getCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-f</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="474,72.5",
+			width=12.708];
+		struct_af0318dfee7df74b7a5d7d3804dc77b2:tail -> struct_7ef270f096fd3742e0f3e90c592ea632:header	[color=red,
+			pos="e,42,122.5 315,170.5 315,50.915 57.762,234.35 42.689,132.52"];
+		struct_af0318dfee7df74b7a5d7d3804dc77b2:tail -> struct_2a8c7736aa916d3e1246faf616f92e25:header	[color=green,
+			pos="e,960,86.5 315,170.5 315,100.79 883.8,168.84 941,129 954,119.95 946.1,99.844 950.97,90.918"];
+		struct_7ef270f096fd3742e0f3e90c592ea632:tail -> struct_8916e87516f1fff83eb34bc18b636c6b:header	[color=blue,
+			pos="e,304,329.5 42,21.5 42,10.158 24.361,14.324 16.5,22.5 0.096299,39.56 5.5521,108.02 16.5,129 86.944,264.01 145.53,326.66 293.65,329.41"];
+	}
+}

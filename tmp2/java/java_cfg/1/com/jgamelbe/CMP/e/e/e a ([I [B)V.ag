@@ -1,0 +1,67 @@
+# Lcom/jgamelbe/CMP/e/e;->a([I [B)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int[]
+# - v9:byte[]
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x8 ]
+	0       (00000000) const/16             v6, 8
+	1       (00000004) const/4              v0, 0
+	2       (00000006) move                 v2, v0
+
+a-BB@0x8 : [ a-BB@0xc a-BB@0x12 ]
+	3       (00000008) if-lt                v2, v6, +5
+
+a-BB@0xc : [ a-BB@0x10 a-BB@0x44 ]
+	4       (0000000c) if-lt                v0, v6, +1c
+
+a-BB@0x10 : 
+	5       (00000010) return-void          
+
+a-BB@0x12 : [ a-BB@0x14 ]
+	6       (00000012) move                 v1, v0
+
+a-BB@0x14 : [ a-BB@0x18 a-BB@0x20 ]
+	7       (00000014) if-lt                v1, v6, +6
+
+a-BB@0x18 : [ a-BB@0x8 ]
+	8       (00000018) add-int/lit8         v1, v2, 1
+	9       (0000001c) move                 v2, v1
+	10      (0000001e) goto                 -b
+
+a-BB@0x20 : [ a-BB@0x14 ]
+	11      (00000020) aget-byte            v3, v9, v2
+	12      (00000024) shl-int/lit8         v4, v2, 3
+	13      (00000028) add-int/2addr        v4, v1
+	14      (0000002a) aget                 v4, v8, v4
+	15      (0000002e) rsub-int/lit8        v5, v1, 7
+	16      (00000032) shl-int/2addr        v4, v5
+	17      (00000034) int-to-byte          v4, v4
+	18      (00000036) add-int/2addr        v3, v4
+	19      (00000038) int-to-byte          v3, v3
+	20      (0000003a) aput-byte            v3, v9, v2
+	21      (0000003e) add-int/lit8         v1, v1, 1
+	22      (00000042) goto                 -17
+
+a-BB@0x44 : [ a-BB@0x5e a-BB@0x6c ]
+	23      (00000044) aget-byte            v1, v9, v0
+	24      (00000048) rem-int/lit16        v1, v1, 256
+	25      (0000004c) int-to-byte          v1, v1
+	26      (0000004e) aput-byte            v1, v9, v0
+	27      (00000052) aget-byte            v1, v9, v0
+	28      (00000056) const/16             v2, 128
+	29      (0000005a) if-le                v1, v2, +9
+
+a-BB@0x5e : [ a-BB@0x6c ]
+	30      (0000005e) aget-byte            v1, v9, v0
+	31      (00000062) add-int/lit16        v1, v1, -255
+	32      (00000066) int-to-byte          v1, v1
+	33      (00000068) aput-byte            v1, v9, v0
+
+a-BB@0x6c : [ a-BB@0xc ]
+	34      (0000006c) add-int/lit8         v0, v0, 1
+	35      (00000070) goto                 -32
+

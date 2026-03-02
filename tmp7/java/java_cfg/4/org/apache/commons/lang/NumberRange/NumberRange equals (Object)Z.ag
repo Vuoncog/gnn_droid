@@ -1,0 +1,43 @@
+# Lorg/apache/commons/lang/NumberRange;->equals(Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Object
+#
+# - return:boolean
+
+equals-BB@0x0 : [ equals-BB@0x8 equals-BB@0xa ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) if-ne                v5, v4, +3
+
+equals-BB@0x8 : 
+	3       (00000008) return               v0
+
+equals-BB@0xa : [ equals-BB@0x12 equals-BB@0x16 ]
+	4       (0000000a) instance-of          v2, v5, Lorg/apache/commons/lang/NumberRange;
+	5       (0000000e) if-nez               v2, +4
+
+equals-BB@0x12 : [ equals-BB@0x8 ]
+	6       (00000012) move                 v0, v1
+	7       (00000014) goto                 -6
+
+equals-BB@0x16 : [ equals-BB@0x2e equals-BB@0x42 ]
+	8       (00000016) check-cast           v5, Lorg/apache/commons/lang/NumberRange;
+	9       (0000001a) iget-object          v2, v4, Lorg/apache/commons/lang/NumberRange;->min Ljava/lang/Number;
+	10      (0000001e) iget-object          v3, v5, Lorg/apache/commons/lang/NumberRange;->min Ljava/lang/Number;
+	11      (00000022) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	12      (00000028) move-result          v2
+	13      (0000002a) if-eqz               v2, +c
+
+equals-BB@0x2e : [ equals-BB@0x42 equals-BB@0x8 ]
+	14      (0000002e) iget-object          v2, v4, Lorg/apache/commons/lang/NumberRange;->max Ljava/lang/Number;
+	15      (00000032) iget-object          v3, v5, Lorg/apache/commons/lang/NumberRange;->max Ljava/lang/Number;
+	16      (00000036) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	17      (0000003c) move-result          v2
+	18      (0000003e) if-nez               v2, -1b
+
+equals-BB@0x42 : [ equals-BB@0x8 ]
+	19      (00000042) move                 v0, v1
+	20      (00000044) goto                 -1e
+

@@ -1,0 +1,23 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->hasOpenSession()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+hasOpenSession-BB@0x0 : [ hasOpenSession-BB@0xe hasOpenSession-BB@0x12 ]
+	0       (00000000) invoke-virtual       v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->listSessionBeginFiles()[Ljava/io/File;
+	1       (00000006) move-result-object   v0
+	2       (00000008) array-length         v0, v0
+	3       (0000000a) if-lez               v0, +4
+
+hasOpenSession-BB@0xe : [ hasOpenSession-BB@0x10 ]
+	4       (0000000e) const/4              v0, 1
+
+hasOpenSession-BB@0x10 : 
+	5       (00000010) return               v0
+
+hasOpenSession-BB@0x12 : [ hasOpenSession-BB@0x10 ]
+	6       (00000012) const/4              v0, 0
+	7       (00000014) goto                 -2
+

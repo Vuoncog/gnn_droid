@@ -1,0 +1,23 @@
+# Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.Closeable
+#
+# - return:void
+
+closeQuietly-BB@0x0 : [ closeQuietly-BB@0x4 closeQuietly-BB@0xa ]
+	0       (00000000) if-eqz               v1, +5
+
+closeQuietly-BB@0x4 : [ closeQuietly-BB@0xa ]
+	1       (00000004) invoke-interface     v1, Ljava/io/Closeable;->close()V
+	4:9
+	(Ljava/io/IOException; -> c closeQuietly-BB@0xc)
+
+closeQuietly-BB@0xa : 
+	2       (0000000a) return-void          
+
+closeQuietly-BB@0xc : [ closeQuietly-BB@0xa ]
+	3       (0000000c) move-exception       v0
+	4       (0000000e) goto                 -2
+

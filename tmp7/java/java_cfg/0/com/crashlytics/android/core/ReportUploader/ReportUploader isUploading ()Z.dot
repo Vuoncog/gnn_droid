@@ -1,0 +1,62 @@
+digraph {
+	graph [bb="0,0,760,342",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_49f17b9fa9d9ea160cd8bacb6b16bf0e {
+		graph [bb="8,8,752,334",
+			label="Lcom/crashlytics/android/core/ReportUploader;.isUploading->()Z\nLocal registers v0 ... v1\nreturn = boolean",
+			lheight=0.62,
+			lp="380,307.5",
+			lwidth=5.92
+		];
+		struct_09b6444096eae8869f89abcf374cb3ed	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/ReportUploader;-&gt;uploadThread Ljava/lang/Thread;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="380,238.5",
+			width=10.111];
+		struct_bb748335ae87a643686aaf71afd9145c	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="99,133.5",
+			width=2.2917];
+		struct_09b6444096eae8869f89abcf374cb3ed:tail -> struct_bb748335ae87a643686aaf71afd9145c:header	[color=red,
+			pos="e,38,150.5 37,209.5 37,186.96 37.739,178.96 37.946,160.51"];
+		struct_abc3358bc913572abe350ccfc4c0ce50	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="282,133.5",
+			width=2.2917];
+		struct_09b6444096eae8869f89abcf374cb3ed:tail -> struct_abc3358bc913572abe350ccfc4c0ce50:header	[color=green,
+			pos="e,221,161.5 37,209.5 37,128.78 204.84,235.56 219.92,171.68"];
+		struct_15e6a44da4ac7242dd9beb32043d2f78	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="170,39.5",
+			width=1.7222];
+		struct_bb748335ae87a643686aaf71afd9145c:tail -> struct_15e6a44da4ac7242dd9beb32043d2f78:header	[color=blue,
+			pos="e,118,53.5 38,115.5 38,73.943 67.885,56.255 107.91,53.801"];
+		struct_abc3358bc913572abe350ccfc4c0ce50:tail -> struct_15e6a44da4ac7242dd9beb32043d2f78:header	[color=blue,
+			pos="e,129,56.5 210,107.5 205.7,107.5 155.39,77.632 136.29,63.387"];
+	}
+}

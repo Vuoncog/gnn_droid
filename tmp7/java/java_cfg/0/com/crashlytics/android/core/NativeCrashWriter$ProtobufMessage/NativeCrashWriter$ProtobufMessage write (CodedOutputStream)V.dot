@@ -1,0 +1,74 @@
+digraph {
+	graph [bb="0,0,1298,577",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_827bbbad63f2bd8004e43bc827e8a73f {
+		graph [bb="34.032,8,1290,569",
+			label="Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;.write->(Lcom/crashlytics/android/core/CodedOutputStream;)V\nLocal \
+registers v0 ... v4\nparam v5 = com.crashlytics.android.core.CodedOutputStream\nreturn = void",
+			lheight=0.83,
+			lp="662.03,535",
+			lwidth=12.03
+		];
+		struct_1c87a3f21300edef8873434d2ad01c71	[height=3.4028,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#909055">v4</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-&gt;tag I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#888877">v1</FONT>, <FONT color="green">0x2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v5</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#888877">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeTag(I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v4</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-&gt;getSizeNoTag()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v5</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeRawVarint32(I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v4</FONT>, <FONT color="#7F7F99">v5</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-&gt;writeProperties(Lcom/crashlytics/android/core/CodedOutputStream;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#888877">v1</FONT>, <FONT color="#909055">v4</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-&gt;children [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">array-length </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="#888877">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="630.03,370.5",
+			width=16.319];
+		struct_11cc0387f6dfc6be25d35baf7657733f	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ge </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="130.03,188.5",
+			width=2.4444];
+		struct_1c87a3f21300edef8873434d2ad01c71:tail -> struct_11cc0387f6dfc6be25d35baf7657733f:header	[color=blue,
+			pos="e,67.032,205.5 68.032,253.5 68.032,236 67.359,229.27 67.117,215.64"];
+		struct_f1ba8fc654b67d4d4caacb569ae060e1	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aget-object </FONT> <FONT color="#6E6EDD">v3</FONT>, <FONT color="#888877">v1</FONT>, <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#6E6EDD">v3</FONT>, <FONT color="#7F7F99">v5</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-&gt;write(Lcom/crashlytics/android/core/CodedOutputStream;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-9</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="579.03,72.5",
+			width=14.917];
+		struct_11cc0387f6dfc6be25d35baf7657733f:tail -> struct_f1ba8fc654b67d4d4caacb569ae060e1:header	[color=red,
+			pos="e,67.032,122.5 67.032,170.5 67.032,153 67.032,146.27 67.032,132.64"];
+		struct_19833968b31ac742861967cb4da259e9	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1208,72.5",
+			width=2.0556];
+		struct_11cc0387f6dfc6be25d35baf7657733f:tail -> struct_19833968b31ac742861967cb4da259e9:header	[color=green,
+			pos="e,1144,86.5 67.032,170.5 67.032,111.68 1076.3,161.96 1125,129 1138.2,120.12 1130.2,99.926 1135,90.947"];
+		struct_f1ba8fc654b67d4d4caacb569ae060e1:tail -> struct_11cc0387f6dfc6be25d35baf7657733f:header	[color=blue,
+			pos="e,67.032,205.5 67.032,21.5 67.032,10.38 49.736,14.481 42.032,22.5 -14.011,80.829 -14.011,146.17 42.032,204.5 46.365,209.01 53.734,\
+212.28 59.352,212.3"];
+	}
+}

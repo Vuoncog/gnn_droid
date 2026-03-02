@@ -1,0 +1,32 @@
+# Lcom/mangosoft/android/wallpapers/SingleImageViewActivity$7;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x20 ]
+	0       (00000000) iget-object          v0, v2, Lcom/mangosoft/android/wallpapers/SingleImageViewActivity$7;->this$0 Lcom/mangosoft/android/wallpapers/SingleImageViewActivity;
+	1       (00000004) invoke-static        v0, Lcom/mangosoft/android/wallpapers/SingleImageViewActivity;->access$4(Lcom/mangosoft/android/wallpapers/SingleImageViewActivity;)Landroid/os/Handler;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) new-instance         v1, Lcom/mangosoft/android/wallpapers/SingleImageViewActivity$7$1;
+	4       (00000010) invoke-direct        v1, v2, Lcom/mangosoft/android/wallpapers/SingleImageViewActivity$7$1;-><init>(Lcom/mangosoft/android/wallpapers/SingleImageViewActivity$7;)V
+	5       (00000016) invoke-virtual       v0, v1, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+	6       (0000001c) const-wide/16        v0, 1000 # [1000.0]
+
+run-BB@0x20 : [ run-BB@0x26 ]
+	7       (00000020) invoke-static        v0, v1, Ljava/lang/Thread;->sleep(J)V
+	20:25
+	(Ljava/lang/Exception; -> 3a run-BB@0x3a)
+
+run-BB@0x26 : 
+	8       (00000026) iget-object          v0, v2, Lcom/mangosoft/android/wallpapers/SingleImageViewActivity$7;->this$0 Lcom/mangosoft/android/wallpapers/SingleImageViewActivity;
+	9       (0000002a) invoke-static        v0, Lcom/mangosoft/android/wallpapers/SingleImageViewActivity;->access$5(Lcom/mangosoft/android/wallpapers/SingleImageViewActivity;)Landroid/app/ProgressDialog;
+	10      (00000030) move-result-object   v0
+	11      (00000032) invoke-virtual       v0, Landroid/app/ProgressDialog;->dismiss()V
+	12      (00000038) return-void          
+
+run-BB@0x3a : [ run-BB@0x26 ]
+	13      (0000003a) move-exception       v0
+	14      (0000003c) goto                 -b
+

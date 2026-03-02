@@ -1,0 +1,51 @@
+# Lcom/unlocker/billing/a;->b(Ljava/lang/String;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x8 b-BB@0x5e ]
+	0       (00000000) iget-boolean         v0, v3, Lcom/unlocker/billing/a;->f Z
+	1       (00000004) if-eqz               v0, +2d
+
+b-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalStateException;
+	3       (0000000c) new-instance         v1, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) const-string         v2, "Can't start async operation ("
+	6       (0000001a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v1
+	8       (00000022) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) const-string         v2, ') because another async operation('
+	11      (0000002e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v1
+	13      (00000036) iget-object          v2, v3, Lcom/unlocker/billing/a;->g Ljava/lang/String;
+	14      (0000003a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000040) move-result-object   v1
+	16      (00000042) const-string         v2, ') is in progress.'
+	17      (00000046) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004c) move-result-object   v1
+	19      (0000004e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (00000054) move-result-object   v1
+	21      (00000056) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	22      (0000005c) throw                v0
+
+b-BB@0x5e : 
+	23      (0000005e) iput-object          v4, v3, Lcom/unlocker/billing/a;->g Ljava/lang/String;
+	24      (00000062) const/4              v0, 1
+	25      (00000064) iput-boolean         v0, v3, Lcom/unlocker/billing/a;->f Z
+	26      (00000068) new-instance         v0, Ljava/lang/StringBuilder;
+	27      (0000006c) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	28      (00000072) const-string         v1, 'Starting async operation: '
+	29      (00000076) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (0000007c) move-result-object   v0
+	31      (0000007e) invoke-virtual       v0, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	32      (00000084) move-result-object   v0
+	33      (00000086) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	34      (0000008c) move-result-object   v0
+	35      (0000008e) invoke-virtual       v3, v0, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	36      (00000094) return-void          
+

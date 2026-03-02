@@ -1,0 +1,30 @@
+# Lorg/apache/commons/lang/builder/EqualsBuilder;->append(B B)Lorg/apache/commons/lang/builder/EqualsBuilder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:byte
+# - v3:byte
+#
+# - return:org.apache.commons.lang.builder.EqualsBuilder
+
+append-BB@0x0 : [ append-BB@0x8 append-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v1, Lorg/apache/commons/lang/builder/EqualsBuilder;->isEquals Z
+	1       (00000004) if-nez               v0, +3
+
+append-BB@0x8 : 
+	2       (00000008) return-object        v1
+
+append-BB@0xa : [ append-BB@0xe append-BB@0x16 ]
+	3       (0000000a) if-ne                v2, v3, +6
+
+append-BB@0xe : [ append-BB@0x10 ]
+	4       (0000000e) const/4              v0, 1
+
+append-BB@0x10 : [ append-BB@0x8 ]
+	5       (00000010) iput-boolean         v0, v1, Lorg/apache/commons/lang/builder/EqualsBuilder;->isEquals Z
+	6       (00000014) goto                 -6
+
+append-BB@0x16 : [ append-BB@0x10 ]
+	7       (00000016) const/4              v0, 0
+	8       (00000018) goto                 -4
+

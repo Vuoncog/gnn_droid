@@ -1,0 +1,56 @@
+digraph {
+	graph [bb="0,0,856,476",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_773b49c5cd656885046dfc736f3e4ebb {
+		graph [bb="8,8,848,468",
+			label="Lorg/apache/commons/io/FileUtils;.copyFile->(Ljava/io/File; Ljava/io/OutputStream;)J\nLocal registers v0 ... v3\nparam v4 = java.io.File\nparam \
+v5 = java.io.OutputStream\nreturn = long",
+			lheight=1.04,
+			lp="428,426.5",
+			lwidth=7.72
+		];
+		struct_fe6fdb4dd891f813104d1af3fa9c780a	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/io/FileInputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#DF3A01">Ljava/io/FileInputStream;-&gt;&lt;init&gt;(Ljava/io/File;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="278,342.5",
+			width=7.1667];
+		struct_7515435d4a61cf264aa1b7d589a0fe13	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v5</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/IOUtils;-&gt;copyLarge(Ljava/io/InputStream; Ljava/io/OutputStream;)J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-wide </FONT> <FONT color="#7A7AAD">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/io/FileInputStream;-&gt;close()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-wide </FONT> <FONT color="#7A7AAD">v2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="428,214.5",
+			width=11.444];
+		struct_fe6fdb4dd891f813104d1af3fa9c780a:tail -> struct_7515435d4a61cf264aa1b7d589a0fe13:header	[color=blue,
+			pos="e,41,264.5 41,313.5 41,295.64 41,288.76 41,274.85"];
+		struct_328cba8422d83821b60863342a7699c1	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#7070D6">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/io/FileInputStream;-&gt;close()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#7070D6">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="225,61.5",
+			width=5.7917];
+		struct_7515435d4a61cf264aa1b7d589a0fe13:tail -> struct_328cba8422d83821b60863342a7699c1:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="113.5,132.5",
+			pos="e,42,100.5 41,163.5 41,139.22 41.752,130.73 41.952,110.64"];
+	}
+}

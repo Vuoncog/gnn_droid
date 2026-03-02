@@ -1,0 +1,128 @@
+# Lorg/apache/commons/lang/ObjectUtils;->clone(Ljava/lang/Object;)Ljava/lang/Object; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object
+#
+# - return:java.lang.Object
+
+clone-BB@0x0 : [ clone-BB@0xa clone-BB@0x4a ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) instance-of          v1, v4, Ljava/lang/Cloneable;
+	2       (00000006) if-eqz               v1, +22
+
+clone-BB@0xa : [ clone-BB@0x1e clone-BB@0x76 ]
+	3       (0000000a) invoke-virtual       v4, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	4       (00000010) move-result-object   v0
+	5       (00000012) invoke-virtual       v0, Ljava/lang/Class;->isArray()Z
+	6       (00000018) move-result          v0
+	7       (0000001a) if-eqz               v0, +2e
+
+clone-BB@0x1e : [ clone-BB@0x3a clone-BB@0x4c ]
+	8       (0000001e) invoke-virtual       v4, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	9       (00000024) move-result-object   v0
+	10      (00000026) invoke-virtual       v0, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) invoke-virtual       v0, Ljava/lang/Class;->isPrimitive()Z
+	13      (00000034) move-result          v1
+	14      (00000036) if-nez               v1, +b
+
+clone-BB@0x3a : [ clone-BB@0x4a ]
+	15      (0000003a) check-cast           v4, [Ljava/lang/Object;
+	16      (0000003e) check-cast           v4, [Ljava/lang/Object;
+	17      (00000042) invoke-virtual       v4, Ljava/lang/Object;->clone()Ljava/lang/Object;
+	18      (00000048) move-result-object   v0
+
+clone-BB@0x4a : 
+	19      (0000004a) return-object        v0
+
+clone-BB@0x4c : [ clone-BB@0x5c ]
+	20      (0000004c) invoke-static        v4, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+	21      (00000052) move-result          v1
+	22      (00000054) invoke-static        v0, v1, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class; I)Ljava/lang/Object;
+	23      (0000005a) move-result-object   v0
+
+clone-BB@0x5c : [ clone-BB@0x64 clone-BB@0x4a ]
+	24      (0000005c) add-int/lit8         v2, v1, -1
+	25      (00000060) if-lez               v1, -b
+
+clone-BB@0x64 : [ clone-BB@0x5c ]
+	26      (00000064) invoke-static        v4, v2, Ljava/lang/reflect/Array;->get(Ljava/lang/Object; I)Ljava/lang/Object;
+	27      (0000006a) move-result-object   v1
+	28      (0000006c) invoke-static        v0, v2, v1, Ljava/lang/reflect/Array;->set(Ljava/lang/Object; I Ljava/lang/Object;)V
+	29      (00000072) move                 v1, v2
+	30      (00000074) goto                 -c
+
+clone-BB@0x76 : [ clone-BB@0x4a ]
+	31      (00000076) const-string         v0, 'clone'
+	32      (0000007a) const/4              v1, 0
+	33      (0000007c) invoke-static        v4, v0, v1, Lorg/apache/commons/lang/reflect/MethodUtils;->invokeMethod(Ljava/lang/Object; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/Object;
+	34      (00000082) move-result-object   v0
+	35      (00000084) goto                 -1d
+	76:81
+	(Ljava/lang/NoSuchMethodException; -> 86 clone-BB@0x86)
+	(Ljava/lang/IllegalAccessException; -> d6 clone-BB@0xd6)
+	(Ljava/lang/reflect/InvocationTargetException; -> 11a clone-BB@0x11a)
+
+clone-BB@0x86 : 
+	36      (00000086) move-exception       v0
+	37      (00000088) new-instance         v1, Lorg/apache/commons/lang/exception/CloneFailedException;
+	38      (0000008c) new-instance         v2, Ljava/lang/StringBuffer;
+	39      (00000090) invoke-direct        v2, Ljava/lang/StringBuffer;-><init>()V
+	40      (00000096) const-string         v3, 'Cloneable type '
+	41      (0000009a) invoke-virtual       v2, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	42      (000000a0) move-result-object   v2
+	43      (000000a2) invoke-virtual       v4, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	44      (000000a8) move-result-object   v3
+	45      (000000aa) invoke-virtual       v3, Ljava/lang/Class;->getName()Ljava/lang/String;
+	46      (000000b0) move-result-object   v3
+	47      (000000b2) invoke-virtual       v2, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	48      (000000b8) move-result-object   v2
+	49      (000000ba) const-string         v3, ' has no clone method'
+	50      (000000be) invoke-virtual       v2, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	51      (000000c4) move-result-object   v2
+	52      (000000c6) invoke-virtual       v2, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	53      (000000cc) move-result-object   v2
+	54      (000000ce) invoke-direct        v1, v2, v0, Lorg/apache/commons/lang/exception/CloneFailedException;-><init>(Ljava/lang/String; Ljava/lang/Throwable;)V
+	55      (000000d4) throw                v1
+
+clone-BB@0xd6 : 
+	56      (000000d6) move-exception       v0
+	57      (000000d8) new-instance         v1, Lorg/apache/commons/lang/exception/CloneFailedException;
+	58      (000000dc) new-instance         v2, Ljava/lang/StringBuffer;
+	59      (000000e0) invoke-direct        v2, Ljava/lang/StringBuffer;-><init>()V
+	60      (000000e6) const-string         v3, 'Cannot clone Cloneable type '
+	61      (000000ea) invoke-virtual       v2, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	62      (000000f0) move-result-object   v2
+	63      (000000f2) invoke-virtual       v4, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	64      (000000f8) move-result-object   v3
+	65      (000000fa) invoke-virtual       v3, Ljava/lang/Class;->getName()Ljava/lang/String;
+	66      (00000100) move-result-object   v3
+	67      (00000102) invoke-virtual       v2, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	68      (00000108) move-result-object   v2
+	69      (0000010a) invoke-virtual       v2, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	70      (00000110) move-result-object   v2
+	71      (00000112) invoke-direct        v1, v2, v0, Lorg/apache/commons/lang/exception/CloneFailedException;-><init>(Ljava/lang/String; Ljava/lang/Throwable;)V
+	72      (00000118) throw                v1
+
+clone-BB@0x11a : 
+	73      (0000011a) move-exception       v0
+	74      (0000011c) new-instance         v1, Lorg/apache/commons/lang/exception/CloneFailedException;
+	75      (00000120) new-instance         v2, Ljava/lang/StringBuffer;
+	76      (00000124) invoke-direct        v2, Ljava/lang/StringBuffer;-><init>()V
+	77      (0000012a) const-string         v3, 'Exception cloning Cloneable type '
+	78      (0000012e) invoke-virtual       v2, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	79      (00000134) move-result-object   v2
+	80      (00000136) invoke-virtual       v4, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	81      (0000013c) move-result-object   v3
+	82      (0000013e) invoke-virtual       v3, Ljava/lang/Class;->getName()Ljava/lang/String;
+	83      (00000144) move-result-object   v3
+	84      (00000146) invoke-virtual       v2, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	85      (0000014c) move-result-object   v2
+	86      (0000014e) invoke-virtual       v2, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	87      (00000154) move-result-object   v2
+	88      (00000156) invoke-virtual       v0, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
+	89      (0000015c) move-result-object   v0
+	90      (0000015e) invoke-direct        v1, v2, v0, Lorg/apache/commons/lang/exception/CloneFailedException;-><init>(Ljava/lang/String; Ljava/lang/Throwable;)V
+	91      (00000164) throw                v1
+

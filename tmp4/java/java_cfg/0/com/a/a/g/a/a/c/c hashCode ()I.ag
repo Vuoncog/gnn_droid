@@ -1,0 +1,19 @@
+# Lcom/a/a/g/a/a/c;->hashCode()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+hashCode-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/a/a/g/a/a/c;->a Ljava/util/List;
+	1       (00000004) invoke-interface     v0, Ljava/util/List;->hashCode()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) iget-boolean         v1, v2, Lcom/a/a/g/a/a/c;->c Z
+	4       (00000010) invoke-static        v1, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	5       (00000016) move-result-object   v1
+	6       (00000018) invoke-virtual       v1, Ljava/lang/Boolean;->hashCode()I
+	7       (0000001e) move-result          v1
+	8       (00000020) xor-int/2addr        v0, v1
+	9       (00000022) return               v0
+

@@ -1,0 +1,44 @@
+# Lorg/apache/commons/lang/NumberUtils;->compare(F F)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:float
+# - v5:float
+#
+# - return:int
+
+compare-BB@0x0 : [ compare-BB@0xc compare-BB@0xe ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v0, -1
+	2       (00000004) cmpg-float           v2, v4, v5
+	3       (00000008) if-gez               v2, +3
+
+compare-BB@0xc : 
+	4       (0000000c) return               v0
+
+compare-BB@0xe : [ compare-BB@0x16 compare-BB@0x1a ]
+	5       (0000000e) cmpl-float           v2, v4, v5
+	6       (00000012) if-lez               v2, +4
+
+compare-BB@0x16 : [ compare-BB@0xc ]
+	7       (00000016) move                 v0, v1
+	8       (00000018) goto                 -6
+
+compare-BB@0x1a : [ compare-BB@0x2e compare-BB@0x32 ]
+	9       (0000001a) invoke-static        v4, Ljava/lang/Float;->floatToIntBits(F)I
+	10      (00000020) move-result          v2
+	11      (00000022) invoke-static        v5, Ljava/lang/Float;->floatToIntBits(F)I
+	12      (00000028) move-result          v3
+	13      (0000002a) if-ne                v2, v3, +4
+
+compare-BB@0x2e : [ compare-BB@0xc ]
+	14      (0000002e) const/4              v0, 0
+	15      (00000030) goto                 -12
+
+compare-BB@0x32 : [ compare-BB@0x36 compare-BB@0xc ]
+	16      (00000032) if-lt                v2, v3, -13
+
+compare-BB@0x36 : [ compare-BB@0xc ]
+	17      (00000036) move                 v0, v1
+	18      (00000038) goto                 -16
+

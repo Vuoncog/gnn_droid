@@ -1,0 +1,15 @@
+# Lcom/crashlytics/android/answers/PredefinedEvent;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Lcom/crashlytics/android/answers/AnswersEvent;-><init>()V
+	1       (00000006) new-instance         v0, Lcom/crashlytics/android/answers/AnswersAttributes;
+	2       (0000000a) iget-object          v1, v2, Lcom/crashlytics/android/answers/PredefinedEvent;->validator Lcom/crashlytics/android/answers/AnswersEventValidator;
+	3       (0000000e) invoke-direct        v0, v1, Lcom/crashlytics/android/answers/AnswersAttributes;-><init>(Lcom/crashlytics/android/answers/AnswersEventValidator;)V
+	4       (00000014) iput-object          v0, v2, Lcom/crashlytics/android/answers/PredefinedEvent;->predefinedAttributes Lcom/crashlytics/android/answers/AnswersAttributes;
+	5       (00000018) return-void          
+

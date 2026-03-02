@@ -1,0 +1,47 @@
+# La/a/b/a/b/a/b;->b(Ljava/lang/Object;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Object
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x6 ]
+	0       (00000000) iget-object          v1, v4, La/a/b/a/b/a/b;->b Ljava/util/List;
+	1       (00000004) monitor-enter        v1
+
+b-BB@0x6 : [ b-BB@0x12 ]
+	2       (00000006) iget-object          v0, v4, La/a/b/a/b/a/b;->b Ljava/util/List;
+	3       (0000000a) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	4       (00000010) move-result-object   v2
+	6:39
+	(Ljava/lang/Throwable; -> 36 b-BB@0x36)
+
+b-BB@0x12 : [ b-BB@0x1e b-BB@0x3c ]
+	5       (00000012) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	6       (00000018) move-result          v0
+	7       (0000001a) if-eqz               v0, +11
+	6:39
+	(Ljava/lang/Throwable; -> 36 b-BB@0x36)
+
+b-BB@0x1e : [ b-BB@0x12 ]
+	8       (0000001e) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	9       (00000024) move-result-object   v0
+	10      (00000026) check-cast           v0, La/a/b/a/b/a/h;
+	11      (0000002a) iget-object          v3, v4, La/a/b/a/b/a/b;->c Ljava/lang/Object;
+	12      (0000002e) invoke-interface     v0, v3, v5, v4, La/a/b/a/b/a/h;->a(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)V
+	13      (00000034) goto                 -11
+	6:39
+	(Ljava/lang/Throwable; -> 36 b-BB@0x36)
+
+b-BB@0x36 : 
+	14      (00000036) move-exception       v0
+	15      (00000038) monitor-exit         v1
+	16      (0000003a) throw                v0
+
+b-BB@0x3c : 
+	17      (0000003c) monitor-exit         v1
+	18      (0000003e) return-void          
+	3c:3d
+	(Ljava/lang/Throwable; -> 36 b-BB@0x36)
+

@@ -1,0 +1,29 @@
+# Lcom/crashlytics/android/core/UserMetaData;->isEmpty()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isEmpty-BB@0x0 : [ isEmpty-BB@0x8 isEmpty-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Lcom/crashlytics/android/core/UserMetaData;->id Ljava/lang/String;
+	1       (00000004) if-nez               v0, +c
+
+isEmpty-BB@0x8 : [ isEmpty-BB@0x10 isEmpty-BB@0x1c ]
+	2       (00000008) iget-object          v0, v1, Lcom/crashlytics/android/core/UserMetaData;->name Ljava/lang/String;
+	3       (0000000c) if-nez               v0, +8
+
+isEmpty-BB@0x10 : [ isEmpty-BB@0x18 isEmpty-BB@0x1c ]
+	4       (00000010) iget-object          v0, v1, Lcom/crashlytics/android/core/UserMetaData;->email Ljava/lang/String;
+	5       (00000014) if-nez               v0, +4
+
+isEmpty-BB@0x18 : [ isEmpty-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+isEmpty-BB@0x1a : 
+	7       (0000001a) return               v0
+
+isEmpty-BB@0x1c : [ isEmpty-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

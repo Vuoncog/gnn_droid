@@ -1,0 +1,37 @@
+# Lcom/a/a/g/h;->a(Ljava/lang/StringBuilder; I)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.StringBuilder
+# - v4:int
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x4 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) move                 v0, v1
+
+a-BB@0x4 : [ a-BB@0xc a-BB@0x2c ]
+	2       (00000004) const/16             v2, 10
+	3       (00000008) if-ge                v0, v2, +12
+
+a-BB@0xc : [ a-BB@0x18 a-BB@0x26 ]
+	4       (0000000c) sget-object          v2, Lcom/a/a/g/h;->a [I
+	5       (00000010) aget                 v2, v2, v0
+	6       (00000014) if-ne                v4, v2, +9
+
+a-BB@0x18 : 
+	7       (00000018) add-int/lit8         v0, v0, 48
+	8       (0000001c) int-to-char          v0, v0
+	9       (0000001e) invoke-virtual       v3, v1, v0, Ljava/lang/StringBuilder;->insert(I C)Ljava/lang/StringBuilder;
+	10      (00000024) return-void          
+
+a-BB@0x26 : [ a-BB@0x4 ]
+	11      (00000026) add-int/lit8         v0, v0, 1
+	12      (0000002a) goto                 -13
+
+a-BB@0x2c : 
+	13      (0000002c) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	14      (00000032) move-result-object   v0
+	15      (00000034) throw                v0
+

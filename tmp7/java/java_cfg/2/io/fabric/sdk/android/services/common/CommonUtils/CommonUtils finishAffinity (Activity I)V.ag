@@ -1,0 +1,29 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->finishAffinity(Landroid/app/Activity; I)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.app.Activity
+# - v3:int
+#
+# - return:void
+
+finishAffinity-BB@0x0 : [ finishAffinity-BB@0x4 finishAffinity-BB@0x6 ]
+	0       (00000000) if-nez               v2, +3
+
+finishAffinity-BB@0x4 : 
+	1       (00000004) return-void          
+
+finishAffinity-BB@0x6 : [ finishAffinity-BB@0x12 finishAffinity-BB@0x1a ]
+	2       (00000006) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	3       (0000000a) const/16             v1, 16
+	4       (0000000e) if-lt                v0, v1, +6
+
+finishAffinity-BB@0x12 : [ finishAffinity-BB@0x4 ]
+	5       (00000012) invoke-virtual       v2, Landroid/app/Activity;->finishAffinity()V
+	6       (00000018) goto                 -a
+
+finishAffinity-BB@0x1a : [ finishAffinity-BB@0x4 ]
+	7       (0000001a) invoke-virtual       v2, v3, Landroid/app/Activity;->setResult(I)V
+	8       (00000020) invoke-virtual       v2, Landroid/app/Activity;->finish()V
+	9       (00000026) goto                 -11
+

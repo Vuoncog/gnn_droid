@@ -1,0 +1,94 @@
+digraph {
+	graph [bb="0,0,1525,594",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_8e7a293cd03395a15d2e968a41c2759d {
+		graph [bb="8,8,1517,586",
+			label="Lorg/apache/commons/io/LineIterator;.<init>->(Ljava/io/Reader;)V\nLocal registers v0 ... v2\nparam v3 = java.io.Reader\nreturn = \
+void",
+			lheight=0.83,
+			lp="762.5,552",
+			lwidth=6.06
+		];
+		struct_4f9f27ddf2ac7bbc4e870f43ba27da63	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/Object;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-boolean </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/LineIterator;-&gt;finished Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7F7F99">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="664,453.5",
+			width=7.4167];
+		struct_2d076a9328a4237c8ddc5f313d8c00a4	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#0000FF">Ljava/lang/IllegalArgumentException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="red">'Reader must not be null'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#7272CC">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/IllegalArgumentException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="384,304.5",
+			width=8.8889];
+		struct_4f9f27ddf2ac7bbc4e870f43ba27da63:tail -> struct_2d076a9328a4237c8ddc5f313d8c00a4:header	[color=red,
+			pos="e,89,354.5 407,405.5 374.22,405.5 134.67,392.73 94.659,363.08"];
+		struct_9a35a1ec65089af95d65d52173dd571b	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">instance-of </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#0000FF">Ljava/io/BufferedReader;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="903,304.5",
+			width=5.0139];
+		struct_4f9f27ddf2ac7bbc4e870f43ba27da63:tail -> struct_9a35a1ec65089af95d65d52173dd571b:header	[color=green,
+			pos="e,733,329.5 418,402.5 418,336.3 657.35,396.86 713,361 722.8,354.68 720.51,341.68 724.05,334.51"];
+		struct_15d99f950eaf12715fa5815f0671c293	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#7F7F99">v3</FONT>, <FONT color="#0000FF">Ljava/io/BufferedReader;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#7F7F99">v3</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/LineIterator;-&gt;bufferedReader Ljava/io/BufferedReader;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="385,155.5",
+			width=10.236];
+		struct_9a35a1ec65089af95d65d52173dd571b:tail -> struct_15d99f950eaf12715fa5815f0671c293:header	[color=red,
+			pos="e,42,183.5 733,278.5 716.79,278.5 726.88,256.38 713,248 651.76,211.03 95.429,254.16 45.57,192.86"];
+		struct_4d2ac747dd5883a1a1d1182c374898f7	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#0000FF">Ljava/io/BufferedReader;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#DF3A01">Ljava/io/BufferedReader;-&gt;&lt;init&gt;(Ljava/io/Reader;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/LineIterator;-&gt;bufferedReader Ljava/io/BufferedReader;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">40</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1140,155.5",
+			width=10.236];
+		struct_9a35a1ec65089af95d65d52173dd571b:tail -> struct_4d2ac747dd5883a1a1d1182c374898f7:header	[color=green,
+			pos="e,797,205.5 748,275.5 748,241.23 787.9,242.73 795.69,215.45"];
+		struct_96c77c97155c34b6cfb63df1e9db8974	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="468,39.5",
+			width=2.0694];
+		struct_15d99f950eaf12715fa5815f0671c293:tail -> struct_96c77c97155c34b6cfb63df1e9db8974:header	[color=blue,
+			pos="e,404,53.5 42,126.5 42,87.952 325.28,57.404 393.6,53.846"];
+		struct_4d2ac747dd5883a1a1d1182c374898f7:tail -> struct_96c77c97155c34b6cfb63df1e9db8974:header	[color=blue,
+			pos="e,419,56.5 782,107.5 772.75,107.5 771.91,101.48 763,99 728.87,89.489 466.42,94.103 424.61,64.921"];
+	}
+}

@@ -1,0 +1,28 @@
+# Lio/fabric/sdk/android/services/common/IdManager;->getAppInstallIdentifier()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.lang.String
+
+getAppInstallIdentifier-BB@0x0 : [ getAppInstallIdentifier-BB@0x8 getAppInstallIdentifier-BB@0x2e ]
+	0       (00000000) iget-object          v0, v3, Lio/fabric/sdk/android/services/common/IdManager;->appInstallIdentifier Ljava/lang/String;
+	1       (00000004) if-nez               v0, +15
+
+getAppInstallIdentifier-BB@0x8 : [ getAppInstallIdentifier-BB@0x26 getAppInstallIdentifier-BB@0x2e ]
+	2       (00000008) iget-object          v0, v3, Lio/fabric/sdk/android/services/common/IdManager;->appContext Landroid/content/Context;
+	3       (0000000c) invoke-static        v0, Lio/fabric/sdk/android/services/common/CommonUtils;->getSharedPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
+	4       (00000012) move-result-object   v1
+	5       (00000014) const-string         v0, 'crashlytics.installation.id'
+	6       (00000018) const/4              v2, 0
+	7       (0000001a) invoke-interface     v1, v0, v2, Landroid/content/SharedPreferences;->getString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	8       (00000020) move-result-object   v0
+	9       (00000022) if-nez               v0, +6
+
+getAppInstallIdentifier-BB@0x26 : [ getAppInstallIdentifier-BB@0x2e ]
+	10      (00000026) invoke-direct        v3, v1, Lio/fabric/sdk/android/services/common/IdManager;->createInstallationUUID(Landroid/content/SharedPreferences;)Ljava/lang/String;
+	11      (0000002c) move-result-object   v0
+
+getAppInstallIdentifier-BB@0x2e : 
+	12      (0000002e) return-object        v0
+

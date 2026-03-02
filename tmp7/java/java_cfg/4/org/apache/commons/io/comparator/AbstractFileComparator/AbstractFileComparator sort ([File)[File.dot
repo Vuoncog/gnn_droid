@@ -1,0 +1,50 @@
+digraph {
+	graph [bb="0,0,692,313",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_f2d723b8ca78109122738dbef7b38a4e {
+		graph [bb="8,8,684,305",
+			label="Lorg/apache/commons/io/comparator/AbstractFileComparator;.sort->([Ljava/io/File;)[Ljava/io/File;\nLocal registers v0 ... v0\nparam \
+v1 = java.io.File[]\nreturn = java.io.File[]",
+			lheight=0.83,
+			lp="346,271",
+			lwidth=8.90
+		];
+		struct_ea72c1960acaa0b5e2659f6b7eb599ee	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="346,205.5",
+			width=2.0972];
+		struct_ecaa8449208b81d776298261c87dc8a6	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Ljava/util/Arrays;-&gt;sort([Ljava/lang/Object; Ljava/util/Comparator;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="336,122.5",
+			width=8.8889];
+		struct_ea72c1960acaa0b5e2659f6b7eb599ee:tail -> struct_ecaa8449208b81d776298261c87dc8a6:header	[color=red,
+			pos="e,37,139.5 292,187.5 292,75.893 53.171,243.36 37.777,149.74"];
+		struct_667139c10f6f8a4a6453a74ebfd8f285	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="346,39.5",
+			width=2.3472];
+		struct_ea72c1960acaa0b5e2659f6b7eb599ee:tail -> struct_667139c10f6f8a4a6453a74ebfd8f285:header	[color=green,
+			pos="e,283,56.5 292,187.5 292,104.1 609.38,208.15 665,146 678.93,130.43 678.93,114.57 665,99 610.49,38.087 310.44,133.07 284.75,66.476"];
+		struct_ecaa8449208b81d776298261c87dc8a6:tail -> struct_667139c10f6f8a4a6453a74ebfd8f285:header	[color=blue,
+			pos="e,283,56.5 37,104.5 37,-3.1965 266.94,156.6 282.2,66.67"];
+	}
+}

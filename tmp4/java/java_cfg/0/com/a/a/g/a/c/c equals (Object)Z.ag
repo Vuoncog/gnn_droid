@@ -1,0 +1,26 @@
+# Lcom/a/a/g/a/c;->equals(Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object
+#
+# - return:boolean
+
+equals-BB@0x0 : [ equals-BB@0xa equals-BB@0xc ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) instance-of          v1, v4, Lcom/a/a/g/a/c;
+	2       (00000006) if-nez               v1, +3
+
+equals-BB@0xa : 
+	3       (0000000a) return               v0
+
+equals-BB@0xc : [ equals-BB@0x1c equals-BB@0xa ]
+	4       (0000000c) check-cast           v4, Lcom/a/a/g/a/c;
+	5       (00000010) iget                 v1, v3, Lcom/a/a/g/a/c;->a I
+	6       (00000014) iget                 v2, v4, Lcom/a/a/g/a/c;->a I
+	7       (00000018) if-ne                v1, v2, -7
+
+equals-BB@0x1c : [ equals-BB@0xa ]
+	8       (0000001c) const/4              v0, 1
+	9       (0000001e) goto                 -a
+

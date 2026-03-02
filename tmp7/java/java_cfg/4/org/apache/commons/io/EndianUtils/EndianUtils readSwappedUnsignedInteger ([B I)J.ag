@@ -1,0 +1,36 @@
+# Lorg/apache/commons/io/EndianUtils;->readSwappedUnsignedInteger([B I)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:byte[]
+# - v7:int
+#
+# - return:long
+
+readSwappedUnsignedInteger-BB@0x0 : 
+	0       (00000000) add-int/lit8         v0, v7, 0
+	1       (00000004) aget-byte            v0, v6, v0
+	2       (00000008) and-int/lit16        v0, v0, 255
+	3       (0000000c) shl-int/lit8         v0, v0, 0
+	4       (00000010) add-int/lit8         v1, v7, 1
+	5       (00000014) aget-byte            v1, v6, v1
+	6       (00000018) and-int/lit16        v1, v1, 255
+	7       (0000001c) shl-int/lit8         v1, v1, 8
+	8       (00000020) add-int/2addr        v0, v1
+	9       (00000022) add-int/lit8         v1, v7, 2
+	10      (00000026) aget-byte            v1, v6, v1
+	11      (0000002a) and-int/lit16        v1, v1, 255
+	12      (0000002e) shl-int/lit8         v1, v1, 16
+	13      (00000032) add-int/2addr        v0, v1
+	14      (00000034) int-to-long          v0, v0
+	15      (00000036) add-int/lit8         v2, v7, 3
+	16      (0000003a) aget-byte            v2, v6, v2
+	17      (0000003e) and-int/lit16        v2, v2, 255
+	18      (00000042) int-to-long          v2, v2
+	19      (00000044) const/16             v4, 24
+	20      (00000048) shl-long/2addr       v2, v4
+	21      (0000004a) const-wide           v4, 4294967295 # [2.1219957905e-314]
+	22      (00000054) and-long/2addr       v0, v4
+	23      (00000056) add-long/2addr       v0, v2
+	24      (00000058) return-wide          v0
+

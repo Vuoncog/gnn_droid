@@ -1,0 +1,21 @@
+# Lcom/crashlytics/android/answers/RandomBackoff;->randomJitter()D [access_flags=]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:double
+
+randomJitter-BB@0x0 : 
+	0       (00000000) const-wide/high16    v4, 16368 # [1.0]
+	1       (00000004) iget-wide            v0, v6, Lcom/crashlytics/android/answers/RandomBackoff;->jitterPercent D
+	2       (00000008) sub-double           v0, v4, v0
+	3       (0000000c) iget-wide            v2, v6, Lcom/crashlytics/android/answers/RandomBackoff;->jitterPercent D
+	4       (00000010) add-double/2addr     v2, v4
+	5       (00000012) iget-object          v4, v6, Lcom/crashlytics/android/answers/RandomBackoff;->random Ljava/util/Random;
+	6       (00000016) invoke-virtual       v4, Ljava/util/Random;->nextDouble()D
+	7       (0000001c) move-result-wide     v4
+	8       (0000001e) sub-double/2addr     v2, v0
+	9       (00000020) mul-double/2addr     v2, v4
+	10      (00000022) add-double/2addr     v0, v2
+	11      (00000024) return-wide          v0
+

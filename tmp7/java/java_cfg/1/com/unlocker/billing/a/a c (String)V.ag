@@ -1,0 +1,19 @@
+# Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:void
+
+c-BB@0x0 : [ c-BB@0x8 c-BB@0x12 ]
+	0       (00000000) iget-boolean         v0, v1, Lcom/unlocker/billing/a;->a Z
+	1       (00000004) if-eqz               v0, +7
+
+c-BB@0x8 : [ c-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Lcom/unlocker/billing/a;->b Ljava/lang/String;
+	3       (0000000c) invoke-static        v0, v2, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+
+c-BB@0x12 : 
+	4       (00000012) return-void          
+

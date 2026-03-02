@@ -1,0 +1,31 @@
+# Lio/fabric/sdk/android/Fabric$Builder;->initializationCallback(Lio/fabric/sdk/android/InitializationCallback;)Lio/fabric/sdk/android/Fabric$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:io.fabric.sdk.android.InitializationCallback
+#
+# - return:io.fabric.sdk.android.Fabric$Builder
+
+initializationCallback-BB@0x0 : [ initializationCallback-BB@0x4 initializationCallback-BB@0x14 ]
+	0       (00000000) if-nez               v3, +a
+
+initializationCallback-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) const-string         v1, 'initializationCallback must not be null.'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+initializationCallback-BB@0x14 : [ initializationCallback-BB@0x1c initializationCallback-BB@0x2c ]
+	5       (00000014) iget-object          v0, v2, Lio/fabric/sdk/android/Fabric$Builder;->initializationCallback Lio/fabric/sdk/android/InitializationCallback;
+	6       (00000018) if-eqz               v0, +a
+
+initializationCallback-BB@0x1c : 
+	7       (0000001c) new-instance         v0, Ljava/lang/IllegalStateException;
+	8       (00000020) const-string         v1, 'initializationCallback already set.'
+	9       (00000024) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	10      (0000002a) throw                v0
+
+initializationCallback-BB@0x2c : 
+	11      (0000002c) iput-object          v3, v2, Lio/fabric/sdk/android/Fabric$Builder;->initializationCallback Lio/fabric/sdk/android/InitializationCallback;
+	12      (00000030) return-object        v2
+

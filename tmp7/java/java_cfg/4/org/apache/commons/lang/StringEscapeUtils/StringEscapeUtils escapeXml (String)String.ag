@@ -1,0 +1,23 @@
+# Lorg/apache/commons/lang/StringEscapeUtils;->escapeXml(Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+#
+# - return:java.lang.String
+
+escapeXml-BB@0x0 : [ escapeXml-BB@0x4 escapeXml-BB@0x8 ]
+	0       (00000000) if-nez               v1, +4
+
+escapeXml-BB@0x4 : [ escapeXml-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+escapeXml-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+escapeXml-BB@0x8 : [ escapeXml-BB@0x6 ]
+	3       (00000008) sget-object          v0, Lorg/apache/commons/lang/Entities;->XML Lorg/apache/commons/lang/Entities;
+	4       (0000000c) invoke-virtual       v0, v1, Lorg/apache/commons/lang/Entities;->escape(Ljava/lang/String;)Ljava/lang/String;
+	5       (00000012) move-result-object   v0
+	6       (00000014) goto                 -7
+

@@ -1,0 +1,60 @@
+# Lcom/a/a/e/a/a;->d()Landroid/content/Intent; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:android.content.Intent
+
+d-BB@0x0 : [ d-BB@0x28 d-BB@0x86 ]
+	0       (00000000) new-instance         v1, Landroid/content/Intent;
+	1       (00000004) iget-object          v0, v5, Lcom/a/a/e/a/a;->g Landroid/app/Activity;
+	2       (00000008) invoke-virtual       v5, Lcom/a/a/e/a/a;->b()Ljava/lang/Class;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-direct        v1, v0, v2, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	5       (00000016) const-string         v0, 'com.google.zxing.client.android.SCAN'
+	6       (0000001a) invoke-virtual       v1, v0, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+	7       (00000020) iget-object          v0, v5, Lcom/a/a/e/a/a;->k Ljava/util/Collection;
+	8       (00000024) if-eqz               v0, +31
+
+d-BB@0x28 : [ d-BB@0x3e ]
+	9       (00000028) new-instance         v2, Ljava/lang/StringBuilder;
+	10      (0000002c) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	11      (00000032) iget-object          v0, v5, Lcom/a/a/e/a/a;->k Ljava/util/Collection;
+	12      (00000036) invoke-interface     v0, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+	13      (0000003c) move-result-object   v3
+
+d-BB@0x3e : [ d-BB@0x4a d-BB@0x74 ]
+	14      (0000003e) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	15      (00000044) move-result          v0
+	16      (00000046) if-eqz               v0, +17
+
+d-BB@0x4a : [ d-BB@0x62 d-BB@0x6c ]
+	17      (0000004a) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	18      (00000050) move-result-object   v0
+	19      (00000052) check-cast           v0, Ljava/lang/String;
+	20      (00000056) invoke-virtual       v2, Ljava/lang/StringBuilder;->length()I
+	21      (0000005c) move-result          v4
+	22      (0000005e) if-lez               v4, +7
+
+d-BB@0x62 : [ d-BB@0x6c ]
+	23      (00000062) const/16             v4, 44
+	24      (00000066) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+d-BB@0x6c : [ d-BB@0x3e ]
+	25      (0000006c) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (00000072) goto                 -1a
+
+d-BB@0x74 : [ d-BB@0x86 ]
+	27      (00000074) const-string         v0, 'SCAN_FORMATS'
+	28      (00000078) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	29      (0000007e) move-result-object   v2
+	30      (00000080) invoke-virtual       v1, v0, v2, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+
+d-BB@0x86 : 
+	31      (00000086) const/high16         v0, 1024 # [1.504632769052528e-36]
+	32      (0000008a) invoke-virtual       v1, v0, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+	33      (00000090) const/high16         v0, 8 # [7.346839692639297e-40]
+	34      (00000094) invoke-virtual       v1, v0, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+	35      (0000009a) invoke-direct        v5, v1, Lcom/a/a/e/a/a;->a(Landroid/content/Intent;)V
+	36      (000000a0) return-object        v1
+

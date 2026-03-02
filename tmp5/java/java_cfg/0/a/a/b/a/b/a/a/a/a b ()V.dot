@@ -1,0 +1,71 @@
+digraph {
+	graph [bb="0,0,978.64,474",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_293769577dea1d12b97c20feb6d0b8e4 {
+		graph [bb="20.637,8,970.64,466",
+			label="La/a/b/a/b/a/a/a;.b->()V\nLocal registers v0 ... v2\nreturn = void",
+			lheight=0.62,
+			lp="495.64,439.5",
+			lwidth=2.11
+		];
+		struct_8e789927b4b0f9270077e34fcbf748c1	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#088A08">La/a/b/a/b/a/a/a;-&gt;a Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;iterator()Ljava/util/Iterator;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7777BB">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="272.64,359.5",
+			width=6.6806];
+		struct_46d65460144bd7fb1d58b443a45192f9	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;hasNext()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xc</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="233.64,232.5",
+			width=5.6944];
+		struct_8e789927b4b0f9270077e34fcbf748c1:tail -> struct_46d65460144bd7fb1d58b443a45192f9:header	[color=blue,
+			pos="e,53.637,271.5 53.637,319.5 53.637,302 53.637,295.27 53.637,281.64"];
+		struct_ec405eed110bc1445fba49fac257e386	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;next()Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">La/a/b/a/b/a/b;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#DF3A01">La/a/b/a/b/a/b;-&gt;a(La/a/b/a/b/a/h;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-f</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="276.64,83.5",
+			width=6.8889];
+		struct_46d65460144bd7fb1d58b443a45192f9:tail -> struct_ec405eed110bc1445fba49fac257e386:header	[color=red,
+			pos="e,53.637,144.5 53.637,192.5 53.637,175 53.637,168.27 53.637,154.64"];
+		struct_eca5a9140cf8f2ad738bbace0c88bbcc	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#088A08">La/a/b/a/b/a/a/a;-&gt;a Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;clear()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="752.64,83.5",
+			width=5.8194];
+		struct_46d65460144bd7fb1d58b443a45192f9:tail -> struct_eca5a9140cf8f2ad738bbace0c88bbcc:header	[color=green,
+			pos="e,553.64,119.5 53.637,192.5 53.637,138.97 487.88,178.78 533.64,151 543.6,144.95 541.24,131.83 544.73,124.58"];
+		struct_ec405eed110bc1445fba49fac257e386:tail -> struct_46d65460144bd7fb1d58b443a45192f9:header	[color=blue,
+			pos="e,53.637,271.5 53.637,21.5 53.637,10.38 36.341,14.481 28.637,22.5 -9.5457,62.241 -9.5457,230.76 28.637,270.5 32.971,275.01 40.339,\
+278.28 45.957,278.3"];
+	}
+}

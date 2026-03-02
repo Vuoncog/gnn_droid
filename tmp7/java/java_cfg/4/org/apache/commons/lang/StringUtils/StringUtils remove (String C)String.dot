@@ -1,0 +1,141 @@
+digraph {
+	graph [bb="0,0,782,1012",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_9a55820dbdaba5dbf9187fc6bd23925d {
+		graph [bb="8,8,774,1004",
+			label="Lorg/apache/commons/lang/StringUtils;.remove->(Ljava/lang/String; C)Ljava/lang/String;\nLocal registers v0 ... v5\nparam v6 = java.lang.String\nparam \
+v7 = char\nreturn = java.lang.String",
+			lheight=1.04,
+			lp="391,962.5",
+			lwidth=8.11
+		];
+		struct_0002a17bc95bc9bf886680ffc9161808	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v1</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#92924C">v6</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/StringUtils;-&gt;isEmpty(Ljava/lang/String;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x9</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="447,856.5",
+			width=8.8472];
+		struct_c8583656259ee3589817a92e5141d9b8	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#92924C">v6</FONT>, <FONT color="#85857F">v7</FONT>, <FONT color="#DF3A01">Ljava/lang/String;-&gt;indexOf(I)I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="green">0x-1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ne </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="330,707.5",
+			width=5.7083];
+		struct_0002a17bc95bc9bf886680ffc9161808:tail -> struct_c8583656259ee3589817a92e5141d9b8:header	[color=red,
+			pos="e,150,757.5 150,805.5 150,788 150,781.27 150,767.64"];
+		struct_480cec4a4f045b0a85d419b5676f84ed	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#92924C">v6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="677,177.5",
+			width=2.4583];
+		struct_0002a17bc95bc9bf886680ffc9161808:tail -> struct_480cec4a4f045b0a85d419b5676f84ed:header	[color=green,
+			pos="e,614,194.5 150,805.5 150,761.37 504.83,782.27 545,764 666.52,708.74 765,693 765,559.5 765,559.5 765,559.5 765,430.5 765,358.67 \
+785.64,329.91 746,270 710.75,216.72 624.19,257.1 614.82,204.58"];
+		struct_c8583656259ee3589817a92e5141d9b8:tail -> struct_480cec4a4f045b0a85d419b5676f84ed:header	[color=red,
+			pos="e,614,194.5 150,656.5 150,575.97 438.58,652.21 510,615 643.75,545.32 681.53,502.01 735,361 749.34,323.18 754.62,305.37 735,270 706.05,\
+217.82 624.37,253.15 614.9,204.58"];
+		struct_22184b66ffc604a909f84aee04c3a443	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#92924C">v6</FONT>, <FONT color="#DF3A01">Ljava/lang/String;-&gt;toCharArray()[C</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7979B2">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="291,558.5",
+			width=5.8333];
+		struct_c8583656259ee3589817a92e5141d9b8:tail -> struct_22184b66ffc604a909f84aee04c3a443:header	[color=green,
+			pos="e,106,608.5 150,656.5 150,631.63 117.5,635.43 108.37,618.62"];
+		struct_ceecfa047c19fb5f755e07dc8735332b	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">array-length </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#7979B2">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ge </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#7272CC">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x10</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="156,431.5",
+			width=2.7083];
+		struct_22184b66ffc604a909f84aee04c3a443:tail -> struct_ceecfa047c19fb5f755e07dc8735332b:header	[color=blue,
+			pos="e,84,459.5 106,507.5 106,487.88 90.627,483.92 85.582,469.44"];
+		struct_c3b16e6b730dc4aa0f077fc7e19fbd2b	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aget-char </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#7979B2">v4</FONT>, <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eq </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#85857F">v7</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x9</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="137,315.5",
+			width=2.7917];
+		struct_ceecfa047c19fb5f755e07dc8735332b:tail -> struct_c3b16e6b730dc4aa0f077fc7e19fbd2b:header	[color=red,
+			pos="e,62,343.5 84,402.5 84,378.23 67.456,372.73 63.061,353.45"];
+		struct_862f98025b9bc7f3b4e89b727d65cfdb	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#92924C">v6</FONT>, <FONT color="#0000FF">Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">50</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#92924C">v6</FONT>, <FONT color="#7979B2">v4</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/String;-&gt;&lt;init&gt;([C I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">56</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-1d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="491,315.5",
+			width=6.5278];
+		struct_ceecfa047c19fb5f755e07dc8735332b:tail -> struct_862f98025b9bc7f3b4e89b727d65cfdb:header	[color=green,
+			pos="e,266,351.5 84,402.5 84,327.74 176.94,387.09 247,361 251.42,359.35 253.81,356.98 256.28,355.01"];
+		struct_dc3d0f3fe269982e28e87d7b9f8fe7a0	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aget-char </FONT> <FONT color="#6C6CE5">v5</FONT>, <FONT color="#7979B2">v4</FONT>, <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">40</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aput-char </FONT> <FONT color="#6C6CE5">v5</FONT>, <FONT color="#7979B2">v4</FONT>, <FONT color="#7F7F99">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#7272CC">v3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="168,177.5",
+			width=3.0556];
+		struct_c3b16e6b730dc4aa0f077fc7e19fbd2b:tail -> struct_dc3d0f3fe269982e28e87d7b9f8fe7a0:header	[color=red,
+			pos="e,83,227.5 62,286.5 62,262.47 77.65,256.7 81.93,237.67"];
+		struct_a010efed62cda80f24bae83173a0a232	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">46</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#8C8C66">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-10</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="126,50.5",
+			width=3.0556];
+		struct_c3b16e6b730dc4aa0f077fc7e19fbd2b:tail -> struct_a010efed62cda80f24bae83173a0a232:header	[color=green,
+			pos="e,41,78.5 47,289.5 3.0239,289.5 36.23,145.28 40.552,88.6"];
+		struct_dc3d0f3fe269982e28e87d7b9f8fe7a0:tail -> struct_a010efed62cda80f24bae83173a0a232:header	[color=blue,
+			pos="e,41,78.5 83,126.5 83,102.14 51.982,105.13 43.258,88.467"];
+		struct_a010efed62cda80f24bae83173a0a232:tail -> struct_ceecfa047c19fb5f755e07dc8735332b:header	[color=blue,
+			pos="e,69,456.5 26,24.5 17.447,24.5 -38.974,429.92 59.027,455.26"];
+		struct_862f98025b9bc7f3b4e89b727d65cfdb:tail -> struct_480cec4a4f045b0a85d419b5676f84ed:header	[color=blue,
+			pos="e,599,191.5 281,275.5 281,205.48 505.77,192.53 588.91,191.56"];
+	}
+}

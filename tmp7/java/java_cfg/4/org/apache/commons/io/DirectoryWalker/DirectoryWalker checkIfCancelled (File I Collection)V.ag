@@ -1,0 +1,23 @@
+# Lorg/apache/commons/io/DirectoryWalker;->checkIfCancelled(Ljava/io/File; I Ljava/util/Collection;)V [access_flags=protected final]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+# - v3:int
+# - v4:java.util.Collection
+#
+# - return:void
+
+checkIfCancelled-BB@0x0 : [ checkIfCancelled-BB@0xc checkIfCancelled-BB@0x18 ]
+	0       (00000000) invoke-virtual       v1, v2, v3, v4, Lorg/apache/commons/io/DirectoryWalker;->handleIsCancelled(Ljava/io/File; I Ljava/util/Collection;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +8
+
+checkIfCancelled-BB@0xc : 
+	3       (0000000c) new-instance         v0, Lorg/apache/commons/io/DirectoryWalker$CancelException;
+	4       (00000010) invoke-direct        v0, v2, v3, Lorg/apache/commons/io/DirectoryWalker$CancelException;-><init>(Ljava/io/File; I)V
+	5       (00000016) throw                v0
+
+checkIfCancelled-BB@0x18 : 
+	6       (00000018) return-void          
+

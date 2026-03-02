@@ -1,0 +1,29 @@
+# Lio/fabric/sdk/android/InitializationTask;->createAndStartTimingMetric(Ljava/lang/String;)Lio/fabric/sdk/android/services/common/TimingMetric; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:io.fabric.sdk.android.services.common.TimingMetric
+
+createAndStartTimingMetric-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lio/fabric/sdk/android/services/common/TimingMetric;
+	1       (00000004) new-instance         v1, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) iget-object          v2, v3, Lio/fabric/sdk/android/InitializationTask;->kit Lio/fabric/sdk/android/Kit;
+	4       (00000012) invoke-virtual       v2, Lio/fabric/sdk/android/Kit;->getIdentifier()Ljava/lang/String;
+	5       (00000018) move-result-object   v2
+	6       (0000001a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v1
+	8       (00000022) const-string         v2, '.'
+	9       (00000026) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v1
+	13      (00000036) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) const-string         v2, 'KitInitialization'
+	16      (00000042) invoke-direct        v0, v1, v2, Lio/fabric/sdk/android/services/common/TimingMetric;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	17      (00000048) invoke-virtual       v0, Lio/fabric/sdk/android/services/common/TimingMetric;->startMeasuring()V
+	18      (0000004e) return-object        v0
+

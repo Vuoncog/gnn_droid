@@ -1,0 +1,62 @@
+# Lcom/crashlytics/android/Crashlytics$Builder;->build()Lcom/crashlytics/android/Crashlytics; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:com.crashlytics.android.Crashlytics
+
+build-BB@0x0 : [ build-BB@0x8 build-BB@0x30 ]
+	0       (00000000) iget-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->coreBuilder Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
+	1       (00000004) if-eqz               v0, +16
+
+build-BB@0x8 : [ build-BB@0x10 build-BB@0x20 ]
+	2       (00000008) iget-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->core Lcom/crashlytics/android/core/CrashlyticsCore;
+	3       (0000000c) if-eqz               v0, +a
+
+build-BB@0x10 : 
+	4       (00000010) new-instance         v0, Ljava/lang/IllegalStateException;
+	5       (00000014) const-string         v1, 'Must not use Deprecated methods delay(), disabled(), listener(), pinningInfoProvider() with core()'
+	6       (00000018) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	7       (0000001e) throw                v0
+
+build-BB@0x20 : [ build-BB@0x30 ]
+	8       (00000020) iget-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->coreBuilder Lcom/crashlytics/android/core/CrashlyticsCore$Builder;
+	9       (00000024) invoke-virtual       v0, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->build()Lcom/crashlytics/android/core/CrashlyticsCore;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) iput-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->core Lcom/crashlytics/android/core/CrashlyticsCore;
+
+build-BB@0x30 : [ build-BB@0x38 build-BB@0x46 ]
+	12      (00000030) iget-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->answers Lcom/crashlytics/android/answers/Answers;
+	13      (00000034) if-nez               v0, +9
+
+build-BB@0x38 : [ build-BB@0x46 ]
+	14      (00000038) new-instance         v0, Lcom/crashlytics/android/answers/Answers;
+	15      (0000003c) invoke-direct        v0, Lcom/crashlytics/android/answers/Answers;-><init>()V
+	16      (00000042) iput-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->answers Lcom/crashlytics/android/answers/Answers;
+
+build-BB@0x46 : [ build-BB@0x4e build-BB@0x5c ]
+	17      (00000046) iget-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->beta Lcom/crashlytics/android/beta/Beta;
+	18      (0000004a) if-nez               v0, +9
+
+build-BB@0x4e : [ build-BB@0x5c ]
+	19      (0000004e) new-instance         v0, Lcom/crashlytics/android/beta/Beta;
+	20      (00000052) invoke-direct        v0, Lcom/crashlytics/android/beta/Beta;-><init>()V
+	21      (00000058) iput-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->beta Lcom/crashlytics/android/beta/Beta;
+
+build-BB@0x5c : [ build-BB@0x64 build-BB@0x72 ]
+	22      (0000005c) iget-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->core Lcom/crashlytics/android/core/CrashlyticsCore;
+	23      (00000060) if-nez               v0, +9
+
+build-BB@0x64 : [ build-BB@0x72 ]
+	24      (00000064) new-instance         v0, Lcom/crashlytics/android/core/CrashlyticsCore;
+	25      (00000068) invoke-direct        v0, Lcom/crashlytics/android/core/CrashlyticsCore;-><init>()V
+	26      (0000006e) iput-object          v0, v4, Lcom/crashlytics/android/Crashlytics$Builder;->core Lcom/crashlytics/android/core/CrashlyticsCore;
+
+build-BB@0x72 : 
+	27      (00000072) new-instance         v0, Lcom/crashlytics/android/Crashlytics;
+	28      (00000076) iget-object          v1, v4, Lcom/crashlytics/android/Crashlytics$Builder;->answers Lcom/crashlytics/android/answers/Answers;
+	29      (0000007a) iget-object          v2, v4, Lcom/crashlytics/android/Crashlytics$Builder;->beta Lcom/crashlytics/android/beta/Beta;
+	30      (0000007e) iget-object          v3, v4, Lcom/crashlytics/android/Crashlytics$Builder;->core Lcom/crashlytics/android/core/CrashlyticsCore;
+	31      (00000082) invoke-direct        v0, v1, v2, v3, Lcom/crashlytics/android/Crashlytics;-><init>(Lcom/crashlytics/android/answers/Answers; Lcom/crashlytics/android/beta/Beta; Lcom/crashlytics/android/core/CrashlyticsCore;)V
+	32      (00000088) return-object        v0
+

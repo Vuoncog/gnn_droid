@@ -1,0 +1,30 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore$CrashMarkerCheck;->call()Ljava/lang/Boolean; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.lang.Boolean
+
+call-BB@0x0 : [ call-BB@0x10 call-BB@0x16 ]
+	0       (00000000) iget-object          v0, v3, Lcom/crashlytics/android/core/CrashlyticsCore$CrashMarkerCheck;->crashMarker Lcom/crashlytics/android/core/CrashlyticsFileMarker;
+	1       (00000004) invoke-virtual       v0, Lcom/crashlytics/android/core/CrashlyticsFileMarker;->isPresent()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +5
+
+call-BB@0x10 : [ call-BB@0x14 ]
+	4       (00000010) sget-object          v0, Ljava/lang/Boolean;->FALSE Ljava/lang/Boolean;
+
+call-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+call-BB@0x16 : [ call-BB@0x14 ]
+	6       (00000016) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) const-string         v1, 'CrashlyticsCore'
+	9       (00000022) const-string         v2, 'Found previous crash marker.'
+	10      (00000026) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	11      (0000002c) iget-object          v0, v3, Lcom/crashlytics/android/core/CrashlyticsCore$CrashMarkerCheck;->crashMarker Lcom/crashlytics/android/core/CrashlyticsFileMarker;
+	12      (00000030) invoke-virtual       v0, Lcom/crashlytics/android/core/CrashlyticsFileMarker;->remove()Z
+	13      (00000036) sget-object          v0, Ljava/lang/Boolean;->TRUE Ljava/lang/Boolean;
+	14      (0000003a) goto                 -13
+

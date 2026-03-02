@@ -1,0 +1,24 @@
+# La/a/b/a/b/b/g/a;->b()Z [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+b-BB@0x0 : [ b-BB@0x14 b-BB@0x18 ]
+	0       (00000000) iget-object          v0, v2, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	1       (00000004) invoke-interface     v0, Ljava/util/List;->size()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const/16             v1, 32
+	4       (00000010) if-ge                v0, v1, +4
+
+b-BB@0x14 : [ b-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+b-BB@0x16 : 
+	6       (00000016) return               v0
+
+b-BB@0x18 : [ b-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

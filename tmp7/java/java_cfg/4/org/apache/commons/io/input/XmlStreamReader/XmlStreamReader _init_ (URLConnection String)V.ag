@@ -1,0 +1,51 @@
+# Lorg/apache/commons/io/input/XmlStreamReader;-><init>(Ljava/net/URLConnection; Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.net.URLConnection
+# - v8:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x50 <init>-BB@0x54 ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) invoke-direct        v6, Ljava/io/Reader;-><init>()V
+	2       (00000008) iput-object          v8, v6, Lorg/apache/commons/io/input/XmlStreamReader;->defaultEncoding Ljava/lang/String;
+	3       (0000000c) invoke-virtual       v7, Ljava/net/URLConnection;->getContentType()Ljava/lang/String;
+	4       (00000012) move-result-object   v0
+	5       (00000014) invoke-virtual       v7, Ljava/net/URLConnection;->getInputStream()Ljava/io/InputStream;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) new-instance         v2, Lorg/apache/commons/io/input/BOMInputStream;
+	8       (00000020) new-instance         v3, Ljava/io/BufferedInputStream;
+	9       (00000024) const/16             v4, 4096
+	10      (00000028) invoke-direct        v3, v1, v4, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream; I)V
+	11      (0000002e) const/4              v1, 0
+	12      (00000030) sget-object          v4, Lorg/apache/commons/io/input/XmlStreamReader;->BOMS [Lorg/apache/commons/io/ByteOrderMark;
+	13      (00000034) invoke-direct        v2, v3, v1, v4, Lorg/apache/commons/io/input/BOMInputStream;-><init>(Ljava/io/InputStream; Z [Lorg/apache/commons/io/ByteOrderMark;)V
+	14      (0000003a) new-instance         v1, Lorg/apache/commons/io/input/BOMInputStream;
+	15      (0000003e) sget-object          v3, Lorg/apache/commons/io/input/XmlStreamReader;->XML_GUESS_BYTES [Lorg/apache/commons/io/ByteOrderMark;
+	16      (00000042) invoke-direct        v1, v2, v5, v3, Lorg/apache/commons/io/input/BOMInputStream;-><init>(Ljava/io/InputStream; Z [Lorg/apache/commons/io/ByteOrderMark;)V
+	17      (00000048) instance-of          v3, v7, Ljava/net/HttpURLConnection;
+	18      (0000004c) if-nez               v3, +4
+
+<init>-BB@0x50 : [ <init>-BB@0x54 <init>-BB@0x74 ]
+	19      (00000050) if-eqz               v0, +12
+
+<init>-BB@0x54 : [ <init>-BB@0x60 ]
+	20      (00000054) invoke-direct        v6, v2, v1, v0, v5, Lorg/apache/commons/io/input/XmlStreamReader;->doHttpStream(Lorg/apache/commons/io/input/BOMInputStream; Lorg/apache/commons/io/input/BOMInputStream; Ljava/lang/String; Z)Ljava/lang/String;
+	21      (0000005a) move-result-object   v0
+	22      (0000005c) iput-object          v0, v6, Lorg/apache/commons/io/input/XmlStreamReader;->encoding Ljava/lang/String;
+
+<init>-BB@0x60 : 
+	23      (00000060) new-instance         v0, Ljava/io/InputStreamReader;
+	24      (00000064) iget-object          v2, v6, Lorg/apache/commons/io/input/XmlStreamReader;->encoding Ljava/lang/String;
+	25      (00000068) invoke-direct        v0, v1, v2, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream; Ljava/lang/String;)V
+	26      (0000006e) iput-object          v0, v6, Lorg/apache/commons/io/input/XmlStreamReader;->reader Ljava/io/Reader;
+	27      (00000072) return-void          
+
+<init>-BB@0x74 : [ <init>-BB@0x60 ]
+	28      (00000074) invoke-direct        v6, v2, v1, v5, Lorg/apache/commons/io/input/XmlStreamReader;->doRawStream(Lorg/apache/commons/io/input/BOMInputStream; Lorg/apache/commons/io/input/BOMInputStream; Z)Ljava/lang/String;
+	29      (0000007a) move-result-object   v0
+	30      (0000007c) iput-object          v0, v6, Lorg/apache/commons/io/input/XmlStreamReader;->encoding Ljava/lang/String;
+	31      (00000080) goto                 -10
+

@@ -1,0 +1,43 @@
+# Lorg/apache/commons/io/input/ClassLoaderObjectInputStream;->resolveProxyClass([Ljava/lang/String;)Ljava/lang/Class; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String[]
+#
+# - return:java.lang.Class
+
+resolveProxyClass-BB@0x0 : [ resolveProxyClass-BB@0xa ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) array-length         v0, v6
+	2       (00000004) new-array            v2, v0, [Ljava/lang/Class;
+	3       (00000008) move                 v0, v1
+
+resolveProxyClass-BB@0xa : [ resolveProxyClass-BB@0x10 resolveProxyClass-BB@0x2a ]
+	4       (0000000a) array-length         v3, v6
+	5       (0000000c) if-ge                v0, v3, +f
+
+resolveProxyClass-BB@0x10 : [ resolveProxyClass-BB@0xa ]
+	6       (00000010) aget-object          v3, v6, v0
+	7       (00000014) iget-object          v4, v5, Lorg/apache/commons/io/input/ClassLoaderObjectInputStream;->classLoader Ljava/lang/ClassLoader;
+	8       (00000018) invoke-static        v3, v1, v4, Ljava/lang/Class;->forName(Ljava/lang/String; Z Ljava/lang/ClassLoader;)Ljava/lang/Class;
+	9       (0000001e) move-result-object   v3
+	10      (00000020) aput-object          v3, v2, v0
+	11      (00000024) add-int/lit8         v0, v0, 1
+	12      (00000028) goto                 -f
+
+resolveProxyClass-BB@0x2a : [ resolveProxyClass-BB@0x36 ]
+	13      (0000002a) iget-object          v0, v5, Lorg/apache/commons/io/input/ClassLoaderObjectInputStream;->classLoader Ljava/lang/ClassLoader;
+	14      (0000002e) invoke-static        v0, v2, Ljava/lang/reflect/Proxy;->getProxyClass(Ljava/lang/ClassLoader; [Ljava/lang/Class;)Ljava/lang/Class;
+	15      (00000034) move-result-object   v0
+	2a:33
+	(Ljava/lang/IllegalArgumentException; -> 38 resolveProxyClass-BB@0x38)
+
+resolveProxyClass-BB@0x36 : 
+	16      (00000036) return-object        v0
+
+resolveProxyClass-BB@0x38 : [ resolveProxyClass-BB@0x36 ]
+	17      (00000038) move-exception       v0
+	18      (0000003a) invoke-super         v5, v6, Ljava/io/ObjectInputStream;->resolveProxyClass([Ljava/lang/String;)Ljava/lang/Class;
+	19      (00000040) move-result-object   v0
+	20      (00000042) goto                 -6
+

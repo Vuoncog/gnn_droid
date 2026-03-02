@@ -1,0 +1,26 @@
+# Lcom/jgamelbe/CMP/AdPushManager;->setPushAdIcon(I)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setPushAdIcon-BB@0x0 : [ setPushAdIcon-BB@0x8 setPushAdIcon-BB@0x18 ]
+	0       (00000000) sget-boolean         v0, Lcom/jgamelbe/CMP/AdPushManager;->a Z
+	1       (00000004) if-nez               v0, +a
+
+setPushAdIcon-BB@0x8 : [ setPushAdIcon-BB@0x16 ]
+	2       (00000008) const-string         v0, 'Error'
+	3       (0000000c) const-string         v1, '没有调用初始化接口AdHelper.init()!'
+	4       (00000010) invoke-static        v0, v1, Lcom/jgamelbe/CMP/AdPushManager;->a(Ljava/lang/String; Ljava/lang/String;)V
+
+setPushAdIcon-BB@0x16 : 
+	5       (00000016) return-void          
+
+setPushAdIcon-BB@0x18 : [ setPushAdIcon-BB@0x16 ]
+	6       (00000018) invoke-static        Lcom/jgamelbe/CMP/e/r;->a()Lcom/jgamelbe/CMP/e/r;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) iput                 v2, v0, Lcom/jgamelbe/CMP/e/r;->i I
+	9       (00000024) goto                 -7
+

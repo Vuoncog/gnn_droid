@@ -1,0 +1,27 @@
+# Lcom/ailock/tszlock/AlarmReceiver2;->onReceive(Landroid/content/Context; Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.content.Intent
+#
+# - return:void
+
+onReceive-BB@0x0 : [ onReceive-BB@0x1a onReceive-BB@0x2e ]
+	0       (00000000) invoke-static        v5, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+	1       (00000006) move-result-object   v1
+	2       (00000008) const-string         v2, 'lockOpen'
+	3       (0000000c) const/4              v3, 1
+	4       (0000000e) invoke-interface     v1, v2, v3, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String; Z)Z
+	5       (00000014) move-result          v0
+	6       (00000016) if-eqz               v0, +c
+
+onReceive-BB@0x1a : [ onReceive-BB@0x2e ]
+	7       (0000001a) new-instance         v2, Landroid/content/Intent;
+	8       (0000001e) const-class          v3, Lcom/ailock/tszlock/LockService;
+	9       (00000022) invoke-direct        v2, v5, v3, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	10      (00000028) invoke-virtual       v5, v2, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+onReceive-BB@0x2e : 
+	11      (0000002e) return-void          
+

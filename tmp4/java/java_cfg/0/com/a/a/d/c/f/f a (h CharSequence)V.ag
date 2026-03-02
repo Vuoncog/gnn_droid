@@ -1,0 +1,161 @@
+# Lcom/a/a/d/c/f;->a(Lcom/a/a/d/c/h; Ljava/lang/CharSequence;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:com.a.a.d.c.h
+# - v7:java.lang.CharSequence
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x6 ]
+	0       (00000000) const/4              v5, 2
+	1       (00000002) const/4              v0, 1
+	2       (00000004) const/4              v1, 0
+
+a-BB@0x6 : [ a-BB@0x12 a-BB@0x1a ]
+	3       (00000006) invoke-interface     v7, Ljava/lang/CharSequence;->length()I
+	4       (0000000c) move-result          v2
+	5       (0000000e) if-nez               v2, +6
+	6:b
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0x12 : [ a-BB@0x18 ]
+	6       (00000012) invoke-virtual       v6, v1, Lcom/a/a/d/c/h;->b(I)V
+
+a-BB@0x18 : 
+	7       (00000018) return-void          
+
+a-BB@0x1a : [ a-BB@0x1e a-BB@0x56 ]
+	8       (0000001a) if-ne                v2, v0, +1e
+
+a-BB@0x1e : [ a-BB@0x4a a-BB@0x56 ]
+	9       (0000001e) invoke-virtual       v6, Lcom/a/a/d/c/h;->j()V
+	10      (00000024) invoke-virtual       v6, Lcom/a/a/d/c/h;->i()Lcom/a/a/d/c/k;
+	11      (0000002a) move-result-object   v3
+	12      (0000002c) invoke-virtual       v3, Lcom/a/a/d/c/k;->h()I
+	13      (00000032) move-result          v3
+	14      (00000034) invoke-virtual       v6, Lcom/a/a/d/c/h;->d()I
+	15      (0000003a) move-result          v4
+	16      (0000003c) sub-int/2addr        v3, v4
+	17      (0000003e) invoke-virtual       v6, Lcom/a/a/d/c/h;->h()I
+	18      (00000044) move-result          v4
+	19      (00000046) if-nez               v4, +8
+	1e:43
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0x4a : [ a-BB@0x4e a-BB@0x56 ]
+	20      (0000004a) if-gt                v3, v5, +6
+
+a-BB@0x4e : [ a-BB@0x18 ]
+	21      (0000004e) invoke-virtual       v6, v1, Lcom/a/a/d/c/h;->b(I)V
+	22      (00000054) goto                 -1e
+
+a-BB@0x56 : [ a-BB@0x5c a-BB@0x76 ]
+	23      (00000056) const/4              v3, 4
+	24      (00000058) if-le                v2, v3, +f
+
+a-BB@0x5c : 
+	25      (0000005c) new-instance         v0, Ljava/lang/IllegalStateException;
+	26      (00000060) const-string         v2, 'Count must not exceed 4'
+	27      (00000064) invoke-direct        v0, v2, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	28      (0000006a) throw                v0
+	5c:6b
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0x6c : 
+	29      (0000006c) move-exception       v0
+	30      (0000006e) invoke-virtual       v6, v1, Lcom/a/a/d/c/h;->b(I)V
+	31      (00000074) throw                v0
+
+a-BB@0x76 : [ a-BB@0x7c ]
+	32      (00000076) add-int/lit8         v3, v2, -1
+	33      (0000007a) const/4              v2, 0
+
+a-BB@0x7c : [ a-BB@0x90 a-BB@0x104 ]
+	34      (0000007c) invoke-static        v7, v2, Lcom/a/a/d/c/f;->a(Ljava/lang/CharSequence; I)Ljava/lang/String;
+	35      (00000082) move-result-object   v4
+	36      (00000084) invoke-virtual       v6, Lcom/a/a/d/c/h;->g()Z
+	37      (0000008a) move-result          v2
+	38      (0000008c) if-nez               v2, +3c
+	7c:fb
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0x90 : [ a-BB@0x92 ]
+	39      (00000090) move                 v2, v0
+	7c:fb
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0x92 : [ a-BB@0x96 a-BB@0x108 ]
+	40      (00000092) if-eqz               v2, +3b
+	7c:fb
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0x96 : [ a-BB@0x9a a-BB@0x108 ]
+	41      (00000096) if-gt                v3, v5, +39
+	7c:fb
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0x9a : [ a-BB@0x9e a-BB@0xe8 ]
+	42      (0000009a) if-gt                v3, v5, +27
+	7c:fb
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0x9e : [ a-BB@0xce a-BB@0xe8 ]
+	43      (0000009e) invoke-virtual       v6, Lcom/a/a/d/c/h;->d()I
+	44      (000000a4) move-result          v2
+	45      (000000a6) add-int/2addr        v2, v3
+	46      (000000a8) invoke-virtual       v6, v2, Lcom/a/a/d/c/h;->c(I)V
+	47      (000000ae) invoke-virtual       v6, Lcom/a/a/d/c/h;->i()Lcom/a/a/d/c/k;
+	48      (000000b4) move-result-object   v2
+	49      (000000b6) invoke-virtual       v2, Lcom/a/a/d/c/k;->h()I
+	50      (000000bc) move-result          v2
+	51      (000000be) invoke-virtual       v6, Lcom/a/a/d/c/h;->d()I
+	52      (000000c4) move-result          v5
+	53      (000000c6) sub-int/2addr        v2, v5
+	54      (000000c8) const/4              v5, 3
+	55      (000000ca) if-lt                v2, v5, +f
+	7c:fb
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0xce : [ a-BB@0xe8 ]
+	56      (000000ce) invoke-virtual       v6, Lcom/a/a/d/c/h;->d()I
+	57      (000000d4) move-result          v0
+	58      (000000d6) invoke-virtual       v4, Ljava/lang/String;->length()I
+	59      (000000dc) move-result          v2
+	60      (000000de) add-int/2addr        v0, v2
+	61      (000000e0) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->c(I)V
+	62      (000000e6) move                 v0, v1
+	7c:fb
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0xe8 : [ a-BB@0xec a-BB@0x10c ]
+	63      (000000e8) if-eqz               v0, +12
+	7c:fb
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0xec : [ a-BB@0xfc ]
+	64      (000000ec) invoke-virtual       v6, Lcom/a/a/d/c/h;->k()V
+	65      (000000f2) iget                 v0, v6, Lcom/a/a/d/c/h;->a I
+	66      (000000f6) sub-int/2addr        v0, v3
+	67      (000000f8) iput                 v0, v6, Lcom/a/a/d/c/h;->a I
+	7c:fb
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+
+a-BB@0xfc : [ a-BB@0x18 ]
+	68      (000000fc) invoke-virtual       v6, v1, Lcom/a/a/d/c/h;->b(I)V
+	69      (00000102) goto                 -75
+
+a-BB@0x104 : [ a-BB@0x92 ]
+	70      (00000104) move                 v2, v1
+	71      (00000106) goto                 -3a
+
+a-BB@0x108 : [ a-BB@0x9a ]
+	72      (00000108) move                 v0, v1
+	73      (0000010a) goto                 -38
+
+a-BB@0x10c : [ a-BB@0xfc ]
+	74      (0000010c) invoke-virtual       v6, v4, Lcom/a/a/d/c/h;->a(Ljava/lang/String;)V
+	75      (00000112) goto                 -b
+	10c:111
+	(Ljava/lang/Throwable; -> 6c a-BB@0x6c)
+

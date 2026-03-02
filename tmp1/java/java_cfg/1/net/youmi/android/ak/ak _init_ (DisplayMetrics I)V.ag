@@ -1,0 +1,161 @@
+# Lnet/youmi/android/ak;-><init>(Landroid/util/DisplayMetrics; I)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.util.DisplayMetrics
+# - v8:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x52 ]
+	0       (00000000) const/16             v1, 160
+	1       (00000004) const/16             v5, 64
+	2       (00000008) const/16             v4, 42
+	3       (0000000c) const/16             v3, 48
+	4       (00000010) const/4              v2, 4
+	5       (00000012) invoke-direct        v6, Ljava/lang/Object;-><init>()V
+	6       (00000018) iput                 v4, v6, Lnet/youmi/android/ak;->e I
+	7       (0000001c) iput                 v2, v6, Lnet/youmi/android/ak;->f I
+	8       (00000020) const/high16         v0, 16256 # [1.0]
+	9       (00000024) iput                 v0, v6, Lnet/youmi/android/ak;->g F
+	10      (00000028) const/4              v0, 0
+	11      (0000002a) iput                 v0, v6, Lnet/youmi/android/ak;->h I
+	12      (0000002e) iput                 v1, v6, Lnet/youmi/android/ak;->i I
+	13      (00000032) iget                 v0, v7, Landroid/util/DisplayMetrics;->widthPixels I
+	14      (00000036) iput                 v0, v6, Lnet/youmi/android/ak;->j I
+	15      (0000003a) iget                 v0, v7, Landroid/util/DisplayMetrics;->heightPixels I
+	16      (0000003e) iput                 v0, v6, Lnet/youmi/android/ak;->k I
+	17      (00000042) iget                 v0, v7, Landroid/util/DisplayMetrics;->density F
+	18      (00000046) iput                 v0, v6, Lnet/youmi/android/ak;->g F
+	19      (0000004a) iput                 v1, v6, Lnet/youmi/android/ak;->i I
+	20      (0000004e) iput                 v8, v6, Lnet/youmi/android/ak;->h I
+
+<init>-BB@0x52 : [ <init>-BB@0x6a <init>-BB@0x76 ]
+	21      (00000052) invoke-virtual       v7, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	22      (00000058) move-result-object   v0
+	23      (0000005a) const-string         v1, 'densityDpi'
+	24      (0000005e) invoke-virtual       v0, v1, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+	25      (00000064) move-result-object   v0
+	26      (00000066) if-eqz               v0, +8
+	52:75
+	(Ljava/lang/Exception; -> 1a2 <init>-BB@0x1a2)
+
+<init>-BB@0x6a : [ <init>-BB@0x76 ]
+	27      (0000006a) invoke-virtual       v0, v7, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
+	28      (00000070) move-result          v0
+	29      (00000072) iput                 v0, v6, Lnet/youmi/android/ak;->i I
+	52:75
+	(Ljava/lang/Exception; -> 1a2 <init>-BB@0x1a2)
+
+<init>-BB@0x76 : [ <init>-BB@0x7a <init>-BB@0xe8 ]
+	30      (00000076) if-ge                v8, v2, +39
+
+<init>-BB@0x7a : [ <init>-BB@0xca ]
+	31      (0000007a) iget                 v0, v6, Lnet/youmi/android/ak;->j I
+	32      (0000007e) int-to-float         v0, v0
+	33      (00000080) iget                 v1, v6, Lnet/youmi/android/ak;->g F
+	34      (00000084) mul-float/2addr      v0, v1
+	35      (00000086) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	36      (0000008c) move-result          v0
+	37      (0000008e) iput                 v0, v6, Lnet/youmi/android/ak;->a I
+	38      (00000092) iget                 v0, v6, Lnet/youmi/android/ak;->k I
+	39      (00000096) int-to-float         v0, v0
+	40      (00000098) iget                 v1, v6, Lnet/youmi/android/ak;->g F
+	41      (0000009c) mul-float/2addr      v0, v1
+	42      (0000009e) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	43      (000000a4) move-result          v0
+	44      (000000a6) iput                 v0, v6, Lnet/youmi/android/ak;->b I
+	45      (000000aa) iput                 v3, v6, Lnet/youmi/android/ak;->d I
+	46      (000000ae) const/16             v0, 50
+	47      (000000b2) iput                 v0, v6, Lnet/youmi/android/ak;->c I
+	48      (000000b6) iput                 v4, v6, Lnet/youmi/android/ak;->e I
+	49      (000000ba) iput                 v2, v6, Lnet/youmi/android/ak;->f I
+	50      (000000be) invoke-static        Lnet/youmi/android/cr;->h()Ljava/lang/String;
+	51      (000000c4) move-result-object   v0
+	52      (000000c6) iput-object          v0, v6, Lnet/youmi/android/ak;->l Ljava/lang/String;
+
+<init>-BB@0xca : [ <init>-BB@0xd6 <init>-BB@0xe6 ]
+	53      (000000ca) iget                 v0, v6, Lnet/youmi/android/ak;->a I
+	54      (000000ce) iget                 v1, v6, Lnet/youmi/android/ak;->b I
+	55      (000000d2) if-le                v0, v1, +a
+
+<init>-BB@0xd6 : [ <init>-BB@0xe6 ]
+	56      (000000d6) iget                 v0, v6, Lnet/youmi/android/ak;->a I
+	57      (000000da) iget                 v1, v6, Lnet/youmi/android/ak;->b I
+	58      (000000de) iput                 v1, v6, Lnet/youmi/android/ak;->a I
+	59      (000000e2) iput                 v0, v6, Lnet/youmi/android/ak;->b I
+
+<init>-BB@0xe6 : 
+	60      (000000e6) return-void          
+
+<init>-BB@0xe8 : [ D:<init>-BB@0x102 120:<init>-BB@0x156 160:<init>-BB@0x16c 240:<init>-BB@0x17e 320:<init>-BB@0x190 ]
+	61      (000000e8) iget                 v0, v6, Lnet/youmi/android/ak;->j I
+	62      (000000ec) iput                 v0, v6, Lnet/youmi/android/ak;->a I
+	63      (000000f0) iget                 v0, v6, Lnet/youmi/android/ak;->k I
+	64      (000000f4) iput                 v0, v6, Lnet/youmi/android/ak;->b I
+	65      (000000f8) iget                 v0, v6, Lnet/youmi/android/ak;->i I
+	66      (000000fc) sparse-switch        v0, +56 (0x1a8)
+
+<init>-BB@0x102 : [ <init>-BB@0x112 ]
+	67      (00000102) iput                 v3, v6, Lnet/youmi/android/ak;->d I
+	68      (00000106) invoke-static        Lnet/youmi/android/cr;->h()Ljava/lang/String;
+	69      (0000010c) move-result-object   v0
+	70      (0000010e) iput-object          v0, v6, Lnet/youmi/android/ak;->l Ljava/lang/String;
+
+<init>-BB@0x112 : [ <init>-BB@0xca ]
+	71      (00000112) const/high16         v0, 16968 # [50.0]
+	72      (00000116) iget                 v1, v6, Lnet/youmi/android/ak;->g F
+	73      (0000011a) mul-float/2addr      v0, v1
+	74      (0000011c) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	75      (00000122) move-result          v0
+	76      (00000124) iput                 v0, v6, Lnet/youmi/android/ak;->c I
+	77      (00000128) const/high16         v0, 16936 # [42.0]
+	78      (0000012c) iget                 v1, v6, Lnet/youmi/android/ak;->g F
+	79      (00000130) mul-float/2addr      v0, v1
+	80      (00000132) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	81      (00000138) move-result          v0
+	82      (0000013a) iput                 v0, v6, Lnet/youmi/android/ak;->e I
+	83      (0000013e) const/high16         v0, 16512 # [4.0]
+	84      (00000142) iget                 v1, v6, Lnet/youmi/android/ak;->g F
+	85      (00000146) mul-float/2addr      v0, v1
+	86      (00000148) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	87      (0000014e) move-result          v0
+	88      (00000150) iput                 v0, v6, Lnet/youmi/android/ak;->f I
+	89      (00000154) goto                 -45
+
+<init>-BB@0x156 : [ <init>-BB@0x112 ]
+	90      (00000156) const/16             v0, 38
+	91      (0000015a) iput                 v0, v6, Lnet/youmi/android/ak;->d I
+	92      (0000015e) invoke-static        Lnet/youmi/android/cr;->f()Ljava/lang/String;
+	93      (00000164) move-result-object   v0
+	94      (00000166) iput-object          v0, v6, Lnet/youmi/android/ak;->l Ljava/lang/String;
+	95      (0000016a) goto                 -2c
+
+<init>-BB@0x16c : [ <init>-BB@0x112 ]
+	96      (0000016c) iput                 v3, v6, Lnet/youmi/android/ak;->d I
+	97      (00000170) invoke-static        Lnet/youmi/android/cr;->h()Ljava/lang/String;
+	98      (00000176) move-result-object   v0
+	99      (00000178) iput-object          v0, v6, Lnet/youmi/android/ak;->l Ljava/lang/String;
+	100     (0000017c) goto                 -35
+
+<init>-BB@0x17e : [ <init>-BB@0x112 ]
+	101     (0000017e) iput                 v5, v6, Lnet/youmi/android/ak;->d I
+	102     (00000182) invoke-static        Lnet/youmi/android/cr;->g()Ljava/lang/String;
+	103     (00000188) move-result-object   v0
+	104     (0000018a) iput-object          v0, v6, Lnet/youmi/android/ak;->l Ljava/lang/String;
+	105     (0000018e) goto                 -3e
+
+<init>-BB@0x190 : [ <init>-BB@0x112 ]
+	106     (00000190) iput                 v5, v6, Lnet/youmi/android/ak;->d I
+	107     (00000194) invoke-static        Lnet/youmi/android/cr;->i()Ljava/lang/String;
+	108     (0000019a) move-result-object   v0
+	109     (0000019c) iput-object          v0, v6, Lnet/youmi/android/ak;->l Ljava/lang/String;
+	110     (000001a0) goto                 -47
+
+<init>-BB@0x1a2 : [ <init>-BB@0x76 ]
+	111     (000001a2) move-exception       v0
+	112     (000001a4) goto/16              -97
+
+<init>-BB@0x1a8 : 
+	113     (000001a8) sparse-switch-payload 78 a0 f0 140
+

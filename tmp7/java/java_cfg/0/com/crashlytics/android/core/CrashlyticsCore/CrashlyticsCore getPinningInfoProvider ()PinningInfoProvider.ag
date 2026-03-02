@@ -1,0 +1,21 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;->getPinningInfoProvider()Lcom/crashlytics/android/core/PinningInfoProvider; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:com.crashlytics.android.core.PinningInfoProvider
+
+getPinningInfoProvider-BB@0x0 : [ getPinningInfoProvider-BB@0x8 getPinningInfoProvider-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v1, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled Z
+	1       (00000004) if-nez               v0, +5
+
+getPinningInfoProvider-BB@0x8 : [ getPinningInfoProvider-BB@0xc ]
+	2       (00000008) iget-object          v0, v1, Lcom/crashlytics/android/core/CrashlyticsCore;->pinningInfo Lcom/crashlytics/android/core/PinningInfoProvider;
+
+getPinningInfoProvider-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+getPinningInfoProvider-BB@0xe : [ getPinningInfoProvider-BB@0xc ]
+	4       (0000000e) const/4              v0, 0
+	5       (00000010) goto                 -2
+

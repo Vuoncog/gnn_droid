@@ -1,0 +1,50 @@
+# Lcom/a/a/b/a/a/a;->a(Ljava/lang/Iterable;)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Iterable
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x4 a-BB@0x8 ]
+	0       (00000000) if-nez               v5, +4
+
+a-BB@0x4 : [ a-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+a-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+a-BB@0x8 : [ a-BB@0x1a ]
+	3       (00000008) new-instance         v1, Ljava/lang/StringBuilder;
+	4       (0000000c) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000012) invoke-interface     v5, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+	6       (00000018) move-result-object   v2
+
+a-BB@0x1a : [ a-BB@0x26 a-BB@0x62 ]
+	7       (0000001a) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	8       (00000020) move-result          v0
+	9       (00000022) if-eqz               v0, +20
+
+a-BB@0x26 : [ a-BB@0x1a ]
+	10      (00000026) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) check-cast           v0, Landroid/hardware/Camera$Area;
+	13      (00000032) iget-object          v3, v0, Landroid/hardware/Camera$Area;->rect Landroid/graphics/Rect;
+	14      (00000036) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	15      (0000003c) move-result-object   v3
+	16      (0000003e) const/16             v4, 58
+	17      (00000042) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	18      (00000048) move-result-object   v3
+	19      (0000004a) iget                 v0, v0, Landroid/hardware/Camera$Area;->weight I
+	20      (0000004e) invoke-virtual       v3, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	21      (00000054) move-result-object   v0
+	22      (00000056) const/16             v3, 32
+	23      (0000005a) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	24      (00000060) goto                 -23
+
+a-BB@0x62 : [ a-BB@0x6 ]
+	25      (00000062) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	26      (00000068) move-result-object   v0
+	27      (0000006a) goto                 -32
+

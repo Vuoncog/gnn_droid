@@ -1,0 +1,24 @@
+# Lorg/apache/commons/lang/RandomStringUtils;->random(I I I Z Z)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:int
+# - v9:int
+# - v10:boolean
+# - v11:boolean
+#
+# - return:java.lang.String
+
+random-BB@0x0 : 
+	0       (00000000) const/4              v5, 0
+	1       (00000002) sget-object          v6, Lorg/apache/commons/lang/RandomStringUtils;->RANDOM Ljava/util/Random;
+	2       (00000006) move                 v0, v7
+	3       (00000008) move                 v1, v8
+	4       (0000000a) move                 v2, v9
+	5       (0000000c) move                 v3, v10
+	6       (0000000e) move                 v4, v11
+	7       (00000010) invoke-static/range  v0 ... v6, Lorg/apache/commons/lang/RandomStringUtils;->random(I I I Z Z [C Ljava/util/Random;)Ljava/lang/String;
+	8       (00000016) move-result-object   v0
+	9       (00000018) return-object        v0
+

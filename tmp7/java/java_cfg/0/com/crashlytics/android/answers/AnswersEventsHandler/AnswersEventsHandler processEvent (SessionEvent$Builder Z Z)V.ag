@@ -1,0 +1,25 @@
+# Lcom/crashlytics/android/answers/AnswersEventsHandler;->processEvent(Lcom/crashlytics/android/answers/SessionEvent$Builder; Z Z)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.crashlytics.android.answers.SessionEvent$Builder
+# - v3:boolean
+# - v4:boolean
+#
+# - return:void
+
+processEvent-BB@0x0 : [ processEvent-BB@0xe processEvent-BB@0x16 ]
+	0       (00000000) new-instance         v0, Lcom/crashlytics/android/answers/AnswersEventsHandler$6;
+	1       (00000004) invoke-direct        v0, v1, v2, v4, Lcom/crashlytics/android/answers/AnswersEventsHandler$6;-><init>(Lcom/crashlytics/android/answers/AnswersEventsHandler; Lcom/crashlytics/android/answers/SessionEvent$Builder; Z)V
+	2       (0000000a) if-eqz               v3, +6
+
+processEvent-BB@0xe : [ processEvent-BB@0x14 ]
+	3       (0000000e) invoke-direct        v1, v0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeSync(Ljava/lang/Runnable;)V
+
+processEvent-BB@0x14 : 
+	4       (00000014) return-void          
+
+processEvent-BB@0x16 : [ processEvent-BB@0x14 ]
+	5       (00000016) invoke-direct        v1, v0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeAsync(Ljava/lang/Runnable;)V
+	6       (0000001c) goto                 -4
+

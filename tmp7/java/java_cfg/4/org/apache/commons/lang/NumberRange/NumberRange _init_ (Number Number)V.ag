@@ -1,0 +1,48 @@
+# Lorg/apache/commons/lang/NumberRange;-><init>(Ljava/lang/Number; Ljava/lang/Number;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Number
+# - v6:java.lang.Number
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xa <init>-BB@0x1a ]
+	0       (00000000) invoke-direct        v4, Ljava/lang/Object;-><init>()V
+	1       (00000006) if-nez               v5, +a
+
+<init>-BB@0xa : 
+	2       (0000000a) new-instance         v0, Ljava/lang/NullPointerException;
+	3       (0000000e) const-string         v1, 'The minimum value must not be null'
+	4       (00000012) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	5       (00000018) throw                v0
+
+<init>-BB@0x1a : [ <init>-BB@0x1e <init>-BB@0x2e ]
+	6       (0000001a) if-nez               v6, +a
+
+<init>-BB@0x1e : 
+	7       (0000001e) new-instance         v0, Ljava/lang/NullPointerException;
+	8       (00000022) const-string         v1, 'The maximum value must not be null'
+	9       (00000026) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	10      (0000002c) throw                v0
+
+<init>-BB@0x2e : [ <init>-BB@0x46 <init>-BB@0x50 ]
+	11      (0000002e) invoke-virtual       v6, Ljava/lang/Number;->doubleValue()D
+	12      (00000034) move-result-wide     v0
+	13      (00000036) invoke-virtual       v5, Ljava/lang/Number;->doubleValue()D
+	14      (0000003c) move-result-wide     v2
+	15      (0000003e) cmpg-double          v0, v0, v2
+	16      (00000042) if-gez               v0, +7
+
+<init>-BB@0x46 : [ <init>-BB@0x4e ]
+	17      (00000046) iput-object          v5, v4, Lorg/apache/commons/lang/NumberRange;->max Ljava/lang/Number;
+	18      (0000004a) iput-object          v5, v4, Lorg/apache/commons/lang/NumberRange;->min Ljava/lang/Number;
+
+<init>-BB@0x4e : 
+	19      (0000004e) return-void          
+
+<init>-BB@0x50 : [ <init>-BB@0x4e ]
+	20      (00000050) iput-object          v5, v4, Lorg/apache/commons/lang/NumberRange;->min Ljava/lang/Number;
+	21      (00000054) iput-object          v6, v4, Lorg/apache/commons/lang/NumberRange;->max Ljava/lang/Number;
+	22      (00000058) goto                 -5
+

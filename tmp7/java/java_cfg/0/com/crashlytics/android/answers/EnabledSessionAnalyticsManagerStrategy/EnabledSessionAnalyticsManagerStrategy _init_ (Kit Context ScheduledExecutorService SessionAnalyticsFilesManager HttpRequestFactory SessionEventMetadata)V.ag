@@ -1,0 +1,37 @@
+# Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-><init>(Lio/fabric/sdk/android/Kit; Landroid/content/Context; Ljava/util/concurrent/ScheduledExecutorService; Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager; Lio/fabric/sdk/android/services/network/HttpRequestFactory; Lcom/crashlytics/android/answers/SessionEventMetadata;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:io.fabric.sdk.android.Kit
+# - v4:android.content.Context
+# - v5:java.util.concurrent.ScheduledExecutorService
+# - v6:com.crashlytics.android.answers.SessionAnalyticsFilesManager
+# - v7:io.fabric.sdk.android.services.network.HttpRequestFactory
+# - v8:com.crashlytics.android.answers.SessionEventMetadata
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v1, 1
+	1       (00000002) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	2       (00000008) new-instance         v0, Ljava/util/concurrent/atomic/AtomicReference;
+	3       (0000000c) invoke-direct        v0, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+	4       (00000012) iput-object          v0, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef Ljava/util/concurrent/atomic/AtomicReference;
+	5       (00000016) new-instance         v0, Lio/fabric/sdk/android/services/common/ApiKey;
+	6       (0000001a) invoke-direct        v0, Lio/fabric/sdk/android/services/common/ApiKey;-><init>()V
+	7       (00000020) iput-object          v0, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->apiKey Lio/fabric/sdk/android/services/common/ApiKey;
+	8       (00000024) new-instance         v0, Lcom/crashlytics/android/answers/KeepAllEventFilter;
+	9       (00000028) invoke-direct        v0, Lcom/crashlytics/android/answers/KeepAllEventFilter;-><init>()V
+	10      (0000002e) iput-object          v0, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->eventFilter Lcom/crashlytics/android/answers/EventFilter;
+	11      (00000032) iput-boolean         v1, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->customEventsEnabled Z
+	12      (00000036) iput-boolean         v1, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->predefinedEventsEnabled Z
+	13      (0000003a) const/4              v0, -1
+	14      (0000003c) iput                 v0, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds I
+	15      (00000040) iput-object          v3, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->kit Lio/fabric/sdk/android/Kit;
+	16      (00000044) iput-object          v4, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context Landroid/content/Context;
+	17      (00000048) iput-object          v5, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->executorService Ljava/util/concurrent/ScheduledExecutorService;
+	18      (0000004c) iput-object          v6, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;
+	19      (00000050) iput-object          v7, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->httpRequestFactory Lio/fabric/sdk/android/services/network/HttpRequestFactory;
+	20      (00000054) iput-object          v8, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->metadata Lcom/crashlytics/android/answers/SessionEventMetadata;
+	21      (00000058) return-void          
+

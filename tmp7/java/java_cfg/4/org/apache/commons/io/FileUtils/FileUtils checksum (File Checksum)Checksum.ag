@@ -1,0 +1,52 @@
+# Lorg/apache/commons/io/FileUtils;->checksum(Ljava/io/File; Ljava/util/zip/Checksum;)Ljava/util/zip/Checksum; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.File
+# - v4:java.util.zip.Checksum
+#
+# - return:java.util.zip.Checksum
+
+checksum-BB@0x0 : [ checksum-BB@0xc checksum-BB@0x1c ]
+	0       (00000000) invoke-virtual       v3, Ljava/io/File;->isDirectory()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +a
+
+checksum-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	4       (00000010) const-string         v1, "Checksums can't be computed on directories"
+	5       (00000014) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	6       (0000001a) throw                v0
+
+checksum-BB@0x1c : [ checksum-BB@0x1e ]
+	7       (0000001c) const/4              v2, 0
+
+checksum-BB@0x1e : [ checksum-BB@0x32 ]
+	8       (0000001e) new-instance         v1, Ljava/util/zip/CheckedInputStream;
+	9       (00000022) new-instance         v0, Ljava/io/FileInputStream;
+	10      (00000026) invoke-direct        v0, v3, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+	11      (0000002c) invoke-direct        v1, v0, v4, Ljava/util/zip/CheckedInputStream;-><init>(Ljava/io/InputStream; Ljava/util/zip/Checksum;)V
+	1e:31
+	(Ljava/lang/Throwable; -> 4a checksum-BB@0x4a)
+
+checksum-BB@0x32 : 
+	12      (00000032) new-instance         v0, Lorg/apache/commons/io/output/NullOutputStream;
+	13      (00000036) invoke-direct        v0, Lorg/apache/commons/io/output/NullOutputStream;-><init>()V
+	14      (0000003c) invoke-static        v1, v0, Lorg/apache/commons/io/IOUtils;->copy(Ljava/io/InputStream; Ljava/io/OutputStream;)I
+	15      (00000042) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
+	16      (00000048) return-object        v4
+	32:41
+	(Ljava/lang/Throwable; -> 56 checksum-BB@0x56)
+
+checksum-BB@0x4a : [ checksum-BB@0x4e ]
+	17      (0000004a) move-exception       v0
+	18      (0000004c) move-object          v1, v2
+
+checksum-BB@0x4e : 
+	19      (0000004e) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
+	20      (00000054) throw                v0
+
+checksum-BB@0x56 : [ checksum-BB@0x4e ]
+	21      (00000056) move-exception       v0
+	22      (00000058) goto                 -5
+

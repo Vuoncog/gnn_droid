@@ -1,0 +1,97 @@
+digraph {
+	graph [bb="0,0,904.5,743",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_2051419cce43bd556530b2d3d5bf5fd4 {
+		graph [bb="64.501,8,896.5,735",
+			label="Lio/fabric/sdk/android/services/common/CommonUtils;.getProximitySensorEnabled->(Landroid/content/Context;)Z\nLocal registers v0 \
+... v2\nparam v3 = android.content.Context\nreturn = boolean",
+			lheight=0.83,
+			lp="480.5,701",
+			lwidth=10.51
+		];
+		struct_90967db2c7b5f9bbece929635f14ce8e	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v1</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;isEmulator(Landroid/content/Context;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="480.5,602.5",
+			width=11.333];
+		struct_b02a15b751353ed22190ad6734466dff	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="152.5,39.5",
+			width=1.7361];
+		struct_90967db2c7b5f9bbece929635f14ce8e:tail -> struct_b02a15b751353ed22190ad6734466dff:header	[color=red,
+			pos="e,100.5,53.5 93.501,551.5 93.501,333.6 -114.21,62.132 90.441,53.701"];
+		struct_435f8574c93211c3635b47cbbffc2681	[height=2.7917,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="red">'sensor'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Landroid/content/Context;-&gt;getSystemService(Ljava/lang/String;)Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#0000FF">Landroid/hardware/SensorManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/16 </FONT> <FONT color="#7272CC">v2</FONT>, <FONT color="green">0x8</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#7272CC">v2</FONT>, <FONT color="#DF3A01">Landroid/hardware/SensorManager;-&gt;getDefaultSensor(I)Landroid/hardware/Sensor;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="490.5,409.5",
+			width=10.75];
+		struct_90967db2c7b5f9bbece929635f14ce8e:tail -> struct_435f8574c93211c3635b47cbbffc2681:header	[color=green,
+			pos="e,128.5,503.5 93.501,551.5 93.501,529.02 118.88,529.16 126.42,513.4"];
+		struct_890ce974c9b4fb5bfdb3cffadf16fb71	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="189.5,238.5",
+			width=2.4028];
+		struct_435f8574c93211c3635b47cbbffc2681:tail -> struct_890ce974c9b4fb5bfdb3cffadf16fb71:header	[color=red,
+			pos="e,128.5,255.5 128.5,314.5 128.5,291.97 128.5,283.95 128.5,265.51"];
+		struct_428328c365b6660df06798077b5f940d	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="369.5,238.5",
+			width=2.0833];
+		struct_435f8574c93211c3635b47cbbffc2681:tail -> struct_428328c365b6660df06798077b5f940d:header	[color=green,
+			pos="e,319.5,266.5 128.5,314.5 128.5,230.73 303.44,343.51 318.47,276.63"];
+		struct_57224ca0349919a9a087ddb428bb732b	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-13</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="178.5,133.5",
+			width=2.0833];
+		struct_890ce974c9b4fb5bfdb3cffadf16fb71:tail -> struct_57224ca0349919a9a087ddb428bb732b:header	[color=blue,
+			pos="e,128.5,161.5 128.5,220.5 128.5,197.97 128.5,189.95 128.5,171.51"];
+		struct_57224ca0349919a9a087ddb428bb732b:tail -> struct_b02a15b751353ed22190ad6734466dff:header	[color=blue,
+			pos="e,111.5,56.5 128.5,104.5 128.5,85.758 116.84,80.66 112.83,66.608"];
+		struct_428328c365b6660df06798077b5f940d:tail -> struct_57224ca0349919a9a087ddb428bb732b:header	[color=blue,
+			pos="e,128.5,161.5 304.5,212.5 294.84,212.5 293.63,207.17 284.5,204 220.06,181.64 137.4,228.18 129.17,171.51"];
+	}
+}

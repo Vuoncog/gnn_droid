@@ -1,0 +1,19 @@
+# Lcom/ailock/tszlock/RingPlay$2;->onError(Landroid/media/MediaPlayer; I I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.media.MediaPlayer
+# - v4:int
+# - v5:int
+#
+# - return:boolean
+
+onError-BB@0x0 : 
+	0       (00000000) invoke-virtual       v3, Landroid/media/MediaPlayer;->stop()V
+	1       (00000006) invoke-virtual       v3, Landroid/media/MediaPlayer;->release()V
+	2       (0000000c) iget-object          v0, v2, Lcom/ailock/tszlock/RingPlay$2;->this$0 Lcom/ailock/tszlock/RingPlay;
+	3       (00000010) const/4              v1, 0
+	4       (00000012) invoke-static        v0, v1, Lcom/ailock/tszlock/RingPlay;->access$1(Lcom/ailock/tszlock/RingPlay; Landroid/media/MediaPlayer;)V
+	5       (00000018) const/4              v0, 1
+	6       (0000001a) return               v0
+

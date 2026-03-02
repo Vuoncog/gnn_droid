@@ -1,0 +1,73 @@
+# Lcom/isnowstudio/common/activity/WhiteListActivity;->onCreate(Landroid/os/Bundle;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x46 ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) invoke-super         v6, v7, Landroid/app/ListActivity;->onCreate(Landroid/os/Bundle;)V
+	3       (0000000a) const-string         v0, 'whitelist'
+	4       (0000000e) invoke-virtual       v6, v0, v2, Lcom/isnowstudio/common/activity/WhiteListActivity;->getSharedPreferences(Ljava/lang/String; I)Landroid/content/SharedPreferences;
+	5       (00000014) move-result-object   v0
+	6       (00000016) iput-object          v0, v6, Lcom/isnowstudio/common/activity/WhiteListActivity;->b Landroid/content/SharedPreferences;
+	7       (0000001a) invoke-virtual       v6, Lcom/isnowstudio/common/activity/WhiteListActivity;->getIntent()Landroid/content/Intent;
+	8       (00000020) move-result-object   v0
+	9       (00000022) const-string         v1, 'sys_app'
+	10      (00000026) invoke-virtual       v0, v1, v2, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String; Z)Z
+	11      (0000002c) move-result          v1
+	12      (0000002e) invoke-virtual       v6, Lcom/isnowstudio/common/activity/WhiteListActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+	13      (00000034) move-result-object   v0
+	14      (00000036) invoke-virtual       v0, v2, Landroid/content/pm/PackageManager;->getInstalledApplications(I)Ljava/util/List;
+	15      (0000003c) move-result-object   v0
+	16      (0000003e) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	17      (00000044) move-result-object   v2
+
+onCreate-BB@0x46 : [ onCreate-BB@0x52 onCreate-BB@0xa0 ]
+	18      (00000046) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	19      (0000004c) move-result          v0
+	20      (0000004e) if-eqz               v0, +29
+
+onCreate-BB@0x52 : [ onCreate-BB@0x62 onCreate-BB@0x6e ]
+	21      (00000052) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	22      (00000058) move-result-object   v0
+	23      (0000005a) check-cast           v0, Landroid/content/pm/ApplicationInfo;
+	24      (0000005e) if-nez               v1, +8
+
+onCreate-BB@0x62 : [ onCreate-BB@0x6e onCreate-BB@0x46 ]
+	25      (00000062) iget                 v3, v0, Landroid/content/pm/ApplicationInfo;->flags I
+	26      (00000066) and-int/lit8         v3, v3, 1
+	27      (0000006a) if-eq                v3, v5, -12
+
+onCreate-BB@0x6e : [ onCreate-BB@0x46 ]
+	28      (0000006e) new-instance         v3, Lcom/isnowstudio/common/activity/b;
+	29      (00000072) invoke-direct        v3, v6, Lcom/isnowstudio/common/activity/b;-><init>(Lcom/isnowstudio/common/activity/WhiteListActivity;)V
+	30      (00000078) iget-object          v4, v0, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	31      (0000007c) iput-object          v4, v3, Lcom/isnowstudio/common/activity/b;->a Ljava/lang/String;
+	32      (00000080) sget-object          v4, Lcom/isnowstudio/common/activity/WhiteListActivity;->a Ljava/util/Map;
+	33      (00000084) iget-object          v0, v0, Landroid/content/pm/ApplicationInfo;->packageName Ljava/lang/String;
+	34      (00000088) invoke-interface     v4, v0, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+	35      (0000008e) move-result          v0
+	36      (00000090) iput-boolean         v0, v3, Lcom/isnowstudio/common/activity/b;->c Z
+	37      (00000094) iget-object          v0, v6, Lcom/isnowstudio/common/activity/WhiteListActivity;->d Ljava/util/List;
+	38      (00000098) invoke-interface     v0, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	39      (0000009e) goto                 -2c
+
+onCreate-BB@0xa0 : 
+	40      (000000a0) new-instance         v0, Lcom/isnowstudio/common/activity/c;
+	41      (000000a4) iget-object          v1, v6, Lcom/isnowstudio/common/activity/WhiteListActivity;->d Ljava/util/List;
+	42      (000000a8) invoke-direct        v0, v6, v6, v1, Lcom/isnowstudio/common/activity/c;-><init>(Lcom/isnowstudio/common/activity/WhiteListActivity; Landroid/content/Context; Ljava/util/List;)V
+	43      (000000ae) iput-object          v0, v6, Lcom/isnowstudio/common/activity/WhiteListActivity;->c Lcom/isnowstudio/common/activity/c;
+	44      (000000b2) iget-object          v0, v6, Lcom/isnowstudio/common/activity/WhiteListActivity;->c Lcom/isnowstudio/common/activity/c;
+	45      (000000b6) invoke-virtual       v6, v0, Lcom/isnowstudio/common/activity/WhiteListActivity;->setListAdapter(Landroid/widget/ListAdapter;)V
+	46      (000000bc) invoke-virtual       v6, Lcom/isnowstudio/common/activity/WhiteListActivity;->getListView()Landroid/widget/ListView;
+	47      (000000c2) move-result-object   v0
+	48      (000000c4) invoke-virtual       v0, v5, Landroid/widget/ListView;->setTextFilterEnabled(Z)V
+	49      (000000ca) new-instance         v1, Lcom/isnowstudio/common/activity/a;
+	50      (000000ce) invoke-direct        v1, v6, Lcom/isnowstudio/common/activity/a;-><init>(Lcom/isnowstudio/common/activity/WhiteListActivity;)V
+	51      (000000d4) invoke-virtual       v0, v1, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+	52      (000000da) return-void          
+

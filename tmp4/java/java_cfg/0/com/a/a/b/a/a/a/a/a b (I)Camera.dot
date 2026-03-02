@@ -1,0 +1,65 @@
+digraph {
+	graph [bb="0,0,828,423",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_25f48c1ad711817fbe845f1625f03116 {
+		graph [bb="8,8,820,415",
+			label="Lcom/a/a/b/a/a/a/a;.b->(I)Landroid/hardware/Camera;\nLocal registers v0 ... v1\nparam v2 = int\nreturn = android.hardware.Camera",
+			lheight=0.83,
+			lp="414,381",
+			lwidth=4.89
+		];
+		struct_45c07e66d0f2b06e7c8662604000ce31	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Lcom/a/a/b/a/a/a/a;-&gt;a(I)I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="green">0x-1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ne </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7777BB">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="281,282.5",
+			width=4.75];
+		struct_97e3d05832c96f11fa6004d4ed2510c1	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#888877">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="99,144.5",
+			width=2.2917];
+		struct_45c07e66d0f2b06e7c8662604000ce31:tail -> struct_97e3d05832c96f11fa6004d4ed2510c1:header	[color=red,
+			pos="e,38,161.5 120,234.5 74.732,234.5 42.881,213.67 38.514,171.69"];
+		struct_5c5869dea3f7d5ff3052b2565628e066	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Landroid/hardware/Camera;-&gt;open(I)Landroid/hardware/Camera;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="506,144.5",
+			width=8.5];
+		struct_45c07e66d0f2b06e7c8662604000ce31:tail -> struct_5c5869dea3f7d5ff3052b2565628e066:header	[color=green,
+			pos="e,225,183.5 131,231.5 131,188.62 209.54,223.22 223.04,193.66"];
+		struct_a87bb62faa7730f3cbee2e2d317b38e5	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="197,39.5",
+			width=2.4722];
+		struct_97e3d05832c96f11fa6004d4ed2510c1:tail -> struct_a87bb62faa7730f3cbee2e2d317b38e5:header	[color=blue,
+			pos="e,118,53.5 38,126.5 38,81.845 65.427,57.215 107.83,53.889"];
+		struct_5c5869dea3f7d5ff3052b2565628e066:tail -> struct_a87bb62faa7730f3cbee2e2d317b38e5:header	[color=blue,
+			pos="e,133,56.5 210,107.5 205.87,107.5 158.53,77.799 140.19,63.523"];
+	}
+}

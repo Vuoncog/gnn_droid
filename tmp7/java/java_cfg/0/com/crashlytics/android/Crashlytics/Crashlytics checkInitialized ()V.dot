@@ -1,0 +1,52 @@
+digraph {
+	graph [bb="0,0,804,380",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_578d535f6e56f0f0d1a6d206180b4f14 {
+		graph [bb="8,8,796,372",
+			label="Lcom/crashlytics/android/Crashlytics;.checkInitialized->()V\nLocal registers v0 ... v1\nreturn = void",
+			lheight=0.62,
+			lp="402,345.5",
+			lwidth=5.31
+		];
+		struct_c385e02400d161c8329577ac0ee61c7e	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lcom/crashlytics/android/Crashlytics;-&gt;getInstance()Lcom/crashlytics/android/Crashlytics;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="404,265.5",
+			width=10.306];
+		struct_e7b8389db4b8233ff937199bfe82d90d	[height=2.3333,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/lang/IllegalStateException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="red"><br/>'Crashlytics must be initialized<br/>by calling Fabric.with(Context)<br/>prior to calling<br/>Crashlytics.getInstance()'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/IllegalStateException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="319,100",
+			width=8.4167];
+		struct_c385e02400d161c8329577ac0ee61c7e:tail -> struct_e7b8389db4b8233ff937199bfe82d90d:header	[color=red,
+			pos="e,41,178 54,225.5 54,207.55 45.252,201.81 42.108,188.25"];
+		struct_381a94973c21c104cb501c4e899eb445	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="714,100",
+			width=2.0556];
+		struct_c385e02400d161c8329577ac0ee61c7e:tail -> struct_381a94973c21c104cb501c4e899eb445:header	[color=green,
+			pos="e,650,114 54,225.5 54,161.22 581.38,224.85 631,184 652.39,166.39 627.24,127.35 640.2,116.72"];
+	}
+}

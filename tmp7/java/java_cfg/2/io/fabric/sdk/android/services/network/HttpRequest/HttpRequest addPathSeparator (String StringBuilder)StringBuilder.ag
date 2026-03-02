@@ -1,0 +1,25 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->addPathSeparator(Ljava/lang/String; Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:java.lang.StringBuilder
+#
+# - return:java.lang.StringBuilder
+
+addPathSeparator-BB@0x0 : [ addPathSeparator-BB@0x20 addPathSeparator-BB@0x26 ]
+	0       (00000000) const/16             v2, 47
+	1       (00000004) const/16             v0, 58
+	2       (00000008) invoke-virtual       v3, v0, Ljava/lang/String;->indexOf(I)I
+	3       (0000000e) move-result          v0
+	4       (00000010) add-int/lit8         v0, v0, 2
+	5       (00000014) invoke-virtual       v3, v2, Ljava/lang/String;->lastIndexOf(I)I
+	6       (0000001a) move-result          v1
+	7       (0000001c) if-ne                v0, v1, +5
+
+addPathSeparator-BB@0x20 : [ addPathSeparator-BB@0x26 ]
+	8       (00000020) invoke-virtual       v4, v2, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+addPathSeparator-BB@0x26 : 
+	9       (00000026) return-object        v4
+

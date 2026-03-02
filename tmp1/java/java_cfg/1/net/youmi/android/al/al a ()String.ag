@@ -1,0 +1,135 @@
+# Lnet/youmi/android/al;->a()Ljava/lang/String; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x20 a-BB@0x3e ]
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) const/16             v1, 256
+	2       (00000008) invoke-direct        v0, v1, Ljava/lang/StringBuilder;-><init>(I)V
+	3       (0000000e) const-string         v1, 'style="'
+	4       (00000012) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) iget-object          v1, v2, Lnet/youmi/android/al;->b Ljava/lang/String;
+	6       (0000001c) if-eqz               v1, +11
+
+a-BB@0x20 : [ a-BB@0x3e ]
+	7       (00000020) const-string         v1, 'color:'
+	8       (00000024) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (0000002a) iget-object          v1, v2, Lnet/youmi/android/al;->b Ljava/lang/String;
+	10      (0000002e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (00000034) const-string         v1, ';'
+	12      (00000038) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+a-BB@0x3e : [ a-BB@0x46 a-BB@0x64 ]
+	13      (0000003e) iget-object          v1, v2, Lnet/youmi/android/al;->a Ljava/lang/String;
+	14      (00000042) if-eqz               v1, +11
+
+a-BB@0x46 : [ a-BB@0x64 ]
+	15      (00000046) const-string         v1, 'background-color:'
+	16      (0000004a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (00000050) iget-object          v1, v2, Lnet/youmi/android/al;->a Ljava/lang/String;
+	18      (00000054) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (0000005a) const-string         v1, ';'
+	20      (0000005e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+a-BB@0x64 : [ a-BB@0x6c a-BB@0xc8 ]
+	21      (00000064) iget-object          v1, v2, Lnet/youmi/android/al;->d Lnet/youmi/android/cv;
+	22      (00000068) if-eqz               v1, +30
+
+a-BB@0x6c : [ a-BB@0x78 a-BB@0x9a ]
+	23      (0000006c) iget-object          v1, v2, Lnet/youmi/android/al;->d Lnet/youmi/android/cv;
+	24      (00000070) iget-object          v1, v1, Lnet/youmi/android/cv;->a Ljava/lang/String;
+	25      (00000074) if-eqz               v1, +13
+
+a-BB@0x78 : [ a-BB@0x9a ]
+	26      (00000078) const-string         v1, 'font-size:'
+	27      (0000007c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (00000082) iget-object          v1, v2, Lnet/youmi/android/al;->d Lnet/youmi/android/cv;
+	29      (00000086) iget-object          v1, v1, Lnet/youmi/android/cv;->a Ljava/lang/String;
+	30      (0000008a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	31      (00000090) const-string         v1, ';'
+	32      (00000094) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+a-BB@0x9a : [ a-BB@0xa6 a-BB@0xc8 ]
+	33      (0000009a) iget-object          v1, v2, Lnet/youmi/android/al;->d Lnet/youmi/android/cv;
+	34      (0000009e) iget-object          v1, v1, Lnet/youmi/android/cv;->b Ljava/lang/String;
+	35      (000000a2) if-eqz               v1, +13
+
+a-BB@0xa6 : [ a-BB@0xc8 ]
+	36      (000000a6) const-string         v1, 'font-weight:'
+	37      (000000aa) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	38      (000000b0) iget-object          v1, v2, Lnet/youmi/android/al;->d Lnet/youmi/android/cv;
+	39      (000000b4) iget-object          v1, v1, Lnet/youmi/android/cv;->b Ljava/lang/String;
+	40      (000000b8) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	41      (000000be) const-string         v1, ';'
+	42      (000000c2) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+a-BB@0xc8 : [ a-BB@0xd0 a-BB@0x188 ]
+	43      (000000c8) iget-object          v1, v2, Lnet/youmi/android/al;->c Lnet/youmi/android/bv;
+	44      (000000cc) if-eqz               v1, +5e
+
+a-BB@0xd0 : [ a-BB@0xdc a-BB@0xfe ]
+	45      (000000d0) iget-object          v1, v2, Lnet/youmi/android/al;->c Lnet/youmi/android/bv;
+	46      (000000d4) iget-object          v1, v1, Lnet/youmi/android/bv;->a Ljava/lang/String;
+	47      (000000d8) if-eqz               v1, +13
+
+a-BB@0xdc : [ a-BB@0xfe ]
+	48      (000000dc) const-string         v1, 'border:'
+	49      (000000e0) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	50      (000000e6) iget-object          v1, v2, Lnet/youmi/android/al;->c Lnet/youmi/android/bv;
+	51      (000000ea) iget-object          v1, v1, Lnet/youmi/android/bv;->a Ljava/lang/String;
+	52      (000000ee) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000f4) const-string         v1, ';'
+	54      (000000f8) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+a-BB@0xfe : [ a-BB@0x10a a-BB@0x12c ]
+	55      (000000fe) iget-object          v1, v2, Lnet/youmi/android/al;->c Lnet/youmi/android/bv;
+	56      (00000102) iget-object          v1, v1, Lnet/youmi/android/bv;->b Ljava/lang/String;
+	57      (00000106) if-eqz               v1, +13
+
+a-BB@0x10a : [ a-BB@0x12c ]
+	58      (0000010a) const-string         v1, 'border-bottom-width:'
+	59      (0000010e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	60      (00000114) iget-object          v1, v2, Lnet/youmi/android/al;->c Lnet/youmi/android/bv;
+	61      (00000118) iget-object          v1, v1, Lnet/youmi/android/bv;->b Ljava/lang/String;
+	62      (0000011c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	63      (00000122) const-string         v1, ';'
+	64      (00000126) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+a-BB@0x12c : [ a-BB@0x138 a-BB@0x15a ]
+	65      (0000012c) iget-object          v1, v2, Lnet/youmi/android/al;->c Lnet/youmi/android/bv;
+	66      (00000130) iget-object          v1, v1, Lnet/youmi/android/bv;->c Ljava/lang/String;
+	67      (00000134) if-eqz               v1, +13
+
+a-BB@0x138 : [ a-BB@0x15a ]
+	68      (00000138) const-string         v1, 'border-bottom-style:'
+	69      (0000013c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	70      (00000142) iget-object          v1, v2, Lnet/youmi/android/al;->c Lnet/youmi/android/bv;
+	71      (00000146) iget-object          v1, v1, Lnet/youmi/android/bv;->c Ljava/lang/String;
+	72      (0000014a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	73      (00000150) const-string         v1, ';'
+	74      (00000154) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+a-BB@0x15a : [ a-BB@0x166 a-BB@0x188 ]
+	75      (0000015a) iget-object          v1, v2, Lnet/youmi/android/al;->c Lnet/youmi/android/bv;
+	76      (0000015e) iget-object          v1, v1, Lnet/youmi/android/bv;->d Ljava/lang/String;
+	77      (00000162) if-eqz               v1, +13
+
+a-BB@0x166 : [ a-BB@0x188 ]
+	78      (00000166) const-string         v1, 'border-bottom-color:'
+	79      (0000016a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	80      (00000170) iget-object          v1, v2, Lnet/youmi/android/al;->c Lnet/youmi/android/bv;
+	81      (00000174) iget-object          v1, v1, Lnet/youmi/android/bv;->d Ljava/lang/String;
+	82      (00000178) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	83      (0000017e) const-string         v1, ';'
+	84      (00000182) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+a-BB@0x188 : 
+	85      (00000188) const-string         v1, '"'
+	86      (0000018c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	87      (00000192) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	88      (00000198) move-result-object   v0
+	89      (0000019a) return-object        v0
+

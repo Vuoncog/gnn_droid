@@ -1,0 +1,15 @@
+# Lcom/crashlytics/android/core/LogFileManager;->setLogFile(Ljava/io/File; I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+# - v3:int
+#
+# - return:void
+
+setLogFile-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/crashlytics/android/core/QueueFileLogStore;
+	1       (00000004) invoke-direct        v0, v2, v3, Lcom/crashlytics/android/core/QueueFileLogStore;-><init>(Ljava/io/File; I)V
+	2       (0000000a) iput-object          v0, v1, Lcom/crashlytics/android/core/LogFileManager;->currentLog Lcom/crashlytics/android/core/FileLogStore;
+	3       (0000000e) return-void          
+

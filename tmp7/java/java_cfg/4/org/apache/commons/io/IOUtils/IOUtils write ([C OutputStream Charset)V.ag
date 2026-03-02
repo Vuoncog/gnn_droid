@@ -1,0 +1,25 @@
+# Lorg/apache/commons/io/IOUtils;->write([C Ljava/io/OutputStream; Ljava/nio/charset/Charset;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:char[]
+# - v3:java.io.OutputStream
+# - v4:java.nio.charset.Charset
+#
+# - return:void
+
+write-BB@0x0 : [ write-BB@0x4 write-BB@0x24 ]
+	0       (00000000) if-eqz               v2, +12
+
+write-BB@0x4 : [ write-BB@0x24 ]
+	1       (00000004) new-instance         v0, Ljava/lang/String;
+	2       (00000008) invoke-direct        v0, v2, Ljava/lang/String;-><init>([C)V
+	3       (0000000e) invoke-static        v4, Lorg/apache/commons/io/Charsets;->toCharset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
+	4       (00000014) move-result-object   v1
+	5       (00000016) invoke-virtual       v0, v1, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) invoke-virtual       v3, v0, Ljava/io/OutputStream;->write([B)V
+
+write-BB@0x24 : 
+	8       (00000024) return-void          
+

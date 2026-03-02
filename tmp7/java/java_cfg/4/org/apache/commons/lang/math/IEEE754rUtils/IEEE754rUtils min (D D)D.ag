@@ -1,0 +1,31 @@
+# Lorg/apache/commons/lang/math/IEEE754rUtils;->min(D D)D [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:double
+# - v5:double
+#
+# - return:double
+
+min-BB@0x0 : [ min-BB@0xc min-BB@0xe ]
+	0       (00000000) invoke-static        v2, v3, Ljava/lang/Double;->isNaN(D)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +3
+
+min-BB@0xc : 
+	3       (0000000c) return-wide          v4
+
+min-BB@0xe : [ min-BB@0x1a min-BB@0x1e ]
+	4       (0000000e) invoke-static        v4, v5, Ljava/lang/Double;->isNaN(D)Z
+	5       (00000014) move-result          v0
+	6       (00000016) if-eqz               v0, +4
+
+min-BB@0x1a : [ min-BB@0xc ]
+	7       (0000001a) move-wide            v4, v2
+	8       (0000001c) goto                 -8
+
+min-BB@0x1e : [ min-BB@0xc ]
+	9       (0000001e) invoke-static        v2, v3, v4, v5, Ljava/lang/Math;->min(D D)D
+	10      (00000024) move-result-wide     v4
+	11      (00000026) goto                 -d
+

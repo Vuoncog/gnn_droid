@@ -1,0 +1,56 @@
+digraph {
+	graph [bb="0,0,997,453",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_e491cf518bfd1d8df562f82ff56de616 {
+		graph [bb="8,8,989,445",
+			label="Lio/fabric/sdk/android/services/common/CommonUtils;.logControlledError->(Landroid/content/Context; Ljava/lang/String; Ljava/lang/\
+Throwable;)V\nLocal registers v0 ... v1\nparam v2 = android.content.Context\nparam v3 = java.lang.String\nparam v4 = java.lang.Throwable\nreturn = \
+void",
+			lheight=1.25,
+			lp="498.5,396",
+			lwidth=13.40
+		];
+		struct_81c41fec83bccb92dc1eae5537affbeb	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;isClsTrace(Landroid/content/Context;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xb</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="500,293.5",
+			width=11.25];
+		struct_2fd8697dc8e71996c3097b151dd9d448	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="red">'Fabric'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#7272CC">v3</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;e(Ljava/lang/String; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="380,155.5",
+			width=10.111];
+		struct_81c41fec83bccb92dc1eae5537affbeb:tail -> struct_2fd8697dc8e71996c3097b151dd9d448:header	[color=red,
+			pos="e,41,205.5 116,253.5 116,217.94 55.461,239.48 43.164,215.52"];
+		struct_ebe5d41d955f0c77e03b339f45dd0bfd	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="451,39.5",
+			width=2.0694];
+		struct_81c41fec83bccb92dc1eae5537affbeb:tail -> struct_ebe5d41d955f0c77e03b339f45dd0bfd:header	[color=green,
+			pos="e,402,56.5 116,253.5 116,182.57 704.5,263.76 753,212 787.34,175.35 786.31,136.59 753,99 703.33,42.955 429.48,126.51 403.91,66.439"];
+		struct_2fd8697dc8e71996c3097b151dd9d448:tail -> struct_ebe5d41d955f0c77e03b339f45dd0bfd:header	[color=blue,
+			pos="e,387,53.5 41,104.5 41,68.069 310.95,55.122 376.71,53.646"];
+	}
+}

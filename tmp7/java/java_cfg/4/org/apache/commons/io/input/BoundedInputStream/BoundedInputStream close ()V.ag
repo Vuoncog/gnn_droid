@@ -1,0 +1,18 @@
+# Lorg/apache/commons/io/input/BoundedInputStream;->close()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+close-BB@0x0 : [ close-BB@0x8 close-BB@0x12 ]
+	0       (00000000) iget-boolean         v0, v1, Lorg/apache/commons/io/input/BoundedInputStream;->propagateClose Z
+	1       (00000004) if-eqz               v0, +7
+
+close-BB@0x8 : [ close-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Lorg/apache/commons/io/input/BoundedInputStream;->in Ljava/io/InputStream;
+	3       (0000000c) invoke-virtual       v0, Ljava/io/InputStream;->close()V
+
+close-BB@0x12 : 
+	4       (00000012) return-void          
+

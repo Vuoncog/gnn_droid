@@ -1,0 +1,20 @@
+# Lcom/ailock/tszlock/LockService;->locakUnregister()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+locakUnregister-BB@0x0 : [ locakUnregister-BB@0x8 locakUnregister-BB@0x18 ]
+	0       (00000000) iget-object          v0, v1, Lcom/ailock/tszlock/LockService;->mMasterResetReciever Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;
+	1       (00000004) if-eqz               v0, +a
+
+locakUnregister-BB@0x8 : [ locakUnregister-BB@0x18 ]
+	2       (00000008) iget-object          v0, v1, Lcom/ailock/tszlock/LockService;->mMasterResetReciever Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;
+	3       (0000000c) invoke-virtual       v1, v0, Lcom/ailock/tszlock/LockService;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+	4       (00000012) const/4              v0, 0
+	5       (00000014) iput-object          v0, v1, Lcom/ailock/tszlock/LockService;->mMasterResetReciever Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;
+
+locakUnregister-BB@0x18 : 
+	6       (00000018) return-void          
+

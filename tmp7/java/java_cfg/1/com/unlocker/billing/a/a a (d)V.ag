@@ -1,0 +1,180 @@
+# Lcom/unlocker/billing/a;->a(Lcom/unlocker/billing/d;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:com.unlocker.billing.d
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x24 a-BB@0x6a ]
+	0       (00000000) invoke-direct        v5, Lcom/unlocker/billing/a;->c()V
+	1       (00000006) const-string         v0, 'consume'
+	2       (0000000a) invoke-virtual       v5, v0, Lcom/unlocker/billing/a;->a(Ljava/lang/String;)V
+	3       (00000010) iget-object          v0, v6, Lcom/unlocker/billing/d;->a Ljava/lang/String;
+	4       (00000014) const-string         v1, 'inapp'
+	5       (00000018) invoke-virtual       v0, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	6       (0000001e) move-result          v0
+	7       (00000020) if-nez               v0, +25
+
+a-BB@0x24 : 
+	8       (00000024) new-instance         v0, Lcom/unlocker/billing/IabException;
+	9       (00000028) const/16             v1, -1010
+	10      (0000002c) new-instance         v2, Ljava/lang/StringBuilder;
+	11      (00000030) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	12      (00000036) const-string         v3, "Items of type '"
+	13      (0000003a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (00000040) move-result-object   v2
+	15      (00000042) iget-object          v3, v6, Lcom/unlocker/billing/d;->a Ljava/lang/String;
+	16      (00000046) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004c) move-result-object   v2
+	18      (0000004e) const-string         v3, "' can't be consumed."
+	19      (00000052) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000058) move-result-object   v2
+	21      (0000005a) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (00000060) move-result-object   v2
+	23      (00000062) invoke-direct        v0, v1, v2, Lcom/unlocker/billing/IabException;-><init>(I Ljava/lang/String;)V
+	24      (00000068) throw                v0
+
+a-BB@0x6a : [ a-BB@0x7e a-BB@0x8e ]
+	25      (0000006a) invoke-virtual       v6, Lcom/unlocker/billing/d;->e()Ljava/lang/String;
+	26      (00000070) move-result-object   v0
+	27      (00000072) invoke-virtual       v6, Lcom/unlocker/billing/d;->c()Ljava/lang/String;
+	28      (00000078) move-result-object   v1
+	29      (0000007a) if-eqz               v0, +a
+	6a:10f
+	(Landroid/os/RemoteException; -> 110 a-BB@0x110)
+
+a-BB@0x7e : [ a-BB@0x8e a-BB@0x148 ]
+	30      (0000007e) const-string         v2, ''
+	31      (00000082) invoke-virtual       v0, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	32      (00000088) move-result          v2
+	33      (0000008a) if-eqz               v2, +5f
+	6a:10f
+	(Landroid/os/RemoteException; -> 110 a-BB@0x110)
+
+a-BB@0x8e : 
+	34      (0000008e) new-instance         v0, Ljava/lang/StringBuilder;
+	35      (00000092) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	36      (00000098) const-string         v2, "Can't consume "
+	37      (0000009c) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	38      (000000a2) move-result-object   v0
+	39      (000000a4) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000aa) move-result-object   v0
+	41      (000000ac) const-string         v2, '. No token.'
+	42      (000000b0) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000b6) move-result-object   v0
+	44      (000000b8) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	45      (000000be) move-result-object   v0
+	46      (000000c0) invoke-virtual       v5, v0, Lcom/unlocker/billing/a;->d(Ljava/lang/String;)V
+	47      (000000c6) new-instance         v0, Lcom/unlocker/billing/IabException;
+	48      (000000ca) const/16             v2, -1007
+	49      (000000ce) new-instance         v3, Ljava/lang/StringBuilder;
+	50      (000000d2) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	51      (000000d8) const-string         v4, 'PurchaseInfo is missing token for sku: '
+	52      (000000dc) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000e2) move-result-object   v3
+	54      (000000e4) invoke-virtual       v3, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	55      (000000ea) move-result-object   v1
+	56      (000000ec) const-string         v3, ' '
+	57      (000000f0) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	58      (000000f6) move-result-object   v1
+	59      (000000f8) invoke-virtual       v1, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	60      (000000fe) move-result-object   v1
+	61      (00000100) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	62      (00000106) move-result-object   v1
+	63      (00000108) invoke-direct        v0, v2, v1, Lcom/unlocker/billing/IabException;-><init>(I Ljava/lang/String;)V
+	64      (0000010e) throw                v0
+	6a:10f
+	(Landroid/os/RemoteException; -> 110 a-BB@0x110)
+
+a-BB@0x110 : 
+	65      (00000110) move-exception       v0
+	66      (00000112) new-instance         v1, Lcom/unlocker/billing/IabException;
+	67      (00000116) const/16             v2, -1001
+	68      (0000011a) new-instance         v3, Ljava/lang/StringBuilder;
+	69      (0000011e) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	70      (00000124) const-string         v4, 'Remote exception while consuming. PurchaseInfo: '
+	71      (00000128) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	72      (0000012e) move-result-object   v3
+	73      (00000130) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	74      (00000136) move-result-object   v3
+	75      (00000138) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	76      (0000013e) move-result-object   v3
+	77      (00000140) invoke-direct        v1, v2, v3, v0, Lcom/unlocker/billing/IabException;-><init>(I Ljava/lang/String; Ljava/lang/Exception;)V
+	78      (00000146) throw                v1
+
+a-BB@0x148 : [ a-BB@0x1a6 a-BB@0x1d4 ]
+	79      (00000148) new-instance         v2, Ljava/lang/StringBuilder;
+	80      (0000014c) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	81      (00000152) const-string         v3, 'Consuming sku: '
+	82      (00000156) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	83      (0000015c) move-result-object   v2
+	84      (0000015e) invoke-virtual       v2, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	85      (00000164) move-result-object   v2
+	86      (00000166) const-string         v3, ', token: '
+	87      (0000016a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	88      (00000170) move-result-object   v2
+	89      (00000172) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	90      (00000178) move-result-object   v2
+	91      (0000017a) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	92      (00000180) move-result-object   v2
+	93      (00000182) invoke-virtual       v5, v2, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	94      (00000188) iget-object          v2, v5, Lcom/unlocker/billing/a;->i Lcom/android/vending/billing/IInAppBillingService;
+	95      (0000018c) const/4              v3, 3
+	96      (0000018e) iget-object          v4, v5, Lcom/unlocker/billing/a;->h Landroid/content/Context;
+	97      (00000192) invoke-virtual       v4, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	98      (00000198) move-result-object   v4
+	99      (0000019a) invoke-interface     v2, v3, v4, v0, Lcom/android/vending/billing/IInAppBillingService;->consumePurchase(I Ljava/lang/String; Ljava/lang/String;)I
+	100     (000001a0) move-result          v0
+	101     (000001a2) if-nez               v0, +19
+	148:24d
+	(Landroid/os/RemoteException; -> 110 a-BB@0x110)
+
+a-BB@0x1a6 : 
+	102     (000001a6) new-instance         v0, Ljava/lang/StringBuilder;
+	103     (000001aa) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	104     (000001b0) const-string         v2, 'Successfully consumed sku: '
+	105     (000001b4) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	106     (000001ba) move-result-object   v0
+	107     (000001bc) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	108     (000001c2) move-result-object   v0
+	109     (000001c4) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	110     (000001ca) move-result-object   v0
+	111     (000001cc) invoke-virtual       v5, v0, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	112     (000001d2) return-void          
+	148:24d
+	(Landroid/os/RemoteException; -> 110 a-BB@0x110)
+
+a-BB@0x1d4 : 
+	113     (000001d4) new-instance         v2, Ljava/lang/StringBuilder;
+	114     (000001d8) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	115     (000001de) const-string         v3, 'Error consuming consuming sku '
+	116     (000001e2) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	117     (000001e8) move-result-object   v2
+	118     (000001ea) invoke-virtual       v2, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	119     (000001f0) move-result-object   v2
+	120     (000001f2) const-string         v3, '. '
+	121     (000001f6) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	122     (000001fc) move-result-object   v2
+	123     (000001fe) invoke-static        v0, Lcom/unlocker/billing/a;->a(I)Ljava/lang/String;
+	124     (00000204) move-result-object   v3
+	125     (00000206) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	126     (0000020c) move-result-object   v2
+	127     (0000020e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	128     (00000214) move-result-object   v2
+	129     (00000216) invoke-virtual       v5, v2, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	130     (0000021c) new-instance         v2, Lcom/unlocker/billing/IabException;
+	131     (00000220) new-instance         v3, Ljava/lang/StringBuilder;
+	132     (00000224) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	133     (0000022a) const-string         v4, 'Error consuming sku '
+	134     (0000022e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	135     (00000234) move-result-object   v3
+	136     (00000236) invoke-virtual       v3, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	137     (0000023c) move-result-object   v1
+	138     (0000023e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	139     (00000244) move-result-object   v1
+	140     (00000246) invoke-direct        v2, v0, v1, Lcom/unlocker/billing/IabException;-><init>(I Ljava/lang/String;)V
+	141     (0000024c) throw                v2
+	148:24d
+	(Landroid/os/RemoteException; -> 110 a-BB@0x110)
+

@@ -1,0 +1,19 @@
+# Lio/fabric/sdk/android/services/settings/DefaultSettingsSpiCall;->applyNonNullHeader(Lio/fabric/sdk/android/services/network/HttpRequest; Ljava/lang/String; Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:io.fabric.sdk.android.services.network.HttpRequest
+# - v2:java.lang.String
+# - v3:java.lang.String
+#
+# - return:void
+
+applyNonNullHeader-BB@0x0 : [ applyNonNullHeader-BB@0x4 applyNonNullHeader-BB@0xa ]
+	0       (00000000) if-eqz               v3, +5
+
+applyNonNullHeader-BB@0x4 : [ applyNonNullHeader-BB@0xa ]
+	1       (00000004) invoke-virtual       v1, v2, v3, Lio/fabric/sdk/android/services/network/HttpRequest;->header(Ljava/lang/String; Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest;
+
+applyNonNullHeader-BB@0xa : 
+	2       (0000000a) return-void          
+

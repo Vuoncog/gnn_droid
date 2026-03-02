@@ -1,0 +1,38 @@
+# Lorg/apache/commons/io/FileUtils;->toFile(Ljava/net/URL;)Ljava/io/File; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.net.URL
+#
+# - return:java.io.File
+
+toFile-BB@0x0 : [ toFile-BB@0x4 toFile-BB@0x1c ]
+	0       (00000000) if-eqz               v3, +e
+
+toFile-BB@0x4 : [ toFile-BB@0x1c toFile-BB@0x20 ]
+	1       (00000004) const-string         v0, 'file'
+	2       (00000008) invoke-virtual       v3, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v0, v1, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-nez               v0, +4
+
+toFile-BB@0x1c : [ toFile-BB@0x1e ]
+	7       (0000001c) const/4              v0, 0
+
+toFile-BB@0x1e : 
+	8       (0000001e) return-object        v0
+
+toFile-BB@0x20 : [ toFile-BB@0x1e ]
+	9       (00000020) invoke-virtual       v3, Ljava/net/URL;->getFile()Ljava/lang/String;
+	10      (00000026) move-result-object   v0
+	11      (00000028) const/16             v1, 47
+	12      (0000002c) sget-char            v2, Ljava/io/File;->separatorChar C
+	13      (00000030) invoke-virtual       v0, v1, v2, Ljava/lang/String;->replace(C C)Ljava/lang/String;
+	14      (00000036) move-result-object   v0
+	15      (00000038) invoke-static        v0, Lorg/apache/commons/io/FileUtils;->decodeUrl(Ljava/lang/String;)Ljava/lang/String;
+	16      (0000003e) move-result-object   v1
+	17      (00000040) new-instance         v0, Ljava/io/File;
+	18      (00000044) invoke-direct        v0, v1, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	19      (0000004a) goto                 -16
+

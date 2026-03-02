@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package com.isnowstudio.common.v11;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.isnowstudio.common.IsnowListView;
+
+/**
+ * IsnowStudio的List界面的fragment基类，在继承fragment基础上，主要模式为
+ * 	1.兼容4.0之前的Activity展示模式，展示界面View同Activty分离，Activity只是作为承载的基础容器
+ *  2.4.0之后，展示界面View同Fragment分离，Fragment只是作为承载的基础容器
+ *  3.通过在Fragement中onCreate中创建展示界面View,createListView()由子类具体实现展示界面
+ *  4.通过在Fragement中onCreateView中返回子类创建的展示界面View
+ *  5.通过在Fragement中onActivityCreated中创建定义其他一些通用功能，如菜单展示等
+ * 
+ * @author evan
+ *
+ */
+public abstract class IsnowListFragment extends IsnowFragment {
+
+	public IsnowListView mListView;
+	
+    /* (non-Javadoc)
+	 * @see android.app.Fragment#onCreate(android.os.Bundle)
+	 */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+    	mListView = createListView();
+
+    	super.onCreate(savedInstanceState);
+	}
+
+	/**
+	 * 具体的ListView由子类创建
+	 * 
+	 * @return
+	 */
+	protected abstract IsnowListView createListView();
+	
+	@Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+		
+		//注册上下文菜单
+		registerForContextMenu(mListView);
+		
+        return mListView;
+    }
+
+}
+

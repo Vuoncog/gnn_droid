@@ -1,0 +1,56 @@
+# Lorg/apache/commons/io/IOUtils;->skipFully(Ljava/io/InputStream; J)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.io.InputStream
+# - v7:long
+#
+# - return:void
+
+skipFully-BB@0x0 : [ skipFully-BB@0xc skipFully-BB@0x3e ]
+	0       (00000000) const-wide/16        v0, 0 # [0.0]
+	1       (00000004) cmp-long             v0, v6, v0
+	2       (00000008) if-gez               v0, +1b
+
+skipFully-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	4       (00000010) new-instance         v1, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) const-string         v2, 'Bytes to skip must not be negative: '
+	7       (0000001e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v1
+	9       (00000026) invoke-virtual       v1, v6, v7, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000034) move-result-object   v1
+	13      (00000036) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	14      (0000003c) throw                v0
+
+skipFully-BB@0x3e : [ skipFully-BB@0x4e skipFully-BB@0x94 ]
+	15      (0000003e) invoke-static        v5, v6, v7, Lorg/apache/commons/io/IOUtils;->skip(Ljava/io/InputStream; J)J
+	16      (00000044) move-result-wide     v0
+	17      (00000046) cmp-long             v2, v0, v6
+	18      (0000004a) if-eqz               v2, +25
+
+skipFully-BB@0x4e : 
+	19      (0000004e) new-instance         v2, Ljava/io/EOFException;
+	20      (00000052) new-instance         v3, Ljava/lang/StringBuilder;
+	21      (00000056) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	22      (0000005c) const-string         v4, 'Bytes to skip: '
+	23      (00000060) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000066) move-result-object   v3
+	25      (00000068) invoke-virtual       v3, v6, v7, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	26      (0000006e) move-result-object   v3
+	27      (00000070) const-string         v4, ' actual: '
+	28      (00000074) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	29      (0000007a) move-result-object   v3
+	30      (0000007c) invoke-virtual       v3, v0, v1, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	31      (00000082) move-result-object   v0
+	32      (00000084) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	33      (0000008a) move-result-object   v0
+	34      (0000008c) invoke-direct        v2, v0, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
+	35      (00000092) throw                v2
+
+skipFully-BB@0x94 : 
+	36      (00000094) return-void          
+

@@ -1,0 +1,31 @@
+# Lcom/a/a/g/a/a/d;->c([I)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int[]
+#
+# - return:void
+
+c-BB@0x0 : [ c-BB@0x4 ]
+	0       (00000000) array-length         v1, v4
+	1       (00000002) const/4              v0, 0
+
+c-BB@0x4 : [ c-BB@0xc c-BB@0x32 ]
+	2       (00000004) div-int/lit8         v2, v1, 2
+	3       (00000008) if-ge                v0, v2, +15
+
+c-BB@0xc : [ c-BB@0x4 ]
+	4       (0000000c) aget                 v2, v4, v0
+	5       (00000010) sub-int              v3, v1, v0
+	6       (00000014) add-int/lit8         v3, v3, -1
+	7       (00000018) aget                 v3, v4, v3
+	8       (0000001c) aput                 v3, v4, v0
+	9       (00000020) sub-int              v3, v1, v0
+	10      (00000024) add-int/lit8         v3, v3, -1
+	11      (00000028) aput                 v2, v4, v3
+	12      (0000002c) add-int/lit8         v0, v0, 1
+	13      (00000030) goto                 -16
+
+c-BB@0x32 : 
+	14      (00000032) return-void          
+

@@ -1,0 +1,33 @@
+# La/a/b/a/a/a/h;->b(F)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:float
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x8 b-BB@0x10 ]
+	0       (00000000) iget                 v0, v2, La/a/b/a/a/a/h;->d I
+	1       (00000004) if-nez               v0, +6
+
+b-BB@0x8 : [ b-BB@0x10 b-BB@0x12 ]
+	2       (00000008) iget-object          v0, v2, La/a/b/a/a/a/h;->b La/a/b/a/b/b/c/i;
+	3       (0000000c) if-nez               v0, +3
+
+b-BB@0x10 : 
+	4       (00000010) return-void          
+
+b-BB@0x12 : [ b-BB@0x2a b-BB@0x10 ]
+	5       (00000012) iget-object          v0, v2, La/a/b/a/a/a/h;->a La/a/b/a/b/a/g;
+	6       (00000016) invoke-interface     v0, La/a/b/a/b/a/g;->e()Ljava/lang/Object;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) check-cast           v0, La/a/b/a/b/b/f;
+	9       (00000022) iget-object          v0, v0, La/a/b/a/b/b/f;->a La/a/b/a/b/a/g;
+	10      (00000026) if-eqz               v0, -b
+
+b-BB@0x2a : [ b-BB@0x10 ]
+	11      (0000002a) invoke-static        v3, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+	12      (00000030) move-result-object   v1
+	13      (00000032) invoke-interface     v0, v1, v2, La/a/b/a/b/a/g;->a(Ljava/lang/Object; Ljava/lang/Object;)V
+	14      (00000038) goto                 -14
+

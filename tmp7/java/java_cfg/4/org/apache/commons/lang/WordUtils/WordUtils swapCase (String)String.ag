@@ -1,0 +1,87 @@
+# Lorg/apache/commons/lang/WordUtils;->swapCase(Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+#
+# - return:java.lang.String
+
+swapCase-BB@0x0 : [ swapCase-BB@0x4 swapCase-BB@0x10 ]
+	0       (00000000) if-eqz               v6, +8
+
+swapCase-BB@0x4 : [ swapCase-BB@0x10 swapCase-BB@0x12 ]
+	1       (00000004) invoke-virtual       v6, Ljava/lang/String;->length()I
+	2       (0000000a) move-result          v3
+	3       (0000000c) if-nez               v3, +3
+
+swapCase-BB@0x10 : 
+	4       (00000010) return-object        v6
+
+swapCase-BB@0x12 : [ swapCase-BB@0x24 ]
+	5       (00000012) new-instance         v4, Ljava/lang/StringBuffer;
+	6       (00000016) invoke-direct        v4, v3, Ljava/lang/StringBuffer;-><init>(I)V
+	7       (0000001c) const/4              v1, 1
+	8       (0000001e) const/4              v0, 0
+	9       (00000020) move                 v2, v0
+	10      (00000022) move                 v0, v1
+
+swapCase-BB@0x24 : [ swapCase-BB@0x28 swapCase-BB@0x9a ]
+	11      (00000024) if-ge                v2, v3, +3b
+
+swapCase-BB@0x28 : [ swapCase-BB@0x3c swapCase-BB@0x5c ]
+	12      (00000028) invoke-virtual       v6, v2, Ljava/lang/String;->charAt(I)C
+	13      (0000002e) move-result          v1
+	14      (00000030) invoke-static        v1, Ljava/lang/Character;->isUpperCase(C)Z
+	15      (00000036) move-result          v5
+	16      (00000038) if-eqz               v5, +12
+
+swapCase-BB@0x3c : [ swapCase-BB@0x44 ]
+	17      (0000003c) invoke-static        v1, Ljava/lang/Character;->toLowerCase(C)C
+	18      (00000042) move-result          v0
+
+swapCase-BB@0x44 : [ swapCase-BB@0x24 ]
+	19      (00000044) invoke-virtual       v4, v0, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+	20      (0000004a) invoke-static        v1, Ljava/lang/Character;->isWhitespace(C)Z
+	21      (00000050) move-result          v1
+	22      (00000052) add-int/lit8         v0, v2, 1
+	23      (00000056) move                 v2, v0
+	24      (00000058) move                 v0, v1
+	25      (0000005a) goto                 -1b
+
+swapCase-BB@0x5c : [ swapCase-BB@0x68 swapCase-BB@0x72 ]
+	26      (0000005c) invoke-static        v1, Ljava/lang/Character;->isTitleCase(C)Z
+	27      (00000062) move-result          v5
+	28      (00000064) if-eqz               v5, +7
+
+swapCase-BB@0x68 : [ swapCase-BB@0x44 ]
+	29      (00000068) invoke-static        v1, Ljava/lang/Character;->toLowerCase(C)C
+	30      (0000006e) move-result          v0
+	31      (00000070) goto                 -16
+
+swapCase-BB@0x72 : [ swapCase-BB@0x7e swapCase-BB@0x96 ]
+	32      (00000072) invoke-static        v1, Ljava/lang/Character;->isLowerCase(C)Z
+	33      (00000078) move-result          v5
+	34      (0000007a) if-eqz               v5, +e
+
+swapCase-BB@0x7e : [ swapCase-BB@0x82 swapCase-BB@0x8c ]
+	35      (0000007e) if-eqz               v0, +7
+
+swapCase-BB@0x82 : [ swapCase-BB@0x44 ]
+	36      (00000082) invoke-static        v1, Ljava/lang/Character;->toTitleCase(C)C
+	37      (00000088) move-result          v0
+	38      (0000008a) goto                 -23
+
+swapCase-BB@0x8c : [ swapCase-BB@0x44 ]
+	39      (0000008c) invoke-static        v1, Ljava/lang/Character;->toUpperCase(C)C
+	40      (00000092) move-result          v0
+	41      (00000094) goto                 -28
+
+swapCase-BB@0x96 : [ swapCase-BB@0x44 ]
+	42      (00000096) move                 v0, v1
+	43      (00000098) goto                 -2a
+
+swapCase-BB@0x9a : [ swapCase-BB@0x10 ]
+	44      (0000009a) invoke-virtual       v4, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	45      (000000a0) move-result-object   v6
+	46      (000000a2) goto                 -49
+

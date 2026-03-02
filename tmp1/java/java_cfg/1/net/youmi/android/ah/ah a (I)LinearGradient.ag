@@ -1,0 +1,30 @@
+# Lnet/youmi/android/ah;->a(I)Landroid/graphics/LinearGradient; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+#
+# - return:android.graphics.LinearGradient
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0x32 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) sget-object          v0, Lnet/youmi/android/ah;->g Landroid/graphics/LinearGradient;
+	2       (00000006) if-nez               v0, +16
+
+a-BB@0xa : [ a-BB@0x32 ]
+	3       (0000000a) new-instance         v0, Landroid/graphics/LinearGradient;
+	4       (0000000e) const/high16         v2, 16128 # [0.5]
+	5       (00000012) int-to-float         v3, v8
+	6       (00000014) mul-float            v4, v2, v3
+	7       (00000018) sget                 v5, Lnet/youmi/android/ah;->a I
+	8       (0000001c) sget                 v6, Lnet/youmi/android/ah;->b I
+	9       (00000020) sget-object          v7, Landroid/graphics/Shader$TileMode;->CLAMP Landroid/graphics/Shader$TileMode;
+	10      (00000024) move                 v2, v1
+	11      (00000026) move                 v3, v1
+	12      (00000028) invoke-direct/range  v0 ... v7, Landroid/graphics/LinearGradient;-><init>(F F F F I I Landroid/graphics/Shader$TileMode;)V
+	13      (0000002e) sput-object          v0, Lnet/youmi/android/ah;->g Landroid/graphics/LinearGradient;
+
+a-BB@0x32 : 
+	14      (00000032) sget-object          v0, Lnet/youmi/android/ah;->g Landroid/graphics/LinearGradient;
+	15      (00000036) return-object        v0
+

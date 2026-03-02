@@ -1,0 +1,54 @@
+digraph {
+	graph [bb="0,0,726,362",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_20602c2bab8773ae2e1715daeecee0ee {
+		graph [bb="8,8,718,354",
+			label="Lorg/apache/commons/io/EndianUtils;.read->(Ljava/io/InputStream;)I\nLocal registers v0 ... v1\nparam v2 = java.io.InputStream\nreturn = \
+int",
+			lheight=0.83,
+			lp="363,320",
+			lwidth=6.32
+		];
+		struct_6f949341a04a4fb944114c85767a65d7	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Ljava/io/InputStream;-&gt;read()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="green">0x-1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ne </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="365,221.5",
+			width=5.25];
+		struct_6d48ada14a0e6bbefdef9436b1030791	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#0000FF">Ljava/io/EOFException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="red">'Unexpected EOF reached'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7777BB">v1</FONT>, <FONT color="#DF3A01">Ljava/io/EOFException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="287,72.5",
+			width=7.5278];
+		struct_6f949341a04a4fb944114c85767a65d7:tail -> struct_6d48ada14a0e6bbefdef9436b1030791:header	[color=red,
+			pos="e,41,122.5 197,170.5 197,101.78 57.019,185.27 42.256,132.61"];
+		struct_95d29fcbc606e58ef39e797b5e4aa8c8	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="643,72.5",
+			width=1.8472];
+		struct_6f949341a04a4fb944114c85767a65d7:tail -> struct_95d29fcbc606e58ef39e797b5e4aa8c8:header	[color=green,
+			pos="e,587,86.5 197,170.5 197,87.762 499.73,177.16 567,129 580,119.7 572.58,99.726 577.76,90.876"];
+	}
+}

@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/enum/Enum;-><init>(Ljava/lang/String;)V [access_flags=protected constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) const/4              v0, 0
+	2       (00000008) iput-object          v0, v2, Lorg/apache/commons/lang/enum/Enum;->iToString Ljava/lang/String;
+	3       (0000000c) invoke-direct        v2, v3, Lorg/apache/commons/lang/enum/Enum;->init(Ljava/lang/String;)V
+	4       (00000012) iput-object          v3, v2, Lorg/apache/commons/lang/enum/Enum;->iName Ljava/lang/String;
+	5       (00000016) invoke-virtual       v2, Lorg/apache/commons/lang/enum/Enum;->getEnumClass()Ljava/lang/Class;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) invoke-virtual       v0, Ljava/lang/Object;->hashCode()I
+	8       (00000024) move-result          v0
+	9       (00000026) add-int/lit8         v0, v0, 7
+	10      (0000002a) invoke-virtual       v3, Ljava/lang/String;->hashCode()I
+	11      (00000030) move-result          v1
+	12      (00000032) mul-int/lit8         v1, v1, 3
+	13      (00000036) add-int/2addr        v0, v1
+	14      (00000038) iput                 v0, v2, Lorg/apache/commons/lang/enum/Enum;->iHashCode I
+	15      (0000003c) return-void          
+

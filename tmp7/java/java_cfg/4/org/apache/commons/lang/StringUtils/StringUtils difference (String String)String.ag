@@ -1,0 +1,37 @@
+# Lorg/apache/commons/lang/StringUtils;->difference(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:java.lang.String
+#
+# - return:java.lang.String
+
+difference-BB@0x0 : [ difference-BB@0x4 difference-BB@0x6 ]
+	0       (00000000) if-nez               v2, +3
+
+difference-BB@0x4 : 
+	1       (00000004) return-object        v3
+
+difference-BB@0x6 : [ difference-BB@0xa difference-BB@0xe ]
+	2       (00000006) if-nez               v3, +4
+
+difference-BB@0xa : [ difference-BB@0x4 ]
+	3       (0000000a) move-object          v3, v2
+	4       (0000000c) goto                 -4
+
+difference-BB@0xe : [ difference-BB@0x1c difference-BB@0x22 ]
+	5       (0000000e) invoke-static        v2, v3, Lorg/apache/commons/lang/StringUtils;->indexOfDifference(Ljava/lang/String; Ljava/lang/String;)I
+	6       (00000014) move-result          v0
+	7       (00000016) const/4              v1, -1
+	8       (00000018) if-ne                v0, v1, +5
+
+difference-BB@0x1c : [ difference-BB@0x4 ]
+	9       (0000001c) const-string         v3, ''
+	10      (00000020) goto                 -e
+
+difference-BB@0x22 : [ difference-BB@0x4 ]
+	11      (00000022) invoke-virtual       v3, v0, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	12      (00000028) move-result-object   v3
+	13      (0000002a) goto                 -13
+

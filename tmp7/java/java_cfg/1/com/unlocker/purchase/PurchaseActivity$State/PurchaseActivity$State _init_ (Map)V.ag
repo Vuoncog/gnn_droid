@@ -1,0 +1,23 @@
+# Lcom/unlocker/purchase/PurchaseActivity$State;-><init>(Ljava/util/Map;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.Map
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v3, Ljava/lang/Object;-><init>()V
+	1       (00000006) const/4              v0, 0
+	2       (00000008) iput-boolean         v0, v3, Lcom/unlocker/purchase/PurchaseActivity$State;->restored Z
+	3       (0000000c) new-instance         v0, Lcom/unlocker/purchase/Parameters;
+	4       (00000010) invoke-direct        v0, v4, Lcom/unlocker/purchase/Parameters;-><init>(Ljava/util/Map;)V
+	5       (00000016) iput-object          v0, v3, Lcom/unlocker/purchase/PurchaseActivity$State;->parameters Lcom/unlocker/purchase/Parameters;
+	6       (0000001a) new-instance         v0, Lcom/unlocker/purchase/PurchaseActivity$ErrorMarkerImpl;
+	7       (0000001e) iget-object          v1, v3, Lcom/unlocker/purchase/PurchaseActivity$State;->parameters Lcom/unlocker/purchase/Parameters;
+	8       (00000022) iget-object          v1, v1, Lcom/unlocker/purchase/Parameters;->tranId Ljava/lang/String;
+	9       (00000026) const/4              v2, 0
+	10      (00000028) invoke-direct        v0, v1, v2, Lcom/unlocker/purchase/PurchaseActivity$ErrorMarkerImpl;-><init>(Ljava/lang/String; Lcom/unlocker/purchase/PurchaseActivity$1;)V
+	11      (0000002e) iput-object          v0, v3, Lcom/unlocker/purchase/PurchaseActivity$State;->errorMarker Lcom/unlocker/purchase/PurchaseActivity$ErrorMarkerImpl;
+	12      (00000032) return-void          
+

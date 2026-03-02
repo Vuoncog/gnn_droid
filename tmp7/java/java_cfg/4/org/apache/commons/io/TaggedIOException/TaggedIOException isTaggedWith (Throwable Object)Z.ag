@@ -1,0 +1,33 @@
+# Lorg/apache/commons/io/TaggedIOException;->isTaggedWith(Ljava/lang/Throwable; Ljava/lang/Object;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Throwable
+# - v2:java.lang.Object
+#
+# - return:boolean
+
+isTaggedWith-BB@0x0 : [ isTaggedWith-BB@0x4 isTaggedWith-BB@0x24 ]
+	0       (00000000) if-eqz               v2, +12
+
+isTaggedWith-BB@0x4 : [ isTaggedWith-BB@0xc isTaggedWith-BB@0x24 ]
+	1       (00000004) instance-of          v0, v1, Lorg/apache/commons/io/TaggedIOException;
+	2       (00000008) if-eqz               v0, +e
+
+isTaggedWith-BB@0xc : [ isTaggedWith-BB@0x20 isTaggedWith-BB@0x24 ]
+	3       (0000000c) check-cast           v1, Lorg/apache/commons/io/TaggedIOException;
+	4       (00000010) iget-object          v0, v1, Lorg/apache/commons/io/TaggedIOException;->tag Ljava/io/Serializable;
+	5       (00000014) invoke-virtual       v2, v0, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-eqz               v0, +4
+
+isTaggedWith-BB@0x20 : [ isTaggedWith-BB@0x22 ]
+	8       (00000020) const/4              v0, 1
+
+isTaggedWith-BB@0x22 : 
+	9       (00000022) return               v0
+
+isTaggedWith-BB@0x24 : [ isTaggedWith-BB@0x22 ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -2
+

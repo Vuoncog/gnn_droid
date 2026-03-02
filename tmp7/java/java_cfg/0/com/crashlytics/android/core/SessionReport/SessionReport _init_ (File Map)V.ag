@@ -1,0 +1,30 @@
+# Lcom/crashlytics/android/core/SessionReport;-><init>(Ljava/io/File; Ljava/util/Map;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.io.File
+# - v6:java.util.Map
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x30 <init>-BB@0x3e ]
+	0       (00000000) invoke-direct        v4, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v5, v4, Lcom/crashlytics/android/core/SessionReport;->file Ljava/io/File;
+	2       (0000000a) new-instance         v0, Ljava/util/HashMap;
+	3       (0000000e) invoke-direct        v0, v6, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+	4       (00000014) iput-object          v0, v4, Lcom/crashlytics/android/core/SessionReport;->customHeaders Ljava/util/Map;
+	5       (00000018) iget-object          v0, v4, Lcom/crashlytics/android/core/SessionReport;->file Ljava/io/File;
+	6       (0000001c) invoke-virtual       v0, Ljava/io/File;->length()J
+	7       (00000022) move-result-wide     v0
+	8       (00000024) const-wide/16        v2, 0 # [0.0]
+	9       (00000028) cmp-long             v0, v0, v2
+	10      (0000002c) if-nez               v0, +9
+
+<init>-BB@0x30 : [ <init>-BB@0x3e ]
+	11      (00000030) iget-object          v0, v4, Lcom/crashlytics/android/core/SessionReport;->customHeaders Ljava/util/Map;
+	12      (00000034) sget-object          v1, Lcom/crashlytics/android/core/ReportUploader;->HEADER_INVALID_CLS_FILE Ljava/util/Map;
+	13      (00000038) invoke-interface     v0, v1, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+<init>-BB@0x3e : 
+	14      (0000003e) return-void          
+

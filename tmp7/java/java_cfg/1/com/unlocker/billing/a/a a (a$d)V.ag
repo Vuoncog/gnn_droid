@@ -1,0 +1,63 @@
+# Lcom/unlocker/billing/a;->a(Lcom/unlocker/billing/a$d;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:com.unlocker.billing.a$d
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xe a-BB@0x1e ]
+	0       (00000000) invoke-direct        v4, Lcom/unlocker/billing/a;->c()V
+	1       (00000006) iget-boolean         v0, v4, Lcom/unlocker/billing/a;->c Z
+	2       (0000000a) if-eqz               v0, +a
+
+a-BB@0xe : 
+	3       (0000000e) new-instance         v0, Ljava/lang/IllegalStateException;
+	4       (00000012) const-string         v1, 'IAB helper is already set up.'
+	5       (00000016) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	6       (0000001c) throw                v0
+
+a-BB@0x1e : [ a-BB@0x68 a-BB@0x86 ]
+	7       (0000001e) const-string         v0, 'Starting in-app billing setup.'
+	8       (00000022) invoke-virtual       v4, v0, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	9       (00000028) new-instance         v0, Lcom/unlocker/billing/a$1;
+	10      (0000002c) invoke-direct        v0, v4, v5, Lcom/unlocker/billing/a$1;-><init>(Lcom/unlocker/billing/a; Lcom/unlocker/billing/a$d;)V
+	11      (00000032) iput-object          v0, v4, Lcom/unlocker/billing/a;->j Landroid/content/ServiceConnection;
+	12      (00000036) new-instance         v0, Landroid/content/Intent;
+	13      (0000003a) const-string         v1, 'com.android.vending.billing.InAppBillingService.BIND'
+	14      (0000003e) invoke-direct        v0, v1, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	15      (00000044) const-string         v1, 'com.android.vending'
+	16      (00000048) invoke-virtual       v0, v1, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+	17      (0000004e) iget-object          v1, v4, Lcom/unlocker/billing/a;->h Landroid/content/Context;
+	18      (00000052) invoke-virtual       v1, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	19      (00000058) move-result-object   v1
+	20      (0000005a) const/4              v2, 0
+	21      (0000005c) invoke-virtual       v1, v0, v2, Landroid/content/pm/PackageManager;->queryIntentServices(Landroid/content/Intent; I)Ljava/util/List;
+	22      (00000062) move-result-object   v1
+	23      (00000064) if-eqz               v1, +11
+
+a-BB@0x68 : [ a-BB@0x74 a-BB@0x86 ]
+	24      (00000068) invoke-interface     v1, Ljava/util/List;->isEmpty()Z
+	25      (0000006e) move-result          v1
+	26      (00000070) if-nez               v1, +b
+
+a-BB@0x74 : [ a-BB@0x84 ]
+	27      (00000074) iget-object          v1, v4, Lcom/unlocker/billing/a;->h Landroid/content/Context;
+	28      (00000078) iget-object          v2, v4, Lcom/unlocker/billing/a;->j Landroid/content/ServiceConnection;
+	29      (0000007c) const/4              v3, 1
+	30      (0000007e) invoke-virtual       v1, v0, v2, v3, Landroid/content/Context;->bindService(Landroid/content/Intent; Landroid/content/ServiceConnection; I)Z
+
+a-BB@0x84 : 
+	31      (00000084) return-void          
+
+a-BB@0x86 : [ a-BB@0x8a a-BB@0x84 ]
+	32      (00000086) if-eqz               v5, -1
+
+a-BB@0x8a : [ a-BB@0x84 ]
+	33      (0000008a) new-instance         v0, Lcom/unlocker/billing/b;
+	34      (0000008e) const/4              v1, 3
+	35      (00000090) const-string         v2, 'Billing service unavailable on device.'
+	36      (00000094) invoke-direct        v0, v1, v2, Lcom/unlocker/billing/b;-><init>(I Ljava/lang/String;)V
+	37      (0000009a) invoke-interface     v5, v0, Lcom/unlocker/billing/a$d;->a(Lcom/unlocker/billing/b;)V
+	38      (000000a0) goto                 -e
+

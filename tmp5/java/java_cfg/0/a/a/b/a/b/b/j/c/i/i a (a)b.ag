@@ -1,0 +1,31 @@
+# La/a/b/a/b/b/j/c/i;->a(La/a/b/a/b/b/b/a/a;)La/a/b/a/b/b/b/b; [access_flags=protected final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:a.a.b.a.b.b.b.a.a
+#
+# - return:a.a.b.a.b.b.b.b
+
+a-BB@0x0 : 
+	0       (00000000) new-instance         v0, La/a/b/a/b/b/b/b;
+	1       (00000004) iget                 v1, v4, La/a/b/a/b/b/b/a/a;->c I
+	2       (00000008) invoke-direct        v0, v1, La/a/b/a/b/b/b/b;-><init>(I)V
+	3       (0000000e) const/4              v1, 0
+	4       (00000010) iput-boolean         v1, v0, La/a/b/a/b/b/b/b;->a Z
+	5       (00000014) const/4              v1, 1
+	6       (00000016) iput-boolean         v1, v0, La/a/b/a/b/b/b/b;->e Z
+	7       (0000001a) iget                 v1, v4, La/a/b/a/b/b/b/a/a;->b I
+	8       (0000001e) add-int/lit8         v1, v1, 104
+	9       (00000022) add-int/lit8         v1, v1, -1
+	10      (00000026) iput                 v1, v0, La/a/b/a/b/b/b/b;->d I
+	11      (0000002a) new-instance         v1, Ljava/lang/StringBuilder;
+	12      (0000002e) const-string         v2, 'c/'
+	13      (00000032) invoke-direct        v1, v2, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	14      (00000038) iget                 v2, v0, La/a/b/a/b/b/b/b;->d I
+	15      (0000003c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	16      (00000042) move-result-object   v1
+	17      (00000044) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	18      (0000004a) move-result-object   v1
+	19      (0000004c) iput-object          v1, v0, La/a/b/a/b/b/b/b;->b Ljava/lang/String;
+	20      (00000050) return-object        v0
+

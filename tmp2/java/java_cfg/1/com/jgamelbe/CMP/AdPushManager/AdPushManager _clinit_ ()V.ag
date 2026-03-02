@@ -1,0 +1,27 @@
+# Lcom/jgamelbe/CMP/AdPushManager;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x8 <clinit>-BB@0x26 ]
+	0       (00000000) const-string         v0, '----->'
+	1       (00000004) if-nez               v0, +11
+
+<clinit>-BB@0x8 : [ <clinit>-BB@0xc ]
+	2       (00000008) const-string         v0, 'AdPushManager'
+
+<clinit>-BB@0xc : 
+	3       (0000000c) sput-object          v0, Lcom/jgamelbe/CMP/AdPushManager;->b Ljava/lang/String;
+	4       (00000010) const/4              v0, 0
+	5       (00000012) sput-boolean         v0, Lcom/jgamelbe/CMP/AdPushManager;->a Z
+	6       (00000016) new-instance         v0, Ljava/lang/Object;
+	7       (0000001a) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	8       (00000020) sput-object          v0, Lcom/jgamelbe/CMP/AdPushManager;->c Ljava/lang/Object;
+	9       (00000024) return-void          
+
+<clinit>-BB@0x26 : [ <clinit>-BB@0xc ]
+	10      (00000026) const-string         v0, '----->'
+	11      (0000002a) goto                 -f
+

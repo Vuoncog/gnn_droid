@@ -1,0 +1,42 @@
+# Lorg/apache/commons/io/output/WriterOutputStream;->processInput(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:boolean
+#
+# - return:void
+
+processInput-BB@0x0 : [ processInput-BB@0xa ]
+	0       (00000000) iget-object          v0, v3, Lorg/apache/commons/io/output/WriterOutputStream;->decoderIn Ljava/nio/ByteBuffer;
+	1       (00000004) invoke-virtual       v0, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+
+processInput-BB@0xa : [ processInput-BB@0x2a processInput-BB@0x32 ]
+	2       (0000000a) iget-object          v0, v3, Lorg/apache/commons/io/output/WriterOutputStream;->decoder Ljava/nio/charset/CharsetDecoder;
+	3       (0000000e) iget-object          v1, v3, Lorg/apache/commons/io/output/WriterOutputStream;->decoderIn Ljava/nio/ByteBuffer;
+	4       (00000012) iget-object          v2, v3, Lorg/apache/commons/io/output/WriterOutputStream;->decoderOut Ljava/nio/CharBuffer;
+	5       (00000016) invoke-virtual       v0, v1, v2, v4, Ljava/nio/charset/CharsetDecoder;->decode(Ljava/nio/ByteBuffer; Ljava/nio/CharBuffer; Z)Ljava/nio/charset/CoderResult;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) invoke-virtual       v0, Ljava/nio/charset/CoderResult;->isOverflow()Z
+	8       (00000024) move-result          v1
+	9       (00000026) if-eqz               v1, +6
+
+processInput-BB@0x2a : [ processInput-BB@0xa ]
+	10      (0000002a) invoke-direct        v3, Lorg/apache/commons/io/output/WriterOutputStream;->flushOutput()V
+	11      (00000030) goto                 -13
+
+processInput-BB@0x32 : [ processInput-BB@0x3e processInput-BB@0x4a ]
+	12      (00000032) invoke-virtual       v0, Ljava/nio/charset/CoderResult;->isUnderflow()Z
+	13      (00000038) move-result          v0
+	14      (0000003a) if-eqz               v0, +8
+
+processInput-BB@0x3e : 
+	15      (0000003e) iget-object          v0, v3, Lorg/apache/commons/io/output/WriterOutputStream;->decoderIn Ljava/nio/ByteBuffer;
+	16      (00000042) invoke-virtual       v0, Ljava/nio/ByteBuffer;->compact()Ljava/nio/ByteBuffer;
+	17      (00000048) return-void          
+
+processInput-BB@0x4a : 
+	18      (0000004a) new-instance         v0, Ljava/io/IOException;
+	19      (0000004e) const-string         v1, 'Unexpected coder result'
+	20      (00000052) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	21      (00000058) throw                v0
+

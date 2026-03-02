@@ -1,0 +1,23 @@
+# Lio/fabric/sdk/android/services/settings/SettingsData;->isExpired(J)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:long
+#
+# - return:boolean
+
+isExpired-BB@0x0 : [ isExpired-BB@0xc isExpired-BB@0x10 ]
+	0       (00000000) iget-wide            v0, v3, Lio/fabric/sdk/android/services/settings/SettingsData;->expiresAtMillis J
+	1       (00000004) cmp-long             v0, v0, v4
+	2       (00000008) if-gez               v0, +4
+
+isExpired-BB@0xc : [ isExpired-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+isExpired-BB@0xe : 
+	4       (0000000e) return               v0
+
+isExpired-BB@0x10 : [ isExpired-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

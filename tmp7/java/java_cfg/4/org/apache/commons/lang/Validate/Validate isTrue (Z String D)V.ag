@@ -1,0 +1,29 @@
+# Lorg/apache/commons/lang/Validate;->isTrue(Z Ljava/lang/String; D)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+# - v4:java.lang.String
+# - v5:double
+#
+# - return:void
+
+isTrue-BB@0x0 : [ isTrue-BB@0x4 isTrue-BB@0x32 ]
+	0       (00000000) if-nez               v2, +19
+
+isTrue-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) new-instance         v1, Ljava/lang/StringBuffer;
+	3       (0000000c) invoke-direct        v1, Ljava/lang/StringBuffer;-><init>()V
+	4       (00000012) invoke-virtual       v1, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v1, v4, v5, Ljava/lang/StringBuffer;->append(D)Ljava/lang/StringBuffer;
+	7       (00000020) move-result-object   v1
+	8       (00000022) invoke-virtual       v1, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	11      (00000030) throw                v0
+
+isTrue-BB@0x32 : 
+	12      (00000032) return-void          
+

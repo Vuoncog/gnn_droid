@@ -1,0 +1,65 @@
+digraph {
+	graph [bb="0,0,1222,401",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_007766ecf5a2145194671a8781ee237e {
+		graph [bb="8,8,1214,393",
+			label="Lio/fabric/sdk/android/services/concurrency/PriorityFutureTask;.checkAndInitDelegate->(Ljava/lang/Object;)Lio/fabric/sdk/android/\
+services/concurrency/Dependency;\nLocal registers v0 ... v1\nparam v2 = java.lang.Object\nreturn = io.fabric.sdk.android.services.concurrency.Dependency",
+			lheight=0.83,
+			lp="611,359",
+			lwidth=15.25
+		];
+		struct_013d5fb641d6bdb224fd8abf6e87b08e	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/concurrency/PriorityTask;-&gt;isProperDelegate(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="611,271.5",
+			width=11.333];
+		struct_0968c939d56c365f770901ad5ad09267	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#0000FF">Lio/fabric/sdk/android/services/concurrency/Dependency;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="287,144.5",
+			width=7.5278];
+		struct_013d5fb641d6bdb224fd8abf6e87b08e:tail -> struct_0968c939d56c365f770901ad5ad09267:header	[color=red,
+			pos="e,36,161.5 224,231.5 224,146 51.106,242.11 36.923,171.5"];
+		struct_82ddf69669af937ebc153157bd77f9af	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#0000FF">Lio/fabric/sdk/android/services/concurrency/PriorityTask;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/concurrency/PriorityTask;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="891,144.5",
+			width=8.75];
+		struct_013d5fb641d6bdb224fd8abf6e87b08e:tail -> struct_82ddf69669af937ebc153157bd77f9af:header	[color=green,
+			pos="e,601,183.5 224,231.5 224,150.84 567.89,257.51 598.79,193.68"];
+		struct_a97a83f3a19fc15c8a8a01b7a4fb215a	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="385,39.5",
+			width=2.4722];
+		struct_0968c939d56c365f770901ad5ad09267:tail -> struct_a97a83f3a19fc15c8a8a01b7a4fb215a:header	[color=blue,
+			pos="e,306,53.5 36,126.5 36,67.381 224.04,54.681 295.89,53.582"];
+		struct_82ddf69669af937ebc153157bd77f9af:tail -> struct_a97a83f3a19fc15c8a8a01b7a4fb215a:header	[color=blue,
+			pos="e,321,56.5 586,107.5 576.75,107.5 575.85,101.7 567,99 517.46,83.899 346.01,108.3 323.45,66.47"];
+	}
+}

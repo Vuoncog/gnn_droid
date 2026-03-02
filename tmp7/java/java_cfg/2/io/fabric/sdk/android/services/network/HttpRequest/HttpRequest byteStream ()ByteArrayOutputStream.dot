@@ -1,0 +1,66 @@
+digraph {
+	graph [bb="0,0,1022,386",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_b4d1e510eccc667a2a16e5700eb42368 {
+		graph [bb="8,8,1014,378",
+			label="Lio/fabric/sdk/android/services/network/HttpRequest;.byteStream->()Ljava/io/ByteArrayOutputStream;\nLocal registers v0 ... v2\nreturn = \
+java.io.ByteArrayOutputStream",
+			lheight=0.62,
+			lp="511,351.5",
+			lwidth=9.42
+		];
+		struct_0b1d84f03b7db1c5784451a2f50ecf88	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;contentLength()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-lez </FONT> <FONT color="#888877">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="512,271.5",
+			width=9.2083];
+		struct_9aa24bf909856847413add788e3eff5b	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="#0000FF">Ljava/io/ByteArrayOutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="#888877">v1</FONT>, <FONT color="#DF3A01">Ljava/io/ByteArrayOutputStream;-&gt;&lt;init&gt;(I)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="266,144.5",
+			width=6.9444];
+		struct_0b1d84f03b7db1c5784451a2f50ecf88:tail -> struct_9aa24bf909856847413add788e3eff5b:header	[color=red,
+			pos="e,41,172.5 202,231.5 202,159.01 56.339,239.99 42.114,182.49"];
+		struct_3277040715748f5c2cad19184a4ea8de	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="#0000FF">Ljava/io/ByteArrayOutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="#DF3A01">Ljava/io/ByteArrayOutputStream;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="770,144.5",
+			width=6.5556];
+		struct_0b1d84f03b7db1c5784451a2f50ecf88:tail -> struct_3277040715748f5c2cad19184a4ea8de:header	[color=green,
+			pos="e,544,180.5 202,231.5 202,159.13 455.77,211.09 525,190 529.52,188.62 531.91,186.25 534.35,184.22"];
+		struct_52b8ab4b3f3a30171ff8d80c08674e6d	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#7777BB">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="364,39.5",
+			width=2.4722];
+		struct_9aa24bf909856847413add788e3eff5b:tail -> struct_52b8ab4b3f3a30171ff8d80c08674e6d:header	[color=blue,
+			pos="e,285,53.5 41,115.5 41,62.614 209.05,54.311 274.69,53.561"];
+		struct_3277040715748f5c2cad19184a4ea8de:tail -> struct_52b8ab4b3f3a30171ff8d80c08674e6d:header	[color=blue,
+			pos="e,300,56.5 544,107.5 534.75,107.5 533.83,101.77 525,99 480.05,84.913 325.49,104.09 302.79,66.645"];
+	}
+}

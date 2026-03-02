@@ -1,0 +1,50 @@
+# Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x70 ]
+	0       (00000000) iget-object          v0, v8, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	1       (00000004) invoke-static        v0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->access$000(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Lcom/crashlytics/android/answers/SessionMetadataCollector;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, Lcom/crashlytics/android/answers/SessionMetadataCollector;->getMetadata()Lcom/crashlytics/android/answers/SessionEventMetadata;
+	4       (00000012) move-result-object   v6
+	5       (00000014) iget-object          v0, v8, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	6       (00000018) invoke-static        v0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->access$100(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) invoke-virtual       v0, Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;->getAnalyticsFilesManager()Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;
+	9       (00000026) move-result-object   v4
+	10      (00000028) iget-object          v0, v8, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	11      (0000002c) invoke-virtual       v4, v0, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->registerRollOverListener(Lio/fabric/sdk/android/services/events/EventsStorageListener;)V
+	12      (00000032) iget-object          v7, v8, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	13      (00000036) new-instance         v0, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;
+	14      (0000003a) iget-object          v1, v8, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	15      (0000003e) invoke-static        v1, Lcom/crashlytics/android/answers/AnswersEventsHandler;->access$200(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Lio/fabric/sdk/android/Kit;
+	16      (00000044) move-result-object   v1
+	17      (00000046) iget-object          v2, v8, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	18      (0000004a) invoke-static        v2, Lcom/crashlytics/android/answers/AnswersEventsHandler;->access$300(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Landroid/content/Context;
+	19      (00000050) move-result-object   v2
+	20      (00000052) iget-object          v3, v8, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	21      (00000056) iget-object          v3, v3, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executor Ljava/util/concurrent/ScheduledExecutorService;
+	22      (0000005a) iget-object          v5, v8, Lcom/crashlytics/android/answers/AnswersEventsHandler$4;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	23      (0000005e) invoke-static        v5, Lcom/crashlytics/android/answers/AnswersEventsHandler;->access$400(Lcom/crashlytics/android/answers/AnswersEventsHandler;)Lio/fabric/sdk/android/services/network/HttpRequestFactory;
+	24      (00000064) move-result-object   v5
+	25      (00000066) invoke-direct/range  v0 ... v6, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-><init>(Lio/fabric/sdk/android/Kit; Landroid/content/Context; Ljava/util/concurrent/ScheduledExecutorService; Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager; Lio/fabric/sdk/android/services/network/HttpRequestFactory; Lcom/crashlytics/android/answers/SessionEventMetadata;)V
+	26      (0000006c) iput-object          v0, v7, Lcom/crashlytics/android/answers/AnswersEventsHandler;->strategy Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;
+	0:6f
+	(Ljava/lang/Exception; -> 72 run-BB@0x72)
+
+run-BB@0x70 : 
+	27      (00000070) return-void          
+
+run-BB@0x72 : [ run-BB@0x70 ]
+	28      (00000072) move-exception       v0
+	29      (00000074) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	30      (0000007a) move-result-object   v1
+	31      (0000007c) const-string         v2, 'Answers'
+	32      (00000080) const-string         v3, 'Failed to enable events'
+	33      (00000084) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	34      (0000008a) goto                 -d
+

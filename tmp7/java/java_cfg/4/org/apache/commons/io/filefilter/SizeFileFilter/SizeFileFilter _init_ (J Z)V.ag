@@ -1,0 +1,26 @@
+# Lorg/apache/commons/io/filefilter/SizeFileFilter;-><init>(J Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:long
+# - v6:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x12 <init>-BB@0x22 ]
+	0       (00000000) invoke-direct        v3, Lorg/apache/commons/io/filefilter/AbstractFileFilter;-><init>()V
+	1       (00000006) const-wide/16        v0, 0 # [0.0]
+	2       (0000000a) cmp-long             v0, v4, v0
+	3       (0000000e) if-gez               v0, +a
+
+<init>-BB@0x12 : 
+	4       (00000012) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	5       (00000016) const-string         v1, 'The size must be non-negative'
+	6       (0000001a) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	7       (00000020) throw                v0
+
+<init>-BB@0x22 : 
+	8       (00000022) iput-wide            v4, v3, Lorg/apache/commons/io/filefilter/SizeFileFilter;->size J
+	9       (00000026) iput-boolean         v6, v3, Lorg/apache/commons/io/filefilter/SizeFileFilter;->acceptLarger Z
+	10      (0000002a) return-void          
+

@@ -1,0 +1,36 @@
+# Lcom/crashlytics/android/answers/AnswersAttributes;->put(Ljava/lang/String; Ljava/lang/String;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:java.lang.String
+#
+# - return:void
+
+put-BB@0x0 : [ put-BB@0x14 put-BB@0x28 ]
+	0       (00000000) iget-object          v0, v2, Lcom/crashlytics/android/answers/AnswersAttributes;->validator Lcom/crashlytics/android/answers/AnswersEventValidator;
+	1       (00000004) const-string         v1, 'key'
+	2       (00000008) invoke-virtual       v0, v3, v1, Lcom/crashlytics/android/answers/AnswersEventValidator;->isNull(Ljava/lang/Object; Ljava/lang/String;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +c
+
+put-BB@0x14 : [ put-BB@0x28 put-BB@0x2a ]
+	5       (00000014) iget-object          v0, v2, Lcom/crashlytics/android/answers/AnswersAttributes;->validator Lcom/crashlytics/android/answers/AnswersEventValidator;
+	6       (00000018) const-string         v1, 'value'
+	7       (0000001c) invoke-virtual       v0, v4, v1, Lcom/crashlytics/android/answers/AnswersEventValidator;->isNull(Ljava/lang/Object; Ljava/lang/String;)Z
+	8       (00000022) move-result          v0
+	9       (00000024) if-eqz               v0, +3
+
+put-BB@0x28 : 
+	10      (00000028) return-void          
+
+put-BB@0x2a : [ put-BB@0x28 ]
+	11      (0000002a) iget-object          v0, v2, Lcom/crashlytics/android/answers/AnswersAttributes;->validator Lcom/crashlytics/android/answers/AnswersEventValidator;
+	12      (0000002e) invoke-virtual       v0, v3, Lcom/crashlytics/android/answers/AnswersEventValidator;->limitStringLength(Ljava/lang/String;)Ljava/lang/String;
+	13      (00000034) move-result-object   v0
+	14      (00000036) iget-object          v1, v2, Lcom/crashlytics/android/answers/AnswersAttributes;->validator Lcom/crashlytics/android/answers/AnswersEventValidator;
+	15      (0000003a) invoke-virtual       v1, v4, Lcom/crashlytics/android/answers/AnswersEventValidator;->limitStringLength(Ljava/lang/String;)Ljava/lang/String;
+	16      (00000040) move-result-object   v1
+	17      (00000042) invoke-virtual       v2, v0, v1, Lcom/crashlytics/android/answers/AnswersAttributes;->putAttribute(Ljava/lang/String; Ljava/lang/Object;)V
+	18      (00000048) goto                 -10
+

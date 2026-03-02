@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/CharUtils;->isAsciiAlphaUpper(C)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:char
+#
+# - return:boolean
+
+isAsciiAlphaUpper-BB@0x0 : [ isAsciiAlphaUpper-BB@0x8 isAsciiAlphaUpper-BB@0x14 ]
+	0       (00000000) const/16             v0, 65
+	1       (00000004) if-lt                v1, v0, +8
+
+isAsciiAlphaUpper-BB@0x8 : [ isAsciiAlphaUpper-BB@0x10 isAsciiAlphaUpper-BB@0x14 ]
+	2       (00000008) const/16             v0, 90
+	3       (0000000c) if-gt                v1, v0, +4
+
+isAsciiAlphaUpper-BB@0x10 : [ isAsciiAlphaUpper-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+isAsciiAlphaUpper-BB@0x12 : 
+	5       (00000012) return               v0
+
+isAsciiAlphaUpper-BB@0x14 : [ isAsciiAlphaUpper-BB@0x12 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -2
+

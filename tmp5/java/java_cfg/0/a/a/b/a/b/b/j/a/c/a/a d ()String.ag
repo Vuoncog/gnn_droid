@@ -1,0 +1,49 @@
+# La/a/b/a/b/b/j/a/c/a;->d()Ljava/lang/String; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.String
+
+d-BB@0x0 : [ d-BB@0x3a d-BB@0x62 ]
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) const-string         v1, 'FX '
+	2       (00000008) invoke-direct        v0, v1, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	3       (0000000e) iget                 v1, v2, La/a/b/a/b/b/j/a/c/a;->d I
+	4       (00000012) add-int/lit8         v1, v1, 1
+	5       (00000016) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) const-string         v1, ' Time '
+	8       (00000022) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (00000030) move-result-object   v0
+	12      (00000032) iget                 v1, v2, La/a/b/a/b/b/j/a/c/a;->a I
+	13      (00000036) if-nez               v1, +16
+
+d-BB@0x3a : [ d-BB@0x60 ]
+	14      (0000003a) new-instance         v1, Ljava/lang/StringBuilder;
+	15      (0000003e) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	16      (00000044) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004a) move-result-object   v0
+	18      (0000004c) const-string         v1, 'L'
+	19      (00000050) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000056) move-result-object   v0
+	21      (00000058) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (0000005e) move-result-object   v0
+
+d-BB@0x60 : 
+	23      (00000060) return-object        v0
+
+d-BB@0x62 : [ d-BB@0x60 ]
+	24      (00000062) new-instance         v1, Ljava/lang/StringBuilder;
+	25      (00000066) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	26      (0000006c) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (00000072) move-result-object   v0
+	28      (00000074) const-string         v1, 'R'
+	29      (00000078) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (0000007e) move-result-object   v0
+	31      (00000080) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	32      (00000086) move-result-object   v0
+	33      (00000088) goto                 -14
+

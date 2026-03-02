@@ -1,0 +1,22 @@
+# La/a/b/a/b/a/k;->a(Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x12 a-BB@0x14 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) invoke-virtual       v3, v0, Ljava/lang/String;->charAt(I)C
+	2       (00000008) move-result          v1
+	3       (0000000a) const/16             v2, 78
+	4       (0000000e) if-ne                v1, v2, +3
+
+a-BB@0x12 : 
+	5       (00000012) return               v0
+
+a-BB@0x14 : [ a-BB@0x12 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -2
+

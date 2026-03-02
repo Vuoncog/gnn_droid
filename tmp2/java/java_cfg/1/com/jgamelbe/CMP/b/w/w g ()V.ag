@@ -1,0 +1,54 @@
+# Lcom/jgamelbe/CMP/b/w;->g()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+g-BB@0x0 : [ g-BB@0x24 g-BB@0x80 ]
+	0       (00000000) sget-object          v0, Lcom/jgamelbe/CMP/b/w;->f Ljava/lang/String;
+	1       (00000004) const-string         v1, '[MyTaskInit]doPushAds() enter !'
+	2       (00000008) invoke-static        v0, v1, Lcom/jgamelbe/CMP/e/g;->c(Ljava/lang/String; Ljava/lang/String;)V
+	3       (0000000e) iget-object          v0, v3, Lcom/jgamelbe/CMP/b/w;->d Landroid/content/Context;
+	4       (00000012) const-wide/16        v1, 0 # [0.0]
+	5       (00000016) invoke-static        v0, v1, v2, Lcom/jgamelbe/CMP/e/o;->a(Landroid/content/Context; J)V
+	6       (0000001c) sget                 v0, Lcom/jgamelbe/CMP/e/p;->e I
+	7       (00000020) if-gtz               v0, +30
+
+g-BB@0x24 : [ g-BB@0x3e g-BB@0x6c ]
+	8       (00000024) new-instance         v0, Lcom/jgamelbe/CMP/e/b;
+	9       (00000028) iget-object          v1, v3, Lcom/jgamelbe/CMP/b/w;->d Landroid/content/Context;
+	10      (0000002c) invoke-direct        v0, v1, Lcom/jgamelbe/CMP/e/b;-><init>(Landroid/content/Context;)V
+	11      (00000032) invoke-virtual       v0, Lcom/jgamelbe/CMP/e/b;->a()Z
+	12      (00000038) move-result          v0
+	13      (0000003a) if-eqz               v0, +19
+
+g-BB@0x3e : [ g-BB@0x6a ]
+	14      (0000003e) new-instance         v0, Landroid/os/Bundle;
+	15      (00000042) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	16      (00000048) const-string         v1, 'GetPushAdsMode'
+	17      (0000004c) const/4              v2, 1
+	18      (0000004e) invoke-virtual       v0, v1, v2, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+	19      (00000054) new-instance         v1, Lcom/jgamelbe/CMP/b/v;
+	20      (00000058) iget-object          v2, v3, Lcom/jgamelbe/CMP/b/w;->d Landroid/content/Context;
+	21      (0000005c) invoke-direct        v1, v2, v0, Lcom/jgamelbe/CMP/b/v;-><init>(Landroid/content/Context; Landroid/os/Bundle;)V
+	22      (00000062) const/4              v0, 0
+	23      (00000064) invoke-virtual       v1, v0, Lcom/jgamelbe/CMP/b/v;->a(Z)Z
+
+g-BB@0x6a : 
+	24      (0000006a) return-void          
+
+g-BB@0x6c : [ g-BB@0x6a ]
+	25      (0000006c) iget-object          v0, v3, Lcom/jgamelbe/CMP/b/w;->d Landroid/content/Context;
+	26      (00000070) invoke-static        Lcom/jgamelbe/CMP/e;->a()J
+	27      (00000076) move-result-wide     v1
+	28      (00000078) invoke-static        v0, v1, v2, Lcom/jgamelbe/CMP/b/e;->a(Landroid/content/Context; J)V
+	29      (0000007e) goto                 -a
+
+g-BB@0x80 : [ g-BB@0x6a ]
+	30      (00000080) iget-object          v0, v3, Lcom/jgamelbe/CMP/b/w;->d Landroid/content/Context;
+	31      (00000084) sget                 v1, Lcom/jgamelbe/CMP/e/p;->e I
+	32      (00000088) int-to-long          v1, v1
+	33      (0000008a) invoke-static        v0, v1, v2, Lcom/jgamelbe/CMP/b/e;->a(Landroid/content/Context; J)V
+	34      (00000090) goto                 -13
+

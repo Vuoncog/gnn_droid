@@ -1,0 +1,16 @@
+# Lio/fabric/sdk/android/services/events/EventsFilesManager$1;->compare(Lio/fabric/sdk/android/services/events/EventsFilesManager$FileWithTimestamp; Lio/fabric/sdk/android/services/events/EventsFilesManager$FileWithTimestamp;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:io.fabric.sdk.android.services.events.EventsFilesManager$FileWithTimestamp
+# - v6:io.fabric.sdk.android.services.events.EventsFilesManager$FileWithTimestamp
+#
+# - return:int
+
+compare-BB@0x0 : 
+	0       (00000000) iget-wide            v0, v5, Lio/fabric/sdk/android/services/events/EventsFilesManager$FileWithTimestamp;->timestamp J
+	1       (00000004) iget-wide            v2, v6, Lio/fabric/sdk/android/services/events/EventsFilesManager$FileWithTimestamp;->timestamp J
+	2       (00000008) sub-long/2addr       v0, v2
+	3       (0000000a) long-to-int          v0, v0
+	4       (0000000c) return               v0
+

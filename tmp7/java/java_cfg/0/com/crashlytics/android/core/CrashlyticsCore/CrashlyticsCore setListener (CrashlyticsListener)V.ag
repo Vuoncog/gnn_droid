@@ -1,0 +1,41 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;->setListener(Lcom/crashlytics/android/core/CrashlyticsListener;)V [access_flags=public synchronized]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.crashlytics.android.core.CrashlyticsListener
+#
+# - return:void
+
+setListener-BB@0x0 : [ setListener-BB@0x2 ]
+	0       (00000000) monitor-enter        v3
+
+setListener-BB@0x2 : [ setListener-BB@0x1c setListener-BB@0x32 ]
+	1       (00000002) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) const-string         v1, 'CrashlyticsCore'
+	4       (0000000e) const-string         v2, 'Use of setListener is deprecated.'
+	5       (00000012) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->w(Ljava/lang/String; Ljava/lang/String;)V
+	6       (00000018) if-nez               v4, +d
+	2:2b
+	(Ljava/lang/Throwable; -> 2c setListener-BB@0x2c)
+
+setListener-BB@0x1c : 
+	7       (0000001c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	8       (00000020) const-string         v1, 'listener must not be null.'
+	9       (00000024) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	10      (0000002a) throw                v0
+	2:2b
+	(Ljava/lang/Throwable; -> 2c setListener-BB@0x2c)
+
+setListener-BB@0x2c : 
+	11      (0000002c) move-exception       v0
+	12      (0000002e) monitor-exit         v3
+	13      (00000030) throw                v0
+
+setListener-BB@0x32 : 
+	14      (00000032) iput-object          v4, v3, Lcom/crashlytics/android/core/CrashlyticsCore;->listener Lcom/crashlytics/android/core/CrashlyticsListener;
+	15      (00000036) monitor-exit         v3
+	16      (00000038) return-void          
+	32:35
+	(Ljava/lang/Throwable; -> 2c setListener-BB@0x2c)
+

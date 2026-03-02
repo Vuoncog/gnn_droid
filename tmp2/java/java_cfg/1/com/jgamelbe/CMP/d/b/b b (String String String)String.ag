@@ -1,0 +1,50 @@
+# Lcom/jgamelbe/CMP/d/b;->b(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:java.lang.String
+# - v4:java.lang.String
+#
+# - return:java.lang.String
+
+b-BB@0x0 : [ b-BB@0x16 b-BB@0x1c ]
+	0       (00000000) new-instance         v0, Lcom/jgamelbe/CMP/d/a;
+	1       (00000004) invoke-direct        v0, Lcom/jgamelbe/CMP/d/a;-><init>()V
+	2       (0000000a) invoke-virtual       v0, Lcom/jgamelbe/CMP/d/a;->a()Z
+	3       (00000010) move-result          v0
+	4       (00000012) if-eqz               v0, +5
+
+b-BB@0x16 : [ b-BB@0x1a ]
+	5       (00000016) const-string         v0, '123456789'
+
+b-BB@0x1a : 
+	6       (0000001a) return-object        v0
+
+b-BB@0x1c : [ b-BB@0x1a ]
+	7       (0000001c) new-instance         v0, Ljava/lang/StringBuffer;
+	8       (00000020) invoke-direct        v0, Ljava/lang/StringBuffer;-><init>()V
+	9       (00000026) invoke-static        Lcom/jgamelbe/CMP/d/c;->a()Lcom/jgamelbe/CMP/d/c;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) invoke-virtual       v1, Lcom/jgamelbe/CMP/d/c;->e()Ljava/lang/String;
+	12      (00000034) move-result-object   v1
+	13      (00000036) invoke-virtual       v0, v1, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) invoke-virtual       v1, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	16      (00000044) move-result-object   v1
+	17      (00000046) invoke-virtual       v1, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	18      (0000004c) move-result-object   v1
+	19      (0000004e) invoke-virtual       v1, v4, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	20      (00000054) invoke-virtual       v0, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	21      (0000005a) move-result-object   v0
+	22      (0000005c) invoke-static        v0, Lcom/jgamelbe/CMP/d/d;->a(Ljava/lang/String;)Ljava/lang/String;
+	23      (00000062) move-result-object   v0
+	24      (00000064) goto                 -25
+	1c:61
+	(Ljava/lang/Exception; -> 66 b-BB@0x66)
+
+b-BB@0x66 : [ b-BB@0x1a ]
+	25      (00000066) move-exception       v0
+	26      (00000068) const/4              v0, 0
+	27      (0000006a) goto                 -28
+

@@ -1,0 +1,64 @@
+digraph {
+	graph [bb="0,0,838,394",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_08e416f76c9ad0fa1e0410cf27a05ac9 {
+		graph [bb="8,8,830,386",
+			label="Lio/fabric/sdk/android/services/common/CommonUtils;.checkPermission->(Landroid/content/Context; Ljava/lang/String;)Z\nLocal registers \
+v0 ... v0\nparam v1 = android.content.Context\nparam v2 = java.lang.String\nreturn = boolean",
+			lheight=1.04,
+			lp="419,344.5",
+			lwidth=11.19
+		];
+		struct_27a6153706ad691cbae3fe76bada8288	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#DF3A01">Landroid/content/Context;-&gt;checkCallingOrSelfPermission(Ljava/lang/String;)I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7777BB">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7777BB">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="419,249.5",
+			width=10];
+		struct_5384e68d8135115d96802b866bda8b78	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="98,133.5",
+			width=2.2639];
+		struct_27a6153706ad691cbae3fe76bada8288:tail -> struct_5384e68d8135115d96802b866bda8b78:header	[color=red,
+			pos="e,37,150.5 80,209.5 80,180.85 46.488,182.09 38.633,160.45"];
+		struct_f64a620876f6e1daef36abd212c785e7	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="284,133.5",
+			width=2.4028];
+		struct_27a6153706ad691cbae3fe76bada8288:tail -> struct_f64a620876f6e1daef36abd212c785e7:header	[color=green,
+			pos="e,223,161.5 80,209.5 80,146.26 207.26,219.28 221.68,171.47"];
+		struct_5ff1f7986801a4efab76115ff788aa20	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#7777BB">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="171,39.5",
+			width=1.7361];
+		struct_5384e68d8135115d96802b866bda8b78:tail -> struct_5ff1f7986801a4efab76115ff788aa20:header	[color=blue,
+			pos="e,119,53.5 37,115.5 37,73.202 68.121,56.083 108.99,53.775"];
+		struct_f64a620876f6e1daef36abd212c785e7:tail -> struct_5ff1f7986801a4efab76115ff788aa20:header	[color=blue,
+			pos="e,130,56.5 208,107.5 203.83,107.5 155.87,77.829 137.29,63.541"];
+	}
+}

@@ -1,0 +1,58 @@
+# Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->read([B I I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:byte[]
+# - v4:int
+# - v5:int
+#
+# - return:int
+
+read-BB@0x0 : [ read-BB@0x12 read-BB@0x1a ]
+	0       (00000000) const-string         v0, 'buffer'
+	1       (00000004) invoke-static        v3, v0, Lio/fabric/sdk/android/services/common/QueueFile;->access$200(Ljava/lang/Object; Ljava/lang/String;)Ljava/lang/Object;
+	2       (0000000a) or-int               v0, v4, v5
+	3       (0000000e) if-ltz               v0, +6
+
+read-BB@0x12 : [ read-BB@0x1a read-BB@0x26 ]
+	4       (00000012) array-length         v0, v3
+	5       (00000014) sub-int/2addr        v0, v4
+	6       (00000016) if-le                v5, v0, +8
+
+read-BB@0x1a : 
+	7       (0000001a) new-instance         v0, Ljava/lang/ArrayIndexOutOfBoundsException;
+	8       (0000001e) invoke-direct        v0, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
+	9       (00000024) throw                v0
+
+read-BB@0x26 : [ read-BB@0x2e read-BB@0x6a ]
+	10      (00000026) iget                 v0, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->remaining I
+	11      (0000002a) if-lez               v0, +20
+
+read-BB@0x2e : [ read-BB@0x36 read-BB@0x3a ]
+	12      (0000002e) iget                 v0, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->remaining I
+	13      (00000032) if-le                v5, v0, +4
+
+read-BB@0x36 : [ read-BB@0x3a ]
+	14      (00000036) iget                 v5, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->remaining I
+
+read-BB@0x3a : [ read-BB@0x68 ]
+	15      (0000003a) iget-object          v0, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->this$0 Lio/fabric/sdk/android/services/common/QueueFile;
+	16      (0000003e) iget                 v1, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->position I
+	17      (00000042) invoke-static        v0, v1, v3, v4, v5, Lio/fabric/sdk/android/services/common/QueueFile;->access$300(Lio/fabric/sdk/android/services/common/QueueFile; I [B I I)V
+	18      (00000048) iget-object          v0, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->this$0 Lio/fabric/sdk/android/services/common/QueueFile;
+	19      (0000004c) iget                 v1, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->position I
+	20      (00000050) add-int/2addr        v1, v5
+	21      (00000052) invoke-static        v0, v1, Lio/fabric/sdk/android/services/common/QueueFile;->access$100(Lio/fabric/sdk/android/services/common/QueueFile; I)I
+	22      (00000058) move-result          v0
+	23      (0000005a) iput                 v0, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->position I
+	24      (0000005e) iget                 v0, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->remaining I
+	25      (00000062) sub-int/2addr        v0, v5
+	26      (00000064) iput                 v0, v2, Lio/fabric/sdk/android/services/common/QueueFile$ElementInputStream;->remaining I
+
+read-BB@0x68 : 
+	27      (00000068) return               v5
+
+read-BB@0x6a : [ read-BB@0x68 ]
+	28      (0000006a) const/4              v5, -1
+	29      (0000006c) goto                 -2
+

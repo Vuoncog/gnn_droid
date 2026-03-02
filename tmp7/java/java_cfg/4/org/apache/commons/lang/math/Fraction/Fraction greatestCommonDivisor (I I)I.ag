@@ -1,0 +1,128 @@
+# Lorg/apache/commons/lang/math/Fraction;->greatestCommonDivisor(I I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:int
+#
+# - return:int
+
+greatestCommonDivisor-BB@0x0 : [ greatestCommonDivisor-BB@0x12 greatestCommonDivisor-BB@0x1e ]
+	0       (00000000) const/16             v5, 31
+	1       (00000004) const/4              v3, 1
+	2       (00000006) invoke-static        v7, Ljava/lang/Math;->abs(I)I
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-le                v0, v3, +8
+
+greatestCommonDivisor-BB@0x12 : [ greatestCommonDivisor-BB@0x1e greatestCommonDivisor-BB@0x22 ]
+	5       (00000012) invoke-static        v8, Ljava/lang/Math;->abs(I)I
+	6       (00000018) move-result          v0
+	7       (0000001a) if-gt                v0, v3, +4
+
+greatestCommonDivisor-BB@0x1e : [ greatestCommonDivisor-BB@0x20 ]
+	8       (0000001e) move                 v0, v3
+
+greatestCommonDivisor-BB@0x20 : 
+	9       (00000020) return               v0
+
+greatestCommonDivisor-BB@0x22 : [ greatestCommonDivisor-BB@0x26 greatestCommonDivisor-BB@0xbc ]
+	10      (00000022) if-lez               v7, +4d
+
+greatestCommonDivisor-BB@0x26 : [ greatestCommonDivisor-BB@0x28 ]
+	11      (00000026) neg-int              v2, v7
+
+greatestCommonDivisor-BB@0x28 : [ greatestCommonDivisor-BB@0x2c greatestCommonDivisor-BB@0x2e ]
+	12      (00000028) if-lez               v8, +3
+
+greatestCommonDivisor-BB@0x2c : [ greatestCommonDivisor-BB@0x2e ]
+	13      (0000002c) neg-int              v8, v8
+
+greatestCommonDivisor-BB@0x2e : [ greatestCommonDivisor-BB@0x34 ]
+	14      (0000002e) const/4              v0, 0
+	15      (00000030) move                 v4, v0
+	16      (00000032) move                 v1, v8
+
+greatestCommonDivisor-BB@0x34 : [ greatestCommonDivisor-BB@0x3c greatestCommonDivisor-BB@0x58 ]
+	17      (00000034) and-int/lit8         v0, v2, 1
+	18      (00000038) if-nez               v0, +10
+
+greatestCommonDivisor-BB@0x3c : [ greatestCommonDivisor-BB@0x44 greatestCommonDivisor-BB@0x58 ]
+	19      (0000003c) and-int/lit8         v0, v1, 1
+	20      (00000040) if-nez               v0, +c
+
+greatestCommonDivisor-BB@0x44 : [ greatestCommonDivisor-BB@0x48 greatestCommonDivisor-BB@0x58 ]
+	21      (00000044) if-ge                v4, v5, +a
+
+greatestCommonDivisor-BB@0x48 : [ greatestCommonDivisor-BB@0x34 ]
+	22      (00000048) div-int/lit8         v2, v2, 2
+	23      (0000004c) div-int/lit8         v1, v1, 2
+	24      (00000050) add-int/lit8         v0, v4, 1
+	25      (00000054) move                 v4, v0
+	26      (00000056) goto                 -11
+
+greatestCommonDivisor-BB@0x58 : [ greatestCommonDivisor-BB@0x5c greatestCommonDivisor-BB@0x6c ]
+	27      (00000058) if-ne                v4, v5, +a
+
+greatestCommonDivisor-BB@0x5c : 
+	28      (0000005c) new-instance         v0, Ljava/lang/ArithmeticException;
+	29      (00000060) const-string         v1, 'overflow: gcd is 2^31'
+	30      (00000064) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	31      (0000006a) throw                v0
+
+greatestCommonDivisor-BB@0x6c : [ greatestCommonDivisor-BB@0x74 greatestCommonDivisor-BB@0x8a ]
+	32      (0000006c) and-int/lit8         v0, v2, 1
+	33      (00000070) if-ne                v0, v3, +d
+
+greatestCommonDivisor-BB@0x74 : [ greatestCommonDivisor-BB@0x76 ]
+	34      (00000074) move                 v0, v1
+
+greatestCommonDivisor-BB@0x76 : [ greatestCommonDivisor-BB@0x7c ]
+	35      (00000076) move                 v6, v0
+	36      (00000078) move                 v0, v1
+	37      (0000007a) move                 v1, v6
+
+greatestCommonDivisor-BB@0x7c : [ greatestCommonDivisor-BB@0x84 greatestCommonDivisor-BB@0x92 ]
+	38      (0000007c) and-int/lit8         v5, v1, 1
+	39      (00000080) if-nez               v5, +9
+
+greatestCommonDivisor-BB@0x84 : [ greatestCommonDivisor-BB@0x7c ]
+	40      (00000084) div-int/lit8         v1, v1, 2
+	41      (00000088) goto                 -6
+
+greatestCommonDivisor-BB@0x8a : [ greatestCommonDivisor-BB@0x76 ]
+	42      (0000008a) div-int/lit8         v0, v2, 2
+	43      (0000008e) neg-int              v0, v0
+	44      (00000090) goto                 -d
+
+greatestCommonDivisor-BB@0x92 : [ greatestCommonDivisor-BB@0x96 greatestCommonDivisor-BB@0xae ]
+	45      (00000092) if-lez               v1, +e
+
+greatestCommonDivisor-BB@0x96 : [ greatestCommonDivisor-BB@0x98 ]
+	46      (00000096) neg-int              v1, v1
+
+greatestCommonDivisor-BB@0x98 : [ greatestCommonDivisor-BB@0xa4 greatestCommonDivisor-BB@0xb4 ]
+	47      (00000098) sub-int              v2, v0, v1
+	48      (0000009c) div-int/lit8         v2, v2, 2
+	49      (000000a0) if-nez               v2, +a
+
+greatestCommonDivisor-BB@0xa4 : [ greatestCommonDivisor-BB@0x20 ]
+	50      (000000a4) neg-int              v0, v1
+	51      (000000a6) shl-int              v1, v3, v4
+	52      (000000aa) mul-int/2addr        v0, v1
+	53      (000000ac) goto                 -46
+
+greatestCommonDivisor-BB@0xae : [ greatestCommonDivisor-BB@0x98 ]
+	54      (000000ae) move                 v0, v1
+	55      (000000b0) move                 v1, v2
+	56      (000000b2) goto                 -d
+
+greatestCommonDivisor-BB@0xb4 : [ greatestCommonDivisor-BB@0x7c ]
+	57      (000000b4) move                 v6, v2
+	58      (000000b6) move                 v2, v1
+	59      (000000b8) move                 v1, v6
+	60      (000000ba) goto                 -1f
+
+greatestCommonDivisor-BB@0xbc : [ greatestCommonDivisor-BB@0x28 ]
+	61      (000000bc) move                 v2, v7
+	62      (000000be) goto                 -4b
+

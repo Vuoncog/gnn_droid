@@ -1,0 +1,36 @@
+# Lorg/apache/commons/io/output/ProxyOutputStream;->write([B)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:byte[]
+#
+# - return:void
+
+write-BB@0x0 : [ write-BB@0x4 write-BB@0x1e ]
+	0       (00000000) if-eqz               v3, +f
+
+write-BB@0x4 : [ write-BB@0x6 ]
+	1       (00000004) array-length         v0, v3
+	4:1b
+	(Ljava/io/IOException; -> 22 write-BB@0x22)
+
+write-BB@0x6 : [ write-BB@0x1c ]
+	2       (00000006) invoke-virtual       v2, v0, Lorg/apache/commons/io/output/ProxyOutputStream;->beforeWrite(I)V
+	3       (0000000c) iget-object          v1, v2, Lorg/apache/commons/io/output/ProxyOutputStream;->out Ljava/io/OutputStream;
+	4       (00000010) invoke-virtual       v1, v3, Ljava/io/OutputStream;->write([B)V
+	5       (00000016) invoke-virtual       v2, v0, Lorg/apache/commons/io/output/ProxyOutputStream;->afterWrite(I)V
+	4:1b
+	(Ljava/io/IOException; -> 22 write-BB@0x22)
+
+write-BB@0x1c : 
+	6       (0000001c) return-void          
+
+write-BB@0x1e : [ write-BB@0x6 ]
+	7       (0000001e) const/4              v0, 0
+	8       (00000020) goto                 -d
+
+write-BB@0x22 : [ write-BB@0x1c ]
+	9       (00000022) move-exception       v0
+	10      (00000024) invoke-virtual       v2, v0, Lorg/apache/commons/io/output/ProxyOutputStream;->handleIOException(Ljava/io/IOException;)V
+	11      (0000002a) goto                 -7
+

@@ -1,0 +1,28 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->closeQuietly(Ljava/io/Closeable;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.Closeable
+#
+# - return:void
+
+closeQuietly-BB@0x0 : [ closeQuietly-BB@0x4 closeQuietly-BB@0xa ]
+	0       (00000000) if-eqz               v1, +5
+
+closeQuietly-BB@0x4 : [ closeQuietly-BB@0xa ]
+	1       (00000004) invoke-interface     v1, Ljava/io/Closeable;->close()V
+	4:9
+	(Ljava/lang/RuntimeException; -> c closeQuietly-BB@0xc)
+	(Ljava/lang/Exception; -> 10 closeQuietly-BB@0x10)
+
+closeQuietly-BB@0xa : 
+	2       (0000000a) return-void          
+
+closeQuietly-BB@0xc : 
+	3       (0000000c) move-exception       v0
+	4       (0000000e) throw                v0
+
+closeQuietly-BB@0x10 : [ closeQuietly-BB@0xa ]
+	5       (00000010) move-exception       v0
+	6       (00000012) goto                 -4
+

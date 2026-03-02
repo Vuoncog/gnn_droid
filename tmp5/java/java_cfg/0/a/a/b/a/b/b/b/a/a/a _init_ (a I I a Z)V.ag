@@ -1,0 +1,27 @@
+# La/a/b/a/b/b/b/a/a;-><init>(La/a/b/a/b/b/a; I I La/a/b/a/i/g/a; Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:a.a.b.a.b.b.a
+# - v3:int
+# - v4:int
+# - v5:a.a.b.a.i.g.a
+# - v6:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v2, v1, La/a/b/a/b/b/b/a/a;->a La/a/b/a/b/b/a;
+	2       (0000000a) iput                 v3, v1, La/a/b/a/b/b/b/a/a;->b I
+	3       (0000000e) iput                 v4, v1, La/a/b/a/b/b/b/a/a;->c I
+	4       (00000012) iput-object          v5, v1, La/a/b/a/b/b/b/a/a;->e La/a/b/a/i/g/a;
+	5       (00000016) iput-boolean         v6, v1, La/a/b/a/b/b/b/a/a;->f Z
+	6       (0000001a) iget-object          v0, v2, La/a/b/a/b/b/a;->i La/a/b/a/b/b/e;
+	7       (0000001e) iget-boolean         v0, v0, La/a/b/a/b/b/e;->v Z
+	8       (00000022) iput-boolean         v0, v1, La/a/b/a/b/b/b/a/a;->g Z
+	9       (00000026) iget-object          v0, v2, La/a/b/a/b/b/a;->x La/a/b/a/b/b/h/a;
+	10      (0000002a) iget-object          v0, v0, La/a/b/a/b/b/h/a;->a La/a/a/b/a;
+	11      (0000002e) iput-object          v0, v1, La/a/b/a/b/b/b/a/a;->h La/a/a/b/a;
+	12      (00000032) return-void          
+

@@ -1,0 +1,20 @@
+# Lorg/apache/commons/lang/math/Fraction;-><init>(I I)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-direct        v2, Ljava/lang/Number;-><init>()V
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) iput                 v0, v2, Lorg/apache/commons/lang/math/Fraction;->hashCode I
+	4       (0000000e) iput-object          v1, v2, Lorg/apache/commons/lang/math/Fraction;->toString Ljava/lang/String;
+	5       (00000012) iput-object          v1, v2, Lorg/apache/commons/lang/math/Fraction;->toProperString Ljava/lang/String;
+	6       (00000016) iput                 v3, v2, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	7       (0000001a) iput                 v4, v2, Lorg/apache/commons/lang/math/Fraction;->denominator I
+	8       (0000001e) return-void          
+

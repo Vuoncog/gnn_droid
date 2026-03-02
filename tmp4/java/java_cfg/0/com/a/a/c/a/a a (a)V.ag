@@ -1,0 +1,28 @@
+# Lcom/a/a/c/a;->a(Lcom/a/a/c/a;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.a.a.c.a
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x12 ]
+	0       (00000000) iget                 v1, v4, Lcom/a/a/c/a;->b I
+	1       (00000004) iget                 v0, v3, Lcom/a/a/c/a;->b I
+	2       (00000008) add-int/2addr        v0, v1
+	3       (0000000a) invoke-direct        v3, v0, Lcom/a/a/c/a;->e(I)V
+	4       (00000010) const/4              v0, 0
+
+a-BB@0x12 : [ a-BB@0x16 a-BB@0x2a ]
+	5       (00000012) if-ge                v0, v1, +c
+
+a-BB@0x16 : [ a-BB@0x12 ]
+	6       (00000016) invoke-virtual       v4, v0, Lcom/a/a/c/a;->a(I)Z
+	7       (0000001c) move-result          v2
+	8       (0000001e) invoke-virtual       v3, v2, Lcom/a/a/c/a;->a(Z)V
+	9       (00000024) add-int/lit8         v0, v0, 1
+	10      (00000028) goto                 -b
+
+a-BB@0x2a : 
+	11      (0000002a) return-void          
+

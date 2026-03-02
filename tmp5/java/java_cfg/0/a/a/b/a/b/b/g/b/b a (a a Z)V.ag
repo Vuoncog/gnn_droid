@@ -1,0 +1,53 @@
+# La/a/b/a/b/b/g/b;->a(La/a/a/a; La/a/b/a/b/b/a; Z)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:a.a.a.a
+# - v8:a.a.b.a.b.b.a
+# - v9:boolean
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x20 ]
+	0       (00000000) const/16             v5, 1234
+	1       (00000004) const/4              v4, -1
+	2       (00000006) invoke-super         v6, v7, v8, v9, La/a/b/a/b/b/g/a;->a(La/a/a/a; La/a/b/a/b/b/a; Z)V
+	3       (0000000c) const-string         v0, 'items'
+	4       (00000010) invoke-virtual       v7, v0, La/a/a/a;->c(Ljava/lang/String;)Ljava/util/List;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	7       (0000001e) move-result-object   v1
+
+a-BB@0x20 : [ a-BB@0x2c a-BB@0x78 ]
+	8       (00000020) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	9       (00000026) move-result          v0
+	10      (00000028) if-eqz               v0, +28
+
+a-BB@0x2c : [ a-BB@0x48 a-BB@0x20 ]
+	11      (0000002c) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	12      (00000032) move-result-object   v0
+	13      (00000034) check-cast           v0, La/a/a/a;
+	14      (00000038) const-string         v2, 'channelID'
+	15      (0000003c) invoke-virtual       v0, v2, v5, La/a/a/a;->c(Ljava/lang/String; I)I
+	16      (00000042) move-result          v2
+	17      (00000044) if-eq                v2, v5, -12
+
+a-BB@0x48 : [ a-BB@0x58 a-BB@0x20 ]
+	18      (00000048) const-string         v3, 'color'
+	19      (0000004c) invoke-virtual       v0, v3, v4, La/a/a/a;->c(Ljava/lang/String; I)I
+	20      (00000052) move-result          v0
+	21      (00000054) if-eq                v0, v4, -1a
+
+a-BB@0x58 : [ a-BB@0x20 ]
+	22      (00000058) invoke-virtual       v6, v2, La/a/b/a/b/b/g/b;->c(I)La/a/b/a/b/b/b/a;
+	23      (0000005e) move-result-object   v2
+	24      (00000060) iget-object          v2, v2, La/a/b/a/b/b/b/a;->a La/a/b/a/b/b/b/e/a;
+	25      (00000064) iget-object          v2, v2, La/a/b/a/b/b/b/e/a;->c La/a/b/a/b/a/b;
+	26      (00000068) invoke-static        v0, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	27      (0000006e) move-result-object   v0
+	28      (00000070) invoke-virtual       v2, v0, v6, La/a/b/a/b/a/b;->a(Ljava/lang/Object; Ljava/lang/Object;)V
+	29      (00000076) goto                 -2b
+
+a-BB@0x78 : 
+	30      (00000078) return-void          
+

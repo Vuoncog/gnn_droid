@@ -1,0 +1,100 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;->doInBackground()Ljava/lang/Void; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.lang.Void
+
+doInBackground-BB@0x0 : [ doInBackground-BB@0x12 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) invoke-virtual       v5, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationStarted()V
+	2       (00000008) iget-object          v0, v5, Lcom/crashlytics/android/core/CrashlyticsCore;->handler Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;
+	3       (0000000c) invoke-virtual       v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->cleanInvalidTempFiles()V
+
+doInBackground-BB@0x12 : [ doInBackground-BB@0x26 doInBackground-BB@0x44 ]
+	4       (00000012) invoke-static        Lio/fabric/sdk/android/services/settings/Settings;->getInstance()Lio/fabric/sdk/android/services/settings/Settings;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) invoke-virtual       v0, Lio/fabric/sdk/android/services/settings/Settings;->awaitSettingsData()Lio/fabric/sdk/android/services/settings/SettingsData;
+	7       (00000020) move-result-object   v0
+	8       (00000022) if-nez               v0, +11
+	12:3b
+	(Ljava/lang/Throwable; -> de doInBackground-BB@0xde)
+	(Ljava/lang/Exception; -> be doInBackground-BB@0xbe)
+
+doInBackground-BB@0x26 : [ doInBackground-BB@0x42 ]
+	9       (00000026) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	10      (0000002c) move-result-object   v0
+	11      (0000002e) const-string         v1, 'CrashlyticsCore'
+	12      (00000032) const-string         v2, 'Received null settings, skipping initialization!'
+	13      (00000036) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->w(Ljava/lang/String; Ljava/lang/String;)V
+	14      (0000003c) invoke-virtual       v5, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V
+
+doInBackground-BB@0x42 : 
+	15      (00000042) return-object        v4
+
+doInBackground-BB@0x44 : [ doInBackground-BB@0x50 doInBackground-BB@0x6e ]
+	16      (00000044) iget-object          v1, v0, Lio/fabric/sdk/android/services/settings/SettingsData;->featuresData Lio/fabric/sdk/android/services/settings/FeaturesSettingsData;
+	17      (00000048) iget-boolean         v1, v1, Lio/fabric/sdk/android/services/settings/FeaturesSettingsData;->collectReports Z
+	18      (0000004c) if-nez               v1, +11
+	44:65
+	(Ljava/lang/Throwable; -> de doInBackground-BB@0xde)
+	(Ljava/lang/Exception; -> be doInBackground-BB@0xbe)
+
+doInBackground-BB@0x50 : [ doInBackground-BB@0x42 ]
+	19      (00000050) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	20      (00000056) move-result-object   v0
+	21      (00000058) const-string         v1, 'CrashlyticsCore'
+	22      (0000005c) const-string         v2, 'Collection of crash reports disabled in Crashlytics settings.'
+	23      (00000060) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	24      (00000066) invoke-virtual       v5, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V
+	25      (0000006c) goto                 -15
+
+doInBackground-BB@0x6e : [ doInBackground-BB@0x84 doInBackground-BB@0xa2 ]
+	26      (0000006e) iget-object          v1, v5, Lcom/crashlytics/android/core/CrashlyticsCore;->handler Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;
+	27      (00000072) invoke-virtual       v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->finalizeSessions()Z
+	28      (00000078) invoke-virtual       v5, v0, Lcom/crashlytics/android/core/CrashlyticsCore;->getCreateReportSpiCall(Lio/fabric/sdk/android/services/settings/SettingsData;)Lcom/crashlytics/android/core/CreateReportSpiCall;
+	29      (0000007e) move-result-object   v0
+	30      (00000080) if-nez               v0, +11
+	6e:99
+	(Ljava/lang/Throwable; -> de doInBackground-BB@0xde)
+	(Ljava/lang/Exception; -> be doInBackground-BB@0xbe)
+
+doInBackground-BB@0x84 : [ doInBackground-BB@0x42 ]
+	31      (00000084) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	32      (0000008a) move-result-object   v0
+	33      (0000008c) const-string         v1, 'CrashlyticsCore'
+	34      (00000090) const-string         v2, 'Unable to create a call to upload reports.'
+	35      (00000094) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->w(Ljava/lang/String; Ljava/lang/String;)V
+	36      (0000009a) invoke-virtual       v5, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V
+	37      (000000a0) goto                 -2f
+
+doInBackground-BB@0xa2 : [ doInBackground-BB@0x42 ]
+	38      (000000a2) new-instance         v1, Lcom/crashlytics/android/core/ReportUploader;
+	39      (000000a6) invoke-direct        v1, v0, Lcom/crashlytics/android/core/ReportUploader;-><init>(Lcom/crashlytics/android/core/CreateReportSpiCall;)V
+	40      (000000ac) iget                 v0, v5, Lcom/crashlytics/android/core/CrashlyticsCore;->delay F
+	41      (000000b0) invoke-virtual       v1, v0, Lcom/crashlytics/android/core/ReportUploader;->uploadReports(F)V
+	42      (000000b6) invoke-virtual       v5, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V
+	43      (000000bc) goto                 -3d
+	a2:b5
+	(Ljava/lang/Throwable; -> de doInBackground-BB@0xde)
+	(Ljava/lang/Exception; -> be doInBackground-BB@0xbe)
+
+doInBackground-BB@0xbe : [ doInBackground-BB@0xc0 ]
+	44      (000000be) move-exception       v0
+
+doInBackground-BB@0xc0 : [ doInBackground-BB@0x42 ]
+	45      (000000c0) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	46      (000000c6) move-result-object   v1
+	47      (000000c8) const-string         v2, 'CrashlyticsCore'
+	48      (000000cc) const-string         v3, 'Crashlytics encountered a problem during asynchronous initialization.'
+	49      (000000d0) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	50      (000000d6) invoke-virtual       v5, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V
+	51      (000000dc) goto                 -4d
+	c0:d5
+	(Ljava/lang/Throwable; -> de doInBackground-BB@0xde)
+
+doInBackground-BB@0xde : 
+	52      (000000de) move-exception       v0
+	53      (000000e0) invoke-virtual       v5, Lcom/crashlytics/android/core/CrashlyticsCore;->markInitializationComplete()V
+	54      (000000e6) throw                v0
+

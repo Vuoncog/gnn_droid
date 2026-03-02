@@ -1,0 +1,79 @@
+digraph {
+	graph [bb="0,0,1518,445",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_a14e07d1a192935160e25de97e4dde22 {
+		graph [bb="8,8,1510,437",
+			label="Lcom/crashlytics/android/Crashlytics$Builder;.answers->(Lcom/crashlytics/android/answers/Answers;)Lcom/crashlytics/android/Crashlytics$\
+Builder;\nLocal registers v0 ... v2\nparam v3 = com.crashlytics.android.answers.Answers\nreturn = com.crashlytics.android.Crashlytics$\
+Builder",
+			lheight=0.83,
+			lp="759,403",
+			lwidth=13.56
+		];
+		struct_da6a928c08798ee23226656b19f61d19	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="408,337.5",
+			width=2.0833];
+		struct_93e0d2f8e76a7f49bbad792c6395180e	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#0000FF">Ljava/lang/NullPointerException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="red">'Answers Kit must not be null.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/NullPointerException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="320,221.5",
+			width=8.4444];
+		struct_da6a928c08798ee23226656b19f61d19:tail -> struct_93e0d2f8e76a7f49bbad792c6395180e:header	[color=red,
+			pos="e,41,271.5 343,322.5 327.75,322.5 97.129,295.19 49.548,277.27"];
+		struct_c70c3e017c40d1b9261c8f7dde2e0003	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#7272CC">v2</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/Crashlytics$Builder;-&gt;answers Lcom/crashlytics/android/answers/Answers;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1072,221.5",
+			width=11.931];
+		struct_da6a928c08798ee23226656b19f61d19:tail -> struct_c70c3e017c40d1b9261c8f7dde2e0003:header	[color=green,
+			pos="e,653,246.5 354,319.5 354,256.82 580.44,312.16 633,278 642.78,271.65 640.49,258.65 644.04,251.5"];
+		struct_ed3974606e1fbcb940cd584ee7c327c4	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#0000FF">Ljava/lang/IllegalStateException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="red">'Answers Kit already set.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/IllegalStateException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="321,72.5",
+			width=8.4167];
+		struct_c70c3e017c40d1b9261c8f7dde2e0003:tail -> struct_ed3974606e1fbcb940cd584ee7c327c4:header	[color=red,
+			pos="e,43,122.5 653,195.5 636.79,195.5 646.98,173.21 633,165 579.32,133.46 97.924,182.51 47.301,131.91"];
+		struct_cca9e183e6bea8d0f2ec1a69fdfbb0e9	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#999933">v3</FONT>, <FONT color="#7272CC">v2</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/Crashlytics$Builder;-&gt;answers Lcom/crashlytics/android/answers/Answers;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#7272CC">v2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1072,72.5",
+			width=11.944];
+		struct_c70c3e017c40d1b9261c8f7dde2e0003:tail -> struct_cca9e183e6bea8d0f2ec1a69fdfbb0e9:header	[color=green,
+			pos="e,667,100.5 668,192.5 668,155.28 667.17,143.47 667.02,110.82"];
+	}
+}

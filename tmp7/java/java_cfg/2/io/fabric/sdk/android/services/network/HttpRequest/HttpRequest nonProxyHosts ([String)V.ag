@@ -1,0 +1,51 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->nonProxyHosts([Ljava/lang/String;)V [access_flags=public static varargs]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String[]
+#
+# - return:void
+
+nonProxyHosts-BB@0x0 : [ nonProxyHosts-BB@0x4 nonProxyHosts-BB@0x5a ]
+	0       (00000000) if-eqz               v5, +2d
+
+nonProxyHosts-BB@0x4 : [ nonProxyHosts-BB@0xa nonProxyHosts-BB@0x5a ]
+	1       (00000004) array-length         v0, v5
+	2       (00000006) if-lez               v0, +2a
+
+nonProxyHosts-BB@0xa : [ nonProxyHosts-BB@0x1c ]
+	3       (0000000a) new-instance         v1, Ljava/lang/StringBuilder;
+	4       (0000000e) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000014) array-length         v0, v5
+	6       (00000016) add-int/lit8         v2, v0, -1
+	7       (0000001a) const/4              v0, 0
+
+nonProxyHosts-BB@0x1c : [ nonProxyHosts-BB@0x20 nonProxyHosts-BB@0x3c ]
+	8       (0000001c) if-ge                v0, v2, +10
+
+nonProxyHosts-BB@0x20 : [ nonProxyHosts-BB@0x1c ]
+	9       (00000020) aget-object          v3, v5, v0
+	10      (00000024) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (0000002a) move-result-object   v3
+	12      (0000002c) const/16             v4, 124
+	13      (00000030) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	14      (00000036) add-int/lit8         v0, v0, 1
+	15      (0000003a) goto                 -f
+
+nonProxyHosts-BB@0x3c : [ nonProxyHosts-BB@0x58 ]
+	16      (0000003c) aget-object          v0, v5, v2
+	17      (00000040) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (00000046) const-string         v0, 'http.nonProxyHosts'
+	19      (0000004a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (00000050) move-result-object   v1
+	21      (00000052) invoke-static        v0, v1, Lio/fabric/sdk/android/services/network/HttpRequest;->setProperty(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+
+nonProxyHosts-BB@0x58 : 
+	22      (00000058) return-void          
+
+nonProxyHosts-BB@0x5a : [ nonProxyHosts-BB@0x58 ]
+	23      (0000005a) const-string         v0, 'http.nonProxyHosts'
+	24      (0000005e) const/4              v1, 0
+	25      (00000060) invoke-static        v0, v1, Lio/fabric/sdk/android/services/network/HttpRequest;->setProperty(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	26      (00000066) goto                 -7
+

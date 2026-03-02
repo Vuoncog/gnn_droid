@@ -1,0 +1,59 @@
+# La/a/b/a/b/b/g/e;-><init>(La/a/b/a/b/b/a;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:a.a.b.a.b.b.a
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v4, 0
+	1       (00000002) invoke-direct        v5, Ljava/lang/Object;-><init>()V
+	2       (00000008) invoke-static        v4, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-static        v0, La/a/b/a/b/a/b;->a(Ljava/lang/Object;)La/a/b/a/b/a/b;
+	5       (00000016) move-result-object   v0
+	6       (00000018) iput-object          v0, v5, La/a/b/a/b/b/g/e;->c La/a/b/a/b/a/b;
+	7       (0000001c) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	8       (00000022) move-result-object   v0
+	9       (00000024) invoke-static        v0, La/a/b/a/b/a/b;->a(Ljava/lang/Object;)La/a/b/a/b/a/b;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) iput-object          v0, v5, La/a/b/a/b/b/g/e;->d La/a/b/a/b/a/b;
+	12      (00000030) iput-boolean         v4, v5, La/a/b/a/b/b/g/e;->e Z
+	13      (00000034) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	14      (0000003a) move-result-object   v0
+	15      (0000003c) invoke-static        v0, La/a/b/a/b/a/b;->a(Ljava/lang/Object;)La/a/b/a/b/a/b;
+	16      (00000042) move-result-object   v0
+	17      (00000044) iput-object          v0, v5, La/a/b/a/b/b/g/e;->f La/a/b/a/b/a/b;
+	18      (00000048) const/16             v0, 8
+	19      (0000004c) iput                 v0, v5, La/a/b/a/b/b/g/e;->g I
+	20      (00000050) new-instance         v0, Ljava/util/ArrayList;
+	21      (00000054) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	22      (0000005a) iput-object          v0, v5, La/a/b/a/b/b/g/e;->h Ljava/util/List;
+	23      (0000005e) new-instance         v0, La/a/b/a/b/b/g/f;
+	24      (00000062) invoke-direct        v0, v5, v4, La/a/b/a/b/b/g/f;-><init>(La/a/b/a/b/b/g/e; B)V
+	25      (00000068) iput-object          v0, v5, La/a/b/a/b/b/g/e;->j La/a/b/a/b/b/g/f;
+	26      (0000006c) iput-object          v6, v5, La/a/b/a/b/b/g/e;->i La/a/b/a/b/b/a;
+	27      (00000070) new-instance         v0, La/a/b/a/b/b/g/i;
+	28      (00000074) invoke-direct        v0, v6, La/a/b/a/b/b/g/i;-><init>(La/a/b/a/b/b/a;)V
+	29      (0000007a) iput-object          v0, v5, La/a/b/a/b/b/g/e;->b La/a/b/a/b/b/g/i;
+	30      (0000007e) new-instance         v0, La/a/b/a/b/b/g/a;
+	31      (00000082) invoke-direct        v0, La/a/b/a/b/b/g/a;-><init>()V
+	32      (00000088) iput-object          v0, v5, La/a/b/a/b/b/g/e;->a La/a/b/a/b/b/g/a;
+	33      (0000008c) iget-object          v0, v5, La/a/b/a/b/b/g/e;->a La/a/b/a/b/b/g/a;
+	34      (00000090) new-instance         v1, La/a/b/a/b/b/g/h;
+	35      (00000094) const-string         v2, 'Bus Master'
+	36      (00000098) const/4              v3, 0
+	37      (0000009a) invoke-direct        v1, v2, v3, La/a/b/a/b/b/g/h;-><init>(Ljava/lang/String; [I)V
+	38      (000000a0) invoke-virtual       v0, v1, v6, La/a/b/a/b/b/g/a;->a(La/a/b/a/b/b/g/h; La/a/b/a/b/b/a;)V
+	39      (000000a6) iget-object          v0, v5, La/a/b/a/b/b/g/e;->a La/a/b/a/b/b/g/a;
+	40      (000000aa) const/4              v1, 1
+	41      (000000ac) iput-boolean         v1, v0, La/a/b/a/b/b/g/a;->a Z
+	42      (000000b0) iget-object          v0, v5, La/a/b/a/b/b/g/e;->a La/a/b/a/b/b/g/a;
+	43      (000000b4) const/4              v1, -1
+	44      (000000b6) iput                 v1, v0, La/a/b/a/b/b/g/a;->b I
+	45      (000000ba) iget-object          v0, v5, La/a/b/a/b/b/g/e;->d La/a/b/a/b/a/b;
+	46      (000000be) invoke-virtual       v0, v5, v4, La/a/b/a/b/a/b;->a(La/a/b/a/b/a/h; Z)V
+	47      (000000c4) invoke-direct        v5, La/a/b/a/b/b/g/e;->h()V
+	48      (000000ca) return-void          
+

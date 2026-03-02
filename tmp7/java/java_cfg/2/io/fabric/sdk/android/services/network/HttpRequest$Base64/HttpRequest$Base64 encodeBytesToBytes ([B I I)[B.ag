@@ -1,0 +1,138 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest$Base64;->encodeBytesToBytes([B I I)[B [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:byte[]
+# - v8:int
+# - v9:int
+#
+# - return:byte[]
+
+encodeBytesToBytes-BB@0x0 : [ encodeBytesToBytes-BB@0x8 encodeBytesToBytes-BB@0x18 ]
+	0       (00000000) const/4              v6, 3
+	1       (00000002) const/4              v1, 0
+	2       (00000004) if-nez               v7, +a
+
+encodeBytesToBytes-BB@0x8 : 
+	3       (00000008) new-instance         v0, Ljava/lang/NullPointerException;
+	4       (0000000c) const-string         v1, 'Cannot serialize a null array.'
+	5       (00000010) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	6       (00000016) throw                v0
+
+encodeBytesToBytes-BB@0x18 : [ encodeBytesToBytes-BB@0x1c encodeBytesToBytes-BB@0x4e ]
+	7       (00000018) if-gez               v8, +1b
+
+encodeBytesToBytes-BB@0x1c : 
+	8       (0000001c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	9       (00000020) new-instance         v1, Ljava/lang/StringBuilder;
+	10      (00000024) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	11      (0000002a) const-string         v2, 'Cannot have negative offset: '
+	12      (0000002e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000034) move-result-object   v1
+	14      (00000036) invoke-virtual       v1, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	15      (0000003c) move-result-object   v1
+	16      (0000003e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	17      (00000044) move-result-object   v1
+	18      (00000046) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	19      (0000004c) throw                v0
+
+encodeBytesToBytes-BB@0x4e : [ encodeBytesToBytes-BB@0x52 encodeBytesToBytes-BB@0x84 ]
+	20      (0000004e) if-gez               v9, +1b
+
+encodeBytesToBytes-BB@0x52 : 
+	21      (00000052) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	22      (00000056) new-instance         v1, Ljava/lang/StringBuilder;
+	23      (0000005a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	24      (00000060) const-string         v2, 'Cannot have length offset: '
+	25      (00000064) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (0000006a) move-result-object   v1
+	27      (0000006c) invoke-virtual       v1, v9, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	28      (00000072) move-result-object   v1
+	29      (00000074) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (0000007a) move-result-object   v1
+	31      (0000007c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	32      (00000082) throw                v0
+
+encodeBytesToBytes-BB@0x84 : [ encodeBytesToBytes-BB@0x8e encodeBytesToBytes-BB@0xd8 ]
+	33      (00000084) add-int              v0, v8, v9
+	34      (00000088) array-length         v2, v7
+	35      (0000008a) if-le                v0, v2, +27
+
+encodeBytesToBytes-BB@0x8e : 
+	36      (0000008e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	37      (00000092) sget-object          v2, Ljava/util/Locale;->ENGLISH Ljava/util/Locale;
+	38      (00000096) const-string         v3, 'Cannot have offset of %d and length of %d with array of length %d'
+	39      (0000009a) new-array            v4, v6, [Ljava/lang/Object;
+	40      (0000009e) invoke-static        v8, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	41      (000000a4) move-result-object   v5
+	42      (000000a6) aput-object          v5, v4, v1
+	43      (000000aa) const/4              v1, 1
+	44      (000000ac) invoke-static        v9, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	45      (000000b2) move-result-object   v5
+	46      (000000b4) aput-object          v5, v4, v1
+	47      (000000b8) const/4              v1, 2
+	48      (000000ba) array-length         v5, v7
+	49      (000000bc) invoke-static        v5, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	50      (000000c2) move-result-object   v5
+	51      (000000c4) aput-object          v5, v4, v1
+	52      (000000c8) invoke-static        v2, v3, v4, Ljava/lang/String;->format(Ljava/util/Locale; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	53      (000000ce) move-result-object   v1
+	54      (000000d0) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	55      (000000d6) throw                v0
+
+encodeBytesToBytes-BB@0xd8 : [ encodeBytesToBytes-BB@0xe8 encodeBytesToBytes-BB@0x110 ]
+	56      (000000d8) div-int/lit8         v0, v9, 3
+	57      (000000dc) mul-int/lit8         v2, v0, 4
+	58      (000000e0) rem-int/lit8         v0, v9, 3
+	59      (000000e4) if-lez               v0, +16
+
+encodeBytesToBytes-BB@0xe8 : [ encodeBytesToBytes-BB@0xea ]
+	60      (000000e8) const/4              v0, 4
+
+encodeBytesToBytes-BB@0xea : [ encodeBytesToBytes-BB@0xf8 ]
+	61      (000000ea) add-int/2addr        v0, v2
+	62      (000000ec) new-array            v3, v0, [B
+	63      (000000f0) add-int/lit8         v4, v9, -2
+	64      (000000f4) move                 v0, v1
+	65      (000000f6) move                 v2, v1
+
+encodeBytesToBytes-BB@0xf8 : [ encodeBytesToBytes-BB@0xfc encodeBytesToBytes-BB@0x114 ]
+	66      (000000f8) if-ge                v2, v4, +e
+
+encodeBytesToBytes-BB@0xfc : [ encodeBytesToBytes-BB@0xf8 ]
+	67      (000000fc) add-int              v5, v2, v8
+	68      (00000100) invoke-static        v7, v5, v6, v3, v0, Lio/fabric/sdk/android/services/network/HttpRequest$Base64;->encode3to4([B I I [B I)[B
+	69      (00000106) add-int/lit8         v2, v2, 3
+	70      (0000010a) add-int/lit8         v0, v0, 4
+	71      (0000010e) goto                 -b
+
+encodeBytesToBytes-BB@0x110 : [ encodeBytesToBytes-BB@0xea ]
+	72      (00000110) move                 v0, v1
+	73      (00000112) goto                 -14
+
+encodeBytesToBytes-BB@0x114 : [ encodeBytesToBytes-BB@0x118 encodeBytesToBytes-BB@0x12a ]
+	74      (00000114) if-ge                v2, v9, +b
+
+encodeBytesToBytes-BB@0x118 : [ encodeBytesToBytes-BB@0x12a ]
+	75      (00000118) add-int              v4, v2, v8
+	76      (0000011c) sub-int              v2, v9, v2
+	77      (00000120) invoke-static        v7, v4, v2, v3, v0, Lio/fabric/sdk/android/services/network/HttpRequest$Base64;->encode3to4([B I I [B I)[B
+	78      (00000126) add-int/lit8         v0, v0, 4
+
+encodeBytesToBytes-BB@0x12a : [ encodeBytesToBytes-BB@0x134 encodeBytesToBytes-BB@0x142 ]
+	79      (0000012a) array-length         v2, v3
+	80      (0000012c) add-int/lit8         v2, v2, -1
+	81      (00000130) if-gt                v0, v2, +9
+
+encodeBytesToBytes-BB@0x134 : [ encodeBytesToBytes-BB@0x140 ]
+	82      (00000134) new-array            v2, v0, [B
+	83      (00000138) invoke-static        v3, v1, v2, v1, v0, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	84      (0000013e) move-object          v0, v2
+
+encodeBytesToBytes-BB@0x140 : 
+	85      (00000140) return-object        v0
+
+encodeBytesToBytes-BB@0x142 : [ encodeBytesToBytes-BB@0x140 ]
+	86      (00000142) move-object          v0, v3
+	87      (00000144) goto                 -2
+

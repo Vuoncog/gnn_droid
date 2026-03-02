@@ -1,0 +1,69 @@
+# Lcom/isnowstudio/common/a/b;->a(Landroid/app/Activity;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.app.Activity
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x30 a-BB@0x64 ]
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) const-string         v1, 'admob adview:'
+	3       (0000000e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) move-result-object   v0
+	5       (00000016) sget-object          v1, Lcom/isnowstudio/common/a/b;->a Lcom/google/ads/AdView;
+	6       (0000001a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v0
+	8       (00000022) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	9       (00000028) sget-object          v0, Lcom/isnowstudio/common/a/b;->a Lcom/google/ads/AdView;
+	10      (0000002c) if-nez               v0, +1c
+
+a-BB@0x30 : [ a-BB@0x64 ]
+	11      (00000030) new-instance         v0, Lcom/google/ads/AdView;
+	12      (00000034) sget-object          v1, Lcom/google/ads/AdSize;->BANNER Lcom/google/ads/AdSize;
+	13      (00000038) const-string         v2, 'a14ee6b37505a95'
+	14      (0000003c) invoke-direct        v0, v3, v1, v2, Lcom/google/ads/AdView;-><init>(Landroid/app/Activity; Lcom/google/ads/AdSize; Ljava/lang/String;)V
+	15      (00000042) sput-object          v0, Lcom/isnowstudio/common/a/b;->a Lcom/google/ads/AdView;
+	16      (00000046) new-instance         v1, Lcom/isnowstudio/common/a/a;
+	17      (0000004a) invoke-direct        v1, Lcom/isnowstudio/common/a/a;-><init>()V
+	18      (00000050) invoke-virtual       v0, v1, Lcom/google/ads/AdView;->setAdListener(Lcom/google/ads/AdListener;)V
+	19      (00000056) sget-object          v0, Lcom/isnowstudio/common/a/b;->a Lcom/google/ads/AdView;
+	20      (0000005a) sget-object          v1, Lcom/isnowstudio/common/a/b;->d Lcom/google/ads/AdRequest;
+	21      (0000005e) invoke-virtual       v0, v1, Lcom/google/ads/AdView;->loadAd(Lcom/google/ads/AdRequest;)V
+	30:63
+	(Ljava/lang/Exception; -> ac a-BB@0xac)
+
+a-BB@0x64 : [ a-BB@0x6c a-BB@0xaa ]
+	22      (00000064) sget-object          v0, Lcom/isnowstudio/common/a/b;->a Lcom/google/ads/AdView;
+	23      (00000068) if-eqz               v0, +21
+
+a-BB@0x6c : [ a-BB@0x8a a-BB@0xaa ]
+	24      (0000006c) sget-object          v2, Lcom/isnowstudio/common/a/b;->a Lcom/google/ads/AdView;
+	25      (00000070) const                v0, 2131230747 # [1.8077555505180786e+38]
+	26      (00000076) invoke-virtual       v3, v0, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+	27      (0000007c) move-result-object   v0
+	28      (0000007e) check-cast           v0, Landroid/widget/LinearLayout;
+	29      (00000082) sget-object          v1, Lcom/isnowstudio/common/a/b;->b Landroid/view/ViewGroup;
+	30      (00000086) if-eq                v1, v0, +12
+
+a-BB@0x8a : [ a-BB@0x9a a-BB@0xa0 ]
+	31      (0000008a) invoke-virtual       v2, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+	32      (00000090) move-result-object   v1
+	33      (00000092) check-cast           v1, Landroid/view/ViewGroup;
+	34      (00000096) if-eqz               v1, +5
+
+a-BB@0x9a : [ a-BB@0xa0 ]
+	35      (0000009a) invoke-virtual       v1, v2, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+a-BB@0xa0 : [ a-BB@0xaa ]
+	36      (000000a0) invoke-virtual       v0, v2, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+	37      (000000a6) sput-object          v0, Lcom/isnowstudio/common/a/b;->b Landroid/view/ViewGroup;
+
+a-BB@0xaa : 
+	38      (000000aa) return-void          
+
+a-BB@0xac : [ a-BB@0x64 ]
+	39      (000000ac) move-exception       v0
+	40      (000000ae) goto                 -25
+

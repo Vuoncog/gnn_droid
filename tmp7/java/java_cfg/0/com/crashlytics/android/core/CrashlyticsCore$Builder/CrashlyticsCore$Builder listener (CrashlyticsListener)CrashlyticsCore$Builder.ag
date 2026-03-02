@@ -1,0 +1,31 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->listener(Lcom/crashlytics/android/core/CrashlyticsListener;)Lcom/crashlytics/android/core/CrashlyticsCore$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.crashlytics.android.core.CrashlyticsListener
+#
+# - return:com.crashlytics.android.core.CrashlyticsCore$Builder
+
+listener-BB@0x0 : [ listener-BB@0x4 listener-BB@0x14 ]
+	0       (00000000) if-nez               v3, +a
+
+listener-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) const-string         v1, 'listener must not be null.'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+listener-BB@0x14 : [ listener-BB@0x1c listener-BB@0x2c ]
+	5       (00000014) iget-object          v0, v2, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->listener Lcom/crashlytics/android/core/CrashlyticsListener;
+	6       (00000018) if-eqz               v0, +a
+
+listener-BB@0x1c : 
+	7       (0000001c) new-instance         v0, Ljava/lang/IllegalStateException;
+	8       (00000020) const-string         v1, 'listener already set.'
+	9       (00000024) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	10      (0000002a) throw                v0
+
+listener-BB@0x2c : 
+	11      (0000002c) iput-object          v3, v2, Lcom/crashlytics/android/core/CrashlyticsCore$Builder;->listener Lcom/crashlytics/android/core/CrashlyticsListener;
+	12      (00000030) return-object        v2
+

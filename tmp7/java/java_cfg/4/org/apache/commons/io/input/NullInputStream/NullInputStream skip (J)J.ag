@@ -1,0 +1,50 @@
+# Lorg/apache/commons/io/input/NullInputStream;->skip(J)J [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:long
+#
+# - return:long
+
+skip-BB@0x0 : [ skip-BB@0x8 skip-BB@0x18 ]
+	0       (00000000) iget-boolean         v0, v5, Lorg/apache/commons/io/input/NullInputStream;->eof Z
+	1       (00000004) if-eqz               v0, +a
+
+skip-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/io/IOException;
+	3       (0000000c) const-string         v1, 'Skip after end of file'
+	4       (00000010) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+skip-BB@0x18 : [ skip-BB@0x28 skip-BB@0x34 ]
+	6       (00000018) iget-wide            v0, v5, Lorg/apache/commons/io/input/NullInputStream;->position J
+	7       (0000001c) iget-wide            v2, v5, Lorg/apache/commons/io/input/NullInputStream;->size J
+	8       (00000020) cmp-long             v0, v0, v2
+	9       (00000024) if-nez               v0, +8
+
+skip-BB@0x28 : [ skip-BB@0x32 ]
+	10      (00000028) invoke-direct        v5, Lorg/apache/commons/io/input/NullInputStream;->doEndOfFile()I
+	11      (0000002e) move-result          v0
+	12      (00000030) int-to-long          v6, v0
+
+skip-BB@0x32 : 
+	13      (00000032) return-wide          v6
+
+skip-BB@0x34 : [ skip-BB@0x4e skip-BB@0x32 ]
+	14      (00000034) iget-wide            v0, v5, Lorg/apache/commons/io/input/NullInputStream;->position J
+	15      (00000038) add-long/2addr       v0, v6
+	16      (0000003a) iput-wide            v0, v5, Lorg/apache/commons/io/input/NullInputStream;->position J
+	17      (0000003e) iget-wide            v0, v5, Lorg/apache/commons/io/input/NullInputStream;->position J
+	18      (00000042) iget-wide            v2, v5, Lorg/apache/commons/io/input/NullInputStream;->size J
+	19      (00000046) cmp-long             v0, v0, v2
+	20      (0000004a) if-lez               v0, -c
+
+skip-BB@0x4e : [ skip-BB@0x32 ]
+	21      (0000004e) iget-wide            v0, v5, Lorg/apache/commons/io/input/NullInputStream;->position J
+	22      (00000052) iget-wide            v2, v5, Lorg/apache/commons/io/input/NullInputStream;->size J
+	23      (00000056) sub-long/2addr       v0, v2
+	24      (00000058) sub-long/2addr       v6, v0
+	25      (0000005a) iget-wide            v0, v5, Lorg/apache/commons/io/input/NullInputStream;->size J
+	26      (0000005e) iput-wide            v0, v5, Lorg/apache/commons/io/input/NullInputStream;->position J
+	27      (00000062) goto                 -18
+

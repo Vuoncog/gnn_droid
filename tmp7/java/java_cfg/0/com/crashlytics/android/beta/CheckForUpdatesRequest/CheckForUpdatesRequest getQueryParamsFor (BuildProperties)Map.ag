@@ -1,0 +1,25 @@
+# Lcom/crashlytics/android/beta/CheckForUpdatesRequest;->getQueryParamsFor(Lcom/crashlytics/android/beta/BuildProperties;)Ljava/util/Map; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.crashlytics.android.beta.BuildProperties
+#
+# - return:java.util.Map
+
+getQueryParamsFor-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/HashMap;
+	1       (00000004) invoke-direct        v0, Ljava/util/HashMap;-><init>()V
+	2       (0000000a) const-string         v1, 'build_version'
+	3       (0000000e) iget-object          v2, v4, Lcom/crashlytics/android/beta/BuildProperties;->versionCode Ljava/lang/String;
+	4       (00000012) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	5       (00000018) const-string         v1, 'display_version'
+	6       (0000001c) iget-object          v2, v4, Lcom/crashlytics/android/beta/BuildProperties;->versionName Ljava/lang/String;
+	7       (00000020) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	8       (00000026) const-string         v1, 'instance'
+	9       (0000002a) iget-object          v2, v4, Lcom/crashlytics/android/beta/BuildProperties;->buildId Ljava/lang/String;
+	10      (0000002e) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	11      (00000034) const-string         v1, 'source'
+	12      (00000038) const-string         v2, '3'
+	13      (0000003c) invoke-interface     v0, v1, v2, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	14      (00000042) return-object        v0
+

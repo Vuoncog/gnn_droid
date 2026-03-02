@@ -1,0 +1,44 @@
+# La/a/b/a/b/b/j/a/c/b;->b()La/a/b/a/a/b; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:a.a.b.a.a.b
+
+b-BB@0x0 : [ b-BB@0x24 ]
+	0       (00000000) invoke-static        La/a/b/a/a/b;->a()La/a/b/a/a/b;
+	1       (00000006) move-result-object   v1
+	2       (00000008) const-string         v0, 'Scene'
+	3       (0000000c) invoke-static        v0, La/a/b/a/a/b;->a(Ljava/lang/String;)La/a/b/a/a/b;
+	4       (00000012) move-result-object   v2
+	5       (00000014) const-string         v0, 'type'
+	6       (00000018) iput-object          v0, v2, La/a/b/a/a/b;->b Ljava/lang/String;
+	7       (0000001c) const/4              v0, 1
+	8       (0000001e) iput                 v0, v2, La/a/b/a/a/b;->e I
+	9       (00000022) const/4              v0, 0
+
+b-BB@0x24 : [ b-BB@0x2c b-BB@0x6a ]
+	10      (00000024) const/16             v3, 100
+	11      (00000028) if-ge                v0, v3, +21
+
+b-BB@0x2c : [ b-BB@0x24 ]
+	12      (0000002c) new-instance         v3, Ljava/lang/StringBuilder;
+	13      (00000030) const-string         v4, 'Load '
+	14      (00000034) invoke-direct        v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	15      (0000003a) add-int/lit8         v4, v0, 1
+	16      (0000003e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	17      (00000044) move-result-object   v3
+	18      (00000046) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	19      (0000004c) move-result-object   v3
+	20      (0000004e) invoke-static        v3, La/a/b/a/a/b;->a(Ljava/lang/String;)La/a/b/a/a/b;
+	21      (00000054) move-result-object   v3
+	22      (00000056) invoke-virtual       v3, v0, La/a/b/a/a/b;->b(I)La/a/b/a/a/b;
+	23      (0000005c) move-result-object   v3
+	24      (0000005e) invoke-virtual       v2, v3, La/a/b/a/a/b;->a(La/a/b/a/a/b;)La/a/b/a/a/b;
+	25      (00000064) add-int/lit8         v0, v0, 1
+	26      (00000068) goto                 -22
+
+b-BB@0x6a : 
+	27      (0000006a) invoke-virtual       v1, v2, La/a/b/a/a/b;->a(La/a/b/a/a/b;)La/a/b/a/a/b;
+	28      (00000070) return-object        v1
+

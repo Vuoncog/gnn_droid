@@ -1,0 +1,24 @@
+# Lio/fabric/sdk/android/Fabric;->getCurrentActivity()Landroid/app/Activity; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.app.Activity
+
+getCurrentActivity-BB@0x0 : [ getCurrentActivity-BB@0x8 getCurrentActivity-BB@0x1a ]
+	0       (00000000) iget-object          v0, v1, Lio/fabric/sdk/android/Fabric;->activity Ljava/lang/ref/WeakReference;
+	1       (00000004) if-eqz               v0, +b
+
+getCurrentActivity-BB@0x8 : [ getCurrentActivity-BB@0x18 ]
+	2       (00000008) iget-object          v0, v1, Lio/fabric/sdk/android/Fabric;->activity Ljava/lang/ref/WeakReference;
+	3       (0000000c) invoke-virtual       v0, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	4       (00000012) move-result-object   v0
+	5       (00000014) check-cast           v0, Landroid/app/Activity;
+
+getCurrentActivity-BB@0x18 : 
+	6       (00000018) return-object        v0
+
+getCurrentActivity-BB@0x1a : [ getCurrentActivity-BB@0x18 ]
+	7       (0000001a) const/4              v0, 0
+	8       (0000001c) goto                 -2
+

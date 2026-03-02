@@ -1,0 +1,30 @@
+# La/a/b/a/b/a/d/a;->b()Ljava/lang/Boolean; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.Boolean
+
+b-BB@0x0 : [ b-BB@0x24 b-BB@0x30 ]
+	0       (00000000) iget-object          v0, v2, La/a/b/a/b/a/d/a;->b La/a/b/a/b/a/b;
+	1       (00000004) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Ljava/lang/Float;
+	4       (00000010) invoke-virtual       v0, Ljava/lang/Float;->floatValue()F
+	5       (00000016) move-result          v0
+	6       (00000018) const/high16         v1, 16256 # [1.0]
+	7       (0000001c) cmpl-float           v0, v0, v1
+	8       (00000020) if-nez               v0, +8
+
+b-BB@0x24 : [ b-BB@0x26 ]
+	9       (00000024) const/4              v0, 1
+
+b-BB@0x26 : 
+	10      (00000026) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) return-object        v0
+
+b-BB@0x30 : [ b-BB@0x26 ]
+	13      (00000030) const/4              v0, 0
+	14      (00000032) goto                 -6
+

@@ -1,0 +1,49 @@
+# La/a/b/a/b/b/a;->a(Z)[Ljava/lang/String; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:boolean
+#
+# - return:java.lang.String[]
+
+a-BB@0x0 : [ a-BB@0x18 a-BB@0x36 ]
+	0       (00000000) invoke-virtual       v5, La/a/b/a/b/b/a;->e()[La/a/b/a/b/b/b/a;
+	1       (00000006) move-result-object   v1
+	2       (00000008) new-instance         v2, Ljava/util/ArrayList;
+	3       (0000000c) array-length         v0, v1
+	4       (0000000e) invoke-direct        v2, v0, Ljava/util/ArrayList;-><init>(I)V
+	5       (00000014) if-eqz               v6, +11
+
+a-BB@0x18 : [ a-BB@0x36 ]
+	6       (00000018) iget-object          v0, v5, La/a/b/a/b/b/a;->a [La/a/b/a/b/b/b/a;
+	7       (0000001c) iget-object          v3, v5, La/a/b/a/b/b/a;->i La/a/b/a/b/b/e;
+	8       (00000020) iget                 v3, v3, La/a/b/a/b/b/e;->t I
+	9       (00000024) aget-object          v0, v0, v3
+	10      (00000028) invoke-virtual       v0, La/a/b/a/b/b/b/a;->toString()Ljava/lang/String;
+	11      (0000002e) move-result-object   v0
+	12      (00000030) invoke-interface     v2, v0, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+a-BB@0x36 : [ a-BB@0x3a ]
+	13      (00000036) array-length         v3, v1
+	14      (00000038) const/4              v0, 0
+
+a-BB@0x3a : [ a-BB@0x3e a-BB@0x56 ]
+	15      (0000003a) if-ge                v0, v3, +e
+
+a-BB@0x3e : [ a-BB@0x3a ]
+	16      (0000003e) aget-object          v4, v1, v0
+	17      (00000042) invoke-virtual       v4, La/a/b/a/b/b/b/a;->toString()Ljava/lang/String;
+	18      (00000048) move-result-object   v4
+	19      (0000004a) invoke-interface     v2, v4, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	20      (00000050) add-int/lit8         v0, v0, 1
+	21      (00000054) goto                 -d
+
+a-BB@0x56 : 
+	22      (00000056) invoke-interface     v2, Ljava/util/List;->size()I
+	23      (0000005c) move-result          v0
+	24      (0000005e) new-array            v0, v0, [Ljava/lang/String;
+	25      (00000062) invoke-interface     v2, v0, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	26      (00000068) move-result-object   v0
+	27      (0000006a) check-cast           v0, [Ljava/lang/String;
+	28      (0000006e) return-object        v0
+

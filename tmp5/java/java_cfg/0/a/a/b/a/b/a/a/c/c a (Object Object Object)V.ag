@@ -1,0 +1,81 @@
+# La/a/b/a/b/a/a/c;->a(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)V [access_flags=public final synthetic]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.Object
+# - v8:java.lang.Object
+# - v9:java.lang.Object
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0xca ]
+	0       (00000000) const                v5, 925353388 # [9.999999747378752e-06]
+	1       (00000006) if-eq                v8, v6, +62
+
+a-BB@0xa : [ a-BB@0x26 ]
+	2       (0000000a) iget-object          v0, v6, La/a/b/a/b/a/a/c;->a Ljava/util/List;
+	3       (0000000e) invoke-interface     v0, Ljava/util/List;->size()I
+	4       (00000014) move-result          v2
+	5       (00000016) const/4              v0, 0
+	6       (00000018) iget-object          v1, v6, La/a/b/a/b/a/a/c;->a Ljava/util/List;
+	7       (0000001c) invoke-interface     v1, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	8       (00000022) move-result-object   v3
+	9       (00000024) move                 v1, v0
+
+a-BB@0x26 : [ a-BB@0x32 a-BB@0x58 ]
+	10      (00000026) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	11      (0000002c) move-result          v0
+	12      (0000002e) if-eqz               v0, +15
+
+a-BB@0x32 : [ a-BB@0x26 ]
+	13      (00000032) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	14      (00000038) move-result-object   v0
+	15      (0000003a) check-cast           v0, La/a/b/a/b/a/b;
+	16      (0000003e) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	17      (00000044) move-result-object   v0
+	18      (00000046) check-cast           v0, Ljava/lang/Float;
+	19      (0000004a) invoke-virtual       v0, Ljava/lang/Float;->floatValue()F
+	20      (00000050) move-result          v0
+	21      (00000052) add-float/2addr      v0, v1
+	22      (00000054) move                 v1, v0
+	23      (00000056) goto                 -18
+
+a-BB@0x58 : [ a-BB@0x7e ]
+	24      (00000058) int-to-float         v0, v2
+	25      (0000005a) div-float            v0, v1, v0
+	26      (0000005e) invoke-direct        v6, La/a/b/a/b/a/a/c;->c()V
+	27      (00000064) invoke-static        v0, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+	28      (0000006a) move-result-object   v1
+	29      (0000006c) invoke-virtual       v6, v1, v6, La/a/b/a/b/a/a/c;->a(Ljava/lang/Object; Ljava/lang/Object;)V
+	30      (00000072) invoke-static        v5, v0, Ljava/lang/Math;->max(F F)F
+	31      (00000078) move-result          v3
+	32      (0000007a) const/4              v0, 0
+	33      (0000007c) move                 v1, v0
+
+a-BB@0x7e : [ a-BB@0x82 a-BB@0xca ]
+	34      (0000007e) if-ge                v1, v2, +26
+
+a-BB@0x82 : [ a-BB@0x7e ]
+	35      (00000082) iget-object          v4, v6, La/a/b/a/b/a/a/c;->i Ljava/util/List;
+	36      (00000086) iget-object          v0, v6, La/a/b/a/b/a/a/c;->a Ljava/util/List;
+	37      (0000008a) invoke-interface     v0, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	38      (00000090) move-result-object   v0
+	39      (00000092) check-cast           v0, La/a/b/a/b/a/b;
+	40      (00000096) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	41      (0000009c) move-result-object   v0
+	42      (0000009e) check-cast           v0, Ljava/lang/Float;
+	43      (000000a2) invoke-virtual       v0, Ljava/lang/Float;->floatValue()F
+	44      (000000a8) move-result          v0
+	45      (000000aa) invoke-static        v0, v5, Ljava/lang/Math;->max(F F)F
+	46      (000000b0) move-result          v0
+	47      (000000b2) div-float/2addr      v0, v3
+	48      (000000b4) invoke-static        v0, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+	49      (000000ba) move-result-object   v0
+	50      (000000bc) invoke-interface     v4, v1, v0, Ljava/util/List;->set(I Ljava/lang/Object;)Ljava/lang/Object;
+	51      (000000c2) add-int/lit8         v0, v1, 1
+	52      (000000c6) move                 v1, v0
+	53      (000000c8) goto                 -25
+
+a-BB@0xca : 
+	54      (000000ca) return-void          
+

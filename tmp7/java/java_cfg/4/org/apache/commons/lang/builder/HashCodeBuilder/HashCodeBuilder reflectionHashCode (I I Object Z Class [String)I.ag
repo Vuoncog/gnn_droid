@@ -1,0 +1,48 @@
+# Lorg/apache/commons/lang/builder/HashCodeBuilder;->reflectionHashCode(I I Ljava/lang/Object; Z Ljava/lang/Class; [Ljava/lang/String;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+# - v5:java.lang.Object
+# - v6:boolean
+# - v7:java.lang.Class
+# - v8:java.lang.String[]
+#
+# - return:int
+
+reflectionHashCode-BB@0x0 : [ reflectionHashCode-BB@0x4 reflectionHashCode-BB@0x14 ]
+	0       (00000000) if-nez               v5, +a
+
+reflectionHashCode-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) const-string         v1, 'The object to build a hash code for must not be null'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+reflectionHashCode-BB@0x14 : [ reflectionHashCode-BB@0x2c ]
+	5       (00000014) new-instance         v1, Lorg/apache/commons/lang/builder/HashCodeBuilder;
+	6       (00000018) invoke-direct        v1, v3, v4, Lorg/apache/commons/lang/builder/HashCodeBuilder;-><init>(I I)V
+	7       (0000001e) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	8       (00000024) move-result-object   v0
+	9       (00000026) invoke-static        v5, v0, v1, v6, v8, Lorg/apache/commons/lang/builder/HashCodeBuilder;->reflectionAppend(Ljava/lang/Object; Ljava/lang/Class; Lorg/apache/commons/lang/builder/HashCodeBuilder; Z [Ljava/lang/String;)V
+
+reflectionHashCode-BB@0x2c : [ reflectionHashCode-BB@0x38 reflectionHashCode-BB@0x4c ]
+	10      (0000002c) invoke-virtual       v0, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+	11      (00000032) move-result-object   v2
+	12      (00000034) if-eqz               v2, +c
+
+reflectionHashCode-BB@0x38 : [ reflectionHashCode-BB@0x3c reflectionHashCode-BB@0x4c ]
+	13      (00000038) if-eq                v0, v7, +a
+
+reflectionHashCode-BB@0x3c : [ reflectionHashCode-BB@0x2c ]
+	14      (0000003c) invoke-virtual       v0, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+	15      (00000042) move-result-object   v0
+	16      (00000044) invoke-static        v5, v0, v1, v6, v8, Lorg/apache/commons/lang/builder/HashCodeBuilder;->reflectionAppend(Ljava/lang/Object; Ljava/lang/Class; Lorg/apache/commons/lang/builder/HashCodeBuilder; Z [Ljava/lang/String;)V
+	17      (0000004a) goto                 -f
+
+reflectionHashCode-BB@0x4c : 
+	18      (0000004c) invoke-virtual       v1, Lorg/apache/commons/lang/builder/HashCodeBuilder;->toHashCode()I
+	19      (00000052) move-result          v0
+	20      (00000054) return               v0
+

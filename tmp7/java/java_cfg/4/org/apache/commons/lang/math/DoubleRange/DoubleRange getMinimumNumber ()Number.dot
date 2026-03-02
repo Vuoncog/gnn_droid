@@ -1,0 +1,54 @@
+digraph {
+	graph [bb="0,0,782,408",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_55e865ec6b5d9a64c245e188ac02f153 {
+		graph [bb="8,8,774,400",
+			label="Lorg/apache/commons/lang/math/DoubleRange;.getMinimumNumber->()Ljava/lang/Number;\nLocal registers v0 ... v4\nreturn = java.lang.Number",
+			lheight=0.62,
+			lp="391,373.5",
+			lwidth=8.64
+		];
+		struct_d6a2f16f366cdcf43d92f8a36e374977	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/math/DoubleRange;-&gt;minObject Ljava/lang/Double;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xb</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="393,304.5",
+			width=10];
+		struct_f668e9e513916cc0fdb92be766c518a5	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/lang/Double;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#8C8C66">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/math/DoubleRange;-&gt;min D</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT color="#7272CC">v3</FONT>, <FONT color="#DF3A01">Ljava/lang/Double;-&gt;&lt;init&gt;(D)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/math/DoubleRange;-&gt;minObject Ljava/lang/Double;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="381,177.5",
+			width=10.125];
+		struct_d6a2f16f366cdcf43d92f8a36e374977:tail -> struct_f668e9e513916cc0fdb92be766c518a5:header	[color=red,
+			pos="e,42,227.5 54,275.5 54,257.46 45.925,251.51 43.023,237.82"];
+		struct_7d7df6345536a6d81105869ae27e40af	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/math/DoubleRange;-&gt;minObject Ljava/lang/Double;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="391,50.5",
+			width=10.111];
+		struct_d6a2f16f366cdcf43d92f8a36e374977:tail -> struct_7d7df6345536a6d81105869ae27e40af:header	[color=green,
+			pos="e,52,78.5 54,275.5 54,197.47 701.48,290.78 755,234 789.45,197.45 789.42,157.57 755,121 703.77,66.581 109.14,148.72 55.818,88.04"];
+		struct_f668e9e513916cc0fdb92be766c518a5:tail -> struct_7d7df6345536a6d81105869ae27e40af:header	[color=blue,
+			pos="e,52,78.5 42,126.5 42,108.62 48.729,102.44 51.147,88.766"];
+	}
+}

@@ -1,0 +1,46 @@
+# Lorg/apache/commons/lang/StringUtils;->containsOnly(Ljava/lang/String; [C)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+# - v5:char[]
+#
+# - return:boolean
+
+containsOnly-BB@0x0 : [ containsOnly-BB@0x8 containsOnly-BB@0xc ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) if-eqz               v5, +4
+
+containsOnly-BB@0x8 : [ containsOnly-BB@0xc containsOnly-BB@0x10 ]
+	3       (00000008) if-nez               v4, +4
+
+containsOnly-BB@0xc : [ containsOnly-BB@0xe ]
+	4       (0000000c) move                 v0, v1
+
+containsOnly-BB@0xe : 
+	5       (0000000e) return               v0
+
+containsOnly-BB@0x10 : [ containsOnly-BB@0x1c containsOnly-BB@0xe ]
+	6       (00000010) invoke-virtual       v4, Ljava/lang/String;->length()I
+	7       (00000016) move-result          v2
+	8       (00000018) if-eqz               v2, -5
+
+containsOnly-BB@0x1c : [ containsOnly-BB@0x22 containsOnly-BB@0x26 ]
+	9       (0000001c) array-length         v2, v5
+	10      (0000001e) if-nez               v2, +4
+
+containsOnly-BB@0x22 : [ containsOnly-BB@0xe ]
+	11      (00000022) move                 v0, v1
+	12      (00000024) goto                 -b
+
+containsOnly-BB@0x26 : [ containsOnly-BB@0x34 containsOnly-BB@0xe ]
+	13      (00000026) invoke-static        v4, v5, Lorg/apache/commons/lang/StringUtils;->indexOfAnyBut(Ljava/lang/String; [C)I
+	14      (0000002c) move-result          v2
+	15      (0000002e) const/4              v3, -1
+	16      (00000030) if-eq                v2, v3, -11
+
+containsOnly-BB@0x34 : [ containsOnly-BB@0xe ]
+	17      (00000034) move                 v0, v1
+	18      (00000036) goto                 -14
+

@@ -1,0 +1,126 @@
+# Lnet/youmi/android/bl;->b(Landroid/app/Activity; Landroid/webkit/WebView; Ljava/lang/String;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.app.Activity
+# - v8:android.webkit.WebView
+# - v9:java.lang.String
+#
+# - return:boolean
+
+b-BB@0x0 : [ b-BB@0x2 ]
+	0       (00000000) const/4              v6, 0
+
+b-BB@0x2 : [ b-BB@0x12 b-BB@0xa8 ]
+	1       (00000002) const-string         v0, 'youmi://wap/'
+	2       (00000006) invoke-virtual       v9, v0, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-nez               v0, +4d
+	2:41
+	(Ljava/lang/Exception; -> a6 b-BB@0xa6)
+
+b-BB@0x12 : [ b-BB@0x3a b-BB@0xa0 ]
+	5       (00000012) const-string         v0, 'youmi://wap/'
+	6       (00000016) invoke-virtual       v0, Ljava/lang/String;->length()I
+	7       (0000001c) move-result          v0
+	8       (0000001e) invoke-virtual       v9, v0, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	9       (00000024) move-result-object   v0
+	10      (00000026) const-string         v1, '/'
+	11      (0000002a) invoke-virtual       v0, v1, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	12      (00000030) move-result          v1
+	13      (00000032) const/4              v2, 0
+	14      (00000034) const/4              v3, -1
+	15      (00000036) if-le                v1, v3, +35
+	2:41
+	(Ljava/lang/Exception; -> a6 b-BB@0xa6)
+
+b-BB@0x3a : [ b-BB@0x44 ]
+	16      (0000003a) const/4              v3, 0
+	17      (0000003c) invoke-virtual       v0, v3, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	18      (00000042) move-result-object   v3
+
+b-BB@0x44 : [ b-BB@0x54 b-BB@0xb8 ]
+	19      (00000044) invoke-virtual       v0, Ljava/lang/String;->length()I
+	20      (0000004a) move-result          v4
+	21      (0000004c) add-int/lit8         v5, v1, 1
+	22      (00000050) if-le                v4, v5, +34
+	44:5d
+	(Ljava/lang/Exception; -> 98 b-BB@0x98)
+
+b-BB@0x54 : [ b-BB@0x64 b-BB@0xb4 ]
+	23      (00000054) add-int/lit8         v1, v1, 1
+	24      (00000058) invoke-virtual       v0, v1, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	25      (0000005e) move-result-object   v0
+	26      (00000060) if-eqz               v0, +2a
+
+b-BB@0x64 : [ b-BB@0x6e ]
+	27      (00000064) invoke-static        v0, Lnet/youmi/android/v;->a(Ljava/lang/String;)Ljava/lang/String;
+	28      (0000006a) move-result-object   v0
+	29      (0000006c) move-object          v1, v3
+	64:69
+	(Ljava/lang/Exception; -> b0 b-BB@0xb0)
+
+b-BB@0x6e : [ b-BB@0x72 b-BB@0x94 ]
+	30      (0000006e) if-eqz               v1, +13
+
+b-BB@0x72 : [ b-BB@0x76 b-BB@0x94 ]
+	31      (00000072) if-eqz               v0, +11
+
+b-BB@0x76 : [ b-BB@0x7c ]
+	32      (00000076) invoke-virtual       v8, v0, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
+	76:7b
+	(Ljava/lang/Exception; -> a6 b-BB@0xa6)
+
+b-BB@0x7c : [ b-BB@0x94 ]
+	33      (0000007c) invoke-static        Lnet/youmi/android/aj;->a()Lnet/youmi/android/ax;
+	34      (00000082) move-result-object   v0
+	35      (00000084) invoke-virtual       v0, Lnet/youmi/android/ax;->f()I
+	36      (0000008a) move-result          v0
+	37      (0000008c) const/4              v2, 3
+	38      (0000008e) invoke-static        v7, v0, v1, v2, Lnet/youmi/android/a;->b(Landroid/app/Activity; I Ljava/lang/String; I)V
+	7c:93
+	(Ljava/lang/Exception; -> ac b-BB@0xac)
+
+b-BB@0x94 : [ b-BB@0x96 ]
+	39      (00000094) const/4              v0, 1
+
+b-BB@0x96 : 
+	40      (00000096) return               v0
+
+b-BB@0x98 : [ b-BB@0x9c ]
+	41      (00000098) move-exception       v0
+	42      (0000009a) move-object          v0, v2
+
+b-BB@0x9c : [ b-BB@0x6e ]
+	43      (0000009c) move-object          v1, v3
+	44      (0000009e) goto                 -18
+
+b-BB@0xa0 : [ b-BB@0x6e ]
+	45      (000000a0) move-object          v1, v0
+	46      (000000a2) move-object          v0, v2
+	47      (000000a4) goto                 -1b
+
+b-BB@0xa6 : [ b-BB@0xa8 ]
+	48      (000000a6) move-exception       v0
+
+b-BB@0xa8 : [ b-BB@0x96 ]
+	49      (000000a8) move                 v0, v6
+	50      (000000aa) goto                 -a
+
+b-BB@0xac : [ b-BB@0x94 ]
+	51      (000000ac) move-exception       v0
+	52      (000000ae) goto                 -d
+
+b-BB@0xb0 : [ b-BB@0x9c ]
+	53      (000000b0) move-exception       v1
+	54      (000000b2) goto                 -b
+
+b-BB@0xb4 : [ b-BB@0x6e ]
+	55      (000000b4) move-object          v1, v3
+	56      (000000b6) goto                 -24
+
+b-BB@0xb8 : [ b-BB@0x6e ]
+	57      (000000b8) move-object          v0, v2
+	58      (000000ba) move-object          v1, v3
+	59      (000000bc) goto                 -27
+

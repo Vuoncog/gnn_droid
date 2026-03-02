@@ -1,0 +1,240 @@
+# Lnet/youmi/android/bt;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x4 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/4              v7, 1
+
+run-BB@0x4 : [ run-BB@0x2c ]
+	2       (00000004) iget-object          v0, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	3       (00000008) iget-object          v1, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	4       (0000000c) const/4              v2, 0
+	5       (0000000e) const-string         v3, '连接中'
+	6       (00000012) invoke-static        v0, v1, v2, v3, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I Ljava/lang/String;)V
+	7       (00000018) iget-object          v0, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	8       (0000001c) iget-object          v1, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	9       (00000020) const/16             v2, 10
+	10      (00000024) invoke-static        v0, v1, v2, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I)V
+	11      (0000002a) const/4              v0, 0
+	4:29
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x2c : [ run-BB@0x34 run-BB@0x44 ]
+	12      (0000002c) iget-object          v1, v8, Lnet/youmi/android/bt;->c Lnet/youmi/android/ay;
+	13      (00000030) if-eqz               v1, +a
+	2c:41
+	(Ljava/lang/Exception; -> 202 run-BB@0x202)
+
+run-BB@0x34 : [ run-BB@0x44 ]
+	14      (00000034) iget-object          v1, v8, Lnet/youmi/android/bt;->c Lnet/youmi/android/ay;
+	15      (00000038) iget-object          v2, v8, Lnet/youmi/android/bt;->d Ljava/lang/String;
+	16      (0000003c) invoke-virtual       v1, v2, Lnet/youmi/android/ay;->c(Ljava/lang/String;)Ljava/io/InputStream;
+	17      (00000042) move-result-object   v0
+
+run-BB@0x44 : [ run-BB@0x48 run-BB@0xe0 ]
+	18      (00000044) if-eqz               v0, +4e
+
+run-BB@0x48 : [ run-BB@0x5c ]
+	19      (00000048) iget-object          v1, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	20      (0000004c) iget-object          v2, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	21      (00000050) const/16             v3, 50
+	22      (00000054) invoke-static        v1, v2, v3, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I)V
+	23      (0000005a) move                 v1, v7
+	48:a1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x5c : [ run-BB@0x60 run-BB@0x1de ]
+	24      (0000005c) if-eqz               v0, +c1
+	48:a1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x60 : [ run-BB@0x6c run-BB@0x1c8 ]
+	25      (00000060) invoke-virtual       v0, Ljava/io/InputStream;->available()I
+	26      (00000066) move-result          v2
+	27      (00000068) if-lez               v2, +b0
+	48:a1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x6c : [ run-BB@0x82 ]
+	28      (0000006c) const/16             v3, 512
+	29      (00000070) new-array            v3, v3, [B
+	30      (00000074) array-length         v4, v3
+	31      (00000076) div-int/2addr        v2, v4
+	32      (00000078) new-instance         v4, Ljava/io/ByteArrayOutputStream;
+	33      (0000007c) invoke-direct        v4, Ljava/io/ByteArrayOutputStream;-><init>()V
+	48:a1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x82 : [ run-BB@0x92 run-BB@0x1ae ]
+	34      (00000082) const/4              v5, 0
+	35      (00000084) array-length         v6, v3
+	36      (00000086) invoke-virtual       v0, v3, v5, v6, Ljava/io/InputStream;->read([B I I)I
+	37      (0000008c) move-result          v5
+	38      (0000008e) if-gtz               v5, +90
+	48:a1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x92 : [ run-BB@0xa2 ]
+	39      (00000092) iget-object          v2, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	40      (00000096) invoke-virtual       v4, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+	41      (0000009c) move-result-object   v3
+	42      (0000009e) iput-object          v3, v2, Lnet/youmi/android/cx;->c [B
+	48:a1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0xa2 : [ run-BB@0xa8 ]
+	43      (000000a2) invoke-virtual       v0, Ljava/io/InputStream;->close()V
+	a2:a7
+	(Ljava/lang/Exception; -> 1f6 run-BB@0x1f6)
+
+run-BB@0xa8 : [ run-BB@0xae ]
+	44      (000000a8) invoke-virtual       v4, Ljava/io/ByteArrayOutputStream;->close()V
+	a8:ad
+	(Ljava/lang/Exception; -> 1fc run-BB@0x1fc)
+
+run-BB@0xae : [ run-BB@0xb6 run-BB@0xd0 ]
+	45      (000000ae) iget-object          v0, v8, Lnet/youmi/android/bt;->c Lnet/youmi/android/ay;
+	46      (000000b2) if-eqz               v0, +f
+	ae:127
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0xb6 : [ run-BB@0xba run-BB@0xd0 ]
+	47      (000000b6) if-nez               v1, +d
+	ae:127
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0xba : [ run-BB@0xd0 ]
+	48      (000000ba) iget-object          v0, v8, Lnet/youmi/android/bt;->c Lnet/youmi/android/ay;
+	49      (000000be) iget-object          v1, v8, Lnet/youmi/android/bt;->d Ljava/lang/String;
+	50      (000000c2) iget-object          v2, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	51      (000000c6) iget-object          v2, v2, Lnet/youmi/android/cx;->c [B
+	52      (000000ca) invoke-virtual       v0, v1, v2, Lnet/youmi/android/ay;->a(Ljava/lang/String; [B)Z
+	ae:127
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0xd0 : [ run-BB@0xde ]
+	53      (000000d0) iget-object          v0, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	54      (000000d4) iget-object          v1, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	55      (000000d8) invoke-static        v0, v1, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp;)V
+	ae:127
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0xde : 
+	56      (000000de) return-void          
+	ae:127
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0xe0 : [ run-BB@0x10a run-BB@0x144 ]
+	57      (000000e0) iget-object          v0, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	58      (000000e4) iget-object          v1, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	59      (000000e8) const/16             v2, 10
+	60      (000000ec) invoke-static        v0, v1, v2, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I)V
+	61      (000000f2) iget-object          v0, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	62      (000000f6) iget-object          v0, v0, Lnet/youmi/android/cx;->b Landroid/app/Activity;
+	63      (000000fa) iget-object          v1, v8, Lnet/youmi/android/bt;->d Ljava/lang/String;
+	64      (000000fe) invoke-static        v0, v1, Lnet/youmi/android/cg;->a(Landroid/content/Context; Ljava/lang/String;)Ljava/net/HttpURLConnection;
+	65      (00000104) move-result-object   v0
+	66      (00000106) if-nez               v0, +1f
+	ae:127
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x10a : [ run-BB@0xde ]
+	67      (0000010a) const-string         v0, 'Unable to connect to the server, please check your network configuration.'
+	68      (0000010e) invoke-static        v0, Lnet/youmi/android/g;->b(Ljava/lang/String;)V
+	69      (00000114) iget-object          v0, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	70      (00000118) iget-object          v1, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	71      (0000011c) const/4              v2, 1
+	72      (0000011e) iget-object          v3, v8, Lnet/youmi/android/bt;->d Ljava/lang/String;
+	73      (00000122) invoke-static        v0, v1, v2, v3, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I Ljava/lang/String;)V
+	74      (00000128) goto                 -25
+
+run-BB@0x12a : [ run-BB@0xde ]
+	75      (0000012a) move-exception       v0
+	76      (0000012c) iget-object          v1, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	77      (00000130) iget-object          v2, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	78      (00000134) invoke-virtual       v0, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+	79      (0000013a) move-result-object   v0
+	80      (0000013c) invoke-static        v1, v2, v7, v0, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I Ljava/lang/String;)V
+	81      (00000142) goto                 -32
+
+run-BB@0x144 : [ run-BB@0x174 ]
+	82      (00000144) const-string         v1, 'GET'
+	83      (00000148) invoke-virtual       v0, v1, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
+	84      (0000014e) const/4              v1, 1
+	85      (00000150) invoke-virtual       v0, v1, Ljava/net/HttpURLConnection;->setDoInput(Z)V
+	86      (00000156) invoke-static        v0, Lnet/youmi/android/cg;->a(Ljava/net/HttpURLConnection;)V
+	87      (0000015c) invoke-virtual       v0, Ljava/net/HttpURLConnection;->connect()V
+	88      (00000162) iget-object          v1, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	89      (00000166) invoke-virtual       v1, v0, Lnet/youmi/android/cx;->a(Ljava/net/HttpURLConnection;)V
+	90      (0000016c) invoke-virtual       v0, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+	91      (00000172) move-result-object   v0
+	144:171
+	(Ljava/lang/Exception; -> 18c run-BB@0x18c)
+
+run-BB@0x174 : [ run-BB@0x5c ]
+	92      (00000174) iget-object          v1, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	93      (00000178) iget-object          v2, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	94      (0000017c) const/16             v3, 50
+	95      (00000180) invoke-static        v1, v2, v3, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I)V
+	96      (00000186) move                 v1, v4
+	97      (00000188) goto/16              -96
+	174:1f1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x18c : [ run-BB@0xde ]
+	98      (0000018c) move-exception       v0
+	99      (0000018e) const-string         v0, 'Unable to connect to the server, please check your network configuration..'
+	100     (00000192) invoke-static        v0, Lnet/youmi/android/g;->b(Ljava/lang/String;)V
+	101     (00000198) iget-object          v0, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	102     (0000019c) iget-object          v1, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	103     (000001a0) const/4              v2, 1
+	104     (000001a2) iget-object          v3, v8, Lnet/youmi/android/bt;->d Ljava/lang/String;
+	105     (000001a6) invoke-static        v0, v1, v2, v3, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I Ljava/lang/String;)V
+	106     (000001ac) goto                 -67
+	174:1f1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x1ae : [ run-BB@0x82 ]
+	107     (000001ae) const/4              v6, 0
+	108     (000001b0) invoke-virtual       v4, v3, v6, v5, Ljava/io/ByteArrayOutputStream;->write([B I I)V
+	109     (000001b6) iget-object          v5, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	110     (000001ba) iget-object          v6, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	111     (000001be) invoke-static        v5, v6, v2, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I)V
+	112     (000001c4) goto/16              -a1
+	174:1f1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x1c8 : [ run-BB@0xde ]
+	113     (000001c8) iget-object          v0, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	114     (000001cc) iget-object          v1, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	115     (000001d0) const/4              v2, 1
+	116     (000001d2) iget-object          v3, v8, Lnet/youmi/android/bt;->d Ljava/lang/String;
+	117     (000001d6) invoke-static        v0, v1, v2, v3, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I Ljava/lang/String;)V
+	118     (000001dc) goto                 -7f
+	174:1f1
+	(Ljava/lang/Exception; -> 12a run-BB@0x12a)
+
+run-BB@0x1de : [ run-BB@0xde ]
+	119     (000001de) iget-object          v0, v8, Lnet/youmi/android/bt;->a Lnet/youmi/android/cx;
+	120     (000001e2) iget-object          v1, v8, Lnet/youmi/android/bt;->b Lnet/youmi/android/bp;
+	121     (000001e6) const/4              v2, 1
+	122     (000001e8) iget-object          v3, v8, Lnet/youmi/android/bt;->d Ljava/lang/String;
+	123     (000001ec) invoke-static        v0, v1, v2, v3, Lnet/youmi/android/cx;->a(Lnet/youmi/android/cx; Lnet/youmi/android/bp; I Ljava/lang/String;)V
+	124     (000001f2) goto/16              -8a
+
+run-BB@0x1f6 : [ run-BB@0xa8 ]
+	125     (000001f6) move-exception       v0
+	126     (000001f8) goto/16              -a8
+
+run-BB@0x1fc : [ run-BB@0xae ]
+	127     (000001fc) move-exception       v0
+	128     (000001fe) goto/16              -a8
+
+run-BB@0x202 : [ run-BB@0x44 ]
+	129     (00000202) move-exception       v1
+	130     (00000204) goto/16              -e0
+

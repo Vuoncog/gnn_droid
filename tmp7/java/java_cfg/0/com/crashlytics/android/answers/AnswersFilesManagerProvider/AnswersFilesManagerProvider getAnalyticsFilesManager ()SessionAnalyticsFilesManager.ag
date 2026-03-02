@@ -1,0 +1,38 @@
+# Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;->getAnalyticsFilesManager()Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:com.crashlytics.android.answers.SessionAnalyticsFilesManager
+
+getAnalyticsFilesManager-BB@0x0 : [ getAnalyticsFilesManager-BB@0x14 getAnalyticsFilesManager-BB@0x24 ]
+	0       (00000000) invoke-static        Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) if-ne                v0, v1, +a
+
+getAnalyticsFilesManager-BB@0x14 : 
+	5       (00000014) new-instance         v0, Ljava/lang/IllegalStateException;
+	6       (00000018) const-string         v1, 'AnswersFilesManagerProvider cannot be called on the main thread'
+	7       (0000001c) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	8       (00000022) throw                v0
+
+getAnalyticsFilesManager-BB@0x24 : 
+	9       (00000024) new-instance         v0, Lcom/crashlytics/android/answers/SessionEventTransform;
+	10      (00000028) invoke-direct        v0, Lcom/crashlytics/android/answers/SessionEventTransform;-><init>()V
+	11      (0000002e) new-instance         v1, Lio/fabric/sdk/android/services/common/SystemCurrentTimeProvider;
+	12      (00000032) invoke-direct        v1, Lio/fabric/sdk/android/services/common/SystemCurrentTimeProvider;-><init>()V
+	13      (00000038) iget-object          v2, v7, Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;->fileStore Lio/fabric/sdk/android/services/persistence/FileStore;
+	14      (0000003c) invoke-interface     v2, Lio/fabric/sdk/android/services/persistence/FileStore;->getFilesDir()Ljava/io/File;
+	15      (00000042) move-result-object   v2
+	16      (00000044) new-instance         v3, Lio/fabric/sdk/android/services/events/GZIPQueueFileEventStorage;
+	17      (00000048) iget-object          v4, v7, Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;->context Landroid/content/Context;
+	18      (0000004c) const-string         v5, 'session_analytics.tap'
+	19      (00000050) const-string         v6, 'session_analytics_to_send'
+	20      (00000054) invoke-direct        v3, v4, v2, v5, v6, Lio/fabric/sdk/android/services/events/GZIPQueueFileEventStorage;-><init>(Landroid/content/Context; Ljava/io/File; Ljava/lang/String; Ljava/lang/String;)V
+	21      (0000005a) new-instance         v2, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;
+	22      (0000005e) iget-object          v4, v7, Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;->context Landroid/content/Context;
+	23      (00000062) invoke-direct        v2, v4, v0, v1, v3, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;-><init>(Landroid/content/Context; Lcom/crashlytics/android/answers/SessionEventTransform; Lio/fabric/sdk/android/services/common/CurrentTimeProvider; Lio/fabric/sdk/android/services/events/EventsStorage;)V
+	24      (00000068) return-object        v2
+

@@ -1,0 +1,47 @@
+# Lorg/apache/commons/io/filefilter/AndFileFilter;->accept(Ljava/io/File;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.File
+#
+# - return:boolean
+
+accept-BB@0x0 : [ accept-BB@0x12 accept-BB@0x16 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v0, v3, Lorg/apache/commons/io/filefilter/AndFileFilter;->fileFilters Ljava/util/List;
+	2       (00000006) invoke-interface     v0, Ljava/util/List;->isEmpty()Z
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-eqz               v0, +4
+
+accept-BB@0x12 : [ accept-BB@0x14 ]
+	5       (00000012) move                 v0, v1
+
+accept-BB@0x14 : 
+	6       (00000014) return               v0
+
+accept-BB@0x16 : [ accept-BB@0x22 ]
+	7       (00000016) iget-object          v0, v3, Lorg/apache/commons/io/filefilter/AndFileFilter;->fileFilters Ljava/util/List;
+	8       (0000001a) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	9       (00000020) move-result-object   v2
+
+accept-BB@0x22 : [ accept-BB@0x2e accept-BB@0x4a ]
+	10      (00000022) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	11      (00000028) move-result          v0
+	12      (0000002a) if-eqz               v0, +10
+
+accept-BB@0x2e : [ accept-BB@0x46 accept-BB@0x22 ]
+	13      (0000002e) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	14      (00000034) move-result-object   v0
+	15      (00000036) check-cast           v0, Lorg/apache/commons/io/filefilter/IOFileFilter;
+	16      (0000003a) invoke-interface     v0, v4, Lorg/apache/commons/io/filefilter/IOFileFilter;->accept(Ljava/io/File;)Z
+	17      (00000040) move-result          v0
+	18      (00000042) if-nez               v0, -10
+
+accept-BB@0x46 : [ accept-BB@0x14 ]
+	19      (00000046) move                 v0, v1
+	20      (00000048) goto                 -1a
+
+accept-BB@0x4a : [ accept-BB@0x14 ]
+	21      (0000004a) const/4              v0, 1
+	22      (0000004c) goto                 -1c
+

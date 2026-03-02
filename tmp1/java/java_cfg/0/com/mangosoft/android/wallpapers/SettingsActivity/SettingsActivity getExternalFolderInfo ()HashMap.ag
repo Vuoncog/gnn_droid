@@ -1,0 +1,66 @@
+# Lcom/mangosoft/android/wallpapers/SettingsActivity;->getExternalFolderInfo()Ljava/util/HashMap; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.util.HashMap
+
+getExternalFolderInfo-BB@0x0 : [ getExternalFolderInfo-BB@0x1e getExternalFolderInfo-BB@0x30 ]
+	0       (00000000) new-instance         v1, Ljava/util/HashMap;
+	1       (00000004) invoke-direct        v1, Ljava/util/HashMap;-><init>()V
+	2       (0000000a) invoke-direct        v5, Lcom/mangosoft/android/wallpapers/SettingsActivity;->createCursor()Landroid/database/Cursor;
+	3       (00000010) move-result-object   v0
+	4       (00000012) invoke-interface     v0, Landroid/database/Cursor;->getCount()I
+	5       (00000018) move-result          v3
+	6       (0000001a) if-lez               v3, +b
+
+getExternalFolderInfo-BB@0x1e : [ getExternalFolderInfo-BB@0x24 ]
+	7       (0000001e) invoke-interface     v0, Landroid/database/Cursor;->moveToFirst()Z
+
+getExternalFolderInfo-BB@0x24 : [ getExternalFolderInfo-BB@0x30 getExternalFolderInfo-BB@0x32 ]
+	8       (00000024) invoke-interface     v0, Landroid/database/Cursor;->isAfterLast()Z
+	9       (0000002a) move-result          v3
+	10      (0000002c) if-eqz               v3, +3
+
+getExternalFolderInfo-BB@0x30 : 
+	11      (00000030) return-object        v1
+
+getExternalFolderInfo-BB@0x32 : [ getExternalFolderInfo-BB@0x6c getExternalFolderInfo-BB@0x9a ]
+	12      (00000032) const-string         v3, '_data'
+	13      (00000036) invoke-interface     v0, v3, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+	14      (0000003c) move-result          v3
+	15      (0000003e) invoke-interface     v0, v3, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+	16      (00000044) move-result-object   v2
+	17      (00000046) const/4              v3, 0
+	18      (00000048) const-string         v4, '/'
+	19      (0000004c) invoke-virtual       v2, v4, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+	20      (00000052) move-result          v4
+	21      (00000054) add-int/lit8         v4, v4, 1
+	22      (00000058) invoke-virtual       v2, v3, v4, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	23      (0000005e) move-result-object   v2
+	24      (00000060) invoke-virtual       v1, v2, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+	25      (00000066) move-result          v3
+	26      (00000068) if-eqz               v3, +19
+
+getExternalFolderInfo-BB@0x6c : [ getExternalFolderInfo-BB@0x92 ]
+	27      (0000006c) invoke-virtual       v1, v2, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	28      (00000072) move-result-object   v5
+	29      (00000074) check-cast           v5, Ljava/lang/Integer;
+	30      (00000078) invoke-virtual       v5, Ljava/lang/Integer;->intValue()I
+	31      (0000007e) move-result          v3
+	32      (00000080) add-int/lit8         v3, v3, 1
+	33      (00000084) invoke-static        v3, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	34      (0000008a) move-result-object   v3
+	35      (0000008c) invoke-virtual       v1, v2, v3, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+
+getExternalFolderInfo-BB@0x92 : [ getExternalFolderInfo-BB@0x24 ]
+	36      (00000092) invoke-interface     v0, Landroid/database/Cursor;->moveToNext()Z
+	37      (00000098) goto                 -3a
+
+getExternalFolderInfo-BB@0x9a : [ getExternalFolderInfo-BB@0x92 ]
+	38      (0000009a) const/4              v3, 1
+	39      (0000009c) invoke-static        v3, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	40      (000000a2) move-result-object   v3
+	41      (000000a4) invoke-virtual       v1, v2, v3, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	42      (000000aa) goto                 -c
+

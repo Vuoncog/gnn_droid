@@ -1,0 +1,41 @@
+# Lio/fabric/sdk/android/services/common/AbstractSpiCall;-><init>(Lio/fabric/sdk/android/Kit; Ljava/lang/String; Ljava/lang/String; Lio/fabric/sdk/android/services/network/HttpRequestFactory; Lio/fabric/sdk/android/services/network/HttpMethod;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:io.fabric.sdk.android.Kit
+# - v4:java.lang.String
+# - v5:java.lang.String
+# - v6:io.fabric.sdk.android.services.network.HttpRequestFactory
+# - v7:io.fabric.sdk.android.services.network.HttpMethod
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xa <init>-BB@0x1a ]
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) if-nez               v5, +a
+
+<init>-BB@0xa : 
+	2       (0000000a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	3       (0000000e) const-string         v1, 'url must not be null.'
+	4       (00000012) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	5       (00000018) throw                v0
+
+<init>-BB@0x1a : [ <init>-BB@0x1e <init>-BB@0x2e ]
+	6       (0000001a) if-nez               v6, +a
+
+<init>-BB@0x1e : 
+	7       (0000001e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	8       (00000022) const-string         v1, 'requestFactory must not be null.'
+	9       (00000026) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	10      (0000002c) throw                v0
+
+<init>-BB@0x2e : 
+	11      (0000002e) iput-object          v3, v2, Lio/fabric/sdk/android/services/common/AbstractSpiCall;->kit Lio/fabric/sdk/android/Kit;
+	12      (00000032) iput-object          v4, v2, Lio/fabric/sdk/android/services/common/AbstractSpiCall;->protocolAndHostOverride Ljava/lang/String;
+	13      (00000036) invoke-direct        v2, v5, Lio/fabric/sdk/android/services/common/AbstractSpiCall;->overrideProtocolAndHost(Ljava/lang/String;)Ljava/lang/String;
+	14      (0000003c) move-result-object   v0
+	15      (0000003e) iput-object          v0, v2, Lio/fabric/sdk/android/services/common/AbstractSpiCall;->url Ljava/lang/String;
+	16      (00000042) iput-object          v6, v2, Lio/fabric/sdk/android/services/common/AbstractSpiCall;->requestFactory Lio/fabric/sdk/android/services/network/HttpRequestFactory;
+	17      (00000046) iput-object          v7, v2, Lio/fabric/sdk/android/services/common/AbstractSpiCall;->method Lio/fabric/sdk/android/services/network/HttpMethod;
+	18      (0000004a) return-void          
+

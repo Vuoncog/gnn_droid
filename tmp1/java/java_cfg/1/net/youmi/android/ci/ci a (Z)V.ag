@@ -1,0 +1,36 @@
+# Lnet/youmi/android/ci;->a(Z)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0x24 ]
+	0       (00000000) iput-boolean         v3, v2, Lnet/youmi/android/ci;->t Z
+	1       (00000004) if-eqz               v3, +10
+
+a-BB@0x8 : [ a-BB@0x10 a-BB@0x22 ]
+	2       (00000008) iget-object          v0, v2, Lnet/youmi/android/ci;->c Landroid/widget/ImageView;
+	3       (0000000c) if-eqz               v0, +b
+
+a-BB@0x10 : [ a-BB@0x22 ]
+	4       (00000010) iget-object          v0, v2, Lnet/youmi/android/ci;->c Landroid/widget/ImageView;
+	5       (00000014) invoke-virtual       v2, Lnet/youmi/android/ci;->b()Landroid/graphics/Bitmap;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+a-BB@0x22 : 
+	8       (00000022) return-void          
+
+a-BB@0x24 : [ a-BB@0x2c a-BB@0x22 ]
+	9       (00000024) iget-object          v0, v2, Lnet/youmi/android/ci;->c Landroid/widget/ImageView;
+	10      (00000028) if-eqz               v0, -3
+
+a-BB@0x2c : [ a-BB@0x22 ]
+	11      (0000002c) iget-object          v0, v2, Lnet/youmi/android/ci;->c Landroid/widget/ImageView;
+	12      (00000030) invoke-virtual       v2, Lnet/youmi/android/ci;->c()Landroid/graphics/Bitmap;
+	13      (00000036) move-result-object   v1
+	14      (00000038) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+	15      (0000003e) goto                 -e
+

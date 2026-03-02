@@ -1,0 +1,30 @@
+# Lorg/apache/commons/lang/CharSet;-><init>([Ljava/lang/String;)V [access_flags=protected constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String[]
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x20 ]
+	0       (00000000) invoke-direct        v3, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Ljava/util/HashSet;
+	2       (0000000a) invoke-direct        v0, Ljava/util/HashSet;-><init>()V
+	3       (00000010) invoke-static        v0, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
+	4       (00000016) move-result-object   v0
+	5       (00000018) iput-object          v0, v3, Lorg/apache/commons/lang/CharSet;->set Ljava/util/Set;
+	6       (0000001c) array-length         v1, v4
+	7       (0000001e) const/4              v0, 0
+
+<init>-BB@0x20 : [ <init>-BB@0x24 <init>-BB@0x34 ]
+	8       (00000020) if-ge                v0, v1, +a
+
+<init>-BB@0x24 : [ <init>-BB@0x20 ]
+	9       (00000024) aget-object          v2, v4, v0
+	10      (00000028) invoke-virtual       v3, v2, Lorg/apache/commons/lang/CharSet;->add(Ljava/lang/String;)V
+	11      (0000002e) add-int/lit8         v0, v0, 1
+	12      (00000032) goto                 -9
+
+<init>-BB@0x34 : 
+	13      (00000034) return-void          
+

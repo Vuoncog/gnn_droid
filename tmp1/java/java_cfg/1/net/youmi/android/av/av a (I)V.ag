@@ -1,0 +1,26 @@
+# Lnet/youmi/android/av;->a(I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x4 a-BB@0xa ]
+	0       (00000000) if-ltz               v2, +5
+
+a-BB@0x4 : [ a-BB@0xa a-BB@0x12 ]
+	1       (00000004) const/4              v0, 3
+	2       (00000006) if-le                v2, v0, +6
+
+a-BB@0xa : [ a-BB@0xc ]
+	3       (0000000a) const/4              v0, 0
+
+a-BB@0xc : 
+	4       (0000000c) iput                 v0, v1, Lnet/youmi/android/av;->d I
+	5       (00000010) return-void          
+
+a-BB@0x12 : [ a-BB@0xc ]
+	6       (00000012) move                 v0, v2
+	7       (00000014) goto                 -4
+

@@ -1,0 +1,100 @@
+# Lcom/jgamelbe/CMP/c/b;->a(Lcom/jgamelbe/CMP/c/c;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:com.jgamelbe.CMP.c.c
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-object          v2, v6, Lcom/jgamelbe/CMP/c/b;->c Ljava/lang/Object;
+	2       (00000006) monitor-enter        v2
+
+a-BB@0x8 : [ a-BB@0x20 a-BB@0x2c ]
+	3       (00000008) iget-object          v1, v6, Lcom/jgamelbe/CMP/c/b;->b Ljava/util/ArrayList;
+	4       (0000000c) invoke-virtual       v1, Ljava/util/ArrayList;->size()I
+	5       (00000012) move-result          v1
+	6       (00000014) invoke-direct        v6, Lcom/jgamelbe/CMP/c/b;->f()I
+	7       (0000001a) move-result          v3
+	8       (0000001c) if-lt                v1, v3, +8
+	8:81
+	(Ljava/lang/Throwable; -> d4 a-BB@0xd4)
+
+a-BB@0x20 : [ a-BB@0x2c ]
+	9       (00000020) iget-object          v1, v6, Lcom/jgamelbe/CMP/c/b;->b Ljava/util/ArrayList;
+	10      (00000024) const/4              v3, 0
+	11      (00000026) invoke-virtual       v1, v3, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+	8:81
+	(Ljava/lang/Throwable; -> d4 a-BB@0xd4)
+
+a-BB@0x2c : [ a-BB@0x88 a-BB@0xd0 ]
+	12      (0000002c) sget-object          v1, Lcom/jgamelbe/CMP/c/b;->a Ljava/lang/String;
+	13      (00000030) new-instance         v3, Ljava/lang/StringBuilder;
+	14      (00000034) const-string         v4, '[MyCpaInstallCollector] add() report id= '
+	15      (00000038) invoke-direct        v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	16      (0000003e) iget-object          v4, v7, Lcom/jgamelbe/CMP/c/c;->a Ljava/lang/String;
+	17      (00000042) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (00000048) move-result-object   v3
+	19      (0000004a) const-string         v4, 'startTime:'
+	20      (0000004e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000054) move-result-object   v3
+	22      (00000056) iget-object          v4, v7, Lcom/jgamelbe/CMP/c/c;->c Ljava/util/Date;
+	23      (0000005a) invoke-virtual       v4, Ljava/util/Date;->getTime()J
+	24      (00000060) move-result-wide     v4
+	25      (00000062) invoke-virtual       v3, v4, v5, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	26      (00000068) move-result-object   v3
+	27      (0000006a) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	28      (00000070) move-result-object   v3
+	29      (00000072) invoke-static        v1, v3, Lcom/jgamelbe/CMP/e/g;->c(Ljava/lang/String; Ljava/lang/String;)V
+	30      (00000078) iget-object          v1, v6, Lcom/jgamelbe/CMP/c/b;->b Ljava/util/ArrayList;
+	31      (0000007c) invoke-virtual       v1, v7, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	32      (00000082) move-result          v1
+	33      (00000084) if-eqz               v1, +26
+
+a-BB@0x88 : [ a-BB@0xc2 ]
+	34      (00000088) invoke-virtual       v6, Lcom/jgamelbe/CMP/c/b;->d()V
+	35      (0000008e) sget-object          v1, Lcom/jgamelbe/CMP/c/b;->a Ljava/lang/String;
+	36      (00000092) new-instance         v3, Ljava/lang/StringBuilder;
+	37      (00000096) const-string         v4, '[MyCpaInstallCollector] add() success, number ='
+	38      (0000009a) invoke-direct        v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	39      (000000a0) iget-object          v4, v6, Lcom/jgamelbe/CMP/c/b;->b Ljava/util/ArrayList;
+	40      (000000a4) invoke-virtual       v4, Ljava/util/ArrayList;->size()I
+	41      (000000aa) move-result          v4
+	42      (000000ac) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	43      (000000b2) move-result-object   v3
+	44      (000000b4) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	45      (000000ba) move-result-object   v3
+	46      (000000bc) invoke-static        v1, v3, Lcom/jgamelbe/CMP/e/g;->c(Ljava/lang/String; Ljava/lang/String;)V
+	88:c1
+	(Ljava/lang/Throwable; -> d4 a-BB@0xd4)
+	(Ljava/lang/Exception; -> c8 a-BB@0xc8)
+
+a-BB@0xc2 : [ a-BB@0xc6 ]
+	47      (000000c2) monitor-exit         v2
+	48      (000000c4) const/4              v0, 1
+	c2:d7
+	(Ljava/lang/Throwable; -> d4 a-BB@0xd4)
+
+a-BB@0xc6 : 
+	49      (000000c6) return               v0
+	c2:d7
+	(Ljava/lang/Throwable; -> d4 a-BB@0xd4)
+
+a-BB@0xc8 : [ a-BB@0xd0 ]
+	50      (000000c8) move-exception       v1
+	51      (000000ca) invoke-virtual       v1, Ljava/lang/Exception;->printStackTrace()V
+	c2:d7
+	(Ljava/lang/Throwable; -> d4 a-BB@0xd4)
+
+a-BB@0xd0 : [ a-BB@0xc6 ]
+	52      (000000d0) monitor-exit         v2
+	53      (000000d2) goto                 -6
+	c2:d7
+	(Ljava/lang/Throwable; -> d4 a-BB@0xd4)
+
+a-BB@0xd4 : 
+	54      (000000d4) move-exception       v0
+	55      (000000d6) monitor-exit         v2
+	56      (000000d8) throw                v0
+

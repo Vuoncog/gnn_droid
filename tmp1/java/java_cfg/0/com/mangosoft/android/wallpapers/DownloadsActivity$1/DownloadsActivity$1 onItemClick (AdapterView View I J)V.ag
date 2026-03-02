@@ -1,0 +1,48 @@
+# Lcom/mangosoft/android/wallpapers/DownloadsActivity$1;->onItemClick(Landroid/widget/AdapterView; Landroid/view/View; I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.widget.AdapterView
+# - v7:android.view.View
+# - v8:int
+# - v9:long
+#
+# - return:void
+
+onItemClick-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/content/Intent;
+	1       (00000004) iget-object          v2, v4, Lcom/mangosoft/android/wallpapers/DownloadsActivity$1;->this$0 Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	2       (00000008) const-class          v3, Lcom/mangosoft/android/wallpapers/SingleImageViewActivity;
+	3       (0000000c) invoke-direct        v0, v2, v3, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	4       (00000012) const-string         v2, 'is_local'
+	5       (00000016) const/4              v3, 1
+	6       (00000018) invoke-virtual       v0, v2, v3, Landroid/content/Intent;->putExtra(Ljava/lang/String; Z)Landroid/content/Intent;
+	7       (0000001e) iget-object          v2, v4, Lcom/mangosoft/android/wallpapers/DownloadsActivity$1;->this$0 Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	8       (00000022) invoke-static        v2, Lcom/mangosoft/android/wallpapers/DownloadsActivity;->access$0(Lcom/mangosoft/android/wallpapers/DownloadsActivity;)I
+	9       (00000028) move-result          v2
+	10      (0000002a) add-int              v1, v7, v2
+	11      (0000002e) const-string         v3, 'image_name'
+	12      (00000032) iget-object          v2, v4, Lcom/mangosoft/android/wallpapers/DownloadsActivity$1;->this$0 Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	13      (00000036) invoke-static        v2, Lcom/mangosoft/android/wallpapers/DownloadsActivity;->access$1(Lcom/mangosoft/android/wallpapers/DownloadsActivity;)Ljava/util/ArrayList;
+	14      (0000003c) move-result-object   v2
+	15      (0000003e) invoke-virtual       v2, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	16      (00000044) move-result-object   v2
+	17      (00000046) check-cast           v2, Lcom/mangosoft/android/wallpapers/model/Image;
+	18      (0000004a) invoke-virtual       v2, Lcom/mangosoft/android/wallpapers/model/Image;->getName()Ljava/lang/String;
+	19      (00000050) move-result-object   v2
+	20      (00000052) invoke-virtual       v0, v3, v2, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+	21      (00000058) const-string         v3, 'image_url'
+	22      (0000005c) iget-object          v2, v4, Lcom/mangosoft/android/wallpapers/DownloadsActivity$1;->this$0 Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	23      (00000060) invoke-static        v2, Lcom/mangosoft/android/wallpapers/DownloadsActivity;->access$1(Lcom/mangosoft/android/wallpapers/DownloadsActivity;)Ljava/util/ArrayList;
+	24      (00000066) move-result-object   v2
+	25      (00000068) invoke-virtual       v2, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	26      (0000006e) move-result-object   v2
+	27      (00000070) check-cast           v2, Lcom/mangosoft/android/wallpapers/model/Image;
+	28      (00000074) invoke-virtual       v2, Lcom/mangosoft/android/wallpapers/model/Image;->getUrl()Ljava/lang/String;
+	29      (0000007a) move-result-object   v2
+	30      (0000007c) invoke-virtual       v0, v3, v2, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+	31      (00000082) iget-object          v2, v4, Lcom/mangosoft/android/wallpapers/DownloadsActivity$1;->this$0 Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	32      (00000086) const                v3, 989898 # [1.3871425472382078e-39]
+	33      (0000008c) invoke-virtual       v2, v0, v3, Lcom/mangosoft/android/wallpapers/DownloadsActivity;->startActivityForResult(Landroid/content/Intent; I)V
+	34      (00000092) return-void          
+

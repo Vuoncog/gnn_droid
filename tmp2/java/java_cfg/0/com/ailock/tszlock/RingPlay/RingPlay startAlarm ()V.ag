@@ -1,0 +1,19 @@
+# Lcom/ailock/tszlock/RingPlay;->startAlarm()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+startAlarm-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iput-boolean         v0, v2, Lcom/ailock/tszlock/RingPlay;->mPlaying Z
+	2       (00000006) iget-object          v0, v2, Lcom/ailock/tszlock/RingPlay;->mMediaPlayer Landroid/media/MediaPlayer;
+	3       (0000000a) const/4              v1, 0
+	4       (0000000c) invoke-virtual       v0, v1, Landroid/media/MediaPlayer;->setLooping(Z)V
+	5       (00000012) iget-object          v0, v2, Lcom/ailock/tszlock/RingPlay;->mMediaPlayer Landroid/media/MediaPlayer;
+	6       (00000016) invoke-virtual       v0, Landroid/media/MediaPlayer;->prepare()V
+	7       (0000001c) iget-object          v0, v2, Lcom/ailock/tszlock/RingPlay;->mMediaPlayer Landroid/media/MediaPlayer;
+	8       (00000020) invoke-virtual       v0, Landroid/media/MediaPlayer;->start()V
+	9       (00000026) return-void          
+

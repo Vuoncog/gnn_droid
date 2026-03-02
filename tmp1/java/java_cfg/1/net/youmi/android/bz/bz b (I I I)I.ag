@@ -1,0 +1,15 @@
+# Lnet/youmi/android/bz;->b(I I I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:int
+#
+# - return:int
+
+b-BB@0x0 : 
+	0       (00000000) xor-int              v0, v2, v3
+	1       (00000004) xor-int/2addr        v0, v4
+	2       (00000006) return               v0
+

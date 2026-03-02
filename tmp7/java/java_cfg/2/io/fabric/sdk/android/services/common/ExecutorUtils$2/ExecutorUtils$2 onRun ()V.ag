@@ -1,0 +1,78 @@
+# Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->onRun()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:void
+
+onRun-BB@0x0 : [ onRun-BB@0x5e onRun-BB@0xb0 ]
+	0       (00000000) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'Fabric'
+	3       (0000000c) new-instance         v2, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) const-string         v3, 'Executing shutdown hook for '
+	6       (0000001a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v2
+	8       (00000022) iget-object          v3, v7, Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->val$serviceName Ljava/lang/String;
+	9       (00000026) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	14      (0000003c) iget-object          v0, v7, Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->val$service Ljava/util/concurrent/ExecutorService;
+	15      (00000040) invoke-interface     v0, Ljava/util/concurrent/ExecutorService;->shutdown()V
+	16      (00000046) iget-object          v0, v7, Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->val$service Ljava/util/concurrent/ExecutorService;
+	17      (0000004a) iget-wide            v2, v7, Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->val$terminationTimeout J
+	18      (0000004e) iget-object          v1, v7, Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->val$timeUnit Ljava/util/concurrent/TimeUnit;
+	19      (00000052) invoke-interface     v0, v2, v3, v1, Ljava/util/concurrent/ExecutorService;->awaitTermination(J Ljava/util/concurrent/TimeUnit;)Z
+	20      (00000058) move-result          v0
+	21      (0000005a) if-nez               v0, +2b
+	0:af
+	(Ljava/lang/InterruptedException; -> b2 onRun-BB@0xb2)
+
+onRun-BB@0x5e : [ onRun-BB@0xb0 ]
+	22      (0000005e) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	23      (00000064) move-result-object   v0
+	24      (00000066) const-string         v1, 'Fabric'
+	25      (0000006a) new-instance         v2, Ljava/lang/StringBuilder;
+	26      (0000006e) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	27      (00000074) iget-object          v3, v7, Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->val$serviceName Ljava/lang/String;
+	28      (00000078) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	29      (0000007e) move-result-object   v2
+	30      (00000080) const-string         v3, ' did not shut down in the'
+	31      (00000084) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	32      (0000008a) move-result-object   v2
+	33      (0000008c) const-string         v3, ' allocated time. Requesting immediate shutdown.'
+	34      (00000090) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	35      (00000096) move-result-object   v2
+	36      (00000098) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	37      (0000009e) move-result-object   v2
+	38      (000000a0) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	39      (000000a6) iget-object          v0, v7, Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->val$service Ljava/util/concurrent/ExecutorService;
+	40      (000000aa) invoke-interface     v0, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
+	0:af
+	(Ljava/lang/InterruptedException; -> b2 onRun-BB@0xb2)
+
+onRun-BB@0xb0 : 
+	41      (000000b0) return-void          
+
+onRun-BB@0xb2 : [ onRun-BB@0xb0 ]
+	42      (000000b2) move-exception       v0
+	43      (000000b4) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	44      (000000ba) move-result-object   v0
+	45      (000000bc) const-string         v1, 'Fabric'
+	46      (000000c0) sget-object          v2, Ljava/util/Locale;->US Ljava/util/Locale;
+	47      (000000c4) const-string         v3, 'Interrupted while waiting for %s to shut down. Requesting immediate shutdown.'
+	48      (000000c8) const/4              v4, 1
+	49      (000000ca) new-array            v4, v4, [Ljava/lang/Object;
+	50      (000000ce) const/4              v5, 0
+	51      (000000d0) iget-object          v6, v7, Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->val$serviceName Ljava/lang/String;
+	52      (000000d4) aput-object          v6, v4, v5
+	53      (000000d8) invoke-static        v2, v3, v4, Ljava/lang/String;->format(Ljava/util/Locale; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	54      (000000de) move-result-object   v2
+	55      (000000e0) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	56      (000000e6) iget-object          v0, v7, Lio/fabric/sdk/android/services/common/ExecutorUtils$2;->val$service Ljava/util/concurrent/ExecutorService;
+	57      (000000ea) invoke-interface     v0, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
+	58      (000000f0) goto                 -20
+

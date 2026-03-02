@@ -1,0 +1,43 @@
+# Lorg/apache/commons/lang/math/Fraction;->reduce()Lorg/apache/commons/lang/math/Fraction; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:org.apache.commons.lang.math.Fraction
+
+reduce-BB@0x0 : [ reduce-BB@0x8 reduce-BB@0x20 ]
+	0       (00000000) iget                 v0, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	1       (00000004) if-nez               v0, +e
+
+reduce-BB@0x8 : [ reduce-BB@0x18 reduce-BB@0x1a ]
+	2       (00000008) sget-object          v0, Lorg/apache/commons/lang/math/Fraction;->ZERO Lorg/apache/commons/lang/math/Fraction;
+	3       (0000000c) invoke-virtual       v3, v0, Lorg/apache/commons/lang/math/Fraction;->equals(Ljava/lang/Object;)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +3
+
+reduce-BB@0x18 : 
+	6       (00000018) return-object        v3
+
+reduce-BB@0x1a : [ reduce-BB@0x18 ]
+	7       (0000001a) sget-object          v3, Lorg/apache/commons/lang/math/Fraction;->ZERO Lorg/apache/commons/lang/math/Fraction;
+	8       (0000001e) goto                 -3
+
+reduce-BB@0x20 : [ reduce-BB@0x3e reduce-BB@0x18 ]
+	9       (00000020) iget                 v0, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	10      (00000024) invoke-static        v0, Ljava/lang/Math;->abs(I)I
+	11      (0000002a) move-result          v0
+	12      (0000002c) iget                 v1, v3, Lorg/apache/commons/lang/math/Fraction;->denominator I
+	13      (00000030) invoke-static        v0, v1, Lorg/apache/commons/lang/math/Fraction;->greatestCommonDivisor(I I)I
+	14      (00000036) move-result          v0
+	15      (00000038) const/4              v1, 1
+	16      (0000003a) if-eq                v0, v1, -11
+
+reduce-BB@0x3e : [ reduce-BB@0x18 ]
+	17      (0000003e) iget                 v1, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	18      (00000042) div-int/2addr        v1, v0
+	19      (00000044) iget                 v2, v3, Lorg/apache/commons/lang/math/Fraction;->denominator I
+	20      (00000048) div-int              v0, v2, v0
+	21      (0000004c) invoke-static        v1, v0, Lorg/apache/commons/lang/math/Fraction;->getFraction(I I)Lorg/apache/commons/lang/math/Fraction;
+	22      (00000052) move-result-object   v3
+	23      (00000054) goto                 -1e
+

@@ -1,0 +1,17 @@
+# Lorg/apache/commons/io/input/DemuxInputStream;->bindStream(Ljava/io/InputStream;)Ljava/io/InputStream; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.InputStream
+#
+# - return:java.io.InputStream
+
+bindStream-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lorg/apache/commons/io/input/DemuxInputStream;->m_streams Ljava/lang/InheritableThreadLocal;
+	1       (00000004) invoke-virtual       v0, Ljava/lang/InheritableThreadLocal;->get()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Ljava/io/InputStream;
+	4       (00000010) iget-object          v1, v2, Lorg/apache/commons/io/input/DemuxInputStream;->m_streams Ljava/lang/InheritableThreadLocal;
+	5       (00000014) invoke-virtual       v1, v3, Ljava/lang/InheritableThreadLocal;->set(Ljava/lang/Object;)V
+	6       (0000001a) return-object        v0
+

@@ -1,0 +1,27 @@
+# Lcom/crashlytics/android/core/ReportUploader$Worker;->onRun()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+onRun-BB@0x0 : [ onRun-BB@0x6 ]
+	0       (00000000) invoke-direct        v4, Lcom/crashlytics/android/core/ReportUploader$Worker;->attemptUploadWithRetry()V
+	0:5
+	(Ljava/lang/Exception; -> 14 onRun-BB@0x14)
+
+onRun-BB@0x6 : 
+	1       (00000006) iget-object          v0, v4, Lcom/crashlytics/android/core/ReportUploader$Worker;->this$0 Lcom/crashlytics/android/core/ReportUploader;
+	2       (0000000a) const/4              v1, 0
+	3       (0000000c) invoke-static        v0, v1, Lcom/crashlytics/android/core/ReportUploader;->access$002(Lcom/crashlytics/android/core/ReportUploader; Ljava/lang/Thread;)Ljava/lang/Thread;
+	4       (00000012) return-void          
+
+onRun-BB@0x14 : [ onRun-BB@0x6 ]
+	5       (00000014) move-exception       v0
+	6       (00000016) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	7       (0000001c) move-result-object   v1
+	8       (0000001e) const-string         v2, 'CrashlyticsCore'
+	9       (00000022) const-string         v3, 'An unexpected error occurred while attempting to upload crash reports.'
+	10      (00000026) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	11      (0000002c) goto                 -13
+

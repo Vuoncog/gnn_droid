@@ -1,0 +1,77 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->getAppIconHashOrNull(Landroid/content/Context;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+#
+# - return:java.lang.String
+
+getAppIconHashOrNull-BB@0x0 : [ getAppIconHashOrNull-BB@0x2 ]
+	0       (00000000) const/4              v0, 0
+
+getAppIconHashOrNull-BB@0x2 : [ getAppIconHashOrNull-BB@0x1a ]
+	1       (00000002) invoke-virtual       v6, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) invoke-static        v6, Lio/fabric/sdk/android/services/common/CommonUtils;->getAppIconResourceId(Landroid/content/Context;)I
+	4       (00000010) move-result          v2
+	5       (00000012) invoke-virtual       v1, v2, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+	6       (00000018) move-result-object   v2
+	2:17
+	(Ljava/lang/Throwable; -> 64 getAppIconHashOrNull-BB@0x64)
+	(Ljava/lang/Exception; -> 3e getAppIconHashOrNull-BB@0x3e)
+
+getAppIconHashOrNull-BB@0x1a : [ getAppIconHashOrNull-BB@0x2e getAppIconHashOrNull-BB@0x3a ]
+	7       (0000001a) invoke-static        v2, Lio/fabric/sdk/android/services/common/CommonUtils;->sha1(Ljava/io/InputStream;)Ljava/lang/String;
+	8       (00000020) move-result-object   v1
+	9       (00000022) invoke-static        v1, Lio/fabric/sdk/android/services/common/CommonUtils;->isNullOrEmpty(Ljava/lang/String;)Z
+	10      (00000028) move-result          v3
+	11      (0000002a) if-eqz               v3, +8
+	1a:27
+	(Ljava/lang/Throwable; -> 76 getAppIconHashOrNull-BB@0x76)
+	(Ljava/lang/Exception; -> 7a getAppIconHashOrNull-BB@0x7a)
+
+getAppIconHashOrNull-BB@0x2e : [ getAppIconHashOrNull-BB@0x38 ]
+	12      (0000002e) const-string         v1, 'Failed to close icon input stream.'
+	13      (00000032) invoke-static        v2, v1, Lio/fabric/sdk/android/services/common/CommonUtils;->closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V
+
+getAppIconHashOrNull-BB@0x38 : 
+	14      (00000038) return-object        v0
+
+getAppIconHashOrNull-BB@0x3a : [ getAppIconHashOrNull-BB@0x2e ]
+	15      (0000003a) move-object          v0, v1
+	16      (0000003c) goto                 -7
+
+getAppIconHashOrNull-BB@0x3e : [ getAppIconHashOrNull-BB@0x42 ]
+	17      (0000003e) move-exception       v1
+	18      (00000040) move-object          v2, v0
+
+getAppIconHashOrNull-BB@0x42 : [ getAppIconHashOrNull-BB@0x38 ]
+	19      (00000042) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	20      (00000048) move-result-object   v3
+	21      (0000004a) const-string         v4, 'Fabric'
+	22      (0000004e) const-string         v5, 'Could not calculate hash for app icon.'
+	23      (00000052) invoke-interface     v3, v4, v5, v1, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	24      (00000058) const-string         v1, 'Failed to close icon input stream.'
+	25      (0000005c) invoke-static        v2, v1, Lio/fabric/sdk/android/services/common/CommonUtils;->closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V
+	26      (00000062) goto                 -15
+	42:57
+	(Ljava/lang/Throwable; -> 76 getAppIconHashOrNull-BB@0x76)
+
+getAppIconHashOrNull-BB@0x64 : [ getAppIconHashOrNull-BB@0x6a ]
+	27      (00000064) move-exception       v1
+	28      (00000066) move-object          v2, v0
+	29      (00000068) move-object          v0, v1
+
+getAppIconHashOrNull-BB@0x6a : 
+	30      (0000006a) const-string         v1, 'Failed to close icon input stream.'
+	31      (0000006e) invoke-static        v2, v1, Lio/fabric/sdk/android/services/common/CommonUtils;->closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V
+	32      (00000074) throw                v0
+
+getAppIconHashOrNull-BB@0x76 : [ getAppIconHashOrNull-BB@0x6a ]
+	33      (00000076) move-exception       v0
+	34      (00000078) goto                 -7
+
+getAppIconHashOrNull-BB@0x7a : [ getAppIconHashOrNull-BB@0x42 ]
+	35      (0000007a) move-exception       v1
+	36      (0000007c) goto                 -1d
+

@@ -1,0 +1,140 @@
+# La/a/b/a/b/b/g/a;->a(La/a/a/a; La/a/b/a/b/b/a; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:a.a.a.a
+# - v10:a.a.b.a.b.b.a
+# - v11:boolean
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xc a-BB@0xba ]
+	0       (00000000) const/4              v7, 0
+	1       (00000002) const/16             v4, 1234
+	2       (00000006) const/4              v6, -1
+	3       (00000008) if-nez               v11, +59
+
+a-BB@0xc : [ a-BB@0x2e ]
+	4       (0000000c) const-string         v0, 'name'
+	5       (00000010) const-string         v1, 'Layer A'
+	6       (00000014) invoke-virtual       v9, v0, v1, La/a/a/a;->c(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	7       (0000001a) move-result-object   v0
+	8       (0000001c) iput-object          v0, v8, La/a/b/a/b/b/g/a;->d Ljava/lang/String;
+	9       (00000020) const-string         v0, 'items'
+	10      (00000024) invoke-virtual       v9, v0, La/a/a/a;->a(Ljava/lang/String;)La/a/a/a;
+	11      (0000002a) move-result-object   v1
+	12      (0000002c) const/4              v0, 0
+
+a-BB@0x2e : [ a-BB@0x36 a-BB@0x162 ]
+	13      (0000002e) const/16             v2, 32
+	14      (00000032) if-ge                v0, v2, +98
+
+a-BB@0x36 : [ a-BB@0x4a a-BB@0x84 ]
+	15      (00000036) invoke-static        v0, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+	16      (0000003c) move-result-object   v2
+	17      (0000003e) invoke-virtual       v1, v2, La/a/a/a;->b(Ljava/lang/String;)La/a/a/d;
+	18      (00000044) move-result-object   v2
+	19      (00000046) if-eqz               v2, +1f
+
+a-BB@0x4a : [ D:a-BB@0x58 -1:a-BB@0x70 ]
+	20      (0000004a) invoke-virtual       v2, La/a/a/d;->a()I
+	21      (00000050) move-result          v2
+	22      (00000052) packed-switch        v2, +89 (0x164)
+
+a-BB@0x58 : [ a-BB@0x6a ]
+	23      (00000058) iget-object          v3, v8, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	24      (0000005c) invoke-static        v2, v10, La/a/b/a/b/b/g/a/c;->a(I La/a/b/a/b/b/a;)La/a/b/a/b/b/g/a/b;
+	25      (00000062) move-result-object   v2
+	26      (00000064) invoke-interface     v3, v2, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+a-BB@0x6a : [ a-BB@0x2e ]
+	27      (0000006a) add-int/lit8         v0, v0, 1
+	28      (0000006e) goto                 -20
+
+a-BB@0x70 : [ a-BB@0x6a ]
+	29      (00000070) iget-object          v2, v8, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	30      (00000074) invoke-static        v6, v7, La/a/b/a/b/b/g/a/c;->a(I La/a/b/a/b/b/a;)La/a/b/a/b/b/g/a/b;
+	31      (0000007a) move-result-object   v3
+	32      (0000007c) invoke-interface     v2, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	33      (00000082) goto                 -c
+
+a-BB@0x84 : [ a-BB@0x98 a-BB@0x6a ]
+	34      (00000084) invoke-static        v0, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+	35      (0000008a) move-result-object   v2
+	36      (0000008c) invoke-virtual       v1, v2, La/a/a/a;->a(Ljava/lang/String;)La/a/a/a;
+	37      (00000092) move-result-object   v2
+	38      (00000094) if-eqz               v2, -15
+
+a-BB@0x98 : [ a-BB@0x6a ]
+	39      (00000098) iget-object          v3, v8, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	40      (0000009c) add-int/lit16        v4, v0, 200
+	41      (000000a0) new-instance         v5, La/a/b/a/b/b/b/d/a;
+	42      (000000a4) invoke-direct        v5, v2, v10, La/a/b/a/b/b/b/d/a;-><init>(La/a/a/a; La/a/b/a/b/b/a;)V
+	43      (000000aa) invoke-static        v4, v5, La/a/b/a/b/b/g/a/c;->a(I La/a/b/a/b/b/b/d/a;)La/a/b/a/b/b/g/a/b;
+	44      (000000b0) move-result-object   v2
+	45      (000000b2) invoke-interface     v3, v2, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	46      (000000b8) goto                 -27
+
+a-BB@0xba : [ a-BB@0xe8 ]
+	47      (000000ba) const-string         v0, 'name'
+	48      (000000be) const-string         v1, 'Layer A'
+	49      (000000c2) invoke-virtual       v9, v0, v1, La/a/a/a;->c(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	50      (000000c8) move-result-object   v0
+	51      (000000ca) iput-object          v0, v8, La/a/b/a/b/b/g/a;->d Ljava/lang/String;
+	52      (000000ce) const-string         v0, 'items'
+	53      (000000d2) invoke-virtual       v9, v0, La/a/a/a;->c(Ljava/lang/String;)Ljava/util/List;
+	54      (000000d8) move-result-object   v1
+	55      (000000da) const/16             v0, 200
+	56      (000000de) invoke-interface     v1, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	57      (000000e4) move-result-object   v2
+	58      (000000e6) move                 v1, v0
+
+a-BB@0xe8 : [ a-BB@0xf4 a-BB@0x162 ]
+	59      (000000e8) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	60      (000000ee) move-result          v0
+	61      (000000f0) if-eqz               v0, +39
+
+a-BB@0xf4 : [ a-BB@0x110 a-BB@0x13e ]
+	62      (000000f4) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	63      (000000fa) move-result-object   v0
+	64      (000000fc) check-cast           v0, La/a/a/a;
+	65      (00000100) const-string         v3, 'channelID'
+	66      (00000104) invoke-virtual       v0, v3, v4, La/a/a/a;->c(Ljava/lang/String; I)I
+	67      (0000010a) move-result          v3
+	68      (0000010c) if-eq                v3, v4, +19
+
+a-BB@0x110 : [ D:a-BB@0x116 -1:a-BB@0x12a ]
+	69      (00000110) packed-switch        v3, +30 (0x170)
+
+a-BB@0x116 : [ a-BB@0xe8 ]
+	70      (00000116) iget-object          v0, v8, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	71      (0000011a) invoke-static        v3, v10, La/a/b/a/b/b/g/a/c;->a(I La/a/b/a/b/b/a;)La/a/b/a/b/b/g/a/b;
+	72      (00000120) move-result-object   v3
+	73      (00000122) invoke-interface     v0, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	74      (00000128) goto                 -20
+
+a-BB@0x12a : [ a-BB@0xe8 ]
+	75      (0000012a) iget-object          v0, v8, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	76      (0000012e) invoke-static        v6, v7, La/a/b/a/b/b/g/a/c;->a(I La/a/b/a/b/b/a;)La/a/b/a/b/b/g/a/b;
+	77      (00000134) move-result-object   v3
+	78      (00000136) invoke-interface     v0, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	79      (0000013c) goto                 -2a
+
+a-BB@0x13e : [ a-BB@0xe8 ]
+	80      (0000013e) new-instance         v3, La/a/b/a/b/b/b/d/a;
+	81      (00000142) invoke-direct        v3, v0, v10, La/a/b/a/b/b/b/d/a;-><init>(La/a/a/a; La/a/b/a/b/b/a;)V
+	82      (00000148) iget-object          v0, v8, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	83      (0000014c) invoke-static        v1, v3, La/a/b/a/b/b/g/a/c;->a(I La/a/b/a/b/b/b/d/a;)La/a/b/a/b/b/g/a/b;
+	84      (00000152) move-result-object   v3
+	85      (00000154) invoke-interface     v0, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	86      (0000015a) add-int/lit8         v0, v1, 1
+	87      (0000015e) move                 v1, v0
+	88      (00000160) goto                 -3c
+
+a-BB@0x162 : 
+	89      (00000162) return-void          
+
+a-BB@0x164 : 
+	90      (00000164) packed-switch-payload -1
+	91      (00000170) packed-switch-payload -1
+

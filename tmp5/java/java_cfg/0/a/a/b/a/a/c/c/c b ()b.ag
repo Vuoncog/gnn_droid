@@ -1,0 +1,44 @@
+# La/a/b/a/a/c/c;->b()La/a/b/a/a/c/b; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:a.a.b.a.a.c.b
+
+b-BB@0x0 : 
+	0       (00000000) new-instance         v0, La/a/b/a/a/c/b;
+	1       (00000004) invoke-direct        v0, La/a/b/a/a/c/b;-><init>()V
+	2       (0000000a) new-instance         v1, La/a/b/a/a/c/a;
+	3       (0000000e) const-string         v2, 'Current channel'
+	4       (00000012) const-string         v3, 'currentChannel'
+	5       (00000016) invoke-direct        v1, v2, v3, La/a/b/a/a/c/a;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	6       (0000001c) invoke-virtual       v0, v1, La/a/b/a/a/c/b;->add(Ljava/lang/Object;)Z
+	7       (00000022) new-instance         v1, La/a/b/a/a/c/a;
+	8       (00000026) const-string         v2, 'Channel'
+	9       (0000002a) const-string         v3, 'chSelect'
+	10      (0000002e) invoke-direct        v1, v2, v3, La/a/b/a/a/c/a;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	11      (00000034) const/4              v2, 1
+	12      (00000036) iput                 v2, v1, La/a/b/a/a/c/a;->c I
+	13      (0000003a) invoke-virtual       v0, v1, La/a/b/a/a/c/b;->add(Ljava/lang/Object;)Z
+	14      (00000040) new-instance         v1, La/a/b/a/a/c/a;
+	15      (00000044) const-string         v2, 'Fixed channel'
+	16      (00000048) const-string         v3, 'fixedCH'
+	17      (0000004c) invoke-direct        v1, v2, v3, La/a/b/a/a/c/a;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	18      (00000052) invoke-virtual       v0, v1, La/a/b/a/a/c/b;->add(Ljava/lang/Object;)Z
+	19      (00000058) new-instance         v1, La/a/b/a/a/c/a;
+	20      (0000005c) const-string         v2, 'Select channel'
+	21      (00000060) const-string         v3, 'selectCh'
+	22      (00000064) invoke-direct        v1, v2, v3, La/a/b/a/a/c/a;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	23      (0000006a) invoke-virtual       v0, v1, La/a/b/a/a/c/b;->add(Ljava/lang/Object;)Z
+	24      (00000070) new-instance         v1, La/a/b/a/a/c/a;
+	25      (00000074) const-string         v2, 'Sends on fader'
+	26      (00000078) const-string         v3, 'sendsOnFader'
+	27      (0000007c) invoke-direct        v1, v2, v3, La/a/b/a/a/c/a;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	28      (00000082) invoke-virtual       v0, v1, La/a/b/a/a/c/b;->add(Ljava/lang/Object;)Z
+	29      (00000088) new-instance         v1, La/a/b/a/a/c/a;
+	30      (0000008c) const-string         v2, 'Mutegroup'
+	31      (00000090) const-string         v3, 'mutegroup'
+	32      (00000094) invoke-direct        v1, v2, v3, La/a/b/a/a/c/a;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	33      (0000009a) invoke-virtual       v0, v1, La/a/b/a/a/c/b;->add(Ljava/lang/Object;)Z
+	34      (000000a0) return-object        v0
+

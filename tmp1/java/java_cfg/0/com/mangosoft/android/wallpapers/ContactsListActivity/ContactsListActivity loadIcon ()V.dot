@@ -1,0 +1,84 @@
+digraph {
+	graph [bb="0,0,2280,650",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_559b751b95c8e65f292da4de5b6bb050 {
+		graph [bb="8,8,2272,642",
+			label="Lcom/mangosoft/android/wallpapers/ContactsListActivity;.loadIcon->()V\nLocal registers v0 ... v4\nreturn = void",
+			lheight=0.62,
+			lp="1140,615.5",
+			lwidth=6.56
+		];
+		struct_b342ba52b70618f76e29ab2b111d3258	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/ContactsListActivity;-&gt;fullUrl Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#848484">v1</FONT>, <FONT color="red">'http://'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/String;-&gt;startsWith(Ljava/lang/String;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x15</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1020,513.5",
+			width=10.389];
+		struct_263fb6b1f4c2d172bd1deae74ca8f459	[height=3.0972,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#848484">v1</FONT>, <FONT color="red">'请稍等...'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#8E8E5B">v4</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#DF3A01">Landroid/app/ProgressDialog;-&gt;show(Landroid/content/Context; Ljava/lang/CharSequence; Ljava/lang/CharSequence; Z)Landroid/app/ProgressDialog;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/ContactsListActivity;-&gt;progress Landroid/app/ProgressDialog;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#DF3A01">Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;-&gt;&lt;init&gt;(Lcom/mangosoft/android/wallpapers/ContactsListActivity;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;-&gt;start()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="637,254.5",
+			width=17.25];
+		struct_b342ba52b70618f76e29ab2b111d3258:tail -> struct_263fb6b1f4c2d172bd1deae74ca8f459:header	[color=red,
+			pos="e,41,359.5 656,454.5 590.1,454.5 91.127,431.01 44.493,368.94"];
+		struct_427a1bafe88305131bb9d5ceec724ab3	[height=4.3194,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/ContactsListActivity;-&gt;fullUrl Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Landroid/graphics/BitmapFactory;-&gt;decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">46</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/ContactsListActivity;-&gt;thumbnail Landroid/graphics/Bitmap;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/io/ByteArrayOutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/io/ByteArrayOutputStream;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">54</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/ContactsListActivity;-&gt;stream Ljava/io/ByteArrayOutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">58</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/ContactsListActivity;-&gt;thumbnail Landroid/graphics/Bitmap;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#088A08">Landroid/graphics/Bitmap$CompressFormat;-&gt;JPEG Landroid/graphics/Bitmap$CompressFormat;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">60</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/16 </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="green">0x4b</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">64</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7070D6">v3</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/ContactsListActivity;-&gt;stream Ljava/io/ByteArrayOutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">68</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#7070D6">v3</FONT>, <FONT color="#DF3A01">Landroid/graphics/Bitmap;-&gt;compress(Landroid/graphics/Bitmap$CompressFormat; I Ljava/io/OutputStream;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-1b</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1770,254.5",
+			width=13.722];
+		struct_b342ba52b70618f76e29ab2b111d3258:tail -> struct_427a1bafe88305131bb9d5ceec724ab3:header	[color=green,
+			pos="e,1286,400.5 671,451.5 671,385.12 1203,427.49 1267,410 1271.6,408.76 1273.9,406.38 1276.4,404.32"];
+		struct_dc16a9d3c80bbe0182375535921142d7	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="720,39.5",
+			width=2.0694];
+		struct_263fb6b1f4c2d172bd1deae74ca8f459:tail -> struct_dc16a9d3c80bbe0182375535921142d7:header	[color=blue,
+			pos="e,656,53.5 41,148.5 41,82.057 545.04,55.586 645.78,53.619"];
+		struct_427a1bafe88305131bb9d5ceec724ab3:tail -> struct_dc16a9d3c80bbe0182375535921142d7:header	[color=blue,
+			pos="e,671,56.5 1286,107.5 1276.7,107.5 1276,101.25 1267,99 1205.9,83.658 723.79,118.97 674.98,65.812"];
+	}
+}

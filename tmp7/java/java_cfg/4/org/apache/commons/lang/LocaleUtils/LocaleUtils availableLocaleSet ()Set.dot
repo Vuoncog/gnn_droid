@@ -1,0 +1,51 @@
+digraph {
+	graph [bb="0,0,706,342",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_b8e351d2f1064a091088adbdc58f9a5e {
+		graph [bb="8,8,698,334",
+			label="Lorg/apache/commons/lang/LocaleUtils;.availableLocaleSet->()Ljava/util/Set;\nLocal registers v0 ... v0\nreturn = java.util.Set",
+			lheight=0.62,
+			lp="353,307.5",
+			lwidth=6.99
+		];
+		struct_9ca9552a74d7dd2ef72810e8c2efeb30	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/LocaleUtils;-&gt;cAvailableLocaleSet Ljava/util/Set;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="354,238.5",
+			width=9.25];
+		struct_79d4c94e0934a7bc0997ac54e73f0e08	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lorg/apache/commons/lang/LocaleUtils;-&gt;initAvailableLocaleSet()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="313,144.5",
+			width=8.2083];
+		struct_9ca9552a74d7dd2ef72810e8c2efeb30:tail -> struct_79d4c94e0934a7bc0997ac54e73f0e08:header	[color=red,
+			pos="e,39,161.5 42,209.5 42,191.97 39.981,185.28 39.256,171.65"];
+		struct_acdbc24ce405768425f9b426a988044a	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/LocaleUtils;-&gt;cAvailableLocaleSet Ljava/util/Set;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="353,50.5",
+			width=9.3611];
+		struct_9ca9552a74d7dd2ef72810e8c2efeb30:tail -> struct_acdbc24ce405768425f9b426a988044a:header	[color=green,
+			pos="e,41,78.5 42,209.5 42,145.33 574.29,214.97 618,168 632.23,152.71 632.22,136.3 618,121 576.55,76.387 95.879,135.84 45.299,87.596"];
+		struct_79d4c94e0934a7bc0997ac54e73f0e08:tail -> struct_acdbc24ce405768425f9b426a988044a:header	[color=blue,
+			pos="e,41,78.5 39,126.5 39,108.98 40.346,102.27 40.829,88.641"];
+	}
+}

@@ -1,0 +1,90 @@
+# Lcom/a/a/g/a/a/d;->a(Ljava/util/List; I)Ljava/util/List; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.util.List
+# - v7:int
+#
+# - return:java.util.List
+
+a-BB@0x0 : [ a-BB@0x10 a-BB@0xbe ]
+	0       (00000000) iget-object          v0, v5, Lcom/a/a/g/a/a/d;->h Ljava/util/List;
+	1       (00000004) invoke-interface     v0, Ljava/util/List;->size()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-ge                v7, v0, +59
+
+a-BB@0x10 : [ a-BB@0x36 ]
+	4       (00000010) iget-object          v0, v5, Lcom/a/a/g/a/a/d;->h Ljava/util/List;
+	5       (00000014) invoke-interface     v0, v7, Ljava/util/List;->get(I)Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, Lcom/a/a/g/a/a/c;
+	8       (00000020) iget-object          v1, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	9       (00000024) invoke-interface     v1, Ljava/util/List;->clear()V
+	10      (0000002a) invoke-interface     v6, Ljava/util/List;->size()I
+	11      (00000030) move-result          v3
+	12      (00000032) const/4              v1, 0
+	13      (00000034) move                 v2, v1
+
+a-BB@0x36 : [ a-BB@0x3a a-BB@0x60 ]
+	14      (00000036) if-ge                v2, v3, +15
+
+a-BB@0x3a : [ a-BB@0x36 ]
+	15      (0000003a) iget-object          v4, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	16      (0000003e) invoke-interface     v6, v2, Ljava/util/List;->get(I)Ljava/lang/Object;
+	17      (00000044) move-result-object   v1
+	18      (00000046) check-cast           v1, Lcom/a/a/g/a/a/c;
+	19      (0000004a) invoke-virtual       v1, Lcom/a/a/g/a/a/c;->a()Ljava/util/List;
+	20      (00000050) move-result-object   v1
+	21      (00000052) invoke-interface     v4, v1, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+	22      (00000058) add-int/lit8         v1, v2, 1
+	23      (0000005c) move                 v2, v1
+	24      (0000005e) goto                 -14
+
+a-BB@0x60 : [ a-BB@0x82 a-BB@0x88 ]
+	25      (00000060) iget-object          v1, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	26      (00000064) invoke-virtual       v0, Lcom/a/a/g/a/a/c;->a()Ljava/util/List;
+	27      (0000006a) move-result-object   v2
+	28      (0000006c) invoke-interface     v1, v2, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+	29      (00000072) iget-object          v1, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	30      (00000076) invoke-static        v1, Lcom/a/a/g/a/a/d;->b(Ljava/util/List;)Z
+	31      (0000007c) move-result          v1
+	32      (0000007e) if-nez               v1, +5
+
+a-BB@0x82 : [ a-BB@0x0 ]
+	33      (00000082) add-int/lit8         v7, v7, 1
+	34      (00000086) goto                 -43
+
+a-BB@0x88 : [ a-BB@0x94 a-BB@0x9a ]
+	35      (00000088) invoke-direct        v5, Lcom/a/a/g/a/a/d;->h()Z
+	36      (0000008e) move-result          v1
+	37      (00000090) if-eqz               v1, +5
+
+a-BB@0x94 : [ a-BB@0x98 ]
+	38      (00000094) iget-object          v0, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+
+a-BB@0x98 : 
+	39      (00000098) return-object        v0
+
+a-BB@0x9a : [ a-BB@0xb4 ]
+	40      (0000009a) new-instance         v1, Ljava/util/ArrayList;
+	41      (0000009e) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	42      (000000a4) invoke-interface     v1, v6, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+	43      (000000aa) invoke-interface     v1, v0, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	44      (000000b0) add-int/lit8         v0, v7, 1
+
+a-BB@0xb4 : [ a-BB@0x98 ]
+	45      (000000b4) invoke-direct        v5, v1, v0, Lcom/a/a/g/a/a/d;->a(Ljava/util/List; I)Ljava/util/List;
+	46      (000000ba) move-result-object   v0
+	47      (000000bc) goto                 -12
+	b4:b9
+	(Lcom/a/a/m; -> c8 a-BB@0xc8)
+
+a-BB@0xbe : 
+	48      (000000be) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	49      (000000c4) move-result-object   v0
+	50      (000000c6) throw                v0
+
+a-BB@0xc8 : [ a-BB@0x82 ]
+	51      (000000c8) move-exception       v0
+	52      (000000ca) goto                 -24
+

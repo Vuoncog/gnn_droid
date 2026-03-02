@@ -1,0 +1,21 @@
+# Lcom/unlocker/purchase/b;->a(Ljava/lang/String; Lcom/unlocker/purchase/b$a;)Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+# - v9:com.unlocker.purchase.b$a
+#
+# - return:java.lang.String
+
+a-BB@0x0 : 
+	0       (00000000) const-string         v1, 'UNLOCKER-HttpPostString'
+	1       (00000004) const/4              v2, 3
+	2       (00000006) const/16             v3, 1000
+	3       (0000000a) const-wide/high16    v4, 16368 # [1.0]
+	4       (0000000e) new-instance         v6, Lcom/unlocker/purchase/b$1;
+	5       (00000012) invoke-direct        v6, v7, v8, v9, Lcom/unlocker/purchase/b$1;-><init>(Lcom/unlocker/purchase/b; Ljava/lang/String; Lcom/unlocker/purchase/b$a;)V
+	6       (00000018) invoke-static/range  v1 ... v6, Lcom/unlocker/Util;->a(Ljava/lang/String; I I D Ljava/util/concurrent/Callable;)Ljava/lang/Object;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) check-cast           v0, Ljava/lang/String;
+	9       (00000024) return-object        v0
+

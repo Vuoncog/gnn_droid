@@ -1,0 +1,93 @@
+digraph {
+	graph [bb="0,0,844.48,864",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_9a01680756a395fea4938983db1a7b2c {
+		graph [bb="19.607,8,781.61,856",
+			label="Lnet/youmi/android/ad;.e->(Landroid/app/Activity; Ljava/lang/String;)Z\nLocal registers v0 ... v3\nparam v4 = android.app.Activity\nparam \
+v5 = java.lang.String\nreturn = boolean",
+			lheight=1.04,
+			lp="400.61,814.5",
+			lwidth=6.43
+		];
+		struct_3c39fb9284b3334e6ddfa77041873a7f	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v5</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x27</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="402.61,741.5",
+			width=2.2083];
+		struct_f7445b278dfe51c0e61231e71f41c07e	[height=5.2361,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#909055">v0</FONT>, <FONT color="#0000FF">Landroid/content/Intent;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#888877">v1</FONT>, <FONT color="red">'android.intent.action.DIAL'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#0000FF">Ljava/lang/StringBuilder;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v3</FONT>, <FONT color="red">'tel:'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#7777BB">v3</FONT>, <FONT color="#DF3A01">Ljava/lang/StringBuilder;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#999933">v5</FONT>, <FONT color="#DF3A01">Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/StringBuilder;-&gt;toString()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#DF3A01">Landroid/net/Uri;-&gt;parse(Ljava/lang/String;)Landroid/net/Uri;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#909055">v0</FONT>, <FONT color="#888877">v1</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT color="#DF3A01">Landroid/content/Intent;-&gt;&lt;init&gt;(Ljava/lang/String; Landroid/net/Uri;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/high16 </FONT> <FONT color="#888877">v1</FONT>, <FONT color="green">0x1000</FONT> ; [2.524354896707238e-29] </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v0</FONT>, <FONT color="#888877">v1</FONT>, <FONT color="#DF3A01">Landroid/content/Intent;-&gt;addFlags(I)Landroid/content/Intent;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#6E6EDD">v4</FONT>, <FONT color="#909055">v0</FONT>, <FONT color="#DF3A01">Landroid/app/Activity;-&gt;startActivity(Landroid/content/Intent;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">48</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#909055">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="390.61,492.5",
+			width=10.083];
+		struct_3c39fb9284b3334e6ddfa77041873a7f:tail -> struct_f7445b278dfe51c0e61231e71f41c07e:header	[color=red,
+			pos="e,52.607,674.5 333.61,726.5 304.71,726.5 95.638,709.73 58.304,682.77"];
+		struct_7820438717b8d7f5b9c7183e453cd368	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#909055">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">50</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="158.61,134.5",
+			width=2.4028];
+		struct_3c39fb9284b3334e6ddfa77041873a7f:tail -> struct_7820438717b8d7f5b9c7183e453cd368:header	[color=green,
+			pos="e,97.607,162.5 344.61,723.5 344.61,630.13 700.01,750.28 762.61,681 874.93,556.67 868.04,434.23 762.61,304 751.54,290.33 183.9,195.71 \
+106.35,167.56"];
+		struct_4228f152610f340a8d1e1e37e61b47ba	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#909055">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="106.61,39.5",
+			width=1.8333];
+		struct_f7445b278dfe51c0e61231e71f41c07e:tail -> struct_4228f152610f340a8d1e1e37e61b47ba:header	[color=blue,
+			pos="e,50.607,53.5 52.607,309.5 52.607,199.27 -56.051,62.361 40.602,53.911"];
+		struct_11ee2ba701b18c899e56120d9cafffa1	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#909055">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="169.61,229.5",
+			width=2.6944];
+		struct_f7445b278dfe51c0e61231e71f41c07e:tail -> struct_11ee2ba701b18c899e56120d9cafffa1:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="154.11,278.5",
+			pos="e,97.607,246.5 52.607,309.5 52.607,278.85 88.302,280.12 96.11,256.45"];
+		struct_11ee2ba701b18c899e56120d9cafffa1:tail -> struct_7820438717b8d7f5b9c7183e453cd368:header	[color=blue,
+			pos="e,97.607,162.5 97.607,211.5 97.607,193.64 97.607,186.76 97.607,172.85"];
+		struct_7820438717b8d7f5b9c7183e453cd368:tail -> struct_4228f152610f340a8d1e1e37e61b47ba:header	[color=blue,
+			pos="e,65.607,56.5 82.607,108.5 61.617,108.5 64.198,87.867 65.297,66.583"];
+	}
+}

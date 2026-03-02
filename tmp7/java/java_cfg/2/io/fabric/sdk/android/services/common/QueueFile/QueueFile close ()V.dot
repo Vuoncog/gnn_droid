@@ -1,0 +1,54 @@
+digraph {
+	graph [bb="0,0,778,424",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_0f39283a7159ae684d614790dcb35e76 {
+		graph [bb="8,8,770,416",
+			label="Lio/fabric/sdk/android/services/common/QueueFile;.close->()V\nLocal registers v0 ... v1\nreturn = void",
+			lheight=0.62,
+			lp="389,389.5",
+			lwidth=5.72
+		];
+		struct_f861c60cf8454d7efac41438c1847da0	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-enter </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="105,331.5",
+			width=2.4583];
+		struct_cc173d9cbde446deb19a559c6c58aa51	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;raf Ljava/io/RandomAccessFile;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Ljava/io/RandomAccessFile;-&gt;close()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="389,214.5",
+			width=10.347];
+		struct_f861c60cf8454d7efac41438c1847da0:tail -> struct_cc173d9cbde446deb19a559c6c58aa51:header	[color=blue,
+			pos="e,38,264.5 38,313.5 38,295.64 38,288.76 38,274.85"];
+		struct_4e34fa93c66bdbe46e6a0afb8a073542	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="114,61.5",
+			width=2.7083];
+		struct_cc173d9cbde446deb19a559c6c58aa51:tail -> struct_4e34fa93c66bdbe46e6a0afb8a073542:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="112.5,132.5",
+			pos="e,42,100.5 38,163.5 38,139.17 41.008,130.76 41.807,110.66"];
+	}
+}

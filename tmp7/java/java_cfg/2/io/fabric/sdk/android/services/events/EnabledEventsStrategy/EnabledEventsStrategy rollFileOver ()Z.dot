@@ -1,0 +1,58 @@
+digraph {
+	graph [bb="0,0,1298.7,468",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_8244cd0156550c8816575dd480780149 {
+		graph [bb="62.661,8,1290.7,460",
+			label="Lio/fabric/sdk/android/services/events/EnabledEventsStrategy;.rollFileOver->()Z\nLocal registers v0 ... v3\nreturn = boolean",
+			lheight=0.62,
+			lp="676.66,433.5",
+			lwidth=7.26
+		];
+		struct_d7a54884dc61a0c2160eb064c8adecab	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/events/EnabledEventsStrategy;-&gt;filesManager Lio/fabric/sdk/android/services/events/EventsFilesManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/events/EventsFilesManager;-&gt;rollFileOver()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="619.66,353.5",
+			width=15.194];
+		struct_237a6bce05ddfa3d67b6ca54eb30e968	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="144.66,39.5",
+			width=1.7083];
+		struct_d7a54884dc61a0c2160eb064c8adecab:tail -> struct_237a6bce05ddfa3d67b6ca54eb30e968:header	[color=blue,
+			pos="e,93.661,53.5 82.661,316.5 -30.903,316.5 -23.865,68.684 83.652,54.164"];
+		struct_e4ecdc719d0cf7376da2d99f3e5306da	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/events/EnabledEventsStrategy;-&gt;context Landroid/content/Context;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7272CC">v2</FONT>, <FONT color="red">'Failed to roll file over.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#7272CC">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;logControlledError(Landroid/content/Context; Ljava/lang/String; Ljava/lang/Throwable;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-a</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="686.66,178.5",
+			width=16.542];
+		struct_d7a54884dc61a0c2160eb064c8adecab:tail -> struct_e4ecdc719d0cf7376da2d99f3e5306da:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="178.66,282.5",
+			pos="e,116.66,250.5 93.661,313.5 93.661,287.42 111.27,281.57 115.67,260.54"];
+		struct_e4ecdc719d0cf7376da2d99f3e5306da:tail -> struct_237a6bce05ddfa3d67b6ca54eb30e968:header	[color=blue,
+			pos="e,103.66,56.5 116.66,105.5 116.66,86.841 107.75,80.934 104.68,66.659"];
+	}
+}

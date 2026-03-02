@@ -1,0 +1,20 @@
+# Lorg/apache/commons/lang/builder/HashCodeBuilder;->reflectionHashCode(Ljava/lang/Object; Z)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.Object
+# - v7:boolean
+#
+# - return:int
+
+reflectionHashCode-BB@0x0 : 
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/16             v0, 17
+	2       (00000006) const/16             v1, 37
+	3       (0000000a) move-object          v2, v6
+	4       (0000000c) move                 v3, v7
+	5       (0000000e) move-object          v5, v4
+	6       (00000010) invoke-static/range  v0 ... v5, Lorg/apache/commons/lang/builder/HashCodeBuilder;->reflectionHashCode(I I Ljava/lang/Object; Z Ljava/lang/Class; [Ljava/lang/String;)I
+	7       (00000016) move-result          v0
+	8       (00000018) return               v0
+

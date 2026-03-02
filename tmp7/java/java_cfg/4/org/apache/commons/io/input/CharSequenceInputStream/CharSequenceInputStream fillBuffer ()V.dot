@@ -1,0 +1,61 @@
+digraph {
+	graph [bb="0,0,1094,562",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_d821e64f871168ea62c0b8bf3a9c2f3f {
+		graph [bb="8,8,1086,554",
+			label="Lorg/apache/commons/io/input/CharSequenceInputStream;.fillBuffer->()V\nLocal registers v0 ... v4\nreturn = void",
+			lheight=0.62,
+			lp="547,527.5",
+			lwidth=6.81
+		];
+		struct_924fbe3590579ac74f105e71f0d597ba	[height=3.7083,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceInputStream;-&gt;bbuf Ljava/nio/ByteBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/nio/ByteBuffer;-&gt;compact()Ljava/nio/ByteBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceInputStream;-&gt;encoder Ljava/nio/charset/CharsetEncoder;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceInputStream;-&gt;cbuf Ljava/nio/CharBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceInputStream;-&gt;bbuf Ljava/nio/ByteBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7070D6">v3</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#7070D6">v3</FONT>, <FONT color="#DF3A01">Ljava/nio/charset/CharsetEncoder;-&gt;encode(Ljava/nio/CharBuffer; Ljava/nio/ByteBuffer; Z)Ljava/nio/charset/CoderResult;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/nio/charset/CoderResult;-&gt;isError()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#848484">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#848484">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="547,359.5",
+			width=14.75];
+		struct_77cb1b7819b7bd1bcad0c94f5d6a378e	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/nio/charset/CoderResult;-&gt;throwException()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="279,166.5",
+			width=7.3056];
+		struct_924fbe3590579ac74f105e71f0d597ba:tail -> struct_77cb1b7819b7bd1bcad0c94f5d6a378e:header	[color=red,
+			pos="e,41,183.5 41,231.5 41,214 41,207.27 41,193.64"];
+		struct_8b8fa94ac95700c2347b933757cd152d	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceInputStream;-&gt;bbuf Ljava/nio/ByteBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/nio/ByteBuffer;-&gt;flip()Ljava/nio/Buffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="547,61.5",
+			width=10.819];
+		struct_924fbe3590579ac74f105e71f0d597ba:tail -> struct_8b8fa94ac95700c2347b933757cd152d:header	[color=green,
+			pos="e,183,100.5 41,231.5 41,174.65 512.46,231.8 551,190 565.16,174.64 564.9,158.59 551,143 498.69,84.302 210.62,174.05 184.84,110.51"];
+		struct_77cb1b7819b7bd1bcad0c94f5d6a378e:tail -> struct_8b8fa94ac95700c2347b933757cd152d:header	[color=blue,
+			pos="e,183,100.5 41,148.5 41,85.654 167.37,157.95 181.68,110.41"];
+	}
+}

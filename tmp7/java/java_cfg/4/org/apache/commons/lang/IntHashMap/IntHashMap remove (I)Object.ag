@@ -1,0 +1,58 @@
+# Lorg/apache/commons/lang/IntHashMap;->remove(I)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+#
+# - return:java.lang.Object
+
+remove-BB@0x0 : [ remove-BB@0x1a ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v3, v7, Lorg/apache/commons/lang/IntHashMap;->table [Lorg/apache/commons/lang/IntHashMap$Entry;
+	2       (00000006) const                v0, 2147483647 # [nan]
+	3       (0000000c) and-int/2addr        v0, v8
+	4       (0000000e) array-length         v2, v3
+	5       (00000010) rem-int              v4, v0, v2
+	6       (00000014) aget-object          v2, v3, v4
+	7       (00000018) move-object          v0, v1
+
+remove-BB@0x1a : [ remove-BB@0x1e remove-BB@0x5e ]
+	8       (0000001a) if-eqz               v2, +22
+
+remove-BB@0x1e : [ remove-BB@0x26 remove-BB@0x52 ]
+	9       (0000001e) iget                 v5, v2, Lorg/apache/commons/lang/IntHashMap$Entry;->hash I
+	10      (00000022) if-ne                v5, v8, +18
+
+remove-BB@0x26 : [ remove-BB@0x2a remove-BB@0x48 ]
+	11      (00000026) if-eqz               v0, +11
+
+remove-BB@0x2a : [ remove-BB@0x32 ]
+	12      (0000002a) iget-object          v3, v2, Lorg/apache/commons/lang/IntHashMap$Entry;->next Lorg/apache/commons/lang/IntHashMap$Entry;
+	13      (0000002e) iput-object          v3, v0, Lorg/apache/commons/lang/IntHashMap$Entry;->next Lorg/apache/commons/lang/IntHashMap$Entry;
+
+remove-BB@0x32 : [ remove-BB@0x46 ]
+	14      (00000032) iget                 v0, v7, Lorg/apache/commons/lang/IntHashMap;->count I
+	15      (00000036) add-int/lit8         v0, v0, -1
+	16      (0000003a) iput                 v0, v7, Lorg/apache/commons/lang/IntHashMap;->count I
+	17      (0000003e) iget-object          v0, v2, Lorg/apache/commons/lang/IntHashMap$Entry;->value Ljava/lang/Object;
+	18      (00000042) iput-object          v1, v2, Lorg/apache/commons/lang/IntHashMap$Entry;->value Ljava/lang/Object;
+
+remove-BB@0x46 : 
+	19      (00000046) return-object        v0
+
+remove-BB@0x48 : [ remove-BB@0x32 ]
+	20      (00000048) iget-object          v0, v2, Lorg/apache/commons/lang/IntHashMap$Entry;->next Lorg/apache/commons/lang/IntHashMap$Entry;
+	21      (0000004c) aput-object          v0, v3, v4
+	22      (00000050) goto                 -f
+
+remove-BB@0x52 : [ remove-BB@0x1a ]
+	23      (00000052) iget-object          v0, v2, Lorg/apache/commons/lang/IntHashMap$Entry;->next Lorg/apache/commons/lang/IntHashMap$Entry;
+	24      (00000056) move-object          v6, v2
+	25      (00000058) move-object          v2, v0
+	26      (0000005a) move-object          v0, v6
+	27      (0000005c) goto                 -21
+
+remove-BB@0x5e : [ remove-BB@0x46 ]
+	28      (0000005e) move-object          v0, v1
+	29      (00000060) goto                 -d
+

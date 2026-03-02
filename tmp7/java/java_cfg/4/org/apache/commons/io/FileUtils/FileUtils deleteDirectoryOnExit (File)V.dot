@@ -1,0 +1,69 @@
+digraph {
+	graph [bb="0,0,740,528",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_534ce07b3e7569968104e4af3740bef9 {
+		graph [bb="8,8,732,520",
+			label="Lorg/apache/commons/io/FileUtils;.deleteDirectoryOnExit->(Ljava/io/File;)V\nLocal registers v0 ... v0\nparam v1 = java.io.File\nreturn = \
+void",
+			lheight=0.83,
+			lp="370,486",
+			lwidth=6.89
+		];
+		struct_f6e89e4bd261ef339117090f286d371c	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Ljava/io/File;-&gt;exists()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="194,398.5",
+			width=4.5972];
+		struct_7e159ff795aedf452e28462ac876c28a	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="86,39.5",
+			width=1.9306];
+		struct_f6e89e4bd261ef339117090f286d371c:tail -> struct_7e159ff795aedf452e28462ac876c28a:header	[color=red,
+			pos="e,27,53.5 39,361.5 -0.011021,361.5 17.89,116.12 25.014,63.399"];
+		struct_4efd5af3272fadea57407d2256666ff1	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Ljava/io/File;-&gt;deleteOnExit()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/FileUtils;-&gt;isSymlink(Ljava/io/File;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x-8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="331,260.5",
+			width=8.1806];
+		struct_f6e89e4bd261ef339117090f286d371c:tail -> struct_4efd5af3272fadea57407d2256666ff1:header	[color=green,
+			pos="e,62,310.5 50,358.5 50,340.46 58.075,334.51 60.977,320.82"];
+		struct_4efd5af3272fadea57407d2256666ff1:tail -> struct_7e159ff795aedf452e28462ac876c28a:header	[color=green,
+			pos="e,37,56.5 47,212.5 15.112,212.5 33.342,110.32 36.547,66.681"];
+		struct_8a32cd01bc6b0c60a1ec4788b795efa6	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/FileUtils;-&gt;cleanDirectoryOnExit(Ljava/io/File;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="390,133.5",
+			width=9.2778];
+		struct_4efd5af3272fadea57407d2256666ff1:tail -> struct_8a32cd01bc6b0c60a1ec4788b795efa6:header	[color=red,
+			pos="e,81,161.5 62,209.5 62,190.5 75.03,185.79 79.509,171.7"];
+		struct_8a32cd01bc6b0c60a1ec4788b795efa6:tail -> struct_7e159ff795aedf452e28462ac876c28a:header	[color=blue,
+			pos="e,37,56.5 81,104.5 81,79.63 48.505,83.429 39.366,66.622"];
+	}
+}

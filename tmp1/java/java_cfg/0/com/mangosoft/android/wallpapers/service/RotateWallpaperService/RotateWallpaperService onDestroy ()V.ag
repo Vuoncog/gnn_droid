@@ -1,0 +1,21 @@
+# Lcom/mangosoft/android/wallpapers/service/RotateWallpaperService;->onDestroy()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onDestroy-BB@0x0 : [ onDestroy-BB@0x10 ]
+	0       (00000000) iget-object          v0, v2, Lcom/mangosoft/android/wallpapers/service/RotateWallpaperService;->notificationManager Landroid/app/NotificationManager;
+	1       (00000004) const                v1, 663234633 # [3.779126009118049e-15]
+	2       (0000000a) invoke-virtual       v0, v1, Landroid/app/NotificationManager;->cancel(I)V
+	0:f
+	(Ljava/lang/Exception; -> 12 onDestroy-BB@0x12)
+
+onDestroy-BB@0x10 : 
+	3       (00000010) return-void          
+
+onDestroy-BB@0x12 : [ onDestroy-BB@0x10 ]
+	4       (00000012) move-exception       v0
+	5       (00000014) goto                 -2
+

@@ -1,0 +1,31 @@
+# Lorg/apache/commons/io/comparator/CompositeFileComparator;->compare(Ljava/io/File; Ljava/io/File;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.io.File
+# - v6:java.io.File
+#
+# - return:int
+
+compare-BB@0x0 : [ compare-BB@0xa ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-object          v2, v4, Lorg/apache/commons/io/comparator/CompositeFileComparator;->delegates [Ljava/util/Comparator;
+	2       (00000006) array-length         v3, v2
+	3       (00000008) move                 v1, v0
+
+compare-BB@0xa : [ compare-BB@0xe compare-BB@0x1e ]
+	4       (0000000a) if-ge                v1, v3, +a
+
+compare-BB@0xe : [ compare-BB@0x1e compare-BB@0x20 ]
+	5       (0000000e) aget-object          v0, v2, v1
+	6       (00000012) invoke-interface     v0, v5, v6, Ljava/util/Comparator;->compare(Ljava/lang/Object; Ljava/lang/Object;)I
+	7       (00000018) move-result          v0
+	8       (0000001a) if-eqz               v0, +3
+
+compare-BB@0x1e : 
+	9       (0000001e) return               v0
+
+compare-BB@0x20 : [ compare-BB@0xa ]
+	10      (00000020) add-int/lit8         v1, v1, 1
+	11      (00000024) goto                 -d
+

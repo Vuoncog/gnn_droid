@@ -1,0 +1,42 @@
+# Lcom/a/a/a/b/a;->b()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+b-BB@0x0 : [ b-BB@0x8 b-BB@0x16 ]
+	0       (00000000) iget-boolean         v0, v2, Lcom/a/a/a/b/a;->b Z
+	1       (00000004) if-eqz               v0, +9
+
+b-BB@0x8 : [ b-BB@0x14 ]
+	2       (00000008) iget                 v0, v2, Lcom/a/a/a/b/a;->c I
+	3       (0000000c) mul-int/lit8         v0, v0, 4
+	4       (00000010) add-int/lit8         v0, v0, 11
+
+b-BB@0x14 : 
+	5       (00000014) return               v0
+
+b-BB@0x16 : [ b-BB@0x20 b-BB@0x2e ]
+	6       (00000016) iget                 v0, v2, Lcom/a/a/a/b/a;->c I
+	7       (0000001a) const/4              v1, 4
+	8       (0000001c) if-gt                v0, v1, +9
+
+b-BB@0x20 : [ b-BB@0x14 ]
+	9       (00000020) iget                 v0, v2, Lcom/a/a/a/b/a;->c I
+	10      (00000024) mul-int/lit8         v0, v0, 4
+	11      (00000028) add-int/lit8         v0, v0, 15
+	12      (0000002c) goto                 -c
+
+b-BB@0x2e : [ b-BB@0x14 ]
+	13      (0000002e) iget                 v0, v2, Lcom/a/a/a/b/a;->c I
+	14      (00000032) mul-int/lit8         v0, v0, 4
+	15      (00000036) iget                 v1, v2, Lcom/a/a/a/b/a;->c I
+	16      (0000003a) add-int/lit8         v1, v1, -4
+	17      (0000003e) div-int/lit8         v1, v1, 8
+	18      (00000042) add-int/lit8         v1, v1, 1
+	19      (00000046) mul-int/lit8         v1, v1, 2
+	20      (0000004a) add-int/2addr        v0, v1
+	21      (0000004c) add-int/lit8         v0, v0, 15
+	22      (00000050) goto                 -1e
+

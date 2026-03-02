@@ -1,0 +1,107 @@
+# Lcom/a/a/c/a;->a(I I Z)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:int
+# - v13:int
+# - v14:boolean
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0xc a-BB@0x18 ]
+	0       (00000000) const/16             v5, 31
+	1       (00000004) const/4              v1, 1
+	2       (00000006) const/4              v2, 0
+	3       (00000008) if-ge                v13, v12, +8
+
+a-BB@0xc : 
+	4       (0000000c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	5       (00000010) invoke-direct        v0, Ljava/lang/IllegalArgumentException;-><init>()V
+	6       (00000016) throw                v0
+
+a-BB@0x18 : [ a-BB@0x1c a-BB@0x20 ]
+	7       (00000018) if-ne                v13, v12, +4
+
+a-BB@0x1c : [ a-BB@0x1e ]
+	8       (0000001c) move                 v0, v1
+
+a-BB@0x1e : 
+	9       (0000001e) return               v0
+
+a-BB@0x20 : [ a-BB@0x2e ]
+	10      (00000020) add-int/lit8         v8, v13, -1
+	11      (00000024) div-int/lit8         v7, v12, 32
+	12      (00000028) div-int/lit8         v9, v8, 32
+	13      (0000002c) move                 v6, v7
+
+a-BB@0x2e : [ a-BB@0x32 a-BB@0x8a ]
+	14      (0000002e) if-gt                v6, v9, +2e
+
+a-BB@0x32 : [ a-BB@0x36 a-BB@0x5e ]
+	15      (00000032) if-le                v6, v7, +16
+
+a-BB@0x36 : [ a-BB@0x38 ]
+	16      (00000036) move                 v3, v2
+
+a-BB@0x38 : [ a-BB@0x3c a-BB@0x64 ]
+	17      (00000038) if-ge                v6, v9, +16
+
+a-BB@0x3c : [ a-BB@0x3e ]
+	18      (0000003c) move                 v4, v5
+
+a-BB@0x3e : [ a-BB@0x42 a-BB@0x6c ]
+	19      (0000003e) if-nez               v3, +17
+
+a-BB@0x42 : [ a-BB@0x46 a-BB@0x6c ]
+	20      (00000042) if-ne                v4, v5, +15
+
+a-BB@0x46 : [ a-BB@0x48 ]
+	21      (00000046) const/4              v0, -1
+
+a-BB@0x48 : [ a-BB@0x56 a-BB@0x7e ]
+	22      (00000048) iget-object          v3, v11, Lcom/a/a/c/a;->a [I
+	23      (0000004c) aget                 v3, v3, v6
+	24      (00000050) and-int/2addr        v3, v0
+	25      (00000052) if-eqz               v14, +16
+
+a-BB@0x56 : [ a-BB@0x5a a-BB@0x82 ]
+	26      (00000056) if-eq                v3, v0, +16
+
+a-BB@0x5a : [ a-BB@0x1e ]
+	27      (0000005a) move                 v0, v2
+	28      (0000005c) goto                 -1f
+
+a-BB@0x5e : [ a-BB@0x38 ]
+	29      (0000005e) and-int/lit8         v3, v12, 31
+	30      (00000062) goto                 -15
+
+a-BB@0x64 : [ a-BB@0x3e ]
+	31      (00000064) and-int/lit8         v0, v8, 31
+	32      (00000068) move                 v4, v0
+	33      (0000006a) goto                 -16
+
+a-BB@0x6c : [ a-BB@0x6e ]
+	34      (0000006c) move                 v0, v2
+
+a-BB@0x6e : [ a-BB@0x72 a-BB@0x48 ]
+	35      (0000006e) if-gt                v3, v4, -13
+
+a-BB@0x72 : [ a-BB@0x6e ]
+	36      (00000072) shl-int              v10, v1, v3
+	37      (00000076) or-int/2addr         v0, v10
+	38      (00000078) add-int/lit8         v3, v3, 1
+	39      (0000007c) goto                 -7
+
+a-BB@0x7e : [ a-BB@0x56 ]
+	40      (0000007e) move                 v0, v2
+	41      (00000080) goto                 -15
+
+a-BB@0x82 : [ a-BB@0x2e ]
+	42      (00000082) add-int/lit8         v0, v6, 1
+	43      (00000086) move                 v6, v0
+	44      (00000088) goto                 -2d
+
+a-BB@0x8a : [ a-BB@0x1e ]
+	45      (0000008a) move                 v0, v1
+	46      (0000008c) goto                 -37
+

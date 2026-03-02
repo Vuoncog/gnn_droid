@@ -1,0 +1,20 @@
+# Lio/fabric/sdk/android/services/concurrency/internal/RetryFuture;-><init>(Ljava/util/concurrent/Callable; Lio/fabric/sdk/android/services/concurrency/internal/RetryState; Lio/fabric/sdk/android/services/concurrency/internal/RetryThreadPoolExecutor;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.concurrent.Callable
+# - v3:io.fabric.sdk.android.services.concurrency.internal.RetryState
+# - v4:io.fabric.sdk.android.services.concurrency.internal.RetryThreadPoolExecutor
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture;-><init>()V
+	1       (00000006) iput-object          v2, v1, Lio/fabric/sdk/android/services/concurrency/internal/RetryFuture;->task Ljava/util/concurrent/Callable;
+	2       (0000000a) iput-object          v3, v1, Lio/fabric/sdk/android/services/concurrency/internal/RetryFuture;->retryState Lio/fabric/sdk/android/services/concurrency/internal/RetryState;
+	3       (0000000e) iput-object          v4, v1, Lio/fabric/sdk/android/services/concurrency/internal/RetryFuture;->executor Lio/fabric/sdk/android/services/concurrency/internal/RetryThreadPoolExecutor;
+	4       (00000012) new-instance         v0, Ljava/util/concurrent/atomic/AtomicReference;
+	5       (00000016) invoke-direct        v0, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+	6       (0000001c) iput-object          v0, v1, Lio/fabric/sdk/android/services/concurrency/internal/RetryFuture;->runner Ljava/util/concurrent/atomic/AtomicReference;
+	7       (00000020) return-void          
+

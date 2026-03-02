@@ -1,0 +1,16 @@
+# Lcom/a/a/d;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/a/a/d;
+	1       (00000004) invoke-direct        v0, Lcom/a/a/d;-><init>()V
+	2       (0000000a) sput-object          v0, Lcom/a/a/d;->c Lcom/a/a/d;
+	3       (0000000e) sget-object          v0, Lcom/a/a/d;->c Lcom/a/a/d;
+	4       (00000012) sget-object          v1, Lcom/a/a/d;->b [Ljava/lang/StackTraceElement;
+	5       (00000016) invoke-virtual       v0, v1, Lcom/a/a/d;->setStackTrace([Ljava/lang/StackTraceElement;)V
+	6       (0000001c) return-void          
+

@@ -1,0 +1,45 @@
+# Lio/fabric/sdk/android/services/common/QueueFile;->clear()V [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+clear-BB@0x0 : [ clear-BB@0x10 ]
+	0       (00000000) const/16             v4, 4096
+	1       (00000004) monitor-enter        v5
+	2       (00000006) const/16             v0, 4096
+	3       (0000000a) const/4              v1, 0
+	4       (0000000c) const/4              v2, 0
+	5       (0000000e) const/4              v3, 0
+
+clear-BB@0x10 : [ clear-BB@0x34 clear-BB@0x3e ]
+	6       (00000010) invoke-direct        v5, v0, v1, v2, v3, Lio/fabric/sdk/android/services/common/QueueFile;->writeHeader(I I I I)V
+	7       (00000016) const/4              v0, 0
+	8       (00000018) iput                 v0, v5, Lio/fabric/sdk/android/services/common/QueueFile;->elementCount I
+	9       (0000001c) sget-object          v0, Lio/fabric/sdk/android/services/common/QueueFile$Element;->NULL Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	10      (00000020) iput-object          v0, v5, Lio/fabric/sdk/android/services/common/QueueFile;->first Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	11      (00000024) sget-object          v0, Lio/fabric/sdk/android/services/common/QueueFile$Element;->NULL Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	12      (00000028) iput-object          v0, v5, Lio/fabric/sdk/android/services/common/QueueFile;->last Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	13      (0000002c) iget                 v0, v5, Lio/fabric/sdk/android/services/common/QueueFile;->fileLength I
+	14      (00000030) if-le                v0, v4, +7
+	10:45
+	(Ljava/lang/Throwable; -> 4a clear-BB@0x4a)
+
+clear-BB@0x34 : [ clear-BB@0x3e ]
+	15      (00000034) const/16             v0, 4096
+	16      (00000038) invoke-direct        v5, v0, Lio/fabric/sdk/android/services/common/QueueFile;->setLength(I)V
+	10:45
+	(Ljava/lang/Throwable; -> 4a clear-BB@0x4a)
+
+clear-BB@0x3e : 
+	17      (0000003e) const/16             v0, 4096
+	18      (00000042) iput                 v0, v5, Lio/fabric/sdk/android/services/common/QueueFile;->fileLength I
+	19      (00000046) monitor-exit         v5
+	20      (00000048) return-void          
+
+clear-BB@0x4a : 
+	21      (0000004a) move-exception       v0
+	22      (0000004c) monitor-exit         v5
+	23      (0000004e) throw                v0
+

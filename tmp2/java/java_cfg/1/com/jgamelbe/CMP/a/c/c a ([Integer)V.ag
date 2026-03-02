@@ -1,0 +1,41 @@
+# Lcom/jgamelbe/CMP/a/c;->a([Ljava/lang/Integer;)V [access_flags=protected varargs]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:java.lang.Integer[]
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xe a-BB@0x6a ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) aget-object          v5, v9, v0
+	2       (00000006) iget-boolean         v0, v8, Lcom/jgamelbe/CMP/a/c;->i Z
+	3       (0000000a) if-nez               v0, +30
+
+a-BB@0xe : [ a-BB@0x6a ]
+	4       (0000000e) iget-object          v0, v8, Lcom/jgamelbe/CMP/a/c;->d Landroid/content/Context;
+	5       (00000012) iget-object          v1, v8, Lcom/jgamelbe/CMP/a/c;->e Lcom/jgamelbe/CMP/c/a;
+	6       (00000016) iget-object          v1, v1, Lcom/jgamelbe/CMP/c/a;->a Ljava/lang/String;
+	7       (0000001a) invoke-virtual       v1, Ljava/lang/String;->hashCode()I
+	8       (00000020) move-result          v1
+	9       (00000022) const                v2, 17301633 # [2.4979616489977405e-38]
+	10      (00000028) iget-object          v3, v8, Lcom/jgamelbe/CMP/a/c;->e Lcom/jgamelbe/CMP/c/a;
+	11      (0000002c) iget-object          v3, v3, Lcom/jgamelbe/CMP/c/a;->b Ljava/lang/String;
+	12      (00000030) iget-object          v4, v8, Lcom/jgamelbe/CMP/a/c;->e Lcom/jgamelbe/CMP/c/a;
+	13      (00000034) iget-object          v4, v4, Lcom/jgamelbe/CMP/c/a;->b Ljava/lang/String;
+	14      (00000038) new-instance         v6, Ljava/lang/StringBuilder;
+	15      (0000003c) const-string         v7, '当前下载：'
+	16      (00000040) invoke-direct        v6, v7, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	17      (00000046) invoke-virtual       v6, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	18      (0000004c) move-result-object   v5
+	19      (0000004e) const-string         v6, '%'
+	20      (00000052) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000058) move-result-object   v5
+	22      (0000005a) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (00000060) move-result-object   v5
+	24      (00000062) const/4              v6, 0
+	25      (00000064) invoke-static/range  v0 ... v6, Lcom/jgamelbe/CMP/e/s;->a(Landroid/content/Context; I I Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Landroid/content/Intent;)V
+
+a-BB@0x6a : 
+	26      (0000006a) return-void          
+

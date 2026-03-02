@@ -1,0 +1,106 @@
+# Lio/fabric/sdk/android/services/common/IdManager;-><init>(Landroid/content/Context; Ljava/lang/String; Ljava/lang/String; Ljava/util/Collection;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+# - v7:java.lang.String
+# - v8:java.lang.String
+# - v9:java.util.Collection
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x1a <init>-BB@0x2a ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) invoke-direct        v5, Ljava/lang/Object;-><init>()V
+	2       (00000008) new-instance         v0, Ljava/util/concurrent/locks/ReentrantLock;
+	3       (0000000c) invoke-direct        v0, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+	4       (00000012) iput-object          v0, v5, Lio/fabric/sdk/android/services/common/IdManager;->installationIdLock Ljava/util/concurrent/locks/ReentrantLock;
+	5       (00000016) if-nez               v6, +a
+
+<init>-BB@0x1a : 
+	6       (0000001a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	7       (0000001e) const-string         v1, 'appContext must not be null'
+	8       (00000022) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	9       (00000028) throw                v0
+
+<init>-BB@0x2a : [ <init>-BB@0x2e <init>-BB@0x3e ]
+	10      (0000002a) if-nez               v7, +a
+
+<init>-BB@0x2e : 
+	11      (0000002e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	12      (00000032) const-string         v1, 'appIdentifier must not be null'
+	13      (00000036) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	14      (0000003c) throw                v0
+
+<init>-BB@0x3e : [ <init>-BB@0x42 <init>-BB@0x52 ]
+	15      (0000003e) if-nez               v9, +a
+
+<init>-BB@0x42 : 
+	16      (00000042) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	17      (00000046) const-string         v1, 'kits must not be null'
+	18      (0000004a) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	19      (00000050) throw                v0
+
+<init>-BB@0x52 : [ <init>-BB@0x96 <init>-BB@0xd6 ]
+	20      (00000052) iput-object          v6, v5, Lio/fabric/sdk/android/services/common/IdManager;->appContext Landroid/content/Context;
+	21      (00000056) iput-object          v7, v5, Lio/fabric/sdk/android/services/common/IdManager;->appIdentifier Ljava/lang/String;
+	22      (0000005a) iput-object          v8, v5, Lio/fabric/sdk/android/services/common/IdManager;->appInstallIdentifier Ljava/lang/String;
+	23      (0000005e) iput-object          v9, v5, Lio/fabric/sdk/android/services/common/IdManager;->kits Ljava/util/Collection;
+	24      (00000062) new-instance         v0, Lio/fabric/sdk/android/services/common/InstallerPackageNameProvider;
+	25      (00000066) invoke-direct        v0, Lio/fabric/sdk/android/services/common/InstallerPackageNameProvider;-><init>()V
+	26      (0000006c) iput-object          v0, v5, Lio/fabric/sdk/android/services/common/IdManager;->installerPackageNameProvider Lio/fabric/sdk/android/services/common/InstallerPackageNameProvider;
+	27      (00000070) new-instance         v0, Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;
+	28      (00000074) invoke-direct        v0, v6, Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-><init>(Landroid/content/Context;)V
+	29      (0000007a) iput-object          v0, v5, Lio/fabric/sdk/android/services/common/IdManager;->advertisingInfoProvider Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;
+	30      (0000007e) const-string         v0, 'com.crashlytics.CollectDeviceIdentifiers'
+	31      (00000082) invoke-static        v6, v0, v4, Lio/fabric/sdk/android/services/common/CommonUtils;->getBooleanResourceValue(Landroid/content/Context; Ljava/lang/String; Z)Z
+	32      (00000088) move-result          v0
+	33      (0000008a) iput-boolean         v0, v5, Lio/fabric/sdk/android/services/common/IdManager;->collectHardwareIds Z
+	34      (0000008e) iget-boolean         v0, v5, Lio/fabric/sdk/android/services/common/IdManager;->collectHardwareIds Z
+	35      (00000092) if-nez               v0, +22
+
+<init>-BB@0x96 : [ <init>-BB@0xd6 ]
+	36      (00000096) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	37      (0000009c) move-result-object   v0
+	38      (0000009e) const-string         v1, 'Fabric'
+	39      (000000a2) new-instance         v2, Ljava/lang/StringBuilder;
+	40      (000000a6) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	41      (000000ac) const-string         v3, 'Device ID collection disabled for '
+	42      (000000b0) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000b6) move-result-object   v2
+	44      (000000b8) invoke-virtual       v6, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	45      (000000be) move-result-object   v3
+	46      (000000c0) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	47      (000000c6) move-result-object   v2
+	48      (000000c8) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	49      (000000ce) move-result-object   v2
+	50      (000000d0) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+
+<init>-BB@0xd6 : [ <init>-BB@0xee <init>-BB@0x12e ]
+	51      (000000d6) const-string         v0, 'com.crashlytics.CollectUserIdentifiers'
+	52      (000000da) invoke-static        v6, v0, v4, Lio/fabric/sdk/android/services/common/CommonUtils;->getBooleanResourceValue(Landroid/content/Context; Ljava/lang/String; Z)Z
+	53      (000000e0) move-result          v0
+	54      (000000e2) iput-boolean         v0, v5, Lio/fabric/sdk/android/services/common/IdManager;->collectUserIds Z
+	55      (000000e6) iget-boolean         v0, v5, Lio/fabric/sdk/android/services/common/IdManager;->collectUserIds Z
+	56      (000000ea) if-nez               v0, +22
+
+<init>-BB@0xee : [ <init>-BB@0x12e ]
+	57      (000000ee) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	58      (000000f4) move-result-object   v0
+	59      (000000f6) const-string         v1, 'Fabric'
+	60      (000000fa) new-instance         v2, Ljava/lang/StringBuilder;
+	61      (000000fe) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	62      (00000104) const-string         v3, 'User information collection disabled for '
+	63      (00000108) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	64      (0000010e) move-result-object   v2
+	65      (00000110) invoke-virtual       v6, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	66      (00000116) move-result-object   v3
+	67      (00000118) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	68      (0000011e) move-result-object   v2
+	69      (00000120) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	70      (00000126) move-result-object   v2
+	71      (00000128) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+
+<init>-BB@0x12e : 
+	72      (0000012e) return-void          
+

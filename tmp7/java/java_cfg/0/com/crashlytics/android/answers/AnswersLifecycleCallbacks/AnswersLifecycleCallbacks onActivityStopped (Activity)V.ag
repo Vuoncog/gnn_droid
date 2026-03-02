@@ -1,0 +1,14 @@
+# Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->onActivityStopped(Landroid/app/Activity;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.app.Activity
+#
+# - return:void
+
+onActivityStopped-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;->analyticsManager Lcom/crashlytics/android/answers/SessionAnalyticsManager;
+	1       (00000004) sget-object          v1, Lcom/crashlytics/android/answers/SessionEvent$Type;->STOP Lcom/crashlytics/android/answers/SessionEvent$Type;
+	2       (00000008) invoke-virtual       v0, v3, v1, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onLifecycle(Landroid/app/Activity; Lcom/crashlytics/android/answers/SessionEvent$Type;)V
+	3       (0000000e) return-void          
+

@@ -1,0 +1,52 @@
+digraph {
+	graph [bb="0,0,1294,330",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_63119ec048431cf2c029ab79542b371b {
+		graph [bb="8,8,1286,322",
+			label="Lio/fabric/sdk/android/Fabric;.singleton->()Lio/fabric/sdk/android/Fabric;\nLocal registers v0 ... v1\nreturn = io.fabric.sdk.android.Fabric",
+			lheight=0.62,
+			lp="647,295.5",
+			lwidth=6.60
+		];
+		struct_838e66515c29e2db49e968da95f99d6e	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/Fabric;-&gt;singleton Lio/fabric/sdk/android/Fabric;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="647,226.5",
+			width=8.75];
+		struct_f13abe50f1dcabbd1b088274c6571fd9	[height=1.9444,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/lang/IllegalStateException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="red"><br/>'Must Initialize Fabric before<br/>using singleton()'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/IllegalStateException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="319,86",
+			width=8.4167];
+		struct_838e66515c29e2db49e968da95f99d6e:tail -> struct_f13abe50f1dcabbd1b088274c6571fd9:header	[color=red,
+			pos="e,41,150 342,200.5 311,200.5 85.184,186.64 46.6,158.36"];
+		struct_bd7805673c7108a68933381ce3843f77	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/Fabric;-&gt;singleton Lio/fabric/sdk/android/Fabric;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="959,86",
+			width=8.8611];
+		struct_838e66515c29e2db49e968da95f99d6e:tail -> struct_bd7805673c7108a68933381ce3843f77:header	[color=green,
+			pos="e,665,114 353,197.5 353,135.04 576.77,186.99 631,156 648.59,145.94 660.7,140.06 664.06,124.03"];
+	}
+}

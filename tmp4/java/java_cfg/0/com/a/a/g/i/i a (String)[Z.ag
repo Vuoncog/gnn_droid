@@ -1,0 +1,128 @@
+# Lcom/a/a/g/i;->a(Ljava/lang/String;)[Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:java.lang.String
+#
+# - return:boolean[]
+
+a-BB@0x0 : [ a-BB@0x14 a-BB@0x4e ]
+	0       (00000000) const/4              v7, 0
+	1       (00000002) const/4              v2, 1
+	2       (00000004) invoke-virtual       v9, Ljava/lang/String;->length()I
+	3       (0000000a) move-result          v0
+	4       (0000000c) const/16             v1, 13
+	5       (00000010) if-eq                v0, v1, +1f
+
+a-BB@0x14 : 
+	6       (00000014) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	7       (00000018) new-instance         v1, Ljava/lang/StringBuilder;
+	8       (0000001c) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	9       (00000022) const-string         v2, 'Requested contents should be 13 digits long, but got '
+	10      (00000026) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) invoke-virtual       v9, Ljava/lang/String;->length()I
+	13      (00000034) move-result          v2
+	14      (00000036) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	15      (0000003c) move-result-object   v1
+	16      (0000003e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	17      (00000044) move-result-object   v1
+	18      (00000046) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	19      (0000004c) throw                v0
+
+a-BB@0x4e : [ a-BB@0x5a a-BB@0x7c ]
+	20      (0000004e) invoke-static        v9, Lcom/a/a/g/x;->a(Ljava/lang/CharSequence;)Z
+	21      (00000054) move-result          v0
+	22      (00000056) if-nez               v0, +13
+	4e:69
+	(Lcom/a/a/h; -> 6a a-BB@0x6a)
+
+a-BB@0x5a : 
+	23      (0000005a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	24      (0000005e) const-string         v1, 'Contents do not pass checksum'
+	25      (00000062) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	26      (00000068) throw                v0
+	4e:69
+	(Lcom/a/a/h; -> 6a a-BB@0x6a)
+
+a-BB@0x6a : 
+	27      (0000006a) move-exception       v0
+	28      (0000006c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	29      (00000070) const-string         v1, 'Illegal contents'
+	30      (00000074) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	31      (0000007a) throw                v0
+
+a-BB@0x7c : [ a-BB@0xae ]
+	32      (0000007c) invoke-virtual       v9, v7, v2, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	33      (00000082) move-result-object   v0
+	34      (00000084) invoke-static        v0, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	35      (0000008a) move-result          v0
+	36      (0000008c) sget-object          v1, Lcom/a/a/g/h;->a [I
+	37      (00000090) aget                 v4, v1, v0
+	38      (00000094) const/16             v0, 95
+	39      (00000098) new-array            v5, v0, [Z
+	40      (0000009c) sget-object          v0, Lcom/a/a/g/x;->b [I
+	41      (000000a0) invoke-static        v5, v7, v0, v2, Lcom/a/a/g/i;->a([Z I [I Z)I
+	42      (000000a6) move-result          v0
+	43      (000000a8) add-int/2addr        v0, v7
+	44      (000000aa) move                 v1, v2
+	45      (000000ac) move                 v3, v0
+
+a-BB@0xae : [ a-BB@0xb4 a-BB@0xf6 ]
+	46      (000000ae) const/4              v0, 6
+	47      (000000b0) if-gt                v1, v0, +23
+
+a-BB@0xb4 : [ a-BB@0xd8 a-BB@0xdc ]
+	48      (000000b4) add-int/lit8         v0, v1, 1
+	49      (000000b8) invoke-virtual       v9, v1, v0, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	50      (000000be) move-result-object   v0
+	51      (000000c0) invoke-static        v0, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	52      (000000c6) move-result          v0
+	53      (000000c8) rsub-int/lit8        v6, v1, 6
+	54      (000000cc) shr-int              v6, v4, v6
+	55      (000000d0) and-int/lit8         v6, v6, 1
+	56      (000000d4) if-ne                v6, v2, +4
+
+a-BB@0xd8 : [ a-BB@0xdc ]
+	57      (000000d8) add-int/lit8         v0, v0, 10
+
+a-BB@0xdc : [ a-BB@0xae ]
+	58      (000000dc) sget-object          v6, Lcom/a/a/g/x;->e [[I
+	59      (000000e0) aget-object          v0, v6, v0
+	60      (000000e4) invoke-static        v5, v3, v0, v7, Lcom/a/a/g/i;->a([Z I [I Z)I
+	61      (000000ea) move-result          v0
+	62      (000000ec) add-int/2addr        v3, v0
+	63      (000000ee) add-int/lit8         v0, v1, 1
+	64      (000000f2) move                 v1, v0
+	65      (000000f4) goto                 -23
+
+a-BB@0xf6 : [ a-BB@0x108 ]
+	66      (000000f6) sget-object          v0, Lcom/a/a/g/x;->c [I
+	67      (000000fa) invoke-static        v5, v3, v0, v7, Lcom/a/a/g/i;->a([Z I [I Z)I
+	68      (00000100) move-result          v0
+	69      (00000102) add-int              v1, v3, v0
+	70      (00000106) const/4              v0, 7
+
+a-BB@0x108 : [ a-BB@0x110 a-BB@0x13c ]
+	71      (00000108) const/16             v3, 12
+	72      (0000010c) if-gt                v0, v3, +18
+
+a-BB@0x110 : [ a-BB@0x108 ]
+	73      (00000110) add-int/lit8         v3, v0, 1
+	74      (00000114) invoke-virtual       v9, v0, v3, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	75      (0000011a) move-result-object   v3
+	76      (0000011c) invoke-static        v3, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	77      (00000122) move-result          v3
+	78      (00000124) sget-object          v4, Lcom/a/a/g/x;->d [[I
+	79      (00000128) aget-object          v3, v4, v3
+	80      (0000012c) invoke-static        v5, v1, v3, v2, Lcom/a/a/g/i;->a([Z I [I Z)I
+	81      (00000132) move-result          v3
+	82      (00000134) add-int/2addr        v1, v3
+	83      (00000136) add-int/lit8         v0, v0, 1
+	84      (0000013a) goto                 -19
+
+a-BB@0x13c : 
+	85      (0000013c) sget-object          v0, Lcom/a/a/g/x;->b [I
+	86      (00000140) invoke-static        v5, v1, v0, v2, Lcom/a/a/g/i;->a([Z I [I Z)I
+	87      (00000146) return-object        v5
+

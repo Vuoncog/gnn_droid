@@ -1,0 +1,72 @@
+digraph {
+	graph [bb="0,0,1191.8,760",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_622d13c4404be5eba2317e9d7ca2dd4b {
+		graph [bb="19.821,8,1183.8,752",
+			label="Lio/fabric/sdk/android/services/network/HttpRequest;.openOutput->()Lio/fabric/sdk/android/services/network/HttpRequest;\nLocal registers \
+v0 ... v4\nreturn = io.fabric.sdk.android.services.network.HttpRequest",
+			lheight=0.62,
+			lp="601.82,725.5",
+			lwidth=11.42
+		];
+		struct_7a1991aed1660ef27c22158580c0a73e	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="598.82,656.5",
+			width=15.542];
+		struct_7ab0afe629f9184d5b0638767245fc5b	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#8E8E5B">v4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="124.82,39.5",
+			width=2.3611];
+		struct_7a1991aed1660ef27c22158580c0a73e:tail -> struct_7ab0afe629f9184d5b0638767245fc5b:header	[color=red,
+			pos="e,60.821,56.5 60.821,627.5 60.821,606.62 43.859,606.26 38.821,586 -13.412,375.95 -12.383,309.3 38.821,99 42.909,82.209 54.877,78.688 \
+59.222,66.549"];
+		struct_ea3c705fd0efbfdd2faaf5e9c964931e	[height=6.7639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8E8E5B">v4</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;getConnection()Ljava/net/HttpURLConnection;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#848484">v1</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#DF3A01">Ljava/net/HttpURLConnection;-&gt;setDoOutput(Z)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8E8E5B">v4</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;getConnection()Ljava/net/HttpURLConnection;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#848484">v1</FONT>, <FONT color="red">'Content-Type'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#DF3A01">Ljava/net/HttpURLConnection;-&gt;getRequestProperty(Ljava/lang/String;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#848484">v1</FONT>, <FONT color="red">'charset'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8E8E5B">v4</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;getParam(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#0000FF">Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8E8E5B">v4</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;getConnection()Ljava/net/HttpURLConnection;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7A7AAD">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">46</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="#DF3A01">Ljava/net/HttpURLConnection;-&gt;getOutputStream()Ljava/io/OutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7A7AAD">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#7070D6">v3</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;bufferSize I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">52</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#7070D6">v3</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;-&gt;&lt;init&gt;(Ljava/io/OutputStream; Ljava/lang/String; I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">58</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2a</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="611.82,342.5",
+			width=15.667];
+		struct_7a1991aed1660ef27c22158580c0a73e:tail -> struct_ea3c705fd0efbfdd2faaf5e9c964931e:header	[color=green,
+			pos="e,72.821,579.5 60.821,627.5 60.821,609.46 68.896,603.51 71.798,589.82"];
+		struct_ea3c705fd0efbfdd2faaf5e9c964931e:tail -> struct_7ab0afe629f9184d5b0638767245fc5b:header	[color=blue,
+			pos="e,60.821,56.5 72.821,104.5 72.821,86.461 64.746,80.515 61.844,66.822"];
+	}
+}

@@ -1,0 +1,70 @@
+digraph {
+	graph [bb="0,0,1068,518",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_b35dcf4c24147a0a05507e4e53f3fd4c {
+		graph [bb="8,8,1060,510",
+			label="Lorg/apache/commons/io/input/CharSequenceReader;.read->()I\nLocal registers v0 ... v3\nreturn = int",
+			lheight=0.62,
+			lp="534,483.5",
+			lwidth=5.88
+		];
+		struct_f9759413ed73ae6addd4c210e5537211	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceReader;-&gt;idx I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceReader;-&gt;charSequence Ljava/lang/CharSequence;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/CharSequence;-&gt;length()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-lt </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="534,381.5",
+			width=11.667];
+		struct_6075a3ade989e440c9290521c1b5cf40	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x-1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="105,188.5",
+			width=2.4583];
+		struct_f9759413ed73ae6addd4c210e5537211:tail -> struct_6075a3ade989e440c9290521c1b5cf40:header	[color=red,
+			pos="e,42,205.5 124,322.5 63.973,322.5 44.158,274.69 42.17,215.82"];
+		struct_dab9cad1b4bb73dd1ebdb2ffff6d4602	[height=2.4861,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceReader;-&gt;charSequence Ljava/lang/CharSequence;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceReader;-&gt;idx I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#7272CC">v2</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput </FONT> <FONT color="#7272CC">v2</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/CharSequenceReader;-&gt;idx I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/CharSequence;-&gt;charAt(I)C</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="632,188.5",
+			width=11.667];
+		struct_f9759413ed73ae6addd4c210e5537211:tail -> struct_dab9cad1b4bb73dd1ebdb2ffff6d4602:header	[color=green,
+			pos="e,237,271.5 139,319.5 139,274.98 221.58,312.62 235.13,281.57"];
+		struct_6df80133beff671ab410e9d441102aaa	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="180,39.5",
+			width=1.8472];
+		struct_6075a3ade989e440c9290521c1b5cf40:tail -> struct_6df80133beff671ab410e9d441102aaa:header	[color=blue,
+			pos="e,124,53.5 42,170.5 42,110.47 58.532,59.382 113.98,53.973"];
+		struct_dab9cad1b4bb73dd1ebdb2ffff6d4602:tail -> struct_6df80133beff671ab410e9d441102aaa:header	[color=blue,
+			pos="e,139,56.5 222,107.5 217.62,107.5 166.06,77.694 146.48,63.422"];
+	}
+}

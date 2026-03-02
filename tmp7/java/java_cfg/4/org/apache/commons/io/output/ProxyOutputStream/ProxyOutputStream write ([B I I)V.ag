@@ -1,0 +1,26 @@
+# Lorg/apache/commons/io/output/ProxyOutputStream;->write([B I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:byte[]
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+write-BB@0x0 : [ write-BB@0x16 ]
+	0       (00000000) invoke-virtual       v1, v4, Lorg/apache/commons/io/output/ProxyOutputStream;->beforeWrite(I)V
+	1       (00000006) iget-object          v0, v1, Lorg/apache/commons/io/output/ProxyOutputStream;->out Ljava/io/OutputStream;
+	2       (0000000a) invoke-virtual       v0, v2, v3, v4, Ljava/io/OutputStream;->write([B I I)V
+	3       (00000010) invoke-virtual       v1, v4, Lorg/apache/commons/io/output/ProxyOutputStream;->afterWrite(I)V
+	0:15
+	(Ljava/io/IOException; -> 18 write-BB@0x18)
+
+write-BB@0x16 : 
+	4       (00000016) return-void          
+
+write-BB@0x18 : [ write-BB@0x16 ]
+	5       (00000018) move-exception       v0
+	6       (0000001a) invoke-virtual       v1, v0, Lorg/apache/commons/io/output/ProxyOutputStream;->handleIOException(Ljava/io/IOException;)V
+	7       (00000020) goto                 -5
+

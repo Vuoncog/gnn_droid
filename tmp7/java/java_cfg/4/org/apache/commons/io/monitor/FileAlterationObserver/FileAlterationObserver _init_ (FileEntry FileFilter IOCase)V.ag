@@ -1,0 +1,68 @@
+# Lorg/apache/commons/io/monitor/FileAlterationObserver;-><init>(Lorg/apache/commons/io/monitor/FileEntry; Ljava/io/FileFilter; Lorg/apache/commons/io/IOCase;)V [access_flags=protected constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:org.apache.commons.io.monitor.FileEntry
+# - v4:java.io.FileFilter
+# - v5:org.apache.commons.io.IOCase
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x18 <init>-BB@0x28 ]
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Ljava/util/concurrent/CopyOnWriteArrayList;
+	2       (0000000a) invoke-direct        v0, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
+	3       (00000010) iput-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationObserver;->listeners Ljava/util/List;
+	4       (00000014) if-nez               v3, +a
+
+<init>-BB@0x18 : 
+	5       (00000018) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	6       (0000001c) const-string         v1, 'Root entry is missing'
+	7       (00000020) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	8       (00000026) throw                v0
+
+<init>-BB@0x28 : [ <init>-BB@0x34 <init>-BB@0x44 ]
+	9       (00000028) invoke-virtual       v3, Lorg/apache/commons/io/monitor/FileEntry;->getFile()Ljava/io/File;
+	10      (0000002e) move-result-object   v0
+	11      (00000030) if-nez               v0, +a
+
+<init>-BB@0x34 : 
+	12      (00000034) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	13      (00000038) const-string         v1, 'Root directory is missing'
+	14      (0000003c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	15      (00000042) throw                v0
+
+<init>-BB@0x44 : [ <init>-BB@0x50 <init>-BB@0x60 ]
+	16      (00000044) iput-object          v3, v2, Lorg/apache/commons/io/monitor/FileAlterationObserver;->rootEntry Lorg/apache/commons/io/monitor/FileEntry;
+	17      (00000048) iput-object          v4, v2, Lorg/apache/commons/io/monitor/FileAlterationObserver;->fileFilter Ljava/io/FileFilter;
+	18      (0000004c) if-eqz               v5, +a
+
+<init>-BB@0x50 : [ <init>-BB@0x60 <init>-BB@0x6a ]
+	19      (00000050) sget-object          v0, Lorg/apache/commons/io/IOCase;->SYSTEM Lorg/apache/commons/io/IOCase;
+	20      (00000054) invoke-virtual       v5, v0, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	21      (0000005a) move-result          v0
+	22      (0000005c) if-eqz               v0, +7
+
+<init>-BB@0x60 : [ <init>-BB@0x68 ]
+	23      (00000060) sget-object          v0, Lorg/apache/commons/io/comparator/NameFileComparator;->NAME_SYSTEM_COMPARATOR Ljava/util/Comparator;
+	24      (00000064) iput-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationObserver;->comparator Ljava/util/Comparator;
+
+<init>-BB@0x68 : 
+	25      (00000068) return-void          
+
+<init>-BB@0x6a : [ <init>-BB@0x7a <init>-BB@0x84 ]
+	26      (0000006a) sget-object          v0, Lorg/apache/commons/io/IOCase;->INSENSITIVE Lorg/apache/commons/io/IOCase;
+	27      (0000006e) invoke-virtual       v5, v0, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	28      (00000074) move-result          v0
+	29      (00000076) if-eqz               v0, +7
+
+<init>-BB@0x7a : [ <init>-BB@0x68 ]
+	30      (0000007a) sget-object          v0, Lorg/apache/commons/io/comparator/NameFileComparator;->NAME_INSENSITIVE_COMPARATOR Ljava/util/Comparator;
+	31      (0000007e) iput-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationObserver;->comparator Ljava/util/Comparator;
+	32      (00000082) goto                 -d
+
+<init>-BB@0x84 : [ <init>-BB@0x68 ]
+	33      (00000084) sget-object          v0, Lorg/apache/commons/io/comparator/NameFileComparator;->NAME_COMPARATOR Ljava/util/Comparator;
+	34      (00000088) iput-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationObserver;->comparator Ljava/util/Comparator;
+	35      (0000008c) goto                 -12
+

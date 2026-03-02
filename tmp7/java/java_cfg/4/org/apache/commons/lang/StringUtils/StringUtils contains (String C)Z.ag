@@ -1,0 +1,27 @@
+# Lorg/apache/commons/lang/StringUtils;->contains(Ljava/lang/String; C)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:char
+#
+# - return:boolean
+
+contains-BB@0x0 : [ contains-BB@0xe contains-BB@0x10 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v2, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-eqz               v1, +3
+
+contains-BB@0xe : 
+	4       (0000000e) return               v0
+
+contains-BB@0x10 : [ contains-BB@0x1c contains-BB@0xe ]
+	5       (00000010) invoke-virtual       v2, v3, Ljava/lang/String;->indexOf(I)I
+	6       (00000016) move-result          v1
+	7       (00000018) if-ltz               v1, -5
+
+contains-BB@0x1c : [ contains-BB@0xe ]
+	8       (0000001c) const/4              v0, 1
+	9       (0000001e) goto                 -8
+

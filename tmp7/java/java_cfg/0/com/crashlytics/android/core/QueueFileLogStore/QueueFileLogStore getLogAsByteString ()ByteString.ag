@@ -1,0 +1,55 @@
+# Lcom/crashlytics/android/core/QueueFileLogStore;->getLogAsByteString()Lcom/crashlytics/android/core/ByteString; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:com.crashlytics.android.core.ByteString
+
+getLogAsByteString-BB@0x0 : [ getLogAsByteString-BB@0x14 getLogAsByteString-BB@0x16 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v6, 0
+	2       (00000004) iget-object          v1, v7, Lcom/crashlytics/android/core/QueueFileLogStore;->workingFile Ljava/io/File;
+	3       (00000008) invoke-virtual       v1, Ljava/io/File;->exists()Z
+	4       (0000000e) move-result          v1
+	5       (00000010) if-nez               v1, +3
+
+getLogAsByteString-BB@0x14 : 
+	6       (00000014) return-object        v0
+
+getLogAsByteString-BB@0x16 : [ getLogAsByteString-BB@0x24 getLogAsByteString-BB@0x14 ]
+	7       (00000016) invoke-direct        v7, Lcom/crashlytics/android/core/QueueFileLogStore;->openLogFile()V
+	8       (0000001c) iget-object          v1, v7, Lcom/crashlytics/android/core/QueueFileLogStore;->logFile Lio/fabric/sdk/android/services/common/QueueFile;
+	9       (00000020) if-eqz               v1, -6
+
+getLogAsByteString-BB@0x24 : [ getLogAsByteString-BB@0x3e ]
+	10      (00000024) const/4              v0, 1
+	11      (00000026) new-array            v1, v0, [I
+	12      (0000002a) aput                 v6, v1, v6
+	13      (0000002e) iget-object          v0, v7, Lcom/crashlytics/android/core/QueueFileLogStore;->logFile Lio/fabric/sdk/android/services/common/QueueFile;
+	14      (00000032) invoke-virtual       v0, Lio/fabric/sdk/android/services/common/QueueFile;->usedBytes()I
+	15      (00000038) move-result          v0
+	16      (0000003a) new-array            v2, v0, [B
+
+getLogAsByteString-BB@0x3e : [ getLogAsByteString-BB@0x52 ]
+	17      (0000003e) iget-object          v0, v7, Lcom/crashlytics/android/core/QueueFileLogStore;->logFile Lio/fabric/sdk/android/services/common/QueueFile;
+	18      (00000042) new-instance         v3, Lcom/crashlytics/android/core/QueueFileLogStore$1;
+	19      (00000046) invoke-direct        v3, v7, v2, v1, Lcom/crashlytics/android/core/QueueFileLogStore$1;-><init>(Lcom/crashlytics/android/core/QueueFileLogStore; [B [I)V
+	20      (0000004c) invoke-virtual       v0, v3, Lio/fabric/sdk/android/services/common/QueueFile;->forEach(Lio/fabric/sdk/android/services/common/QueueFile$ElementReader;)V
+	3e:51
+	(Ljava/io/IOException; -> 60 getLogAsByteString-BB@0x60)
+
+getLogAsByteString-BB@0x52 : [ getLogAsByteString-BB@0x14 ]
+	21      (00000052) aget                 v0, v1, v6
+	22      (00000056) invoke-static        v2, v6, v0, Lcom/crashlytics/android/core/ByteString;->copyFrom([B I I)Lcom/crashlytics/android/core/ByteString;
+	23      (0000005c) move-result-object   v0
+	24      (0000005e) goto                 -25
+
+getLogAsByteString-BB@0x60 : [ getLogAsByteString-BB@0x52 ]
+	25      (00000060) move-exception       v0
+	26      (00000062) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	27      (00000068) move-result-object   v3
+	28      (0000006a) const-string         v4, 'CrashlyticsCore'
+	29      (0000006e) const-string         v5, 'A problem occurred while reading the Crashlytics log file.'
+	30      (00000072) invoke-interface     v3, v4, v5, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	31      (00000078) goto                 -13
+

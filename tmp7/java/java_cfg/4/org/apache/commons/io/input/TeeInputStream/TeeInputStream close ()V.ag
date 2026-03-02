@@ -1,0 +1,33 @@
+# Lorg/apache/commons/io/input/TeeInputStream;->close()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+close-BB@0x0 : [ close-BB@0xe close-BB@0x18 ]
+	0       (00000000) invoke-super         v2, Lorg/apache/commons/io/input/ProxyInputStream;->close()V
+	1       (00000006) iget-boolean         v0, v2, Lorg/apache/commons/io/input/TeeInputStream;->closeBranch Z
+	2       (0000000a) if-eqz               v0, +7
+	0:5
+	(Ljava/lang/Throwable; -> 1a close-BB@0x1a)
+
+close-BB@0xe : [ close-BB@0x18 ]
+	3       (0000000e) iget-object          v0, v2, Lorg/apache/commons/io/input/TeeInputStream;->branch Ljava/io/OutputStream;
+	4       (00000012) invoke-virtual       v0, Ljava/io/OutputStream;->close()V
+
+close-BB@0x18 : 
+	5       (00000018) return-void          
+
+close-BB@0x1a : [ close-BB@0x24 close-BB@0x2e ]
+	6       (0000001a) move-exception       v0
+	7       (0000001c) iget-boolean         v1, v2, Lorg/apache/commons/io/input/TeeInputStream;->closeBranch Z
+	8       (00000020) if-eqz               v1, +7
+
+close-BB@0x24 : [ close-BB@0x2e ]
+	9       (00000024) iget-object          v1, v2, Lorg/apache/commons/io/input/TeeInputStream;->branch Ljava/io/OutputStream;
+	10      (00000028) invoke-virtual       v1, Ljava/io/OutputStream;->close()V
+
+close-BB@0x2e : 
+	11      (0000002e) throw                v0
+

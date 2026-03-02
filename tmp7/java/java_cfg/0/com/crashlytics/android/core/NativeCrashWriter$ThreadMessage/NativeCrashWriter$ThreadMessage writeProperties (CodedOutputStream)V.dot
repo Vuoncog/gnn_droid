@@ -1,0 +1,59 @@
+digraph {
+	graph [bb="0,0,1024,511",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_50225ba70ec4053c316998e0d56fc5fd {
+		graph [bb="8,8,1012,503",
+			label="Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;.writeProperties->(Lcom/crashlytics/android/core/CodedOutputStream;)\
+V\nLocal registers v0 ... v2\nparam v3 = com.crashlytics.android.core.CodedOutputStream\nreturn = void",
+			lheight=0.83,
+			lp="510,469",
+			lwidth=12.82
+		];
+		struct_6258fce36a9b6be1719a25c8ae6ff99a	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;-&gt;hasName()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xc</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="511,381.5",
+			width=9.875];
+		struct_cb02f3262bdb9b6057534002d008b5da	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;-&gt;name Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/ByteString;-&gt;copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#8C8C66">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeBytes(I Lcom/crashlytics/android/core/ByteString;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="500,232.5",
+			width=13.444];
+		struct_6258fce36a9b6be1719a25c8ae6ff99a:tail -> struct_cb02f3262bdb9b6057534002d008b5da:header	[color=red,
+			pos="e,41,293.5 177,341.5 177,281.28 56.97,348.42 42.435,303.62"];
+		struct_2f87763612811cbf00889a652f1ffe86	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="green">0x2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;-&gt;importance I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#8C8C66">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeUInt32(I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="510,72.5",
+			width=9.7778];
+		struct_6258fce36a9b6be1719a25c8ae6ff99a:tail -> struct_2f87763612811cbf00889a652f1ffe86:header	[color=green,
+			pos="e,183,122.5 177,341.5 177,250.72 930.46,365.8 993,300 1034.3,256.51 1034.3,208.52 993,165 933.39,102.18 240.39,204.07 186.34,132.15"];
+		struct_cb02f3262bdb9b6057534002d008b5da:tail -> struct_2f87763612811cbf00889a652f1ffe86:header	[color=blue,
+			pos="e,183,122.5 41,170.5 41,107.65 167.37,179.95 181.68,132.41"];
+	}
+}

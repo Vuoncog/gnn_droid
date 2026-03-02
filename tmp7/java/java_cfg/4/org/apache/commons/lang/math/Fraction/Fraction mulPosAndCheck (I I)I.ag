@@ -1,0 +1,27 @@
+# Lorg/apache/commons/lang/math/Fraction;->mulPosAndCheck(I I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+#
+# - return:int
+
+mulPosAndCheck-BB@0x0 : [ mulPosAndCheck-BB@0x14 mulPosAndCheck-BB@0x24 ]
+	0       (00000000) int-to-long          v0, v4
+	1       (00000002) int-to-long          v2, v5
+	2       (00000004) mul-long/2addr       v0, v2
+	3       (00000006) const-wide/32        v2, 2147483647 # [2147483647.0]
+	4       (0000000c) cmp-long             v2, v0, v2
+	5       (00000010) if-lez               v2, +a
+
+mulPosAndCheck-BB@0x14 : 
+	6       (00000014) new-instance         v0, Ljava/lang/ArithmeticException;
+	7       (00000018) const-string         v1, 'overflow: mulPos'
+	8       (0000001c) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	9       (00000022) throw                v0
+
+mulPosAndCheck-BB@0x24 : 
+	10      (00000024) long-to-int          v0, v0
+	11      (00000026) return               v0
+

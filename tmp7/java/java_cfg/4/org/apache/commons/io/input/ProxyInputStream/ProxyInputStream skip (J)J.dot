@@ -1,0 +1,56 @@
+digraph {
+	graph [bb="0,0,938.03,439",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_7cc80f5d76ce752f87fb658b118d73b7 {
+		graph [bb="48.032,8,930.03,431",
+			label="Lorg/apache/commons/io/input/ProxyInputStream;.skip->(J)J\nLocal registers v0 ... v4\nparam v5 = long\nreturn = long",
+			lheight=0.83,
+			lp="489.03,397",
+			lwidth=5.54
+		];
+		struct_e37fbd6b2d611c7d0572f1bdbb44e7da	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/ProxyInputStream;-&gt;in Ljava/io/InputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v4</FONT>, <FONT color="#7272CC">v5</FONT>, <FONT color="#DF3A01">Ljava/io/InputStream;-&gt;skip(J)J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-wide </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="405.03,309.5",
+			width=9.6528];
+		struct_ed898ecefce41776d2f709548b756a0f	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-wide </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="148.03,39.5",
+			width=2.2083];
+		struct_e37fbd6b2d611c7d0572f1bdbb44e7da:tail -> struct_ed898ecefce41776d2f709548b756a0f:header	[color=blue,
+			pos="e,79.032,53.5 68.032,272.5 -25.903,272.5 -19.077,69.04 68.808,54.337"];
+		struct_1cbad02d14fa5952976a308b2c4b5d5d	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/input/ProxyInputStream;-&gt;handleIOException(Ljava/io/IOException;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-wide/16 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> ; [0.0] </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="499.03,156.5",
+			width=11.75];
+		struct_e37fbd6b2d611c7d0572f1bdbb44e7da:tail -> struct_1cbad02d14fa5952976a308b2c4b5d5d:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="163.03,238.5",
+			pos="e,101.03,206.5 79.032,269.5 79.032,243.55 95.876,237.48 100.09,216.51"];
+		struct_1cbad02d14fa5952976a308b2c4b5d5d:tail -> struct_ed898ecefce41776d2f709548b756a0f:header	[color=blue,
+			pos="e,89.032,56.5 101.03,105.5 101.03,86.932 92.803,80.89 89.974,66.628"];
+	}
+}

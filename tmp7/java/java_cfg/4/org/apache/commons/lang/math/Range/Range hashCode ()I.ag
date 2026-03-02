@@ -1,0 +1,27 @@
+# Lorg/apache/commons/lang/math/Range;->hashCode()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+hashCode-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, Ljava/lang/Object;->hashCode()I
+	3       (0000000e) move-result          v0
+	4       (00000010) add-int/lit16        v0, v0, 629
+	5       (00000014) mul-int/lit8         v0, v0, 37
+	6       (00000018) invoke-virtual       v2, Lorg/apache/commons/lang/math/Range;->getMinimumNumber()Ljava/lang/Number;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) invoke-virtual       v1, Ljava/lang/Object;->hashCode()I
+	9       (00000026) move-result          v1
+	10      (00000028) add-int/2addr        v0, v1
+	11      (0000002a) mul-int/lit8         v0, v0, 37
+	12      (0000002e) invoke-virtual       v2, Lorg/apache/commons/lang/math/Range;->getMaximumNumber()Ljava/lang/Number;
+	13      (00000034) move-result-object   v1
+	14      (00000036) invoke-virtual       v1, Ljava/lang/Object;->hashCode()I
+	15      (0000003c) move-result          v1
+	16      (0000003e) add-int/2addr        v0, v1
+	17      (00000040) return               v0
+

@@ -1,0 +1,33 @@
+# Lcom/a/a/g/a;->b(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x28 b-BB@0x46 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v0, v4, Lcom/a/a/g/a;->e [I
+	2       (00000006) iget                 v1, v4, Lcom/a/a/g/a;->f I
+	3       (0000000a) aput                 v5, v0, v1
+	4       (0000000e) iget                 v0, v4, Lcom/a/a/g/a;->f I
+	5       (00000012) add-int/lit8         v0, v0, 1
+	6       (00000016) iput                 v0, v4, Lcom/a/a/g/a;->f I
+	7       (0000001a) iget                 v0, v4, Lcom/a/a/g/a;->f I
+	8       (0000001e) iget-object          v1, v4, Lcom/a/a/g/a;->e [I
+	9       (00000022) array-length         v1, v1
+	10      (00000024) if-lt                v0, v1, +11
+
+b-BB@0x28 : [ b-BB@0x46 ]
+	11      (00000028) iget                 v0, v4, Lcom/a/a/g/a;->f I
+	12      (0000002c) mul-int/lit8         v0, v0, 2
+	13      (00000030) new-array            v0, v0, [I
+	14      (00000034) iget-object          v1, v4, Lcom/a/a/g/a;->e [I
+	15      (00000038) iget                 v2, v4, Lcom/a/a/g/a;->f I
+	16      (0000003c) invoke-static        v1, v3, v0, v3, v2, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	17      (00000042) iput-object          v0, v4, Lcom/a/a/g/a;->e [I
+
+b-BB@0x46 : 
+	18      (00000046) return-void          
+

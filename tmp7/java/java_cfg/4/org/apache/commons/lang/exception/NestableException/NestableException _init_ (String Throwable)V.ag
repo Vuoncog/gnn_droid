@@ -1,0 +1,19 @@
+# Lorg/apache/commons/lang/exception/NestableException;-><init>(Ljava/lang/String; Ljava/lang/Throwable;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:java.lang.Throwable
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+	1       (00000006) new-instance         v0, Lorg/apache/commons/lang/exception/NestableDelegate;
+	2       (0000000a) invoke-direct        v0, v1, Lorg/apache/commons/lang/exception/NestableDelegate;-><init>(Lorg/apache/commons/lang/exception/Nestable;)V
+	3       (00000010) iput-object          v0, v1, Lorg/apache/commons/lang/exception/NestableException;->delegate Lorg/apache/commons/lang/exception/NestableDelegate;
+	4       (00000014) const/4              v0, 0
+	5       (00000016) iput-object          v0, v1, Lorg/apache/commons/lang/exception/NestableException;->cause Ljava/lang/Throwable;
+	6       (0000001a) iput-object          v3, v1, Lorg/apache/commons/lang/exception/NestableException;->cause Ljava/lang/Throwable;
+	7       (0000001e) return-void          
+

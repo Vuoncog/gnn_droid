@@ -1,0 +1,69 @@
+digraph {
+	graph [bb="0,0,1221.2,474",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_a4c046eebd74db66d8cda061f8b5705f {
+		graph [bb="13.212,8,1213.2,466",
+			label="Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;.getSize->()I\nLocal registers v0 ... v5\nreturn = int",
+			lheight=0.62,
+			lp="613.21,439.5",
+			lwidth=7.47
+		];
+		struct_c55699cd4c2f727d7d977e1a07fe159d	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#909055">v2</FONT>, <FONT color="#888877">v5</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;-&gt;messages [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">array-length </FONT> <FONT color="#7F7F99">v3</FONT>, <FONT color="#909055">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="613.21,348.5",
+			width=16.444];
+		struct_b37b74467bb1ac2be7d251b1b73ba382	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ge </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xc</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="108.21,232.5",
+			width=2.3056];
+		struct_c55699cd4c2f727d7d977e1a07fe159d:tail -> struct_b37b74467bb1ac2be7d251b1b73ba382:header	[color=blue,
+			pos="e,46.212,249.5 42.212,297.5 42.212,279.94 44.904,273.29 45.871,259.66"];
+		struct_50f75e0df22bb3fefa632c577fa480ef	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aget-object </FONT> <FONT color="#6E6EDD">v4</FONT>, <FONT color="#909055">v2</FONT>, <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#6E6EDD">v4</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-&gt;getSize()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#6E6EDD">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/2addr </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#6E6EDD">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-b</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="379.21,94.5",
+			width=9.9444];
+		struct_b37b74467bb1ac2be7d251b1b73ba382:tail -> struct_50f75e0df22bb3fefa632c577fa480ef:header	[color=red,
+			pos="e,46.212,166.5 46.212,214.5 46.212,197 46.212,190.27 46.212,176.64"];
+		struct_4cff6834230aa7560603de7022c329bf	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#7777BB">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="822.21,94.5",
+			width=1.8472];
+		struct_b37b74467bb1ac2be7d251b1b73ba382:tail -> struct_4cff6834230aa7560603de7022c329bf:header	[color=green,
+			pos="e,766.21,108.5 46.212,214.5 46.212,136.59 684.88,221.06 746.21,173 766.14,157.38 745.31,122.2 756.34,111.59"];
+		struct_50f75e0df22bb3fefa632c577fa480ef:tail -> struct_b37b74467bb1ac2be7d251b1b73ba382:header	[color=blue,
+			pos="e,46.212,249.5 46.212,21.5 46.212,10.38 28.916,14.481 21.212,22.5 -25.131,70.734 19.442,106.13 21.212,173 22.101,206.59 1.3881,224.8 \
+25.212,248.5 28.421,251.69 33.448,254.22 37.78,254.91"];
+	}
+}

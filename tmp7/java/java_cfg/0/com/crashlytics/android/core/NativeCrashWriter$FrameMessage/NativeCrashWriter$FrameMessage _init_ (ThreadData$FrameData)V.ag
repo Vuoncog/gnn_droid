@@ -1,0 +1,25 @@
+# Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;-><init>(Lcom/crashlytics/android/core/internal/models/ThreadData$FrameData;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.crashlytics.android.core.internal.models.ThreadData$FrameData
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 3
+	1       (00000002) const/4              v1, 0
+	2       (00000004) new-array            v1, v1, [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;
+	3       (00000008) invoke-direct        v2, v0, v1, Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-><init>(I [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;)V
+	4       (0000000e) iget-wide            v0, v3, Lcom/crashlytics/android/core/internal/models/ThreadData$FrameData;->address J
+	5       (00000012) iput-wide            v0, v2, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->address J
+	6       (00000016) iget-object          v0, v3, Lcom/crashlytics/android/core/internal/models/ThreadData$FrameData;->symbol Ljava/lang/String;
+	7       (0000001a) iput-object          v0, v2, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->symbol Ljava/lang/String;
+	8       (0000001e) iget-object          v0, v3, Lcom/crashlytics/android/core/internal/models/ThreadData$FrameData;->file Ljava/lang/String;
+	9       (00000022) iput-object          v0, v2, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->file Ljava/lang/String;
+	10      (00000026) iget-wide            v0, v3, Lcom/crashlytics/android/core/internal/models/ThreadData$FrameData;->offset J
+	11      (0000002a) iput-wide            v0, v2, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->offset J
+	12      (0000002e) iget                 v0, v3, Lcom/crashlytics/android/core/internal/models/ThreadData$FrameData;->importance I
+	13      (00000032) iput                 v0, v2, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->importance I
+	14      (00000036) return-void          
+

@@ -1,0 +1,87 @@
+# Lnet/youmi/android/ar;->a(Ljava/lang/String; I)Ljava/lang/String; [access_flags=static final]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:java.lang.String
+# - v13:int
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x68 ]
+	0       (00000000) const/4              v11, 0
+	1       (00000002) new-instance         v0, Ljava/lang/StringBuilder;
+	2       (00000006) invoke-static        Lnet/youmi/android/ar;->a()Ljava/lang/String;
+	3       (0000000c) move-result-object   v1
+	4       (0000000e) invoke-static        v1, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	5       (00000014) move-result-object   v1
+	6       (00000016) invoke-direct        v0, v1, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	7       (0000001c) invoke-virtual       v0, v13, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	8       (00000022) move-result-object   v0
+	9       (00000024) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) invoke-static        v0, Lnet/youmi/android/as;->a(Ljava/lang/String;)Ljava/lang/String;
+	12      (00000032) move-result-object   v0
+	13      (00000034) new-instance         v1, Ljava/lang/StringBuilder;
+	14      (00000038) const/16             v2, 1024
+	15      (0000003c) invoke-direct        v1, v2, Ljava/lang/StringBuilder;-><init>(I)V
+	16      (00000042) invoke-virtual       v0, Ljava/lang/String;->length()I
+	17      (00000048) move-result          v2
+	18      (0000004a) invoke-virtual       v12, Ljava/lang/String;->length()I
+	19      (00000050) move-result          v3
+	20      (00000052) invoke-virtual       v12, Ljava/lang/String;->length()I
+	21      (00000058) move-result          v4
+	22      (0000005a) const/4              v5, 1
+	23      (0000005c) sub-int/2addr        v4, v5
+	24      (0000005e) div-int/2addr        v4, v2
+	25      (00000060) add-int/lit8         v4, v4, 1
+	26      (00000064) move                 v5, v11
+	27      (00000066) move                 v6, v11
+
+a-BB@0x68 : [ a-BB@0x6c a-BB@0x7e ]
+	28      (00000068) if-lt                v5, v4, +b
+
+a-BB@0x6c : 
+	29      (0000006c) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (00000072) move-result-object   v0
+	31      (00000074) invoke-static        v0, v1, Lnet/youmi/android/ar;->a(Ljava/lang/String; Ljava/lang/StringBuilder;)Ljava/lang/String;
+	32      (0000007a) move-result-object   v0
+	33      (0000007c) return-object        v0
+
+a-BB@0x7e : [ a-BB@0x86 a-BB@0x88 ]
+	34      (0000007e) add-int              v7, v6, v2
+	35      (00000082) if-le                v7, v3, +3
+
+a-BB@0x86 : [ a-BB@0x88 ]
+	36      (00000086) move                 v7, v3
+
+a-BB@0x88 : [ a-BB@0x9a ]
+	37      (00000088) invoke-virtual       v12, v6, v7, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	38      (0000008e) move-result-object   v7
+	39      (00000090) invoke-static        v7, v0, Lnet/youmi/android/ar;->a(Ljava/lang/String; Ljava/lang/String;)[B
+	40      (00000096) move-result-object   v7
+	41      (00000098) move                 v8, v11
+
+a-BB@0x9a : [ a-BB@0xa0 a-BB@0xa8 ]
+	42      (0000009a) array-length         v9, v7
+	43      (0000009c) if-lt                v8, v9, +6
+
+a-BB@0xa0 : [ a-BB@0x68 ]
+	44      (000000a0) add-int/2addr        v6, v2
+	45      (000000a2) add-int/lit8         v5, v5, 1
+	46      (000000a6) goto                 -1f
+
+a-BB@0xa8 : [ a-BB@0x9a ]
+	47      (000000a8) aget-byte            v9, v7, v8
+	48      (000000ac) ushr-int/lit8        v9, v9, 4
+	49      (000000b0) and-int/lit8         v9, v9, 15
+	50      (000000b4) sget-object          v10, Lnet/youmi/android/ar;->a [C
+	51      (000000b8) aget-char            v9, v10, v9
+	52      (000000bc) invoke-virtual       v1, v9, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	53      (000000c2) aget-byte            v9, v7, v8
+	54      (000000c6) and-int/lit8         v9, v9, 15
+	55      (000000ca) sget-object          v10, Lnet/youmi/android/ar;->a [C
+	56      (000000ce) aget-char            v9, v10, v9
+	57      (000000d2) invoke-virtual       v1, v9, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	58      (000000d8) add-int/lit8         v8, v8, 1
+	59      (000000dc) goto                 -21
+

@@ -1,0 +1,17 @@
+# Lio/fabric/sdk/android/services/events/EventsFilesManager;->deleteAllEventsFiles()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+deleteAllEventsFiles-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lio/fabric/sdk/android/services/events/EventsFilesManager;->eventStorage Lio/fabric/sdk/android/services/events/EventsStorage;
+	1       (00000004) iget-object          v1, v2, Lio/fabric/sdk/android/services/events/EventsFilesManager;->eventStorage Lio/fabric/sdk/android/services/events/EventsStorage;
+	2       (00000008) invoke-interface     v1, Lio/fabric/sdk/android/services/events/EventsStorage;->getAllFilesInRollOverDirectory()Ljava/util/List;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-interface     v0, v1, Lio/fabric/sdk/android/services/events/EventsStorage;->deleteFilesInRollOverDirectory(Ljava/util/List;)V
+	5       (00000016) iget-object          v0, v2, Lio/fabric/sdk/android/services/events/EventsFilesManager;->eventStorage Lio/fabric/sdk/android/services/events/EventsStorage;
+	6       (0000001a) invoke-interface     v0, Lio/fabric/sdk/android/services/events/EventsStorage;->deleteWorkingFile()V
+	7       (00000020) return-void          
+

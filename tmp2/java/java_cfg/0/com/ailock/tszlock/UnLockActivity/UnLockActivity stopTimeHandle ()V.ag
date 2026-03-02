@@ -1,0 +1,13 @@
+# Lcom/ailock/tszlock/UnLockActivity;->stopTimeHandle()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+stopTimeHandle-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/ailock/tszlock/UnLockActivity;->mHandle Landroid/os/Handler;
+	1       (00000004) iget-object          v1, v2, Lcom/ailock/tszlock/UnLockActivity;->runable Ljava/lang/Runnable;
+	2       (00000008) invoke-virtual       v0, v1, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+	3       (0000000e) return-void          
+

@@ -1,0 +1,27 @@
+# Lcom/unlocker/purchase/c;->a(I I Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+# - v5:android.content.Intent
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0x18 ]
+	0       (00000000) iget-boolean         v0, v2, Lcom/unlocker/purchase/c;->g Z
+	1       (00000004) if-nez               v0, +a
+
+a-BB@0x8 : [ a-BB@0x16 ]
+	2       (00000008) const-string         v0, 'UNLOCKER-PurchManager'
+	3       (0000000c) const-string         v1, 'Purchase manager not started'
+	4       (00000010) invoke-static        v0, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+
+a-BB@0x16 : 
+	5       (00000016) return-void          
+
+a-BB@0x18 : [ a-BB@0x16 ]
+	6       (00000018) iget-object          v0, v2, Lcom/unlocker/purchase/c;->b Lcom/unlocker/billing/a;
+	7       (0000001c) invoke-virtual       v0, v3, v4, v5, Lcom/unlocker/billing/a;->a(I I Landroid/content/Intent;)Z
+	8       (00000022) goto                 -6
+

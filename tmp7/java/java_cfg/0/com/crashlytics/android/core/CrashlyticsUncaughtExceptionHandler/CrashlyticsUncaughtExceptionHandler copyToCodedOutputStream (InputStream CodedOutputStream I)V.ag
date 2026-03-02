@@ -1,0 +1,33 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->copyToCodedOutputStream(Ljava/io/InputStream; Lcom/crashlytics/android/core/CodedOutputStream; I)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.InputStream
+# - v4:com.crashlytics.android.core.CodedOutputStream
+# - v5:int
+#
+# - return:void
+
+copyToCodedOutputStream-BB@0x0 : [ copyToCodedOutputStream-BB@0x6 ]
+	0       (00000000) new-array            v1, v5, [B
+	1       (00000004) const/4              v0, 0
+
+copyToCodedOutputStream-BB@0x6 : [ copyToCodedOutputStream-BB@0xc copyToCodedOutputStream-BB@0x20 ]
+	2       (00000006) array-length         v2, v1
+	3       (00000008) if-ge                v0, v2, +c
+
+copyToCodedOutputStream-BB@0xc : [ copyToCodedOutputStream-BB@0x1c copyToCodedOutputStream-BB@0x20 ]
+	4       (0000000c) array-length         v2, v1
+	5       (0000000e) sub-int/2addr        v2, v0
+	6       (00000010) invoke-virtual       v3, v1, v0, v2, Ljava/io/InputStream;->read([B I I)I
+	7       (00000016) move-result          v2
+	8       (00000018) if-ltz               v2, +4
+
+copyToCodedOutputStream-BB@0x1c : [ copyToCodedOutputStream-BB@0x6 ]
+	9       (0000001c) add-int/2addr        v0, v2
+	10      (0000001e) goto                 -c
+
+copyToCodedOutputStream-BB@0x20 : 
+	11      (00000020) invoke-virtual       v4, v1, Lcom/crashlytics/android/core/CodedOutputStream;->writeRawBytes([B)V
+	12      (00000026) return-void          
+

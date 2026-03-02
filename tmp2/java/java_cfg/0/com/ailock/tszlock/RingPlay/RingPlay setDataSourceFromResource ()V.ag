@@ -1,0 +1,30 @@
+# Lcom/ailock/tszlock/RingPlay;->setDataSourceFromResource()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:void
+
+setDataSourceFromResource-BB@0x0 : [ setDataSourceFromResource-BB@0x1c setDataSourceFromResource-BB@0x44 ]
+	0       (00000000) iget-object          v0, v7, Lcom/ailock/tszlock/RingPlay;->context Landroid/content/Context;
+	1       (00000004) invoke-virtual       v0, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) const/high16         v1, 32516 # [1.754580954436089e+38]
+	4       (00000010) invoke-virtual       v0, v1, Landroid/content/res/Resources;->openRawResourceFd(I)Landroid/content/res/AssetFileDescriptor;
+	5       (00000016) move-result-object   v6
+	6       (00000018) if-eqz               v6, +16
+
+setDataSourceFromResource-BB@0x1c : [ setDataSourceFromResource-BB@0x44 ]
+	7       (0000001c) iget-object          v0, v7, Lcom/ailock/tszlock/RingPlay;->mMediaPlayer Landroid/media/MediaPlayer;
+	8       (00000020) invoke-virtual       v6, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
+	9       (00000026) move-result-object   v1
+	10      (00000028) invoke-virtual       v6, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
+	11      (0000002e) move-result-wide     v2
+	12      (00000030) invoke-virtual       v6, Landroid/content/res/AssetFileDescriptor;->getLength()J
+	13      (00000036) move-result-wide     v4
+	14      (00000038) invoke-virtual/range v0 ... v5, Landroid/media/MediaPlayer;->setDataSource(Ljava/io/FileDescriptor; J J)V
+	15      (0000003e) invoke-virtual       v6, Landroid/content/res/AssetFileDescriptor;->close()V
+
+setDataSourceFromResource-BB@0x44 : 
+	16      (00000044) return-void          
+

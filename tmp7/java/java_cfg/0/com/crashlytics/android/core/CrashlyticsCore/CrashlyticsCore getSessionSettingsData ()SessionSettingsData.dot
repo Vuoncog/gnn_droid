@@ -1,0 +1,66 @@
+digraph {
+	graph [bb="0,0,1276,408",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_6b9793f10c48f1ac4e56e29849d1f247 {
+		graph [bb="8,8,1268,400",
+			label="Lcom/crashlytics/android/core/CrashlyticsCore;.getSessionSettingsData->()Lio/fabric/sdk/android/services/settings/SessionSettingsData;\nLocal \
+registers v0 ... v0\nreturn = io.fabric.sdk.android.services.settings.SessionSettingsData",
+			lheight=0.62,
+			lp="638,373.5",
+			lwidth=12.47
+		];
+		struct_9518d48bf7ddb35b74386d3202566439	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/services/settings/Settings;-&gt;getInstance()Lio/fabric/sdk/android/services/settings/Settings;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/settings/Settings;-&gt;awaitSettingsData()Lio/fabric/sdk/android/services/settings/SettingsData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="617,271.5",
+			width=14.042];
+		struct_dd9fbb58cff951485518c94408a567da	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="103,133.5",
+			width=2.4028];
+		struct_9518d48bf7ddb35b74386d3202566439:tail -> struct_dd9fbb58cff951485518c94408a567da:header	[color=red,
+			pos="e,42,150.5 122,212.5 80.531,212.5 47.532,198.04 42.629,160.54"];
+		struct_252e986eb2d2478bf48306d6198be5e7	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/settings/SettingsData;-&gt;sessionData Lio/fabric/sdk/android/services/settings/SessionSettingsData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="734,133.5",
+			width=14.611];
+		struct_9518d48bf7ddb35b74386d3202566439:tail -> struct_252e986eb2d2478bf48306d6198be5e7:header	[color=green,
+			pos="e,233,161.5 137,209.5 137,165.71 217.9,202.07 231.17,171.42"];
+		struct_40fdee8cb9868f37ebfeb0590f91029e	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="201,39.5",
+			width=2.4722];
+		struct_dd9fbb58cff951485518c94408a567da:tail -> struct_40fdee8cb9868f37ebfeb0590f91029e:header	[color=blue,
+			pos="e,122,53.5 42,115.5 42,73.943 71.885,56.255 111.91,53.801"];
+		struct_252e986eb2d2478bf48306d6198be5e7:tail -> struct_40fdee8cb9868f37ebfeb0590f91029e:header	[color=blue,
+			pos="e,137,56.5 218,107.5 213.7,107.5 163.39,77.632 144.29,63.387"];
+	}
+}

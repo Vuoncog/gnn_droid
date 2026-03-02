@@ -1,0 +1,42 @@
+# Lorg/apache/commons/io/FileUtils;->deleteQuietly(Ljava/io/File;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+#
+# - return:boolean
+
+deleteQuietly-BB@0x0 : [ deleteQuietly-BB@0x6 deleteQuietly-BB@0x8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-nez               v2, +3
+
+deleteQuietly-BB@0x6 : 
+	2       (00000006) return               v0
+
+deleteQuietly-BB@0x8 : [ deleteQuietly-BB@0x14 deleteQuietly-BB@0x1a ]
+	3       (00000008) invoke-virtual       v2, Ljava/io/File;->isDirectory()Z
+	4       (0000000e) move-result          v1
+	5       (00000010) if-eqz               v1, +5
+	8:19
+	(Ljava/lang/Exception; -> 28 deleteQuietly-BB@0x28)
+
+deleteQuietly-BB@0x14 : [ deleteQuietly-BB@0x1a ]
+	6       (00000014) invoke-static        v2, Lorg/apache/commons/io/FileUtils;->cleanDirectory(Ljava/io/File;)V
+	8:19
+	(Ljava/lang/Exception; -> 28 deleteQuietly-BB@0x28)
+
+deleteQuietly-BB@0x1a : [ deleteQuietly-BB@0x6 ]
+	7       (0000001a) invoke-virtual       v2, Ljava/io/File;->delete()Z
+	8       (00000020) move-result          v0
+	9       (00000022) goto                 -e
+	1a:1f
+	(Ljava/lang/Exception; -> 24 deleteQuietly-BB@0x24)
+
+deleteQuietly-BB@0x24 : [ deleteQuietly-BB@0x6 ]
+	10      (00000024) move-exception       v1
+	11      (00000026) goto                 -10
+
+deleteQuietly-BB@0x28 : [ deleteQuietly-BB@0x1a ]
+	12      (00000028) move-exception       v1
+	13      (0000002a) goto                 -8
+

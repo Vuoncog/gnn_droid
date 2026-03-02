@@ -1,0 +1,44 @@
+# Lio/fabric/sdk/android/services/settings/DefaultSettingsJsonTransform;->toAppJson(Lio/fabric/sdk/android/services/settings/AppSettingsData;)Lorg/json/JSONObject; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:io.fabric.sdk.android.services.settings.AppSettingsData
+#
+# - return:org.json.JSONObject
+
+toAppJson-BB@0x0 : [ toAppJson-BB@0x62 toAppJson-BB@0x78 ]
+	0       (00000000) new-instance         v0, Lorg/json/JSONObject;
+	1       (00000004) invoke-direct        v0, Lorg/json/JSONObject;-><init>()V
+	2       (0000000a) const-string         v1, 'identifier'
+	3       (0000000e) iget-object          v2, v4, Lio/fabric/sdk/android/services/settings/AppSettingsData;->identifier Ljava/lang/String;
+	4       (00000012) invoke-virtual       v0, v1, v2, Lorg/json/JSONObject;->put(Ljava/lang/String; Ljava/lang/Object;)Lorg/json/JSONObject;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) const-string         v1, 'status'
+	7       (0000001e) iget-object          v2, v4, Lio/fabric/sdk/android/services/settings/AppSettingsData;->status Ljava/lang/String;
+	8       (00000022) invoke-virtual       v0, v1, v2, Lorg/json/JSONObject;->put(Ljava/lang/String; Ljava/lang/Object;)Lorg/json/JSONObject;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) const-string         v1, 'url'
+	11      (0000002e) iget-object          v2, v4, Lio/fabric/sdk/android/services/settings/AppSettingsData;->url Ljava/lang/String;
+	12      (00000032) invoke-virtual       v0, v1, v2, Lorg/json/JSONObject;->put(Ljava/lang/String; Ljava/lang/Object;)Lorg/json/JSONObject;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) const-string         v1, 'reports_url'
+	15      (0000003e) iget-object          v2, v4, Lio/fabric/sdk/android/services/settings/AppSettingsData;->reportsUrl Ljava/lang/String;
+	16      (00000042) invoke-virtual       v0, v1, v2, Lorg/json/JSONObject;->put(Ljava/lang/String; Ljava/lang/Object;)Lorg/json/JSONObject;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) const-string         v1, 'update_required'
+	19      (0000004e) iget-boolean         v2, v4, Lio/fabric/sdk/android/services/settings/AppSettingsData;->updateRequired Z
+	20      (00000052) invoke-virtual       v0, v1, v2, Lorg/json/JSONObject;->put(Ljava/lang/String; Z)Lorg/json/JSONObject;
+	21      (00000058) move-result-object   v0
+	22      (0000005a) iget-object          v1, v4, Lio/fabric/sdk/android/services/settings/AppSettingsData;->icon Lio/fabric/sdk/android/services/settings/AppIconSettingsData;
+	23      (0000005e) if-eqz               v1, +d
+
+toAppJson-BB@0x62 : [ toAppJson-BB@0x78 ]
+	24      (00000062) const-string         v1, 'icon'
+	25      (00000066) iget-object          v2, v4, Lio/fabric/sdk/android/services/settings/AppSettingsData;->icon Lio/fabric/sdk/android/services/settings/AppIconSettingsData;
+	26      (0000006a) invoke-direct        v3, v2, Lio/fabric/sdk/android/services/settings/DefaultSettingsJsonTransform;->toIconJson(Lio/fabric/sdk/android/services/settings/AppIconSettingsData;)Lorg/json/JSONObject;
+	27      (00000070) move-result-object   v2
+	28      (00000072) invoke-virtual       v0, v1, v2, Lorg/json/JSONObject;->put(Ljava/lang/String; Ljava/lang/Object;)Lorg/json/JSONObject;
+
+toAppJson-BB@0x78 : 
+	29      (00000078) return-object        v0
+

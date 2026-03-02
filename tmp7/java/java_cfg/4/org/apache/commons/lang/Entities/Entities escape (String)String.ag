@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/Entities;->escape(Ljava/lang/String;)Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:java.lang.String
+
+escape-BB@0x0 : [ escape-BB@0x8 ]
+	0       (00000000) invoke-direct        v2, v3, Lorg/apache/commons/lang/Entities;->createStringWriter(Ljava/lang/String;)Ljava/io/StringWriter;
+	1       (00000006) move-result-object   v0
+
+escape-BB@0x8 : 
+	2       (00000008) invoke-virtual       v2, v0, v3, Lorg/apache/commons/lang/Entities;->escape(Ljava/io/Writer; Ljava/lang/String;)V
+	3       (0000000e) invoke-virtual       v0, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+	4       (00000014) move-result-object   v0
+	5       (00000016) return-object        v0
+	8:d
+	(Ljava/io/IOException; -> 18 escape-BB@0x18)
+
+escape-BB@0x18 : 
+	6       (00000018) move-exception       v0
+	7       (0000001a) new-instance         v1, Lorg/apache/commons/lang/UnhandledException;
+	8       (0000001e) invoke-direct        v1, v0, Lorg/apache/commons/lang/UnhandledException;-><init>(Ljava/lang/Throwable;)V
+	9       (00000024) throw                v1
+

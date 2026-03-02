@@ -1,0 +1,25 @@
+# Lorg/apache/commons/lang/StringUtils;->join(Ljava/util/Collection; C)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.util.Collection
+# - v2:char
+#
+# - return:java.lang.String
+
+join-BB@0x0 : [ join-BB@0x4 join-BB@0x8 ]
+	0       (00000000) if-nez               v1, +4
+
+join-BB@0x4 : [ join-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+join-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+join-BB@0x8 : [ join-BB@0x6 ]
+	3       (00000008) invoke-interface     v1, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+	4       (0000000e) move-result-object   v0
+	5       (00000010) invoke-static        v0, v2, Lorg/apache/commons/lang/StringUtils;->join(Ljava/util/Iterator; C)Ljava/lang/String;
+	6       (00000016) move-result-object   v0
+	7       (00000018) goto                 -9
+

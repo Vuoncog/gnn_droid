@@ -1,0 +1,24 @@
+# Lorg/apache/commons/io/monitor/FileEntry;->getLevel()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getLevel-BB@0x0 : [ getLevel-BB@0x8 getLevel-BB@0xc ]
+	0       (00000000) iget-object          v0, v1, Lorg/apache/commons/io/monitor/FileEntry;->parent Lorg/apache/commons/io/monitor/FileEntry;
+	1       (00000004) if-nez               v0, +4
+
+getLevel-BB@0x8 : [ getLevel-BB@0xa ]
+	2       (00000008) const/4              v0, 0
+
+getLevel-BB@0xa : 
+	3       (0000000a) return               v0
+
+getLevel-BB@0xc : [ getLevel-BB@0xa ]
+	4       (0000000c) iget-object          v0, v1, Lorg/apache/commons/io/monitor/FileEntry;->parent Lorg/apache/commons/io/monitor/FileEntry;
+	5       (00000010) invoke-virtual       v0, Lorg/apache/commons/io/monitor/FileEntry;->getLevel()I
+	6       (00000016) move-result          v0
+	7       (00000018) add-int/lit8         v0, v0, 1
+	8       (0000001c) goto                 -9
+

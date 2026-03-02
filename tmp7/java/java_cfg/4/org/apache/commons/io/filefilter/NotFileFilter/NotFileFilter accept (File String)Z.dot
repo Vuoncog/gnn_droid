@@ -1,0 +1,65 @@
+digraph {
+	graph [bb="0,0,892,416",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_9c5ac197e7cbef4cba0b5ce17b32a69e {
+		graph [bb="8,8,884,408",
+			label="Lorg/apache/commons/io/filefilter/NotFileFilter;.accept->(Ljava/io/File; Ljava/lang/String;)Z\nLocal registers v0 ... v1\nparam \
+v2 = java.io.File\nparam v3 = java.lang.String\nreturn = boolean",
+			lheight=1.04,
+			lp="446,366.5",
+			lwidth=8.28
+		];
+		struct_5b3ea8b50a211b307752fd45e822ef61	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v1</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/filefilter/NotFileFilter;-&gt;filter Lorg/apache/commons/io/filefilter/IOFileFilter;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT color="#7272CC">v3</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/filefilter/IOFileFilter;-&gt;accept(Ljava/io/File; Ljava/lang/String;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="446,260.5",
+			width=11.944];
+		struct_c28b3536271197ca88749c6ff4a7b2d3	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="103,133.5",
+			width=2.4028];
+		struct_5b3ea8b50a211b307752fd45e822ef61:tail -> struct_c28b3536271197ca88749c6ff4a7b2d3:header	[color=red,
+			pos="e,42,150.5 37,209.5 37,186.88 40.693,179 41.731,160.53"];
+		struct_a8eb76155ea23d2186054481ca2ca753	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="294,133.5",
+			width=2.4028];
+		struct_5b3ea8b50a211b307752fd45e822ef61:tail -> struct_a8eb76155ea23d2186054481ca2ca753:header	[color=green,
+			pos="e,233,161.5 37,209.5 37,123.67 216.52,240.3 231.95,171.87"];
+		struct_692608993063f45d670e3aee33e66ff2	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="178,39.5",
+			width=1.8472];
+		struct_c28b3536271197ca88749c6ff4a7b2d3:tail -> struct_692608993063f45d670e3aee33e66ff2:header	[color=blue,
+			pos="e,122,53.5 42,115.5 42,73.943 71.885,56.255 111.91,53.801"];
+		struct_a8eb76155ea23d2186054481ca2ca753:tail -> struct_692608993063f45d670e3aee33e66ff2:header	[color=blue,
+			pos="e,137,56.5 218,107.5 213.7,107.5 163.39,77.632 144.29,63.387"];
+	}
+}

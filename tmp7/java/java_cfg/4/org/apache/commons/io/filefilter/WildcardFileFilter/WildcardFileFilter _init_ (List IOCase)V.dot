@@ -1,0 +1,84 @@
+digraph {
+	graph [bb="0,0,1432,609",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_9b56b268a6c5b036497d5012693f01dd {
+		graph [bb="8,8,1424,601",
+			label="Lorg/apache/commons/io/filefilter/WildcardFileFilter;.<init>->(Ljava/util/List; Lorg/apache/commons/io/IOCase;)V\nLocal registers \
+v0 ... v2\nparam v3 = java.util.List\nparam v4 = org.apache.commons.io.IOCase\nreturn = void",
+			lheight=1.04,
+			lp="716,559.5",
+			lwidth=10.33
+		];
+		struct_7b54edfc9dacf16e110dbc2a53ea20f0	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/filefilter/AbstractFileFilter;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#8E8E5B">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="645,475.5",
+			width=8.2222];
+		struct_4aba64abff549e6eaddfef0f7a143805	[height=1.9444,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#0000FF">Ljava/lang/IllegalArgumentException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7A7AAD">v1</FONT>, <FONT color="red"><br/>'The wildcard list must not be<br/>null'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#7A7AAD">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/IllegalArgumentException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#848484">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="336,304.5",
+			width=8.8889];
+		struct_7b54edfc9dacf16e110dbc2a53ea20f0:tail -> struct_4aba64abff549e6eaddfef0f7a143805:header	[color=red,
+			pos="e,41,368.5 359,449.5 289.64,449.5 64.523,442.19 42.704,378.72"];
+		struct_f0e8afe98e29fcc4a97c008e6050d18e	[height=2.7917,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#8E8E5B">v3</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;size()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#848484">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-array </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#848484">v0</FONT>, <FONT color="#0000FF">[Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#8E8E5B">v3</FONT>, <FONT color="#848484">v0</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;toArray([Ljava/lang/Object;)[Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#848484">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#0000FF">[Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/filefilter/WildcardFileFilter;-&gt;wildcards [Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7070D6">v4</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1045,304.5",
+			width=10.306];
+		struct_7b54edfc9dacf16e110dbc2a53ea20f0:tail -> struct_f0e8afe98e29fcc4a97c008e6050d18e:header	[color=green,
+			pos="e,684,395.5 370,446.5 370,380.3 601.79,424.67 665,405 669.51,403.6 671.9,401.22 674.34,399.2"];
+		struct_8235865526aa4077e13532f4a2a27749	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#7070D6">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/IOCase;-&gt;SENSITIVE Lorg/apache/commons/io/IOCase;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="369,144.5",
+			width=9.7917];
+		struct_f0e8afe98e29fcc4a97c008e6050d18e:tail -> struct_8235865526aa4077e13532f4a2a27749:header	[color=red,
+			pos="e,42,161.5 684,212.5 674.75,212.5 673.98,206.24 665,204 600.97,188.03 95.101,226.76 45.853,170.88"];
+		struct_cd8c7e6cc56c15c65b016bf70de33245	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#7070D6">v4</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/filefilter/WildcardFileFilter;-&gt;caseSensitivity Lorg/apache/commons/io/IOCase;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="716,50.5",
+			width=12.264];
+		struct_f0e8afe98e29fcc4a97c008e6050d18e:tail -> struct_cd8c7e6cc56c15c65b016bf70de33245:header	[color=green,
+			pos="e,300,78.5 699,209.5 699,186.21 723.49,190.05 731,168 737.74,148.23 745.03,136.48 731,121 668.9,52.471 328.16,165.27 301.64,88.79"];
+		struct_8235865526aa4077e13532f4a2a27749:tail -> struct_cd8c7e6cc56c15c65b016bf70de33245:header	[color=blue,
+			pos="e,300,78.5 42,126.5 42,13.511 284.13,183.85 299.26,88.568"];
+	}
+}

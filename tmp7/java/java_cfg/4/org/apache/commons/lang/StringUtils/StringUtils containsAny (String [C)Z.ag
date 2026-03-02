@@ -1,0 +1,82 @@
+# Lorg/apache/commons/lang/StringUtils;->containsAny(Ljava/lang/String; [C)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:java.lang.String
+# - v12:char[]
+#
+# - return:boolean
+
+containsAny-BB@0x0 : [ containsAny-BB@0x10 containsAny-BB@0x1c ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) invoke-static        v11, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	3       (0000000a) move-result          v2
+	4       (0000000c) if-nez               v2, +8
+
+containsAny-BB@0x10 : [ containsAny-BB@0x1c containsAny-BB@0x20 ]
+	5       (00000010) invoke-static        v12, Lorg/apache/commons/lang/ArrayUtils;->isEmpty([C)Z
+	6       (00000016) move-result          v2
+	7       (00000018) if-eqz               v2, +4
+
+containsAny-BB@0x1c : [ containsAny-BB@0x1e ]
+	8       (0000001c) move                 v0, v1
+
+containsAny-BB@0x1e : 
+	9       (0000001e) return               v0
+
+containsAny-BB@0x20 : [ containsAny-BB@0x34 ]
+	10      (00000020) invoke-virtual       v11, Ljava/lang/String;->length()I
+	11      (00000026) move-result          v4
+	12      (00000028) array-length         v5, v12
+	13      (0000002a) add-int/lit8         v6, v4, -1
+	14      (0000002e) add-int/lit8         v7, v5, -1
+	15      (00000032) move                 v3, v1
+
+containsAny-BB@0x34 : [ containsAny-BB@0x38 containsAny-BB@0x88 ]
+	16      (00000034) if-ge                v3, v4, +2a
+
+containsAny-BB@0x38 : [ containsAny-BB@0x42 ]
+	17      (00000038) invoke-virtual       v11, v3, Ljava/lang/String;->charAt(I)C
+	18      (0000003e) move-result          v8
+	19      (00000040) move                 v2, v1
+
+containsAny-BB@0x42 : [ containsAny-BB@0x46 containsAny-BB@0x80 ]
+	20      (00000042) if-ge                v2, v5, +1f
+
+containsAny-BB@0x46 : [ containsAny-BB@0x4e containsAny-BB@0x7a ]
+	21      (00000046) aget-char            v9, v12, v2
+	22      (0000004a) if-ne                v9, v8, +18
+
+containsAny-BB@0x4e : [ containsAny-BB@0x5a containsAny-BB@0x1e ]
+	23      (0000004e) invoke-static        v8, Lorg/apache/commons/lang/CharUtils;->isHighSurrogate(C)Z
+	24      (00000054) move-result          v9
+	25      (00000056) if-eqz               v9, -1c
+
+containsAny-BB@0x5a : [ containsAny-BB@0x5e containsAny-BB@0x1e ]
+	26      (0000005a) if-eq                v2, v7, -1e
+
+containsAny-BB@0x5e : [ containsAny-BB@0x62 containsAny-BB@0x7a ]
+	27      (0000005e) if-ge                v3, v6, +e
+
+containsAny-BB@0x62 : [ containsAny-BB@0x7a containsAny-BB@0x1e ]
+	28      (00000062) add-int/lit8         v9, v2, 1
+	29      (00000066) aget-char            v9, v12, v9
+	30      (0000006a) add-int/lit8         v10, v3, 1
+	31      (0000006e) invoke-virtual       v11, v10, Ljava/lang/String;->charAt(I)C
+	32      (00000074) move-result          v10
+	33      (00000076) if-eq                v9, v10, -2c
+
+containsAny-BB@0x7a : [ containsAny-BB@0x42 ]
+	34      (0000007a) add-int/lit8         v2, v2, 1
+	35      (0000007e) goto                 -1e
+
+containsAny-BB@0x80 : [ containsAny-BB@0x34 ]
+	36      (00000080) add-int/lit8         v2, v3, 1
+	37      (00000084) move                 v3, v2
+	38      (00000086) goto                 -29
+
+containsAny-BB@0x88 : [ containsAny-BB@0x1e ]
+	39      (00000088) move                 v0, v1
+	40      (0000008a) goto                 -36
+

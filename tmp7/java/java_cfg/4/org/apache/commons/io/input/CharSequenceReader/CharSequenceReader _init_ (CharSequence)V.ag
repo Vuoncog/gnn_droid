@@ -1,0 +1,20 @@
+# Lorg/apache/commons/io/input/CharSequenceReader;-><init>(Ljava/lang/CharSequence;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.CharSequence
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xa <init>-BB@0x10 ]
+	0       (00000000) invoke-direct        v0, Ljava/io/Reader;-><init>()V
+	1       (00000006) if-eqz               v1, +5
+
+<init>-BB@0xa : 
+	2       (0000000a) iput-object          v1, v0, Lorg/apache/commons/io/input/CharSequenceReader;->charSequence Ljava/lang/CharSequence;
+	3       (0000000e) return-void          
+
+<init>-BB@0x10 : [ <init>-BB@0xa ]
+	4       (00000010) const-string         v1, ''
+	5       (00000014) goto                 -5
+

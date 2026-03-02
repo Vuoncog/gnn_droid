@@ -1,0 +1,45 @@
+# Lnet/youmi/android/cq;->a(Landroid/app/Activity;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.app.Activity
+#
+# - return:void
+
+a-BB@0x0 : 
+	0       (00000000) const/4              v3, -1
+	1       (00000002) invoke-virtual       v4, v3, Lnet/youmi/android/cq;->setBackgroundColor(I)V
+	2       (00000008) new-instance         v0, Landroid/webkit/WebView;
+	3       (0000000c) invoke-direct        v0, v5, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
+	4       (00000012) iput-object          v0, v4, Lnet/youmi/android/cq;->a Landroid/webkit/WebView;
+	5       (00000016) iget-object          v0, v4, Lnet/youmi/android/cq;->a Landroid/webkit/WebView;
+	6       (0000001a) iget                 v1, v4, Lnet/youmi/android/cq;->d I
+	7       (0000001e) invoke-virtual       v0, v1, Landroid/webkit/WebView;->setId(I)V
+	8       (00000024) new-instance         v0, Lnet/youmi/android/ci;
+	9       (00000028) iget-object          v1, v4, Lnet/youmi/android/cq;->b Lnet/youmi/android/ak;
+	10      (0000002c) invoke-direct        v0, v5, v1, v4, Lnet/youmi/android/ci;-><init>(Landroid/app/Activity; Lnet/youmi/android/ak; Lnet/youmi/android/j;)V
+	11      (00000032) iput-object          v0, v4, Lnet/youmi/android/cq;->c Lnet/youmi/android/ci;
+	12      (00000036) iget-object          v0, v4, Lnet/youmi/android/cq;->c Lnet/youmi/android/ci;
+	13      (0000003a) iget                 v1, v4, Lnet/youmi/android/cq;->e I
+	14      (0000003e) invoke-virtual       v0, v1, Lnet/youmi/android/ci;->setId(I)V
+	15      (00000044) new-instance         v0, Landroid/widget/RelativeLayout$LayoutParams;
+	16      (00000048) invoke-direct        v0, v3, v3, Landroid/widget/RelativeLayout$LayoutParams;-><init>(I I)V
+	17      (0000004e) const/4              v1, 2
+	18      (00000050) iget-object          v2, v4, Lnet/youmi/android/cq;->c Lnet/youmi/android/ci;
+	19      (00000054) invoke-virtual       v2, Lnet/youmi/android/ci;->getId()I
+	20      (0000005a) move-result          v2
+	21      (0000005c) invoke-virtual       v0, v1, v2, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I I)V
+	22      (00000062) iget-object          v1, v4, Lnet/youmi/android/cq;->a Landroid/webkit/WebView;
+	23      (00000066) invoke-virtual       v4, v1, v0, Lnet/youmi/android/cq;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	24      (0000006c) new-instance         v0, Landroid/widget/RelativeLayout$LayoutParams;
+	25      (00000070) const/4              v1, -2
+	26      (00000072) invoke-direct        v0, v3, v1, Landroid/widget/RelativeLayout$LayoutParams;-><init>(I I)V
+	27      (00000078) const/16             v1, 12
+	28      (0000007c) invoke-virtual       v0, v1, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+	29      (00000082) iget-object          v1, v4, Lnet/youmi/android/cq;->c Lnet/youmi/android/ci;
+	30      (00000086) invoke-virtual       v4, v1, v0, Lnet/youmi/android/cq;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	31      (0000008c) iget-object          v0, v4, Lnet/youmi/android/cq;->a Landroid/webkit/WebView;
+	32      (00000090) iget-object          v1, v4, Lnet/youmi/android/cq;->c Lnet/youmi/android/ci;
+	33      (00000094) invoke-virtual       v4, v0, v1, Lnet/youmi/android/cq;->a(Landroid/webkit/WebView; Lnet/youmi/android/ci;)V
+	34      (0000009a) return-void          
+

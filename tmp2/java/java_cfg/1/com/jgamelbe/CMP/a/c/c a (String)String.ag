@@ -1,0 +1,32 @@
+# Lcom/jgamelbe/CMP/a/c;->a(Ljava/lang/String;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:java.lang.String
+
+a-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/Date;
+	1       (00000004) invoke-direct        v0, Ljava/util/Date;-><init>()V
+	2       (0000000a) new-instance         v1, Ljava/lang/StringBuilder;
+	3       (0000000e) const-string         v2, 'My'
+	4       (00000012) invoke-direct        v1, v2, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	5       (00000018) invoke-virtual       v5, Ljava/lang/String;->hashCode()I
+	6       (0000001e) move-result          v2
+	7       (00000020) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	8       (00000026) move-result-object   v1
+	9       (00000028) const-string         v2, '_'
+	10      (0000002c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (00000032) move-result-object   v1
+	12      (00000034) invoke-virtual       v0, Ljava/util/Date;->getTime()J
+	13      (0000003a) move-result-wide     v2
+	14      (0000003c) invoke-virtual       v1, v2, v3, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	15      (00000042) move-result-object   v0
+	16      (00000044) const-string         v1, '.apk'
+	17      (00000048) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004e) move-result-object   v0
+	19      (00000050) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (00000056) move-result-object   v0
+	21      (00000058) return-object        v0
+

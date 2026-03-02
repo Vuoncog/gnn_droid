@@ -1,0 +1,34 @@
+# Lcom/jgamelbe/CMP/JavaScriptCallBack;->goBack()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+goBack-BB@0x0 : [ goBack-BB@0x10 goBack-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Lcom/jgamelbe/CMP/JavaScriptCallBack;->a Landroid/webkit/WebView;
+	1       (00000004) invoke-virtual       v0, Landroid/webkit/WebView;->canGoBack()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +8
+
+goBack-BB@0x10 : [ goBack-BB@0x1a ]
+	4       (00000010) iget-object          v0, v1, Lcom/jgamelbe/CMP/JavaScriptCallBack;->a Landroid/webkit/WebView;
+	5       (00000014) invoke-virtual       v0, Landroid/webkit/WebView;->goBack()V
+
+goBack-BB@0x1a : 
+	6       (0000001a) return-void          
+
+goBack-BB@0x1c : [ goBack-BB@0x1a ]
+	7       (0000001c) iget-object          v0, v1, Lcom/jgamelbe/CMP/JavaScriptCallBack;->a Landroid/webkit/WebView;
+	8       (00000020) invoke-virtual       v0, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
+	9       (00000026) move-result-object   v0
+	10      (00000028) check-cast           v0, Landroid/app/Activity;
+	11      (0000002c) invoke-virtual       v0, Landroid/app/Activity;->finish()V
+	12      (00000032) goto                 -c
+	1c:31
+	(Ljava/lang/Exception; -> 34 goBack-BB@0x34)
+
+goBack-BB@0x34 : [ goBack-BB@0x1a ]
+	13      (00000034) move-exception       v0
+	14      (00000036) goto                 -e
+

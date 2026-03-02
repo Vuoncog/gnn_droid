@@ -1,0 +1,32 @@
+# Lnet/youmi/android/ct;->a(Lnet/youmi/android/au;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:net.youmi.android.au
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x4 a-BB@0x6 ]
+	0       (00000000) if-nez               v2, +3
+
+a-BB@0x4 : 
+	1       (00000004) return-void          
+
+a-BB@0x6 : [ a-BB@0x12 a-BB@0x4 ]
+	2       (00000006) invoke-virtual       v2, Lnet/youmi/android/au;->c()I
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-lez               v0, -5
+	6:21
+	(Ljava/lang/Exception; -> 24 a-BB@0x24)
+
+a-BB@0x12 : [ a-BB@0x4 ]
+	5       (00000012) iput-object          v2, v1, Lnet/youmi/android/ct;->a Lnet/youmi/android/au;
+	6       (00000016) const/4              v0, 1
+	7       (00000018) iput-boolean         v0, v1, Lnet/youmi/android/ct;->d Z
+	8       (0000001c) invoke-direct        v1, Lnet/youmi/android/ct;->b()V
+	9       (00000022) goto                 -f
+
+a-BB@0x24 : [ a-BB@0x4 ]
+	10      (00000024) move-exception       v0
+	11      (00000026) goto                 -11
+

@@ -1,0 +1,18 @@
+# Lcom/unlocker/purchase/PurchaseActivity;->onSaveInstanceState(Landroid/os/Bundle;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+onSaveInstanceState-BB@0x0 : 
+	0       (00000000) invoke-super         v2, v3, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
+	1       (00000006) const-string         v0, 'state'
+	2       (0000000a) iget-object          v1, v2, Lcom/unlocker/purchase/PurchaseActivity;->a Lcom/unlocker/purchase/PurchaseActivity$State;
+	3       (0000000e) invoke-virtual       v3, v0, v1, Landroid/os/Bundle;->putSerializable(Ljava/lang/String; Ljava/io/Serializable;)V
+	4       (00000014) const-string         v0, 'UNLOCKER-PurchActivity'
+	5       (00000018) const-string         v1, 'State saved'
+	6       (0000001c) invoke-static        v0, v1, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	7       (00000022) return-void          
+

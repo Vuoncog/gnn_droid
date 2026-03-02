@@ -1,0 +1,82 @@
+# Lnet/youmi/android/cg;->c(Landroid/content/Context; Ljava/lang/String;)Ljava/lang/String; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.Context
+# - v7:java.lang.String
+#
+# - return:java.lang.String
+
+c-BB@0x0 : [ c-BB@0x2 ]
+	0       (00000000) const/4              v5, 0
+
+c-BB@0x2 : [ c-BB@0xe c-BB@0x12 ]
+	1       (00000002) invoke-static        v6, v7, Lnet/youmi/android/cg;->b(Landroid/content/Context; Ljava/lang/String;)Ljava/io/InputStream;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) if-nez               v0, +4
+	2:29
+	(Ljava/lang/Exception; -> 58 c-BB@0x58)
+
+c-BB@0xe : [ c-BB@0x10 ]
+	4       (0000000e) move-object          v0, v5
+	2:29
+	(Ljava/lang/Exception; -> 58 c-BB@0x58)
+
+c-BB@0x10 : 
+	5       (00000010) return-object        v0
+	2:29
+	(Ljava/lang/Exception; -> 58 c-BB@0x58)
+
+c-BB@0x12 : [ c-BB@0x24 ]
+	6       (00000012) const/16             v1, 512
+	7       (00000016) new-array            v1, v1, [B
+	8       (0000001a) new-instance         v2, Ljava/io/ByteArrayOutputStream;
+	9       (0000001e) invoke-direct        v2, Ljava/io/ByteArrayOutputStream;-><init>()V
+	2:29
+	(Ljava/lang/Exception; -> 58 c-BB@0x58)
+
+c-BB@0x24 : [ c-BB@0x30 c-BB@0x4e ]
+	10      (00000024) invoke-virtual       v0, v1, Ljava/io/InputStream;->read([B)I
+	11      (0000002a) move-result          v3
+	12      (0000002c) if-gtz               v3, +11
+
+c-BB@0x30 : [ c-BB@0x36 ]
+	13      (00000030) invoke-virtual       v0, Ljava/io/InputStream;->close()V
+	30:35
+	(Ljava/lang/Exception; -> 5e c-BB@0x5e)
+
+c-BB@0x36 : [ c-BB@0x42 ]
+	14      (00000036) const-string         v0, 'utf-8'
+	15      (0000003a) invoke-virtual       v2, v0, Ljava/io/ByteArrayOutputStream;->toString(Ljava/lang/String;)Ljava/lang/String;
+	16      (00000040) move-result-object   v0
+	36:3f
+	(Ljava/lang/Exception; -> 58 c-BB@0x58)
+
+c-BB@0x42 : [ c-BB@0x10 ]
+	17      (00000042) invoke-virtual       v2, Ljava/io/ByteArrayOutputStream;->close()V
+	18      (00000048) goto                 -1c
+	42:47
+	(Ljava/lang/Exception; -> 4a c-BB@0x4a)
+
+c-BB@0x4a : [ c-BB@0x10 ]
+	19      (0000004a) move-exception       v1
+	20      (0000004c) goto                 -1e
+
+c-BB@0x4e : [ c-BB@0x50 ]
+	21      (0000004e) const/4              v4, 0
+
+c-BB@0x50 : [ c-BB@0x24 ]
+	22      (00000050) invoke-virtual       v2, v1, v4, v3, Ljava/io/ByteArrayOutputStream;->write([B I I)V
+	23      (00000056) goto                 -19
+	50:55
+	(Ljava/lang/Exception; -> 58 c-BB@0x58)
+
+c-BB@0x58 : [ c-BB@0x10 ]
+	24      (00000058) move-exception       v0
+	25      (0000005a) move-object          v0, v5
+	26      (0000005c) goto                 -26
+
+c-BB@0x5e : [ c-BB@0x36 ]
+	27      (0000005e) move-exception       v0
+	28      (00000060) goto                 -15
+

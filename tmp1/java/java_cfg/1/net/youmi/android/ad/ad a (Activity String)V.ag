@@ -1,0 +1,60 @@
+# Lnet/youmi/android/ad;->a(Landroid/app/Activity; Ljava/lang/String;)V [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.app.Activity
+# - v6:java.lang.String
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x4 a-BB@0x6 ]
+	0       (00000000) if-nez               v6, +3
+
+a-BB@0x4 : 
+	1       (00000004) return-void          
+
+a-BB@0x6 : [ a-BB@0x1a a-BB@0x4 ]
+	2       (00000006) invoke-virtual       v6, Ljava/lang/String;->trim()Ljava/lang/String;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) invoke-virtual       v0, Ljava/lang/String;->length()I
+	5       (00000014) move-result          v1
+	6       (00000016) if-eqz               v1, -9
+
+a-BB@0x1a : [ a-BB@0x4 ]
+	7       (0000001a) invoke-static        v0, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+	8       (00000020) move-result-object   v1
+	9       (00000022) new-instance         v2, Landroid/content/Intent;
+	10      (00000026) const-string         v3, 'android.intent.action.VIEW'
+	11      (0000002a) invoke-direct        v2, v3, v1, Landroid/content/Intent;-><init>(Ljava/lang/String; Landroid/net/Uri;)V
+	12      (00000030) const/high16         v1, 4096 # [2.524354896707238e-29]
+	13      (00000034) invoke-virtual       v2, v1, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+	14      (0000003a) new-instance         v1, Landroid/content/ComponentName;
+	15      (0000003e) const-string         v3, 'com.android.browser'
+	16      (00000042) const-string         v4, 'com.android.browser.BrowserActivity'
+	17      (00000046) invoke-direct        v1, v3, v4, Landroid/content/ComponentName;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	18      (0000004c) invoke-virtual       v2, v1, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+	19      (00000052) invoke-virtual       v5, v2, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+	20      (00000058) goto                 -2a
+	1a:57
+	(Ljava/lang/Exception; -> 5a a-BB@0x5a)
+
+a-BB@0x5a : [ a-BB@0x5c ]
+	21      (0000005a) move-exception       v1
+
+a-BB@0x5c : [ a-BB@0x4 ]
+	22      (0000005c) new-instance         v1, Landroid/content/Intent;
+	23      (00000060) const-string         v2, 'android.intent.action.VIEW'
+	24      (00000064) invoke-static        v0, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+	25      (0000006a) move-result-object   v0
+	26      (0000006c) invoke-direct        v1, v2, v0, Landroid/content/Intent;-><init>(Ljava/lang/String; Landroid/net/Uri;)V
+	27      (00000072) const/high16         v0, 4096 # [2.524354896707238e-29]
+	28      (00000076) invoke-virtual       v1, v0, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+	29      (0000007c) invoke-virtual       v5, v1, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+	30      (00000082) goto                 -3f
+	5c:81
+	(Ljava/lang/Exception; -> 84 a-BB@0x84)
+
+a-BB@0x84 : [ a-BB@0x4 ]
+	31      (00000084) move-exception       v0
+	32      (00000086) goto                 -41
+

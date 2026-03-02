@@ -1,0 +1,35 @@
+# Lorg/apache/commons/io/input/BOMInputStream;->matches(Lorg/apache/commons/io/ByteOrderMark;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:org.apache.commons.io.ByteOrderMark
+#
+# - return:boolean
+
+matches-BB@0x0 : [ matches-BB@0x4 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) move                 v0, v1
+
+matches-BB@0x4 : [ matches-BB@0x10 matches-BB@0x2c ]
+	2       (00000004) invoke-virtual       v5, Lorg/apache/commons/io/ByteOrderMark;->length()I
+	3       (0000000a) move-result          v2
+	4       (0000000c) if-ge                v0, v2, +10
+
+matches-BB@0x10 : [ matches-BB@0x24 matches-BB@0x26 ]
+	5       (00000010) invoke-virtual       v5, v0, Lorg/apache/commons/io/ByteOrderMark;->get(I)I
+	6       (00000016) move-result          v2
+	7       (00000018) iget-object          v3, v4, Lorg/apache/commons/io/input/BOMInputStream;->firstBytes [I
+	8       (0000001c) aget                 v3, v3, v0
+	9       (00000020) if-eq                v2, v3, +3
+
+matches-BB@0x24 : 
+	10      (00000024) return               v1
+
+matches-BB@0x26 : [ matches-BB@0x4 ]
+	11      (00000026) add-int/lit8         v0, v0, 1
+	12      (0000002a) goto                 -13
+
+matches-BB@0x2c : [ matches-BB@0x24 ]
+	13      (0000002c) const/4              v1, 1
+	14      (0000002e) goto                 -5
+

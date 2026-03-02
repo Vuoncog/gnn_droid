@@ -1,0 +1,206 @@
+# Lcom/jgamelbe/CMP/a/c;->a([Ljava/lang/Void;)Ljava/lang/Boolean; [access_flags=protected varargs]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.Void[]
+#
+# - return:java.lang.Boolean
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0x14 ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) sget-boolean         v0, Lcom/jgamelbe/CMP/a/c;->c Z
+	2       (00000006) if-nez               v0, +7
+
+a-BB@0xa : [ a-BB@0x12 ]
+	3       (0000000a) invoke-static        v5, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	4       (00000010) move-result-object   v0
+
+a-BB@0x12 : 
+	5       (00000012) return-object        v0
+
+a-BB@0x14 : [ a-BB@0x1c ]
+	6       (00000014) invoke-static        v5, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	7       (0000001a) move-result-object   v0
+
+a-BB@0x1c : [ D:a-BB@0xdc 200:a-BB@0x160 ]
+	8       (0000001c) sget-object          v1, Lcom/jgamelbe/CMP/a/c;->a Ljava/lang/String;
+	9       (00000020) new-instance         v2, Ljava/lang/StringBuilder;
+	10      (00000024) const-string         v3, '[MyTaskFetchAndInstallApk] doInBackground() , appDownloadUrl:'
+	11      (00000028) invoke-direct        v2, v3, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	12      (0000002e) iget-object          v3, v6, Lcom/jgamelbe/CMP/a/c;->e Lcom/jgamelbe/CMP/c/a;
+	13      (00000032) iget-object          v3, v3, Lcom/jgamelbe/CMP/c/a;->h Ljava/lang/String;
+	14      (00000036) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (0000003c) move-result-object   v2
+	16      (0000003e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	17      (00000044) move-result-object   v2
+	18      (00000046) invoke-static        v1, v2, Lcom/jgamelbe/CMP/e/g;->c(Ljava/lang/String; Ljava/lang/String;)V
+	19      (0000004c) new-instance         v1, Lorg/apache/http/client/methods/HttpGet;
+	20      (00000050) iget-object          v2, v6, Lcom/jgamelbe/CMP/a/c;->e Lcom/jgamelbe/CMP/c/a;
+	21      (00000054) iget-object          v2, v2, Lcom/jgamelbe/CMP/c/a;->h Ljava/lang/String;
+	22      (00000058) invoke-direct        v1, v2, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
+	23      (0000005e) iget-object          v2, v6, Lcom/jgamelbe/CMP/a/c;->h Lorg/apache/http/impl/client/DefaultHttpClient;
+	24      (00000062) invoke-virtual       v2, Lorg/apache/http/impl/client/DefaultHttpClient;->getParams()Lorg/apache/http/params/HttpParams;
+	25      (00000068) move-result-object   v2
+	26      (0000006a) const-string         v3, 'http.connection.timeout'
+	27      (0000006e) const                v4, 180000 # [2.5223372357846707e-40]
+	28      (00000074) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	29      (0000007a) move-result-object   v4
+	30      (0000007c) invoke-interface     v2, v3, v4, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String; Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
+	31      (00000082) iget-object          v2, v6, Lcom/jgamelbe/CMP/a/c;->h Lorg/apache/http/impl/client/DefaultHttpClient;
+	32      (00000086) invoke-virtual       v2, Lorg/apache/http/impl/client/DefaultHttpClient;->getParams()Lorg/apache/http/params/HttpParams;
+	33      (0000008c) move-result-object   v2
+	34      (0000008e) const-string         v3, 'http.socket.timeout'
+	35      (00000092) const                v4, 60000 # [8.407790785948902e-41]
+	36      (00000098) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	37      (0000009e) move-result-object   v4
+	38      (000000a0) invoke-interface     v2, v3, v4, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String; Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
+	39      (000000a6) new-instance         v2, Lorg/apache/http/protocol/BasicHttpContext;
+	40      (000000aa) invoke-direct        v2, Lorg/apache/http/protocol/BasicHttpContext;-><init>()V
+	41      (000000b0) iget-object          v3, v6, Lcom/jgamelbe/CMP/a/c;->h Lorg/apache/http/impl/client/DefaultHttpClient;
+	42      (000000b4) invoke-static        v3, Lcom/jgamelbe/CMP/b/d;->a(Lorg/apache/http/client/HttpClient;)V
+	43      (000000ba) iget-object          v3, v6, Lcom/jgamelbe/CMP/a/c;->h Lorg/apache/http/impl/client/DefaultHttpClient;
+	44      (000000be) invoke-virtual       v3, v1, v2, Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest; Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
+	45      (000000c4) move-result-object   v3
+	46      (000000c6) invoke-interface     v3, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+	47      (000000cc) move-result-object   v1
+	48      (000000ce) invoke-interface     v1, Lorg/apache/http/StatusLine;->getStatusCode()I
+	49      (000000d4) move-result          v1
+	50      (000000d6) packed-switch        v1, +d5 (0x280)
+	1c:11f
+	(Ljava/lang/Exception; -> 124 a-BB@0x124)
+
+a-BB@0xdc : [ a-BB@0x12 ]
+	51      (000000dc) sget-object          v2, Lcom/jgamelbe/CMP/a/c;->a Ljava/lang/String;
+	52      (000000e0) new-instance         v3, Ljava/lang/StringBuilder;
+	53      (000000e4) const-string         v4, '[MyTaskFetchAndInstallApk] doInBackground(),download failed! Url = '
+	54      (000000e8) invoke-direct        v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	55      (000000ee) iget-object          v4, v6, Lcom/jgamelbe/CMP/a/c;->e Lcom/jgamelbe/CMP/c/a;
+	56      (000000f2) iget-object          v4, v4, Lcom/jgamelbe/CMP/c/a;->h Ljava/lang/String;
+	57      (000000f6) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	58      (000000fc) move-result-object   v3
+	59      (000000fe) const-string         v4, ' !resp code = '
+	60      (00000102) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	61      (00000108) move-result-object   v3
+	62      (0000010a) invoke-virtual       v3, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	63      (00000110) move-result-object   v1
+	64      (00000112) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	65      (00000118) move-result-object   v1
+	66      (0000011a) invoke-static        v2, v1, Lcom/jgamelbe/CMP/e/g;->a(Ljava/lang/String; Ljava/lang/String;)V
+	67      (00000120) goto/16              -87
+
+a-BB@0x124 : [ a-BB@0x12 ]
+	68      (00000124) move-exception       v0
+	69      (00000126) invoke-virtual       v0, Ljava/lang/Exception;->printStackTrace()V
+	70      (0000012c) sget-object          v1, Lcom/jgamelbe/CMP/a/c;->a Ljava/lang/String;
+	71      (00000130) new-instance         v2, Ljava/lang/StringBuilder;
+	72      (00000134) const-string         v3, '[MyTaskFetchAndInstallApk] doInBackground(),download failed! e='
+	73      (00000138) invoke-direct        v2, v3, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	74      (0000013e) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	75      (00000144) move-result-object   v0
+	76      (00000146) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	77      (0000014c) move-result-object   v0
+	78      (0000014e) invoke-static        v1, v0, Lcom/jgamelbe/CMP/e/g;->a(Ljava/lang/String; Ljava/lang/String;)V
+	79      (00000154) invoke-static        v5, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	80      (0000015a) move-result-object   v0
+	81      (0000015c) goto/16              -a5
+
+a-BB@0x160 : [ a-BB@0x194 a-BB@0x24c ]
+	82      (00000160) const-string         v0, 'http.request'
+	83      (00000164) invoke-interface     v2, v0, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+	84      (0000016a) move-result-object   v0
+	85      (0000016c) check-cast           v0, Lorg/apache/http/client/methods/HttpUriRequest;
+	86      (00000170) const-string         v1, 'http.target_host'
+	87      (00000174) invoke-interface     v2, v1, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+	88      (0000017a) move-result-object   v1
+	89      (0000017c) check-cast           v1, Lorg/apache/http/HttpHost;
+	90      (00000180) invoke-interface     v0, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
+	91      (00000186) move-result-object   v2
+	92      (00000188) invoke-virtual       v2, Ljava/net/URI;->isAbsolute()Z
+	93      (0000018e) move-result          v2
+	94      (00000190) if-eqz               v2, +5e
+	160:27b
+	(Ljava/lang/Exception; -> 124 a-BB@0x124)
+
+a-BB@0x194 : [ a-BB@0x1a4 ]
+	95      (00000194) invoke-interface     v0, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
+	96      (0000019a) move-result-object   v0
+	97      (0000019c) invoke-virtual       v0, Ljava/net/URI;->toString()Ljava/lang/String;
+	98      (000001a2) move-result-object   v0
+	160:27b
+	(Ljava/lang/Exception; -> 124 a-BB@0x124)
+
+a-BB@0x1a4 : [ a-BB@0x200 a-BB@0x20a ]
+	99      (000001a4) sget-object          v1, Lcom/jgamelbe/CMP/a/c;->a Ljava/lang/String;
+	100     (000001a8) new-instance         v2, Ljava/lang/StringBuilder;
+	101     (000001ac) const-string         v4, '[MyTaskFetchAndInstallApk] doInBackground():'
+	102     (000001b0) invoke-direct        v2, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	103     (000001b6) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	104     (000001bc) move-result-object   v2
+	105     (000001be) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	106     (000001c4) move-result-object   v2
+	107     (000001c6) invoke-static        v1, v2, Lcom/jgamelbe/CMP/e/g;->c(Ljava/lang/String; Ljava/lang/String;)V
+	108     (000001cc) iget-object          v1, v6, Lcom/jgamelbe/CMP/a/c;->e Lcom/jgamelbe/CMP/c/a;
+	109     (000001d0) iput-object          v0, v1, Lcom/jgamelbe/CMP/c/a;->h Ljava/lang/String;
+	110     (000001d4) invoke-interface     v3, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+	111     (000001da) move-result-object   v0
+	112     (000001dc) invoke-interface     v0, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
+	113     (000001e2) move-result-object   v2
+	114     (000001e4) invoke-interface     v3, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+	115     (000001ea) move-result-object   v0
+	116     (000001ec) invoke-interface     v0, Lorg/apache/http/HttpEntity;->getContentLength()J
+	117     (000001f2) move-result-wide     v0
+	118     (000001f4) const-wide/16        v3, 0 # [0.0]
+	119     (000001f8) cmp-long             v3, v0, v3
+	120     (000001fc) if-gez               v3, +7
+	160:27b
+	(Ljava/lang/Exception; -> 124 a-BB@0x124)
+
+a-BB@0x200 : [ a-BB@0x20a ]
+	121     (00000200) iget-object          v0, v6, Lcom/jgamelbe/CMP/a/c;->e Lcom/jgamelbe/CMP/c/a;
+	122     (00000204) iget                 v0, v0, Lcom/jgamelbe/CMP/c/a;->p I
+	123     (00000208) int-to-long          v0, v0
+	160:27b
+	(Ljava/lang/Exception; -> 124 a-BB@0x124)
+
+a-BB@0x20a : [ a-BB@0x22a a-BB@0x12 ]
+	124     (0000020a) iget-object          v3, v6, Lcom/jgamelbe/CMP/a/c;->e Lcom/jgamelbe/CMP/c/a;
+	125     (0000020e) invoke-direct        v6, v3, v2, v0, v1, Lcom/jgamelbe/CMP/a/c;->a(Lcom/jgamelbe/CMP/c/a; Ljava/io/InputStream; J)Z
+	126     (00000214) move-result          v0
+	127     (00000216) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	128     (0000021c) move-result-object   v0
+	129     (0000021e) invoke-virtual       v0, Ljava/lang/Boolean;->booleanValue()Z
+	130     (00000224) move-result          v1
+	131     (00000226) if-eqz               v1, -10a
+	160:27b
+	(Ljava/lang/Exception; -> 124 a-BB@0x124)
+
+a-BB@0x22a : [ a-BB@0x12 ]
+	132     (0000022a) new-instance         v0, Ljava/util/Date;
+	133     (0000022e) invoke-direct        v0, Ljava/util/Date;-><init>()V
+	134     (00000234) iput-object          v0, v6, Lcom/jgamelbe/CMP/a/c;->g Ljava/util/Date;
+	135     (00000238) invoke-direct        v6, Lcom/jgamelbe/CMP/a/c;->a()Z
+	136     (0000023e) move-result          v0
+	137     (00000240) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	138     (00000246) move-result-object   v0
+	139     (00000248) goto/16              -11b
+	160:27b
+	(Ljava/lang/Exception; -> 124 a-BB@0x124)
+
+a-BB@0x24c : [ a-BB@0x1a4 ]
+	140     (0000024c) new-instance         v2, Ljava/lang/StringBuilder;
+	141     (00000250) invoke-virtual       v1, Lorg/apache/http/HttpHost;->toURI()Ljava/lang/String;
+	142     (00000256) move-result-object   v1
+	143     (00000258) invoke-static        v1, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	144     (0000025e) move-result-object   v1
+	145     (00000260) invoke-direct        v2, v1, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	146     (00000266) invoke-interface     v0, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
+	147     (0000026c) move-result-object   v0
+	148     (0000026e) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	149     (00000274) move-result-object   v0
+	150     (00000276) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	151     (0000027c) move-result-object   v0
+	152     (0000027e) goto                 -6d
+
+a-BB@0x280 : 
+	153     (00000280) packed-switch-payload c8
+

@@ -1,0 +1,34 @@
+# Lcom/a/a/g/a;->a([C C)Z [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:char[]
+# - v5:char
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x6 a-BB@0x18 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-eqz               v4, +b
+
+a-BB@0x6 : [ a-BB@0xa ]
+	2       (00000006) array-length         v2, v4
+	3       (00000008) move                 v1, v0
+
+a-BB@0xa : [ a-BB@0xe a-BB@0x18 ]
+	4       (0000000a) if-ge                v1, v2, +7
+
+a-BB@0xe : [ a-BB@0x16 a-BB@0x1a ]
+	5       (0000000e) aget-char            v3, v4, v1
+	6       (00000012) if-ne                v3, v5, +4
+
+a-BB@0x16 : [ a-BB@0x18 ]
+	7       (00000016) const/4              v0, 1
+
+a-BB@0x18 : 
+	8       (00000018) return               v0
+
+a-BB@0x1a : [ a-BB@0xa ]
+	9       (0000001a) add-int/lit8         v1, v1, 1
+	10      (0000001e) goto                 -a
+

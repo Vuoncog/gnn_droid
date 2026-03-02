@@ -1,0 +1,49 @@
+# Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->recycleBlockedQueue()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+recycleBlockedQueue-BB@0x0 : [ recycleBlockedQueue-BB@0x16 ]
+	0       (00000000) iget-object          v0, v3, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->lock Ljava/util/concurrent/locks/ReentrantLock;
+	1       (00000004) invoke-virtual       v0, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+	2       (0000000a) iget-object          v0, v3, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->blockedQueue Ljava/util/Queue;
+	3       (0000000e) invoke-interface     v0, Ljava/util/Queue;->iterator()Ljava/util/Iterator;
+	4       (00000014) move-result-object   v1
+	0:45
+	(Ljava/lang/Throwable; -> 48 recycleBlockedQueue-BB@0x48)
+
+recycleBlockedQueue-BB@0x16 : [ recycleBlockedQueue-BB@0x22 recycleBlockedQueue-BB@0x56 ]
+	5       (00000016) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	6       (0000001c) move-result          v0
+	7       (0000001e) if-eqz               v0, +1c
+	0:45
+	(Ljava/lang/Throwable; -> 48 recycleBlockedQueue-BB@0x48)
+
+recycleBlockedQueue-BB@0x22 : [ recycleBlockedQueue-BB@0x3a recycleBlockedQueue-BB@0x16 ]
+	8       (00000022) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) check-cast           v0, Lio/fabric/sdk/android/services/concurrency/Dependency;
+	11      (0000002e) invoke-virtual       v3, v0, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->canProcess(Lio/fabric/sdk/android/services/concurrency/Dependency;)Z
+	12      (00000034) move-result          v2
+	13      (00000036) if-eqz               v2, -10
+	0:45
+	(Ljava/lang/Throwable; -> 48 recycleBlockedQueue-BB@0x48)
+
+recycleBlockedQueue-BB@0x3a : [ recycleBlockedQueue-BB@0x16 ]
+	14      (0000003a) invoke-super         v3, v0, Ljava/util/concurrent/PriorityBlockingQueue;->offer(Ljava/lang/Object;)Z
+	15      (00000040) invoke-interface     v1, Ljava/util/Iterator;->remove()V
+	16      (00000046) goto                 -18
+
+recycleBlockedQueue-BB@0x48 : 
+	17      (00000048) move-exception       v0
+	18      (0000004a) iget-object          v1, v3, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->lock Ljava/util/concurrent/locks/ReentrantLock;
+	19      (0000004e) invoke-virtual       v1, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+	20      (00000054) throw                v0
+
+recycleBlockedQueue-BB@0x56 : 
+	21      (00000056) iget-object          v0, v3, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->lock Ljava/util/concurrent/locks/ReentrantLock;
+	22      (0000005a) invoke-virtual       v0, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+	23      (00000060) return-void          
+

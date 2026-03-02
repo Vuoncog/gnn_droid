@@ -1,0 +1,30 @@
+# Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->writeProperties(Lcom/crashlytics/android/core/CodedOutputStream;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:com.crashlytics.android.core.CodedOutputStream
+#
+# - return:void
+
+writeProperties-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget-wide            v2, v4, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->address J
+	2       (00000006) invoke-virtual       v5, v0, v2, v3, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt64(I J)V
+	3       (0000000c) const/4              v0, 2
+	4       (0000000e) iget-object          v1, v4, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->symbol Ljava/lang/String;
+	5       (00000012) invoke-static        v1, Lcom/crashlytics/android/core/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;
+	6       (00000018) move-result-object   v1
+	7       (0000001a) invoke-virtual       v5, v0, v1, Lcom/crashlytics/android/core/CodedOutputStream;->writeBytes(I Lcom/crashlytics/android/core/ByteString;)V
+	8       (00000020) const/4              v0, 3
+	9       (00000022) iget-object          v1, v4, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->file Ljava/lang/String;
+	10      (00000026) invoke-static        v1, Lcom/crashlytics/android/core/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) invoke-virtual       v5, v0, v1, Lcom/crashlytics/android/core/CodedOutputStream;->writeBytes(I Lcom/crashlytics/android/core/ByteString;)V
+	13      (00000034) const/4              v0, 4
+	14      (00000036) iget-wide            v2, v4, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->offset J
+	15      (0000003a) invoke-virtual       v5, v0, v2, v3, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt64(I J)V
+	16      (00000040) const/4              v0, 5
+	17      (00000042) iget                 v1, v4, Lcom/crashlytics/android/core/NativeCrashWriter$FrameMessage;->importance I
+	18      (00000046) invoke-virtual       v5, v0, v1, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt32(I I)V
+	19      (0000004c) return-void          
+

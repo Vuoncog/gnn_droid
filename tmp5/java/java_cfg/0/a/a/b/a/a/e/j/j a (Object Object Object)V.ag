@@ -1,0 +1,22 @@
+# La/a/b/a/a/e/j;->a(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)V [access_flags=public final bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+# - v4:java.lang.Object
+# - v5:java.lang.Object
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0x14 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget-object          v0, v2, La/a/b/a/a/e/j;->a La/a/b/a/a/e/i;
+	2       (00000006) if-eq                v4, v0, +7
+
+a-BB@0xa : [ a-BB@0x14 ]
+	3       (0000000a) iget-object          v0, v2, La/a/b/a/a/e/j;->a La/a/b/a/a/e/i;
+	4       (0000000e) invoke-virtual       v0, v1, v1, La/a/b/a/a/e/i;->a(Z Z)V
+
+a-BB@0x14 : 
+	5       (00000014) return-void          
+

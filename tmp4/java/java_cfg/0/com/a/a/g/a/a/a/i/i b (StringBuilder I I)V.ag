@@ -1,0 +1,42 @@
+# Lcom/a/a/g/a/a/a/i;->b(Ljava/lang/StringBuilder; I I)V [access_flags=protected final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.StringBuilder
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x26 ]
+	0       (00000000) invoke-virtual       v4, Lcom/a/a/g/a/a/a/i;->c()Lcom/a/a/g/a/a/a/t;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, v6, v7, Lcom/a/a/g/a/a/a/t;->a(I I)I
+	3       (0000000e) move-result          v0
+	4       (00000010) invoke-virtual       v4, v5, v0, Lcom/a/a/g/a/a/a/i;->a(Ljava/lang/StringBuilder; I)V
+	5       (00000016) invoke-virtual       v4, v0, Lcom/a/a/g/a/a/a/i;->a(I)I
+	6       (0000001c) move-result          v2
+	7       (0000001e) const                v1, 100000 # [1.401298464324817e-40]
+	8       (00000024) const/4              v0, 0
+
+b-BB@0x26 : [ b-BB@0x2c b-BB@0x48 ]
+	9       (00000026) const/4              v3, 5
+	10      (00000028) if-ge                v0, v3, +10
+
+b-BB@0x2c : [ b-BB@0x34 b-BB@0x3e ]
+	11      (0000002c) div-int              v3, v2, v1
+	12      (00000030) if-nez               v3, +7
+
+b-BB@0x34 : [ b-BB@0x3e ]
+	13      (00000034) const/16             v3, 48
+	14      (00000038) invoke-virtual       v5, v3, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+b-BB@0x3e : [ b-BB@0x26 ]
+	15      (0000003e) div-int/lit8         v1, v1, 10
+	16      (00000042) add-int/lit8         v0, v0, 1
+	17      (00000046) goto                 -10
+
+b-BB@0x48 : 
+	18      (00000048) invoke-virtual       v5, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	19      (0000004e) return-void          
+

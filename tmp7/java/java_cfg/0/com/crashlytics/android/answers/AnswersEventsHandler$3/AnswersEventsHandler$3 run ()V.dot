@@ -1,0 +1,59 @@
+digraph {
+	graph [bb="0,0,1157.3,490",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_f6fffc15b89de2679412cad49ce6827a {
+		graph [bb="29.321,8,1149.3,482",
+			label="Lcom/crashlytics/android/answers/AnswersEventsHandler$3;.run->()V\nLocal registers v0 ... v4\nreturn = void",
+			lheight=0.62,
+			lp="589.32,455.5",
+			lwidth=6.43
+		];
+		struct_72fdea3ed7cfd5aaa6ed4a5ece5d5785	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/AnswersEventsHandler$3;-&gt;this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/AnswersEventsHandler;-&gt;strategy Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;-&gt;sendEvents()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="589.32,375.5",
+			width=15.319];
+		struct_861c1d0875e28b69266feaae2065e735	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="115.32,39.5",
+			width=1.9583];
+		struct_72fdea3ed7cfd5aaa6ed4a5ece5d5785:tail -> struct_861c1d0875e28b69266feaae2065e735:header	[color=blue,
+			pos="e,55.321,53.5 59.321,335.5 59.321,213.7 -62.803,62.348 45.276,53.873"];
+		struct_d1e926de2aa54cb299d2d228d692d99f	[height=2.4861,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#848484">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="red">'Answers'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7070D6">v3</FONT>, <FONT color="red">'Failed to send events files'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#7070D6">v3</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="524.32,189.5",
+			width=12.5];
+		struct_72fdea3ed7cfd5aaa6ed4a5ece5d5785:tail -> struct_d1e926de2aa54cb299d2d228d692d99f:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="157.82,304.5",
+			pos="e,99.321,272.5 59.321,335.5 59.321,306.09 90.772,305.38 97.897,282.47"];
+		struct_d1e926de2aa54cb299d2d228d692d99f:tail -> struct_861c1d0875e28b69266feaae2065e735:header	[color=blue,
+			pos="e,66.321,56.5 84.321,108.5 63.208,108.5 65.133,87.973 66.054,66.626"];
+	}
+}

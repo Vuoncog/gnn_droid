@@ -1,0 +1,24 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;->getSessionSettingsData()Lio/fabric/sdk/android/services/settings/SessionSettingsData; [access_flags=static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:io.fabric.sdk.android.services.settings.SessionSettingsData
+
+getSessionSettingsData-BB@0x0 : [ getSessionSettingsData-BB@0x14 getSessionSettingsData-BB@0x18 ]
+	0       (00000000) invoke-static        Lio/fabric/sdk/android/services/settings/Settings;->getInstance()Lio/fabric/sdk/android/services/settings/Settings;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, Lio/fabric/sdk/android/services/settings/Settings;->awaitSettingsData()Lio/fabric/sdk/android/services/settings/SettingsData;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-nez               v0, +4
+
+getSessionSettingsData-BB@0x14 : [ getSessionSettingsData-BB@0x16 ]
+	5       (00000014) const/4              v0, 0
+
+getSessionSettingsData-BB@0x16 : 
+	6       (00000016) return-object        v0
+
+getSessionSettingsData-BB@0x18 : [ getSessionSettingsData-BB@0x16 ]
+	7       (00000018) iget-object          v0, v0, Lio/fabric/sdk/android/services/settings/SettingsData;->sessionData Lio/fabric/sdk/android/services/settings/SessionSettingsData;
+	8       (0000001c) goto                 -3
+

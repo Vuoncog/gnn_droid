@@ -1,0 +1,66 @@
+.class Lcom/ailock/tszlock/RingPlay$1;
+.super Landroid/os/Handler;
+.source "RingPlay.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/ailock/tszlock/RingPlay;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/ailock/tszlock/RingPlay;
+
+
+# direct methods
+.method constructor <init>(Lcom/ailock/tszlock/RingPlay;)V
+    .locals 0
+
+    .prologue
+    .line 1
+    iput-object p1, p0, Lcom/ailock/tszlock/RingPlay$1;->this$0:Lcom/ailock/tszlock/RingPlay;
+
+    .line 18
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 1
+    .param p1, "paramMessage"    # Landroid/os/Message;
+
+    .prologue
+    .line 20
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 26
+    :goto_0
+    :pswitch_0
+    return-void
+
+    .line 24
+    :pswitch_1
+    iget-object v0, p0, Lcom/ailock/tszlock/RingPlay$1;->this$0:Lcom/ailock/tszlock/RingPlay;
+
+    invoke-static {v0}, Lcom/ailock/tszlock/RingPlay;->access$0(Lcom/ailock/tszlock/RingPlay;)V
+
+    goto :goto_0
+
+    .line 20
+    :pswitch_data_0
+    .packed-switch 0x3e8
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method

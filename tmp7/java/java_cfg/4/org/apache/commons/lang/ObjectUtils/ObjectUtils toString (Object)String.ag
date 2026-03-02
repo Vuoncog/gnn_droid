@@ -1,0 +1,22 @@
+# Lorg/apache/commons/lang/ObjectUtils;->toString(Ljava/lang/Object;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : [ toString-BB@0x4 toString-BB@0xa ]
+	0       (00000000) if-nez               v1, +5
+
+toString-BB@0x4 : [ toString-BB@0x8 ]
+	1       (00000004) const-string         v0, ''
+
+toString-BB@0x8 : 
+	2       (00000008) return-object        v0
+
+toString-BB@0xa : [ toString-BB@0x8 ]
+	3       (0000000a) invoke-virtual       v1, Ljava/lang/Object;->toString()Ljava/lang/String;
+	4       (00000010) move-result-object   v0
+	5       (00000012) goto                 -5
+

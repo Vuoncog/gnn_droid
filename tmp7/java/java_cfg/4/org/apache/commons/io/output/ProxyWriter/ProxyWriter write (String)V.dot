@@ -1,0 +1,87 @@
+digraph {
+	graph [bb="0,0,868,651",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_9db9effc094d84bd2adaa327a2b3f617 {
+		graph [bb="8,8,860,643",
+			label="Lorg/apache/commons/io/output/ProxyWriter;.write->(Ljava/lang/String;)V\nLocal registers v0 ... v2\nparam v3 = java.lang.String\nreturn = \
+void",
+			lheight=0.83,
+			lp="434,609",
+			lwidth=6.83
+		];
+		struct_bf4ebb90341afe5a8c41a93cad3f926c	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="373,532.5",
+			width=2.2917];
+		struct_1b4e120525610ff2cba840e05300b169	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT color="#DF3A01">Ljava/lang/String;-&gt;length()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="203,426.5",
+			width=5.0833];
+		struct_bf4ebb90341afe5a8c41a93cad3f926c:tail -> struct_1b4e120525610ff2cba840e05300b169:header	[color=red,
+			pos="e,41,454.5 301,506.5 274.42,506.5 84.11,488.15 47.194,462.92"];
+		struct_5807a978dd9db7b19c91c46ee8bc0b49	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/output/ProxyWriter;-&gt;beforeWrite(I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/output/ProxyWriter;-&gt;out Ljava/io/Writer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#DF3A01">Ljava/io/Writer;-&gt;write(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/output/ProxyWriter;-&gt;afterWrite(I)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="526,298.5",
+			width=8.9028];
+		struct_bf4ebb90341afe5a8c41a93cad3f926c:tail -> struct_5807a978dd9db7b19c91c46ee8bc0b49:header	[color=green,
+			pos="e,231,348.5 312,503.5 312,462.06 373.38,496.36 395,461 411,434.84 413.7,416.31 395,392 351.35,335.27 242.8,414.99 231.89,358.74"];
+		struct_1b4e120525610ff2cba840e05300b169:tail -> struct_5807a978dd9db7b19c91c46ee8bc0b49:header	[color=blue,
+			pos="e,216,345.5 41,397.5 41,330.77 121.1,374.22 185,355 194.7,352.08 198.96,348.57 205.65,346.74"];
+		struct_217b4740f46d02aa11f3e594f13b0d51	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/output/ProxyWriter;-&gt;handleIOException(Ljava/io/IOException;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="424,145.5",
+			width=11.333];
+		struct_1b4e120525610ff2cba840e05300b169:tail -> struct_217b4740f46d02aa11f3e594f13b0d51:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="111,298.5",
+			pos="e,41,184.5 41,397.5 41,306.35 41,281.02 41,194.75"];
+		struct_67a430ee130028acf02083ec211e5095	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="434,39.5",
+			width=2.0694];
+		struct_5807a978dd9db7b19c91c46ee8bc0b49:tail -> struct_67a430ee130028acf02083ec211e5095:header	[color=blue,
+			pos="e,385,56.5 231,247.5 231,213.47 818.07,216.15 841,191 868.25,161.11 868.21,129.93 841,100 775,27.403 412.59,148.91 386.48,66.633"];
+		struct_5807a978dd9db7b19c91c46ee8bc0b49:tail -> struct_217b4740f46d02aa11f3e594f13b0d51:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="199,216.5",
+			pos="e,41,184.5 216,250.5 206.99,250.5 82.004,208.68 48.964,190.8"];
+		struct_217b4740f46d02aa11f3e594f13b0d51:tail -> struct_67a430ee130028acf02083ec211e5095:header	[color=blue,
+			pos="e,370,53.5 41,105.5 41,70.876 296.56,55.524 359.81,53.689"];
+	}
+}

@@ -1,0 +1,27 @@
+# Lorg/apache/commons/io/output/TeeOutputStream;->write([B I I)V [access_flags=public synchronized]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:byte[]
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+write-BB@0x0 : [ write-BB@0x2 ]
+	0       (00000000) monitor-enter        v1
+
+write-BB@0x2 : 
+	1       (00000002) invoke-super         v1, v2, v3, v4, Lorg/apache/commons/io/output/ProxyOutputStream;->write([B I I)V
+	2       (00000008) iget-object          v0, v1, Lorg/apache/commons/io/output/TeeOutputStream;->branch Ljava/io/OutputStream;
+	3       (0000000c) invoke-virtual       v0, v2, v3, v4, Ljava/io/OutputStream;->write([B I I)V
+	4       (00000012) monitor-exit         v1
+	5       (00000014) return-void          
+	2:11
+	(Ljava/lang/Throwable; -> 16 write-BB@0x16)
+
+write-BB@0x16 : 
+	6       (00000016) move-exception       v0
+	7       (00000018) monitor-exit         v1
+	8       (0000001a) throw                v0
+

@@ -1,0 +1,56 @@
+digraph {
+	graph [bb="0,0,958,460",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_b994af0e05713e7c5cb72b481c1dad13 {
+		graph [bb="8,8,950,452",
+			label="Lorg/apache/commons/lang/StringUtils;.strip->(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;\nLocal registers v0 ... v0\nparam \
+v1 = java.lang.String\nparam v2 = java.lang.String\nreturn = java.lang.String",
+			lheight=1.04,
+			lp="479,410.5",
+			lwidth=9.32
+		];
+		struct_fcfe3d1d61c75cb7b8135687b51b5a6b	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/StringUtils;-&gt;isEmpty(Ljava/lang/String;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="347,315.5",
+			width=8.8472];
+		struct_dd82040921ac0e2354a80194102aca7b	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="113,39.5",
+			width=2.3333];
+		struct_fcfe3d1d61c75cb7b8135687b51b5a6b:tail -> struct_dd82040921ac0e2354a80194102aca7b:header	[color=red,
+			pos="e,39,53.5 39,278.5 -7.582,278.5 -10.766,83.21 29.447,56.511"];
+		struct_4b92146edd3f748c2b73baf38fef4bf6	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/StringUtils;-&gt;stripStart(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/StringUtils;-&gt;stripEnd(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-9</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="489,166.5",
+			width=12.569];
+		struct_fcfe3d1d61c75cb7b8135687b51b5a6b:tail -> struct_4b92146edd3f748c2b73baf38fef4bf6:header	[color=green,
+			pos="e,62,227.5 50,275.5 50,257.46 58.075,251.51 60.977,237.82"];
+		struct_4b92146edd3f748c2b73baf38fef4bf6:tail -> struct_dd82040921ac0e2354a80194102aca7b:header	[color=blue,
+			pos="e,49,56.5 62,104.5 62,86.197 53.085,80.448 50.02,66.46"];
+	}
+}

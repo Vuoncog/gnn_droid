@@ -1,0 +1,33 @@
+# Lorg/apache/commons/lang/builder/ToStringBuilder;-><init>(Ljava/lang/Object; Lorg/apache/commons/lang/builder/ToStringStyle; Ljava/lang/StringBuffer;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+# - v3:org.apache.commons.lang.builder.ToStringStyle
+# - v4:java.lang.StringBuffer
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xa <init>-BB@0x12 ]
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) if-nez               v3, +6
+
+<init>-BB@0xa : [ <init>-BB@0x12 ]
+	2       (0000000a) invoke-static        Lorg/apache/commons/lang/builder/ToStringBuilder;->getDefaultStyle()Lorg/apache/commons/lang/builder/ToStringStyle;
+	3       (00000010) move-result-object   v3
+
+<init>-BB@0x12 : [ <init>-BB@0x16 <init>-BB@0x24 ]
+	4       (00000012) if-nez               v4, +9
+
+<init>-BB@0x16 : [ <init>-BB@0x24 ]
+	5       (00000016) new-instance         v4, Ljava/lang/StringBuffer;
+	6       (0000001a) const/16             v0, 512
+	7       (0000001e) invoke-direct        v4, v0, Ljava/lang/StringBuffer;-><init>(I)V
+
+<init>-BB@0x24 : 
+	8       (00000024) iput-object          v4, v1, Lorg/apache/commons/lang/builder/ToStringBuilder;->buffer Ljava/lang/StringBuffer;
+	9       (00000028) iput-object          v3, v1, Lorg/apache/commons/lang/builder/ToStringBuilder;->style Lorg/apache/commons/lang/builder/ToStringStyle;
+	10      (0000002c) iput-object          v2, v1, Lorg/apache/commons/lang/builder/ToStringBuilder;->object Ljava/lang/Object;
+	11      (00000030) invoke-virtual       v3, v4, v2, Lorg/apache/commons/lang/builder/ToStringStyle;->appendStart(Ljava/lang/StringBuffer; Ljava/lang/Object;)V
+	12      (00000036) return-void          
+

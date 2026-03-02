@@ -1,0 +1,24 @@
+# Lorg/apache/commons/lang/math/FloatRange;->containsNumber(Ljava/lang/Number;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Number
+#
+# - return:boolean
+
+containsNumber-BB@0x0 : [ containsNumber-BB@0x4 containsNumber-BB@0x8 ]
+	0       (00000000) if-nez               v2, +4
+
+containsNumber-BB@0x4 : [ containsNumber-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+containsNumber-BB@0x6 : 
+	2       (00000006) return               v0
+
+containsNumber-BB@0x8 : [ containsNumber-BB@0x6 ]
+	3       (00000008) invoke-virtual       v2, Ljava/lang/Number;->floatValue()F
+	4       (0000000e) move-result          v0
+	5       (00000010) invoke-virtual       v1, v0, Lorg/apache/commons/lang/math/FloatRange;->containsFloat(F)Z
+	6       (00000016) move-result          v0
+	7       (00000018) goto                 -9
+

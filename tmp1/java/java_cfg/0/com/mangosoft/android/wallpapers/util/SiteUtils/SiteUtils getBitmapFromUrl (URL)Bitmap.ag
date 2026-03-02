@@ -1,0 +1,93 @@
+# Lcom/mangosoft/android/wallpapers/util/SiteUtils;->getBitmapFromUrl(Ljava/net/URL;)Landroid/graphics/Bitmap; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:java.net.URL
+#
+# - return:android.graphics.Bitmap
+
+getBitmapFromUrl-BB@0x0 : [ getBitmapFromUrl-BB@0x6 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v3, 0
+	2       (00000004) const/4              v5, 0
+
+getBitmapFromUrl-BB@0x6 : [ getBitmapFromUrl-BB@0x1c ]
+	3       (00000006) new-instance         v4, Ljava/io/BufferedInputStream;
+	4       (0000000a) invoke-virtual       v9, Ljava/net/URL;->openStream()Ljava/io/InputStream;
+	5       (00000010) move-result-object   v7
+	6       (00000012) const/16             v8, 4096
+	7       (00000016) invoke-direct        v4, v7, v8, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream; I)V
+	6:1b
+	(Ljava/lang/Throwable; -> 7a getBitmapFromUrl-BB@0x7a)
+	(Ljava/io/IOException; -> 68 getBitmapFromUrl-BB@0x68)
+
+getBitmapFromUrl-BB@0x1c : [ getBitmapFromUrl-BB@0x34 ]
+	8       (0000001c) new-instance         v2, Ljava/io/ByteArrayOutputStream;
+	9       (00000020) invoke-direct        v2, Ljava/io/ByteArrayOutputStream;-><init>()V
+	10      (00000026) new-instance         v6, Ljava/io/BufferedOutputStream;
+	11      (0000002a) const/16             v7, 4096
+	12      (0000002e) invoke-direct        v6, v2, v7, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream; I)V
+	1c:33
+	(Ljava/lang/Throwable; -> 8a getBitmapFromUrl-BB@0x8a)
+	(Ljava/io/IOException; -> 98 getBitmapFromUrl-BB@0x98)
+
+getBitmapFromUrl-BB@0x34 : [ getBitmapFromUrl-BB@0x66 ]
+	13      (00000034) invoke-static        v4, v6, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->copy(Ljava/io/InputStream; Ljava/io/OutputStream;)I
+	14      (0000003a) invoke-virtual       v6, Ljava/io/OutputStream;->flush()V
+	15      (00000040) invoke-virtual       v2, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+	16      (00000046) move-result-object   v1
+	17      (00000048) const/4              v7, 0
+	18      (0000004a) array-length         v8, v1
+	19      (0000004c) invoke-static        v1, v7, v8, Landroid/graphics/BitmapFactory;->decodeByteArray([B I I)Landroid/graphics/Bitmap;
+	20      (00000052) move-result-object   v0
+	21      (00000054) invoke-static        v4, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeStream(Ljava/io/Closeable;)V
+	22      (0000005a) invoke-static        v6, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeStream(Ljava/io/Closeable;)V
+	23      (00000060) move-object          v5, v6
+	24      (00000062) move-object          v3, v4
+	25      (00000064) move-object          v7, v0
+	34:51
+	(Ljava/lang/Throwable; -> 90 getBitmapFromUrl-BB@0x90)
+	(Ljava/io/IOException; -> 9e getBitmapFromUrl-BB@0x9e)
+
+getBitmapFromUrl-BB@0x66 : 
+	26      (00000066) return-object        v7
+
+getBitmapFromUrl-BB@0x68 : [ getBitmapFromUrl-BB@0x6a ]
+	27      (00000068) move-exception       v7
+
+getBitmapFromUrl-BB@0x6a : [ getBitmapFromUrl-BB@0x66 ]
+	28      (0000006a) invoke-static        v3, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeStream(Ljava/io/Closeable;)V
+	29      (00000070) invoke-static        v5, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeStream(Ljava/io/Closeable;)V
+	30      (00000076) const/4              v7, 0
+	31      (00000078) goto                 -9
+
+getBitmapFromUrl-BB@0x7a : [ getBitmapFromUrl-BB@0x7c ]
+	32      (0000007a) move-exception       v7
+
+getBitmapFromUrl-BB@0x7c : 
+	33      (0000007c) invoke-static        v3, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeStream(Ljava/io/Closeable;)V
+	34      (00000082) invoke-static        v5, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeStream(Ljava/io/Closeable;)V
+	35      (00000088) throw                v7
+
+getBitmapFromUrl-BB@0x8a : [ getBitmapFromUrl-BB@0x7c ]
+	36      (0000008a) move-exception       v7
+	37      (0000008c) move-object          v3, v4
+	38      (0000008e) goto                 -9
+
+getBitmapFromUrl-BB@0x90 : [ getBitmapFromUrl-BB@0x7c ]
+	39      (00000090) move-exception       v7
+	40      (00000092) move-object          v5, v6
+	41      (00000094) move-object          v3, v4
+	42      (00000096) goto                 -d
+
+getBitmapFromUrl-BB@0x98 : [ getBitmapFromUrl-BB@0x6a ]
+	43      (00000098) move-exception       v7
+	44      (0000009a) move-object          v3, v4
+	45      (0000009c) goto                 -19
+
+getBitmapFromUrl-BB@0x9e : [ getBitmapFromUrl-BB@0x6a ]
+	46      (0000009e) move-exception       v7
+	47      (000000a0) move-object          v5, v6
+	48      (000000a2) move-object          v3, v4
+	49      (000000a4) goto                 -1d
+

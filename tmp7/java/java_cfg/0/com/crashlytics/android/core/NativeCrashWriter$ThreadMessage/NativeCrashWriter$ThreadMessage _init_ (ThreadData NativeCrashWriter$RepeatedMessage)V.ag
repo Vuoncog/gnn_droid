@@ -1,0 +1,21 @@
+# Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;-><init>(Lcom/crashlytics/android/core/internal/models/ThreadData; Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.crashlytics.android.core.internal.models.ThreadData
+# - v5:com.crashlytics.android.core.NativeCrashWriter$RepeatedMessage
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v2, 1
+	1       (00000002) new-array            v0, v2, [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;
+	2       (00000006) const/4              v1, 0
+	3       (00000008) aput-object          v5, v0, v1
+	4       (0000000c) invoke-direct        v3, v2, v0, Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-><init>(I [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;)V
+	5       (00000012) iget-object          v0, v4, Lcom/crashlytics/android/core/internal/models/ThreadData;->name Ljava/lang/String;
+	6       (00000016) iput-object          v0, v3, Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;->name Ljava/lang/String;
+	7       (0000001a) iget                 v0, v4, Lcom/crashlytics/android/core/internal/models/ThreadData;->importance I
+	8       (0000001e) iput                 v0, v3, Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;->importance I
+	9       (00000022) return-void          
+

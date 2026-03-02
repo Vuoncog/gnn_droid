@@ -1,0 +1,27 @@
+# La/a/b/a/b/b/c/e;->e(F)Ljava/lang/String; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:float
+#
+# - return:java.lang.String
+
+e-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) invoke-virtual       v5, v6, La/a/b/a/b/b/c/e;->d(F)F
+	3       (00000010) move-result          v1
+	4       (00000012) float-to-double      v2, v1
+	5       (00000014) iget                 v1, v5, La/a/b/a/b/b/c/e;->e I
+	6       (00000018) const/4              v4, 0
+	7       (0000001a) invoke-static        v2, v3, v1, v4, La/a/b/a/f/f;->a(D I Z)Ljava/lang/String;
+	8       (00000020) move-result-object   v1
+	9       (00000022) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (00000028) move-result-object   v0
+	11      (0000002a) iget-object          v1, v5, La/a/b/a/b/b/c/e;->g Ljava/lang/String;
+	12      (0000002e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000034) move-result-object   v0
+	14      (00000036) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	15      (0000003c) move-result-object   v0
+	16      (0000003e) return-object        v0
+

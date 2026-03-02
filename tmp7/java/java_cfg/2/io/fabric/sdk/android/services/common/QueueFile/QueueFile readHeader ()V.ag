@@ -1,0 +1,72 @@
+# Lio/fabric/sdk/android/services/common/QueueFile;->readHeader()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+readHeader-BB@0x0 : [ readHeader-BB@0x48 readHeader-BB@0x9e ]
+	0       (00000000) iget-object          v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->raf Ljava/io/RandomAccessFile;
+	1       (00000004) const-wide/16        v2, 0 # [0.0]
+	2       (00000008) invoke-virtual       v0, v2, v3, Ljava/io/RandomAccessFile;->seek(J)V
+	3       (0000000e) iget-object          v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->raf Ljava/io/RandomAccessFile;
+	4       (00000012) iget-object          v1, v4, Lio/fabric/sdk/android/services/common/QueueFile;->buffer [B
+	5       (00000016) invoke-virtual       v0, v1, Ljava/io/RandomAccessFile;->readFully([B)V
+	6       (0000001c) iget-object          v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->buffer [B
+	7       (00000020) const/4              v1, 0
+	8       (00000022) invoke-static        v0, v1, Lio/fabric/sdk/android/services/common/QueueFile;->readInt([B I)I
+	9       (00000028) move-result          v0
+	10      (0000002a) iput                 v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->fileLength I
+	11      (0000002e) iget                 v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->fileLength I
+	12      (00000032) int-to-long          v0, v0
+	13      (00000034) iget-object          v2, v4, Lio/fabric/sdk/android/services/common/QueueFile;->raf Ljava/io/RandomAccessFile;
+	14      (00000038) invoke-virtual       v2, Ljava/io/RandomAccessFile;->length()J
+	15      (0000003e) move-result-wide     v2
+	16      (00000040) cmp-long             v0, v0, v2
+	17      (00000044) if-lez               v0, +2d
+
+readHeader-BB@0x48 : 
+	18      (00000048) new-instance         v0, Ljava/io/IOException;
+	19      (0000004c) new-instance         v1, Ljava/lang/StringBuilder;
+	20      (00000050) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	21      (00000056) const-string         v2, 'File is truncated. Expected length: '
+	22      (0000005a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000060) move-result-object   v1
+	24      (00000062) iget                 v2, v4, Lio/fabric/sdk/android/services/common/QueueFile;->fileLength I
+	25      (00000066) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	26      (0000006c) move-result-object   v1
+	27      (0000006e) const-string         v2, ', Actual length: '
+	28      (00000072) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	29      (00000078) move-result-object   v1
+	30      (0000007a) iget-object          v2, v4, Lio/fabric/sdk/android/services/common/QueueFile;->raf Ljava/io/RandomAccessFile;
+	31      (0000007e) invoke-virtual       v2, Ljava/io/RandomAccessFile;->length()J
+	32      (00000084) move-result-wide     v2
+	33      (00000086) invoke-virtual       v1, v2, v3, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	34      (0000008c) move-result-object   v1
+	35      (0000008e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	36      (00000094) move-result-object   v1
+	37      (00000096) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	38      (0000009c) throw                v0
+
+readHeader-BB@0x9e : 
+	39      (0000009e) iget-object          v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->buffer [B
+	40      (000000a2) const/4              v1, 4
+	41      (000000a4) invoke-static        v0, v1, Lio/fabric/sdk/android/services/common/QueueFile;->readInt([B I)I
+	42      (000000aa) move-result          v0
+	43      (000000ac) iput                 v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->elementCount I
+	44      (000000b0) iget-object          v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->buffer [B
+	45      (000000b4) const/16             v1, 8
+	46      (000000b8) invoke-static        v0, v1, Lio/fabric/sdk/android/services/common/QueueFile;->readInt([B I)I
+	47      (000000be) move-result          v0
+	48      (000000c0) iget-object          v1, v4, Lio/fabric/sdk/android/services/common/QueueFile;->buffer [B
+	49      (000000c4) const/16             v2, 12
+	50      (000000c8) invoke-static        v1, v2, Lio/fabric/sdk/android/services/common/QueueFile;->readInt([B I)I
+	51      (000000ce) move-result          v1
+	52      (000000d0) invoke-direct        v4, v0, Lio/fabric/sdk/android/services/common/QueueFile;->readElement(I)Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	53      (000000d6) move-result-object   v0
+	54      (000000d8) iput-object          v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->first Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	55      (000000dc) invoke-direct        v4, v1, Lio/fabric/sdk/android/services/common/QueueFile;->readElement(I)Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	56      (000000e2) move-result-object   v0
+	57      (000000e4) iput-object          v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->last Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	58      (000000e8) return-void          
+

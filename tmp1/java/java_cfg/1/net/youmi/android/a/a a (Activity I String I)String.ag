@@ -1,0 +1,100 @@
+# Lnet/youmi/android/a;->a(Landroid/app/Activity; I Ljava/lang/String; I)Ljava/lang/String; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.app.Activity
+# - v7:int
+# - v8:java.lang.String
+# - v9:int
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x5c a-BB@0x60 ]
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) const/16             v1, 512
+	2       (00000008) invoke-direct        v0, v1, Ljava/lang/StringBuilder;-><init>(I)V
+	3       (0000000e) const-string         v1, 'adid='
+	4       (00000012) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) invoke-virtual       v0, v7, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	6       (0000001e) const-string         v1, 'et'
+	7       (00000022) new-instance         v2, Ljava/lang/StringBuilder;
+	8       (00000026) invoke-static        v9, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+	9       (0000002c) move-result-object   v3
+	10      (0000002e) invoke-direct        v2, v3, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	11      (00000034) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (0000003a) move-result-object   v2
+	13      (0000003c) invoke-static        v0, v1, v2, Lnet/youmi/android/t;->a(Ljava/lang/StringBuilder; Ljava/lang/String; Ljava/lang/String;)V
+	14      (00000042) const-string         v1, 'eid'
+	15      (00000046) invoke-static        v0, v1, v8, Lnet/youmi/android/t;->a(Ljava/lang/StringBuilder; Ljava/lang/String; Ljava/lang/String;)V
+	16      (0000004c) const-string         v1, '0'
+	17      (00000050) invoke-static        v6, Lnet/youmi/android/e;->i(Landroid/content/Context;)Z
+	18      (00000056) move-result          v2
+	19      (00000058) if-eqz               v2, +4
+	0:131
+	(Ljava/lang/Exception; -> 136 a-BB@0x136)
+
+a-BB@0x5c : [ a-BB@0x60 ]
+	20      (0000005c) const-string         v1, '1'
+	0:131
+	(Ljava/lang/Exception; -> 136 a-BB@0x136)
+
+a-BB@0x60 : [ a-BB@0x134 ]
+	21      (00000060) const-string         v2, 'ts'
+	22      (00000064) invoke-static        v0, v2, v1, Lnet/youmi/android/t;->a(Ljava/lang/StringBuilder; Ljava/lang/String; Ljava/lang/String;)V
+	23      (0000006a) new-instance         v1, Ljava/util/Date;
+	24      (0000006e) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	25      (00000074) move-result-wide     v2
+	26      (00000076) invoke-direct        v1, v2, v3, Ljava/util/Date;-><init>(J)V
+	27      (0000007c) invoke-static        v0, v6, v1, Lnet/youmi/android/t;->a(Ljava/lang/StringBuilder; Landroid/app/Activity; Ljava/util/Date;)V
+	28      (00000082) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	29      (00000088) move-result-object   v2
+	30      (0000008a) invoke-static        Lnet/youmi/android/t;->a()Ljava/lang/String;
+	31      (00000090) move-result-object   v3
+	32      (00000092) new-instance         v4, Ljava/lang/StringBuilder;
+	33      (00000096) invoke-static        Lnet/youmi/android/n;->c()Ljava/lang/String;
+	34      (0000009c) move-result-object   v5
+	35      (0000009e) invoke-static        v5, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	36      (000000a4) move-result-object   v5
+	37      (000000a6) invoke-direct        v4, v5, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	38      (000000ac) const/4              v5, 0
+	39      (000000ae) invoke-virtual       v1, Ljava/util/Date;->getSeconds()I
+	40      (000000b4) move-result          v1
+	41      (000000b6) rem-int/lit8         v1, v1, 16
+	42      (000000ba) add-int/lit8         v1, v1, 1
+	43      (000000be) invoke-virtual       v3, v5, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	44      (000000c4) move-result-object   v1
+	45      (000000c6) invoke-virtual       v4, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	46      (000000cc) move-result-object   v1
+	47      (000000ce) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	48      (000000d4) move-result-object   v1
+	49      (000000d6) invoke-static        v2, v1, Lnet/youmi/android/as;->b(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	50      (000000dc) move-result-object   v1
+	51      (000000de) const-string         v2, 'sig'
+	52      (000000e2) invoke-static        v0, v2, v1, Lnet/youmi/android/t;->a(Ljava/lang/StringBuilder; Ljava/lang/String; Ljava/lang/String;)V
+	53      (000000e8) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	54      (000000ee) move-result-object   v0
+	55      (000000f0) const                v1, 2147483647 # [nan]
+	56      (000000f6) invoke-static        v1, Lnet/youmi/android/ag;->a(I)I
+	57      (000000fc) move-result          v1
+	58      (000000fe) invoke-static        v0, v1, Lnet/youmi/android/ar;->a(Ljava/lang/String; I)Ljava/lang/String;
+	59      (00000104) move-result-object   v0
+	60      (00000106) new-instance         v2, Ljava/lang/StringBuilder;
+	61      (0000010a) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	62      (00000110) move-result-object   v0
+	63      (00000112) invoke-direct        v2, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	64      (00000118) const-string         v0, '&k='
+	65      (0000011c) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	66      (00000122) move-result-object   v0
+	67      (00000124) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	68      (0000012a) move-result-object   v0
+	69      (0000012c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	70      (00000132) move-result-object   v0
+
+a-BB@0x134 : 
+	71      (00000134) return-object        v0
+
+a-BB@0x136 : [ a-BB@0x134 ]
+	72      (00000136) move-exception       v0
+	73      (00000138) const-string         v0, ''
+	74      (0000013c) goto                 -4
+

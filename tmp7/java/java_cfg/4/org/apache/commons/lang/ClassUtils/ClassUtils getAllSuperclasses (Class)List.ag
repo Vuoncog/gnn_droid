@@ -1,0 +1,32 @@
+# Lorg/apache/commons/lang/ClassUtils;->getAllSuperclasses(Ljava/lang/Class;)Ljava/util/List; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Class
+#
+# - return:java.util.List
+
+getAllSuperclasses-BB@0x0 : [ getAllSuperclasses-BB@0x4 getAllSuperclasses-BB@0x8 ]
+	0       (00000000) if-nez               v2, +4
+
+getAllSuperclasses-BB@0x4 : [ getAllSuperclasses-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+getAllSuperclasses-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+getAllSuperclasses-BB@0x8 : [ getAllSuperclasses-BB@0x1a ]
+	3       (00000008) new-instance         v0, Ljava/util/ArrayList;
+	4       (0000000c) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	5       (00000012) invoke-virtual       v2, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+	6       (00000018) move-result-object   v1
+
+getAllSuperclasses-BB@0x1a : [ getAllSuperclasses-BB@0x1e getAllSuperclasses-BB@0x6 ]
+	7       (0000001a) if-eqz               v1, -a
+
+getAllSuperclasses-BB@0x1e : [ getAllSuperclasses-BB@0x1a ]
+	8       (0000001e) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	9       (00000024) invoke-virtual       v1, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+	10      (0000002a) move-result-object   v1
+	11      (0000002c) goto                 -9
+

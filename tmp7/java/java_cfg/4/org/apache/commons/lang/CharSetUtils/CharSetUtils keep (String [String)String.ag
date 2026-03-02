@@ -1,0 +1,38 @@
+# Lorg/apache/commons/lang/CharSetUtils;->keep(Ljava/lang/String; [Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.lang.String[]
+#
+# - return:java.lang.String
+
+keep-BB@0x0 : [ keep-BB@0x4 keep-BB@0x8 ]
+	0       (00000000) if-nez               v1, +4
+
+keep-BB@0x4 : [ keep-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+keep-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+keep-BB@0x8 : [ keep-BB@0x14 keep-BB@0x20 ]
+	3       (00000008) invoke-virtual       v1, Ljava/lang/String;->length()I
+	4       (0000000e) move-result          v0
+	5       (00000010) if-eqz               v0, +8
+
+keep-BB@0x14 : [ keep-BB@0x20 keep-BB@0x26 ]
+	6       (00000014) invoke-static        v2, Lorg/apache/commons/lang/ArrayUtils;->isEmpty([Ljava/lang/Object;)Z
+	7       (0000001a) move-result          v0
+	8       (0000001c) if-eqz               v0, +5
+
+keep-BB@0x20 : [ keep-BB@0x6 ]
+	9       (00000020) const-string         v0, ''
+	10      (00000024) goto                 -f
+
+keep-BB@0x26 : [ keep-BB@0x6 ]
+	11      (00000026) const/4              v0, 1
+	12      (00000028) invoke-static        v1, v2, v0, Lorg/apache/commons/lang/CharSetUtils;->modify(Ljava/lang/String; [Ljava/lang/String; Z)Ljava/lang/String;
+	13      (0000002e) move-result-object   v0
+	14      (00000030) goto                 -15
+

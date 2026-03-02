@@ -1,0 +1,37 @@
+# Lcom/a/a/g/a/a;->b([I [F)V [access_flags=protected static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int[]
+# - v5:float[]
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x8 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) aget                 v1, v5, v2
+	2       (00000006) const/4              v0, 1
+
+b-BB@0x8 : [ b-BB@0xe b-BB@0x26 ]
+	3       (00000008) array-length         v3, v4
+	4       (0000000a) if-ge                v0, v3, +e
+
+b-BB@0xe : [ b-BB@0x1a b-BB@0x20 ]
+	5       (0000000e) aget                 v3, v5, v0
+	6       (00000012) cmpg-float           v3, v3, v1
+	7       (00000016) if-gez               v3, +5
+
+b-BB@0x1a : [ b-BB@0x20 ]
+	8       (0000001a) aget                 v1, v5, v0
+	9       (0000001e) move                 v2, v0
+
+b-BB@0x20 : [ b-BB@0x8 ]
+	10      (00000020) add-int/lit8         v0, v0, 1
+	11      (00000024) goto                 -e
+
+b-BB@0x26 : 
+	12      (00000026) aget                 v0, v4, v2
+	13      (0000002a) add-int/lit8         v0, v0, -1
+	14      (0000002e) aput                 v0, v4, v2
+	15      (00000032) return-void          
+

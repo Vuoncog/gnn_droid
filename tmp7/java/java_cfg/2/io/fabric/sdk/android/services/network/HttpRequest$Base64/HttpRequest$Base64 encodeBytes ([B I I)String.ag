@@ -1,0 +1,30 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest$Base64;->encodeBytes([B I I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:byte[]
+# - v4:int
+# - v5:int
+#
+# - return:java.lang.String
+
+encodeBytes-BB@0x0 : [ encodeBytes-BB@0x8 ]
+	0       (00000000) invoke-static        v3, v4, v5, Lio/fabric/sdk/android/services/network/HttpRequest$Base64;->encodeBytesToBytes([B I I)[B
+	1       (00000006) move-result-object   v1
+
+encodeBytes-BB@0x8 : [ encodeBytes-BB@0x16 ]
+	2       (00000008) new-instance         v0, Ljava/lang/String;
+	3       (0000000c) const-string         v2, 'US-ASCII'
+	4       (00000010) invoke-direct        v0, v1, v2, Ljava/lang/String;-><init>([B Ljava/lang/String;)V
+	8:15
+	(Ljava/io/UnsupportedEncodingException; -> 18 encodeBytes-BB@0x18)
+
+encodeBytes-BB@0x16 : 
+	5       (00000016) return-object        v0
+
+encodeBytes-BB@0x18 : [ encodeBytes-BB@0x16 ]
+	6       (00000018) move-exception       v0
+	7       (0000001a) new-instance         v0, Ljava/lang/String;
+	8       (0000001e) invoke-direct        v0, v1, Ljava/lang/String;-><init>([B)V
+	9       (00000024) goto                 -7
+

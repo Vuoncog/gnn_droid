@@ -1,0 +1,38 @@
+# Lcom/a/a/d/c/j;->d(C)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:char
+#
+# - return:boolean
+
+d-BB@0x0 : [ d-BB@0x8 d-BB@0x28 ]
+	0       (00000000) const/16             v0, 32
+	1       (00000004) if-eq                v1, v0, +12
+
+d-BB@0x8 : [ d-BB@0x10 d-BB@0x18 ]
+	2       (00000008) const/16             v0, 48
+	3       (0000000c) if-lt                v1, v0, +6
+
+d-BB@0x10 : [ d-BB@0x18 d-BB@0x28 ]
+	4       (00000010) const/16             v0, 57
+	5       (00000014) if-le                v1, v0, +a
+
+d-BB@0x18 : [ d-BB@0x20 d-BB@0x2c ]
+	6       (00000018) const/16             v0, 65
+	7       (0000001c) if-lt                v1, v0, +8
+
+d-BB@0x20 : [ d-BB@0x28 d-BB@0x2c ]
+	8       (00000020) const/16             v0, 90
+	9       (00000024) if-gt                v1, v0, +4
+
+d-BB@0x28 : [ d-BB@0x2a ]
+	10      (00000028) const/4              v0, 1
+
+d-BB@0x2a : 
+	11      (0000002a) return               v0
+
+d-BB@0x2c : [ d-BB@0x2a ]
+	12      (0000002c) const/4              v0, 0
+	13      (0000002e) goto                 -2
+

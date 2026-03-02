@@ -1,0 +1,49 @@
+# Lcom/unlocker/purchase/c;->a(I Lcom/unlocker/b;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+# - v9:com.unlocker.b
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0x36 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-boolean         v0, v7, Lcom/unlocker/purchase/c;->g Z
+	2       (00000006) if-nez               v0, +18
+
+a-BB@0xa : [ a-BB@0x34 ]
+	3       (0000000a) const-string         v0, 'UNLOCKER-PurchManager'
+	4       (0000000e) const-string         v1, 'Purchase manager not started'
+	5       (00000012) invoke-static        v0, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String;)I
+	6       (00000018) const-string         v0, 'beginPurchase'
+	7       (0000001c) const-string         v1, 'manager not started'
+	8       (00000020) invoke-direct        v7, v0, v1, Lcom/unlocker/purchase/c;->a(Ljava/lang/String; Ljava/lang/String;)V
+	9       (00000026) invoke-static        v2, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	10      (0000002c) move-result-object   v0
+	11      (0000002e) invoke-interface     v9, v0, v2, Lcom/unlocker/b;->a(Ljava/lang/Object; Z)V
+
+a-BB@0x34 : 
+	12      (00000034) return-void          
+
+a-BB@0x36 : [ a-BB@0x34 ]
+	13      (00000036) new-instance         v4, Lcom/unlocker/purchase/c$a;
+	14      (0000003a) iget-object          v0, v7, Lcom/unlocker/purchase/c;->d Lcom/unlocker/purchase/Parameters;
+	15      (0000003e) iget-object          v0, v0, Lcom/unlocker/purchase/Parameters;->account Ljava/lang/String;
+	16      (00000042) iget-object          v1, v7, Lcom/unlocker/purchase/c;->d Lcom/unlocker/purchase/Parameters;
+	17      (00000046) iget                 v1, v1, Lcom/unlocker/purchase/Parameters;->index I
+	18      (0000004a) const/4              v2, 0
+	19      (0000004c) invoke-direct        v4, v0, v1, v2, Lcom/unlocker/purchase/c$a;-><init>(Ljava/lang/String; I Lcom/unlocker/purchase/c$1;)V
+	20      (00000052) iget-object          v0, v7, Lcom/unlocker/purchase/c;->b Lcom/unlocker/billing/a;
+	21      (00000056) iget-object          v1, v7, Lcom/unlocker/purchase/c;->a Landroid/app/Activity;
+	22      (0000005a) iget-object          v2, v7, Lcom/unlocker/purchase/c;->d Lcom/unlocker/purchase/Parameters;
+	23      (0000005e) iget-object          v2, v2, Lcom/unlocker/purchase/Parameters;->sku Ljava/lang/String;
+	24      (00000062) const-string         v3, 'inapp'
+	25      (00000066) new-instance         v5, Lcom/unlocker/purchase/c$5;
+	26      (0000006a) invoke-direct        v5, v7, v9, Lcom/unlocker/purchase/c$5;-><init>(Lcom/unlocker/purchase/c; Lcom/unlocker/b;)V
+	27      (00000070) invoke-virtual       v4, Lcom/unlocker/purchase/c$a;->toString()Ljava/lang/String;
+	28      (00000076) move-result-object   v6
+	29      (00000078) move                 v4, v8
+	30      (0000007a) invoke-virtual/range v0 ... v6, Lcom/unlocker/billing/a;->a(Landroid/app/Activity; Ljava/lang/String; Ljava/lang/String; I Lcom/unlocker/billing/a$c; Ljava/lang/String;)V
+	31      (00000080) goto                 -26
+

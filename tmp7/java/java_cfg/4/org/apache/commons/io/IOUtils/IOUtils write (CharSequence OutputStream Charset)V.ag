@@ -1,0 +1,21 @@
+# Lorg/apache/commons/io/IOUtils;->write(Ljava/lang/CharSequence; Ljava/io/OutputStream; Ljava/nio/charset/Charset;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.CharSequence
+# - v2:java.io.OutputStream
+# - v3:java.nio.charset.Charset
+#
+# - return:void
+
+write-BB@0x0 : [ write-BB@0x4 write-BB@0x12 ]
+	0       (00000000) if-eqz               v1, +9
+
+write-BB@0x4 : [ write-BB@0x12 ]
+	1       (00000004) invoke-virtual       v1, Ljava/lang/Object;->toString()Ljava/lang/String;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-static        v0, v2, v3, Lorg/apache/commons/io/IOUtils;->write(Ljava/lang/String; Ljava/io/OutputStream; Ljava/nio/charset/Charset;)V
+
+write-BB@0x12 : 
+	4       (00000012) return-void          
+

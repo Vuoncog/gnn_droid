@@ -1,0 +1,57 @@
+# Lorg/apache/commons/io/IOCase;->forName(Ljava/lang/String;)Lorg/apache/commons/io/IOCase; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:org.apache.commons.io.IOCase
+
+forName-BB@0x0 : [ forName-BB@0x14 forName-BB@0x1a ]
+	0       (00000000) sget-object          v0, Lorg/apache/commons/io/IOCase;->SENSITIVE Lorg/apache/commons/io/IOCase;
+	1       (00000004) iget-object          v0, v0, Lorg/apache/commons/io/IOCase;->name Ljava/lang/String;
+	2       (00000008) invoke-virtual       v0, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +5
+
+forName-BB@0x14 : [ forName-BB@0x18 ]
+	5       (00000014) sget-object          v0, Lorg/apache/commons/io/IOCase;->SENSITIVE Lorg/apache/commons/io/IOCase;
+
+forName-BB@0x18 : 
+	6       (00000018) return-object        v0
+
+forName-BB@0x1a : [ forName-BB@0x2e forName-BB@0x34 ]
+	7       (0000001a) sget-object          v0, Lorg/apache/commons/io/IOCase;->INSENSITIVE Lorg/apache/commons/io/IOCase;
+	8       (0000001e) iget-object          v0, v0, Lorg/apache/commons/io/IOCase;->name Ljava/lang/String;
+	9       (00000022) invoke-virtual       v0, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	10      (00000028) move-result          v0
+	11      (0000002a) if-eqz               v0, +5
+
+forName-BB@0x2e : [ forName-BB@0x18 ]
+	12      (0000002e) sget-object          v0, Lorg/apache/commons/io/IOCase;->INSENSITIVE Lorg/apache/commons/io/IOCase;
+	13      (00000032) goto                 -d
+
+forName-BB@0x34 : [ forName-BB@0x48 forName-BB@0x4e ]
+	14      (00000034) sget-object          v0, Lorg/apache/commons/io/IOCase;->SYSTEM Lorg/apache/commons/io/IOCase;
+	15      (00000038) iget-object          v0, v0, Lorg/apache/commons/io/IOCase;->name Ljava/lang/String;
+	16      (0000003c) invoke-virtual       v0, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	17      (00000042) move-result          v0
+	18      (00000044) if-eqz               v0, +5
+
+forName-BB@0x48 : [ forName-BB@0x18 ]
+	19      (00000048) sget-object          v0, Lorg/apache/commons/io/IOCase;->SYSTEM Lorg/apache/commons/io/IOCase;
+	20      (0000004c) goto                 -1a
+
+forName-BB@0x4e : 
+	21      (0000004e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	22      (00000052) new-instance         v1, Ljava/lang/StringBuilder;
+	23      (00000056) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	24      (0000005c) const-string         v2, 'Invalid IOCase name: '
+	25      (00000060) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (00000066) move-result-object   v1
+	27      (00000068) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (0000006e) move-result-object   v1
+	29      (00000070) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (00000076) move-result-object   v1
+	31      (00000078) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	32      (0000007e) throw                v0
+

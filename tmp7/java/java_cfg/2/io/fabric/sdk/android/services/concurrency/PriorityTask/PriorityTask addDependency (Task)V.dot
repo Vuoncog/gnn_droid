@@ -1,0 +1,55 @@
+digraph {
+	graph [bb="0,0,880,439",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_c94e35957765d677822702379a73a0c8 {
+		graph [bb="8,8,872,431",
+			label="Lio/fabric/sdk/android/services/concurrency/PriorityTask;.addDependency->(Lio/fabric/sdk/android/services/concurrency/Task;)V\nLocal \
+registers v0 ... v1\nparam v2 = io.fabric.sdk.android.services.concurrency.Task\nreturn = void",
+			lheight=0.83,
+			lp="440,397",
+			lwidth=11.78
+		];
+		struct_1baaf074dd240c24b1598253fa368d3c	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-enter </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="148,331.5",
+			width=2.4583];
+		struct_edb1f55b2367cae107684ea1ae6a122b	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/concurrency/PriorityTask;-&gt;dependencies Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;add(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="442,214.5",
+			width=10.625];
+		struct_1baaf074dd240c24b1598253fa368d3c:tail -> struct_edb1f55b2367cae107684ea1ae6a122b:header	[color=blue,
+			pos="e,81,264.5 81,313.5 81,295.64 81,288.76 81,274.85"];
+		struct_cab28f1a23cffc5cfd531b2c06d1e132	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="153,61.5",
+			width=2.7083];
+		struct_edb1f55b2367cae107684ea1ae6a122b:tail -> struct_cab28f1a23cffc5cfd531b2c06d1e132:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="153.5,132.5",
+			pos="e,81,100.5 81,163.5 81,139.22 81,130.73 81,110.64"];
+	}
+}

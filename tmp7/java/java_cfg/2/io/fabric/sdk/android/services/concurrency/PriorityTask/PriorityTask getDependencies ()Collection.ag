@@ -1,0 +1,24 @@
+# Lio/fabric/sdk/android/services/concurrency/PriorityTask;->getDependencies()Ljava/util/Collection; [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.util.Collection
+
+getDependencies-BB@0x0 : [ getDependencies-BB@0x2 ]
+	0       (00000000) monitor-enter        v1
+
+getDependencies-BB@0x2 : 
+	1       (00000002) iget-object          v0, v1, Lio/fabric/sdk/android/services/concurrency/PriorityTask;->dependencies Ljava/util/List;
+	2       (00000006) invoke-static        v0, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) monitor-exit         v1
+	5       (00000010) return-object        v0
+	2:b
+	(Ljava/lang/Throwable; -> 12 getDependencies-BB@0x12)
+
+getDependencies-BB@0x12 : 
+	6       (00000012) move-exception       v0
+	7       (00000014) monitor-exit         v1
+	8       (00000016) throw                v0
+

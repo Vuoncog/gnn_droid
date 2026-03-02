@@ -1,0 +1,21 @@
+# Lorg/apache/commons/lang/StringUtils;->defaultIfEmpty(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.lang.String
+#
+# - return:java.lang.String
+
+defaultIfEmpty-BB@0x0 : [ defaultIfEmpty-BB@0xc defaultIfEmpty-BB@0xe ]
+	0       (00000000) invoke-static        v1, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +3
+
+defaultIfEmpty-BB@0xc : 
+	3       (0000000c) return-object        v2
+
+defaultIfEmpty-BB@0xe : [ defaultIfEmpty-BB@0xc ]
+	4       (0000000e) move-object          v2, v1
+	5       (00000010) goto                 -2
+

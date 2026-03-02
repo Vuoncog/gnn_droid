@@ -1,0 +1,18 @@
+# Lcom/jgamelbe/CMP/b/r;->b()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0xc b-BB@0x12 ]
+	0       (00000000) invoke-virtual       v1, Lcom/jgamelbe/CMP/b/r;->a()Lcom/jgamelbe/CMP/b/a;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +5
+
+b-BB@0xc : [ b-BB@0x12 ]
+	3       (0000000c) invoke-interface     v0, Lcom/jgamelbe/CMP/b/a;->a()V
+
+b-BB@0x12 : 
+	4       (00000012) return-void          
+

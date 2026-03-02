@@ -1,0 +1,54 @@
+# La/a/b/a/b/b/b/d/a;->f_()La/a/a/a; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:a.a.a.a
+
+f_-BB@0x0 : [ f_-BB@0x70 ]
+	0       (00000000) new-instance         v1, La/a/a/a;
+	1       (00000004) invoke-direct        v1, La/a/a/a;-><init>()V
+	2       (0000000a) const-string         v2, 'name'
+	3       (0000000e) iget-object          v0, v5, La/a/b/a/b/b/b/d/a;->a La/a/b/a/b/b/b/e/a;
+	4       (00000012) iget-object          v0, v0, La/a/b/a/b/b/b/e/a;->a La/a/b/a/b/a/e;
+	5       (00000016) invoke-virtual       v0, La/a/b/a/b/a/e;->e()Ljava/lang/Object;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) check-cast           v0, Ljava/lang/String;
+	8       (00000022) invoke-virtual       v1, v2, v0, La/a/a/a;->a(Ljava/lang/String; Ljava/lang/String;)V
+	9       (00000028) const-string         v2, 'color'
+	10      (0000002c) iget-object          v0, v5, La/a/b/a/b/b/b/d/a;->a La/a/b/a/b/b/b/e/a;
+	11      (00000030) iget-object          v0, v0, La/a/b/a/b/b/b/e/a;->c La/a/b/a/b/a/b;
+	12      (00000034) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	13      (0000003a) move-result-object   v0
+	14      (0000003c) check-cast           v0, Ljava/lang/Integer;
+	15      (00000040) invoke-virtual       v0, Ljava/lang/Integer;->intValue()I
+	16      (00000046) move-result          v0
+	17      (00000048) invoke-virtual       v1, v2, v0, La/a/a/a;->a(Ljava/lang/String; I)V
+	18      (0000004e) const-string         v0, 'mixID'
+	19      (00000052) invoke-virtual       v5, La/a/b/a/b/b/b/d/a;->k()I
+	20      (00000058) move-result          v2
+	21      (0000005a) invoke-virtual       v1, v0, v2, La/a/a/a;->a(Ljava/lang/String; I)V
+	22      (00000060) invoke-virtual       v5, La/a/b/a/b/b/b/d/a;->j()[La/a/b/a/b/b/b/d/b;
+	23      (00000066) move-result-object   v2
+	24      (00000068) array-length         v0, v2
+	25      (0000006a) new-array            v3, v0, [Ljava/lang/String;
+	26      (0000006e) const/4              v0, 0
+
+f_-BB@0x70 : [ f_-BB@0x76 f_-BB@0x90 ]
+	27      (00000070) array-length         v4, v2
+	28      (00000072) if-ge                v0, v4, +f
+
+f_-BB@0x76 : [ f_-BB@0x70 ]
+	29      (00000076) aget-object          v4, v2, v0
+	30      (0000007a) iget                 v4, v4, La/a/b/a/b/b/b/d/b;->a I
+	31      (0000007e) invoke-static        v4, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+	32      (00000084) move-result-object   v4
+	33      (00000086) aput-object          v4, v3, v0
+	34      (0000008a) add-int/lit8         v0, v0, 1
+	35      (0000008e) goto                 -f
+
+f_-BB@0x90 : 
+	36      (00000090) const-string         v0, 'channels'
+	37      (00000094) invoke-virtual       v1, v0, v3, La/a/a/a;->a(Ljava/lang/String; [Ljava/lang/String;)V
+	38      (0000009a) return-object        v1
+

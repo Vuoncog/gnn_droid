@@ -1,0 +1,21 @@
+# Lorg/apache/commons/lang/CharUtils;->toIntValue(C I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:char
+# - v2:int
+#
+# - return:int
+
+toIntValue-BB@0x0 : [ toIntValue-BB@0xc toIntValue-BB@0xe ]
+	0       (00000000) invoke-static        v1, Lorg/apache/commons/lang/CharUtils;->isAsciiNumeric(C)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +3
+
+toIntValue-BB@0xc : 
+	3       (0000000c) return               v2
+
+toIntValue-BB@0xe : [ toIntValue-BB@0xc ]
+	4       (0000000e) add-int/lit8         v2, v1, -48
+	5       (00000012) goto                 -3
+

@@ -1,0 +1,15 @@
+# La/a/b/a/b/b/j/c/e;->g(La/a/b/a/b/b/b/a/a;)La/a/b/a/b/b/b/e/e; [access_flags=protected final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:a.a.b.a.b.b.b.a.a
+#
+# - return:a.a.b.a.b.b.b.e.e
+
+g-BB@0x0 : 
+	0       (00000000) new-instance         v0, La/a/b/a/b/b/j/c/b/d;
+	1       (00000004) iget-object          v1, v2, La/a/b/a/b/b/j/c/e;->q La/a/b/a/b/b/b/b;
+	2       (00000008) iget-object          v1, v1, La/a/b/a/b/b/b/b;->b Ljava/lang/String;
+	3       (0000000c) invoke-direct        v0, v1, v3, La/a/b/a/b/b/j/c/b/d;-><init>(Ljava/lang/String; La/a/b/a/b/b/b/a/a;)V
+	4       (00000012) return-object        v0
+

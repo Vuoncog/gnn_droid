@@ -1,0 +1,56 @@
+digraph {
+	graph [bb="0,0,683.31,424",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_77fc6e936ee709440f0373ae99296da7 {
+		graph [bb="13.31,8,675.31,416",
+			label="Lcom/jgamelbe/CMP/a/a;.b->()Lcom/jgamelbe/CMP/a/b;\nLocal registers v0 ... v1\nreturn = com.jgamelbe.CMP.a.b",
+			lheight=0.62,
+			lp="344.31,389.5",
+			lwidth=5.10
+		];
+		struct_a74adb374b71f66c5f659aea45717bda	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">Lcom/jgamelbe/CMP/a/a;-&gt;b Ljava/util/concurrent/BlockingQueue;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/BlockingQueue;-&gt;element()Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Lcom/jgamelbe/CMP/a/b;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="344.31,298.5",
+			width=8.9583];
+		struct_afc77083e6fc1b269e1397d45d72fbc0	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="116.31,39.5",
+			width=2.4722];
+		struct_a74adb374b71f66c5f659aea45717bda:tail -> struct_afc77083e6fc1b269e1397d45d72fbc0:header	[color=blue,
+			pos="e,37.31,53.5 43.31,247.5 43.31,164.94 -41.195,62.719 27.157,54.086"];
+		struct_4cb95171dc11251458bbd3cde458d547	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="157.31,145.5",
+			width=2.7083];
+		struct_a74adb374b71f66c5f659aea45717bda:tail -> struct_4cb95171dc11251458bbd3cde458d547:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="142.81,216.5",
+			pos="e,85.31,184.5 43.31,247.5 43.31,217.66 76.333,217.66 83.815,194.59"];
+		struct_4cb95171dc11251458bbd3cde458d547:tail -> struct_afc77083e6fc1b269e1397d45d72fbc0:header	[color=blue,
+			pos="e,52.31,56.5 70.31,108.5 49.197,108.5 51.122,87.973 52.043,66.626"];
+	}
+}

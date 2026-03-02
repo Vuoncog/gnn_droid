@@ -1,0 +1,189 @@
+# Lorg/apache/commons/io/FileUtils;->doCopyFile(Ljava/io/File; Ljava/io/File; Z)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:java.io.File
+# - v14:java.io.File
+# - v15:boolean
+#
+# - return:void
+
+doCopyFile-BB@0x0 : [ doCopyFile-BB@0x14 doCopyFile-BB@0x5e ]
+	0       (00000000) const-wide/32        v8, 31457280 # [31457280.0]
+	1       (00000006) const/4              v2, 0
+	2       (00000008) invoke-virtual       v14, Ljava/io/File;->exists()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +27
+
+doCopyFile-BB@0x14 : [ doCopyFile-BB@0x20 doCopyFile-BB@0x5e ]
+	5       (00000014) invoke-virtual       v14, Ljava/io/File;->isDirectory()Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-eqz               v0, +21
+
+doCopyFile-BB@0x20 : 
+	8       (00000020) new-instance         v0, Ljava/io/IOException;
+	9       (00000024) new-instance         v1, Ljava/lang/StringBuilder;
+	10      (00000028) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	11      (0000002e) const-string         v2, "Destination '"
+	12      (00000032) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v1
+	14      (0000003a) invoke-virtual       v1, v14, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	15      (00000040) move-result-object   v1
+	16      (00000042) const-string         v2, "' exists but is a directory"
+	17      (00000046) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004c) move-result-object   v1
+	19      (0000004e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (00000054) move-result-object   v1
+	21      (00000056) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	22      (0000005c) throw                v0
+
+doCopyFile-BB@0x5e : [ doCopyFile-BB@0x68 ]
+	23      (0000005e) new-instance         v7, Ljava/io/FileInputStream;
+	24      (00000062) invoke-direct        v7, v13, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+	5e:67
+	(Ljava/lang/Throwable; -> 138 doCopyFile-BB@0x138)
+
+doCopyFile-BB@0x68 : [ doCopyFile-BB@0x72 ]
+	25      (00000068) new-instance         v6, Ljava/io/FileOutputStream;
+	26      (0000006c) invoke-direct        v6, v14, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+	68:71
+	(Ljava/lang/Throwable; -> 16e doCopyFile-BB@0x16e)
+
+doCopyFile-BB@0x72 : [ doCopyFile-BB@0x7a ]
+	27      (00000072) invoke-virtual       v7, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
+	28      (00000078) move-result-object   v1
+	72:77
+	(Ljava/lang/Throwable; -> 178 doCopyFile-BB@0x178)
+
+doCopyFile-BB@0x7a : [ doCopyFile-BB@0x82 ]
+	29      (0000007a) invoke-virtual       v6, Ljava/io/FileOutputStream;->getChannel()Ljava/nio/channels/FileChannel;
+	30      (00000080) move-result-object   v0
+	7a:7f
+	(Ljava/lang/Throwable; -> 182 doCopyFile-BB@0x182)
+
+doCopyFile-BB@0x82 : [ doCopyFile-BB@0x8e ]
+	31      (00000082) invoke-virtual       v1, Ljava/nio/channels/FileChannel;->size()J
+	32      (00000088) move-result-wide     v10
+	33      (0000008a) const-wide/16        v2, 0 # [0.0]
+	82:a9
+	(Ljava/lang/Throwable; -> 190 doCopyFile-BB@0x190)
+
+doCopyFile-BB@0x8e : [ doCopyFile-BB@0x96 doCopyFile-BB@0xb6 ]
+	34      (0000008e) cmp-long             v4, v2, v10
+	35      (00000092) if-gez               v4, +12
+	82:a9
+	(Ljava/lang/Throwable; -> 190 doCopyFile-BB@0x190)
+
+doCopyFile-BB@0x96 : [ doCopyFile-BB@0xa2 doCopyFile-BB@0xb0 ]
+	36      (00000096) sub-long             v4, v10, v2
+	37      (0000009a) cmp-long             v4, v4, v8
+	38      (0000009e) if-lez               v4, +9
+	82:a9
+	(Ljava/lang/Throwable; -> 190 doCopyFile-BB@0x190)
+
+doCopyFile-BB@0xa2 : [ doCopyFile-BB@0xa4 ]
+	39      (000000a2) move-wide            v4, v8
+	82:a9
+	(Ljava/lang/Throwable; -> 190 doCopyFile-BB@0x190)
+
+doCopyFile-BB@0xa4 : [ doCopyFile-BB@0x8e ]
+	40      (000000a4) invoke-virtual/range v0 ... v5, Ljava/nio/channels/FileChannel;->transferFrom(Ljava/nio/channels/ReadableByteChannel; J J)J
+	41      (000000aa) move-result-wide     v4
+	42      (000000ac) add-long/2addr       v2, v4
+	43      (000000ae) goto                 -10
+
+doCopyFile-BB@0xb0 : [ doCopyFile-BB@0xa4 ]
+	44      (000000b0) sub-long             v4, v10, v2
+	45      (000000b4) goto                 -8
+
+doCopyFile-BB@0xb6 : [ doCopyFile-BB@0xe6 doCopyFile-BB@0x15a ]
+	46      (000000b6) invoke-static        v0, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	47      (000000bc) invoke-static        v6, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/OutputStream;)V
+	48      (000000c2) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	49      (000000c8) invoke-static        v7, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
+	50      (000000ce) invoke-virtual       v13, Ljava/io/File;->length()J
+	51      (000000d4) move-result-wide     v0
+	52      (000000d6) invoke-virtual       v14, Ljava/io/File;->length()J
+	53      (000000dc) move-result-wide     v2
+	54      (000000de) cmp-long             v0, v0, v2
+	55      (000000e2) if-eqz               v0, +3c
+
+doCopyFile-BB@0xe6 : 
+	56      (000000e6) new-instance         v0, Ljava/io/IOException;
+	57      (000000ea) new-instance         v1, Ljava/lang/StringBuilder;
+	58      (000000ee) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	59      (000000f4) const-string         v2, "Failed to copy full contents from '"
+	60      (000000f8) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	61      (000000fe) move-result-object   v1
+	62      (00000100) invoke-virtual       v1, v13, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	63      (00000106) move-result-object   v1
+	64      (00000108) const-string         v2, "' to '"
+	65      (0000010c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	66      (00000112) move-result-object   v1
+	67      (00000114) invoke-virtual       v1, v14, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	68      (0000011a) move-result-object   v1
+	69      (0000011c) const-string         v2, "'"
+	70      (00000120) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	71      (00000126) move-result-object   v1
+	72      (00000128) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	73      (0000012e) move-result-object   v1
+	74      (00000130) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	75      (00000136) throw                v0
+
+doCopyFile-BB@0x138 : [ doCopyFile-BB@0x140 ]
+	76      (00000138) move-exception       v0
+	77      (0000013a) move-object          v1, v2
+	78      (0000013c) move-object          v3, v2
+	79      (0000013e) move-object          v4, v2
+
+doCopyFile-BB@0x140 : 
+	80      (00000140) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	81      (00000146) invoke-static        v3, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/OutputStream;)V
+	82      (0000014c) invoke-static        v2, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	83      (00000152) invoke-static        v4, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
+	84      (00000158) throw                v0
+
+doCopyFile-BB@0x15a : [ doCopyFile-BB@0x15e doCopyFile-BB@0x16c ]
+	85      (0000015a) if-eqz               v15, +9
+
+doCopyFile-BB@0x15e : [ doCopyFile-BB@0x16c ]
+	86      (0000015e) invoke-virtual       v13, Ljava/io/File;->lastModified()J
+	87      (00000164) move-result-wide     v0
+	88      (00000166) invoke-virtual       v14, v0, v1, Ljava/io/File;->setLastModified(J)Z
+
+doCopyFile-BB@0x16c : 
+	89      (0000016c) return-void          
+
+doCopyFile-BB@0x16e : [ doCopyFile-BB@0x140 ]
+	90      (0000016e) move-exception       v0
+	91      (00000170) move-object          v1, v2
+	92      (00000172) move-object          v3, v2
+	93      (00000174) move-object          v4, v7
+	94      (00000176) goto                 -1b
+
+doCopyFile-BB@0x178 : [ doCopyFile-BB@0x140 ]
+	95      (00000178) move-exception       v0
+	96      (0000017a) move-object          v1, v2
+	97      (0000017c) move-object          v3, v6
+	98      (0000017e) move-object          v4, v7
+	99      (00000180) goto                 -20
+
+doCopyFile-BB@0x182 : [ doCopyFile-BB@0x140 ]
+	100     (00000182) move-exception       v0
+	101     (00000184) move-object          v3, v6
+	102     (00000186) move-object          v4, v7
+	103     (00000188) move-object          v12, v2
+	104     (0000018a) move-object          v2, v1
+	105     (0000018c) move-object          v1, v12
+	106     (0000018e) goto                 -27
+
+doCopyFile-BB@0x190 : [ doCopyFile-BB@0x140 ]
+	107     (00000190) move-exception       v2
+	108     (00000192) move-object          v3, v6
+	109     (00000194) move-object          v4, v7
+	110     (00000196) move-object          v12, v1
+	111     (00000198) move-object          v1, v0
+	112     (0000019a) move-object          v0, v2
+	113     (0000019c) move-object          v2, v12
+	114     (0000019e) goto                 -2f
+

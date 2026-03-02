@@ -1,0 +1,27 @@
+# Lio/fabric/sdk/android/services/common/QueueFile;-><init>(Ljava/io/File;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x1e <init>-BB@0x24 ]
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) const/16             v0, 16
+	2       (0000000a) new-array            v0, v0, [B
+	3       (0000000e) iput-object          v0, v1, Lio/fabric/sdk/android/services/common/QueueFile;->buffer [B
+	4       (00000012) invoke-virtual       v2, Ljava/io/File;->exists()Z
+	5       (00000018) move-result          v0
+	6       (0000001a) if-nez               v0, +5
+
+<init>-BB@0x1e : [ <init>-BB@0x24 ]
+	7       (0000001e) invoke-static        v2, Lio/fabric/sdk/android/services/common/QueueFile;->initialize(Ljava/io/File;)V
+
+<init>-BB@0x24 : 
+	8       (00000024) invoke-static        v2, Lio/fabric/sdk/android/services/common/QueueFile;->open(Ljava/io/File;)Ljava/io/RandomAccessFile;
+	9       (0000002a) move-result-object   v0
+	10      (0000002c) iput-object          v0, v1, Lio/fabric/sdk/android/services/common/QueueFile;->raf Ljava/io/RandomAccessFile;
+	11      (00000030) invoke-direct        v1, Lio/fabric/sdk/android/services/common/QueueFile;->readHeader()V
+	12      (00000036) return-void          
+

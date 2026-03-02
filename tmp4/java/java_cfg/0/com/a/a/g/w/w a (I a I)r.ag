@@ -1,0 +1,33 @@
+# Lcom/a/a/g/w;->a(I Lcom/a/a/c/a; I)Lcom/a/a/r; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:com.a.a.c.a
+# - v5:int
+#
+# - return:com.a.a.r
+
+a-BB@0x0 : [ a-BB@0xe ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) sget-object          v1, Lcom/a/a/g/w;->a [I
+	2       (00000006) invoke-static        v4, v5, v0, v1, Lcom/a/a/g/x;->a(Lcom/a/a/c/a; I Z [I)[I
+	3       (0000000c) move-result-object   v0
+
+a-BB@0xe : [ a-BB@0x1a ]
+	4       (0000000e) iget-object          v1, v2, Lcom/a/a/g/w;->c Lcom/a/a/g/v;
+	5       (00000012) invoke-virtual       v1, v3, v4, v0, Lcom/a/a/g/v;->a(I Lcom/a/a/c/a; [I)Lcom/a/a/r;
+	6       (00000018) move-result-object   v0
+	e:17
+	(Lcom/a/a/q; -> 1c a-BB@0x1c)
+
+a-BB@0x1a : 
+	7       (0000001a) return-object        v0
+
+a-BB@0x1c : [ a-BB@0x1a ]
+	8       (0000001c) move-exception       v1
+	9       (0000001e) iget-object          v1, v2, Lcom/a/a/g/w;->b Lcom/a/a/g/u;
+	10      (00000022) invoke-virtual       v1, v3, v4, v0, Lcom/a/a/g/u;->a(I Lcom/a/a/c/a; [I)Lcom/a/a/r;
+	11      (00000028) move-result-object   v0
+	12      (0000002a) goto                 -8
+

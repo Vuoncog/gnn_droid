@@ -1,0 +1,125 @@
+# Lcom/isnowstudio/common/c/c;->a(Landroid/app/Activity; Ljava/lang/String;)Landroid/app/Dialog; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.app.Activity
+# - v6:java.lang.String
+#
+# - return:android.app.Dialog
+
+a-BB@0x0 : [ a-BB@0x22 a-BB@0x50 ]
+	0       (00000000) invoke-static        v5, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const/high16         v1, 32515 # [1.7412886744782398e+38]
+	3       (0000000c) const/4              v2, 0
+	4       (0000000e) invoke-virtual       v0, v1, v2, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup;)Landroid/view/View;
+	5       (00000014) move-result-object   v2
+	6       (00000016) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	7       (0000001a) const/16             v1, 11
+	8       (0000001e) if-le                v0, v1, +19
+
+a-BB@0x22 : [ a-BB@0x50 ]
+	9       (00000022) invoke-virtual       v5, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
+	10      (00000028) move-result-object   v0
+	11      (0000002a) invoke-interface     v0, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+	12      (00000030) move-result-object   v0
+	13      (00000032) invoke-virtual       v0, Landroid/view/Display;->getWidth()I
+	14      (00000038) move-result          v0
+	15      (0000003a) int-to-double        v0, v0
+	16      (0000003c) const-wide           v3, 4606732058837280358 # [0.95]
+	17      (00000046) mul-double/2addr     v0, v3
+	18      (00000048) double-to-int        v0, v0
+	19      (0000004a) invoke-virtual       v2, v0, Landroid/view/View;->setMinimumWidth(I)V
+
+a-BB@0x50 : [ a-BB@0xe4 ]
+	20      (00000050) const                v0, 2131230724 # [1.8077508855638697e+38]
+	21      (00000056) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	22      (0000005c) move-result-object   v0
+	23      (0000005e) check-cast           v0, Landroid/widget/TextView;
+	24      (00000062) new-instance         v1, Ljava/lang/StringBuilder;
+	25      (00000066) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	26      (0000006c) const-string         v3, 'Copyright '
+	27      (00000070) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (00000076) move-result-object   v1
+	29      (00000078) invoke-static        Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+	30      (0000007e) move-result-object   v3
+	31      (00000080) const/4              v4, 1
+	32      (00000082) invoke-virtual       v3, v4, Ljava/util/Calendar;->get(I)I
+	33      (00000088) move-result          v3
+	34      (0000008a) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	35      (00000090) move-result-object   v1
+	36      (00000092) const-string         v3, ' Isnow Studio'
+	37      (00000096) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	38      (0000009c) move-result-object   v1
+	39      (0000009e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	40      (000000a4) move-result-object   v1
+	41      (000000a6) invoke-virtual       v0, v1, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	42      (000000ac) const                v0, 2131230722 # [1.8077504799156777e+38]
+	43      (000000b2) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	44      (000000b8) move-result-object   v0
+	45      (000000ba) check-cast           v0, Landroid/widget/TextView;
+	46      (000000be) const                v1, 2131230721 # [1.8077502770915816e+38]
+	47      (000000c4) invoke-virtual       v2, v1, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	48      (000000ca) move-result-object   v1
+	49      (000000cc) check-cast           v1, Landroid/widget/TextView;
+	50      (000000d0) const/high16         v3, 32518 # [1.7811655143517873e+38]
+	51      (000000d4) invoke-virtual       v1, v3, Landroid/widget/TextView;->setText(I)V
+	52      (000000da) invoke-virtual       v5, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+	53      (000000e0) move-result-object   v1
+	54      (000000e2) const/4              v3, 0
+
+a-BB@0xe4 : [ a-BB@0x128 ]
+	55      (000000e4) invoke-virtual       v1, v6, v3, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String; I)Landroid/content/pm/PackageInfo;
+	56      (000000ea) move-result-object   v1
+	57      (000000ec) new-instance         v3, Ljava/lang/StringBuilder;
+	58      (000000f0) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	59      (000000f6) iget-object          v4, v1, Landroid/content/pm/PackageInfo;->versionName Ljava/lang/String;
+	60      (000000fa) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	61      (00000100) move-result-object   v3
+	62      (00000102) const-string         v4, ' build'
+	63      (00000106) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	64      (0000010c) move-result-object   v3
+	65      (0000010e) iget                 v1, v1, Landroid/content/pm/PackageInfo;->versionCode I
+	66      (00000112) invoke-virtual       v3, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	67      (00000118) move-result-object   v1
+	68      (0000011a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	69      (00000120) move-result-object   v1
+	70      (00000122) invoke-virtual       v0, v1, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	e4:127
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 19e a-BB@0x19e)
+
+a-BB@0x128 : 
+	71      (00000128) const                v0, 2131230725 # [1.8077510883879658e+38]
+	72      (0000012e) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	73      (00000134) move-result-object   v0
+	74      (00000136) check-cast           v0, Landroid/widget/Button;
+	75      (0000013a) new-instance         v1, Lcom/isnowstudio/common/c/d;
+	76      (0000013e) invoke-direct        v1, v5, v6, Lcom/isnowstudio/common/c/d;-><init>(Landroid/app/Activity; Ljava/lang/String;)V
+	77      (00000144) invoke-virtual       v0, v1, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	78      (0000014a) const                v0, 2131230726 # [1.8077512912120618e+38]
+	79      (00000150) invoke-virtual       v2, v0, Landroid/view/View;->findViewById(I)Landroid/view/View;
+	80      (00000156) move-result-object   v0
+	81      (00000158) check-cast           v0, Landroid/widget/Button;
+	82      (0000015c) new-instance         v1, Lcom/isnowstudio/common/c/e;
+	83      (00000160) invoke-direct        v1, v5, Lcom/isnowstudio/common/c/e;-><init>(Landroid/app/Activity;)V
+	84      (00000166) invoke-virtual       v0, v1, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+	85      (0000016c) new-instance         v0, Landroid/app/AlertDialog$Builder;
+	86      (00000170) invoke-direct        v0, v5, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+	87      (00000176) const                v1, 2131099661 # [1.7811681510650357e+38]
+	88      (0000017c) invoke-virtual       v5, v1, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+	89      (00000182) move-result-object   v1
+	90      (00000184) invoke-virtual       v0, v1, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+	91      (0000018a) move-result-object   v0
+	92      (0000018c) invoke-virtual       v0, v2, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+	93      (00000192) move-result-object   v0
+	94      (00000194) invoke-virtual       v0, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+	95      (0000019a) move-result-object   v0
+	96      (0000019c) return-object        v0
+
+a-BB@0x19e : [ a-BB@0x128 ]
+	97      (0000019e) move-exception       v0
+	98      (000001a0) invoke-virtual       v0, Landroid/content/pm/PackageManager$NameNotFoundException;->getCause()Ljava/lang/Throwable;
+	99      (000001a6) move-result-object   v0
+	100     (000001a8) invoke-virtual       v0, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+	101     (000001ae) goto                 -43
+

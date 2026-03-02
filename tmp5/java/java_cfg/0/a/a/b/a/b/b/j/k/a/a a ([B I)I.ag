@@ -1,0 +1,94 @@
+# La/a/b/a/b/b/j/k/a;->a([B I)I [access_flags=protected final]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:byte[]
+# - v7:int
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0x4a a-BB@0x54 ]
+	0       (00000000) const/16             v4, 31
+	1       (00000004) const/4              v2, 0
+	2       (00000006) add-int/lit8         v0, v7, 2
+	3       (0000000a) add-int/lit8         v0, v0, 2
+	4       (0000000e) add-int/lit8         v0, v0, 2
+	5       (00000012) add-int/lit8         v0, v0, 2
+	6       (00000016) add-int/lit8         v0, v0, 2
+	7       (0000001a) add-int/lit8         v0, v0, 2
+	8       (0000001e) add-int/lit8         v0, v0, 2
+	9       (00000022) add-int/lit8         v0, v0, 2
+	10      (00000026) add-int/lit8         v0, v0, 2
+	11      (0000002a) add-int/lit8         v0, v0, 2
+	12      (0000002e) add-int/lit8         v0, v0, 2
+	13      (00000032) add-int/lit8         v0, v0, 2
+	14      (00000036) add-int/lit8         v0, v0, 2
+	15      (0000003a) add-int/lit8         v3, v0, 6
+	16      (0000003e) iget-object          v0, v5, La/a/b/a/b/b/j/k/a;->a La/a/b/a/b/b/a;
+	17      (00000042) iget-object          v0, v0, La/a/b/a/b/b/a;->o La/a/b/a/b/b/l/e;
+	18      (00000046) if-nez               v0, +7
+
+a-BB@0x4a : [ a-BB@0x52 ]
+	19      (0000004a) add-int/lit8         v0, v3, 62
+	20      (0000004e) add-int/lit8         v1, v0, 2
+
+a-BB@0x52 : 
+	21      (00000052) return               v1
+
+a-BB@0x54 : [ a-BB@0x90 a-BB@0xc4 ]
+	22      (00000054) iget-object          v0, v5, La/a/b/a/b/b/j/k/a;->a La/a/b/a/b/b/a;
+	23      (00000058) iget-object          v0, v0, La/a/b/a/b/b/a;->o La/a/b/a/b/b/l/e;
+	24      (0000005c) iget-object          v0, v0, La/a/b/a/b/b/l/e;->a La/a/b/a/b/a/b;
+	25      (00000060) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	26      (00000066) move-result-object   v0
+	27      (00000068) check-cast           v0, [F
+	28      (0000006c) iget-object          v1, v5, La/a/b/a/b/b/j/k/a;->a La/a/b/a/b/b/a;
+	29      (00000070) iget-object          v1, v1, La/a/b/a/b/b/a;->o La/a/b/a/b/b/l/e;
+	30      (00000074) iget-object          v1, v1, La/a/b/a/b/b/l/e;->c La/a/b/a/b/a/b;
+	31      (00000078) invoke-virtual       v1, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	32      (0000007e) move-result-object   v1
+	33      (00000080) check-cast           v1, Ljava/lang/Integer;
+	34      (00000084) invoke-virtual       v1, Ljava/lang/Integer;->intValue()I
+	35      (0000008a) move-result          v1
+	36      (0000008c) if-nez               v1, +1c
+
+a-BB@0x90 : [ a-BB@0x92 ]
+	37      (00000090) move                 v1, v3
+
+a-BB@0x92 : [ a-BB@0x96 a-BB@0xac ]
+	38      (00000092) if-ge                v2, v4, +d
+
+a-BB@0x96 : [ a-BB@0x92 ]
+	39      (00000096) invoke-static        v6, v1, La/a/b/a/b/b/j/k/a;->c([B I)F
+	40      (0000009c) move-result          v3
+	41      (0000009e) aput                 v3, v0, v2
+	42      (000000a2) add-int/lit8         v1, v1, 2
+	43      (000000a6) add-int/lit8         v2, v2, 1
+	44      (000000aa) goto                 -c
+
+a-BB@0xac : [ a-BB@0xb0 ]
+	45      (000000ac) add-int/lit8         v1, v1, 62
+
+a-BB@0xb0 : [ a-BB@0x52 ]
+	46      (000000b0) iget-object          v2, v5, La/a/b/a/b/b/j/k/a;->a La/a/b/a/b/b/a;
+	47      (000000b4) iget-object          v2, v2, La/a/b/a/b/b/a;->o La/a/b/a/b/b/l/e;
+	48      (000000b8) iget-object          v2, v2, La/a/b/a/b/b/l/e;->a La/a/b/a/b/a/b;
+	49      (000000bc) invoke-virtual       v2, v0, v5, La/a/b/a/b/a/b;->a(Ljava/lang/Object; Ljava/lang/Object;)V
+	50      (000000c2) goto                 -38
+
+a-BB@0xc4 : [ a-BB@0xc8 ]
+	51      (000000c4) add-int/lit8         v1, v3, 62
+
+a-BB@0xc8 : [ a-BB@0xcc a-BB@0xb0 ]
+	52      (000000c8) if-ge                v2, v4, -c
+
+a-BB@0xcc : [ a-BB@0xc8 ]
+	53      (000000cc) invoke-static        v6, v1, La/a/b/a/b/b/j/k/a;->c([B I)F
+	54      (000000d2) move-result          v3
+	55      (000000d4) aput                 v3, v0, v2
+	56      (000000d8) add-int/lit8         v3, v1, 2
+	57      (000000dc) add-int/lit8         v1, v2, 1
+	58      (000000e0) move                 v2, v1
+	59      (000000e2) move                 v1, v3
+	60      (000000e4) goto                 -e
+

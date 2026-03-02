@@ -1,0 +1,39 @@
+# La/a/b/a/b/b/j/f/v;->d(F)F [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:float
+#
+# - return:float
+
+d-BB@0x0 : [ d-BB@0x16 d-BB@0x1c ]
+	0       (00000000) const                v1, 1067878439 # [1.3010300397872925]
+	1       (00000006) const/high16         v0, 16448 # [3.0]
+	2       (0000000a) mul-float/2addr      v0, v5
+	3       (0000000c) add-float/2addr      v0, v1
+	4       (0000000e) cmpg-float           v1, v0, v1
+	5       (00000012) if-gtz               v1, +5
+
+d-BB@0x16 : [ d-BB@0x1a ]
+	6       (00000016) const/high16         v0, 16800 # [20.0]
+
+d-BB@0x1a : 
+	7       (0000001a) return               v0
+
+d-BB@0x1c : [ d-BB@0x2a d-BB@0x32 ]
+	8       (0000001c) const                v1, 1082761738 # [4.301030158996582]
+	9       (00000022) cmpl-float           v1, v0, v1
+	10      (00000026) if-ltz               v1, +6
+
+d-BB@0x2a : [ d-BB@0x1a ]
+	11      (0000002a) const                v0, 1184645120 # [20000.0]
+	12      (00000030) goto                 -b
+
+d-BB@0x32 : [ d-BB@0x1a ]
+	13      (00000032) const-wide/high16    v2, 16420 # [10.0]
+	14      (00000036) float-to-double      v0, v0
+	15      (00000038) invoke-static        v2, v3, v0, v1, Ljava/lang/Math;->pow(D D)D
+	16      (0000003e) move-result-wide     v0
+	17      (00000040) double-to-float      v0, v0
+	18      (00000042) goto                 -14
+

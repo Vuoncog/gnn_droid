@@ -1,0 +1,65 @@
+# Lcom/a/a/c/b/d;->a([I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int[]
+# - v9:int
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0x18 ]
+	0       (00000000) const/4              v6, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) if-nez               v9, +a
+
+a-BB@0x8 : 
+	3       (00000008) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	4       (0000000c) const-string         v1, 'No error correction bytes'
+	5       (00000010) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	6       (00000016) throw                v0
+
+a-BB@0x18 : [ a-BB@0x22 a-BB@0x32 ]
+	7       (00000018) array-length         v0, v8
+	8       (0000001a) sub-int              v2, v0, v9
+	9       (0000001e) if-gtz               v2, +a
+
+a-BB@0x22 : 
+	10      (00000022) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	11      (00000026) const-string         v1, 'No data bytes provided'
+	12      (0000002a) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	13      (00000030) throw                v0
+
+a-BB@0x32 : [ a-BB@0x76 ]
+	14      (00000032) invoke-direct        v7, v9, Lcom/a/a/c/b/d;->a(I)Lcom/a/a/c/b/b;
+	15      (00000038) move-result-object   v0
+	16      (0000003a) new-array            v3, v2, [I
+	17      (0000003e) invoke-static        v8, v1, v3, v1, v2, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	18      (00000044) new-instance         v4, Lcom/a/a/c/b/b;
+	19      (00000048) iget-object          v5, v7, Lcom/a/a/c/b/d;->a Lcom/a/a/c/b/a;
+	20      (0000004c) invoke-direct        v4, v5, v3, Lcom/a/a/c/b/b;-><init>(Lcom/a/a/c/b/a; [I)V
+	21      (00000052) invoke-virtual       v4, v9, v6, Lcom/a/a/c/b/b;->a(I I)Lcom/a/a/c/b/b;
+	22      (00000058) move-result-object   v3
+	23      (0000005a) invoke-virtual       v3, v0, Lcom/a/a/c/b/b;->c(Lcom/a/a/c/b/b;)[Lcom/a/a/c/b/b;
+	24      (00000060) move-result-object   v0
+	25      (00000062) aget-object          v0, v0, v6
+	26      (00000066) invoke-virtual       v0, Lcom/a/a/c/b/b;->a()[I
+	27      (0000006c) move-result-object   v3
+	28      (0000006e) array-length         v0, v3
+	29      (00000070) sub-int              v4, v9, v0
+	30      (00000074) move                 v0, v1
+
+a-BB@0x76 : [ a-BB@0x7a a-BB@0x88 ]
+	31      (00000076) if-ge                v0, v4, +9
+
+a-BB@0x7a : [ a-BB@0x76 ]
+	32      (0000007a) add-int              v5, v2, v0
+	33      (0000007e) aput                 v1, v8, v5
+	34      (00000082) add-int/lit8         v0, v0, 1
+	35      (00000086) goto                 -8
+
+a-BB@0x88 : 
+	36      (00000088) add-int              v0, v2, v4
+	37      (0000008c) array-length         v2, v3
+	38      (0000008e) invoke-static        v3, v1, v8, v0, v2, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	39      (00000094) return-void          
+

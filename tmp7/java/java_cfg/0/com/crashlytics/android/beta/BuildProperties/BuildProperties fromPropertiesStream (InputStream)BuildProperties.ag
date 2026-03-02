@@ -1,0 +1,16 @@
+# Lcom/crashlytics/android/beta/BuildProperties;->fromPropertiesStream(Ljava/io/InputStream;)Lcom/crashlytics/android/beta/BuildProperties; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.InputStream
+#
+# - return:com.crashlytics.android.beta.BuildProperties
+
+fromPropertiesStream-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/Properties;
+	1       (00000004) invoke-direct        v0, Ljava/util/Properties;-><init>()V
+	2       (0000000a) invoke-virtual       v0, v1, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
+	3       (00000010) invoke-static        v0, Lcom/crashlytics/android/beta/BuildProperties;->fromProperties(Ljava/util/Properties;)Lcom/crashlytics/android/beta/BuildProperties;
+	4       (00000016) move-result-object   v0
+	5       (00000018) return-object        v0
+

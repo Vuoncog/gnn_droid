@@ -1,0 +1,73 @@
+digraph {
+	graph [bb="0,0,1275.3,526",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_d62f90c8d28b5b57ca208cd57c2c0c3c {
+		graph [bb="9.3087,8,1267.3,518",
+			label="Lcom/a/a/a/c/d;.a->(Ljava/lang/Iterable; I)Ljava/util/Collection;\nLocal registers v0 ... v3\nparam v4 = java.lang.Iterable\nparam \
+v5 = int\nreturn = java.util.Collection",
+			lheight=1.04,
+			lp="638.31,476.5",
+			lwidth=5.64
+		];
+		struct_e83101c6ae398531283148de66553cb1	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#0000FF">Ljava/util/LinkedList;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Ljava/util/LinkedList;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#909055">v4</FONT>, <FONT color="#DF3A01">Ljava/lang/Iterable;-&gt;iterator()Ljava/util/Iterator;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="280.31,370.5",
+			width=7.2778];
+		struct_c8e8bd1bb2ea4c34ba8453bfb513526f	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v2</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;hasNext()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xc</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="223.31,232.5",
+			width=5.6944];
+		struct_e83101c6ae398531283148de66553cb1:tail -> struct_c8e8bd1bb2ea4c34ba8453bfb513526f:header	[color=blue,
+			pos="e,43.309,271.5 43.309,319.5 43.309,302 43.309,295.27 43.309,281.64"];
+		struct_3c12ff40ebb22e84e0f46f6f11f15d12	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v2</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;next()Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#0000FF">Lcom/a/a/a/c/g;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7777BB">v3</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#6E6EDD">v5</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lcom/a/a/a/c/d;-&gt;a(Lcom/a/a/a/c/g; I Ljava/util/Collection;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-f</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="341.31,83.5",
+			width=8.9861];
+		struct_c8e8bd1bb2ea4c34ba8453bfb513526f:tail -> struct_3c12ff40ebb22e84e0f46f6f11f15d12:header	[color=red,
+			pos="e,43.309,144.5 43.309,192.5 43.309,175 43.309,168.27 43.309,154.64"];
+		struct_1c3a9d91c629237ce15133d861fb392e	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lcom/a/a/a/c/d;-&gt;a(Ljava/lang/Iterable;)Ljava/util/Collection;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="971.31,83.5",
+			width=8];
+		struct_c8e8bd1bb2ea4c34ba8453bfb513526f:tail -> struct_1c3a9d91c629237ce15133d861fb392e:header	[color=green,
+			pos="e,693.31,119.5 43.309,192.5 43.309,122.24 614.29,187.54 674.31,151 684.13,145.02 681.45,131.88 684.68,124.6"];
+		struct_3c12ff40ebb22e84e0f46f6f11f15d12:tail -> struct_c8e8bd1bb2ea4c34ba8453bfb513526f:header	[color=blue,
+			pos="e,43.309,271.5 43.309,21.5 43.309,10.158 25.67,14.324 17.809,22.5 -21.776,63.667 17.689,93.889 17.809,151 17.92,204.11 -18.569,232.28 \
+18.309,270.5 22.652,275 30.019,278.27 35.634,278.3"];
+	}
+}

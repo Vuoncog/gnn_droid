@@ -1,0 +1,35 @@
+# Lorg/apache/commons/io/output/CountingOutputStream;->getCount()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:int
+
+getCount-BB@0x0 : [ getCount-BB@0x16 getCount-BB@0x54 ]
+	0       (00000000) invoke-virtual       v5, Lorg/apache/commons/io/output/CountingOutputStream;->getByteCount()J
+	1       (00000006) move-result-wide     v0
+	2       (00000008) const-wide/32        v2, 2147483647 # [2147483647.0]
+	3       (0000000e) cmp-long             v2, v0, v2
+	4       (00000012) if-lez               v2, +21
+
+getCount-BB@0x16 : 
+	5       (00000016) new-instance         v2, Ljava/lang/ArithmeticException;
+	6       (0000001a) new-instance         v3, Ljava/lang/StringBuilder;
+	7       (0000001e) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	8       (00000024) const-string         v4, 'The byte count '
+	9       (00000028) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002e) move-result-object   v3
+	11      (00000030) invoke-virtual       v3, v0, v1, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	12      (00000036) move-result-object   v0
+	13      (00000038) const-string         v1, ' is too large to be converted to an int'
+	14      (0000003c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000042) move-result-object   v0
+	16      (00000044) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	17      (0000004a) move-result-object   v0
+	18      (0000004c) invoke-direct        v2, v0, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	19      (00000052) throw                v2
+
+getCount-BB@0x54 : 
+	20      (00000054) long-to-int          v0, v0
+	21      (00000056) return               v0
+

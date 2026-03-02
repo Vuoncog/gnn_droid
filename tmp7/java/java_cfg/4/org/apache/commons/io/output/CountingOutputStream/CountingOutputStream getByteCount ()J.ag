@@ -1,0 +1,22 @@
+# Lorg/apache/commons/io/output/CountingOutputStream;->getByteCount()J [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:long
+
+getByteCount-BB@0x0 : [ getByteCount-BB@0x2 ]
+	0       (00000000) monitor-enter        v2
+
+getByteCount-BB@0x2 : 
+	1       (00000002) iget-wide            v0, v2, Lorg/apache/commons/io/output/CountingOutputStream;->count J
+	2       (00000006) monitor-exit         v2
+	3       (00000008) return-wide          v0
+	2:5
+	(Ljava/lang/Throwable; -> a getByteCount-BB@0xa)
+
+getByteCount-BB@0xa : 
+	4       (0000000a) move-exception       v0
+	5       (0000000c) monitor-exit         v2
+	6       (0000000e) throw                v0
+

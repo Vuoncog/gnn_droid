@@ -1,0 +1,21 @@
+# La/a/b/a/a/e/d;->s()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+s-BB@0x0 : [ s-BB@0x8 s-BB@0xa ]
+	0       (00000000) iget-object          v0, v1, La/a/b/a/a/e/d;->a La/a/b/a/a/a/b;
+	1       (00000004) if-nez               v0, +3
+
+s-BB@0x8 : 
+	2       (00000008) return-void          
+
+s-BB@0xa : [ s-BB@0x8 ]
+	3       (0000000a) const/4              v0, 0
+	4       (0000000c) invoke-virtual       v1, v0, La/a/b/a/a/e/d;->d(Z)V
+	5       (00000012) iget-object          v0, v1, La/a/b/a/a/e/d;->a La/a/b/a/a/a/b;
+	6       (00000016) invoke-virtual       v0, La/a/b/a/a/a/b;->a()V
+	7       (0000001c) goto                 -a
+

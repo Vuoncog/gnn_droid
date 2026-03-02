@@ -1,0 +1,310 @@
+# Lorg/apache/commons/io/input/Tailer;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v13
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0xa ]
+	0       (00000000) const-wide/16        v2, 0 # [0.0]
+	1       (00000004) const/4              v1, 0
+	2       (00000006) move-wide            v4, v2
+	3       (00000008) move-wide            v6, v2
+
+run-BB@0xa : [ run-BB@0x12 run-BB@0x92 ]
+	4       (0000000a) iget-boolean         v0, v13, Lorg/apache/commons/io/input/Tailer;->run Z
+	5       (0000000e) if-eqz               v0, +42
+	a:d
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x12 : [ run-BB@0x16 run-BB@0x92 ]
+	6       (00000012) if-nez               v1, +40
+
+run-BB@0x16 : [ run-BB@0x2a ]
+	7       (00000016) new-instance         v0, Ljava/io/RandomAccessFile;
+	8       (0000001a) iget-object          v8, v13, Lorg/apache/commons/io/input/Tailer;->file Ljava/io/File;
+	9       (0000001e) const-string         v9, 'r'
+	10      (00000022) invoke-direct        v0, v8, v9, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	11      (00000028) move-object          v1, v0
+	16:27
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/io/FileNotFoundException; -> 3e run-BB@0x3e)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x2a : [ run-BB@0x2e run-BB@0x60 ]
+	12      (0000002a) if-nez               v1, +1b
+
+run-BB@0x2e : [ run-BB@0xa ]
+	13      (0000002e) iget-wide            v8, v13, Lorg/apache/commons/io/input/Tailer;->delayMillis J
+	14      (00000032) invoke-static        v8, v9, Ljava/lang/Thread;->sleep(J)V
+	15      (00000038) goto                 -17
+	2e:37
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/InterruptedException; -> 3a run-BB@0x3a)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x3a : [ run-BB@0xa ]
+	16      (0000003a) move-exception       v0
+	17      (0000003c) goto                 -19
+
+run-BB@0x3e : [ run-BB@0x40 ]
+	18      (0000003e) move-exception       v0
+
+run-BB@0x40 : [ run-BB@0x2a ]
+	19      (00000040) iget-object          v0, v13, Lorg/apache/commons/io/input/Tailer;->listener Lorg/apache/commons/io/input/TailerListener;
+	20      (00000044) invoke-interface     v0, Lorg/apache/commons/io/input/TailerListener;->fileNotFound()V
+	21      (0000004a) goto                 -10
+	40:49
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x4c : [ run-BB@0x4e ]
+	22      (0000004c) move-exception       v0
+
+run-BB@0x4e : [ run-BB@0x5e ]
+	23      (0000004e) iget-object          v2, v13, Lorg/apache/commons/io/input/Tailer;->listener Lorg/apache/commons/io/input/TailerListener;
+	24      (00000052) invoke-interface     v2, v0, Lorg/apache/commons/io/input/TailerListener;->handle(Ljava/lang/Exception;)V
+	25      (00000058) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	4e:57
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+
+run-BB@0x5e : 
+	26      (0000005e) return-void          
+
+run-BB@0x60 : [ run-BB@0x68 run-BB@0x8e ]
+	27      (00000060) iget-boolean         v0, v13, Lorg/apache/commons/io/input/Tailer;->end Z
+	28      (00000064) if-eqz               v0, +15
+	60:81
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x68 : [ run-BB@0x74 ]
+	29      (00000068) iget-object          v0, v13, Lorg/apache/commons/io/input/Tailer;->file Ljava/io/File;
+	30      (0000006c) invoke-virtual       v0, Ljava/io/File;->length()J
+	31      (00000072) move-result-wide     v4
+	60:81
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x74 : [ run-BB@0xa ]
+	32      (00000074) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	33      (0000007a) move-result-wide     v6
+	34      (0000007c) invoke-virtual       v1, v4, v5, Ljava/io/RandomAccessFile;->seek(J)V
+	35      (00000082) goto                 -3c
+
+run-BB@0x84 : [ run-BB@0x86 ]
+	36      (00000084) move-exception       v0
+
+run-BB@0x86 : 
+	37      (00000086) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	38      (0000008c) throw                v0
+
+run-BB@0x8e : [ run-BB@0x74 ]
+	39      (0000008e) move-wide            v4, v2
+	40      (00000090) goto                 -e
+
+run-BB@0x92 : [ run-BB@0x9a run-BB@0x178 ]
+	41      (00000092) iget-boolean         v0, v13, Lorg/apache/commons/io/input/Tailer;->run Z
+	42      (00000096) if-eqz               v0, +71
+	92:c3
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x9a : [ run-BB@0xba run-BB@0xfc ]
+	43      (0000009a) iget-object          v0, v13, Lorg/apache/commons/io/input/Tailer;->file Ljava/io/File;
+	44      (0000009e) invoke-static        v0, v6, v7, Lorg/apache/commons/io/FileUtils;->isFileNewer(Ljava/io/File; J)Z
+	45      (000000a4) move-result          v0
+	46      (000000a6) iget-object          v8, v13, Lorg/apache/commons/io/input/Tailer;->file Ljava/io/File;
+	47      (000000aa) invoke-virtual       v8, Ljava/io/File;->length()J
+	48      (000000b0) move-result-wide     v8
+	49      (000000b2) cmp-long             v10, v8, v4
+	50      (000000b6) if-gez               v10, +23
+	92:c3
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0xba : [ run-BB@0xc4 ]
+	51      (000000ba) iget-object          v0, v13, Lorg/apache/commons/io/input/Tailer;->listener Lorg/apache/commons/io/input/TailerListener;
+	52      (000000be) invoke-interface     v0, Lorg/apache/commons/io/input/TailerListener;->fileRotated()V
+	92:c3
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0xc4 : [ run-BB@0xd6 ]
+	53      (000000c4) new-instance         v0, Ljava/io/RandomAccessFile;
+	54      (000000c8) iget-object          v8, v13, Lorg/apache/commons/io/input/Tailer;->file Ljava/io/File;
+	55      (000000cc) const-string         v9, 'r'
+	56      (000000d0) invoke-direct        v0, v8, v9, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	c4:d5
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/io/FileNotFoundException; -> e2 run-BB@0xe2)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0xd6 : [ run-BB@0x92 ]
+	57      (000000d6) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	58      (000000dc) move-wide            v4, v2
+	59      (000000de) move-object          v1, v0
+	60      (000000e0) goto                 -27
+	d6:db
+	(Ljava/lang/Throwable; -> 182 run-BB@0x182)
+	(Ljava/io/FileNotFoundException; -> 1c6 run-BB@0x1c6)
+	(Ljava/lang/Exception; -> 1a2 run-BB@0x1a2)
+
+run-BB@0xe2 : [ run-BB@0xea ]
+	61      (000000e2) move-exception       v0
+	62      (000000e4) move-wide            v11, v4
+	63      (000000e6) move-object          v4, v1
+	64      (000000e8) move-wide            v0, v11
+
+run-BB@0xea : [ run-BB@0x92 ]
+	65      (000000ea) iget-object          v5, v13, Lorg/apache/commons/io/input/Tailer;->listener Lorg/apache/commons/io/input/TailerListener;
+	66      (000000ee) invoke-interface     v5, Lorg/apache/commons/io/input/TailerListener;->fileNotFound()V
+	67      (000000f4) move-wide            v11, v0
+	68      (000000f6) move-object          v1, v4
+	69      (000000f8) move-wide            v4, v11
+	70      (000000fa) goto                 -34
+	ea:f3
+	(Ljava/lang/Throwable; -> 18e run-BB@0x18e)
+	(Ljava/lang/Exception; -> 1ae run-BB@0x1ae)
+
+run-BB@0xfc : [ run-BB@0x104 run-BB@0x158 ]
+	71      (000000fc) cmp-long             v8, v8, v4
+	72      (00000100) if-lez               v8, +2c
+
+run-BB@0x104 : [ run-BB@0x114 ]
+	73      (00000104) invoke-direct        v13, v1, Lorg/apache/commons/io/input/Tailer;->readLines(Ljava/io/RandomAccessFile;)J
+	74      (0000010a) move-result-wide     v4
+	75      (0000010c) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	76      (00000112) move-result-wide     v6
+	104:121
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x114 : [ run-BB@0x11c run-BB@0x122 ]
+	77      (00000114) iget-boolean         v0, v13, Lorg/apache/commons/io/input/Tailer;->reOpen Z
+	78      (00000118) if-eqz               v0, +5
+	104:121
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x11c : [ run-BB@0x122 ]
+	79      (0000011c) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	104:121
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x122 : [ run-BB@0x12c ]
+	80      (00000122) iget-wide            v8, v13, Lorg/apache/commons/io/input/Tailer;->delayMillis J
+	81      (00000126) invoke-static        v8, v9, Ljava/lang/Thread;->sleep(J)V
+	122:12b
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/InterruptedException; -> 1c2 run-BB@0x1c2)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x12c : [ run-BB@0x134 run-BB@0x1ce ]
+	82      (0000012c) iget-boolean         v0, v13, Lorg/apache/commons/io/input/Tailer;->run Z
+	83      (00000130) if-eqz               v0, +4f
+	12c:14d
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x134 : [ run-BB@0x13c run-BB@0x1ce ]
+	84      (00000134) iget-boolean         v0, v13, Lorg/apache/commons/io/input/Tailer;->reOpen Z
+	85      (00000138) if-eqz               v0, +4b
+	12c:14d
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x13c : [ run-BB@0x14e ]
+	86      (0000013c) new-instance         v0, Ljava/io/RandomAccessFile;
+	87      (00000140) iget-object          v8, v13, Lorg/apache/commons/io/input/Tailer;->file Ljava/io/File;
+	88      (00000144) const-string         v9, 'r'
+	89      (00000148) invoke-direct        v0, v8, v9, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	12c:14d
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x14e : [ run-BB@0x154 ]
+	90      (0000014e) invoke-virtual       v0, v4, v5, Ljava/io/RandomAccessFile;->seek(J)V
+	14e:153
+	(Ljava/lang/Throwable; -> 196 run-BB@0x196)
+	(Ljava/lang/Exception; -> 1b6 run-BB@0x1b6)
+
+run-BB@0x154 : [ run-BB@0x92 ]
+	91      (00000154) move-object          v1, v0
+	92      (00000156) goto                 -62
+
+run-BB@0x158 : [ run-BB@0x15c run-BB@0x114 ]
+	93      (00000158) if-eqz               v0, -22
+
+run-BB@0x15c : [ run-BB@0x160 ]
+	94      (0000015c) const-wide/16        v4, 0 # [0.0]
+
+run-BB@0x160 : [ run-BB@0x114 ]
+	95      (00000160) invoke-virtual       v1, v4, v5, Ljava/io/RandomAccessFile;->seek(J)V
+	96      (00000166) invoke-direct        v13, v1, Lorg/apache/commons/io/input/Tailer;->readLines(Ljava/io/RandomAccessFile;)J
+	97      (0000016c) move-result-wide     v4
+	98      (0000016e) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	99      (00000174) move-result-wide     v6
+	100     (00000176) goto                 -31
+	160:173
+	(Ljava/lang/Throwable; -> 84 run-BB@0x84)
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x178 : [ run-BB@0x5e ]
+	101     (00000178) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	102     (0000017e) goto/16              -90
+
+run-BB@0x182 : [ run-BB@0x86 ]
+	103     (00000182) move-exception       v1
+	104     (00000184) move-object          v11, v1
+	105     (00000186) move-object          v1, v0
+	106     (00000188) move-object          v0, v11
+	107     (0000018a) goto/16              -82
+
+run-BB@0x18e : [ run-BB@0x86 ]
+	108     (0000018e) move-exception       v0
+	109     (00000190) move-object          v1, v4
+	110     (00000192) goto/16              -86
+
+run-BB@0x196 : [ run-BB@0x86 ]
+	111     (00000196) move-exception       v1
+	112     (00000198) move-object          v11, v1
+	113     (0000019a) move-object          v1, v0
+	114     (0000019c) move-object          v0, v11
+	115     (0000019e) goto/16              -8c
+
+run-BB@0x1a2 : [ run-BB@0x4e ]
+	116     (000001a2) move-exception       v1
+	117     (000001a4) move-object          v11, v1
+	118     (000001a6) move-object          v1, v0
+	119     (000001a8) move-object          v0, v11
+	120     (000001aa) goto/16              -ae
+
+run-BB@0x1ae : [ run-BB@0x4e ]
+	121     (000001ae) move-exception       v0
+	122     (000001b0) move-object          v1, v4
+	123     (000001b2) goto/16              -b2
+
+run-BB@0x1b6 : [ run-BB@0x4e ]
+	124     (000001b6) move-exception       v1
+	125     (000001b8) move-object          v11, v1
+	126     (000001ba) move-object          v1, v0
+	127     (000001bc) move-object          v0, v11
+	128     (000001be) goto/16              -b8
+
+run-BB@0x1c2 : [ run-BB@0x12c ]
+	129     (000001c2) move-exception       v0
+	130     (000001c4) goto                 -4c
+
+run-BB@0x1c6 : [ run-BB@0xea ]
+	131     (000001c6) move-exception       v1
+	132     (000001c8) move-object          v4, v0
+	133     (000001ca) move-wide            v0, v2
+	134     (000001cc) goto                 -71
+
+run-BB@0x1ce : [ run-BB@0x154 ]
+	135     (000001ce) move-object          v0, v1
+	136     (000001d0) goto                 -3e
+

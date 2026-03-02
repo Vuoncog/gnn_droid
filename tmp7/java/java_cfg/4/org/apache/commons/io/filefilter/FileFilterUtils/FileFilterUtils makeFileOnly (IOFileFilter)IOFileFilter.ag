@@ -1,0 +1,23 @@
+# Lorg/apache/commons/io/filefilter/FileFilterUtils;->makeFileOnly(Lorg/apache/commons/io/filefilter/IOFileFilter;)Lorg/apache/commons/io/filefilter/IOFileFilter; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:org.apache.commons.io.filefilter.IOFileFilter
+#
+# - return:org.apache.commons.io.filefilter.IOFileFilter
+
+makeFileOnly-BB@0x0 : [ makeFileOnly-BB@0x4 makeFileOnly-BB@0xa ]
+	0       (00000000) if-nez               v2, +5
+
+makeFileOnly-BB@0x4 : [ makeFileOnly-BB@0x8 ]
+	1       (00000004) sget-object          v0, Lorg/apache/commons/io/filefilter/FileFileFilter;->FILE Lorg/apache/commons/io/filefilter/IOFileFilter;
+
+makeFileOnly-BB@0x8 : 
+	2       (00000008) return-object        v0
+
+makeFileOnly-BB@0xa : [ makeFileOnly-BB@0x8 ]
+	3       (0000000a) new-instance         v0, Lorg/apache/commons/io/filefilter/AndFileFilter;
+	4       (0000000e) sget-object          v1, Lorg/apache/commons/io/filefilter/FileFileFilter;->FILE Lorg/apache/commons/io/filefilter/IOFileFilter;
+	5       (00000012) invoke-direct        v0, v1, v2, Lorg/apache/commons/io/filefilter/AndFileFilter;-><init>(Lorg/apache/commons/io/filefilter/IOFileFilter; Lorg/apache/commons/io/filefilter/IOFileFilter;)V
+	6       (00000018) goto                 -8
+

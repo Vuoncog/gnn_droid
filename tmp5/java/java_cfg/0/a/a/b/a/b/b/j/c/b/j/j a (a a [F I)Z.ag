@@ -1,0 +1,116 @@
+# La/a/b/a/b/b/j/c/b/j;->a(La/a/b/a/b/c/a; La/a/b/a/b/b/c/a; [F I)Z [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:a.a.b.a.b.c.a
+# - v10:a.a.b.a.b.b.c.a
+# - v11:float[]
+# - v12:int
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0xe a-BB@0xd4 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget-object          v0, v8, La/a/b/a/b/b/j/c/b/j;->a [La/a/b/a/b/b/b/e/p;
+	2       (00000006) aget-object          v4, v0, v12
+	3       (0000000a) if-nez               v12, +65
+
+a-BB@0xe : [ a-BB@0x2a a-BB@0xd0 ]
+	4       (0000000e) iget-object          v0, v4, La/a/b/a/b/b/b/e/p;->d La/a/b/a/b/a/b;
+	5       (00000012) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) check-cast           v0, Ljava/lang/Integer;
+	8       (0000001e) invoke-virtual       v0, Ljava/lang/Integer;->intValue()I
+	9       (00000024) move-result          v0
+	10      (00000026) if-eqz               v0, +55
+
+a-BB@0x2a : [ a-BB@0x2c ]
+	11      (0000002a) const/4              v0, 0
+
+a-BB@0x2c : [ a-BB@0x2e ]
+	12      (0000002c) move                 v1, v0
+
+a-BB@0x2e : [ D:a-BB@0xb0 1:a-BB@0x102 2:a-BB@0x112 ]
+	13      (0000002e) iget-object          v2, v10, La/a/b/a/b/b/c/a;->b La/a/b/a/b/b/c/i;
+	14      (00000032) iget-object          v0, v4, La/a/b/a/b/b/b/e/p;->a La/a/b/a/b/a/b;
+	15      (00000036) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	16      (0000003c) move-result-object   v0
+	17      (0000003e) check-cast           v0, Ljava/lang/Float;
+	18      (00000042) invoke-virtual       v0, Ljava/lang/Float;->floatValue()F
+	19      (00000048) move-result          v0
+	20      (0000004a) invoke-virtual       v2, v0, La/a/b/a/b/b/c/i;->d(F)F
+	21      (00000050) move-result          v2
+	22      (00000052) iget-object          v3, v10, La/a/b/a/b/b/c/a;->a La/a/b/a/b/b/c/i;
+	23      (00000056) iget-object          v0, v4, La/a/b/a/b/b/b/e/p;->b La/a/b/a/b/a/b;
+	24      (0000005a) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	25      (00000060) move-result-object   v0
+	26      (00000062) check-cast           v0, Ljava/lang/Float;
+	27      (00000066) invoke-virtual       v0, Ljava/lang/Float;->floatValue()F
+	28      (0000006c) move-result          v0
+	29      (0000006e) invoke-virtual       v3, v0, La/a/b/a/b/b/c/i;->d(F)F
+	30      (00000074) move-result          v3
+	31      (00000076) iget-object          v5, v10, La/a/b/a/b/b/c/a;->c La/a/b/a/b/b/c/b/a;
+	32      (0000007a) const/high16         v6, 16256 # [1.0]
+	33      (0000007e) iget-object          v0, v4, La/a/b/a/b/b/b/e/p;->c La/a/b/a/b/a/b;
+	34      (00000082) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	35      (00000088) move-result-object   v0
+	36      (0000008a) check-cast           v0, Ljava/lang/Float;
+	37      (0000008e) invoke-virtual       v0, Ljava/lang/Float;->floatValue()F
+	38      (00000094) move-result          v0
+	39      (00000096) sub-float            v0, v6, v0
+	40      (0000009a) invoke-virtual       v5, v0, La/a/b/a/b/b/c/b/a;->d(F)F
+	41      (000000a0) move-result          v0
+	42      (000000a2) const                v4, 1070386381 # [1.600000023841858]
+	43      (000000a8) mul-float/2addr      v4, v0
+	44      (000000aa) packed-switch        v1, +39 (0x11c)
+
+a-BB@0xb0 : [ a-BB@0xb6 ]
+	45      (000000b0) invoke-virtual       v9, v2, v3, v11, La/a/b/a/b/c/a;->a(F F [F)V
+
+a-BB@0xb6 : 
+	46      (000000b6) iget-object          v0, v8, La/a/b/a/b/b/j/c/b/j;->b La/a/b/a/b/a/b;
+	47      (000000ba) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	48      (000000c0) move-result-object   v0
+	49      (000000c2) check-cast           v0, Ljava/lang/Boolean;
+	50      (000000c6) invoke-virtual       v0, Ljava/lang/Boolean;->booleanValue()Z
+	51      (000000cc) move-result          v0
+	52      (000000ce) return               v0
+
+a-BB@0xd0 : [ a-BB@0x2c ]
+	53      (000000d0) move                 v0, v1
+	54      (000000d2) goto                 -53
+
+a-BB@0xd4 : [ a-BB@0xe2 a-BB@0x2e ]
+	55      (000000d4) add-int/lit8         v0, v12, 1
+	56      (000000d8) iget-object          v2, v8, La/a/b/a/b/b/j/c/b/j;->a [La/a/b/a/b/b/b/e/p;
+	57      (000000dc) array-length         v2, v2
+	58      (000000de) if-ne                v0, v2, -58
+
+a-BB@0xe2 : [ a-BB@0xfe a-BB@0x2e ]
+	59      (000000e2) iget-object          v0, v4, La/a/b/a/b/b/b/e/p;->d La/a/b/a/b/a/b;
+	60      (000000e6) invoke-virtual       v0, La/a/b/a/b/a/b;->e()Ljava/lang/Object;
+	61      (000000ec) move-result-object   v0
+	62      (000000ee) check-cast           v0, Ljava/lang/Integer;
+	63      (000000f2) invoke-virtual       v0, Ljava/lang/Integer;->intValue()I
+	64      (000000f8) move-result          v0
+	65      (000000fa) if-eqz               v0, -66
+
+a-BB@0xfe : [ a-BB@0x2e ]
+	66      (000000fe) const/4              v1, 2
+	67      (00000100) goto                 -69
+
+a-BB@0x102 : [ a-BB@0xb6 ]
+	68      (00000102) const-wide/high16    v6, 16368 # [1.0]
+	69      (00000106) move-object          v1, v9
+	70      (00000108) move-object          v5, v11
+	71      (0000010a) invoke-virtual/range v1 ... v7, La/a/b/a/b/c/a;->a(F F F [F D)V
+	72      (00000110) goto                 -2d
+
+a-BB@0x112 : [ a-BB@0xb6 ]
+	73      (00000112) invoke-virtual       v9, v2, v3, v11, La/a/b/a/b/c/a;->b(F F [F)V
+	74      (00000118) goto                 -31
+
+a-BB@0x11a : 
+	75      (0000011a) nop                  
+	76      (0000011c) packed-switch-payload 1 2
+

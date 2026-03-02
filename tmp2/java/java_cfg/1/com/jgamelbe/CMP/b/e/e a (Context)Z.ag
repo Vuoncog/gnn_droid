@@ -1,0 +1,28 @@
+# Lcom/jgamelbe/CMP/b/e;->a(Landroid/content/Context;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x22 a-BB@0x26 ]
+	0       (00000000) new-instance         v0, Ljava/util/Date;
+	1       (00000004) invoke-direct        v0, Ljava/util/Date;-><init>()V
+	2       (0000000a) invoke-static        v5, Lcom/jgamelbe/CMP/e/o;->e(Landroid/content/Context;)J
+	3       (00000010) move-result-wide     v1
+	4       (00000012) invoke-virtual       v0, Ljava/util/Date;->getTime()J
+	5       (00000018) move-result-wide     v3
+	6       (0000001a) cmp-long             v0, v3, v1
+	7       (0000001e) if-lez               v0, +4
+
+a-BB@0x22 : [ a-BB@0x24 ]
+	8       (00000022) const/4              v0, 1
+
+a-BB@0x24 : 
+	9       (00000024) return               v0
+
+a-BB@0x26 : [ a-BB@0x24 ]
+	10      (00000026) const/4              v0, 0
+	11      (00000028) goto                 -2
+

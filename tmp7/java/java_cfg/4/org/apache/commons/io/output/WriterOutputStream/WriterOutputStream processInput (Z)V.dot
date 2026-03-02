@@ -1,0 +1,99 @@
+digraph {
+	graph [bb="0,0,1366,682",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_ce7be61d757f390907b1edd675134e0d {
+		graph [bb="8,8,1358,674",
+			label="Lorg/apache/commons/io/output/WriterOutputStream;.processInput->(Z)V\nLocal registers v0 ... v3\nparam v4 = boolean\nreturn = void",
+			lheight=0.83,
+			lp="683,640",
+			lwidth=6.86
+		];
+		struct_33ca4ca6b35c8596ea37203d5ea18842	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/output/WriterOutputStream;-&gt;decoderIn Ljava/nio/ByteBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/nio/ByteBuffer;-&gt;flip()Ljava/nio/Buffer;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="469,563.5",
+			width=10.764];
+		struct_2ecf2dd8d3cac51de882bb6504b2c900	[height=2.7917,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/output/WriterOutputStream;-&gt;decoder Ljava/nio/charset/CharsetDecoder;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#8E8E5B">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/output/WriterOutputStream;-&gt;decoderIn Ljava/nio/ByteBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="#8E8E5B">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/output/WriterOutputStream;-&gt;decoderOut Ljava/nio/CharBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#7070D6">v4</FONT>, <FONT color="#DF3A01">Ljava/nio/charset/CharsetDecoder;-&gt;decode(Ljava/nio/ByteBuffer; Ljava/nio/CharBuffer; Z)Ljava/nio/charset/CoderResult;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/nio/charset/CoderResult;-&gt;isOverflow()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#848484">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#848484">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="610,392.5",
+			width=14.778];
+		struct_33ca4ca6b35c8596ea37203d5ea18842:tail -> struct_2ecf2dd8d3cac51de882bb6504b2c900:header	[color=blue,
+			pos="e,103,486.5 103,534.5 103,517 103,510.27 103,496.64"];
+		struct_cb109bcf4309ab83947c8b3501c90fe7	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#8E8E5B">v3</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/output/WriterOutputStream;-&gt;flushOutput()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-13</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="408,210.5",
+			width=9.1806];
+		struct_2ecf2dd8d3cac51de882bb6504b2c900:tail -> struct_cb109bcf4309ab83947c8b3501c90fe7:header	[color=red,
+			pos="e,103,238.5 103,297.5 103,274.97 103,266.95 103,248.51"];
+		struct_25bdecc98ae144ce40e7af86337387e1	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/nio/charset/CoderResult;-&gt;isUnderflow()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1009,210.5",
+			width=7];
+		struct_2ecf2dd8d3cac51de882bb6504b2c900:tail -> struct_25bdecc98ae144ce40e7af86337387e1:header	[color=green,
+			pos="e,767,246.5 103,297.5 103,225.69 678.67,274.74 748,256 752.56,254.77 754.95,252.39 757.38,250.33"];
+		struct_cb109bcf4309ab83947c8b3501c90fe7:tail -> struct_2ecf2dd8d3cac51de882bb6504b2c900:header	[color=blue,
+			pos="e,103,486.5 103,181.5 103,170.16 85.361,174.32 77.5,182.5 58.247,202.52 77.471,217.22 77.5,245 77.611,351.89 3.8637,408.5 78,485.5 \
+82.338,490.01 89.706,493.28 95.323,493.3"];
+		struct_585cbd2023cda7777ab6d0f3e53f3372	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/output/WriterOutputStream;-&gt;decoderIn Ljava/nio/ByteBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/nio/ByteBuffer;-&gt;compact()Ljava/nio/ByteBuffer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">48</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="408,72.5",
+			width=10.875];
+		struct_25bdecc98ae144ce40e7af86337387e1:tail -> struct_585cbd2023cda7777ab6d0f3e53f3372:header	[color=red,
+			pos="e,42,111.5 767,173.5 757.75,173.5 756.97,167.27 748,165 675.02,146.51 95.096,186.46 45.394,120.97"];
+		struct_bdc6bb55adb0b3f0e8fadacc6b43de63	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/io/IOException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#848484">v1</FONT>, <FONT color="red">'Unexpected coder result'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">52</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#DF3A01">Ljava/io/IOException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">58</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1084,72.5",
+			width=7.3889];
+		struct_25bdecc98ae144ce40e7af86337387e1:tail -> struct_bdc6bb55adb0b3f0e8fadacc6b43de63:header	[color=green,
+			pos="e,843,122.5 782,170.5 782,140.04 829.54,152.84 840.68,132.52"];
+	}
+}

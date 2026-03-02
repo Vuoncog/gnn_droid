@@ -1,0 +1,53 @@
+digraph {
+	graph [bb="0,0,892,386",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_21753b5c44e4ca6999fbf8e59981247e {
+		graph [bb="8,8,884,378",
+			label="Lorg/apache/commons/io/input/DemuxInputStream;.close->()V\nLocal registers v0 ... v1\nreturn = void",
+			lheight=0.62,
+			lp="446,351.5",
+			lwidth=5.81
+		];
+		struct_54d54f207eaa563765d6105e420a020e	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/DemuxInputStream;-&gt;m_streams Ljava/lang/InheritableThreadLocal;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/lang/InheritableThreadLocal;-&gt;get()Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/io/InputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="446,249.5",
+			width=11.944];
+		struct_deffcf97395a26e5a829ed5ef03933e1	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/io/InputStream;-&gt;close()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="213,122.5",
+			width=5.4722];
+		struct_54d54f207eaa563765d6105e420a020e:tail -> struct_deffcf97395a26e5a829ed5ef03933e1:header	[color=red,
+			pos="e,41,139.5 41,187.5 41,170 41,163.27 41,149.64"];
+		struct_db9de3b4921cead99ead3e54d8d6f5a8	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="284,39.5",
+			width=2.0556];
+		struct_54d54f207eaa563765d6105e420a020e:tail -> struct_db9de3b4921cead99ead3e54d8d6f5a8:header	[color=green,
+			pos="e,235,56.5 41,187.5 41,103 362.6,208.93 419,146 432.94,130.44 432,115.35 419,99 369.1,36.263 246.68,131.16 235.78,66.687"];
+		struct_deffcf97395a26e5a829ed5ef03933e1:tail -> struct_db9de3b4921cead99ead3e54d8d6f5a8:header	[color=blue,
+			pos="e,220,53.5 41,104.5 41,66.047 159.96,55.012 209.93,53.651"];
+	}
+}

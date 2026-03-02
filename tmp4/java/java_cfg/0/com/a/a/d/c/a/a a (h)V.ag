@@ -1,0 +1,133 @@
+# Lcom/a/a/d/c/a;->a(Lcom/a/a/d/c/h;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:com.a.a.d.c.h
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x1a a-BB@0x62 ]
+	0       (00000000) const/4              v4, 2
+	1       (00000002) invoke-virtual       v6, Lcom/a/a/d/c/h;->a()Ljava/lang/String;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) iget                 v1, v6, Lcom/a/a/d/c/h;->a I
+	4       (0000000e) invoke-static        v0, v1, Lcom/a/a/d/c/j;->a(Ljava/lang/CharSequence; I)I
+	5       (00000014) move-result          v0
+	6       (00000016) if-lt                v0, v4, +26
+
+a-BB@0x1a : [ a-BB@0x60 ]
+	7       (0000001a) invoke-virtual       v6, Lcom/a/a/d/c/h;->a()Ljava/lang/String;
+	8       (00000020) move-result-object   v0
+	9       (00000022) iget                 v1, v6, Lcom/a/a/d/c/h;->a I
+	10      (00000026) invoke-virtual       v0, v1, Ljava/lang/String;->charAt(I)C
+	11      (0000002c) move-result          v0
+	12      (0000002e) invoke-virtual       v6, Lcom/a/a/d/c/h;->a()Ljava/lang/String;
+	13      (00000034) move-result-object   v1
+	14      (00000036) iget                 v2, v6, Lcom/a/a/d/c/h;->a I
+	15      (0000003a) add-int/lit8         v2, v2, 1
+	16      (0000003e) invoke-virtual       v1, v2, Ljava/lang/String;->charAt(I)C
+	17      (00000044) move-result          v1
+	18      (00000046) invoke-static        v0, v1, Lcom/a/a/d/c/a;->a(C C)C
+	19      (0000004c) move-result          v0
+	20      (0000004e) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->a(C)V
+	21      (00000054) iget                 v0, v6, Lcom/a/a/d/c/h;->a I
+	22      (00000058) add-int/lit8         v0, v0, 2
+	23      (0000005c) iput                 v0, v6, Lcom/a/a/d/c/h;->a I
+
+a-BB@0x60 : 
+	24      (00000060) return-void          
+
+a-BB@0x62 : [ a-BB@0x92 a-BB@0x12c ]
+	25      (00000062) invoke-virtual       v6, Lcom/a/a/d/c/h;->b()C
+	26      (00000068) move-result          v0
+	27      (0000006a) invoke-virtual       v6, Lcom/a/a/d/c/h;->a()Ljava/lang/String;
+	28      (00000070) move-result-object   v1
+	29      (00000072) iget                 v2, v6, Lcom/a/a/d/c/h;->a I
+	30      (00000076) invoke-virtual       v5, Lcom/a/a/d/c/a;->a()I
+	31      (0000007c) move-result          v3
+	32      (0000007e) invoke-static        v1, v2, v3, Lcom/a/a/d/c/j;->a(Ljava/lang/CharSequence; I I)I
+	33      (00000084) move-result          v1
+	34      (00000086) invoke-virtual       v5, Lcom/a/a/d/c/a;->a()I
+	35      (0000008c) move-result          v2
+	36      (0000008e) if-eq                v1, v2, +4f
+
+a-BB@0x92 : [ D:a-BB@0x98 1:a-BB@0xde 2:a-BB@0x106 3:a-BB@0xf2 4:a-BB@0x118 5:a-BB@0xca ]
+	37      (00000092) packed-switch        v1, +75 (0x17c)
+
+a-BB@0x98 : 
+	38      (00000098) new-instance         v0, Ljava/lang/IllegalStateException;
+	39      (0000009c) new-instance         v2, Ljava/lang/StringBuilder;
+	40      (000000a0) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	41      (000000a6) const-string         v3, 'Illegal mode: '
+	42      (000000aa) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000b0) move-result-object   v2
+	44      (000000b2) invoke-virtual       v2, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	45      (000000b8) move-result-object   v1
+	46      (000000ba) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	47      (000000c0) move-result-object   v1
+	48      (000000c2) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	49      (000000c8) throw                v0
+
+a-BB@0xca : [ a-BB@0x60 ]
+	50      (000000ca) const/16             v0, 231
+	51      (000000ce) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->a(C)V
+	52      (000000d4) const/4              v0, 5
+	53      (000000d6) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->b(I)V
+	54      (000000dc) goto                 -3e
+
+a-BB@0xde : [ a-BB@0x60 ]
+	55      (000000de) const/16             v0, 230
+	56      (000000e2) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->a(C)V
+	57      (000000e8) const/4              v0, 1
+	58      (000000ea) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->b(I)V
+	59      (000000f0) goto                 -48
+
+a-BB@0xf2 : [ a-BB@0x60 ]
+	60      (000000f2) const/16             v0, 238
+	61      (000000f6) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->a(C)V
+	62      (000000fc) const/4              v0, 3
+	63      (000000fe) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->b(I)V
+	64      (00000104) goto                 -52
+
+a-BB@0x106 : [ a-BB@0x60 ]
+	65      (00000106) const/16             v0, 239
+	66      (0000010a) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->a(C)V
+	67      (00000110) invoke-virtual       v6, v4, Lcom/a/a/d/c/h;->b(I)V
+	68      (00000116) goto                 -5b
+
+a-BB@0x118 : [ a-BB@0x60 ]
+	69      (00000118) const/16             v0, 240
+	70      (0000011c) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->a(C)V
+	71      (00000122) const/4              v0, 4
+	72      (00000124) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->b(I)V
+	73      (0000012a) goto                 -65
+
+a-BB@0x12c : [ a-BB@0x138 a-BB@0x160 ]
+	74      (0000012c) invoke-static        v0, Lcom/a/a/d/c/j;->b(C)Z
+	75      (00000132) move-result          v1
+	76      (00000134) if-eqz               v1, +16
+
+a-BB@0x138 : [ a-BB@0x60 ]
+	77      (00000138) const/16             v1, 235
+	78      (0000013c) invoke-virtual       v6, v1, Lcom/a/a/d/c/h;->a(C)V
+	79      (00000142) add-int/lit8         v0, v0, -128
+	80      (00000146) add-int/lit8         v0, v0, 1
+	81      (0000014a) int-to-char          v0, v0
+	82      (0000014c) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->a(C)V
+	83      (00000152) iget                 v0, v6, Lcom/a/a/d/c/h;->a I
+	84      (00000156) add-int/lit8         v0, v0, 1
+	85      (0000015a) iput                 v0, v6, Lcom/a/a/d/c/h;->a I
+	86      (0000015e) goto                 -7f
+
+a-BB@0x160 : [ a-BB@0x60 ]
+	87      (00000160) add-int/lit8         v0, v0, 1
+	88      (00000164) int-to-char          v0, v0
+	89      (00000166) invoke-virtual       v6, v0, Lcom/a/a/d/c/h;->a(C)V
+	90      (0000016c) iget                 v0, v6, Lcom/a/a/d/c/h;->a I
+	91      (00000170) add-int/lit8         v0, v0, 1
+	92      (00000174) iput                 v0, v6, Lcom/a/a/d/c/h;->a I
+	93      (00000178) goto/16              -8c
+
+a-BB@0x17c : 
+	94      (0000017c) packed-switch-payload 1 2 3 4 5
+

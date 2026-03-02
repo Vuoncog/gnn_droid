@@ -1,0 +1,52 @@
+digraph {
+	graph [bb="0,0,804,352",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_7f1f27f2e773fa90cce19bd4a14102e0 {
+		graph [bb="8,8,796,344",
+			label="Lcom/crashlytics/android/core/CodedOutputStream;.checkNoSpaceLeft->()V\nLocal registers v0 ... v2\nreturn = void",
+			lheight=0.62,
+			lp="402,317.5",
+			lwidth=6.93
+		];
+		struct_62acb34687f774adf63c9472c88a5296	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;spaceLeft()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="404,237.5",
+			width=8.5278];
+		struct_b34d50ffad229642a238eb968c647823	[height=1.9444,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#0000FF">Ljava/lang/IllegalStateException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="red"><br/>'Did not write as much data as<br/>expected.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7777BB">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/IllegalStateException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="319,86",
+			width=8.4167];
+		struct_62acb34687f774adf63c9472c88a5296:tail -> struct_b34d50ffad229642a238eb968c647823:header	[color=red,
+			pos="e,41,150 118,197.5 118,161.22 55.305,184.48 43.06,159.82"];
+		struct_9459ae431a789431df2d839c5b0f275d	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="714,86",
+			width=2.0556];
+		struct_62acb34687f774adf63c9472c88a5296:tail -> struct_9459ae431a789431df2d839c5b0f275d:header	[color=green,
+			pos="e,650,100 118,197.5 118,140.31 585.9,191.16 631,156 648,142.74 632.21,113.55 640.49,103.49"];
+	}
+}

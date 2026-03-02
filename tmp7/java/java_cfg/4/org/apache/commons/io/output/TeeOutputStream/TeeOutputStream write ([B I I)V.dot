@@ -1,0 +1,56 @@
+digraph {
+	graph [bb="0,0,788,491",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_22082d707b0efcbb0d1d8ccbb218efeb {
+		graph [bb="8,8,780,483",
+			label="Lorg/apache/commons/io/output/TeeOutputStream;.write->([B I I)V\nLocal registers v0 ... v1\nparam v2 = byte[]\nparam v3 = int\nparam \
+v4 = int\nreturn = void",
+			lheight=1.25,
+			lp="394,434",
+			lwidth=6.18
+		];
+		struct_70082cfe848e3798c4dd60bf49f1f3ea	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-enter </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="108,353.5",
+			width=2.4583];
+		struct_62f2af559fa212f955851ddbacdfd20d	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-super </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#848484">v3</FONT>, <FONT color="#7A7AAD">v4</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/output/ProxyOutputStream;-&gt;write([B I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7070D6">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/output/TeeOutputStream;-&gt;branch Ljava/io/OutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7070D6">v0</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#848484">v3</FONT>, <FONT color="#7A7AAD">v4</FONT>, <FONT color="#DF3A01">Ljava/io/OutputStream;-&gt;write([B I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="394,225.5",
+			width=10.5];
+		struct_70082cfe848e3798c4dd60bf49f1f3ea:tail -> struct_62f2af559fa212f955851ddbacdfd20d:header	[color=blue,
+			pos="e,41,286.5 41,335.5 41,317.64 41,310.76 41,296.85"];
+		struct_e32e44312de8412204181dbe47f4b649	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#7070D6">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#7070D6">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="114,61.5",
+			width=2.7083];
+		struct_62f2af559fa212f955851ddbacdfd20d:tail -> struct_e32e44312de8412204181dbe47f4b649:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="113.5,132.5",
+			pos="e,42,100.5 41,163.5 41,139.22 41.752,130.73 41.952,110.64"];
+	}
+}

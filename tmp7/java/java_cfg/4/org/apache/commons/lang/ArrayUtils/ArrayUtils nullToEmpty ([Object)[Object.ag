@@ -1,0 +1,21 @@
+# Lorg/apache/commons/lang/ArrayUtils;->nullToEmpty([Ljava/lang/Object;)[Ljava/lang/Object; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object[]
+#
+# - return:java.lang.Object[]
+
+nullToEmpty-BB@0x0 : [ nullToEmpty-BB@0x4 nullToEmpty-BB@0xa ]
+	0       (00000000) if-eqz               v1, +5
+
+nullToEmpty-BB@0x4 : [ nullToEmpty-BB@0xa nullToEmpty-BB@0xe ]
+	1       (00000004) array-length         v0, v1
+	2       (00000006) if-nez               v0, +4
+
+nullToEmpty-BB@0xa : [ nullToEmpty-BB@0xe ]
+	3       (0000000a) sget-object          v1, Lorg/apache/commons/lang/ArrayUtils;->EMPTY_OBJECT_ARRAY [Ljava/lang/Object;
+
+nullToEmpty-BB@0xe : 
+	4       (0000000e) return-object        v1
+

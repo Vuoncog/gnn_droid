@@ -1,0 +1,15 @@
+# Lio/fabric/sdk/android/services/events/GZIPQueueFileEventStorage;->getMoveOutputStream(Ljava/io/File;)Ljava/io/OutputStream; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.File
+#
+# - return:java.io.OutputStream
+
+getMoveOutputStream-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/zip/GZIPOutputStream;
+	1       (00000004) new-instance         v1, Ljava/io/FileOutputStream;
+	2       (00000008) invoke-direct        v1, v3, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+	3       (0000000e) invoke-direct        v0, v1, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
+	4       (00000014) return-object        v0
+

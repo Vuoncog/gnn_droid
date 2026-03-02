@@ -1,0 +1,66 @@
+digraph {
+	graph [bb="0,0,1200,401",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_b0c42f2e2b7185123e3a9c8679d71d4d {
+		graph [bb="8,8,1192,393",
+			label="Lio/fabric/sdk/android/services/persistence/PreferenceStoreImpl;.save->(Landroid/content/SharedPreferences$Editor;)Z\nLocal registers \
+v0 ... v2\nparam v3 = android.content.SharedPreferences$Editor\nreturn = boolean",
+			lheight=0.83,
+			lp="600,359",
+			lwidth=10.97
+		];
+		struct_9c37bb4736549e8c56428dc6eeea0314	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Landroid/os/Build$VERSION;-&gt;SDK_INT I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/16 </FONT> <FONT color="#888877">v1</FONT>, <FONT color="green">0x9</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-lt </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="505,271.5",
+			width=5.3333];
+		struct_be4cb37dddc364f55a777805466f09b5	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7777BB">v3</FONT>, <FONT color="#DF3A01">Landroid/content/SharedPreferences$Editor;-&gt;apply()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="300,144.5",
+			width=7.875];
+		struct_9c37bb4736549e8c56428dc6eeea0314:tail -> struct_be4cb37dddc364f55a777805466f09b5:header	[color=red,
+			pos="e,42,172.5 323,234.5 293.9,234.5 84.995,209.63 47.692,181.05"];
+		struct_2c3d4f72542595b5caa526f554fd9939	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7777BB">v3</FONT>, <FONT color="#DF3A01">Landroid/content/SharedPreferences$Editor;-&gt;commit()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="893,144.5",
+			width=8.0833];
+		struct_9c37bb4736549e8c56428dc6eeea0314:tail -> struct_2c3d4f72542595b5caa526f554fd9939:header	[color=green,
+			pos="e,612,180.5 334,231.5 334,173.21 537.51,207.85 593,190 597.49,188.55 599.88,186.18 602.33,184.17"];
+		struct_f8c5ec6769b6c5b5e7684683740fed28	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="375,39.5",
+			width=1.8472];
+		struct_be4cb37dddc364f55a777805466f09b5:tail -> struct_f8c5ec6769b6c5b5e7684683740fed28:header	[color=blue,
+			pos="e,319,53.5 42,115.5 42,86.24 253.27,57.908 308.98,53.966"];
+		struct_2c3d4f72542595b5caa526f554fd9939:tail -> struct_f8c5ec6769b6c5b5e7684683740fed28:header	[color=blue,
+			pos="e,334,56.5 612,107.5 602.75,107.5 601.86,101.66 593,99 540.63,83.278 358.82,110.94 336.29,66.405"];
+	}
+}

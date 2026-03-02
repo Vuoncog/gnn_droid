@@ -1,0 +1,29 @@
+# Lorg/apache/commons/io/CopyUtils;->copy(Ljava/io/Reader; Ljava/io/Writer;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.io.Reader
+# - v6:java.io.Writer
+#
+# - return:int
+
+copy-BB@0x0 : [ copy-BB@0xc ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) const/16             v0, 4096
+	2       (00000006) new-array            v2, v0, [C
+	3       (0000000a) move                 v0, v1
+
+copy-BB@0xc : [ copy-BB@0x1a copy-BB@0x24 ]
+	4       (0000000c) const/4              v3, -1
+	5       (0000000e) invoke-virtual       v5, v2, Ljava/io/Reader;->read([C)I
+	6       (00000014) move-result          v4
+	7       (00000016) if-eq                v3, v4, +7
+
+copy-BB@0x1a : [ copy-BB@0xc ]
+	8       (0000001a) invoke-virtual       v6, v2, v1, v4, Ljava/io/Writer;->write([C I I)V
+	9       (00000020) add-int/2addr        v0, v4
+	10      (00000022) goto                 -b
+
+copy-BB@0x24 : 
+	11      (00000024) return               v0
+

@@ -1,0 +1,37 @@
+# Lorg/apache/commons/lang/NumberRange;->includesNumber(Ljava/lang/Number;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.Number
+#
+# - return:boolean
+
+includesNumber-BB@0x0 : [ includesNumber-BB@0x6 includesNumber-BB@0x8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-nez               v7, +3
+
+includesNumber-BB@0x6 : 
+	2       (00000006) return               v0
+
+includesNumber-BB@0x8 : [ includesNumber-BB@0x24 includesNumber-BB@0x6 ]
+	3       (00000008) iget-object          v1, v6, Lorg/apache/commons/lang/NumberRange;->min Ljava/lang/Number;
+	4       (0000000c) invoke-virtual       v1, Ljava/lang/Number;->doubleValue()D
+	5       (00000012) move-result-wide     v2
+	6       (00000014) invoke-virtual       v7, Ljava/lang/Number;->doubleValue()D
+	7       (0000001a) move-result-wide     v4
+	8       (0000001c) cmpl-double          v1, v2, v4
+	9       (00000020) if-gtz               v1, -d
+
+includesNumber-BB@0x24 : [ includesNumber-BB@0x40 includesNumber-BB@0x6 ]
+	10      (00000024) iget-object          v1, v6, Lorg/apache/commons/lang/NumberRange;->max Ljava/lang/Number;
+	11      (00000028) invoke-virtual       v1, Ljava/lang/Number;->doubleValue()D
+	12      (0000002e) move-result-wide     v2
+	13      (00000030) invoke-virtual       v7, Ljava/lang/Number;->doubleValue()D
+	14      (00000036) move-result-wide     v4
+	15      (00000038) cmpg-double          v1, v2, v4
+	16      (0000003c) if-ltz               v1, -1b
+
+includesNumber-BB@0x40 : [ includesNumber-BB@0x6 ]
+	17      (00000040) const/4              v0, 1
+	18      (00000042) goto                 -1e
+

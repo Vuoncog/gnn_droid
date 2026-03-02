@@ -1,0 +1,28 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->handleUncaughtException(Ljava/util/Date; Ljava/lang/Thread; Ljava/lang/Throwable;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.Date
+# - v3:java.lang.Thread
+# - v4:java.lang.Throwable
+#
+# - return:void
+
+handleUncaughtException-BB@0x0 : [ handleUncaughtException-BB@0x32 handleUncaughtException-BB@0x38 ]
+	0       (00000000) iget-object          v0, v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->crashlyticsCore Lcom/crashlytics/android/core/CrashlyticsCore;
+	1       (00000004) invoke-virtual       v0, Lcom/crashlytics/android/core/CrashlyticsCore;->createCrashMarker()V
+	2       (0000000a) invoke-direct        v1, v2, v3, v4, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->writeFatal(Ljava/util/Date; Ljava/lang/Thread; Ljava/lang/Throwable;)V
+	3       (00000010) invoke-virtual       v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->doCloseSessions()V
+	4       (00000016) invoke-direct        v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->doOpenSession()V
+	5       (0000001c) invoke-virtual       v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->trimSessionFiles()V
+	6       (00000022) iget-object          v0, v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->crashlyticsCore Lcom/crashlytics/android/core/CrashlyticsCore;
+	7       (00000026) invoke-virtual       v0, Lcom/crashlytics/android/core/CrashlyticsCore;->shouldPromptUserBeforeSendingCrashReports()Z
+	8       (0000002c) move-result          v0
+	9       (0000002e) if-nez               v0, +5
+
+handleUncaughtException-BB@0x32 : [ handleUncaughtException-BB@0x38 ]
+	10      (00000032) invoke-direct        v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->sendSessionReports()V
+
+handleUncaughtException-BB@0x38 : 
+	11      (00000038) return-void          
+

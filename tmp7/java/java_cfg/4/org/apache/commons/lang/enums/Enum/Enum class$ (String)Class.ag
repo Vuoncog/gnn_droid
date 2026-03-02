@@ -1,0 +1,23 @@
+# Lorg/apache/commons/lang/enums/Enum;->class$(Ljava/lang/String;)Ljava/lang/Class; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:java.lang.Class
+
+class$-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+	0:5
+	(Ljava/lang/ClassNotFoundException; -> a class$-BB@0xa)
+
+class$-BB@0xa : 
+	3       (0000000a) move-exception       v0
+	4       (0000000c) new-instance         v1, Ljava/lang/NoClassDefFoundError;
+	5       (00000010) invoke-virtual       v0, Ljava/lang/ClassNotFoundException;->getMessage()Ljava/lang/String;
+	6       (00000016) move-result-object   v0
+	7       (00000018) invoke-direct        v1, v0, Ljava/lang/NoClassDefFoundError;-><init>(Ljava/lang/String;)V
+	8       (0000001e) throw                v1
+

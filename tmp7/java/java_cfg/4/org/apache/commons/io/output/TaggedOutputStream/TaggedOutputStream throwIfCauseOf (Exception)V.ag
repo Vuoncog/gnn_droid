@@ -1,0 +1,13 @@
+# Lorg/apache/commons/io/output/TaggedOutputStream;->throwIfCauseOf(Ljava/lang/Exception;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Exception
+#
+# - return:void
+
+throwIfCauseOf-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/apache/commons/io/output/TaggedOutputStream;->tag Ljava/io/Serializable;
+	1       (00000004) invoke-static        v2, v0, Lorg/apache/commons/io/TaggedIOException;->throwCauseIfTaggedWith(Ljava/lang/Throwable; Ljava/lang/Object;)V
+	2       (0000000a) return-void          
+

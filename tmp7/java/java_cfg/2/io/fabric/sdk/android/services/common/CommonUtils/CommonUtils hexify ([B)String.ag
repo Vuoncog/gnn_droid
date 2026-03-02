@@ -1,0 +1,40 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->hexify([B)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:byte[]
+#
+# - return:java.lang.String
+
+hexify-BB@0x0 : [ hexify-BB@0xc ]
+	0       (00000000) array-length         v0, v6
+	1       (00000002) mul-int/lit8         v0, v0, 2
+	2       (00000006) new-array            v1, v0, [C
+	3       (0000000a) const/4              v0, 0
+
+hexify-BB@0xc : [ hexify-BB@0x12 hexify-BB@0x4c ]
+	4       (0000000c) array-length         v2, v6
+	5       (0000000e) if-ge                v0, v2, +1f
+
+hexify-BB@0x12 : [ hexify-BB@0xc ]
+	6       (00000012) aget-byte            v2, v6, v0
+	7       (00000016) and-int/lit16        v2, v2, 255
+	8       (0000001a) mul-int/lit8         v3, v0, 2
+	9       (0000001e) sget-object          v4, Lio/fabric/sdk/android/services/common/CommonUtils;->HEX_VALUES [C
+	10      (00000022) ushr-int/lit8        v5, v2, 4
+	11      (00000026) aget-char            v4, v4, v5
+	12      (0000002a) aput-char            v4, v1, v3
+	13      (0000002e) mul-int/lit8         v3, v0, 2
+	14      (00000032) add-int/lit8         v3, v3, 1
+	15      (00000036) sget-object          v4, Lio/fabric/sdk/android/services/common/CommonUtils;->HEX_VALUES [C
+	16      (0000003a) and-int/lit8         v2, v2, 15
+	17      (0000003e) aget-char            v2, v4, v2
+	18      (00000042) aput-char            v2, v1, v3
+	19      (00000046) add-int/lit8         v0, v0, 1
+	20      (0000004a) goto                 -1f
+
+hexify-BB@0x4c : 
+	21      (0000004c) new-instance         v0, Ljava/lang/String;
+	22      (00000050) invoke-direct        v0, v1, Ljava/lang/String;-><init>([C)V
+	23      (00000056) return-object        v0
+

@@ -1,0 +1,46 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$1;
+	1       (00000004) invoke-direct        v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$1;-><init>()V
+	2       (0000000a) sput-object          v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->SESSION_FILE_FILTER Ljava/io/FilenameFilter;
+	3       (0000000e) new-instance         v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$2;
+	4       (00000012) invoke-direct        v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$2;-><init>()V
+	5       (00000018) sput-object          v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->LARGEST_FILE_NAME_FIRST Ljava/util/Comparator;
+	6       (0000001c) new-instance         v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$3;
+	7       (00000020) invoke-direct        v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$3;-><init>()V
+	8       (00000026) sput-object          v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->SMALLEST_FILE_NAME_FIRST Ljava/util/Comparator;
+	9       (0000002a) new-instance         v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$4;
+	10      (0000002e) invoke-direct        v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$4;-><init>()V
+	11      (00000034) sput-object          v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->ANY_SESSION_FILENAME_FILTER Ljava/io/FilenameFilter;
+	12      (00000038) const-string         v0, '([\\d|A-Z|a-z]{12}\\-[\\d|A-Z|a-z]{4}\\-[\\d|A-Z|a-z]{4}\\-[\\d|A-Z|a-z]{12}).+'
+	13      (0000003c) invoke-static        v0, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+	14      (00000042) move-result-object   v0
+	15      (00000044) sput-object          v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->SESSION_FILE_PATTERN Ljava/util/regex/Pattern;
+	16      (00000048) const-string         v0, 'X-CRASHLYTICS-SEND-FLAGS'
+	17      (0000004c) const-string         v1, '1'
+	18      (00000050) invoke-static        v0, v1, Ljava/util/Collections;->singletonMap(Ljava/lang/Object; Ljava/lang/Object;)Ljava/util/Map;
+	19      (00000056) move-result-object   v0
+	20      (00000058) sput-object          v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->SEND_AT_CRASHTIME_HEADER Ljava/util/Map;
+	21      (0000005c) const/4              v0, 4
+	22      (0000005e) new-array            v0, v0, [Ljava/lang/String;
+	23      (00000062) const/4              v1, 0
+	24      (00000064) const-string         v2, 'SessionUser'
+	25      (00000068) aput-object          v2, v0, v1
+	26      (0000006c) const/4              v1, 1
+	27      (0000006e) const-string         v2, 'SessionApp'
+	28      (00000072) aput-object          v2, v0, v1
+	29      (00000076) const/4              v1, 2
+	30      (00000078) const-string         v2, 'SessionOS'
+	31      (0000007c) aput-object          v2, v0, v1
+	32      (00000080) const/4              v1, 3
+	33      (00000082) const-string         v2, 'SessionDevice'
+	34      (00000086) aput-object          v2, v0, v1
+	35      (0000008a) sput-object          v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->INITIAL_SESSION_PART_TAGS [Ljava/lang/String;
+	36      (0000008e) return-void          
+

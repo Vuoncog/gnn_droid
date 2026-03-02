@@ -1,0 +1,94 @@
+# Lcom/jgamelbe/CMP/c/a;->a(Lorg/json/JSONObject;)Lcom/jgamelbe/CMP/c/a; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:org.json.JSONObject
+#
+# - return:com.jgamelbe.CMP.c.a
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0x12a ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) const/4              v3, 0
+	2       (00000004) if-eqz               v4, +93
+
+a-BB@0x8 : [ a-BB@0x128 ]
+	3       (00000008) new-instance         v0, Lcom/jgamelbe/CMP/c/a;
+	4       (0000000c) invoke-direct        v0, Lcom/jgamelbe/CMP/c/a;-><init>()V
+	5       (00000012) const-string         v2, 'id'
+	6       (00000016) invoke-virtual       v4, v2, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+	7       (0000001c) move-result-object   v2
+	8       (0000001e) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->a Ljava/lang/String;
+	9       (00000022) const-string         v2, 'name'
+	10      (00000026) invoke-virtual       v4, v2, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+	11      (0000002c) move-result-object   v2
+	12      (0000002e) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->b Ljava/lang/String;
+	13      (00000032) const-string         v2, 'appUid'
+	14      (00000036) invoke-virtual       v4, v2, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+	15      (0000003c) move-result-object   v2
+	16      (0000003e) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->c Ljava/lang/String;
+	17      (00000042) const-string         v2, 'appVer'
+	18      (00000046) invoke-virtual       v4, v2, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+	19      (0000004c) move-result-object   v2
+	20      (0000004e) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->d Ljava/lang/String;
+	21      (00000052) const-string         v2, 'score'
+	22      (00000056) invoke-virtual       v4, v2, Lorg/json/JSONObject;->optInt(Ljava/lang/String;)I
+	23      (0000005c) move-result          v2
+	24      (0000005e) iput                 v2, v0, Lcom/jgamelbe/CMP/c/a;->e I
+	25      (00000062) const-string         v2, 'descr'
+	26      (00000066) invoke-virtual       v4, v2, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+	27      (0000006c) move-result-object   v2
+	28      (0000006e) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->f Ljava/lang/String;
+	29      (00000072) const-string         v2, 'iconUrl'
+	30      (00000076) invoke-virtual       v4, v2, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+	31      (0000007c) move-result-object   v2
+	32      (0000007e) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->g Ljava/lang/String;
+	33      (00000082) const-string         v2, 'appDownloadUrl'
+	34      (00000086) invoke-virtual       v4, v2, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+	35      (0000008c) move-result-object   v2
+	36      (0000008e) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->h Ljava/lang/String;
+	37      (00000092) const-string         v2, 'platformType'
+	38      (00000096) invoke-virtual       v4, v2, v3, Lorg/json/JSONObject;->optInt(Ljava/lang/String; I)I
+	39      (0000009c) move-result          v2
+	40      (0000009e) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	41      (000000a4) move-result-object   v2
+	42      (000000a6) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->i Ljava/lang/Integer;
+	43      (000000aa) const-string         v2, 'showScore'
+	44      (000000ae) invoke-virtual       v4, v2, v3, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String; Z)Z
+	45      (000000b4) move-result          v2
+	46      (000000b6) iput-boolean         v2, v0, Lcom/jgamelbe/CMP/c/a;->k Z
+	47      (000000ba) const-string         v2, 'moneyName'
+	48      (000000be) const-string         v3, '积分'
+	49      (000000c2) invoke-virtual       v4, v2, v3, Lorg/json/JSONObject;->optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	50      (000000c8) move-result-object   v2
+	51      (000000ca) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->l Ljava/lang/String;
+	52      (000000ce) const-string         v2, 'appAdverName'
+	53      (000000d2) const-string         v3, '暂无记录'
+	54      (000000d6) invoke-virtual       v4, v2, v3, Lorg/json/JSONObject;->optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	55      (000000dc) move-result-object   v2
+	56      (000000de) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->m Ljava/lang/String;
+	57      (000000e2) const-string         v2, 'appDetail'
+	58      (000000e6) const-string         v3, '暂无记录'
+	59      (000000ea) invoke-virtual       v4, v2, v3, Lorg/json/JSONObject;->optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	60      (000000f0) move-result-object   v2
+	61      (000000f2) iput-object          v2, v0, Lcom/jgamelbe/CMP/c/a;->n Ljava/lang/String;
+	62      (000000f6) const-string         v2, 'appPicUrl'
+	63      (000000fa) invoke-virtual       v4, v2, v1, Lorg/json/JSONObject;->optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	64      (00000100) move-result-object   v1
+	65      (00000102) iput-object          v1, v0, Lcom/jgamelbe/CMP/c/a;->o Ljava/lang/String;
+	66      (00000106) const-string         v1, 'appSize'
+	67      (0000010a) const/4              v2, -1
+	68      (0000010c) invoke-virtual       v4, v1, v2, Lorg/json/JSONObject;->optInt(Ljava/lang/String; I)I
+	69      (00000112) move-result          v1
+	70      (00000114) iput                 v1, v0, Lcom/jgamelbe/CMP/c/a;->p I
+	71      (00000118) const-string         v1, 'downAppidEncode'
+	72      (0000011c) invoke-virtual       v4, v1, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+	73      (00000122) move-result-object   v1
+	74      (00000124) iput-object          v1, v0, Lcom/jgamelbe/CMP/c/a;->q Ljava/lang/String;
+
+a-BB@0x128 : 
+	75      (00000128) return-object        v0
+
+a-BB@0x12a : [ a-BB@0x128 ]
+	76      (0000012a) move-object          v0, v1
+	77      (0000012c) goto                 -2
+

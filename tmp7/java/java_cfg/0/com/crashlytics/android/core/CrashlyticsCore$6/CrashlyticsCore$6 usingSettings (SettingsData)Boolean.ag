@@ -1,0 +1,39 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore$6;->usingSettings(Lio/fabric/sdk/android/services/settings/SettingsData;)Ljava/lang/Boolean; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:io.fabric.sdk.android.services.settings.SettingsData
+#
+# - return:java.lang.Boolean
+
+usingSettings-BB@0x0 : [ usingSettings-BB@0x1a usingSettings-BB@0x46 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget-object          v1, v3, Lcom/crashlytics/android/core/CrashlyticsCore$6;->this$0 Lcom/crashlytics/android/core/CrashlyticsCore;
+	2       (00000006) invoke-virtual       v1, Lcom/crashlytics/android/core/CrashlyticsCore;->getFabric()Lio/fabric/sdk/android/Fabric;
+	3       (0000000c) move-result-object   v1
+	4       (0000000e) invoke-virtual       v1, Lio/fabric/sdk/android/Fabric;->getCurrentActivity()Landroid/app/Activity;
+	5       (00000014) move-result-object   v1
+	6       (00000016) if-eqz               v1, +18
+
+usingSettings-BB@0x1a : [ usingSettings-BB@0x26 usingSettings-BB@0x46 ]
+	7       (0000001a) invoke-virtual       v1, Landroid/app/Activity;->isFinishing()Z
+	8       (00000020) move-result          v2
+	9       (00000022) if-nez               v2, +12
+
+usingSettings-BB@0x26 : [ usingSettings-BB@0x36 usingSettings-BB@0x46 ]
+	10      (00000026) iget-object          v2, v3, Lcom/crashlytics/android/core/CrashlyticsCore$6;->this$0 Lcom/crashlytics/android/core/CrashlyticsCore;
+	11      (0000002a) invoke-virtual       v2, Lcom/crashlytics/android/core/CrashlyticsCore;->shouldPromptUserBeforeSendingCrashReports()Z
+	12      (00000030) move-result          v2
+	13      (00000032) if-eqz               v2, +a
+
+usingSettings-BB@0x36 : [ usingSettings-BB@0x46 ]
+	14      (00000036) iget-object          v0, v3, Lcom/crashlytics/android/core/CrashlyticsCore$6;->this$0 Lcom/crashlytics/android/core/CrashlyticsCore;
+	15      (0000003a) iget-object          v2, v4, Lio/fabric/sdk/android/services/settings/SettingsData;->promptData Lio/fabric/sdk/android/services/settings/PromptSettingsData;
+	16      (0000003e) invoke-static        v0, v1, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->access$200(Lcom/crashlytics/android/core/CrashlyticsCore; Landroid/app/Activity; Lio/fabric/sdk/android/services/settings/PromptSettingsData;)Z
+	17      (00000044) move-result          v0
+
+usingSettings-BB@0x46 : 
+	18      (00000046) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	19      (0000004c) move-result-object   v0
+	20      (0000004e) return-object        v0
+

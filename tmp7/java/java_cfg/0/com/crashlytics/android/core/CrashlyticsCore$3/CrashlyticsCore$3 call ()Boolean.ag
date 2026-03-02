@@ -1,0 +1,46 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore$3;->call()Ljava/lang/Boolean; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.lang.Boolean
+
+call-BB@0x0 : [ call-BB@0x54 ]
+	0       (00000000) iget-object          v0, v5, Lcom/crashlytics/android/core/CrashlyticsCore$3;->this$0 Lcom/crashlytics/android/core/CrashlyticsCore;
+	1       (00000004) invoke-static        v0, Lcom/crashlytics/android/core/CrashlyticsCore;->access$100(Lcom/crashlytics/android/core/CrashlyticsCore;)Lcom/crashlytics/android/core/CrashlyticsFileMarker;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, Lcom/crashlytics/android/core/CrashlyticsFileMarker;->remove()Z
+	4       (00000012) move-result          v0
+	5       (00000014) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) const-string         v2, 'CrashlyticsCore'
+	8       (00000020) new-instance         v3, Ljava/lang/StringBuilder;
+	9       (00000024) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	10      (0000002a) const-string         v4, 'Initialization marker file removed: '
+	11      (0000002e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v3
+	13      (00000036) invoke-virtual       v3, v0, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v3
+	15      (0000003e) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	16      (00000044) move-result-object   v3
+	17      (00000046) invoke-interface     v1, v2, v3, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	18      (0000004c) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	19      (00000052) move-result-object   v0
+	0:51
+	(Ljava/lang/Exception; -> 56 call-BB@0x56)
+
+call-BB@0x54 : 
+	20      (00000054) return-object        v0
+
+call-BB@0x56 : [ call-BB@0x54 ]
+	21      (00000056) move-exception       v0
+	22      (00000058) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	23      (0000005e) move-result-object   v1
+	24      (00000060) const-string         v2, 'CrashlyticsCore'
+	25      (00000064) const-string         v3, 'Problem encountered deleting Crashlytics initialization marker.'
+	26      (00000068) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	27      (0000006e) const/4              v0, 0
+	28      (00000070) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	29      (00000076) move-result-object   v0
+	30      (00000078) goto                 -12
+

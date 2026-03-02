@@ -1,0 +1,44 @@
+# Lio/fabric/sdk/android/services/events/EventsFilesManager;->rollFileOver()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:boolean
+
+rollFileOver-BB@0x0 : [ rollFileOver-BB@0x16 rollFileOver-BB@0x68 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) const/4              v0, 0
+	3       (00000006) iget-object          v3, v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->eventStorage Lio/fabric/sdk/android/services/events/EventsStorage;
+	4       (0000000a) invoke-interface     v3, Lio/fabric/sdk/android/services/events/EventsStorage;->isWorkingFileEmpty()Z
+	5       (00000010) move-result          v3
+	6       (00000012) if-nez               v3, +2b
+
+rollFileOver-BB@0x16 : [ rollFileOver-BB@0x60 ]
+	7       (00000016) invoke-virtual       v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->generateUniqueRollOverFileName()Ljava/lang/String;
+	8       (0000001c) move-result-object   v0
+	9       (0000001e) iget-object          v3, v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->eventStorage Lio/fabric/sdk/android/services/events/EventsStorage;
+	10      (00000022) invoke-interface     v3, v0, Lio/fabric/sdk/android/services/events/EventsStorage;->rollOver(Ljava/lang/String;)V
+	11      (00000028) iget-object          v3, v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->context Landroid/content/Context;
+	12      (0000002c) const/4              v4, 4
+	13      (0000002e) const-string         v5, 'Fabric'
+	14      (00000032) sget-object          v6, Ljava/util/Locale;->US Ljava/util/Locale;
+	15      (00000036) const-string         v7, 'generated new file %s'
+	16      (0000003a) new-array            v8, v1, [Ljava/lang/Object;
+	17      (0000003e) aput-object          v0, v8, v2
+	18      (00000042) invoke-static        v6, v7, v8, Ljava/lang/String;->format(Ljava/util/Locale; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	19      (00000048) move-result-object   v2
+	20      (0000004a) invoke-static        v3, v4, v5, v2, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlled(Landroid/content/Context; I Ljava/lang/String; Ljava/lang/String;)V
+	21      (00000050) iget-object          v2, v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->currentTimeProvider Lio/fabric/sdk/android/services/common/CurrentTimeProvider;
+	22      (00000054) invoke-interface     v2, Lio/fabric/sdk/android/services/common/CurrentTimeProvider;->getCurrentTimeMillis()J
+	23      (0000005a) move-result-wide     v2
+	24      (0000005c) iput-wide            v2, v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->lastRollOverTime J
+
+rollFileOver-BB@0x60 : 
+	25      (00000060) invoke-direct        v9, v0, Lio/fabric/sdk/android/services/events/EventsFilesManager;->triggerRollOverOnListeners(Ljava/lang/String;)V
+	26      (00000066) return               v1
+
+rollFileOver-BB@0x68 : [ rollFileOver-BB@0x60 ]
+	27      (00000068) move                 v1, v2
+	28      (0000006a) goto                 -5
+

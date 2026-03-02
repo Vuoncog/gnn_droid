@@ -1,0 +1,70 @@
+# Lorg/apache/commons/io/EndianUtils;->writeSwappedLong([B I J)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:byte[]
+# - v8:int
+# - v9:long
+#
+# - return:void
+
+writeSwappedLong-BB@0x0 : 
+	0       (00000000) const-wide/16        v4, 255 # [255.0]
+	1       (00000004) add-int/lit8         v0, v7, 0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) shr-long             v2, v8, v1
+	4       (0000000e) and-long/2addr       v2, v4
+	5       (00000010) long-to-int          v1, v2
+	6       (00000012) int-to-byte          v1, v1
+	7       (00000014) aput-byte            v1, v6, v0
+	8       (00000018) add-int/lit8         v0, v7, 1
+	9       (0000001c) const/16             v1, 8
+	10      (00000020) shr-long             v2, v8, v1
+	11      (00000024) and-long/2addr       v2, v4
+	12      (00000026) long-to-int          v1, v2
+	13      (00000028) int-to-byte          v1, v1
+	14      (0000002a) aput-byte            v1, v6, v0
+	15      (0000002e) add-int/lit8         v0, v7, 2
+	16      (00000032) const/16             v1, 16
+	17      (00000036) shr-long             v2, v8, v1
+	18      (0000003a) and-long/2addr       v2, v4
+	19      (0000003c) long-to-int          v1, v2
+	20      (0000003e) int-to-byte          v1, v1
+	21      (00000040) aput-byte            v1, v6, v0
+	22      (00000044) add-int/lit8         v0, v7, 3
+	23      (00000048) const/16             v1, 24
+	24      (0000004c) shr-long             v2, v8, v1
+	25      (00000050) and-long/2addr       v2, v4
+	26      (00000052) long-to-int          v1, v2
+	27      (00000054) int-to-byte          v1, v1
+	28      (00000056) aput-byte            v1, v6, v0
+	29      (0000005a) add-int/lit8         v0, v7, 4
+	30      (0000005e) const/16             v1, 32
+	31      (00000062) shr-long             v2, v8, v1
+	32      (00000066) and-long/2addr       v2, v4
+	33      (00000068) long-to-int          v1, v2
+	34      (0000006a) int-to-byte          v1, v1
+	35      (0000006c) aput-byte            v1, v6, v0
+	36      (00000070) add-int/lit8         v0, v7, 5
+	37      (00000074) const/16             v1, 40
+	38      (00000078) shr-long             v2, v8, v1
+	39      (0000007c) and-long/2addr       v2, v4
+	40      (0000007e) long-to-int          v1, v2
+	41      (00000080) int-to-byte          v1, v1
+	42      (00000082) aput-byte            v1, v6, v0
+	43      (00000086) add-int/lit8         v0, v7, 6
+	44      (0000008a) const/16             v1, 48
+	45      (0000008e) shr-long             v2, v8, v1
+	46      (00000092) and-long/2addr       v2, v4
+	47      (00000094) long-to-int          v1, v2
+	48      (00000096) int-to-byte          v1, v1
+	49      (00000098) aput-byte            v1, v6, v0
+	50      (0000009c) add-int/lit8         v0, v7, 7
+	51      (000000a0) const/16             v1, 56
+	52      (000000a4) shr-long             v2, v8, v1
+	53      (000000a8) and-long/2addr       v2, v4
+	54      (000000aa) long-to-int          v1, v2
+	55      (000000ac) int-to-byte          v1, v1
+	56      (000000ae) aput-byte            v1, v6, v0
+	57      (000000b2) return-void          
+

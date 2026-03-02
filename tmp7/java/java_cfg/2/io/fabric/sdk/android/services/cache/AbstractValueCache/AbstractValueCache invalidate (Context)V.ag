@@ -1,0 +1,23 @@
+# Lio/fabric/sdk/android/services/cache/AbstractValueCache;->invalidate(Landroid/content/Context;)V [access_flags=public final synchronized]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:void
+
+invalidate-BB@0x0 : [ invalidate-BB@0x2 ]
+	0       (00000000) monitor-enter        v1
+
+invalidate-BB@0x2 : 
+	1       (00000002) invoke-virtual       v1, v2, Lio/fabric/sdk/android/services/cache/AbstractValueCache;->doInvalidate(Landroid/content/Context;)V
+	2       (00000008) monitor-exit         v1
+	3       (0000000a) return-void          
+	2:7
+	(Ljava/lang/Throwable; -> c invalidate-BB@0xc)
+
+invalidate-BB@0xc : 
+	4       (0000000c) move-exception       v0
+	5       (0000000e) monitor-exit         v1
+	6       (00000010) throw                v0
+

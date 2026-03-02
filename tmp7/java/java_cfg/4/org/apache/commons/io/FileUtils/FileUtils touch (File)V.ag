@@ -1,0 +1,42 @@
+# Lorg/apache/commons/io/FileUtils;->touch(Ljava/io/File;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.File
+#
+# - return:void
+
+touch-BB@0x0 : [ touch-BB@0xc touch-BB@0x1a ]
+	0       (00000000) invoke-virtual       v3, Ljava/io/File;->exists()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +9
+
+touch-BB@0xc : [ touch-BB@0x1a ]
+	3       (0000000c) invoke-static        v3, Lorg/apache/commons/io/FileUtils;->openOutputStream(Ljava/io/File;)Ljava/io/FileOutputStream;
+	4       (00000012) move-result-object   v0
+	5       (00000014) invoke-static        v0, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/OutputStream;)V
+
+touch-BB@0x1a : [ touch-BB@0x2e touch-BB@0x60 ]
+	6       (0000001a) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	7       (00000020) move-result-wide     v0
+	8       (00000022) invoke-virtual       v3, v0, v1, Ljava/io/File;->setLastModified(J)Z
+	9       (00000028) move-result          v0
+	10      (0000002a) if-nez               v0, +1b
+
+touch-BB@0x2e : 
+	11      (0000002e) new-instance         v0, Ljava/io/IOException;
+	12      (00000032) new-instance         v1, Ljava/lang/StringBuilder;
+	13      (00000036) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	14      (0000003c) const-string         v2, 'Unable to set the last modification time for '
+	15      (00000040) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000046) move-result-object   v1
+	17      (00000048) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	18      (0000004e) move-result-object   v1
+	19      (00000050) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (00000056) move-result-object   v1
+	21      (00000058) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	22      (0000005e) throw                v0
+
+touch-BB@0x60 : 
+	23      (00000060) return-void          
+

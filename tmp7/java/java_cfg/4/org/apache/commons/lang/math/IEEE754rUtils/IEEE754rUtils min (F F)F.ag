@@ -1,0 +1,31 @@
+# Lorg/apache/commons/lang/math/IEEE754rUtils;->min(F F)F [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:float
+# - v2:float
+#
+# - return:float
+
+min-BB@0x0 : [ min-BB@0xc min-BB@0xe ]
+	0       (00000000) invoke-static        v1, Ljava/lang/Float;->isNaN(F)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +3
+
+min-BB@0xc : 
+	3       (0000000c) return               v2
+
+min-BB@0xe : [ min-BB@0x1a min-BB@0x1e ]
+	4       (0000000e) invoke-static        v2, Ljava/lang/Float;->isNaN(F)Z
+	5       (00000014) move-result          v0
+	6       (00000016) if-eqz               v0, +4
+
+min-BB@0x1a : [ min-BB@0xc ]
+	7       (0000001a) move                 v2, v1
+	8       (0000001c) goto                 -8
+
+min-BB@0x1e : [ min-BB@0xc ]
+	9       (0000001e) invoke-static        v1, v2, Ljava/lang/Math;->min(F F)F
+	10      (00000024) move-result          v2
+	11      (00000026) goto                 -d
+

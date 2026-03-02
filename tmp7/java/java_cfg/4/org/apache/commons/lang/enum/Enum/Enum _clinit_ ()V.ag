@@ -1,0 +1,19 @@
+# Lorg/apache/commons/lang/enum/Enum;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/HashMap;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-direct        v0, v1, Ljava/util/HashMap;-><init>(I)V
+	3       (0000000c) invoke-static        v0, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+	4       (00000012) move-result-object   v0
+	5       (00000014) sput-object          v0, Lorg/apache/commons/lang/enum/Enum;->EMPTY_MAP Ljava/util/Map;
+	6       (00000018) new-instance         v0, Ljava/util/WeakHashMap;
+	7       (0000001c) invoke-direct        v0, Ljava/util/WeakHashMap;-><init>()V
+	8       (00000022) sput-object          v0, Lorg/apache/commons/lang/enum/Enum;->cEnumClasses Ljava/util/Map;
+	9       (00000026) return-void          
+

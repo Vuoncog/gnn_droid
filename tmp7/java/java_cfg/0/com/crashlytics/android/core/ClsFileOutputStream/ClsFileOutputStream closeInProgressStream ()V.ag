@@ -1,0 +1,21 @@
+# Lcom/crashlytics/android/core/ClsFileOutputStream;->closeInProgressStream()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+closeInProgressStream-BB@0x0 : [ closeInProgressStream-BB@0x8 closeInProgressStream-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v1, Lcom/crashlytics/android/core/ClsFileOutputStream;->closed Z
+	1       (00000004) if-eqz               v0, +3
+
+closeInProgressStream-BB@0x8 : 
+	2       (00000008) return-void          
+
+closeInProgressStream-BB@0xa : [ closeInProgressStream-BB@0x8 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) iput-boolean         v0, v1, Lcom/crashlytics/android/core/ClsFileOutputStream;->closed Z
+	5       (00000010) invoke-super         v1, Ljava/io/FileOutputStream;->flush()V
+	6       (00000016) invoke-super         v1, Ljava/io/FileOutputStream;->close()V
+	7       (0000001c) goto                 -a
+

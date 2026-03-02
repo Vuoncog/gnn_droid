@@ -1,0 +1,27 @@
+# Lorg/apache/commons/io/input/BOMInputStream;->readFirstBytes()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+readFirstBytes-BB@0x0 : [ readFirstBytes-BB@0x12 readFirstBytes-BB@0x28 ]
+	0       (00000000) invoke-virtual       v3, Lorg/apache/commons/io/input/BOMInputStream;->getBOM()Lorg/apache/commons/io/ByteOrderMark;
+	1       (00000006) iget                 v0, v3, Lorg/apache/commons/io/input/BOMInputStream;->fbIndex I
+	2       (0000000a) iget                 v1, v3, Lorg/apache/commons/io/input/BOMInputStream;->fbLength I
+	3       (0000000e) if-ge                v0, v1, +d
+
+readFirstBytes-BB@0x12 : [ readFirstBytes-BB@0x26 ]
+	4       (00000012) iget-object          v0, v3, Lorg/apache/commons/io/input/BOMInputStream;->firstBytes [I
+	5       (00000016) iget                 v1, v3, Lorg/apache/commons/io/input/BOMInputStream;->fbIndex I
+	6       (0000001a) add-int/lit8         v2, v1, 1
+	7       (0000001e) iput                 v2, v3, Lorg/apache/commons/io/input/BOMInputStream;->fbIndex I
+	8       (00000022) aget                 v0, v0, v1
+
+readFirstBytes-BB@0x26 : 
+	9       (00000026) return               v0
+
+readFirstBytes-BB@0x28 : [ readFirstBytes-BB@0x26 ]
+	10      (00000028) const/4              v0, -1
+	11      (0000002a) goto                 -2
+

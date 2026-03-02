@@ -1,0 +1,53 @@
+digraph {
+	graph [bb="0,0,484,386",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_dad5c49ef17deb1c1a852ad9a2d54d7e {
+		graph [bb="8,8,476,378",
+			label="Lcom/a/a/e/a/a;.b->()Ljava/lang/Class;\nLocal registers v0 ... v1\nreturn = java.lang.Class",
+			lheight=0.62,
+			lp="242,351.5",
+			lwidth=3.43
+		];
+		struct_3d558aa4c6433d1f0b521522ef80b008	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">Lcom/a/a/e/a/a;-&gt;l Ljava/lang/Class;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="244,282.5",
+			width=5.8194];
+		struct_280b23227afb22c861f192d5af211b10	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lcom/a/a/e/a/a;-&gt;a()Ljava/lang/Class;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">Lcom/a/a/e/a/a;-&gt;l Ljava/lang/Class;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="232,166.5",
+			width=5.9861];
+		struct_3d558aa4c6433d1f0b521522ef80b008:tail -> struct_280b23227afb22c861f192d5af211b10:header	[color=red,
+			pos="e,42,205.5 56,253.5 56,235.1 46.399,229.5 43.099,215.49"];
+		struct_5ae050b9a5f8ec9d7c3ae6cfb287663d	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">Lcom/a/a/e/a/a;-&gt;l Ljava/lang/Class;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="242,50.5",
+			width=5.9306];
+		struct_3d558aa4c6433d1f0b521522ef80b008:tail -> struct_5ae050b9a5f8ec9d7c3ae6cfb287663d:header	[color=green,
+			pos="e,54,78.5 56,253.5 56,163.91 397,278.53 457,212 484.09,181.97 484.06,151.06 457,121 399.23,56.813 81.641,159.47 55.687,88.575"];
+		struct_280b23227afb22c861f192d5af211b10:tail -> struct_5ae050b9a5f8ec9d7c3ae6cfb287663d:header	[color=blue,
+			pos="e,54,78.5 42,126.5 42,108.46 50.075,102.51 52.977,88.822"];
+	}
+}

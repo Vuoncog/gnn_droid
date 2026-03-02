@@ -1,0 +1,40 @@
+# Lorg/apache/commons/lang/math/Range;->overlapsRange(Lorg/apache/commons/lang/math/Range;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:org.apache.commons.lang.math.Range
+#
+# - return:boolean
+
+overlapsRange-BB@0x0 : [ overlapsRange-BB@0x6 overlapsRange-BB@0x8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-nez               v3, +3
+
+overlapsRange-BB@0x6 : 
+	2       (00000006) return               v0
+
+overlapsRange-BB@0x8 : [ overlapsRange-BB@0x1c overlapsRange-BB@0x44 ]
+	3       (00000008) invoke-virtual       v2, Lorg/apache/commons/lang/math/Range;->getMinimumNumber()Ljava/lang/Number;
+	4       (0000000e) move-result-object   v1
+	5       (00000010) invoke-virtual       v3, v1, Lorg/apache/commons/lang/math/Range;->containsNumber(Ljava/lang/Number;)Z
+	6       (00000016) move-result          v1
+	7       (00000018) if-nez               v1, +16
+
+overlapsRange-BB@0x1c : [ overlapsRange-BB@0x30 overlapsRange-BB@0x44 ]
+	8       (0000001c) invoke-virtual       v2, Lorg/apache/commons/lang/math/Range;->getMaximumNumber()Ljava/lang/Number;
+	9       (00000022) move-result-object   v1
+	10      (00000024) invoke-virtual       v3, v1, Lorg/apache/commons/lang/math/Range;->containsNumber(Ljava/lang/Number;)Z
+	11      (0000002a) move-result          v1
+	12      (0000002c) if-nez               v1, +c
+
+overlapsRange-BB@0x30 : [ overlapsRange-BB@0x44 overlapsRange-BB@0x6 ]
+	13      (00000030) invoke-virtual       v3, Lorg/apache/commons/lang/math/Range;->getMinimumNumber()Ljava/lang/Number;
+	14      (00000036) move-result-object   v1
+	15      (00000038) invoke-virtual       v2, v1, Lorg/apache/commons/lang/math/Range;->containsNumber(Ljava/lang/Number;)Z
+	16      (0000003e) move-result          v1
+	17      (00000040) if-eqz               v1, -1d
+
+overlapsRange-BB@0x44 : [ overlapsRange-BB@0x6 ]
+	18      (00000044) const/4              v0, 1
+	19      (00000046) goto                 -20
+

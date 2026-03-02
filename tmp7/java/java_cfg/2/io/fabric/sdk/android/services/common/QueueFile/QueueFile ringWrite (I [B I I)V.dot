@@ -1,0 +1,83 @@
+digraph {
+	graph [bb="0,0,1557,754",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_d262a2da7c14b11c7664ce121eb62982 {
+		graph [bb="8,8,1549,746",
+			label="Lio/fabric/sdk/android/services/common/QueueFile;.ringWrite->(I [B I I)V\nLocal registers v0 ... v6\nparam v7 = int\nparam v8 = \
+byte[]\nparam v9 = int\nparam v10 = int\nreturn = void",
+			lheight=1.46,
+			lp="778.5,689.5",
+			lwidth=6.67
+		];
+		struct_da720a4c0560cf1a985b9004c368159c	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v6</FONT>, <FONT color="#949445">v7</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;wrapPosition(I)I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#8F8F58">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int </FONT> <FONT color="#8B8B6A">v1</FONT>, <FONT color="#8F8F58">v0</FONT>, <FONT color="#86867D">v10</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#81818F">v2</FONT>, <FONT color="#999933">v6</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;fileLength I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-gt </FONT> <FONT color="#8B8B6A">v1</FONT>, <FONT color="#81818F">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xe</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="736,557.5",
+			width=9.2917];
+		struct_ff377edbd624bb6d161bd4559aaacb7b	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#8B8B6A">v1</FONT>, <FONT color="#999933">v6</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;raf Ljava/io/RandomAccessFile;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">int-to-long </FONT> <FONT color="#81818F">v2</FONT>, <FONT color="#8F8F58">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8B8B6A">v1</FONT>, <FONT color="#81818F">v2</FONT>, <FONT color="#7D7DA2">v3</FONT>, <FONT color="#DF3A01">Ljava/io/RandomAccessFile;-&gt;seek(J)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#8F8F58">v0</FONT>, <FONT color="#999933">v6</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;raf Ljava/io/RandomAccessFile;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8F8F58">v0</FONT>, <FONT color="#7878B4">v8</FONT>, <FONT color="#7373C7">v9</FONT>, <FONT color="#86867D">v10</FONT>, <FONT color="#DF3A01">Ljava/io/RandomAccessFile;-&gt;write([B I I)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="393,276.5",
+			width=10.458];
+		struct_da720a4c0560cf1a985b9004c368159c:tail -> struct_ff377edbd624bb6d161bd4559aaacb7b:header	[color=red,
+			pos="e,42,337.5 427,495.5 427,314.06 56.523,514.53 42.414,347.64"];
+		struct_7be53f6a0389ec2a8fa172525aae51a4	[height=4.9306,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#8B8B6A">v1</FONT>, <FONT color="#999933">v6</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;fileLength I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sub-int/2addr </FONT> <FONT color="#8B8B6A">v1</FONT>, <FONT color="#8F8F58">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#81818F">v2</FONT>, <FONT color="#999933">v6</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;raf Ljava/io/RandomAccessFile;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">int-to-long </FONT> <FONT color="#6F6FD9">v4</FONT>, <FONT color="#8F8F58">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#81818F">v2</FONT>, <FONT color="#6F6FD9">v4</FONT>, <FONT color="#6A6AEC">v5</FONT>, <FONT color="#DF3A01">Ljava/io/RandomAccessFile;-&gt;seek(J)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#8F8F58">v0</FONT>, <FONT color="#999933">v6</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;raf Ljava/io/RandomAccessFile;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8F8F58">v0</FONT>, <FONT color="#7878B4">v8</FONT>, <FONT color="#7373C7">v9</FONT>, <FONT color="#8B8B6A">v1</FONT>, <FONT color="#DF3A01">Ljava/io/RandomAccessFile;-&gt;write([B I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">48</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#8F8F58">v0</FONT>, <FONT color="#999933">v6</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;raf Ljava/io/RandomAccessFile;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-wide/16 </FONT> <FONT color="#81818F">v2</FONT>, <FONT color="green">0x10</FONT> ; [16.0] </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">50</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8F8F58">v0</FONT>, <FONT color="#81818F">v2</FONT>, <FONT color="#7D7DA2">v3</FONT>, <FONT color="#DF3A01">Ljava/io/RandomAccessFile;-&gt;seek(J)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">56</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#8F8F58">v0</FONT>, <FONT color="#999933">v6</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;raf Ljava/io/RandomAccessFile;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int </FONT> <FONT color="#81818F">v2</FONT>, <FONT color="#7373C7">v9</FONT>, <FONT color="#8B8B6A">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sub-int </FONT> <FONT color="#8B8B6A">v1</FONT>, <FONT color="#86867D">v10</FONT>, <FONT color="#8B8B6A">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">62</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8F8F58">v0</FONT>, <FONT color="#7878B4">v8</FONT>, <FONT color="#81818F">v2</FONT>, <FONT color="#8B8B6A">v1</FONT>, <FONT color="#DF3A01">Ljava/io/RandomAccessFile;-&gt;write([B I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">68</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-1f</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1164,276.5",
+			width=10.458];
+		struct_da720a4c0560cf1a985b9004c368159c:tail -> struct_7be53f6a0389ec2a8fa172525aae51a4:header	[color=green,
+			pos="e,798,444.5 427,495.5 427,456.12 741.27,465.28 779,454 783.52,452.65 785.91,450.27 788.35,448.24"];
+		struct_6605ca45025cc8cc0b1e832006d9330e	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="476,39.5",
+			width=2.0556];
+		struct_ff377edbd624bb6d161bd4559aaacb7b:tail -> struct_6605ca45025cc8cc0b1e832006d9330e:header	[color=blue,
+			pos="e,427,56.5 42,214.5 42,33.062 412.48,233.53 426.59,66.64"];
+		struct_7be53f6a0389ec2a8fa172525aae51a4:tail -> struct_6605ca45025cc8cc0b1e832006d9330e:header	[color=blue,
+			pos="e,427,56.5 798,107.5 788.75,107.5 787.91,101.47 779,99 744,89.299 474.38,94.846 432.47,64.907"];
+	}
+}

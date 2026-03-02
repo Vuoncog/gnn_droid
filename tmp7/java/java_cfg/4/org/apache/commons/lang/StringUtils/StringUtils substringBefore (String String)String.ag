@@ -1,0 +1,41 @@
+# Lorg/apache/commons/lang/StringUtils;->substringBefore(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:java.lang.String
+#
+# - return:java.lang.String
+
+substringBefore-BB@0x0 : [ substringBefore-BB@0xc substringBefore-BB@0x10 ]
+	0       (00000000) invoke-static        v2, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +4
+
+substringBefore-BB@0xc : [ substringBefore-BB@0x10 substringBefore-BB@0x12 ]
+	3       (0000000c) if-nez               v3, +3
+
+substringBefore-BB@0x10 : 
+	4       (00000010) return-object        v2
+
+substringBefore-BB@0x12 : [ substringBefore-BB@0x1e substringBefore-BB@0x24 ]
+	5       (00000012) invoke-virtual       v3, Ljava/lang/String;->length()I
+	6       (00000018) move-result          v0
+	7       (0000001a) if-nez               v0, +5
+
+substringBefore-BB@0x1e : [ substringBefore-BB@0x10 ]
+	8       (0000001e) const-string         v2, ''
+	9       (00000022) goto                 -9
+
+substringBefore-BB@0x24 : [ substringBefore-BB@0x32 substringBefore-BB@0x10 ]
+	10      (00000024) invoke-virtual       v2, v3, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	11      (0000002a) move-result          v0
+	12      (0000002c) const/4              v1, -1
+	13      (0000002e) if-eq                v0, v1, -f
+
+substringBefore-BB@0x32 : [ substringBefore-BB@0x10 ]
+	14      (00000032) const/4              v1, 0
+	15      (00000034) invoke-virtual       v2, v1, v0, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	16      (0000003a) move-result-object   v2
+	17      (0000003c) goto                 -16
+

@@ -1,0 +1,26 @@
+# Lnet/youmi/android/cc;->onDownloadStart(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:java.lang.String
+# - v5:java.lang.String
+# - v6:java.lang.String
+# - v7:long
+#
+# - return:void
+
+onDownloadStart-BB@0x0 : [ onDownloadStart-BB@0xe ]
+	0       (00000000) iget-object          v0, v1, Lnet/youmi/android/cc;->a Lnet/youmi/android/cq;
+	1       (00000004) iget-object          v0, v0, Lnet/youmi/android/cq;->f Lnet/youmi/android/AdActivity;
+	2       (00000008) invoke-static        v0, v2, Lnet/youmi/android/ad;->a(Landroid/app/Activity; Ljava/lang/String;)V
+	0:d
+	(Ljava/lang/Exception; -> 10 onDownloadStart-BB@0x10)
+
+onDownloadStart-BB@0xe : 
+	3       (0000000e) return-void          
+
+onDownloadStart-BB@0x10 : [ onDownloadStart-BB@0xe ]
+	4       (00000010) move-exception       v0
+	5       (00000012) goto                 -2
+

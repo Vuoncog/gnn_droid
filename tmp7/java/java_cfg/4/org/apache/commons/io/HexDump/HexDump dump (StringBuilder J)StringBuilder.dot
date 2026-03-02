@@ -1,0 +1,72 @@
+digraph {
+	graph [bb="0,0,865.41,548",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_0f07015304b0aedb1c258a328294f18d {
+		graph [bb="25.414,8,857.41,540",
+			label="Lorg/apache/commons/io/HexDump;.dump->(Ljava/lang/StringBuilder; J)Ljava/lang/StringBuilder;\nLocal registers v0 ... v5\nparam v6 = \
+java.lang.StringBuilder\nparam v7 = long\nreturn = java.lang.StringBuilder",
+			lheight=1.04,
+			lp="441.41,498.5",
+			lwidth=8.93
+		];
+		struct_3ec2f778dc38498a0789dd759e66566a	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="119.41,425.5",
+			width=2.2917];
+		struct_665b0eea982c424c0418a8c8f1679172	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/16 </FONT> <FONT color="#8E8E5B">v1</FONT>, <FONT color="green">0x8</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ge </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x15</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="125.41,331.5",
+			width=2.4583];
+		struct_3ec2f778dc38498a0789dd759e66566a:tail -> struct_665b0eea982c424c0418a8c8f1679172:header	[color=blue,
+			pos="e,58.414,359.5 58.414,407.5 58.414,390 58.414,383.27 58.414,369.64"];
+		struct_87a0c289c573f6d4edcec74e2043199b	[height=3.4028,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#8E8E5B">v1</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/HexDump;-&gt;_hexcodes [C</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#848484">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/HexDump;-&gt;_shifts [I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aget </FONT> <FONT color="#848484">v2</FONT>, <FONT color="#848484">v2</FONT>, <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">shr-long </FONT> <FONT color="#848484">v2</FONT>, <FONT color="#7A7AAD">v6</FONT>, <FONT color="#848484">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">long-to-int </FONT> <FONT color="#848484">v2</FONT>, <FONT color="#848484">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">and-int/lit8 </FONT> <FONT color="#848484">v2</FONT>, <FONT color="#848484">v2</FONT>, <FONT color="green">0xf</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aget-char </FONT> <FONT color="#8E8E5B">v1</FONT>, <FONT color="#8E8E5B">v1</FONT>, <FONT color="#848484">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7070D6">v5</FONT>, <FONT color="#8E8E5B">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/StringBuilder;-&gt;append(C)Ljava/lang/StringBuilder;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-16</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="343.41,138.5",
+			width=8.6111];
+		struct_665b0eea982c424c0418a8c8f1679172:tail -> struct_87a0c289c573f6d4edcec74e2043199b:header	[color=red,
+			pos="e,58.414,254.5 58.414,302.5 58.414,285 58.414,278.27 58.414,264.64"];
+		struct_e44c06861c9b790fa19d68755c206814	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#7070D6">v5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="760.41,138.5",
+			width=2.4722];
+		struct_665b0eea982c424c0418a8c8f1679172:tail -> struct_e44c06861c9b790fa19d68755c206814:header	[color=green,
+			pos="e,681.41,152.5 58.414,302.5 58.414,235.23 612.42,306.01 662.41,261 695.67,231.06 643.1,165.2 671.21,154.1"];
+		struct_87a0c289c573f6d4edcec74e2043199b:tail -> struct_665b0eea982c424c0418a8c8f1679172:header	[color=blue,
+			pos="e,58.414,359.5 58.414,21.5 58.414,10.38 41.118,14.481 33.414,22.5 -40.026,98.937 31.512,155.02 33.414,261 34.192,304.35 6.416,327.68 \
+36.914,358.5 40.173,361.79 45.319,364.38 49.76,365.08"];
+	}
+}

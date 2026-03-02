@@ -1,0 +1,57 @@
+# La/a/b/a/a/a/c;->c(F)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:float
+#
+# - return:void
+
+c-BB@0x0 : [ c-BB@0xc c-BB@0x52 ]
+	0       (00000000) const/high16         v3, 17530 # [1000.0]
+	1       (00000004) iget-object          v0, v4, La/a/b/a/a/a/c;->g La/a/b/a/a/a/d;
+	2       (00000008) if-eqz               v0, +25
+
+c-BB@0xc : [ c-BB@0x30 c-BB@0x54 ]
+	3       (0000000c) iget-object          v0, v4, La/a/b/a/a/a/c;->d La/a/b/a/b/b/c/i;
+	4       (00000010) invoke-virtual       v0, v5, La/a/b/a/b/b/c/i;->d(F)F
+	5       (00000016) move-result          v0
+	6       (00000018) const-string         v1, ' s'
+	7       (0000001c) iget-object          v2, v4, La/a/b/a/a/a/c;->c La/a/b/a/b/b/c/c/c;
+	8       (00000020) iget-object          v2, v2, La/a/b/a/b/b/c/c/c;->b Ljava/lang/String;
+	9       (00000024) invoke-virtual       v1, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	10      (0000002a) move-result          v1
+	11      (0000002c) if-eqz               v1, +14
+
+c-BB@0x30 : [ c-BB@0x3c ]
+	12      (00000030) mul-float/2addr      v0, v3
+	13      (00000032) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	14      (00000038) move-result          v0
+	15      (0000003a) int-to-float         v0, v0
+
+c-BB@0x3c : [ c-BB@0x52 ]
+	16      (0000003c) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	17      (00000042) move-result          v0
+	18      (00000044) iput                 v0, v4, La/a/b/a/a/a/c;->a I
+	19      (00000048) iget-object          v0, v4, La/a/b/a/a/a/c;->g La/a/b/a/a/a/d;
+	20      (0000004c) invoke-virtual       v0, La/a/b/a/a/a/d;->interrupt()V
+
+c-BB@0x52 : 
+	21      (00000052) return-void          
+
+c-BB@0x54 : [ c-BB@0x6c c-BB@0x3c ]
+	22      (00000054) const-string         v1, ' Hz'
+	23      (00000058) iget-object          v2, v4, La/a/b/a/a/a/c;->c La/a/b/a/b/b/c/c/c;
+	24      (0000005c) iget-object          v2, v2, La/a/b/a/b/b/c/c/c;->b Ljava/lang/String;
+	25      (00000060) invoke-virtual       v1, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	26      (00000066) move-result          v1
+	27      (00000068) if-eqz               v1, -16
+
+c-BB@0x6c : [ c-BB@0x3c ]
+	28      (0000006c) const/high16         v1, 16256 # [1.0]
+	29      (00000070) div-float            v0, v1, v0
+	30      (00000074) mul-float/2addr      v0, v3
+	31      (00000076) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	32      (0000007c) move-result          v0
+	33      (0000007e) int-to-float         v0, v0
+	34      (00000080) goto                 -22
+

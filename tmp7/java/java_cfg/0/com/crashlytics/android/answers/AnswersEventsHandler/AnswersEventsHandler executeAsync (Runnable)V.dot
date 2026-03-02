@@ -1,0 +1,59 @@
+digraph {
+	graph [bb="0,0,1004,483",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_27a1d0821003d85285d8b212b7964287 {
+		graph [bb="8,8,996,475",
+			label="Lcom/crashlytics/android/answers/AnswersEventsHandler;.executeAsync->(Ljava/lang/Runnable;)V\nLocal registers v0 ... v4\nparam v5 = \
+java.lang.Runnable\nreturn = void",
+			lheight=0.83,
+			lp="502,441",
+			lwidth=9.08
+		];
+		struct_d353422cda1ed3c7aa7add20a69d93cf	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#909055">v4</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/AnswersEventsHandler;-&gt;executor Ljava/util/concurrent/ScheduledExecutorService;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v5</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/ScheduledExecutorService;-&gt;submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="502,364.5",
+			width=13.5];
+		struct_ee2bc5e2d107ffca8cb00c2a1e2cf517	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="92,39.5",
+			width=1.9444];
+		struct_d353422cda1ed3c7aa7add20a69d93cf:tail -> struct_ee2bc5e2d107ffca8cb00c2a1e2cf517:header	[color=blue,
+			pos="e,43,56.5 37,335.5 37,222.39 26.412,193.52 38,81 38.694,74.263 40.399,70.766 41.625,66.547"];
+		struct_04f8e17a3196585ffd52988e860d32cc	[height=2.4861,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="red">'Answers'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#6E6EDD">v3</FONT>, <FONT color="red">'Failed to submit events task'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#6E6EDD">v3</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="502,189.5",
+			width=12.5];
+		struct_d353422cda1ed3c7aa7add20a69d93cf:tail -> struct_04f8e17a3196585ffd52988e860d32cc:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="135.5,304.5",
+			pos="e,77,272.5 37,335.5 37,306.09 68.451,305.38 75.576,282.47"];
+		struct_04f8e17a3196585ffd52988e860d32cc:tail -> struct_ee2bc5e2d107ffca8cb00c2a1e2cf517:header	[color=blue,
+			pos="e,43,56.5 62,108.5 40.759,108.5 42.032,88.084 42.777,66.671"];
+	}
+}

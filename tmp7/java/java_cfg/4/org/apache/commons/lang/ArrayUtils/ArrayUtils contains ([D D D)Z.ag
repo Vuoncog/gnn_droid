@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/ArrayUtils;->contains([D D D)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:double[]
+# - v10:double
+# - v11:double
+#
+# - return:boolean
+
+contains-BB@0x0 : [ contains-BB@0x16 contains-BB@0x18 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) move-object          v0, v7
+	2       (00000004) move-wide            v1, v8
+	3       (00000006) move-wide            v4, v10
+	4       (00000008) invoke-static/range  v0 ... v5, Lorg/apache/commons/lang/ArrayUtils;->indexOf([D D I D)I
+	5       (0000000e) move-result          v0
+	6       (00000010) const/4              v1, -1
+	7       (00000012) if-eq                v0, v1, +3
+
+contains-BB@0x16 : [ contains-BB@0x18 ]
+	8       (00000016) const/4              v3, 1
+
+contains-BB@0x18 : 
+	9       (00000018) return               v3
+

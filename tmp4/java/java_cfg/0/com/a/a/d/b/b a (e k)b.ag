@@ -1,0 +1,158 @@
+# Lcom/a/a/d/b;->a(Lcom/a/a/d/c/e; Lcom/a/a/d/c/k;)Lcom/a/a/c/b; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:com.a.a.d.c.e
+# - v12:com.a.a.d.c.k
+#
+# - return:com.a.a.c.b
+
+a-BB@0x0 : [ a-BB@0x32 ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) invoke-virtual       v12, Lcom/a/a/d/c/k;->d()I
+	3       (0000000a) move-result          v7
+	4       (0000000c) invoke-virtual       v12, Lcom/a/a/d/c/k;->e()I
+	5       (00000012) move-result          v8
+	6       (00000014) new-instance         v9, Lcom/a/a/i/c/b;
+	7       (00000018) invoke-virtual       v12, Lcom/a/a/d/c/k;->f()I
+	8       (0000001e) move-result          v0
+	9       (00000020) invoke-virtual       v12, Lcom/a/a/d/c/k;->g()I
+	10      (00000026) move-result          v2
+	11      (00000028) invoke-direct        v9, v0, v2, Lcom/a/a/i/c/b;-><init>(I I)V
+	12      (0000002e) move                 v6, v1
+	13      (00000030) move                 v5, v1
+
+a-BB@0x32 : [ a-BB@0x36 a-BB@0x11e ]
+	14      (00000032) if-ge                v6, v8, +76
+
+a-BB@0x36 : [ a-BB@0x42 a-BB@0x130 ]
+	15      (00000036) iget                 v0, v12, Lcom/a/a/d/c/k;->c I
+	16      (0000003a) rem-int              v0, v6, v0
+	17      (0000003e) if-nez               v0, +79
+
+a-BB@0x42 : [ a-BB@0x46 ]
+	18      (00000042) move                 v0, v1
+	19      (00000044) move                 v2, v1
+
+a-BB@0x46 : [ a-BB@0x52 a-BB@0x70 ]
+	20      (00000046) invoke-virtual       v12, Lcom/a/a/d/c/k;->f()I
+	21      (0000004c) move-result          v3
+	22      (0000004e) if-ge                v0, v3, +11
+
+a-BB@0x52 : [ a-BB@0x5a a-BB@0x6c ]
+	23      (00000052) rem-int/lit8         v3, v0, 2
+	24      (00000056) if-nez               v3, +b
+
+a-BB@0x5a : [ a-BB@0x5c ]
+	25      (0000005a) move                 v3, v4
+
+a-BB@0x5c : [ a-BB@0x46 ]
+	26      (0000005c) invoke-virtual       v9, v2, v5, v3, Lcom/a/a/i/c/b;->a(I I Z)V
+	27      (00000062) add-int/lit8         v2, v2, 1
+	28      (00000066) add-int/lit8         v0, v0, 1
+	29      (0000006a) goto                 -12
+
+a-BB@0x6c : [ a-BB@0x5c ]
+	30      (0000006c) move                 v3, v1
+	31      (0000006e) goto                 -9
+
+a-BB@0x70 : [ a-BB@0x74 ]
+	32      (00000070) add-int/lit8         v0, v5, 1
+
+a-BB@0x74 : [ a-BB@0x78 ]
+	33      (00000074) move                 v5, v1
+	34      (00000076) move                 v2, v1
+
+a-BB@0x78 : [ a-BB@0x7c a-BB@0xd8 ]
+	35      (00000078) if-ge                v5, v7, +30
+
+a-BB@0x7c : [ a-BB@0x88 a-BB@0x92 ]
+	36      (0000007c) iget                 v3, v12, Lcom/a/a/d/c/k;->b I
+	37      (00000080) rem-int              v3, v5, v3
+	38      (00000084) if-nez               v3, +7
+
+a-BB@0x88 : [ a-BB@0x92 ]
+	39      (00000088) invoke-virtual       v9, v2, v0, v4, Lcom/a/a/i/c/b;->a(I I Z)V
+	40      (0000008e) add-int/lit8         v2, v2, 1
+
+a-BB@0x92 : [ a-BB@0xb8 a-BB@0x12c ]
+	41      (00000092) invoke-virtual       v11, v5, v6, Lcom/a/a/d/c/e;->a(I I)Z
+	42      (00000098) move-result          v3
+	43      (0000009a) invoke-virtual       v9, v2, v0, v3, Lcom/a/a/i/c/b;->a(I I Z)V
+	44      (000000a0) add-int/lit8         v3, v2, 1
+	45      (000000a4) iget                 v2, v12, Lcom/a/a/d/c/k;->b I
+	46      (000000a8) rem-int              v2, v5, v2
+	47      (000000ac) iget                 v10, v12, Lcom/a/a/d/c/k;->b I
+	48      (000000b0) add-int/lit8         v10, v10, -1
+	49      (000000b4) if-ne                v2, v10, +3c
+
+a-BB@0xb8 : [ a-BB@0xc0 a-BB@0xd4 ]
+	50      (000000b8) rem-int/lit8         v2, v6, 2
+	51      (000000bc) if-nez               v2, +c
+
+a-BB@0xc0 : [ a-BB@0xc2 ]
+	52      (000000c0) move                 v2, v4
+
+a-BB@0xc2 : [ a-BB@0xcc ]
+	53      (000000c2) invoke-virtual       v9, v3, v0, v2, Lcom/a/a/i/c/b;->a(I I Z)V
+	54      (000000c8) add-int/lit8         v2, v3, 1
+
+a-BB@0xcc : [ a-BB@0x78 ]
+	55      (000000cc) add-int/lit8         v3, v5, 1
+	56      (000000d0) move                 v5, v3
+	57      (000000d2) goto                 -2d
+
+a-BB@0xd4 : [ a-BB@0xc2 ]
+	58      (000000d4) move                 v2, v1
+	59      (000000d6) goto                 -a
+
+a-BB@0xd8 : [ a-BB@0xf0 a-BB@0x128 ]
+	60      (000000d8) add-int/lit8         v3, v0, 1
+	61      (000000dc) iget                 v0, v12, Lcom/a/a/d/c/k;->c I
+	62      (000000e0) rem-int              v0, v6, v0
+	63      (000000e4) iget                 v2, v12, Lcom/a/a/d/c/k;->c I
+	64      (000000e8) add-int/lit8         v2, v2, -1
+	65      (000000ec) if-ne                v0, v2, +1e
+
+a-BB@0xf0 : [ a-BB@0xf4 ]
+	66      (000000f0) move                 v0, v1
+	67      (000000f2) move                 v2, v1
+
+a-BB@0xf4 : [ a-BB@0x100 a-BB@0x110 ]
+	68      (000000f4) invoke-virtual       v12, Lcom/a/a/d/c/k;->f()I
+	69      (000000fa) move-result          v5
+	70      (000000fc) if-ge                v0, v5, +a
+
+a-BB@0x100 : [ a-BB@0xf4 ]
+	71      (00000100) invoke-virtual       v9, v2, v3, v4, Lcom/a/a/i/c/b;->a(I I Z)V
+	72      (00000106) add-int/lit8         v2, v2, 1
+	73      (0000010a) add-int/lit8         v0, v0, 1
+	74      (0000010e) goto                 -d
+
+a-BB@0x110 : [ a-BB@0x114 ]
+	75      (00000110) add-int/lit8         v0, v3, 1
+
+a-BB@0x114 : [ a-BB@0x32 ]
+	76      (00000114) add-int/lit8         v2, v6, 1
+	77      (00000118) move                 v6, v2
+	78      (0000011a) move                 v5, v0
+	79      (0000011c) goto                 -75
+
+a-BB@0x11e : 
+	80      (0000011e) invoke-static        v9, Lcom/a/a/d/b;->a(Lcom/a/a/i/c/b;)Lcom/a/a/c/b;
+	81      (00000124) move-result-object   v0
+	82      (00000126) return-object        v0
+
+a-BB@0x128 : [ a-BB@0x114 ]
+	83      (00000128) move                 v0, v3
+	84      (0000012a) goto                 -b
+
+a-BB@0x12c : [ a-BB@0xcc ]
+	85      (0000012c) move                 v2, v3
+	86      (0000012e) goto                 -31
+
+a-BB@0x130 : [ a-BB@0x74 ]
+	87      (00000130) move                 v0, v5
+	88      (00000132) goto                 -5f
+

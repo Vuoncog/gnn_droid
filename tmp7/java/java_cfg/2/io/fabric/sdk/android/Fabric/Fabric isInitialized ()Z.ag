@@ -1,0 +1,28 @@
+# Lio/fabric/sdk/android/Fabric;->isInitialized()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:boolean
+
+isInitialized-BB@0x0 : [ isInitialized-BB@0x8 isInitialized-BB@0x20 ]
+	0       (00000000) sget-object          v0, Lio/fabric/sdk/android/Fabric;->singleton Lio/fabric/sdk/android/Fabric;
+	1       (00000004) if-eqz               v0, +e
+
+isInitialized-BB@0x8 : [ isInitialized-BB@0x1c isInitialized-BB@0x20 ]
+	2       (00000008) sget-object          v0, Lio/fabric/sdk/android/Fabric;->singleton Lio/fabric/sdk/android/Fabric;
+	3       (0000000c) iget-object          v0, v0, Lio/fabric/sdk/android/Fabric;->initialized Ljava/util/concurrent/atomic/AtomicBoolean;
+	4       (00000010) invoke-virtual       v0, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +4
+
+isInitialized-BB@0x1c : [ isInitialized-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+isInitialized-BB@0x1e : 
+	8       (0000001e) return               v0
+
+isInitialized-BB@0x20 : [ isInitialized-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

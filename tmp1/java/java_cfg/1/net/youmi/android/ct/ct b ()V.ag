@@ -1,0 +1,35 @@
+# Lnet/youmi/android/ct;->b()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x8 b-BB@0xe ]
+	0       (00000000) iget-object          v0, v3, Lnet/youmi/android/ct;->b Lnet/youmi/android/cu;
+	1       (00000004) if-eqz               v0, +5
+	0:27
+	(Ljava/lang/Exception; -> 2a b-BB@0x2a)
+
+b-BB@0x8 : [ b-BB@0xe ]
+	2       (00000008) invoke-direct        v3, Lnet/youmi/android/ct;->c()V
+	0:27
+	(Ljava/lang/Exception; -> 2a b-BB@0x2a)
+
+b-BB@0xe : [ b-BB@0x28 ]
+	3       (0000000e) new-instance         v0, Lnet/youmi/android/cu;
+	4       (00000012) new-instance         v1, Lnet/youmi/android/bf;
+	5       (00000016) invoke-direct        v1, v3, Lnet/youmi/android/bf;-><init>(Lnet/youmi/android/ct;)V
+	6       (0000001c) const/4              v2, -1
+	7       (0000001e) invoke-direct        v0, v1, v2, Lnet/youmi/android/cu;-><init>(Lnet/youmi/android/p; I)V
+	8       (00000024) iput-object          v0, v3, Lnet/youmi/android/ct;->b Lnet/youmi/android/cu;
+	0:27
+	(Ljava/lang/Exception; -> 2a b-BB@0x2a)
+
+b-BB@0x28 : 
+	9       (00000028) return-void          
+
+b-BB@0x2a : [ b-BB@0x28 ]
+	10      (0000002a) move-exception       v0
+	11      (0000002c) goto                 -2
+

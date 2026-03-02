@@ -1,0 +1,269 @@
+# Lcom/unlocker/billing/a;->a(I I Landroid/content/Intent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:int
+# - v10:int
+# - v11:android.content.Intent
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x14 a-BB@0x16 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v5, -1
+	2       (00000004) const/16             v7, -1002
+	3       (00000008) const/4              v1, 1
+	4       (0000000a) const/4              v6, 0
+	5       (0000000c) iget                 v2, v8, Lcom/unlocker/billing/a;->k I
+	6       (00000010) if-eq                v9, v2, +3
+
+a-BB@0x14 : 
+	7       (00000014) return               v0
+
+a-BB@0x16 : [ a-BB@0x30 a-BB@0x5e ]
+	8       (00000016) invoke-direct        v8, Lcom/unlocker/billing/a;->c()V
+	9       (0000001c) const-string         v2, 'handleActivityResult'
+	10      (00000020) invoke-virtual       v8, v2, Lcom/unlocker/billing/a;->a(Ljava/lang/String;)V
+	11      (00000026) invoke-virtual       v8, Lcom/unlocker/billing/a;->b()V
+	12      (0000002c) if-nez               v11, +19
+
+a-BB@0x30 : [ a-BB@0x50 a-BB@0x5a ]
+	13      (00000030) const-string         v0, 'Null data in IAB activity result.'
+	14      (00000034) invoke-virtual       v8, v0, Lcom/unlocker/billing/a;->d(Ljava/lang/String;)V
+	15      (0000003a) new-instance         v0, Lcom/unlocker/billing/b;
+	16      (0000003e) const-string         v2, 'Null data in IAB result'
+	17      (00000042) invoke-direct        v0, v7, v2, Lcom/unlocker/billing/b;-><init>(I Ljava/lang/String;)V
+	18      (00000048) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	19      (0000004c) if-eqz               v2, +7
+
+a-BB@0x50 : [ a-BB@0x5a ]
+	20      (00000050) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	21      (00000054) invoke-interface     v2, v0, v6, Lcom/unlocker/billing/a$c;->a(Lcom/unlocker/billing/b; Lcom/unlocker/billing/d;)V
+
+a-BB@0x5a : [ a-BB@0x14 ]
+	22      (0000005a) move                 v0, v1
+	23      (0000005c) goto                 -24
+
+a-BB@0x5e : [ a-BB@0x82 a-BB@0x230 ]
+	24      (0000005e) invoke-virtual       v8, v11, Lcom/unlocker/billing/a;->a(Landroid/content/Intent;)I
+	25      (00000064) move-result          v2
+	26      (00000066) const-string         v3, 'INAPP_PURCHASE_DATA'
+	27      (0000006a) invoke-virtual       v11, v3, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+	28      (00000070) move-result-object   v3
+	29      (00000072) const-string         v4, 'INAPP_DATA_SIGNATURE'
+	30      (00000076) invoke-virtual       v11, v4, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+	31      (0000007c) move-result-object   v4
+	32      (0000007e) if-ne                v10, v5, +d9
+
+a-BB@0x82 : [ a-BB@0x86 a-BB@0x230 ]
+	33      (00000082) if-nez               v2, +d7
+
+a-BB@0x86 : [ a-BB@0x150 a-BB@0x154 ]
+	34      (00000086) const-string         v2, 'Successful resultcode from purchase activity.'
+	35      (0000008a) invoke-virtual       v8, v2, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	36      (00000090) new-instance         v2, Ljava/lang/StringBuilder;
+	37      (00000094) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	38      (0000009a) const-string         v5, 'Purchase data: '
+	39      (0000009e) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000a4) move-result-object   v2
+	41      (000000a6) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	42      (000000ac) move-result-object   v2
+	43      (000000ae) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	44      (000000b4) move-result-object   v2
+	45      (000000b6) invoke-virtual       v8, v2, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	46      (000000bc) new-instance         v2, Ljava/lang/StringBuilder;
+	47      (000000c0) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	48      (000000c6) const-string         v5, 'Data signature: '
+	49      (000000ca) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	50      (000000d0) move-result-object   v2
+	51      (000000d2) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	52      (000000d8) move-result-object   v2
+	53      (000000da) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	54      (000000e0) move-result-object   v2
+	55      (000000e2) invoke-virtual       v8, v2, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	56      (000000e8) new-instance         v2, Ljava/lang/StringBuilder;
+	57      (000000ec) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	58      (000000f2) const-string         v5, 'Extras: '
+	59      (000000f6) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	60      (000000fc) move-result-object   v2
+	61      (000000fe) invoke-virtual       v11, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+	62      (00000104) move-result-object   v5
+	63      (00000106) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	64      (0000010c) move-result-object   v2
+	65      (0000010e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	66      (00000114) move-result-object   v2
+	67      (00000116) invoke-virtual       v8, v2, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	68      (0000011c) new-instance         v2, Ljava/lang/StringBuilder;
+	69      (00000120) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	70      (00000126) const-string         v5, 'Expected item type: '
+	71      (0000012a) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	72      (00000130) move-result-object   v2
+	73      (00000132) iget-object          v5, v8, Lcom/unlocker/billing/a;->l Ljava/lang/String;
+	74      (00000136) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	75      (0000013c) move-result-object   v2
+	76      (0000013e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	77      (00000144) move-result-object   v2
+	78      (00000146) invoke-virtual       v8, v2, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	79      (0000014c) if-eqz               v3, +4
+
+a-BB@0x150 : [ a-BB@0x154 a-BB@0x1c4 ]
+	80      (00000150) if-nez               v4, +3a
+
+a-BB@0x154 : [ a-BB@0x1b4 a-BB@0x1be ]
+	81      (00000154) const-string         v0, 'BUG: either purchaseData or dataSignature is null.'
+	82      (00000158) invoke-virtual       v8, v0, Lcom/unlocker/billing/a;->d(Ljava/lang/String;)V
+	83      (0000015e) new-instance         v0, Ljava/lang/StringBuilder;
+	84      (00000162) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	85      (00000168) const-string         v2, 'Extras: '
+	86      (0000016c) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	87      (00000172) move-result-object   v0
+	88      (00000174) invoke-virtual       v11, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+	89      (0000017a) move-result-object   v2
+	90      (0000017c) invoke-virtual       v2, Landroid/os/Bundle;->toString()Ljava/lang/String;
+	91      (00000182) move-result-object   v2
+	92      (00000184) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	93      (0000018a) move-result-object   v0
+	94      (0000018c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	95      (00000192) move-result-object   v0
+	96      (00000194) invoke-virtual       v8, v0, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	97      (0000019a) new-instance         v0, Lcom/unlocker/billing/b;
+	98      (0000019e) const/16             v2, -1008
+	99      (000001a2) const-string         v3, 'IAB returned null purchaseData or dataSignature'
+	100     (000001a6) invoke-direct        v0, v2, v3, Lcom/unlocker/billing/b;-><init>(I Ljava/lang/String;)V
+	101     (000001ac) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	102     (000001b0) if-eqz               v2, +7
+
+a-BB@0x1b4 : [ a-BB@0x1be ]
+	103     (000001b4) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	104     (000001b8) invoke-interface     v2, v0, v6, Lcom/unlocker/billing/a$c;->a(Lcom/unlocker/billing/b; Lcom/unlocker/billing/d;)V
+
+a-BB@0x1be : [ a-BB@0x14 ]
+	105     (000001be) move                 v0, v1
+	106     (000001c0) goto/16              -d6
+
+a-BB@0x1c4 : [ a-BB@0x1da a-BB@0x1f2 ]
+	107     (000001c4) new-instance         v2, Lcom/unlocker/billing/d;
+	108     (000001c8) iget-object          v5, v8, Lcom/unlocker/billing/a;->l Ljava/lang/String;
+	109     (000001cc) invoke-direct        v2, v5, v3, v4, Lcom/unlocker/billing/d;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	110     (000001d2) iget-object          v3, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	111     (000001d6) if-eqz               v3, +e
+	1c4:1d1
+	(Lorg/json/JSONException; -> 1f8 a-BB@0x1f8)
+
+a-BB@0x1da : [ a-BB@0x1f2 ]
+	112     (000001da) iget-object          v3, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	113     (000001de) new-instance         v4, Lcom/unlocker/billing/b;
+	114     (000001e2) const-string         v5, 'Success'
+	115     (000001e6) invoke-direct        v4, v0, v5, Lcom/unlocker/billing/b;-><init>(I Ljava/lang/String;)V
+	116     (000001ec) invoke-interface     v3, v4, v2, Lcom/unlocker/billing/a$c;->a(Lcom/unlocker/billing/b; Lcom/unlocker/billing/d;)V
+
+a-BB@0x1f2 : [ a-BB@0x14 ]
+	117     (000001f2) move                 v0, v1
+	118     (000001f4) goto/16              -f0
+
+a-BB@0x1f8 : [ a-BB@0x220 a-BB@0x22a ]
+	119     (000001f8) move-exception       v0
+	120     (000001fa) const-string         v2, 'Failed to parse purchase data.'
+	121     (000001fe) invoke-virtual       v8, v2, Lcom/unlocker/billing/a;->d(Ljava/lang/String;)V
+	122     (00000204) invoke-virtual       v0, Lorg/json/JSONException;->printStackTrace()V
+	123     (0000020a) new-instance         v0, Lcom/unlocker/billing/b;
+	124     (0000020e) const-string         v2, 'Failed to parse purchase data.'
+	125     (00000212) invoke-direct        v0, v7, v2, Lcom/unlocker/billing/b;-><init>(I Ljava/lang/String;)V
+	126     (00000218) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	127     (0000021c) if-eqz               v2, +7
+
+a-BB@0x220 : [ a-BB@0x22a ]
+	128     (00000220) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	129     (00000224) invoke-interface     v2, v0, v6, Lcom/unlocker/billing/a$c;->a(Lcom/unlocker/billing/b; Lcom/unlocker/billing/d;)V
+
+a-BB@0x22a : [ a-BB@0x14 ]
+	130     (0000022a) move                 v0, v1
+	131     (0000022c) goto/16              -10c
+
+a-BB@0x230 : [ a-BB@0x234 a-BB@0x28a ]
+	132     (00000230) if-ne                v10, v5, +2d
+
+a-BB@0x234 : [ a-BB@0x270 a-BB@0x1f2 ]
+	133     (00000234) new-instance         v0, Ljava/lang/StringBuilder;
+	134     (00000238) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	135     (0000023e) const-string         v3, 'Result code was OK but in-app billing response was not OK: '
+	136     (00000242) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	137     (00000248) move-result-object   v0
+	138     (0000024a) invoke-static        v2, Lcom/unlocker/billing/a;->a(I)Ljava/lang/String;
+	139     (00000250) move-result-object   v3
+	140     (00000252) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	141     (00000258) move-result-object   v0
+	142     (0000025a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	143     (00000260) move-result-object   v0
+	144     (00000262) invoke-virtual       v8, v0, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	145     (00000268) iget-object          v0, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	146     (0000026c) if-eqz               v0, -3d
+
+a-BB@0x270 : [ a-BB@0x1f2 ]
+	147     (00000270) new-instance         v0, Lcom/unlocker/billing/b;
+	148     (00000274) const-string         v3, 'Problem purchashing item.'
+	149     (00000278) invoke-direct        v0, v2, v3, Lcom/unlocker/billing/b;-><init>(I Ljava/lang/String;)V
+	150     (0000027e) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	151     (00000282) invoke-interface     v2, v0, v6, Lcom/unlocker/billing/a$c;->a(Lcom/unlocker/billing/b; Lcom/unlocker/billing/d;)V
+	152     (00000288) goto                 -4b
+
+a-BB@0x28a : [ a-BB@0x28e a-BB@0x2e8 ]
+	153     (0000028a) if-nez               v10, +2f
+
+a-BB@0x28e : [ a-BB@0x2dc a-BB@0x1f2 ]
+	154     (0000028e) new-instance         v0, Ljava/lang/StringBuilder;
+	155     (00000292) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	156     (00000298) const-string         v3, 'Purchase canceled - Response: '
+	157     (0000029c) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	158     (000002a2) move-result-object   v0
+	159     (000002a4) invoke-static        v2, Lcom/unlocker/billing/a;->a(I)Ljava/lang/String;
+	160     (000002aa) move-result-object   v2
+	161     (000002ac) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	162     (000002b2) move-result-object   v0
+	163     (000002b4) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	164     (000002ba) move-result-object   v0
+	165     (000002bc) invoke-virtual       v8, v0, Lcom/unlocker/billing/a;->c(Ljava/lang/String;)V
+	166     (000002c2) new-instance         v0, Lcom/unlocker/billing/b;
+	167     (000002c6) const/16             v2, -1005
+	168     (000002ca) const-string         v3, 'User canceled.'
+	169     (000002ce) invoke-direct        v0, v2, v3, Lcom/unlocker/billing/b;-><init>(I Ljava/lang/String;)V
+	170     (000002d4) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	171     (000002d8) if-eqz               v2, -73
+
+a-BB@0x2dc : [ a-BB@0x1f2 ]
+	172     (000002dc) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	173     (000002e0) invoke-interface     v2, v0, v6, Lcom/unlocker/billing/a$c;->a(Lcom/unlocker/billing/b; Lcom/unlocker/billing/d;)V
+	174     (000002e6) goto                 -7a
+
+a-BB@0x2e8 : [ a-BB@0x352 a-BB@0x1f2 ]
+	175     (000002e8) new-instance         v0, Ljava/lang/StringBuilder;
+	176     (000002ec) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	177     (000002f2) const-string         v3, 'Purchase failed. Result code: '
+	178     (000002f6) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	179     (000002fc) move-result-object   v0
+	180     (000002fe) invoke-static        v10, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+	181     (00000304) move-result-object   v3
+	182     (00000306) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	183     (0000030c) move-result-object   v0
+	184     (0000030e) const-string         v3, '. Response: '
+	185     (00000312) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	186     (00000318) move-result-object   v0
+	187     (0000031a) invoke-static        v2, Lcom/unlocker/billing/a;->a(I)Ljava/lang/String;
+	188     (00000320) move-result-object   v2
+	189     (00000322) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	190     (00000328) move-result-object   v0
+	191     (0000032a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	192     (00000330) move-result-object   v0
+	193     (00000332) invoke-virtual       v8, v0, Lcom/unlocker/billing/a;->d(Ljava/lang/String;)V
+	194     (00000338) new-instance         v0, Lcom/unlocker/billing/b;
+	195     (0000033c) const/16             v2, -1006
+	196     (00000340) const-string         v3, 'Unknown purchase response.'
+	197     (00000344) invoke-direct        v0, v2, v3, Lcom/unlocker/billing/b;-><init>(I Ljava/lang/String;)V
+	198     (0000034a) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	199     (0000034e) if-eqz               v2, -ae
+
+a-BB@0x352 : [ a-BB@0x1f2 ]
+	200     (00000352) iget-object          v2, v8, Lcom/unlocker/billing/a;->m Lcom/unlocker/billing/a$c;
+	201     (00000356) invoke-interface     v2, v0, v6, Lcom/unlocker/billing/a$c;->a(Lcom/unlocker/billing/b; Lcom/unlocker/billing/d;)V
+	202     (0000035c) goto/16              -b5
+

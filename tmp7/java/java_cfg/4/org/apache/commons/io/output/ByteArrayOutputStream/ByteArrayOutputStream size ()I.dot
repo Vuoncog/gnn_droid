@@ -1,0 +1,53 @@
+digraph {
+	graph [bb="0,0,620,402",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_9f92bbf41b2e21f44a1049f65a7d02be {
+		graph [bb="8,8,612,394",
+			label="Lorg/apache/commons/io/output/ByteArrayOutputStream;.size->()I\nLocal registers v0 ... v1\nreturn = int",
+			lheight=0.62,
+			lp="310,367.5",
+			lwidth=6.18
+		];
+		struct_db01f0ab4f5577fb7d1033f7f6084387	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-enter </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="105,309.5",
+			width=2.4583];
+		struct_75ffce70bd6ebf0724aec172c8f3e10a	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/output/ByteArrayOutputStream;-&gt;count I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="310,203.5",
+			width=8.1667];
+		struct_db01f0ab4f5577fb7d1033f7f6084387:tail -> struct_75ffce70bd6ebf0724aec172c8f3e10a:header	[color=blue,
+			pos="e,37,242.5 38,291.5 38,273.63 37.327,266.76 37.085,252.85"];
+		struct_c9e353b612b2a8e825d16a82cb1fe49f	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="110,61.5",
+			width=2.5972];
+		struct_75ffce70bd6ebf0724aec172c8f3e10a:tail -> struct_c9e353b612b2a8e825d16a82cb1fe49f:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="109.5,132.5",
+			pos="e,38,100.5 37,163.5 37,139.22 37.752,130.73 37.952,110.64"];
+	}
+}

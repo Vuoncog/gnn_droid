@@ -1,0 +1,23 @@
+# Lnet/youmi/android/AdView;->onWindowFocusChanged(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+onWindowFocusChanged-BB@0x0 : [ onWindowFocusChanged-BB@0xa onWindowFocusChanged-BB@0x12 ]
+	0       (00000000) invoke-super         v1, v2, Landroid/widget/RelativeLayout;->onWindowFocusChanged(Z)V
+	1       (00000006) if-eqz               v2, +6
+
+onWindowFocusChanged-BB@0xa : [ onWindowFocusChanged-BB@0xc ]
+	2       (0000000a) const/4              v0, 0
+
+onWindowFocusChanged-BB@0xc : 
+	3       (0000000c) iput-boolean         v0, v1, Lnet/youmi/android/AdView;->c Z
+	4       (00000010) return-void          
+
+onWindowFocusChanged-BB@0x12 : [ onWindowFocusChanged-BB@0xc ]
+	5       (00000012) const/4              v0, 1
+	6       (00000014) goto                 -4
+

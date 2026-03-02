@@ -1,0 +1,23 @@
+# Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->wasInterrupted()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+wasInterrupted-BB@0x0 : [ wasInterrupted-BB@0x10 wasInterrupted-BB@0x14 ]
+	0       (00000000) invoke-virtual       v2, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->getState()I
+	1       (00000006) move-result          v0
+	2       (00000008) const/16             v1, 8
+	3       (0000000c) if-ne                v0, v1, +4
+
+wasInterrupted-BB@0x10 : [ wasInterrupted-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+wasInterrupted-BB@0x12 : 
+	5       (00000012) return               v0
+
+wasInterrupted-BB@0x14 : [ wasInterrupted-BB@0x12 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -2
+

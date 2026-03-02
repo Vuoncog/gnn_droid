@@ -1,0 +1,35 @@
+# La/a/a/b/a;->a(Ljava/lang/String;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x1a a-BB@0x2e ]
+	0       (00000000) const/16             v3, 8
+	1       (00000004) iget-object          v0, v4, La/a/a/b/a;->a Ljava/util/HashMap;
+	2       (00000008) new-instance         v1, La/a/a/b/b;
+	3       (0000000c) invoke-direct        v1, La/a/a/b/b;-><init>()V
+	4       (00000012) iget-byte            v2, v1, La/a/a/b/b;->a B
+	5       (00000016) if-eqz               v2, +c
+
+a-BB@0x1a : [ a-BB@0x22 a-BB@0x2e ]
+	6       (0000001a) iget-byte            v2, v1, La/a/a/b/b;->a B
+	7       (0000001e) if-eq                v2, v3, +8
+
+a-BB@0x22 : 
+	8       (00000022) new-instance         v0, La/a/a/b/c;
+	9       (00000026) invoke-direct        v0, La/a/a/b/c;-><init>()V
+	10      (0000002c) throw                v0
+
+a-BB@0x2e : 
+	11      (0000002e) iput-byte            v3, v1, La/a/a/b/b;->a B
+	12      (00000032) iget-object          v2, v1, La/a/a/b/b;->b Ljava/util/List;
+	13      (00000036) const/4              v3, 1
+	14      (00000038) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	15      (0000003e) move-result-object   v3
+	16      (00000040) invoke-interface     v2, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	17      (00000046) invoke-virtual       v0, v5, v1, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	18      (0000004c) return-void          
+

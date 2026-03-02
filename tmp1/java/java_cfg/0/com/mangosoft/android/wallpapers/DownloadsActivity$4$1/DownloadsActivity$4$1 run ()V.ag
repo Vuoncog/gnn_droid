@@ -1,0 +1,50 @@
+# Lcom/mangosoft/android/wallpapers/DownloadsActivity$4$1;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x8 run-BB@0x28 ]
+	0       (00000000) iget                 v1, v5, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4$1;->val$size I
+	1       (00000004) if-nez               v1, +12
+
+run-BB@0x8 : [ run-BB@0x28 ]
+	2       (00000008) iget-object          v1, v5, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4$1;->this$1 Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;
+	3       (0000000c) invoke-static        v1, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;->access$0(Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;)Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	4       (00000012) move-result-object   v1
+	5       (00000014) const-string         v2, '没有下载的壁纸哦'
+	6       (00000018) const/4              v3, 0
+	7       (0000001a) invoke-static        v1, v2, v3, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	8       (00000020) move-result-object   v1
+	9       (00000022) invoke-virtual       v1, Landroid/widget/Toast;->show()V
+
+run-BB@0x28 : 
+	10      (00000028) new-instance         v0, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;
+	11      (0000002c) iget-object          v1, v5, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4$1;->this$1 Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;
+	12      (00000030) invoke-static        v1, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;->access$0(Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;)Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	13      (00000036) move-result-object   v1
+	14      (00000038) iget-object          v2, v5, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4$1;->this$1 Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;
+	15      (0000003c) invoke-static        v2, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;->access$0(Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;)Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	16      (00000042) move-result-object   v2
+	17      (00000044) invoke-static        v2, Lcom/mangosoft/android/wallpapers/DownloadsActivity;->access$1(Lcom/mangosoft/android/wallpapers/DownloadsActivity;)Ljava/util/ArrayList;
+	18      (0000004a) move-result-object   v2
+	19      (0000004c) iget-object          v3, v5, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4$1;->this$1 Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;
+	20      (00000050) invoke-static        v3, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;->access$0(Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;)Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	21      (00000056) move-result-object   v3
+	22      (00000058) invoke-static        v3, Lcom/mangosoft/android/wallpapers/DownloadsActivity;->access$0(Lcom/mangosoft/android/wallpapers/DownloadsActivity;)I
+	23      (0000005e) move-result          v3
+	24      (00000060) iget-object          v4, v5, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4$1;->this$1 Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;
+	25      (00000064) invoke-static        v4, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;->access$0(Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;)Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	26      (0000006a) move-result-object   v4
+	27      (0000006c) invoke-static        v4, Lcom/mangosoft/android/wallpapers/DownloadsActivity;->access$11(Lcom/mangosoft/android/wallpapers/DownloadsActivity;)I
+	28      (00000072) move-result          v4
+	29      (00000074) invoke-direct        v0, v1, v2, v3, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;-><init>(Landroid/app/Activity; Ljava/util/List; I I)V
+	30      (0000007a) iget-object          v1, v5, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4$1;->this$1 Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;
+	31      (0000007e) invoke-static        v1, Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;->access$0(Lcom/mangosoft/android/wallpapers/DownloadsActivity$4;)Lcom/mangosoft/android/wallpapers/DownloadsActivity;
+	32      (00000084) move-result-object   v1
+	33      (00000086) invoke-static        v1, Lcom/mangosoft/android/wallpapers/DownloadsActivity;->access$18(Lcom/mangosoft/android/wallpapers/DownloadsActivity;)Landroid/widget/GridView;
+	34      (0000008c) move-result-object   v1
+	35      (0000008e) invoke-virtual       v1, v0, Landroid/widget/GridView;->setAdapter(Landroid/widget/ListAdapter;)V
+	36      (00000094) return-void          
+

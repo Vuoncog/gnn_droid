@@ -1,0 +1,190 @@
+# Lcom/a/a/a/b/a;->a(Lcom/a/a/a/b/b;)[Lcom/a/a/t; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v14
+# - v15:com.a.a.a.b.b
+#
+# - return:com.a.a.t[]
+
+a-BB@0x0 : [ a-BB@0x10 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 1
+	2       (00000004) iput                 v1, v14, Lcom/a/a/a/b/a;->e I
+	3       (00000008) move-object          v1, v15
+	4       (0000000a) move-object          v2, v15
+	5       (0000000c) move-object          v4, v15
+	6       (0000000e) move-object          v6, v15
+
+a-BB@0x10 : [ a-BB@0x1c a-BB@0xa4 ]
+	7       (00000010) iget                 v3, v14, Lcom/a/a/a/b/a;->e I
+	8       (00000014) const/16             v5, 9
+	9       (00000018) if-ge                v3, v5, +46
+
+a-BB@0x1c : [ a-BB@0x56 a-BB@0xc2 ]
+	10      (0000001c) const/4              v3, 1
+	11      (0000001e) const/4              v5, -1
+	12      (00000020) invoke-direct        v14, v6, v0, v3, v5, Lcom/a/a/a/b/a;->a(Lcom/a/a/a/b/b; Z I I)Lcom/a/a/a/b/b;
+	13      (00000026) move-result-object   v7
+	14      (00000028) const/4              v3, 1
+	15      (0000002a) const/4              v5, 1
+	16      (0000002c) invoke-direct        v14, v4, v0, v3, v5, Lcom/a/a/a/b/a;->a(Lcom/a/a/a/b/b; Z I I)Lcom/a/a/a/b/b;
+	17      (00000032) move-result-object   v5
+	18      (00000034) const/4              v3, -1
+	19      (00000036) const/4              v8, 1
+	20      (00000038) invoke-direct        v14, v2, v0, v3, v8, Lcom/a/a/a/b/a;->a(Lcom/a/a/a/b/b; Z I I)Lcom/a/a/a/b/b;
+	21      (0000003e) move-result-object   v3
+	22      (00000040) const/4              v8, -1
+	23      (00000042) const/4              v9, -1
+	24      (00000044) invoke-direct        v14, v1, v0, v8, v9, Lcom/a/a/a/b/a;->a(Lcom/a/a/a/b/b; Z I I)Lcom/a/a/a/b/b;
+	25      (0000004a) move-result-object   v15
+	26      (0000004c) iget                 v8, v14, Lcom/a/a/a/b/a;->e I
+	27      (00000050) const/4              v9, 2
+	28      (00000052) if-le                v8, v9, +38
+
+a-BB@0x56 : [ a-BB@0x8a a-BB@0xa4 ]
+	29      (00000056) invoke-static        v15, v7, Lcom/a/a/a/b/a;->b(Lcom/a/a/a/b/b; Lcom/a/a/a/b/b;)F
+	30      (0000005c) move-result          v8
+	31      (0000005e) iget                 v9, v14, Lcom/a/a/a/b/a;->e I
+	32      (00000062) int-to-float         v9, v9
+	33      (00000064) mul-float/2addr      v8, v9
+	34      (00000066) invoke-static        v1, v6, Lcom/a/a/a/b/a;->b(Lcom/a/a/a/b/b; Lcom/a/a/a/b/b;)F
+	35      (0000006c) move-result          v9
+	36      (0000006e) iget                 v10, v14, Lcom/a/a/a/b/a;->e I
+	37      (00000072) add-int/lit8         v10, v10, 2
+	38      (00000076) int-to-float         v10, v10
+	39      (00000078) mul-float/2addr      v9, v10
+	40      (0000007a) div-float/2addr      v8, v9
+	41      (0000007c) float-to-double      v10, v8
+	42      (0000007e) const-wide/high16    v12, 16360 # [0.75]
+	43      (00000082) cmpg-double          v9, v10, v12
+	44      (00000086) if-ltz               v9, +f
+
+a-BB@0x8a : [ a-BB@0x98 a-BB@0xa4 ]
+	45      (0000008a) float-to-double      v8, v8
+	46      (0000008c) const-wide/high16    v10, 16372 # [1.25]
+	47      (00000090) cmpl-double          v8, v8, v10
+	48      (00000094) if-gtz               v8, +8
+
+a-BB@0x98 : [ a-BB@0xa4 a-BB@0xc2 ]
+	49      (00000098) invoke-direct        v14, v7, v5, v3, v15, Lcom/a/a/a/b/a;->a(Lcom/a/a/a/b/b; Lcom/a/a/a/b/b; Lcom/a/a/a/b/b; Lcom/a/a/a/b/b;)Z
+	50      (0000009e) move-result          v8
+	51      (000000a0) if-nez               v8, +11
+
+a-BB@0xa4 : [ a-BB@0xae a-BB@0xe2 ]
+	52      (000000a4) iget                 v0, v14, Lcom/a/a/a/b/a;->e I
+	53      (000000a8) const/4              v3, 5
+	54      (000000aa) if-eq                v0, v3, +1c
+
+a-BB@0xae : [ a-BB@0xb8 a-BB@0xe2 ]
+	55      (000000ae) iget                 v0, v14, Lcom/a/a/a/b/a;->e I
+	56      (000000b2) const/4              v3, 7
+	57      (000000b4) if-eq                v0, v3, +17
+
+a-BB@0xb8 : 
+	58      (000000b8) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	59      (000000be) move-result-object   v0
+	60      (000000c0) throw                v0
+
+a-BB@0xc2 : [ a-BB@0xc6 a-BB@0xde ]
+	61      (000000c2) if-nez               v0, +e
+
+a-BB@0xc6 : [ a-BB@0xc8 ]
+	62      (000000c6) const/4              v0, 1
+
+a-BB@0xc8 : [ a-BB@0x10 ]
+	63      (000000c8) iget                 v1, v14, Lcom/a/a/a/b/a;->e I
+	64      (000000cc) add-int/lit8         v1, v1, 1
+	65      (000000d0) iput                 v1, v14, Lcom/a/a/a/b/a;->e I
+	66      (000000d4) move-object          v1, v15
+	67      (000000d6) move-object          v2, v3
+	68      (000000d8) move-object          v4, v5
+	69      (000000da) move-object          v6, v7
+	70      (000000dc) goto                 -66
+
+a-BB@0xde : [ a-BB@0xc8 ]
+	71      (000000de) const/4              v0, 0
+	72      (000000e0) goto                 -c
+
+a-BB@0xe2 : [ a-BB@0xec a-BB@0x1da ]
+	73      (000000e2) iget                 v0, v14, Lcom/a/a/a/b/a;->e I
+	74      (000000e6) const/4              v3, 5
+	75      (000000e8) if-ne                v0, v3, +79
+
+a-BB@0xec : [ a-BB@0xee ]
+	76      (000000ec) const/4              v0, 1
+
+a-BB@0xee : 
+	77      (000000ee) iput-boolean         v0, v14, Lcom/a/a/a/b/a;->b Z
+	78      (000000f2) new-instance         v0, Lcom/a/a/t;
+	79      (000000f6) invoke-virtual       v6, Lcom/a/a/a/b/b;->b()I
+	80      (000000fc) move-result          v3
+	81      (000000fe) int-to-float         v3, v3
+	82      (00000100) const/high16         v5, 16128 # [0.5]
+	83      (00000104) add-float/2addr      v3, v5
+	84      (00000106) invoke-virtual       v6, Lcom/a/a/a/b/b;->c()I
+	85      (0000010c) move-result          v5
+	86      (0000010e) int-to-float         v5, v5
+	87      (00000110) const/high16         v6, 16128 # [0.5]
+	88      (00000114) sub-float/2addr      v5, v6
+	89      (00000116) invoke-direct        v0, v3, v5, Lcom/a/a/t;-><init>(F F)V
+	90      (0000011c) new-instance         v3, Lcom/a/a/t;
+	91      (00000120) invoke-virtual       v4, Lcom/a/a/a/b/b;->b()I
+	92      (00000126) move-result          v5
+	93      (00000128) int-to-float         v5, v5
+	94      (0000012a) const/high16         v6, 16128 # [0.5]
+	95      (0000012e) add-float/2addr      v5, v6
+	96      (00000130) invoke-virtual       v4, Lcom/a/a/a/b/b;->c()I
+	97      (00000136) move-result          v4
+	98      (00000138) int-to-float         v4, v4
+	99      (0000013a) const/high16         v6, 16128 # [0.5]
+	100     (0000013e) add-float/2addr      v4, v6
+	101     (00000140) invoke-direct        v3, v5, v4, Lcom/a/a/t;-><init>(F F)V
+	102     (00000146) new-instance         v4, Lcom/a/a/t;
+	103     (0000014a) invoke-virtual       v2, Lcom/a/a/a/b/b;->b()I
+	104     (00000150) move-result          v5
+	105     (00000152) int-to-float         v5, v5
+	106     (00000154) const/high16         v6, 16128 # [0.5]
+	107     (00000158) sub-float/2addr      v5, v6
+	108     (0000015a) invoke-virtual       v2, Lcom/a/a/a/b/b;->c()I
+	109     (00000160) move-result          v2
+	110     (00000162) int-to-float         v2, v2
+	111     (00000164) const/high16         v6, 16128 # [0.5]
+	112     (00000168) add-float/2addr      v2, v6
+	113     (0000016a) invoke-direct        v4, v5, v2, Lcom/a/a/t;-><init>(F F)V
+	114     (00000170) new-instance         v2, Lcom/a/a/t;
+	115     (00000174) invoke-virtual       v1, Lcom/a/a/a/b/b;->b()I
+	116     (0000017a) move-result          v5
+	117     (0000017c) int-to-float         v5, v5
+	118     (0000017e) const/high16         v6, 16128 # [0.5]
+	119     (00000182) sub-float/2addr      v5, v6
+	120     (00000184) invoke-virtual       v1, Lcom/a/a/a/b/b;->c()I
+	121     (0000018a) move-result          v1
+	122     (0000018c) int-to-float         v1, v1
+	123     (0000018e) const/high16         v6, 16128 # [0.5]
+	124     (00000192) sub-float/2addr      v1, v6
+	125     (00000194) invoke-direct        v2, v5, v1, Lcom/a/a/t;-><init>(F F)V
+	126     (0000019a) const/4              v1, 4
+	127     (0000019c) new-array            v1, v1, [Lcom/a/a/t;
+	128     (000001a0) const/4              v5, 0
+	129     (000001a2) aput-object          v0, v1, v5
+	130     (000001a6) const/4              v0, 1
+	131     (000001a8) aput-object          v3, v1, v0
+	132     (000001ac) const/4              v0, 2
+	133     (000001ae) aput-object          v4, v1, v0
+	134     (000001b2) const/4              v0, 3
+	135     (000001b4) aput-object          v2, v1, v0
+	136     (000001b8) iget                 v0, v14, Lcom/a/a/a/b/a;->e I
+	137     (000001bc) mul-int/lit8         v0, v0, 2
+	138     (000001c0) add-int/lit8         v0, v0, -3
+	139     (000001c4) int-to-float         v0, v0
+	140     (000001c6) iget                 v2, v14, Lcom/a/a/a/b/a;->e I
+	141     (000001ca) mul-int/lit8         v2, v2, 2
+	142     (000001ce) int-to-float         v2, v2
+	143     (000001d0) invoke-static        v1, v0, v2, Lcom/a/a/a/b/a;->a([Lcom/a/a/t; F F)[Lcom/a/a/t;
+	144     (000001d6) move-result-object   v0
+	145     (000001d8) return-object        v0
+
+a-BB@0x1da : [ a-BB@0xee ]
+	146     (000001da) const/4              v0, 0
+	147     (000001dc) goto                 -77
+

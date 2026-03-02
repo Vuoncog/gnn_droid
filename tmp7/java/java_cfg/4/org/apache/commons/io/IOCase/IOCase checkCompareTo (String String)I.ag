@@ -1,0 +1,37 @@
+# Lorg/apache/commons/io/IOCase;->checkCompareTo(Ljava/lang/String; Ljava/lang/String;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:java.lang.String
+#
+# - return:int
+
+checkCompareTo-BB@0x0 : [ checkCompareTo-BB@0x4 checkCompareTo-BB@0x8 ]
+	0       (00000000) if-eqz               v3, +4
+
+checkCompareTo-BB@0x4 : [ checkCompareTo-BB@0x8 checkCompareTo-BB@0x18 ]
+	1       (00000004) if-nez               v4, +a
+
+checkCompareTo-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/NullPointerException;
+	3       (0000000c) const-string         v1, 'The strings must not be null'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+checkCompareTo-BB@0x18 : [ checkCompareTo-BB@0x20 checkCompareTo-BB@0x2a ]
+	6       (00000018) iget-boolean         v0, v2, Lorg/apache/commons/io/IOCase;->sensitive Z
+	7       (0000001c) if-eqz               v0, +7
+
+checkCompareTo-BB@0x20 : [ checkCompareTo-BB@0x28 ]
+	8       (00000020) invoke-virtual       v3, v4, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+	9       (00000026) move-result          v0
+
+checkCompareTo-BB@0x28 : 
+	10      (00000028) return               v0
+
+checkCompareTo-BB@0x2a : [ checkCompareTo-BB@0x28 ]
+	11      (0000002a) invoke-virtual       v3, v4, Ljava/lang/String;->compareToIgnoreCase(Ljava/lang/String;)I
+	12      (00000030) move-result          v0
+	13      (00000032) goto                 -5
+

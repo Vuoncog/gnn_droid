@@ -1,0 +1,35 @@
+# Lio/fabric/sdk/android/services/common/TimingMetric;->startMeasuring()V [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+startMeasuring-BB@0x0 : [ startMeasuring-BB@0x2 ]
+	0       (00000000) monitor-enter        v2
+
+startMeasuring-BB@0x2 : [ startMeasuring-BB@0xa startMeasuring-BB@0xe ]
+	1       (00000002) iget-boolean         v0, v2, Lio/fabric/sdk/android/services/common/TimingMetric;->disabled Z
+	2       (00000006) if-eqz               v0, +4
+	2:5
+	(Ljava/lang/Throwable; -> 24 startMeasuring-BB@0x24)
+
+startMeasuring-BB@0xa : 
+	3       (0000000a) monitor-exit         v2
+	4       (0000000c) return-void          
+
+startMeasuring-BB@0xe : [ startMeasuring-BB@0xa ]
+	5       (0000000e) invoke-static        Landroid/os/SystemClock;->elapsedRealtime()J
+	6       (00000014) move-result-wide     v0
+	7       (00000016) iput-wide            v0, v2, Lio/fabric/sdk/android/services/common/TimingMetric;->start J
+	8       (0000001a) const-wide/16        v0, 0 # [0.0]
+	9       (0000001e) iput-wide            v0, v2, Lio/fabric/sdk/android/services/common/TimingMetric;->duration J
+	10      (00000022) goto                 -c
+	e:21
+	(Ljava/lang/Throwable; -> 24 startMeasuring-BB@0x24)
+
+startMeasuring-BB@0x24 : 
+	11      (00000024) move-exception       v0
+	12      (00000026) monitor-exit         v2
+	13      (00000028) throw                v0
+

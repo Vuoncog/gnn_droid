@@ -1,0 +1,30 @@
+# Lorg/apache/commons/io/ThreadMonitor;->start(Ljava/lang/Thread; J)Ljava/lang/Thread; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.Thread
+# - v7:long
+#
+# - return:java.lang.Thread
+
+start-BB@0x0 : [ start-BB@0xe start-BB@0x3c ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const-wide/16        v2, 0 # [0.0]
+	2       (00000006) cmp-long             v1, v6, v2
+	3       (0000000a) if-lez               v1, +19
+
+start-BB@0xe : [ start-BB@0x3c ]
+	4       (0000000e) new-instance         v1, Lorg/apache/commons/io/ThreadMonitor;
+	5       (00000012) invoke-direct        v1, v5, v6, v7, Lorg/apache/commons/io/ThreadMonitor;-><init>(Ljava/lang/Thread; J)V
+	6       (00000018) new-instance         v0, Ljava/lang/Thread;
+	7       (0000001c) const-class          v2, Lorg/apache/commons/io/ThreadMonitor;
+	8       (00000020) invoke-virtual       v2, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+	9       (00000026) move-result-object   v2
+	10      (00000028) invoke-direct        v0, v1, v2, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable; Ljava/lang/String;)V
+	11      (0000002e) const/4              v1, 1
+	12      (00000030) invoke-virtual       v0, v1, Ljava/lang/Thread;->setDaemon(Z)V
+	13      (00000036) invoke-virtual       v0, Ljava/lang/Thread;->start()V
+
+start-BB@0x3c : 
+	14      (0000003c) return-object        v0
+

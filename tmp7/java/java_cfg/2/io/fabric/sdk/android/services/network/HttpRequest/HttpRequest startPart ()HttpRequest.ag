@@ -1,0 +1,31 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->startPart()Lio/fabric/sdk/android/services/network/HttpRequest; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:io.fabric.sdk.android.services.network.HttpRequest
+
+startPart-BB@0x0 : [ startPart-BB@0x8 startPart-BB@0x30 ]
+	0       (00000000) iget-boolean         v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->multipart Z
+	1       (00000004) if-nez               v0, +16
+
+startPart-BB@0x8 : [ startPart-BB@0x2e ]
+	2       (00000008) const/4              v0, 1
+	3       (0000000a) iput-boolean         v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->multipart Z
+	4       (0000000e) const-string         v0, 'multipart/form-data; boundary=00content0boundary00'
+	5       (00000012) invoke-virtual       v2, v0, Lio/fabric/sdk/android/services/network/HttpRequest;->contentType(Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-virtual       v0, Lio/fabric/sdk/android/services/network/HttpRequest;->openOutput()Lio/fabric/sdk/android/services/network/HttpRequest;
+	8       (00000020) iget-object          v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+	9       (00000024) const-string         v1, '--00content0boundary00\r\n'
+	10      (00000028) invoke-virtual       v0, v1, Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;->write(Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+
+startPart-BB@0x2e : 
+	11      (0000002e) return-object        v2
+
+startPart-BB@0x30 : [ startPart-BB@0x2e ]
+	12      (00000030) iget-object          v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+	13      (00000034) const-string         v1, '\r\n--00content0boundary00\r\n'
+	14      (00000038) invoke-virtual       v0, v1, Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;->write(Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+	15      (0000003e) goto                 -8
+

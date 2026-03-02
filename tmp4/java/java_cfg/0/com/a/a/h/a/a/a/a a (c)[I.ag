@@ -1,0 +1,51 @@
+# Lcom/a/a/h/a/a/a;->a(Lcom/a/a/h/a/a/c;)[I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:com.a.a.h.a.a.c
+#
+# - return:int[]
+
+a-BB@0x0 : [ a-BB@0x10 ]
+	0       (00000000) invoke-virtual       v6, Lcom/a/a/h/a/a/c;->a()I
+	1       (00000006) move-result          v2
+	2       (00000008) new-array            v3, v2, [I
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) const/4              v0, 1
+
+a-BB@0x10 : [ a-BB@0x20 a-BB@0x4a ]
+	5       (00000010) iget-object          v4, v5, Lcom/a/a/h/a/a/a;->a Lcom/a/a/h/a/a/b;
+	6       (00000014) invoke-virtual       v4, Lcom/a/a/h/a/a/b;->c()I
+	7       (0000001a) move-result          v4
+	8       (0000001c) if-ge                v0, v4, +17
+
+a-BB@0x20 : [ a-BB@0x24 a-BB@0x4a ]
+	9       (00000020) if-ge                v1, v2, +15
+
+a-BB@0x24 : [ a-BB@0x30 a-BB@0x44 ]
+	10      (00000024) invoke-virtual       v6, v0, Lcom/a/a/h/a/a/c;->b(I)I
+	11      (0000002a) move-result          v4
+	12      (0000002c) if-nez               v4, +c
+
+a-BB@0x30 : [ a-BB@0x44 ]
+	13      (00000030) iget-object          v4, v5, Lcom/a/a/h/a/a/a;->a Lcom/a/a/h/a/a/b;
+	14      (00000034) invoke-virtual       v4, v0, Lcom/a/a/h/a/a/b;->c(I)I
+	15      (0000003a) move-result          v4
+	16      (0000003c) aput                 v4, v3, v1
+	17      (00000040) add-int/lit8         v1, v1, 1
+
+a-BB@0x44 : [ a-BB@0x10 ]
+	18      (00000044) add-int/lit8         v0, v0, 1
+	19      (00000048) goto                 -1c
+
+a-BB@0x4a : [ a-BB@0x4e a-BB@0x58 ]
+	20      (0000004a) if-eq                v1, v2, +7
+
+a-BB@0x4e : 
+	21      (0000004e) invoke-static        Lcom/a/a/d;->a()Lcom/a/a/d;
+	22      (00000054) move-result-object   v0
+	23      (00000056) throw                v0
+
+a-BB@0x58 : 
+	24      (00000058) return-object        v3
+

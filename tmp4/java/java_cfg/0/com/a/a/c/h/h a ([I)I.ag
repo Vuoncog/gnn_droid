@@ -1,0 +1,121 @@
+# Lcom/a/a/c/h;->a([I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int[]
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0xc ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) array-length         v7, v8
+	2       (00000004) move                 v2, v6
+	3       (00000006) move                 v0, v6
+	4       (00000008) move                 v1, v6
+	5       (0000000a) move                 v3, v6
+
+a-BB@0xc : [ a-BB@0x10 a-BB@0x30 ]
+	6       (0000000c) if-ge                v2, v7, +12
+
+a-BB@0x10 : [ a-BB@0x18 a-BB@0x1e ]
+	7       (00000010) aget                 v4, v8, v2
+	8       (00000014) if-le                v4, v0, +5
+
+a-BB@0x18 : [ a-BB@0x1e ]
+	9       (00000018) aget                 v0, v8, v2
+	10      (0000001c) move                 v1, v2
+
+a-BB@0x1e : [ a-BB@0x26 a-BB@0x2a ]
+	11      (0000001e) aget                 v4, v8, v2
+	12      (00000022) if-le                v4, v3, +4
+
+a-BB@0x26 : [ a-BB@0x2a ]
+	13      (00000026) aget                 v3, v8, v2
+
+a-BB@0x2a : [ a-BB@0xc ]
+	14      (0000002a) add-int/lit8         v2, v2, 1
+	15      (0000002e) goto                 -11
+
+a-BB@0x30 : [ a-BB@0x36 ]
+	16      (00000030) move                 v5, v6
+	17      (00000032) move                 v2, v6
+	18      (00000034) move                 v4, v6
+
+a-BB@0x36 : [ a-BB@0x3a a-BB@0x54 ]
+	19      (00000036) if-ge                v5, v7, +f
+
+a-BB@0x3a : [ a-BB@0x4a a-BB@0xb4 ]
+	20      (0000003a) sub-int              v0, v5, v1
+	21      (0000003e) aget                 v6, v8, v5
+	22      (00000042) mul-int/2addr        v6, v0
+	23      (00000044) mul-int/2addr        v0, v6
+	24      (00000046) if-le                v0, v2, +37
+
+a-BB@0x4a : [ a-BB@0x4c ]
+	25      (0000004a) move                 v4, v5
+
+a-BB@0x4c : [ a-BB@0x36 ]
+	26      (0000004c) add-int/lit8         v5, v5, 1
+	27      (00000050) move                 v2, v0
+	28      (00000052) goto                 -e
+
+a-BB@0x54 : [ a-BB@0x58 a-BB@0xae ]
+	29      (00000054) if-le                v1, v4, +2d
+
+a-BB@0x58 : [ a-BB@0x5c ]
+	30      (00000058) move                 v0, v1
+	31      (0000005a) move                 v2, v4
+
+a-BB@0x5c : [ a-BB@0x68 a-BB@0x72 ]
+	32      (0000005c) sub-int              v1, v0, v2
+	33      (00000060) div-int/lit8         v4, v7, 16
+	34      (00000064) if-gt                v1, v4, +7
+
+a-BB@0x68 : 
+	35      (00000068) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	36      (0000006e) move-result-object   v0
+	37      (00000070) throw                v0
+
+a-BB@0x72 : [ a-BB@0x7c ]
+	38      (00000072) add-int/lit8         v5, v0, -1
+	39      (00000076) const/4              v4, -1
+	40      (00000078) add-int/lit8         v6, v0, -1
+
+a-BB@0x7c : [ a-BB@0x80 a-BB@0xa4 ]
+	41      (0000007c) if-le                v6, v2, +14
+
+a-BB@0x80 : [ a-BB@0x9a a-BB@0xaa ]
+	42      (00000080) sub-int              v1, v6, v2
+	43      (00000084) mul-int/2addr        v1, v1
+	44      (00000086) sub-int              v7, v0, v6
+	45      (0000008a) mul-int/2addr        v1, v7
+	46      (0000008c) aget                 v7, v8, v6
+	47      (00000090) sub-int              v7, v3, v7
+	48      (00000094) mul-int/2addr        v1, v7
+	49      (00000096) if-le                v1, v4, +a
+
+a-BB@0x9a : [ a-BB@0x9c ]
+	50      (0000009a) move                 v5, v6
+
+a-BB@0x9c : [ a-BB@0x7c ]
+	51      (0000009c) add-int/lit8         v6, v6, -1
+	52      (000000a0) move                 v4, v1
+	53      (000000a2) goto                 -13
+
+a-BB@0xa4 : 
+	54      (000000a4) shl-int/lit8         v0, v5, 3
+	55      (000000a8) return               v0
+
+a-BB@0xaa : [ a-BB@0x9c ]
+	56      (000000aa) move                 v1, v4
+	57      (000000ac) goto                 -8
+
+a-BB@0xae : [ a-BB@0x5c ]
+	58      (000000ae) move                 v0, v4
+	59      (000000b0) move                 v2, v1
+	60      (000000b2) goto                 -2b
+
+a-BB@0xb4 : [ a-BB@0x4c ]
+	61      (000000b4) move                 v0, v2
+	62      (000000b6) goto                 -35
+

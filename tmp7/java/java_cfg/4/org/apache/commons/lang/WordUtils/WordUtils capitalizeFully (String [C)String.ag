@@ -1,0 +1,40 @@
+# Lorg/apache/commons/lang/WordUtils;->capitalizeFully(Ljava/lang/String; [C)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:char[]
+#
+# - return:java.lang.String
+
+capitalizeFully-BB@0x0 : [ capitalizeFully-BB@0x4 capitalizeFully-BB@0x1c ]
+	0       (00000000) if-nez               v3, +e
+
+capitalizeFully-BB@0x4 : [ capitalizeFully-BB@0x6 ]
+	1       (00000004) const/4              v0, -1
+
+capitalizeFully-BB@0x6 : [ capitalizeFully-BB@0xa capitalizeFully-BB@0x1a ]
+	2       (00000006) if-eqz               v2, +a
+
+capitalizeFully-BB@0xa : [ capitalizeFully-BB@0x16 capitalizeFully-BB@0x1a ]
+	3       (0000000a) invoke-virtual       v2, Ljava/lang/String;->length()I
+	4       (00000010) move-result          v1
+	5       (00000012) if-eqz               v1, +4
+
+capitalizeFully-BB@0x16 : [ capitalizeFully-BB@0x1a capitalizeFully-BB@0x20 ]
+	6       (00000016) if-nez               v0, +5
+
+capitalizeFully-BB@0x1a : 
+	7       (0000001a) return-object        v2
+
+capitalizeFully-BB@0x1c : [ capitalizeFully-BB@0x6 ]
+	8       (0000001c) array-length         v0, v3
+	9       (0000001e) goto                 -c
+
+capitalizeFully-BB@0x20 : [ capitalizeFully-BB@0x1a ]
+	10      (00000020) invoke-virtual       v2, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+	11      (00000026) move-result-object   v0
+	12      (00000028) invoke-static        v0, v3, Lorg/apache/commons/lang/WordUtils;->capitalize(Ljava/lang/String; [C)Ljava/lang/String;
+	13      (0000002e) move-result-object   v2
+	14      (00000030) goto                 -b
+

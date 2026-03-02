@@ -1,0 +1,26 @@
+# Lcom/crashlytics/android/answers/AnswersEventsHandler$5;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0xe ]
+	0       (00000000) iget-object          v0, v4, Lcom/crashlytics/android/answers/AnswersEventsHandler$5;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	1       (00000004) iget-object          v0, v0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->strategy Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;
+	2       (00000008) invoke-interface     v0, Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;->rollFileOver()Z
+	0:d
+	(Ljava/lang/Exception; -> 10 run-BB@0x10)
+
+run-BB@0xe : 
+	3       (0000000e) return-void          
+
+run-BB@0x10 : [ run-BB@0xe ]
+	4       (00000010) move-exception       v0
+	5       (00000012) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	6       (00000018) move-result-object   v1
+	7       (0000001a) const-string         v2, 'Answers'
+	8       (0000001e) const-string         v3, 'Failed to flush events'
+	9       (00000022) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	10      (00000028) goto                 -d
+

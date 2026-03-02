@@ -1,0 +1,64 @@
+# Lcom/unlocker/a;->a(Landroid/content/Context; Ljava/lang/String; Landroid/app/ProgressDialog; Ljava/lang/Runnable;)Landroid/app/ProgressDialog; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:java.lang.String
+# - v6:android.app.ProgressDialog
+# - v7:java.lang.Runnable
+#
+# - return:android.app.ProgressDialog
+
+a-BB@0x0 : [ a-BB@0x6 a-BB@0x18 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) if-eqz               v6, +b
+
+a-BB@0x6 : [ a-BB@0x12 a-BB@0x18 ]
+	2       (00000006) invoke-virtual       v6, Landroid/app/ProgressDialog;->isShowing()Z
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-eqz               v0, +5
+
+a-BB@0x12 : [ a-BB@0x18 ]
+	5       (00000012) invoke-virtual       v6, Landroid/app/ProgressDialog;->dismiss()V
+
+a-BB@0x18 : [ a-BB@0x38 a-BB@0x52 ]
+	6       (00000018) new-instance         v0, Landroid/app/ProgressDialog;
+	7       (0000001c) invoke-direct        v0, v4, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
+	8       (00000022) invoke-virtual       v0, v1, Landroid/app/ProgressDialog;->setCanceledOnTouchOutside(Z)V
+	9       (00000028) invoke-virtual       v0, v1, Landroid/app/ProgressDialog;->setProgressStyle(I)V
+	10      (0000002e) invoke-virtual       v0, v5, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
+	11      (00000034) if-nez               v7, +f
+
+a-BB@0x38 : [ a-BB@0x3e ]
+	12      (00000038) invoke-virtual       v0, v1, Landroid/app/ProgressDialog;->setCancelable(Z)V
+
+a-BB@0x3e : [ a-BB@0x46 a-BB@0x8a ]
+	13      (0000003e) instance-of          v1, v4, Landroid/app/Activity;
+	14      (00000042) if-eqz               v1, +24
+
+a-BB@0x46 : [ a-BB@0x50 ]
+	15      (00000046) check-cast           v4, Landroid/app/Activity;
+	16      (0000004a) invoke-static        v4, v0, Lcom/unlocker/a;->a(Landroid/app/Activity; Landroid/app/Dialog;)V
+
+a-BB@0x50 : 
+	17      (00000050) return-object        v0
+
+a-BB@0x52 : [ a-BB@0x3e ]
+	18      (00000052) const/4              v1, 1
+	19      (00000054) invoke-virtual       v0, v1, Landroid/app/ProgressDialog;->setCancelable(Z)V
+	20      (0000005a) const/4              v1, -2
+	21      (0000005c) const/high16         v2, 32517 # [1.767873234393938e+38]
+	22      (00000060) invoke-virtual       v4, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	23      (00000066) move-result-object   v2
+	24      (00000068) new-instance         v3, Lcom/unlocker/a$6;
+	25      (0000006c) invoke-direct        v3, Lcom/unlocker/a$6;-><init>()V
+	26      (00000072) invoke-virtual       v0, v1, v2, v3, Landroid/app/ProgressDialog;->setButton(I Ljava/lang/CharSequence; Landroid/content/DialogInterface$OnClickListener;)V
+	27      (00000078) new-instance         v1, Lcom/unlocker/a$7;
+	28      (0000007c) invoke-direct        v1, v7, Lcom/unlocker/a$7;-><init>(Ljava/lang/Runnable;)V
+	29      (00000082) invoke-virtual       v0, v1, Landroid/app/ProgressDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
+	30      (00000088) goto                 -25
+
+a-BB@0x8a : [ a-BB@0x50 ]
+	31      (0000008a) invoke-virtual       v0, Landroid/app/ProgressDialog;->show()V
+	32      (00000090) goto                 -20
+

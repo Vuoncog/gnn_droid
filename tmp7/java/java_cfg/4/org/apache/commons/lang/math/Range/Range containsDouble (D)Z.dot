@@ -1,0 +1,82 @@
+digraph {
+	graph [bb="0,0,714,594",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_0854d003f534c1a84817c55812586fd9 {
+		graph [bb="8,8,706,586",
+			label="Lorg/apache/commons/lang/math/Range;.containsDouble->(D)Z\nLocal registers v0 ... v6\nparam v7 = double\nreturn = boolean",
+			lheight=0.83,
+			lp="357,552",
+			lwidth=5.92
+		];
+		struct_5c2fc8d0e7f1cc3e51eb4a866b9946b1	[height=3.0972,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v5</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/math/Range;-&gt;getMinimumDouble()D</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-wide </FONT> <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#919150">v0</FONT>, <FONT color="#8A8A6D">v1</FONT>, <FONT color="#83838A">v6</FONT>, <FONT color="#7B7BA7">v7</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/math/NumberUtils;-&gt;compare(D D)I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v5</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/math/Range;-&gt;getMaximumDouble()D</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-wide </FONT> <FONT color="#7474C4">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7474C4">v2</FONT>, <FONT color="#6D6DE1">v3</FONT>, <FONT color="#83838A">v6</FONT>, <FONT color="#7B7BA7">v7</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/math/NumberUtils;-&gt;compare(D D)I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#8A8A6D">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-gtz </FONT> <FONT color="#919150">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="357,398.5",
+			width=9.4722];
+		struct_37312247d23f4577bd6378040a463d51	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ltz </FONT> <FONT color="#8A8A6D">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="93,227.5",
+			width=2.1111];
+		struct_5c2fc8d0e7f1cc3e51eb4a866b9946b1:tail -> struct_37312247d23f4577bd6378040a463d51:header	[color=red,
+			pos="e,42,244.5 41,292.5 41,275 41.673,268.27 41.915,254.64"];
+		struct_697a23a2694b1cd613ded9c3aab62be5	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#919150">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="294,133.5",
+			width=2.4028];
+		struct_5c2fc8d0e7f1cc3e51eb4a866b9946b1:tail -> struct_697a23a2694b1cd613ded9c3aab62be5:header	[color=green,
+			pos="e,218,158.5 41,292.5 41,228.88 130.52,293.35 178,251 192.1,238.42 194.94,181.22 208.93,163.65"];
+		struct_c1c9819169c4d3d8e9d724a314ca9137	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#919150">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="103,133.5",
+			width=2.4028];
+		struct_37312247d23f4577bd6378040a463d51:tail -> struct_c1c9819169c4d3d8e9d724a314ca9137:header	[color=red,
+			pos="e,42,150.5 42,209.5 42,186.97 42,178.95 42,160.51"];
+		struct_37312247d23f4577bd6378040a463d51:tail -> struct_697a23a2694b1cd613ded9c3aab62be5:header	[color=green,
+			pos="e,218,158.5 42,209.5 42,137.33 131.48,193.5 199,168 203.42,166.33 205.81,163.96 208.27,162"];
+		struct_d915f9e3299e27f69c884f6277be38e8	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="178,39.5",
+			width=1.8333];
+		struct_c1c9819169c4d3d8e9d724a314ca9137:tail -> struct_d915f9e3299e27f69c884f6277be38e8:header	[color=blue,
+			pos="e,122,53.5 42,115.5 42,73.943 71.885,56.255 111.91,53.801"];
+		struct_697a23a2694b1cd613ded9c3aab62be5:tail -> struct_d915f9e3299e27f69c884f6277be38e8:header	[color=blue,
+			pos="e,137,56.5 218,107.5 213.7,107.5 163.39,77.632 144.29,63.387"];
+	}
+}

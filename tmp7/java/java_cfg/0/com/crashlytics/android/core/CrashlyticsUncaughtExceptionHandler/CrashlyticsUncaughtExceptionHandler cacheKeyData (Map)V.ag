@@ -1,0 +1,15 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->cacheKeyData(Ljava/util/Map;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.util.Map
+#
+# - return:void
+
+cacheKeyData-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->executorServiceWrapper Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;
+	1       (00000004) new-instance         v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$9;
+	2       (00000008) invoke-direct        v1, v2, v3, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$9;-><init>(Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler; Ljava/util/Map;)V
+	3       (0000000e) invoke-virtual       v0, v1, Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;->executeAsync(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+	4       (00000014) return-void          
+

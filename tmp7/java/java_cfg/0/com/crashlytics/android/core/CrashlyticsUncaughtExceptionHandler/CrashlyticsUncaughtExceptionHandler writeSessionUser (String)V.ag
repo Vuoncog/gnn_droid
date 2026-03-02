@@ -1,0 +1,76 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->writeSessionUser(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+#
+# - return:void
+
+writeSessionUser-BB@0x0 : [ writeSessionUser-BB@0x2 ]
+	0       (00000000) const/4              v1, 0
+
+writeSessionUser-BB@0x2 : [ writeSessionUser-BB@0x3a ]
+	1       (00000002) new-instance         v2, Lcom/crashlytics/android/core/ClsFileOutputStream;
+	2       (00000006) invoke-direct        v5, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->getFilesDir()Ljava/io/File;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) new-instance         v3, Ljava/lang/StringBuilder;
+	5       (00000012) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	6       (00000018) invoke-virtual       v3, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (0000001e) move-result-object   v3
+	8       (00000020) const-string         v4, 'SessionUser'
+	9       (00000024) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002a) move-result-object   v3
+	11      (0000002c) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000032) move-result-object   v3
+	13      (00000034) invoke-direct        v2, v0, v3, Lcom/crashlytics/android/core/ClsFileOutputStream;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	2:39
+	(Ljava/lang/Throwable; -> 94 writeSessionUser-BB@0x94)
+
+writeSessionUser-BB@0x3a : [ writeSessionUser-BB@0x56 writeSessionUser-BB@0x6c ]
+	14      (0000003a) invoke-static        v2, Lcom/crashlytics/android/core/CodedOutputStream;->newInstance(Ljava/io/OutputStream;)Lcom/crashlytics/android/core/CodedOutputStream;
+	15      (00000040) move-result-object   v1
+	16      (00000042) invoke-direct        v5, v6, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->getUserMetaData(Ljava/lang/String;)Lcom/crashlytics/android/core/UserMetaData;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) invoke-virtual       v0, Lcom/crashlytics/android/core/UserMetaData;->isEmpty()Z
+	19      (00000050) move-result          v3
+	20      (00000052) if-eqz               v3, +d
+	3a:4f
+	(Ljava/lang/Throwable; -> ae writeSessionUser-BB@0xae)
+
+writeSessionUser-BB@0x56 : [ writeSessionUser-BB@0x6a ]
+	21      (00000056) const-string         v0, 'Failed to flush session user file.'
+	22      (0000005a) invoke-static        v1, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->flushOrLog(Ljava/io/Flushable; Ljava/lang/String;)V
+	23      (00000060) const-string         v0, 'Failed to close session user file.'
+	24      (00000064) invoke-static        v2, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V
+
+writeSessionUser-BB@0x6a : 
+	25      (0000006a) return-void          
+
+writeSessionUser-BB@0x6c : [ writeSessionUser-BB@0x6a ]
+	26      (0000006c) iget-object          v3, v0, Lcom/crashlytics/android/core/UserMetaData;->id Ljava/lang/String;
+	27      (00000070) iget-object          v4, v0, Lcom/crashlytics/android/core/UserMetaData;->name Ljava/lang/String;
+	28      (00000074) iget-object          v0, v0, Lcom/crashlytics/android/core/UserMetaData;->email Ljava/lang/String;
+	29      (00000078) invoke-static        v1, v3, v4, v0, Lcom/crashlytics/android/core/SessionProtobufHelper;->writeSessionUser(Lcom/crashlytics/android/core/CodedOutputStream; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	30      (0000007e) const-string         v0, 'Failed to flush session user file.'
+	31      (00000082) invoke-static        v1, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->flushOrLog(Ljava/io/Flushable; Ljava/lang/String;)V
+	32      (00000088) const-string         v0, 'Failed to close session user file.'
+	33      (0000008c) invoke-static        v2, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V
+	34      (00000092) goto                 -14
+	6c:7d
+	(Ljava/lang/Throwable; -> ae writeSessionUser-BB@0xae)
+
+writeSessionUser-BB@0x94 : [ writeSessionUser-BB@0x98 ]
+	35      (00000094) move-exception       v0
+	36      (00000096) move-object          v2, v1
+
+writeSessionUser-BB@0x98 : 
+	37      (00000098) const-string         v3, 'Failed to flush session user file.'
+	38      (0000009c) invoke-static        v1, v3, Lio/fabric/sdk/android/services/common/CommonUtils;->flushOrLog(Ljava/io/Flushable; Ljava/lang/String;)V
+	39      (000000a2) const-string         v1, 'Failed to close session user file.'
+	40      (000000a6) invoke-static        v2, v1, Lio/fabric/sdk/android/services/common/CommonUtils;->closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V
+	41      (000000ac) throw                v0
+
+writeSessionUser-BB@0xae : [ writeSessionUser-BB@0x98 ]
+	42      (000000ae) move-exception       v0
+	43      (000000b0) goto                 -c
+

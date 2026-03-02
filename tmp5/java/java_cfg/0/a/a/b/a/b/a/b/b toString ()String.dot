@@ -1,0 +1,51 @@
+digraph {
+	graph [bb="0,0,540,342",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_6fe173ea128605b4eca5add115d7a7d0 {
+		graph [bb="8,8,532,334",
+			label="La/a/b/a/b/a/b;.toString->()Ljava/lang/String;\nLocal registers v0 ... v1\nreturn = java.lang.String",
+			lheight=0.62,
+			lp="270,307.5",
+			lwidth=4.06
+		];
+		struct_fec324fbf645fbd9f79c48e7eb2f00f0	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">La/a/b/a/b/a/b;-&gt;d Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="270,238.5",
+			width=5.875];
+		struct_c640cc31ccfb8f33f6dc769214a10fae	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-super </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/Object;-&gt;toString()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="260,133.5",
+			width=6.7639];
+		struct_fec324fbf645fbd9f79c48e7eb2f00f0:tail -> struct_c640cc31ccfb8f33f6dc769214a10fae:header	[color=red,
+			pos="e,38,161.5 80,209.5 80,185.14 48.982,188.13 40.258,171.47"];
+		struct_248c72ea3643d7118ff34e0caa355cc2	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="270,39.5",
+			width=2.4722];
+		struct_fec324fbf645fbd9f79c48e7eb2f00f0:tail -> struct_248c72ea3643d7118ff34e0caa355cc2:header	[color=green,
+			pos="e,206,56.5 80,209.5 80,112.84 447.99,239.54 513,168 533.62,145.3 533.14,122.12 513,99 470.24,49.908 233.98,117.2 208.27,66.524"];
+		struct_c640cc31ccfb8f33f6dc769214a10fae:tail -> struct_248c72ea3643d7118ff34e0caa355cc2:header	[color=blue,
+			pos="e,206,56.5 38,104.5 38,30.637 189.99,124.12 204.84,66.595"];
+	}
+}

@@ -1,0 +1,35 @@
+# Lorg/apache/commons/io/filefilter/WildcardFileFilter;->accept(Ljava/io/File; Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.io.File
+# - v8:java.lang.String
+#
+# - return:boolean
+
+accept-BB@0x0 : [ accept-BB@0xa ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-object          v2, v6, Lorg/apache/commons/io/filefilter/WildcardFileFilter;->wildcards [Ljava/lang/String;
+	2       (00000006) array-length         v3, v2
+	3       (00000008) move                 v1, v0
+
+accept-BB@0xa : [ accept-BB@0xe accept-BB@0x24 ]
+	4       (0000000a) if-ge                v1, v3, +d
+
+accept-BB@0xe : [ accept-BB@0x22 accept-BB@0x26 ]
+	5       (0000000e) aget-object          v4, v2, v1
+	6       (00000012) iget-object          v5, v6, Lorg/apache/commons/io/filefilter/WildcardFileFilter;->caseSensitivity Lorg/apache/commons/io/IOCase;
+	7       (00000016) invoke-static        v8, v4, v5, Lorg/apache/commons/io/FilenameUtils;->wildcardMatch(Ljava/lang/String; Ljava/lang/String; Lorg/apache/commons/io/IOCase;)Z
+	8       (0000001c) move-result          v4
+	9       (0000001e) if-eqz               v4, +4
+
+accept-BB@0x22 : [ accept-BB@0x24 ]
+	10      (00000022) const/4              v0, 1
+
+accept-BB@0x24 : 
+	11      (00000024) return               v0
+
+accept-BB@0x26 : [ accept-BB@0xa ]
+	12      (00000026) add-int/lit8         v1, v1, 1
+	13      (0000002a) goto                 -10
+

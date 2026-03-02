@@ -1,0 +1,16 @@
+# Lorg/apache/commons/lang/builder/ToStringStyle;->append(Ljava/lang/StringBuffer; Ljava/lang/String; S)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.StringBuffer
+# - v2:java.lang.String
+# - v3:short
+#
+# - return:void
+
+append-BB@0x0 : 
+	0       (00000000) invoke-virtual       v0, v1, v2, Lorg/apache/commons/lang/builder/ToStringStyle;->appendFieldStart(Ljava/lang/StringBuffer; Ljava/lang/String;)V
+	1       (00000006) invoke-virtual       v0, v1, v2, v3, Lorg/apache/commons/lang/builder/ToStringStyle;->appendDetail(Ljava/lang/StringBuffer; Ljava/lang/String; S)V
+	2       (0000000c) invoke-virtual       v0, v1, v2, Lorg/apache/commons/lang/builder/ToStringStyle;->appendFieldEnd(Ljava/lang/StringBuffer; Ljava/lang/String;)V
+	3       (00000012) return-void          
+

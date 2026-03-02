@@ -1,0 +1,74 @@
+digraph {
+	graph [bb="0,0,1008,570",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_00735c469cc14737eaaa21b819cbd98b {
+		graph [bb="8,8,1000,562",
+			label="Lcom/a/a/c/b;.<init>->(I I)V\nLocal registers v0 ... v2\nparam v3 = int\nparam v4 = int\nreturn = void",
+			lheight=1.04,
+			lp="504,520.5",
+			lwidth=2.43
+		];
+		struct_c961058890c22f0606b907ddf82aeeb4	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#8E8E5B">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/Object;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-lt </FONT> <FONT color="#848484">v3</FONT>, <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="455,425.5",
+			width=5.0556];
+		struct_b9ad7e2e93e5faf24ebcc34392f11e74	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ge </FONT> <FONT color="#7A7AAD">v4</FONT>, <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="275,320.5",
+			width=2.3056];
+		struct_c961058890c22f0606b907ddf82aeeb4:tail -> struct_b9ad7e2e93e5faf24ebcc34392f11e74:header	[color=red,
+			pos="e,212,337.5 283,388.5 247.79,388.5 218.09,378.52 212.83,347.74"];
+		struct_eb9e4fa53a3d3b9800984470163714fa	[height=1.9444,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/lang/IllegalArgumentException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7070D6">v1</FONT>, <FONT color="red"><br/>'Both dimensions must be greater<br/>than 0'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7070D6">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/IllegalArgumentException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="672,138.5",
+			width=8.8889];
+		struct_c961058890c22f0606b907ddf82aeeb4:tail -> struct_eb9e4fa53a3d3b9800984470163714fa:header	[color=green,
+			pos="e,377,202.5 294,385.5 294,348.18 347.11,375.58 367,344 398.77,293.58 379.41,268.38 377.2,212.51"];
+		struct_b9ad7e2e93e5faf24ebcc34392f11e74:tail -> struct_eb9e4fa53a3d3b9800984470163714fa:header	[color=red,
+			pos="e,362,199.5 212,302.5 212,241.43 299.97,304.34 343,261 359.85,244.03 341.81,212.46 352.15,202.55"];
+		struct_85180b63e56742b210c3f2591320e53d	[height=3.4028,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput </FONT> <FONT color="#848484">v3</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#088A08">Lcom/a/a/c/b;-&gt;a I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput </FONT> <FONT color="#7A7AAD">v4</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#088A08">Lcom/a/a/c/b;-&gt;b I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v3</FONT>, <FONT color="green">0x1f</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">div-int/lit8 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="green">0x20</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#088A08">Lcom/a/a/c/b;-&gt;c I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#088A08">Lcom/a/a/c/b;-&gt;c I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">mul-int/2addr </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7A7AAD">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-array </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">[I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#088A08">Lcom/a/a/c/b;-&gt;d [I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="175,138.5",
+			width=4.4167];
+		struct_b9ad7e2e93e5faf24ebcc34392f11e74:tail -> struct_85180b63e56742b210c3f2591320e53d:header	[color=green,
+			pos="e,41,254.5 212,302.5 212,227.42 57.292,323.16 42.183,264.76"];
+	}
+}

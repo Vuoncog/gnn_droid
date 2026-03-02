@@ -1,0 +1,49 @@
+# Lorg/apache/commons/lang/ArrayUtils;->lastIndexOf([D D I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:double[]
+# - v7:double
+# - v8:int
+#
+# - return:int
+
+lastIndexOf-BB@0x0 : [ lastIndexOf-BB@0xe lastIndexOf-BB@0x10 ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) invoke-static        v5, Lorg/apache/commons/lang/ArrayUtils;->isEmpty([D)Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-eqz               v1, +3
+
+lastIndexOf-BB@0xe : 
+	4       (0000000e) return               v0
+
+lastIndexOf-BB@0x10 : [ lastIndexOf-BB@0x14 lastIndexOf-BB@0xe ]
+	5       (00000010) if-ltz               v8, -1
+
+lastIndexOf-BB@0x14 : [ lastIndexOf-BB@0x1a lastIndexOf-BB@0x20 ]
+	6       (00000014) array-length         v1, v5
+	7       (00000016) if-lt                v8, v1, +5
+
+lastIndexOf-BB@0x1a : [ lastIndexOf-BB@0x20 ]
+	8       (0000001a) array-length         v1, v5
+	9       (0000001c) add-int/lit8         v8, v1, -1
+
+lastIndexOf-BB@0x20 : [ lastIndexOf-BB@0x22 ]
+	10      (00000020) move                 v1, v8
+
+lastIndexOf-BB@0x22 : [ lastIndexOf-BB@0x26 lastIndexOf-BB@0xe ]
+	11      (00000022) if-ltz               v1, -a
+
+lastIndexOf-BB@0x26 : [ lastIndexOf-BB@0x32 lastIndexOf-BB@0x36 ]
+	12      (00000026) aget-wide            v2, v5, v1
+	13      (0000002a) cmpl-double          v2, v6, v2
+	14      (0000002e) if-nez               v2, +4
+
+lastIndexOf-BB@0x32 : [ lastIndexOf-BB@0xe ]
+	15      (00000032) move                 v0, v1
+	16      (00000034) goto                 -13
+
+lastIndexOf-BB@0x36 : [ lastIndexOf-BB@0x22 ]
+	17      (00000036) add-int/lit8         v1, v1, -1
+	18      (0000003a) goto                 -c
+

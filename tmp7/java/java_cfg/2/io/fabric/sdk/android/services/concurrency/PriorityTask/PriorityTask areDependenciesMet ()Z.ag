@@ -1,0 +1,36 @@
+# Lio/fabric/sdk/android/services/concurrency/PriorityTask;->areDependenciesMet()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+areDependenciesMet-BB@0x0 : [ areDependenciesMet-BB@0x10 ]
+	0       (00000000) invoke-virtual       v2, Lio/fabric/sdk/android/services/concurrency/PriorityTask;->getDependencies()Ljava/util/Collection;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-interface     v0, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+	3       (0000000e) move-result-object   v1
+
+areDependenciesMet-BB@0x10 : [ areDependenciesMet-BB@0x1c areDependenciesMet-BB@0x38 ]
+	4       (00000010) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +10
+
+areDependenciesMet-BB@0x1c : [ areDependenciesMet-BB@0x34 areDependenciesMet-BB@0x10 ]
+	7       (0000001c) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	8       (00000022) move-result-object   v0
+	9       (00000024) check-cast           v0, Lio/fabric/sdk/android/services/concurrency/Task;
+	10      (00000028) invoke-interface     v0, Lio/fabric/sdk/android/services/concurrency/Task;->isFinished()Z
+	11      (0000002e) move-result          v0
+	12      (00000030) if-nez               v0, -10
+
+areDependenciesMet-BB@0x34 : [ areDependenciesMet-BB@0x36 ]
+	13      (00000034) const/4              v0, 0
+
+areDependenciesMet-BB@0x36 : 
+	14      (00000036) return               v0
+
+areDependenciesMet-BB@0x38 : [ areDependenciesMet-BB@0x36 ]
+	15      (00000038) const/4              v0, 1
+	16      (0000003a) goto                 -2
+

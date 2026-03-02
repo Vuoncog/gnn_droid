@@ -1,0 +1,94 @@
+# Lcom/a/a/b/a/a/a;->b(Landroid/hardware/Camera$Parameters; Z)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.hardware.Camera$Parameters
+# - v6:boolean
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x1e b-BB@0x22 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-virtual       v5, Landroid/hardware/Camera$Parameters;->getMinExposureCompensation()I
+	2       (00000008) move-result          v1
+	3       (0000000a) invoke-virtual       v5, Landroid/hardware/Camera$Parameters;->getMaxExposureCompensation()I
+	4       (00000010) move-result          v2
+	5       (00000012) invoke-virtual       v5, Landroid/hardware/Camera$Parameters;->getExposureCompensationStep()F
+	6       (00000018) move-result          v3
+	7       (0000001a) if-nez               v1, +4
+
+b-BB@0x1e : [ b-BB@0x22 b-BB@0xf0 ]
+	8       (0000001e) if-eqz               v2, +69
+
+b-BB@0x22 : [ b-BB@0x2a b-BB@0xf0 ]
+	9       (00000022) cmpl-float           v4, v3, v0
+	10      (00000026) if-lez               v4, +65
+
+b-BB@0x2a : [ b-BB@0x2e b-BB@0x9e ]
+	11      (0000002a) if-eqz               v6, +3a
+
+b-BB@0x2e : [ b-BB@0x58 b-BB@0xa4 ]
+	12      (0000002e) div-float/2addr      v0, v3
+	13      (00000030) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	14      (00000036) move-result          v0
+	15      (00000038) int-to-float         v4, v0
+	16      (0000003a) mul-float/2addr      v3, v4
+	17      (0000003c) invoke-static        v0, v2, Ljava/lang/Math;->min(I I)I
+	18      (00000042) move-result          v0
+	19      (00000044) invoke-static        v0, v1, Ljava/lang/Math;->max(I I)I
+	20      (0000004a) move-result          v0
+	21      (0000004c) invoke-virtual       v5, Landroid/hardware/Camera$Parameters;->getExposureCompensation()I
+	22      (00000052) move-result          v1
+	23      (00000054) if-ne                v1, v0, +28
+
+b-BB@0x58 : [ b-BB@0x9c ]
+	24      (00000058) const-string         v1, 'CameraConfiguration'
+	25      (0000005c) new-instance         v2, Ljava/lang/StringBuilder;
+	26      (00000060) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	27      (00000066) const-string         v4, 'Exposure compensation already set to '
+	28      (0000006a) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	29      (00000070) move-result-object   v2
+	30      (00000072) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	31      (00000078) move-result-object   v0
+	32      (0000007a) const-string         v2, ' / '
+	33      (0000007e) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	34      (00000084) move-result-object   v0
+	35      (00000086) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+	36      (0000008c) move-result-object   v0
+	37      (0000008e) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	38      (00000094) move-result-object   v0
+	39      (00000096) invoke-static        v1, v0, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+
+b-BB@0x9c : 
+	40      (0000009c) return-void          
+
+b-BB@0x9e : [ b-BB@0x2e ]
+	41      (0000009e) const/high16         v0, 16320 # [1.5]
+	42      (000000a2) goto                 -3a
+
+b-BB@0xa4 : [ b-BB@0x9c ]
+	43      (000000a4) const-string         v1, 'CameraConfiguration'
+	44      (000000a8) new-instance         v2, Ljava/lang/StringBuilder;
+	45      (000000ac) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	46      (000000b2) const-string         v4, 'Setting exposure compensation to '
+	47      (000000b6) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	48      (000000bc) move-result-object   v2
+	49      (000000be) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	50      (000000c4) move-result-object   v2
+	51      (000000c6) const-string         v4, ' / '
+	52      (000000ca) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000d0) move-result-object   v2
+	54      (000000d2) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+	55      (000000d8) move-result-object   v2
+	56      (000000da) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	57      (000000e0) move-result-object   v2
+	58      (000000e2) invoke-static        v1, v2, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	59      (000000e8) invoke-virtual       v5, v0, Landroid/hardware/Camera$Parameters;->setExposureCompensation(I)V
+	60      (000000ee) goto                 -29
+
+b-BB@0xf0 : [ b-BB@0x9c ]
+	61      (000000f0) const-string         v0, 'CameraConfiguration'
+	62      (000000f4) const-string         v1, 'Camera does not support exposure compensation'
+	63      (000000f8) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	64      (000000fe) goto                 -31
+

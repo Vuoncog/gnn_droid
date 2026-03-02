@@ -1,0 +1,111 @@
+# Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;->onReceive(Landroid/content/Context; Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Context
+# - v8:android.content.Intent
+#
+# - return:void
+
+onReceive-BB@0x0 : [ onReceive-BB@0x1a onReceive-BB@0x1c ]
+	0       (00000000) invoke-static        v7, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+	1       (00000006) move-result-object   v2
+	2       (00000008) const-string         v4, 'lockOpen'
+	3       (0000000c) const/4              v5, 1
+	4       (0000000e) invoke-interface     v2, v4, v5, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String; Z)Z
+	5       (00000014) move-result          v1
+	6       (00000016) if-nez               v1, +3
+	0:f1
+	(Ljava/lang/Exception; -> f4 onReceive-BB@0xf4)
+
+onReceive-BB@0x1a : 
+	7       (0000001a) return-void          
+	0:f1
+	(Ljava/lang/Exception; -> f4 onReceive-BB@0xf4)
+
+onReceive-BB@0x1c : [ onReceive-BB@0x38 onReceive-BB@0x1a ]
+	8       (0000001c) iget-object          v4, v6, Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;->this$0 Lcom/ailock/tszlock/LockService;
+	9       (00000020) iget-object          v4, v4, Lcom/ailock/tszlock/LockService;->action Ljava/lang/String;
+	10      (00000024) invoke-virtual       v8, Landroid/content/Intent;->getAction()Ljava/lang/String;
+	11      (0000002a) move-result-object   v5
+	12      (0000002c) invoke-virtual       v4, v5, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	13      (00000032) move-result          v4
+	14      (00000034) if-nez               v4, -d
+	0:f1
+	(Ljava/lang/Exception; -> f4 onReceive-BB@0xf4)
+
+onReceive-BB@0x38 : [ onReceive-BB@0x60 onReceive-BB@0x94 ]
+	15      (00000038) iget-object          v4, v6, Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;->this$0 Lcom/ailock/tszlock/LockService;
+	16      (0000003c) invoke-virtual       v8, Landroid/content/Intent;->getAction()Ljava/lang/String;
+	17      (00000042) move-result-object   v5
+	18      (00000044) iput-object          v5, v4, Lcom/ailock/tszlock/LockService;->action Ljava/lang/String;
+	19      (00000048) iget-object          v4, v6, Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;->this$0 Lcom/ailock/tszlock/LockService;
+	20      (0000004c) iget-object          v4, v4, Lcom/ailock/tszlock/LockService;->action Ljava/lang/String;
+	21      (00000050) const-string         v5, 'android.intent.action.SCREEN_ON'
+	22      (00000054) invoke-virtual       v4, v5, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	23      (0000005a) move-result          v4
+	24      (0000005c) if-eqz               v4, +1c
+	0:f1
+	(Ljava/lang/Exception; -> f4 onReceive-BB@0xf4)
+
+onReceive-BB@0x60 : [ onReceive-BB@0x84 onReceive-BB@0x94 ]
+	25      (00000060) iget-object          v4, v6, Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;->this$0 Lcom/ailock/tszlock/LockService;
+	26      (00000064) invoke-virtual       v4, Lcom/ailock/tszlock/LockService;->getTopName()Ljava/lang/String;
+	27      (0000006a) move-result-object   v3
+	28      (0000006c) iget-object          v4, v6, Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;->this$0 Lcom/ailock/tszlock/LockService;
+	29      (00000070) invoke-virtual       v4, Lcom/ailock/tszlock/LockService;->getPackageName()Ljava/lang/String;
+	30      (00000076) move-result-object   v4
+	31      (00000078) invoke-virtual       v3, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	32      (0000007e) move-result          v4
+	33      (00000080) if-nez               v4, +a
+	0:f1
+	(Ljava/lang/Exception; -> f4 onReceive-BB@0xf4)
+
+onReceive-BB@0x84 : [ onReceive-BB@0x94 onReceive-BB@0x1a ]
+	34      (00000084) const-string         v4, 'launcher'
+	35      (00000088) invoke-virtual       v3, v4, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+	36      (0000008e) move-result          v4
+	37      (00000090) if-eqz               v4, -3b
+	0:f1
+	(Ljava/lang/Exception; -> f4 onReceive-BB@0xf4)
+
+onReceive-BB@0x94 : [ onReceive-BB@0xb0 onReceive-BB@0x1a ]
+	38      (00000094) const-string         v4, 'phone'
+	39      (00000098) invoke-virtual       v7, v4, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	40      (0000009e) move-result-object   v4
+	41      (000000a0) check-cast           v4, Landroid/telephony/TelephonyManager;
+	42      (000000a4) invoke-virtual       v4, Landroid/telephony/TelephonyManager;->getCallState()I
+	43      (000000aa) move-result          v4
+	44      (000000ac) if-nez               v4, -49
+	0:f1
+	(Ljava/lang/Exception; -> f4 onReceive-BB@0xf4)
+
+onReceive-BB@0xb0 : [ onReceive-BB@0xc8 onReceive-BB@0xce ]
+	45      (000000b0) iget-object          v4, v6, Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;->this$0 Lcom/ailock/tszlock/LockService;
+	46      (000000b4) iget-object          v4, v4, Lcom/ailock/tszlock/LockService;->action Ljava/lang/String;
+	47      (000000b8) const-string         v5, 'android.intent.action.SCREEN_ON'
+	48      (000000bc) invoke-virtual       v4, v5, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	49      (000000c2) move-result          v4
+	50      (000000c4) if-eqz               v4, +5
+	0:f1
+	(Ljava/lang/Exception; -> f4 onReceive-BB@0xf4)
+
+onReceive-BB@0xc8 : [ onReceive-BB@0xce ]
+	51      (000000c8) invoke-static        v7, Lcom/ailock/tszlock/MyWakeLock;->acquire(Landroid/content/Context;)V
+	0:f1
+	(Ljava/lang/Exception; -> f4 onReceive-BB@0xf4)
+
+onReceive-BB@0xce : [ onReceive-BB@0x1a ]
+	52      (000000ce) new-instance         v0, Landroid/content/Intent;
+	53      (000000d2) invoke-direct        v0, Landroid/content/Intent;-><init>()V
+	54      (000000d8) const-class          v4, Lcom/ailock/tszlock/UnLockActivity;
+	55      (000000dc) invoke-virtual       v0, v7, v4, Landroid/content/Intent;->setClass(Landroid/content/Context; Ljava/lang/Class;)Landroid/content/Intent;
+	56      (000000e2) const/high16         v4, 4096 # [2.524354896707238e-29]
+	57      (000000e6) invoke-virtual       v0, v4, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+	58      (000000ec) invoke-virtual       v7, v0, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+	59      (000000f2) goto                 -6c
+
+onReceive-BB@0xf4 : [ onReceive-BB@0x1a ]
+	60      (000000f4) move-exception       v4
+	61      (000000f6) goto                 -6e
+

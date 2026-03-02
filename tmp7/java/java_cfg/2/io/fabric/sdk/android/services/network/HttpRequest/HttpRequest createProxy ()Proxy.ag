@@ -1,0 +1,17 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->createProxy()Ljava/net/Proxy; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.net.Proxy
+
+createProxy-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/net/Proxy;
+	1       (00000004) sget-object          v1, Ljava/net/Proxy$Type;->HTTP Ljava/net/Proxy$Type;
+	2       (00000008) new-instance         v2, Ljava/net/InetSocketAddress;
+	3       (0000000c) iget-object          v3, v5, Lio/fabric/sdk/android/services/network/HttpRequest;->httpProxyHost Ljava/lang/String;
+	4       (00000010) iget                 v4, v5, Lio/fabric/sdk/android/services/network/HttpRequest;->httpProxyPort I
+	5       (00000014) invoke-direct        v2, v3, v4, Ljava/net/InetSocketAddress;-><init>(Ljava/lang/String; I)V
+	6       (0000001a) invoke-direct        v0, v1, v2, Ljava/net/Proxy;-><init>(Ljava/net/Proxy$Type; Ljava/net/SocketAddress;)V
+	7       (00000020) return-object        v0
+

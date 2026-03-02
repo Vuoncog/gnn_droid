@@ -1,0 +1,29 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->sendSessionReports()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:void
+
+sendSessionReports-BB@0x0 : [ sendSessionReports-BB@0xc ]
+	0       (00000000) invoke-direct        v7, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->listCompleteSessionFiles()[Ljava/io/File;
+	1       (00000006) move-result-object   v1
+	2       (00000008) array-length         v2, v1
+	3       (0000000a) const/4              v0, 0
+
+sendSessionReports-BB@0xc : [ sendSessionReports-BB@0x10 sendSessionReports-BB@0x32 ]
+	4       (0000000c) if-ge                v0, v2, +13
+
+sendSessionReports-BB@0x10 : [ sendSessionReports-BB@0xc ]
+	5       (00000010) aget-object          v3, v1, v0
+	6       (00000014) iget-object          v4, v7, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->executorServiceWrapper Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;
+	7       (00000018) new-instance         v5, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$SendSessionRunnable;
+	8       (0000001c) iget-object          v6, v7, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->crashlyticsCore Lcom/crashlytics/android/core/CrashlyticsCore;
+	9       (00000020) invoke-direct        v5, v6, v3, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$SendSessionRunnable;-><init>(Lcom/crashlytics/android/core/CrashlyticsCore; Ljava/io/File;)V
+	10      (00000026) invoke-virtual       v4, v5, Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;->executeAsync(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+	11      (0000002c) add-int/lit8         v0, v0, 1
+	12      (00000030) goto                 -12
+
+sendSessionReports-BB@0x32 : 
+	13      (00000032) return-void          
+

@@ -1,0 +1,90 @@
+# Lcom/isnowstudio/common/IsnowActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.view.MenuItem
+#
+# - return:boolean
+
+onOptionsItemSelected-BB@0x0 : [ D:onOptionsItemSelected-BB@0x16 2131230779:onOptionsItemSelected-BB@0x20 2131230780:onOptionsItemSelected-BB@0x34 2131230781:onOptionsItemSelected-BB@0x6a 2131230782:onOptionsItemSelected-BB@0x72 2131230783:onOptionsItemSelected-BB@0x44 2131230784:onOptionsItemSelected-BB@0xf0 ]
+	0       (00000000) const/high16         v3, 32518 # [1.7811655143517873e+38]
+	1       (00000004) const/4              v6, 0
+	2       (00000006) const/4              v0, 1
+	3       (00000008) invoke-interface     v8, Landroid/view/MenuItem;->getItemId()I
+	4       (0000000e) move-result          v1
+	5       (00000010) packed-switch        v1, +74 (0xf8)
+
+onOptionsItemSelected-BB@0x16 : [ onOptionsItemSelected-BB@0x1e ]
+	6       (00000016) invoke-super         v7, v8, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+	7       (0000001c) move-result          v0
+
+onOptionsItemSelected-BB@0x1e : 
+	8       (0000001e) return               v0
+
+onOptionsItemSelected-BB@0x20 : [ onOptionsItemSelected-BB@0x1e ]
+	9       (00000020) iget-object          v1, v7, Lcom/isnowstudio/common/IsnowActivity;->g Lcom/a/a/a/a/c;
+	10      (00000024) const-string         v2, 'isnow.studio.premium'
+	11      (00000028) iget-object          v3, v7, Lcom/isnowstudio/common/IsnowActivity;->h Lcom/a/a/a/a/d;
+	12      (0000002c) invoke-virtual       v1, v7, v2, v3, Lcom/a/a/a/a/c;->a(Landroid/app/Activity; Ljava/lang/String; Lcom/a/a/a/a/d;)V
+	13      (00000032) goto                 -a
+
+onOptionsItemSelected-BB@0x34 : [ onOptionsItemSelected-BB@0x1e ]
+	14      (00000034) invoke-virtual       v7, Lcom/isnowstudio/common/IsnowActivity;->getPackageName()Ljava/lang/String;
+	15      (0000003a) move-result-object   v1
+	16      (0000003c) invoke-static        v7, v1, Lcom/isnowstudio/common/c/c;->a(Landroid/content/Context; Ljava/lang/String;)V
+	17      (00000042) goto                 -12
+
+onOptionsItemSelected-BB@0x44 : [ onOptionsItemSelected-BB@0x1e ]
+	18      (00000044) const                v1, 2131099654 # [1.7811667312963635e+38]
+	19      (0000004a) new-array            v2, v0, [Ljava/lang/Object;
+	20      (0000004e) invoke-virtual       v7, v3, Lcom/isnowstudio/common/IsnowActivity;->getString(I)Ljava/lang/String;
+	21      (00000054) move-result-object   v3
+	22      (00000056) aput-object          v3, v2, v6
+	23      (0000005a) invoke-virtual       v7, v1, v2, Lcom/isnowstudio/common/IsnowActivity;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	24      (00000060) move-result-object   v1
+	25      (00000062) invoke-static        v7, v1, Lcom/isnowstudio/common/c/a;->a(Landroid/content/Context; Ljava/lang/String;)V
+	26      (00000068) goto                 -25
+
+onOptionsItemSelected-BB@0x6a : [ onOptionsItemSelected-BB@0x1e ]
+	27      (0000006a) invoke-static        v7, Lcom/isnowstudio/common/c/c;->a(Landroid/content/Context;)V
+	28      (00000070) goto                 -29
+
+onOptionsItemSelected-BB@0x72 : [ onOptionsItemSelected-BB@0x1e ]
+	29      (00000072) const                v1, 2131099659 # [1.7811677454168437e+38]
+	30      (00000078) new-array            v2, v0, [Ljava/lang/Object;
+	31      (0000007c) invoke-virtual       v7, v3, Lcom/isnowstudio/common/IsnowActivity;->getString(I)Ljava/lang/String;
+	32      (00000082) move-result-object   v3
+	33      (00000084) aput-object          v3, v2, v6
+	34      (00000088) invoke-virtual       v7, v1, v2, Lcom/isnowstudio/common/IsnowActivity;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	35      (0000008e) move-result-object   v1
+	36      (00000090) const                v2, 2131099660 # [1.7811679482409397e+38]
+	37      (00000096) const/4              v3, 2
+	38      (00000098) new-array            v3, v3, [Ljava/lang/Object;
+	39      (0000009c) new-instance         v4, Ljava/lang/StringBuilder;
+	40      (000000a0) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	41      (000000a6) const-string         v5, 'http://market.android.com/details?id='
+	42      (000000aa) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000b0) move-result-object   v4
+	44      (000000b2) invoke-virtual       v7, Lcom/isnowstudio/common/IsnowActivity;->getPackageName()Ljava/lang/String;
+	45      (000000b8) move-result-object   v5
+	46      (000000ba) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	47      (000000c0) move-result-object   v4
+	48      (000000c2) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	49      (000000c8) move-result-object   v4
+	50      (000000ca) aput-object          v4, v3, v6
+	51      (000000ce) const                v4, 2131099649 # [1.7811657171758833e+38]
+	52      (000000d4) invoke-virtual       v7, v4, Lcom/isnowstudio/common/IsnowActivity;->getString(I)Ljava/lang/String;
+	53      (000000da) move-result-object   v4
+	54      (000000dc) aput-object          v4, v3, v0
+	55      (000000e0) invoke-virtual       v7, v2, v3, Lcom/isnowstudio/common/IsnowActivity;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	56      (000000e6) move-result-object   v2
+	57      (000000e8) invoke-static        v7, v1, v2, Lcom/isnowstudio/common/c/a;->a(Landroid/content/Context; Ljava/lang/String; Ljava/lang/String;)V
+	58      (000000ee) goto                 -68
+
+onOptionsItemSelected-BB@0xf0 : [ onOptionsItemSelected-BB@0x1e ]
+	59      (000000f0) invoke-virtual       v7, v6, Lcom/isnowstudio/common/IsnowActivity;->showDialog(I)V
+	60      (000000f6) goto                 -6c
+
+onOptionsItemSelected-BB@0xf8 : 
+	61      (000000f8) packed-switch-payload 7f08003b 7f08003c 7f08003d 7f08003e 7f08003f 7f080040
+

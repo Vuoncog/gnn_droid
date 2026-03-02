@@ -1,0 +1,30 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->body(Ljava/lang/String;)Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:java.lang.String
+
+body-BB@0x0 : [ body-BB@0x8 ]
+	0       (00000000) invoke-virtual       v2, Lio/fabric/sdk/android/services/network/HttpRequest;->byteStream()Ljava/io/ByteArrayOutputStream;
+	1       (00000006) move-result-object   v0
+
+body-BB@0x8 : 
+	2       (00000008) invoke-virtual       v2, Lio/fabric/sdk/android/services/network/HttpRequest;->buffer()Ljava/io/BufferedInputStream;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v2, v1, v0, Lio/fabric/sdk/android/services/network/HttpRequest;->copy(Ljava/io/InputStream; Ljava/io/OutputStream;)Lio/fabric/sdk/android/services/network/HttpRequest;
+	5       (00000016) invoke-static        v3, Lio/fabric/sdk/android/services/network/HttpRequest;->getValidCharset(Ljava/lang/String;)Ljava/lang/String;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) invoke-virtual       v0, v1, Ljava/io/ByteArrayOutputStream;->toString(Ljava/lang/String;)Ljava/lang/String;
+	8       (00000024) move-result-object   v0
+	9       (00000026) return-object        v0
+	8:23
+	(Ljava/io/IOException; -> 28 body-BB@0x28)
+
+body-BB@0x28 : 
+	10      (00000028) move-exception       v0
+	11      (0000002a) new-instance         v1, Lio/fabric/sdk/android/services/network/HttpRequest$HttpRequestException;
+	12      (0000002e) invoke-direct        v1, v0, Lio/fabric/sdk/android/services/network/HttpRequest$HttpRequestException;-><init>(Ljava/io/IOException;)V
+	13      (00000034) throw                v1
+

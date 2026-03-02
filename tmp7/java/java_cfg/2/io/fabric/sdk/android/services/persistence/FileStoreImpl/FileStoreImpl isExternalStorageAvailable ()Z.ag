@@ -1,0 +1,30 @@
+# Lio/fabric/sdk/android/services/persistence/FileStoreImpl;->isExternalStorageAvailable()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+isExternalStorageAvailable-BB@0x0 : [ isExternalStorageAvailable-BB@0x18 isExternalStorageAvailable-BB@0x32 ]
+	0       (00000000) invoke-static        Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'mounted'
+	3       (0000000c) invoke-virtual       v1, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-nez               v0, +f
+
+isExternalStorageAvailable-BB@0x18 : [ isExternalStorageAvailable-BB@0x30 ]
+	6       (00000018) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) const-string         v1, 'Fabric'
+	9       (00000024) const-string         v2, 'External Storage is not mounted and/or writable\nHave you declared android.permission.WRITE_EXTERNAL_STORAGE in the manifest?'
+	10      (00000028) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->w(Ljava/lang/String; Ljava/lang/String;)V
+	11      (0000002e) const/4              v0, 0
+
+isExternalStorageAvailable-BB@0x30 : 
+	12      (00000030) return               v0
+
+isExternalStorageAvailable-BB@0x32 : [ isExternalStorageAvailable-BB@0x30 ]
+	13      (00000032) const/4              v0, 1
+	14      (00000034) goto                 -2
+

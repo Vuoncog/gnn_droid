@@ -1,0 +1,39 @@
+# Lcom/crashlytics/android/core/NativeCrashWriter;->createBinaryImagesMessage([Lcom/crashlytics/android/core/internal/models/BinaryImageData;)Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:com.crashlytics.android.core.internal.models.BinaryImageData[]
+#
+# - return:com.crashlytics.android.core.NativeCrashWriter$RepeatedMessage
+
+createBinaryImagesMessage-BB@0x0 : [ createBinaryImagesMessage-BB@0x4 createBinaryImagesMessage-BB@0x2a ]
+	0       (00000000) if-eqz               v4, +15
+
+createBinaryImagesMessage-BB@0x4 : [ createBinaryImagesMessage-BB@0xa ]
+	1       (00000004) array-length         v0, v4
+	2       (00000006) new-array            v0, v0, [Lcom/crashlytics/android/core/NativeCrashWriter$BinaryImageMessage;
+
+createBinaryImagesMessage-BB@0xa : [ createBinaryImagesMessage-BB@0xc ]
+	3       (0000000a) const/4              v1, 0
+
+createBinaryImagesMessage-BB@0xc : [ createBinaryImagesMessage-BB@0x12 createBinaryImagesMessage-BB@0x30 ]
+	4       (0000000c) array-length         v2, v0
+	5       (0000000e) if-ge                v1, v2, +11
+
+createBinaryImagesMessage-BB@0x12 : [ createBinaryImagesMessage-BB@0xc ]
+	6       (00000012) new-instance         v2, Lcom/crashlytics/android/core/NativeCrashWriter$BinaryImageMessage;
+	7       (00000016) aget-object          v3, v4, v1
+	8       (0000001a) invoke-direct        v2, v3, Lcom/crashlytics/android/core/NativeCrashWriter$BinaryImageMessage;-><init>(Lcom/crashlytics/android/core/internal/models/BinaryImageData;)V
+	9       (00000020) aput-object          v2, v0, v1
+	10      (00000024) add-int/lit8         v1, v1, 1
+	11      (00000028) goto                 -e
+
+createBinaryImagesMessage-BB@0x2a : [ createBinaryImagesMessage-BB@0xa ]
+	12      (0000002a) sget-object          v0, Lcom/crashlytics/android/core/NativeCrashWriter;->EMPTY_BINARY_IMAGE_MESSAGES [Lcom/crashlytics/android/core/NativeCrashWriter$BinaryImageMessage;
+	13      (0000002e) goto                 -12
+
+createBinaryImagesMessage-BB@0x30 : 
+	14      (00000030) new-instance         v1, Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;
+	15      (00000034) invoke-direct        v1, v0, Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;-><init>([Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;)V
+	16      (0000003a) return-object        v1
+

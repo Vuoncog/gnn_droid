@@ -1,0 +1,25 @@
+# Lio/fabric/sdk/android/services/common/AbstractSpiCall;->overrideProtocolAndHost(Ljava/lang/String;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:java.lang.String
+
+overrideProtocolAndHost-BB@0x0 : [ overrideProtocolAndHost-BB@0x10 overrideProtocolAndHost-BB@0x28 ]
+	0       (00000000) iget-object          v0, v2, Lio/fabric/sdk/android/services/common/AbstractSpiCall;->protocolAndHostOverride Ljava/lang/String;
+	1       (00000004) invoke-static        v0, Lio/fabric/sdk/android/services/common/CommonUtils;->isNullOrEmpty(Ljava/lang/String;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +e
+
+overrideProtocolAndHost-BB@0x10 : [ overrideProtocolAndHost-BB@0x28 ]
+	4       (00000010) sget-object          v0, Lio/fabric/sdk/android/services/common/AbstractSpiCall;->PROTOCOL_AND_HOST_PATTERN Ljava/util/regex/Pattern;
+	5       (00000014) invoke-virtual       v0, v3, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) iget-object          v1, v2, Lio/fabric/sdk/android/services/common/AbstractSpiCall;->protocolAndHostOverride Ljava/lang/String;
+	8       (00000020) invoke-virtual       v0, v1, Ljava/util/regex/Matcher;->replaceFirst(Ljava/lang/String;)Ljava/lang/String;
+	9       (00000026) move-result-object   v3
+
+overrideProtocolAndHost-BB@0x28 : 
+	10      (00000028) return-object        v3
+

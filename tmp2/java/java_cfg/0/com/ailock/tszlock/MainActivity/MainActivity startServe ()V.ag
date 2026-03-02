@@ -1,0 +1,14 @@
+# Lcom/ailock/tszlock/MainActivity;->startServe()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+startServe-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/content/Intent;
+	1       (00000004) const-class          v1, Lcom/ailock/tszlock/LockService;
+	2       (00000008) invoke-direct        v0, v2, v1, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	3       (0000000e) invoke-virtual       v2, v0, Lcom/ailock/tszlock/MainActivity;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+	4       (00000014) return-void          
+

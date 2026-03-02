@@ -1,0 +1,302 @@
+# Lorg/apache/commons/io/FilenameUtils;->doNormalize(Ljava/lang/String; C Z)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:java.lang.String
+# - v11:char
+# - v12:boolean
+#
+# - return:java.lang.String
+
+doNormalize-BB@0x0 : [ doNormalize-BB@0x4 doNormalize-BB@0x8 ]
+	0       (00000000) if-nez               v10, +4
+
+doNormalize-BB@0x4 : [ doNormalize-BB@0x6 ]
+	1       (00000004) const/4              v10, 0
+
+doNormalize-BB@0x6 : 
+	2       (00000006) return-object        v10
+
+doNormalize-BB@0x8 : [ doNormalize-BB@0x14 doNormalize-BB@0x6 ]
+	3       (00000008) invoke-virtual       v10, Ljava/lang/String;->length()I
+	4       (0000000e) move-result          v2
+	5       (00000010) if-eqz               v2, -5
+
+doNormalize-BB@0x14 : [ doNormalize-BB@0x20 doNormalize-BB@0x24 ]
+	6       (00000014) invoke-static        v10, Lorg/apache/commons/io/FilenameUtils;->getPrefixLength(Ljava/lang/String;)I
+	7       (0000001a) move-result          v4
+	8       (0000001c) if-gez               v4, +4
+
+doNormalize-BB@0x20 : [ doNormalize-BB@0x6 ]
+	9       (00000020) const/4              v10, 0
+	10      (00000022) goto                 -e
+
+doNormalize-BB@0x24 : [ doNormalize-BB@0x46 doNormalize-BB@0x64 ]
+	11      (00000024) add-int/lit8         v0, v2, 2
+	12      (00000028) new-array            v5, v0, [C
+	13      (0000002c) const/4              v0, 0
+	14      (0000002e) invoke-virtual       v10, Ljava/lang/String;->length()I
+	15      (00000034) move-result          v1
+	16      (00000036) const/4              v3, 0
+	17      (00000038) invoke-virtual       v10, v0, v1, v5, v3, Ljava/lang/String;->getChars(I I [C I)V
+	18      (0000003e) sget-char            v0, Lorg/apache/commons/io/FilenameUtils;->SYSTEM_SEPARATOR C
+	19      (00000042) if-ne                v11, v0, +11
+
+doNormalize-BB@0x46 : [ doNormalize-BB@0x4a ]
+	20      (00000046) sget-char            v0, Lorg/apache/commons/io/FilenameUtils;->OTHER_SEPARATOR C
+
+doNormalize-BB@0x4a : [ doNormalize-BB@0x4c ]
+	21      (0000004a) const/4              v1, 0
+
+doNormalize-BB@0x4c : [ doNormalize-BB@0x52 doNormalize-BB@0x6a ]
+	22      (0000004c) array-length         v3, v5
+	23      (0000004e) if-ge                v1, v3, +e
+
+doNormalize-BB@0x52 : [ doNormalize-BB@0x5a doNormalize-BB@0x5e ]
+	24      (00000052) aget-char            v3, v5, v1
+	25      (00000056) if-ne                v3, v0, +4
+
+doNormalize-BB@0x5a : [ doNormalize-BB@0x5e ]
+	26      (0000005a) aput-char            v11, v5, v1
+
+doNormalize-BB@0x5e : [ doNormalize-BB@0x4c ]
+	27      (0000005e) add-int/lit8         v1, v1, 1
+	28      (00000062) goto                 -b
+
+doNormalize-BB@0x64 : [ doNormalize-BB@0x4a ]
+	29      (00000064) sget-char            v0, Lorg/apache/commons/io/FilenameUtils;->SYSTEM_SEPARATOR C
+	30      (00000068) goto                 -f
+
+doNormalize-BB@0x6a : [ doNormalize-BB@0x78 doNormalize-BB@0x248 ]
+	31      (0000006a) const/4              v0, 1
+	32      (0000006c) add-int/lit8         v1, v2, -1
+	33      (00000070) aget-char            v1, v5, v1
+	34      (00000074) if-eq                v1, v11, +ea
+
+doNormalize-BB@0x78 : [ doNormalize-BB@0x82 ]
+	35      (00000078) add-int/lit8         v1, v2, 1
+	36      (0000007c) aput-char            v11, v5, v2
+	37      (00000080) const/4              v0, 0
+
+doNormalize-BB@0x82 : [ doNormalize-BB@0x8c ]
+	38      (00000082) add-int/lit8         v2, v4, 1
+	39      (00000086) move                 v9, v2
+	40      (00000088) move                 v2, v1
+	41      (0000008a) move                 v1, v9
+
+doNormalize-BB@0x8c : [ doNormalize-BB@0x90 doNormalize-BB@0xc0 ]
+	42      (0000008c) if-ge                v1, v2, +1a
+
+doNormalize-BB@0x90 : [ doNormalize-BB@0x98 doNormalize-BB@0xba ]
+	43      (00000090) aget-char            v3, v5, v1
+	44      (00000094) if-ne                v3, v11, +13
+
+doNormalize-BB@0x98 : [ doNormalize-BB@0xa4 doNormalize-BB@0xba ]
+	45      (00000098) add-int/lit8         v3, v1, -1
+	46      (0000009c) aget-char            v3, v5, v3
+	47      (000000a0) if-ne                v3, v11, +d
+
+doNormalize-BB@0xa4 : [ doNormalize-BB@0xba ]
+	48      (000000a4) add-int/lit8         v3, v1, -1
+	49      (000000a8) sub-int              v6, v2, v1
+	50      (000000ac) invoke-static        v5, v1, v5, v3, v6, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	51      (000000b2) add-int/lit8         v2, v2, -1
+	52      (000000b6) add-int/lit8         v1, v1, -1
+
+doNormalize-BB@0xba : [ doNormalize-BB@0x8c ]
+	53      (000000ba) add-int/lit8         v1, v1, 1
+	54      (000000be) goto                 -19
+
+doNormalize-BB@0xc0 : [ doNormalize-BB@0xc4 ]
+	55      (000000c0) add-int/lit8         v1, v4, 1
+
+doNormalize-BB@0xc4 : [ doNormalize-BB@0xc8 doNormalize-BB@0x12a ]
+	56      (000000c4) if-ge                v1, v2, +33
+
+doNormalize-BB@0xc8 : [ doNormalize-BB@0xd0 doNormalize-BB@0x23e ]
+	57      (000000c8) aget-char            v3, v5, v1
+	58      (000000cc) if-ne                v3, v11, +b9
+
+doNormalize-BB@0xd0 : [ doNormalize-BB@0xe0 doNormalize-BB@0x23e ]
+	59      (000000d0) add-int/lit8         v3, v1, -1
+	60      (000000d4) aget-char            v3, v5, v3
+	61      (000000d8) const/16             v6, 46
+	62      (000000dc) if-ne                v3, v6, +b1
+
+doNormalize-BB@0xe0 : [ doNormalize-BB@0xe8 doNormalize-BB@0xf4 ]
+	63      (000000e0) add-int/lit8         v3, v4, 1
+	64      (000000e4) if-eq                v1, v3, +8
+
+doNormalize-BB@0xe8 : [ doNormalize-BB@0xf4 doNormalize-BB@0x23e ]
+	65      (000000e8) add-int/lit8         v3, v1, -2
+	66      (000000ec) aget-char            v3, v5, v3
+	67      (000000f0) if-ne                v3, v11, +a7
+
+doNormalize-BB@0xf4 : [ doNormalize-BB@0xfc doNormalize-BB@0xfe ]
+	68      (000000f4) add-int/lit8         v3, v2, -1
+	69      (000000f8) if-ne                v1, v3, +3
+
+doNormalize-BB@0xfc : [ doNormalize-BB@0xfe ]
+	70      (000000fc) const/4              v0, 1
+
+doNormalize-BB@0xfe : [ doNormalize-BB@0x11e ]
+	71      (000000fe) add-int/lit8         v3, v1, 1
+	72      (00000102) add-int/lit8         v6, v1, -1
+	73      (00000106) sub-int              v7, v2, v1
+	74      (0000010a) invoke-static        v5, v3, v5, v6, v7, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	75      (00000110) add-int/lit8         v2, v2, -2
+	76      (00000114) add-int/lit8         v1, v1, -1
+	77      (00000118) move                 v9, v1
+	78      (0000011a) move                 v1, v0
+	79      (0000011c) move                 v0, v9
+
+doNormalize-BB@0x11e : [ doNormalize-BB@0xc4 ]
+	80      (0000011e) add-int/lit8         v0, v0, 1
+	81      (00000122) move                 v9, v0
+	82      (00000124) move                 v0, v1
+	83      (00000126) move                 v1, v9
+	84      (00000128) goto                 -32
+
+doNormalize-BB@0x12a : [ doNormalize-BB@0x12e ]
+	85      (0000012a) add-int/lit8         v1, v4, 2
+
+doNormalize-BB@0x12e : [ doNormalize-BB@0x132 doNormalize-BB@0x1ea ]
+	86      (0000012e) if-ge                v1, v2, +5e
+
+doNormalize-BB@0x132 : [ doNormalize-BB@0x13a doNormalize-BB@0x236 ]
+	87      (00000132) aget-char            v3, v5, v1
+	88      (00000136) if-ne                v3, v11, +80
+
+doNormalize-BB@0x13a : [ doNormalize-BB@0x14a doNormalize-BB@0x236 ]
+	89      (0000013a) add-int/lit8         v3, v1, -1
+	90      (0000013e) aget-char            v3, v5, v3
+	91      (00000142) const/16             v6, 46
+	92      (00000146) if-ne                v3, v6, +78
+
+doNormalize-BB@0x14a : [ doNormalize-BB@0x15a doNormalize-BB@0x236 ]
+	93      (0000014a) add-int/lit8         v3, v1, -2
+	94      (0000014e) aget-char            v3, v5, v3
+	95      (00000152) const/16             v6, 46
+	96      (00000156) if-ne                v3, v6, +70
+
+doNormalize-BB@0x15a : [ doNormalize-BB@0x162 doNormalize-BB@0x16e ]
+	97      (0000015a) add-int/lit8         v3, v4, 2
+	98      (0000015e) if-eq                v1, v3, +8
+
+doNormalize-BB@0x162 : [ doNormalize-BB@0x16e doNormalize-BB@0x236 ]
+	99      (00000162) add-int/lit8         v3, v1, -3
+	100     (00000166) aget-char            v3, v5, v3
+	101     (0000016a) if-ne                v3, v11, +66
+
+doNormalize-BB@0x16e : [ doNormalize-BB@0x176 doNormalize-BB@0x17c ]
+	102     (0000016e) add-int/lit8         v3, v4, 2
+	103     (00000172) if-ne                v1, v3, +5
+
+doNormalize-BB@0x176 : [ doNormalize-BB@0x6 ]
+	104     (00000176) const/4              v10, 0
+	105     (00000178) goto/16              -b9
+
+doNormalize-BB@0x17c : [ doNormalize-BB@0x184 doNormalize-BB@0x186 ]
+	106     (0000017c) add-int/lit8         v3, v2, -1
+	107     (00000180) if-ne                v1, v3, +3
+
+doNormalize-BB@0x184 : [ doNormalize-BB@0x186 ]
+	108     (00000184) const/4              v0, 1
+
+doNormalize-BB@0x186 : [ doNormalize-BB@0x18a ]
+	109     (00000186) add-int/lit8         v3, v1, -4
+
+doNormalize-BB@0x18a : [ doNormalize-BB@0x18e doNormalize-BB@0x1c8 ]
+	110     (0000018a) if-lt                v3, v4, +1f
+
+doNormalize-BB@0x18e : [ doNormalize-BB@0x196 doNormalize-BB@0x1c2 ]
+	111     (0000018e) aget-char            v6, v5, v3
+	112     (00000192) if-ne                v6, v11, +18
+
+doNormalize-BB@0x196 : [ doNormalize-BB@0x1b6 ]
+	113     (00000196) add-int/lit8         v6, v1, 1
+	114     (0000019a) add-int/lit8         v7, v3, 1
+	115     (0000019e) sub-int              v8, v2, v1
+	116     (000001a2) invoke-static        v5, v6, v5, v7, v8, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	117     (000001a8) sub-int/2addr        v1, v3
+	118     (000001aa) sub-int/2addr        v2, v1
+	119     (000001ac) add-int/lit8         v1, v3, 1
+	120     (000001b0) move                 v9, v1
+	121     (000001b2) move                 v1, v0
+	122     (000001b4) move                 v0, v9
+
+doNormalize-BB@0x1b6 : [ doNormalize-BB@0x12e ]
+	123     (000001b6) add-int/lit8         v0, v0, 1
+	124     (000001ba) move                 v9, v0
+	125     (000001bc) move                 v0, v1
+	126     (000001be) move                 v1, v9
+	127     (000001c0) goto                 -49
+
+doNormalize-BB@0x1c2 : [ doNormalize-BB@0x18a ]
+	128     (000001c2) add-int/lit8         v3, v3, -1
+	129     (000001c6) goto                 -1e
+
+doNormalize-BB@0x1c8 : [ doNormalize-BB@0x1b6 ]
+	130     (000001c8) add-int/lit8         v3, v1, 1
+	131     (000001cc) sub-int              v6, v2, v1
+	132     (000001d0) invoke-static        v5, v3, v5, v4, v6, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	133     (000001d6) add-int/lit8         v1, v1, 1
+	134     (000001da) sub-int/2addr        v1, v4
+	135     (000001dc) sub-int/2addr        v2, v1
+	136     (000001de) add-int/lit8         v1, v4, 1
+	137     (000001e2) move                 v9, v1
+	138     (000001e4) move                 v1, v0
+	139     (000001e6) move                 v0, v9
+	140     (000001e8) goto                 -19
+
+doNormalize-BB@0x1ea : [ doNormalize-BB@0x1ee doNormalize-BB@0x1f6 ]
+	141     (000001ea) if-gtz               v2, +6
+
+doNormalize-BB@0x1ee : [ doNormalize-BB@0x6 ]
+	142     (000001ee) const-string         v10, ''
+	143     (000001f2) goto/16              -f6
+
+doNormalize-BB@0x1f6 : [ doNormalize-BB@0x1fa doNormalize-BB@0x20a ]
+	144     (000001f6) if-gt                v2, v4, +a
+
+doNormalize-BB@0x1fa : [ doNormalize-BB@0x6 ]
+	145     (000001fa) new-instance         v10, Ljava/lang/String;
+	146     (000001fe) const/4              v0, 0
+	147     (00000200) invoke-direct        v10, v5, v0, v2, Ljava/lang/String;-><init>([C I I)V
+	148     (00000206) goto/16              -100
+
+doNormalize-BB@0x20a : [ doNormalize-BB@0x20e doNormalize-BB@0x222 ]
+	149     (0000020a) if-eqz               v0, +c
+
+doNormalize-BB@0x20e : [ doNormalize-BB@0x212 doNormalize-BB@0x222 ]
+	150     (0000020e) if-eqz               v12, +a
+
+doNormalize-BB@0x212 : [ doNormalize-BB@0x6 ]
+	151     (00000212) new-instance         v10, Ljava/lang/String;
+	152     (00000216) const/4              v0, 0
+	153     (00000218) invoke-direct        v10, v5, v0, v2, Ljava/lang/String;-><init>([C I I)V
+	154     (0000021e) goto/16              -10c
+
+doNormalize-BB@0x222 : [ doNormalize-BB@0x6 ]
+	155     (00000222) new-instance         v10, Ljava/lang/String;
+	156     (00000226) const/4              v0, 0
+	157     (00000228) add-int/lit8         v1, v2, -1
+	158     (0000022c) invoke-direct        v10, v5, v0, v1, Ljava/lang/String;-><init>([C I I)V
+	159     (00000232) goto/16              -116
+
+doNormalize-BB@0x236 : [ doNormalize-BB@0x1b6 ]
+	160     (00000236) move                 v9, v1
+	161     (00000238) move                 v1, v0
+	162     (0000023a) move                 v0, v9
+	163     (0000023c) goto                 -43
+
+doNormalize-BB@0x23e : [ doNormalize-BB@0x11e ]
+	164     (0000023e) move                 v9, v1
+	165     (00000240) move                 v1, v0
+	166     (00000242) move                 v0, v9
+	167     (00000244) goto/16              -93
+
+doNormalize-BB@0x248 : [ doNormalize-BB@0x82 ]
+	168     (00000248) move                 v1, v2
+	169     (0000024a) goto/16              -e4
+

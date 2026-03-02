@@ -1,0 +1,22 @@
+# Lorg/apache/commons/lang/exception/ExceptionUtils;->getRootCauseMessage(Ljava/lang/Throwable;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Throwable
+#
+# - return:java.lang.String
+
+getRootCauseMessage-BB@0x0 : [ getRootCauseMessage-BB@0xc getRootCauseMessage-BB@0x16 ]
+	0       (00000000) invoke-static        v1, Lorg/apache/commons/lang/exception/ExceptionUtils;->getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-nez               v0, +7
+
+getRootCauseMessage-BB@0xc : 
+	3       (0000000c) invoke-static        v1, Lorg/apache/commons/lang/exception/ExceptionUtils;->getMessage(Ljava/lang/Throwable;)Ljava/lang/String;
+	4       (00000012) move-result-object   v0
+	5       (00000014) return-object        v0
+
+getRootCauseMessage-BB@0x16 : [ getRootCauseMessage-BB@0xc ]
+	6       (00000016) move-object          v1, v0
+	7       (00000018) goto                 -6
+

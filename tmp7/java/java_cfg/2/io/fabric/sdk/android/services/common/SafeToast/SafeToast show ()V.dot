@@ -1,0 +1,71 @@
+digraph {
+	graph [bb="0,0,1420,540",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_b4b4c4d98b285348ff061080d05cf61d {
+		graph [bb="8,8,1412,532",
+			label="Lio/fabric/sdk/android/services/common/SafeToast;.show->()V\nLocal registers v0 ... v2\nreturn = void",
+			lheight=0.62,
+			lp="710,505.5",
+			lwidth=5.65
+		];
+		struct_2fbc4f5cefd079cf99568b076addbc26	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Landroid/os/Looper;-&gt;myLooper()Landroid/os/Looper;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Landroid/os/Looper;-&gt;getMainLooper()Landroid/os/Looper;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ne </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="500,403.5",
+			width=7.625];
+		struct_2beb591497359549c2f1b03188498553	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-super </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Landroid/widget/Toast;-&gt;show()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="217,199.5",
+			width=5.5833];
+		struct_2fbc4f5cefd079cf99568b076addbc26:tail -> struct_2beb591497359549c2f1b03188498553:header	[color=red,
+			pos="e,41,216.5 236,344.5 135.77,344.5 47.078,321.76 41.299,226.57"];
+		struct_9883539c6a5b3addcf2cfac35969d223	[height=2.7917,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Landroid/os/Handler;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Landroid/os/Looper;-&gt;getMainLooper()Landroid/os/Looper;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v1</FONT>, <FONT color="#DF3A01">Landroid/os/Handler;-&gt;&lt;init&gt;(Landroid/os/Looper;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#888877">v1</FONT>, <FONT color="#0000FF">Lio/fabric/sdk/android/services/common/SafeToast$1;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#888877">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/SafeToast$1;-&gt;&lt;init&gt;(Lio/fabric/sdk/android/services/common/SafeToast;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v1</FONT>, <FONT color="#DF3A01">Landroid/os/Handler;-&gt;post(Ljava/lang/Runnable;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-12</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="920,199.5",
+			width=13.444];
+		struct_2fbc4f5cefd079cf99568b076addbc26:tail -> struct_9883539c6a5b3addcf2cfac35969d223:header	[color=green,
+			pos="e,461,293.5 251,341.5 251,249.5 444.91,378.4 460.06,303.65"];
+		struct_0463c674a07d6b5301d4286ababd6518	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="300,39.5",
+			width=2.0556];
+		struct_2beb591497359549c2f1b03188498553:tail -> struct_0463c674a07d6b5301d4286ababd6518:header	[color=blue,
+			pos="e,236,53.5 41,181.5 41,81.272 126.37,55.203 225.72,53.582"];
+		struct_9883539c6a5b3addcf2cfac35969d223:tail -> struct_0463c674a07d6b5301d4286ababd6518:header	[color=blue,
+			pos="e,251,56.5 446,107.5 436.75,107.5 435.76,101.99 427,99 354.26,74.183 259.92,131.41 251.59,66.492"];
+	}
+}

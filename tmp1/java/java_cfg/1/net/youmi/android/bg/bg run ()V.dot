@@ -1,0 +1,57 @@
+digraph {
+	graph [bb="0,0,746,446",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_b965e2f0bfac328fd8094b74ca91025f {
+		graph [bb="8,8,738,438",
+			label="Lnet/youmi/android/bg;.run->()V\nLocal registers v0 ... v2\nreturn = void",
+			lheight=0.62,
+			lp="373,411.5",
+			lwidth=3.00
+		];
+		struct_4cf6454c0849fc5330f8765715e81218	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#088A08">Lnet/youmi/android/bg;-&gt;a Lnet/youmi/android/ae;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lnet/youmi/android/ae;-&gt;a(Lnet/youmi/android/ae;)Lnet/youmi/android/y;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lnet/youmi/android/y;-&gt;e Landroid/widget/ImageView;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#088A08">Lnet/youmi/android/bg;-&gt;b Landroid/graphics/Bitmap;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7777BB">v1</FONT>, <FONT color="#DF3A01">Landroid/widget/ImageView;-&gt;setImageBitmap(Landroid/graphics/Bitmap;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="373,298.5",
+			width=9.9167];
+		struct_3ebb0f14c84c139c3fa8b1a6bc76eeb5	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="97,39.5",
+			width=2.0556];
+		struct_4cf6454c0849fc5330f8765715e81218:tail -> struct_3ebb0f14c84c139c3fa8b1a6bc76eeb5:header	[color=blue,
+			pos="e,33,53.5 41,225.5 41,152.71 -35.474,62.778 22.913,54.17"];
+		struct_cf2db70614e20ca70e4306b136f40ff0	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="154,134.5",
+			width=2.7083];
+		struct_4cf6454c0849fc5330f8765715e81218:tail -> struct_cf2db70614e20ca70e4306b136f40ff0:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="139.5,194.5",
+			pos="e,82,162.5 41,225.5 41,195.88 73.237,195.52 80.541,172.53"];
+		struct_cf2db70614e20ca70e4306b136f40ff0:tail -> struct_3ebb0f14c84c139c3fa8b1a6bc76eeb5:header	[color=blue,
+			pos="e,48,56.5 67,108.5 45.759,108.5 47.032,88.084 47.777,66.671"];
+	}
+}

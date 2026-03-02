@@ -1,0 +1,50 @@
+# La/a/b/a/b/b/b;->run()V [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x2 ]
+	0       (00000000) const/4              v0, 0
+
+run-BB@0x2 : [ run-BB@0xc ]
+	1       (00000002) iget-object          v1, v6, La/a/b/a/b/b/b;->a La/a/b/a/b/b/a;
+	2       (00000006) iget-object          v1, v1, La/a/b/a/b/b/a;->a [La/a/b/a/b/b/b/a;
+	3       (0000000a) array-length         v2, v1
+	2:39
+	(Ljava/lang/InterruptedException; -> 40 run-BB@0x40)
+
+run-BB@0xc : [ run-BB@0x10 run-BB@0x42 ]
+	4       (0000000c) if-ge                v0, v2, +1b
+	2:39
+	(Ljava/lang/InterruptedException; -> 40 run-BB@0x40)
+
+run-BB@0x10 : [ run-BB@0x1c run-BB@0x30 ]
+	5       (00000010) aget-object          v3, v1, v0
+	6       (00000014) iget-object          v4, v3, La/a/b/a/b/b/b/a;->k La/a/b/a/b/a/b;
+	7       (00000018) if-eqz               v4, +c
+	2:39
+	(Ljava/lang/InterruptedException; -> 40 run-BB@0x40)
+
+run-BB@0x1c : [ run-BB@0x30 ]
+	8       (0000001c) iget-object          v3, v3, La/a/b/a/b/b/b/a;->k La/a/b/a/b/a/b;
+	9       (00000020) const/4              v4, 0
+	10      (00000022) invoke-static        v4, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	11      (00000028) move-result-object   v4
+	12      (0000002a) invoke-virtual       v3, v4, v6, La/a/b/a/b/a/b;->a(Ljava/lang/Object; Ljava/lang/Object;)V
+	2:39
+	(Ljava/lang/InterruptedException; -> 40 run-BB@0x40)
+
+run-BB@0x30 : [ run-BB@0xc ]
+	13      (00000030) const-wide/16        v4, 8 # [8.0]
+	14      (00000034) invoke-static        v4, v5, Ljava/lang/Thread;->sleep(J)V
+	15      (0000003a) add-int/lit8         v0, v0, 1
+	16      (0000003e) goto                 -19
+
+run-BB@0x40 : [ run-BB@0x42 ]
+	17      (00000040) move-exception       v0
+
+run-BB@0x42 : 
+	18      (00000042) return-void          
+

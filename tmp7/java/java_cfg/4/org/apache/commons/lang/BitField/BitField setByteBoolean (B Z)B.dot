@@ -1,0 +1,64 @@
+digraph {
+	graph [bb="0,0,1149,372",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_c1ba90508e7c46d28c610a0ad605482a {
+		graph [bb="8,8,1141,364",
+			label="Lorg/apache/commons/lang/BitField;.setByteBoolean->(B Z)B\nLocal registers v0 ... v1\nparam v2 = byte\nparam v3 = boolean\nreturn = \
+byte",
+			lheight=1.04,
+			lp="574.5,322.5",
+			lwidth=5.62
+		];
+		struct_cb8fb60119341e45a231de96565c8b7c	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="372,249.5",
+			width=2.0972];
+		struct_a732e28ee704f1daa57f1829624342c8	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v1</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/BitField;-&gt;setByte(B)B</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7272CC">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="286,144.5",
+			width=7.4861];
+		struct_cb8fb60119341e45a231de96565c8b7c:tail -> struct_a732e28ee704f1daa57f1829624342c8:header	[color=red,
+			pos="e,38,172.5 307,234.5 249.13,234.5 61.054,233.92 39.934,182.35"];
+		struct_a85bb6ba4c63a872271c9cae916f4794	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v1</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/BitField;-&gt;clearByte(B)B</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7272CC">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="853,144.5",
+			width=7.7639];
+		struct_cb8fb60119341e45a231de96565c8b7c:tail -> struct_a85bb6ba4c63a872271c9cae916f4794:header	[color=green,
+			pos="e,584,180.5 318,231.5 318,175.84 512.08,207.25 565,190 569.49,188.54 571.88,186.16 574.33,184.15"];
+		struct_50bc475a330525e39b9e2474e038b887	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#7272CC">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="359,39.5",
+			width=1.7083];
+		struct_a732e28ee704f1daa57f1829624342c8:tail -> struct_50bc475a330525e39b9e2474e038b887:header	[color=blue,
+			pos="e,308,53.5 38,115.5 38,56.944 226.58,53.689 297.97,53.51"];
+		struct_a85bb6ba4c63a872271c9cae916f4794:tail -> struct_50bc475a330525e39b9e2474e038b887:header	[color=blue,
+			pos="e,318,56.5 584,107.5 574.75,107.5 573.85,101.69 565,99 515.15,83.824 342.39,108.59 320.32,66.244"];
+	}
+}

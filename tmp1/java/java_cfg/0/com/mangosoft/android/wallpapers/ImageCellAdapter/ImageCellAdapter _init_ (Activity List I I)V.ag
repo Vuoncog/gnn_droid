@@ -1,0 +1,44 @@
+# Lcom/mangosoft/android/wallpapers/ImageCellAdapter;-><init>(Landroid/app/Activity; Ljava/util/List; I I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.app.Activity
+# - v6:java.util.List
+# - v7:int
+# - v8:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x66 <init>-BB@0x6e ]
+	0       (00000000) invoke-direct        v4, Landroid/widget/BaseAdapter;-><init>()V
+	1       (00000006) const/4              v0, 0
+	2       (00000008) iput                 v0, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->scale F
+	3       (0000000c) invoke-static        v5, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+	4       (00000012) move-result-object   v0
+	5       (00000014) iput-object          v0, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->inflater Landroid/view/LayoutInflater;
+	6       (00000018) iput-object          v5, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->context Landroid/app/Activity;
+	7       (0000001c) iput-object          v6, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->images Ljava/util/List;
+	8       (00000020) new-instance         v0, Landroid/os/Handler;
+	9       (00000024) invoke-direct        v0, Landroid/os/Handler;-><init>()V
+	10      (0000002a) iput-object          v0, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->handler Landroid/os/Handler;
+	11      (0000002e) iput                 v7, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->startIdx I
+	12      (00000032) iput                 v8, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->endIdx I
+	13      (00000036) invoke-virtual       v5, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+	14      (0000003c) move-result-object   v0
+	15      (0000003e) invoke-virtual       v0, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+	16      (00000044) move-result-object   v0
+	17      (00000046) iget                 v0, v0, Landroid/util/DisplayMetrics;->density F
+	18      (0000004a) iput                 v0, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->scale F
+	19      (0000004e) iget                 v0, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->scale F
+	20      (00000052) float-to-double      v0, v0
+	21      (00000054) const-wide           v2, 4562254508917369340 # [0.001]
+	22      (0000005e) cmpg-double          v0, v0, v2
+	23      (00000062) if-gtz               v0, +6
+
+<init>-BB@0x66 : [ <init>-BB@0x6e ]
+	24      (00000066) const/high16         v0, 16256 # [1.0]
+	25      (0000006a) iput                 v0, v4, Lcom/mangosoft/android/wallpapers/ImageCellAdapter;->scale F
+
+<init>-BB@0x6e : 
+	26      (0000006e) return-void          
+

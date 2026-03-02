@@ -1,0 +1,36 @@
+# La/a/b/a/b/b/c/e;-><init>(La/a/b/a/b/b/c/c/c;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:a.a.b.a.b.b.c.c.c
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v4, v0, La/a/b/a/b/b/c/b;-><init>(F)V
+	2       (00000008) iget                 v0, v5, La/a/b/a/b/b/c/c/c;->c F
+	3       (0000000c) float-to-double      v0, v0
+	4       (0000000e) invoke-static        v0, v1, Ljava/lang/Math;->log10(D)D
+	5       (00000014) move-result-wide     v0
+	6       (00000016) double-to-float      v0, v0
+	7       (00000018) iput                 v0, v4, La/a/b/a/b/b/c/e;->c F
+	8       (0000001c) iget                 v0, v5, La/a/b/a/b/b/c/c/c;->d F
+	9       (00000020) float-to-double      v0, v0
+	10      (00000022) invoke-static        v0, v1, Ljava/lang/Math;->log10(D)D
+	11      (00000028) move-result-wide     v0
+	12      (0000002a) iget                 v2, v4, La/a/b/a/b/b/c/e;->c F
+	13      (0000002e) float-to-double      v2, v2
+	14      (00000030) sub-double/2addr     v0, v2
+	15      (00000032) double-to-float      v0, v0
+	16      (00000034) iput                 v0, v4, La/a/b/a/b/b/c/e;->d F
+	17      (00000038) const/high16         v0, 16256 # [1.0]
+	18      (0000003c) iget                 v1, v5, La/a/b/a/b/b/c/c/c;->e F
+	19      (00000040) div-float/2addr      v0, v1
+	20      (00000042) iput                 v0, v4, La/a/b/a/b/b/c/e;->f F
+	21      (00000046) iget                 v0, v5, La/a/b/a/b/b/c/c/c;->h I
+	22      (0000004a) iput                 v0, v4, La/a/b/a/b/b/c/e;->e I
+	23      (0000004e) iget-object          v0, v5, La/a/b/a/b/b/c/c/c;->b Ljava/lang/String;
+	24      (00000052) iput-object          v0, v4, La/a/b/a/b/b/c/e;->g Ljava/lang/String;
+	25      (00000056) return-void          
+

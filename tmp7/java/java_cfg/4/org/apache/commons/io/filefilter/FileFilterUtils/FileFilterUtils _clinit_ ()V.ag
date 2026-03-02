@@ -1,0 +1,39 @@
+# Lorg/apache/commons/io/filefilter/FileFilterUtils;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v4, 2
+	1       (00000002) const/4              v3, 1
+	2       (00000004) const/4              v2, 0
+	3       (00000006) new-array            v0, v4, [Lorg/apache/commons/io/filefilter/IOFileFilter;
+	4       (0000000a) invoke-static        Lorg/apache/commons/io/filefilter/FileFilterUtils;->directoryFileFilter()Lorg/apache/commons/io/filefilter/IOFileFilter;
+	5       (00000010) move-result-object   v1
+	6       (00000012) aput-object          v1, v0, v2
+	7       (00000016) const-string         v1, 'CVS'
+	8       (0000001a) invoke-static        v1, Lorg/apache/commons/io/filefilter/FileFilterUtils;->nameFileFilter(Ljava/lang/String;)Lorg/apache/commons/io/filefilter/IOFileFilter;
+	9       (00000020) move-result-object   v1
+	10      (00000022) aput-object          v1, v0, v3
+	11      (00000026) invoke-static        v0, Lorg/apache/commons/io/filefilter/FileFilterUtils;->and([Lorg/apache/commons/io/filefilter/IOFileFilter;)Lorg/apache/commons/io/filefilter/IOFileFilter;
+	12      (0000002c) move-result-object   v0
+	13      (0000002e) invoke-static        v0, Lorg/apache/commons/io/filefilter/FileFilterUtils;->notFileFilter(Lorg/apache/commons/io/filefilter/IOFileFilter;)Lorg/apache/commons/io/filefilter/IOFileFilter;
+	14      (00000034) move-result-object   v0
+	15      (00000036) sput-object          v0, Lorg/apache/commons/io/filefilter/FileFilterUtils;->cvsFilter Lorg/apache/commons/io/filefilter/IOFileFilter;
+	16      (0000003a) new-array            v0, v4, [Lorg/apache/commons/io/filefilter/IOFileFilter;
+	17      (0000003e) invoke-static        Lorg/apache/commons/io/filefilter/FileFilterUtils;->directoryFileFilter()Lorg/apache/commons/io/filefilter/IOFileFilter;
+	18      (00000044) move-result-object   v1
+	19      (00000046) aput-object          v1, v0, v2
+	20      (0000004a) const-string         v1, '.svn'
+	21      (0000004e) invoke-static        v1, Lorg/apache/commons/io/filefilter/FileFilterUtils;->nameFileFilter(Ljava/lang/String;)Lorg/apache/commons/io/filefilter/IOFileFilter;
+	22      (00000054) move-result-object   v1
+	23      (00000056) aput-object          v1, v0, v3
+	24      (0000005a) invoke-static        v0, Lorg/apache/commons/io/filefilter/FileFilterUtils;->and([Lorg/apache/commons/io/filefilter/IOFileFilter;)Lorg/apache/commons/io/filefilter/IOFileFilter;
+	25      (00000060) move-result-object   v0
+	26      (00000062) invoke-static        v0, Lorg/apache/commons/io/filefilter/FileFilterUtils;->notFileFilter(Lorg/apache/commons/io/filefilter/IOFileFilter;)Lorg/apache/commons/io/filefilter/IOFileFilter;
+	27      (00000068) move-result-object   v0
+	28      (0000006a) sput-object          v0, Lorg/apache/commons/io/filefilter/FileFilterUtils;->svnFilter Lorg/apache/commons/io/filefilter/IOFileFilter;
+	29      (0000006e) return-void          
+

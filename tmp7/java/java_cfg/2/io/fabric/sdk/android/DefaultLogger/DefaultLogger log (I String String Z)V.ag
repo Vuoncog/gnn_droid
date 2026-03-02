@@ -1,0 +1,25 @@
+# Lio/fabric/sdk/android/DefaultLogger;->log(I Ljava/lang/String; Ljava/lang/String; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:java.lang.String
+# - v4:java.lang.String
+# - v5:boolean
+#
+# - return:void
+
+log-BB@0x0 : [ log-BB@0x4 log-BB@0x10 ]
+	0       (00000000) if-nez               v5, +8
+
+log-BB@0x4 : [ log-BB@0x10 log-BB@0x16 ]
+	1       (00000004) invoke-virtual       v1, v3, v2, Lio/fabric/sdk/android/DefaultLogger;->isLoggable(Ljava/lang/String; I)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +5
+
+log-BB@0x10 : [ log-BB@0x16 ]
+	4       (00000010) invoke-static        v2, v3, v4, Landroid/util/Log;->println(I Ljava/lang/String; Ljava/lang/String;)I
+
+log-BB@0x16 : 
+	5       (00000016) return-void          
+

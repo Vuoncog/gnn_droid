@@ -1,0 +1,29 @@
+# Lorg/apache/commons/io/input/BOMInputStream;->skip(J)J [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:long
+#
+# - return:long
+
+skip-BB@0x0 : [ skip-BB@0xc skip-BB@0x20 ]
+	0       (00000000) const-wide/16        v0, 0 # [0.0]
+	1       (00000004) cmp-long             v0, v4, v0
+	2       (00000008) if-lez               v0, +c
+
+skip-BB@0xc : [ skip-BB@0x18 skip-BB@0x20 ]
+	3       (0000000c) invoke-direct        v3, Lorg/apache/commons/io/input/BOMInputStream;->readFirstBytes()I
+	4       (00000012) move-result          v0
+	5       (00000014) if-ltz               v0, +6
+
+skip-BB@0x18 : [ skip-BB@0x0 ]
+	6       (00000018) const-wide/16        v0, 1 # [1.0]
+	7       (0000001c) sub-long/2addr       v4, v0
+	8       (0000001e) goto                 -f
+
+skip-BB@0x20 : 
+	9       (00000020) iget-object          v0, v3, Lorg/apache/commons/io/input/BOMInputStream;->in Ljava/io/InputStream;
+	10      (00000024) invoke-virtual       v0, v4, v5, Ljava/io/InputStream;->skip(J)J
+	11      (0000002a) move-result-wide     v0
+	12      (0000002c) return-wide          v0
+

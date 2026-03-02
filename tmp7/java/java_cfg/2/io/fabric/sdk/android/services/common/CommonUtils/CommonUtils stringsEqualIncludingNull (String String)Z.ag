@@ -1,0 +1,30 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->stringsEqualIncludingNull(Ljava/lang/String; Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.lang.String
+#
+# - return:boolean
+
+stringsEqualIncludingNull-BB@0x0 : [ stringsEqualIncludingNull-BB@0x4 stringsEqualIncludingNull-BB@0x8 ]
+	0       (00000000) if-ne                v1, v2, +4
+
+stringsEqualIncludingNull-BB@0x4 : [ stringsEqualIncludingNull-BB@0x6 ]
+	1       (00000004) const/4              v0, 1
+
+stringsEqualIncludingNull-BB@0x6 : 
+	2       (00000006) return               v0
+
+stringsEqualIncludingNull-BB@0x8 : [ stringsEqualIncludingNull-BB@0xc stringsEqualIncludingNull-BB@0x16 ]
+	3       (00000008) if-eqz               v1, +7
+
+stringsEqualIncludingNull-BB@0xc : [ stringsEqualIncludingNull-BB@0x6 ]
+	4       (0000000c) invoke-virtual       v1, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	5       (00000012) move-result          v0
+	6       (00000014) goto                 -7
+
+stringsEqualIncludingNull-BB@0x16 : [ stringsEqualIncludingNull-BB@0x6 ]
+	7       (00000016) const/4              v0, 0
+	8       (00000018) goto                 -9
+

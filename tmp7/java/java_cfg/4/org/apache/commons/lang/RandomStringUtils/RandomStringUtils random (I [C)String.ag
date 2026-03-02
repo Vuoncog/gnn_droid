@@ -1,0 +1,37 @@
+# Lorg/apache/commons/lang/RandomStringUtils;->random(I [C)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:char[]
+#
+# - return:java.lang.String
+
+random-BB@0x0 : [ random-BB@0x6 random-BB@0x1e ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) if-nez               v8, +e
+
+random-BB@0x6 : [ random-BB@0x1c ]
+	2       (00000006) const/4              v5, 0
+	3       (00000008) sget-object          v6, Lorg/apache/commons/lang/RandomStringUtils;->RANDOM Ljava/util/Random;
+	4       (0000000c) move                 v0, v7
+	5       (0000000e) move                 v2, v1
+	6       (00000010) move                 v3, v1
+	7       (00000012) move                 v4, v1
+	8       (00000014) invoke-static/range  v0 ... v6, Lorg/apache/commons/lang/RandomStringUtils;->random(I I I Z Z [C Ljava/util/Random;)Ljava/lang/String;
+	9       (0000001a) move-result-object   v0
+
+random-BB@0x1c : 
+	10      (0000001c) return-object        v0
+
+random-BB@0x1e : [ random-BB@0x1c ]
+	11      (0000001e) array-length         v2, v8
+	12      (00000020) sget-object          v6, Lorg/apache/commons/lang/RandomStringUtils;->RANDOM Ljava/util/Random;
+	13      (00000024) move                 v0, v7
+	14      (00000026) move                 v3, v1
+	15      (00000028) move                 v4, v1
+	16      (0000002a) move-object          v5, v8
+	17      (0000002c) invoke-static/range  v0 ... v6, Lorg/apache/commons/lang/RandomStringUtils;->random(I I I Z Z [C Ljava/util/Random;)Ljava/lang/String;
+	18      (00000032) move-result-object   v0
+	19      (00000034) goto                 -c
+

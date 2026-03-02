@@ -1,0 +1,180 @@
+# Lcom/a/a/d/a/c;->a(Lcom/a/a/c/c; Ljava/lang/StringBuilder;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:com.a.a.c.c
+# - v10:java.lang.StringBuilder
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x10 ]
+	0       (00000000) const/16             v8, 8
+	1       (00000004) const/4              v7, 3
+	2       (00000006) const/4              v1, 0
+	3       (00000008) new-array            v4, v7, [I
+	4       (0000000c) move                 v0, v1
+	5       (0000000e) move                 v2, v1
+
+a-BB@0x10 : [ a-BB@0x1c a-BB@0x1e ]
+	6       (00000010) invoke-virtual       v9, Lcom/a/a/c/c;->c()I
+	7       (00000016) move-result          v3
+	8       (00000018) if-ne                v3, v8, +3
+
+a-BB@0x1c : 
+	9       (0000001c) return-void          
+
+a-BB@0x1e : [ a-BB@0x2e a-BB@0x1c ]
+	10      (0000001e) invoke-virtual       v9, v8, Lcom/a/a/c/c;->a(I)I
+	11      (00000024) move-result          v3
+	12      (00000026) const/16             v5, 254
+	13      (0000002a) if-eq                v3, v5, -7
+
+a-BB@0x2e : [ a-BB@0x3e ]
+	14      (0000002e) invoke-virtual       v9, v8, Lcom/a/a/c/c;->a(I)I
+	15      (00000034) move-result          v5
+	16      (00000036) invoke-static        v3, v5, v4, Lcom/a/a/d/a/c;->a(I I [I)V
+	17      (0000003c) move                 v3, v1
+
+a-BB@0x3e : [ a-BB@0x42 a-BB@0x13a ]
+	18      (0000003e) if-ge                v3, v7, +7e
+
+a-BB@0x42 : [ D:a-BB@0x4c 0:a-BB@0x56 1:a-BB@0x9c 2:a-BB@0xbc 3:a-BB@0x116 ]
+	19      (00000042) aget                 v5, v4, v3
+	20      (00000046) packed-switch        v0, +83 (0x14c)
+
+a-BB@0x4c : 
+	21      (0000004c) invoke-static        Lcom/a/a/h;->a()Lcom/a/a/h;
+	22      (00000052) move-result-object   v0
+	23      (00000054) throw                v0
+
+a-BB@0x56 : [ a-BB@0x5a a-BB@0x64 ]
+	24      (00000056) if-ge                v5, v7, +7
+
+a-BB@0x5a : [ a-BB@0x5e ]
+	25      (0000005a) add-int/lit8         v0, v5, 1
+
+a-BB@0x5e : [ a-BB@0x3e ]
+	26      (0000005e) add-int/lit8         v3, v3, 1
+	27      (00000062) goto                 -12
+
+a-BB@0x64 : [ a-BB@0x6e a-BB@0x92 ]
+	28      (00000064) sget-object          v6, Lcom/a/a/d/a/c;->a [C
+	29      (00000068) array-length         v6, v6
+	30      (0000006a) if-ge                v5, v6, +14
+
+a-BB@0x6e : [ a-BB@0x7a a-BB@0x8a ]
+	31      (0000006e) sget-object          v6, Lcom/a/a/d/a/c;->a [C
+	32      (00000072) aget-char            v5, v6, v5
+	33      (00000076) if-eqz               v2, +a
+
+a-BB@0x7a : [ a-BB@0x5e ]
+	34      (0000007a) add-int/lit16        v2, v5, 128
+	35      (0000007e) int-to-char          v2, v2
+	36      (00000080) invoke-virtual       v10, v2, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	37      (00000086) move                 v2, v1
+	38      (00000088) goto                 -15
+
+a-BB@0x8a : [ a-BB@0x5e ]
+	39      (0000008a) invoke-virtual       v10, v5, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	40      (00000090) goto                 -19
+
+a-BB@0x92 : 
+	41      (00000092) invoke-static        Lcom/a/a/h;->a()Lcom/a/a/h;
+	42      (00000098) move-result-object   v0
+	43      (0000009a) throw                v0
+
+a-BB@0x9c : [ a-BB@0xa0 a-BB@0xb2 ]
+	44      (0000009c) if-eqz               v2, +b
+
+a-BB@0xa0 : [ a-BB@0xae ]
+	45      (000000a0) add-int/lit16        v0, v5, 128
+	46      (000000a4) int-to-char          v0, v0
+	47      (000000a6) invoke-virtual       v10, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	48      (000000ac) move                 v2, v1
+
+a-BB@0xae : [ a-BB@0x5e ]
+	49      (000000ae) move                 v0, v1
+	50      (000000b0) goto                 -29
+
+a-BB@0xb2 : [ a-BB@0xae ]
+	51      (000000b2) int-to-char          v0, v5
+	52      (000000b4) invoke-virtual       v10, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	53      (000000ba) goto                 -6
+
+a-BB@0xbc : [ a-BB@0xc6 a-BB@0xec ]
+	54      (000000bc) sget-object          v0, Lcom/a/a/d/a/c;->b [C
+	55      (000000c0) array-length         v0, v0
+	56      (000000c2) if-ge                v5, v0, +15
+
+a-BB@0xc6 : [ a-BB@0xd2 a-BB@0xe4 ]
+	57      (000000c6) sget-object          v0, Lcom/a/a/d/a/c;->b [C
+	58      (000000ca) aget-char            v0, v0, v5
+	59      (000000ce) if-eqz               v2, +b
+
+a-BB@0xd2 : [ a-BB@0xe0 ]
+	60      (000000d2) add-int/lit16        v0, v0, 128
+	61      (000000d6) int-to-char          v0, v0
+	62      (000000d8) invoke-virtual       v10, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	63      (000000de) move                 v2, v1
+
+a-BB@0xe0 : [ a-BB@0x5e ]
+	64      (000000e0) move                 v0, v1
+	65      (000000e2) goto                 -42
+
+a-BB@0xe4 : [ a-BB@0xe0 ]
+	66      (000000e4) invoke-virtual       v10, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	67      (000000ea) goto                 -5
+
+a-BB@0xec : [ a-BB@0xf4 a-BB@0x100 ]
+	68      (000000ec) const/16             v0, 27
+	69      (000000f0) if-ne                v5, v0, +8
+
+a-BB@0xf4 : [ a-BB@0xe0 ]
+	70      (000000f4) const/16             v0, 29
+	71      (000000f8) invoke-virtual       v10, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	72      (000000fe) goto                 -f
+
+a-BB@0x100 : [ a-BB@0x108 a-BB@0x10c ]
+	73      (00000100) const/16             v0, 30
+	74      (00000104) if-ne                v5, v0, +4
+
+a-BB@0x108 : [ a-BB@0xe0 ]
+	75      (00000108) const/4              v2, 1
+	76      (0000010a) goto                 -15
+
+a-BB@0x10c : 
+	77      (0000010c) invoke-static        Lcom/a/a/h;->a()Lcom/a/a/h;
+	78      (00000112) move-result-object   v0
+	79      (00000114) throw                v0
+
+a-BB@0x116 : [ a-BB@0x11a a-BB@0x12c ]
+	80      (00000116) if-eqz               v2, +b
+
+a-BB@0x11a : [ a-BB@0x128 ]
+	81      (0000011a) add-int/lit16        v0, v5, 224
+	82      (0000011e) int-to-char          v0, v0
+	83      (00000120) invoke-virtual       v10, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	84      (00000126) move                 v2, v1
+
+a-BB@0x128 : [ a-BB@0x5e ]
+	85      (00000128) move                 v0, v1
+	86      (0000012a) goto                 -66
+
+a-BB@0x12c : [ a-BB@0x128 ]
+	87      (0000012c) add-int/lit8         v0, v5, 96
+	88      (00000130) int-to-char          v0, v0
+	89      (00000132) invoke-virtual       v10, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	90      (00000138) goto                 -8
+
+a-BB@0x13a : [ a-BB@0x146 a-BB@0x10 ]
+	91      (0000013a) invoke-virtual       v9, Lcom/a/a/c/c;->c()I
+	92      (00000140) move-result          v3
+	93      (00000142) if-gtz               v3, -99
+
+a-BB@0x146 : [ a-BB@0x1c ]
+	94      (00000146) goto/16              -95
+
+a-BB@0x14a : 
+	95      (0000014a) nop                  
+	96      (0000014c) packed-switch-payload 0 1 2 3
+

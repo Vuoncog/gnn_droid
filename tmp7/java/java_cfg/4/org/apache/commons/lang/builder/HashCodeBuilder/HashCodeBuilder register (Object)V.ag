@@ -1,0 +1,58 @@
+# Lorg/apache/commons/lang/builder/HashCodeBuilder;->register(Ljava/lang/Object;)V [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:void
+
+register-BB@0x0 : [ register-BB@0x8 register-BB@0x56 ]
+	0       (00000000) sget-object          v0, Lorg/apache/commons/lang/builder/HashCodeBuilder;->class$org$apache$commons$lang$builder$HashCodeBuilder Ljava/lang/Class;
+	1       (00000004) if-nez               v0, +29
+
+register-BB@0x8 : [ register-BB@0x18 ]
+	2       (00000008) const-string         v0, 'org.apache.commons.lang.builder.HashCodeBuilder'
+	3       (0000000c) invoke-static        v0, Lorg/apache/commons/lang/builder/HashCodeBuilder;->class$(Ljava/lang/String;)Ljava/lang/Class;
+	4       (00000012) move-result-object   v0
+	5       (00000014) sput-object          v0, Lorg/apache/commons/lang/builder/HashCodeBuilder;->class$org$apache$commons$lang$builder$HashCodeBuilder Ljava/lang/Class;
+
+register-BB@0x18 : [ register-BB@0x1a ]
+	6       (00000018) monitor-enter        v0
+
+register-BB@0x1a : [ register-BB@0x26 register-BB@0x3a ]
+	7       (0000001a) invoke-static        Lorg/apache/commons/lang/builder/HashCodeBuilder;->getRegistry()Ljava/util/Set;
+	8       (00000020) move-result-object   v1
+	9       (00000022) if-nez               v1, +c
+	1a:3b
+	(Ljava/lang/Throwable; -> 5c register-BB@0x5c)
+
+register-BB@0x26 : [ register-BB@0x3a ]
+	10      (00000026) sget-object          v1, Lorg/apache/commons/lang/builder/HashCodeBuilder;->REGISTRY Ljava/lang/ThreadLocal;
+	11      (0000002a) new-instance         v2, Ljava/util/HashSet;
+	12      (0000002e) invoke-direct        v2, Ljava/util/HashSet;-><init>()V
+	13      (00000034) invoke-virtual       v1, v2, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+	1a:3b
+	(Ljava/lang/Throwable; -> 5c register-BB@0x5c)
+
+register-BB@0x3a : 
+	14      (0000003a) monitor-exit         v0
+	15      (0000003c) invoke-static        Lorg/apache/commons/lang/builder/HashCodeBuilder;->getRegistry()Ljava/util/Set;
+	16      (00000042) move-result-object   v0
+	17      (00000044) new-instance         v1, Lorg/apache/commons/lang/builder/IDKey;
+	18      (00000048) invoke-direct        v1, v3, Lorg/apache/commons/lang/builder/IDKey;-><init>(Ljava/lang/Object;)V
+	19      (0000004e) invoke-interface     v0, v1, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	20      (00000054) return-void          
+
+register-BB@0x56 : [ register-BB@0x18 ]
+	21      (00000056) sget-object          v0, Lorg/apache/commons/lang/builder/HashCodeBuilder;->class$org$apache$commons$lang$builder$HashCodeBuilder Ljava/lang/Class;
+	22      (0000005a) goto                 -21
+
+register-BB@0x5c : [ register-BB@0x5e ]
+	23      (0000005c) move-exception       v1
+
+register-BB@0x5e : 
+	24      (0000005e) monitor-exit         v0
+	25      (00000060) throw                v1
+	5e:5f
+	(Ljava/lang/Throwable; -> 5c register-BB@0x5c)
+

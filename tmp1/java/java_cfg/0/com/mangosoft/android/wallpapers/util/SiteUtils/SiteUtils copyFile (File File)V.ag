@@ -1,0 +1,111 @@
+# Lcom/mangosoft/android/wallpapers/util/SiteUtils;->copyFile(Ljava/io/File; Ljava/io/File;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.io.File
+# - v8:java.io.File
+#
+# - return:void
+
+copyFile-BB@0x0 : [ copyFile-BB@0xc copyFile-BB@0x4e ]
+	0       (00000000) invoke-virtual       v8, Ljava/io/File;->exists()Z
+	1       (00000006) move-result          v3
+	2       (00000008) if-eqz               v3, +23
+
+copyFile-BB@0xc : [ copyFile-BB@0x18 copyFile-BB@0x4e ]
+	3       (0000000c) invoke-virtual       v8, Ljava/io/File;->isDirectory()Z
+	4       (00000012) move-result          v3
+	5       (00000014) if-eqz               v3, +1d
+
+copyFile-BB@0x18 : 
+	6       (00000018) new-instance         v3, Ljava/io/IOException;
+	7       (0000001c) new-instance         v4, Ljava/lang/StringBuilder;
+	8       (00000020) const-string         v5, "Destination '"
+	9       (00000024) invoke-direct        v4, v5, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	10      (0000002a) invoke-virtual       v4, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	11      (00000030) move-result-object   v4
+	12      (00000032) const-string         v5, "' exists but is a directory"
+	13      (00000036) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v4
+	15      (0000003e) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	16      (00000044) move-result-object   v4
+	17      (00000046) invoke-direct        v3, v4, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	18      (0000004c) throw                v3
+
+copyFile-BB@0x4e : [ copyFile-BB@0x62 ]
+	19      (0000004e) new-instance         v1, Ljava/io/FileInputStream;
+	20      (00000052) invoke-direct        v1, v7, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+	21      (00000058) new-instance         v2, Ljava/io/FileOutputStream;
+	22      (0000005c) invoke-direct        v2, v8, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+copyFile-BB@0x62 : [ copyFile-BB@0x8c copyFile-BB@0x132 ]
+	23      (00000062) invoke-static        v1, v2, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->copy(Ljava/io/InputStream; Ljava/io/OutputStream;)I
+	24      (00000068) invoke-static        v2, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeQuietly(Ljava/io/OutputStream;)V
+	25      (0000006e) invoke-static        v1, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeQuietly(Ljava/io/InputStream;)V
+	26      (00000074) invoke-virtual       v7, Ljava/io/File;->length()J
+	27      (0000007a) move-result-wide     v3
+	28      (0000007c) invoke-virtual       v8, Ljava/io/File;->length()J
+	29      (00000082) move-result-wide     v5
+	30      (00000084) cmp-long             v3, v3, v5
+	31      (00000088) if-eqz               v3, +55
+	62:67
+	(Ljava/lang/Throwable; -> 122 copyFile-BB@0x122)
+	(Ljava/lang/Exception; -> d6 copyFile-BB@0xd6)
+
+copyFile-BB@0x8c : 
+	32      (0000008c) new-instance         v3, Ljava/io/IOException;
+	33      (00000090) new-instance         v4, Ljava/lang/StringBuilder;
+	34      (00000094) const-string         v5, "Failed to copy full contents from '"
+	35      (00000098) invoke-direct        v4, v5, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	36      (0000009e) invoke-virtual       v4, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	37      (000000a4) move-result-object   v4
+	38      (000000a6) const-string         v5, "' to '"
+	39      (000000aa) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000b0) move-result-object   v4
+	41      (000000b2) invoke-virtual       v4, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	42      (000000b8) move-result-object   v4
+	43      (000000ba) const-string         v5, "'"
+	44      (000000be) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	45      (000000c4) move-result-object   v4
+	46      (000000c6) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	47      (000000cc) move-result-object   v4
+	48      (000000ce) invoke-direct        v3, v4, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	49      (000000d4) throw                v3
+
+copyFile-BB@0xd6 : [ copyFile-BB@0xd8 ]
+	50      (000000d6) move-exception       v0
+
+copyFile-BB@0xd8 : 
+	51      (000000d8) new-instance         v3, Ljava/io/IOException;
+	52      (000000dc) new-instance         v4, Ljava/lang/StringBuilder;
+	53      (000000e0) const-string         v5, "Failed to copy full contents from '"
+	54      (000000e4) invoke-direct        v4, v5, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	55      (000000ea) invoke-virtual       v4, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	56      (000000f0) move-result-object   v4
+	57      (000000f2) const-string         v5, "' to '"
+	58      (000000f6) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	59      (000000fc) move-result-object   v4
+	60      (000000fe) invoke-virtual       v4, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	61      (00000104) move-result-object   v4
+	62      (00000106) const-string         v5, "'"
+	63      (0000010a) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	64      (00000110) move-result-object   v4
+	65      (00000112) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	66      (00000118) move-result-object   v4
+	67      (0000011a) invoke-direct        v3, v4, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	68      (00000120) throw                v3
+	d8:121
+	(Ljava/lang/Throwable; -> 122 copyFile-BB@0x122)
+
+copyFile-BB@0x122 : 
+	69      (00000122) move-exception       v3
+	70      (00000124) invoke-static        v2, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeQuietly(Ljava/io/OutputStream;)V
+	71      (0000012a) invoke-static        v1, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeQuietly(Ljava/io/InputStream;)V
+	72      (00000130) throw                v3
+
+copyFile-BB@0x132 : 
+	73      (00000132) invoke-virtual       v7, Ljava/io/File;->lastModified()J
+	74      (00000138) move-result-wide     v3
+	75      (0000013a) invoke-virtual       v8, v3, v4, Ljava/io/File;->setLastModified(J)Z
+	76      (00000140) return-void          
+

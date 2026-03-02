@@ -1,0 +1,54 @@
+# Lio/fabric/sdk/android/services/common/AdvertisingInfoServiceStrategy$AdvertisingInterface;->getId()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:java.lang.String
+
+getId-BB@0x0 : [ getId-BB@0x12 ]
+	0       (00000000) invoke-static        Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+	1       (00000006) move-result-object   v1
+	2       (00000008) invoke-static        Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) const/4              v0, 0
+
+getId-BB@0x12 : [ getId-BB@0x44 ]
+	5       (00000012) const-string         v3, 'com.google.android.gms.ads.identifier.internal.IAdvertisingIdService'
+	6       (00000016) invoke-virtual       v1, v3, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+	7       (0000001c) iget-object          v3, v6, Lio/fabric/sdk/android/services/common/AdvertisingInfoServiceStrategy$AdvertisingInterface;->binder Landroid/os/IBinder;
+	8       (00000020) const/4              v4, 1
+	9       (00000022) const/4              v5, 0
+	10      (00000024) invoke-interface     v3, v4, v1, v2, v5, Landroid/os/IBinder;->transact(I Landroid/os/Parcel; Landroid/os/Parcel; I)Z
+	11      (0000002a) invoke-virtual       v2, Landroid/os/Parcel;->readException()V
+	12      (00000030) invoke-virtual       v2, Landroid/os/Parcel;->readString()Ljava/lang/String;
+	13      (00000036) move-result-object   v0
+	14      (00000038) invoke-virtual       v2, Landroid/os/Parcel;->recycle()V
+	15      (0000003e) invoke-virtual       v1, Landroid/os/Parcel;->recycle()V
+	12:35
+	(Ljava/lang/Throwable; -> 6c getId-BB@0x6c)
+	(Ljava/lang/Exception; -> 46 getId-BB@0x46)
+
+getId-BB@0x44 : 
+	16      (00000044) return-object        v0
+
+getId-BB@0x46 : [ getId-BB@0x48 ]
+	17      (00000046) move-exception       v3
+
+getId-BB@0x48 : [ getId-BB@0x44 ]
+	18      (00000048) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	19      (0000004e) move-result-object   v3
+	20      (00000050) const-string         v4, 'Fabric'
+	21      (00000054) const-string         v5, 'Could not get parcel from Google Play Service to capture AdvertisingId'
+	22      (00000058) invoke-interface     v3, v4, v5, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	23      (0000005e) invoke-virtual       v2, Landroid/os/Parcel;->recycle()V
+	24      (00000064) invoke-virtual       v1, Landroid/os/Parcel;->recycle()V
+	25      (0000006a) goto                 -13
+	48:5d
+	(Ljava/lang/Throwable; -> 6c getId-BB@0x6c)
+
+getId-BB@0x6c : 
+	26      (0000006c) move-exception       v0
+	27      (0000006e) invoke-virtual       v2, Landroid/os/Parcel;->recycle()V
+	28      (00000074) invoke-virtual       v1, Landroid/os/Parcel;->recycle()V
+	29      (0000007a) throw                v0
+

@@ -1,0 +1,63 @@
+# Lcom/jgamelbe/CMP/b/m;->a()Lcom/jgamelbe/CMP/b/i; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v12
+#
+# - return:com.jgamelbe.CMP.b.i
+
+a-BB@0x0 : 
+	0       (00000000) const/4              v7, 0
+	1       (00000002) sget-object          v0, Lcom/jgamelbe/CMP/b/m;->b Ljava/lang/String;
+	2       (00000006) const-string         v1, '[MyStackCommitInstallLog] long:%d'
+	3       (0000000a) const/4              v2, 1
+	4       (0000000c) new-array            v2, v2, [Ljava/lang/Object;
+	5       (00000010) iget-object          v3, v12, Lcom/jgamelbe/CMP/b/m;->c Landroid/os/Bundle;
+	6       (00000014) const-string         v4, 'startInstall'
+	7       (00000018) invoke-virtual       v3, v4, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+	8       (0000001e) move-result-wide     v3
+	9       (00000020) invoke-static        v3, v4, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	10      (00000026) move-result-object   v3
+	11      (00000028) aput-object          v3, v2, v7
+	12      (0000002c) invoke-static        v1, v2, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	13      (00000032) move-result-object   v1
+	14      (00000034) invoke-static        v0, v1, Lcom/jgamelbe/CMP/e/g;->c(Ljava/lang/String; Ljava/lang/String;)V
+	15      (0000003a) const-string         v1, 'android_v10.2.8'
+	16      (0000003e) invoke-static        Lcom/jgamelbe/CMP/e/q;->a()Lcom/jgamelbe/CMP/e/q;
+	17      (00000044) move-result-object   v0
+	18      (00000046) iget-object          v2, v0, Lcom/jgamelbe/CMP/e/q;->b Ljava/lang/String;
+	19      (0000004a) invoke-static        Lcom/jgamelbe/CMP/e/r;->a()Lcom/jgamelbe/CMP/e/r;
+	20      (00000050) move-result-object   v0
+	21      (00000052) iget-object          v3, v0, Lcom/jgamelbe/CMP/e/r;->a Ljava/lang/String;
+	22      (00000056) invoke-static        Lcom/jgamelbe/CMP/e/r;->a()Lcom/jgamelbe/CMP/e/r;
+	23      (0000005c) move-result-object   v0
+	24      (0000005e) iget-object          v4, v0, Lcom/jgamelbe/CMP/e/r;->b Ljava/lang/String;
+	25      (00000062) iget-object          v0, v12, Lcom/jgamelbe/CMP/b/m;->c Landroid/os/Bundle;
+	26      (00000066) const-string         v5, 'downAppId'
+	27      (0000006a) invoke-virtual       v0, v5, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+	28      (00000070) move-result-object   v5
+	29      (00000072) iget-object          v0, v12, Lcom/jgamelbe/CMP/b/m;->c Landroid/os/Bundle;
+	30      (00000076) const-string         v6, 'downAppidEncode'
+	31      (0000007a) invoke-virtual       v0, v6, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+	32      (00000080) move-result-object   v6
+	33      (00000082) new-instance         v8, Ljava/util/Date;
+	34      (00000086) iget-object          v0, v12, Lcom/jgamelbe/CMP/b/m;->c Landroid/os/Bundle;
+	35      (0000008a) const-string         v9, 'startInstall'
+	36      (0000008e) invoke-virtual       v0, v9, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+	37      (00000094) move-result-wide     v9
+	38      (00000096) invoke-direct        v8, v9, v10, Ljava/util/Date;-><init>(J)V
+	39      (0000009c) new-instance         v9, Ljava/util/Date;
+	40      (000000a0) iget-object          v0, v12, Lcom/jgamelbe/CMP/b/m;->c Landroid/os/Bundle;
+	41      (000000a4) const-string         v10, 'endInstall'
+	42      (000000a8) invoke-virtual       v0, v10, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+	43      (000000ae) move-result-wide     v10
+	44      (000000b0) invoke-direct        v9, v10, v11, Ljava/util/Date;-><init>(J)V
+	45      (000000b6) invoke-static        Lcom/jgamelbe/CMP/e/r;->a()Lcom/jgamelbe/CMP/e/r;
+	46      (000000bc) move-result-object   v0
+	47      (000000be) iget-boolean         v0, v0, Lcom/jgamelbe/CMP/e/r;->c Z
+	48      (000000c2) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	49      (000000c8) move-result-object   v10
+	50      (000000ca) move-object          v0, v12
+	51      (000000cc) invoke-direct/range  v0 ... v10, Lcom/jgamelbe/CMP/b/m;->a(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; I Ljava/util/Date; Ljava/util/Date; Ljava/lang/Boolean;)Lcom/jgamelbe/CMP/b/i;
+	52      (000000d2) move-result-object   v0
+	53      (000000d4) return-object        v0
+

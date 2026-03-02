@@ -1,0 +1,17 @@
+# Lorg/apache/commons/io/output/WriterOutputStream;->write(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+write-BB@0x0 : 
+	0       (00000000) const/4              v3, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) new-array            v0, v3, [B
+	3       (00000008) int-to-byte          v1, v5
+	4       (0000000a) aput-byte            v1, v0, v2
+	5       (0000000e) invoke-virtual       v4, v0, v2, v3, Lorg/apache/commons/io/output/WriterOutputStream;->write([B I I)V
+	6       (00000014) return-void          
+

@@ -1,0 +1,91 @@
+# Lcom/ailock/tszlock/UnLockActivity;->onBatteryInfoReceiver(I I I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+onBatteryInfoReceiver-BB@0x0 : [ onBatteryInfoReceiver-BB@0x44 onBatteryInfoReceiver-BB@0x4a ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) mul-int/lit8         v0, v5, 100
+	2       (00000006) div-int/2addr        v0, v6
+	3       (00000008) iput                 v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerValue I
+	4       (0000000c) iget-object          v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerView Landroid/widget/TextView;
+	5       (00000010) new-instance         v1, Ljava/lang/StringBuilder;
+	6       (00000014) iget                 v2, v4, Lcom/ailock/tszlock/UnLockActivity;->powerValue I
+	7       (00000018) invoke-static        v2, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+	8       (0000001e) move-result-object   v2
+	9       (00000020) invoke-direct        v1, v2, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	10      (00000026) const-string         v2, '%'
+	11      (0000002a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000030) move-result-object   v1
+	13      (00000032) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (00000038) move-result-object   v1
+	15      (0000003a) invoke-virtual       v0, v1, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	16      (00000040) if-eq                v7, v3, +5
+
+onBatteryInfoReceiver-BB@0x44 : [ onBatteryInfoReceiver-BB@0x4a onBatteryInfoReceiver-BB@0x66 ]
+	17      (00000044) const/4              v0, 2
+	18      (00000046) if-ne                v7, v0, +10
+
+onBatteryInfoReceiver-BB@0x4a : [ onBatteryInfoReceiver-BB@0x5e ]
+	19      (0000004a) iget-object          v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerImage Landroid/widget/ImageView;
+	20      (0000004e) const                v1, 2130837515 # [1.727998625585447e+38]
+	21      (00000054) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setBackgroundResource(I)V
+	22      (0000005a) iput-boolean         v3, v4, Lcom/ailock/tszlock/UnLockActivity;->powerChanging Z
+
+onBatteryInfoReceiver-BB@0x5e : 
+	23      (0000005e) invoke-virtual       v4, Lcom/ailock/tszlock/UnLockActivity;->updatePowerIcon()V
+	24      (00000064) return-void          
+
+onBatteryInfoReceiver-BB@0x66 : [ onBatteryInfoReceiver-BB@0x72 onBatteryInfoReceiver-BB@0x8a ]
+	25      (00000066) iget                 v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerValue I
+	26      (0000006a) const/16             v1, 20
+	27      (0000006e) if-gt                v0, v1, +e
+
+onBatteryInfoReceiver-BB@0x72 : [ onBatteryInfoReceiver-BB@0x82 ]
+	28      (00000072) iget-object          v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerImage Landroid/widget/ImageView;
+	29      (00000076) const                v1, 2130837511 # [1.727997814289063e+38]
+	30      (0000007c) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setBackgroundResource(I)V
+
+onBatteryInfoReceiver-BB@0x82 : [ onBatteryInfoReceiver-BB@0x5e ]
+	31      (00000082) const/4              v0, 0
+	32      (00000084) iput-boolean         v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerChanging Z
+	33      (00000088) goto                 -15
+
+onBatteryInfoReceiver-BB@0x8a : [ onBatteryInfoReceiver-BB@0x96 onBatteryInfoReceiver-BB@0xa8 ]
+	34      (0000008a) iget                 v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerValue I
+	35      (0000008e) const/16             v1, 50
+	36      (00000092) if-gt                v0, v1, +b
+
+onBatteryInfoReceiver-BB@0x96 : [ onBatteryInfoReceiver-BB@0x82 ]
+	37      (00000096) iget-object          v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerImage Landroid/widget/ImageView;
+	38      (0000009a) const                v1, 2130837512 # [1.727998017113159e+38]
+	39      (000000a0) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setBackgroundResource(I)V
+	40      (000000a6) goto                 -12
+
+onBatteryInfoReceiver-BB@0xa8 : [ onBatteryInfoReceiver-BB@0xb4 onBatteryInfoReceiver-BB@0xc6 ]
+	41      (000000a8) iget                 v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerValue I
+	42      (000000ac) const/16             v1, 75
+	43      (000000b0) if-gt                v0, v1, +b
+
+onBatteryInfoReceiver-BB@0xb4 : [ onBatteryInfoReceiver-BB@0x82 ]
+	44      (000000b4) iget-object          v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerImage Landroid/widget/ImageView;
+	45      (000000b8) const                v1, 2130837513 # [1.727998219937255e+38]
+	46      (000000be) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setBackgroundResource(I)V
+	47      (000000c4) goto                 -21
+
+onBatteryInfoReceiver-BB@0xc6 : [ onBatteryInfoReceiver-BB@0xd2 onBatteryInfoReceiver-BB@0x82 ]
+	48      (000000c6) iget                 v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerValue I
+	49      (000000ca) const/16             v1, 100
+	50      (000000ce) if-gt                v0, v1, -26
+
+onBatteryInfoReceiver-BB@0xd2 : [ onBatteryInfoReceiver-BB@0x82 ]
+	51      (000000d2) iget-object          v0, v4, Lcom/ailock/tszlock/UnLockActivity;->powerImage Landroid/widget/ImageView;
+	52      (000000d6) const                v1, 2130837510 # [1.727997611464967e+38]
+	53      (000000dc) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setBackgroundResource(I)V
+	54      (000000e2) goto                 -30
+

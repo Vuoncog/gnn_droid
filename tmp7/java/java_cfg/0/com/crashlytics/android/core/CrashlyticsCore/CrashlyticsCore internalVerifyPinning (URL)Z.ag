@@ -1,0 +1,35 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;->internalVerifyPinning(Ljava/net/URL;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.net.URL
+#
+# - return:boolean
+
+internalVerifyPinning-BB@0x0 : [ internalVerifyPinning-BB@0xe internalVerifyPinning-BB@0x42 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-virtual       v4, Lcom/crashlytics/android/core/CrashlyticsCore;->getPinningInfoProvider()Lcom/crashlytics/android/core/PinningInfoProvider;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) if-eqz               v0, +1c
+
+internalVerifyPinning-BB@0xe : [ internalVerifyPinning-BB@0x40 ]
+	4       (0000000e) iget-object          v0, v4, Lcom/crashlytics/android/core/CrashlyticsCore;->httpRequestFactory Lio/fabric/sdk/android/services/network/HttpRequestFactory;
+	5       (00000012) sget-object          v2, Lio/fabric/sdk/android/services/network/HttpMethod;->GET Lio/fabric/sdk/android/services/network/HttpMethod;
+	6       (00000016) invoke-virtual       v5, Ljava/net/URL;->toString()Ljava/lang/String;
+	7       (0000001c) move-result-object   v3
+	8       (0000001e) invoke-interface     v0, v2, v3, Lio/fabric/sdk/android/services/network/HttpRequestFactory;->buildHttpRequest(Lio/fabric/sdk/android/services/network/HttpMethod; Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest;
+	9       (00000024) move-result-object   v2
+	10      (00000026) invoke-virtual       v2, Lio/fabric/sdk/android/services/network/HttpRequest;->getConnection()Ljava/net/HttpURLConnection;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) check-cast           v0, Ljavax/net/ssl/HttpsURLConnection;
+	13      (00000032) invoke-virtual       v0, v1, Ljavax/net/ssl/HttpsURLConnection;->setInstanceFollowRedirects(Z)V
+	14      (00000038) invoke-virtual       v2, Lio/fabric/sdk/android/services/network/HttpRequest;->code()I
+	15      (0000003e) const/4              v0, 1
+
+internalVerifyPinning-BB@0x40 : 
+	16      (00000040) return               v0
+
+internalVerifyPinning-BB@0x42 : [ internalVerifyPinning-BB@0x40 ]
+	17      (00000042) move                 v0, v1
+	18      (00000044) goto                 -2
+

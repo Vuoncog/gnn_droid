@@ -1,0 +1,27 @@
+# Lorg/apache/commons/lang/ClassUtils;->isInnerClass(Ljava/lang/Class;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Class
+#
+# - return:boolean
+
+isInnerClass-BB@0x0 : [ isInnerClass-BB@0x6 isInnerClass-BB@0x8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-nez               v3, +3
+
+isInnerClass-BB@0x6 : 
+	2       (00000006) return               v0
+
+isInnerClass-BB@0x8 : [ isInnerClass-BB@0x20 isInnerClass-BB@0x6 ]
+	3       (00000008) invoke-virtual       v3, Ljava/lang/Class;->getName()Ljava/lang/String;
+	4       (0000000e) move-result-object   v1
+	5       (00000010) const/16             v2, 36
+	6       (00000014) invoke-virtual       v1, v2, Ljava/lang/String;->indexOf(I)I
+	7       (0000001a) move-result          v1
+	8       (0000001c) if-ltz               v1, -b
+
+isInnerClass-BB@0x20 : [ isInnerClass-BB@0x6 ]
+	9       (00000020) const/4              v0, 1
+	10      (00000022) goto                 -e
+

@@ -1,0 +1,33 @@
+# Lcom/ailock/tszlock/AlarmReceiver2;->enableAlert(Landroid/content/Context;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.content.Context
+#
+# - return:void
+
+enableAlert-BB@0x0 : 
+	0       (00000000) const/4              v7, 0
+	1       (00000002) invoke-static        Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	4       (00000010) move-result-wide     v5
+	5       (00000012) invoke-virtual       v1, v5, v6, Ljava/util/Calendar;->setTimeInMillis(J)V
+	6       (00000018) const/16             v5, 13
+	7       (0000001c) const/4              v6, 5
+	8       (0000001e) invoke-virtual       v1, v5, v6, Ljava/util/Calendar;->add(I I)V
+	9       (00000024) invoke-virtual       v1, Ljava/util/Calendar;->getTimeInMillis()J
+	10      (0000002a) move-result-wide     v3
+	11      (0000002c) new-instance         v2, Landroid/content/Intent;
+	12      (00000030) const-string         v5, 'com.ailock.tszlock.ALARM_ALERT_2'
+	13      (00000034) invoke-direct        v2, v5, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	14      (0000003a) const-string         v5, 'alarm'
+	15      (0000003e) invoke-virtual       v8, v5, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	16      (00000044) move-result-object   v0
+	17      (00000046) check-cast           v0, Landroid/app/AlarmManager;
+	18      (0000004a) const/high16         v5, 4096 # [2.524354896707238e-29]
+	19      (0000004e) invoke-static        v8, v7, v2, v5, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context; I Landroid/content/Intent; I)Landroid/app/PendingIntent;
+	20      (00000054) move-result-object   v5
+	21      (00000056) invoke-virtual       v0, v7, v3, v4, v5, Landroid/app/AlarmManager;->set(I J Landroid/app/PendingIntent;)V
+	22      (0000005c) return-void          
+

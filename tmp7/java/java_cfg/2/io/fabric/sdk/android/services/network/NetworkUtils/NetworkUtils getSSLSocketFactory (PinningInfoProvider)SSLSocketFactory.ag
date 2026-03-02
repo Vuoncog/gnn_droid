@@ -1,0 +1,30 @@
+# Lio/fabric/sdk/android/services/network/NetworkUtils;->getSSLSocketFactory(Lio/fabric/sdk/android/services/network/PinningInfoProvider;)Ljavax/net/ssl/SSLSocketFactory; [access_flags=public static final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:io.fabric.sdk.android.services.network.PinningInfoProvider
+#
+# - return:javax.net.ssl.SSLSocketFactory
+
+getSSLSocketFactory-BB@0x0 : 
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const-string         v0, 'TLS'
+	2       (00000006) invoke-static        v0, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) new-instance         v1, Lio/fabric/sdk/android/services/network/SystemKeyStore;
+	5       (00000012) invoke-interface     v5, Lio/fabric/sdk/android/services/network/PinningInfoProvider;->getKeyStoreStream()Ljava/io/InputStream;
+	6       (00000018) move-result-object   v2
+	7       (0000001a) invoke-interface     v5, Lio/fabric/sdk/android/services/network/PinningInfoProvider;->getKeyStorePassword()Ljava/lang/String;
+	8       (00000020) move-result-object   v3
+	9       (00000022) invoke-direct        v1, v2, v3, Lio/fabric/sdk/android/services/network/SystemKeyStore;-><init>(Ljava/io/InputStream; Ljava/lang/String;)V
+	10      (00000028) new-instance         v2, Lio/fabric/sdk/android/services/network/PinningTrustManager;
+	11      (0000002c) invoke-direct        v2, v1, v5, Lio/fabric/sdk/android/services/network/PinningTrustManager;-><init>(Lio/fabric/sdk/android/services/network/SystemKeyStore; Lio/fabric/sdk/android/services/network/PinningInfoProvider;)V
+	12      (00000032) const/4              v1, 1
+	13      (00000034) new-array            v1, v1, [Ljavax/net/ssl/TrustManager;
+	14      (00000038) const/4              v3, 0
+	15      (0000003a) aput-object          v2, v1, v3
+	16      (0000003e) invoke-virtual       v0, v4, v1, v4, Ljavax/net/ssl/SSLContext;->init([Ljavax/net/ssl/KeyManager; [Ljavax/net/ssl/TrustManager; Ljava/security/SecureRandom;)V
+	17      (00000044) invoke-virtual       v0, Ljavax/net/ssl/SSLContext;->getSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
+	18      (0000004a) move-result-object   v0
+	19      (0000004c) return-object        v0
+

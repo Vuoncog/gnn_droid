@@ -1,0 +1,56 @@
+# Lcom/a/a/b/a/a/a;->b(Landroid/hardware/Camera$Parameters;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.hardware.Camera$Parameters
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0xc b-BB@0x98 ]
+	0       (00000000) invoke-virtual       v4, Landroid/hardware/Camera$Parameters;->getMaxNumFocusAreas()I
+	1       (00000006) move-result          v0
+	2       (00000008) if-lez               v0, +48
+
+b-BB@0xc : [ b-BB@0x96 ]
+	3       (0000000c) const-string         v0, 'CameraConfiguration'
+	4       (00000010) new-instance         v1, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) const-string         v2, 'Old focus areas: '
+	7       (0000001e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v1
+	9       (00000026) invoke-virtual       v4, Landroid/hardware/Camera$Parameters;->getFocusAreas()Ljava/util/List;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) invoke-static        v2, Lcom/a/a/b/a/a/a;->a(Ljava/lang/Iterable;)Ljava/lang/String;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	16      (00000044) move-result-object   v1
+	17      (00000046) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	18      (0000004c) const/16             v0, 400
+	19      (00000050) invoke-static        v0, Lcom/a/a/b/a/a/a;->a(I)Ljava/util/List;
+	20      (00000056) move-result-object   v0
+	21      (00000058) const-string         v1, 'CameraConfiguration'
+	22      (0000005c) new-instance         v2, Ljava/lang/StringBuilder;
+	23      (00000060) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	24      (00000066) const-string         v3, 'Setting focus area to : '
+	25      (0000006a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (00000070) move-result-object   v2
+	27      (00000072) invoke-static        v0, Lcom/a/a/b/a/a/a;->a(Ljava/lang/Iterable;)Ljava/lang/String;
+	28      (00000078) move-result-object   v3
+	29      (0000007a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (00000080) move-result-object   v2
+	31      (00000082) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	32      (00000088) move-result-object   v2
+	33      (0000008a) invoke-static        v1, v2, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	34      (00000090) invoke-virtual       v4, v0, Landroid/hardware/Camera$Parameters;->setFocusAreas(Ljava/util/List;)V
+
+b-BB@0x96 : 
+	35      (00000096) return-void          
+
+b-BB@0x98 : [ b-BB@0x96 ]
+	36      (00000098) const-string         v0, 'CameraConfiguration'
+	37      (0000009c) const-string         v1, 'Device does not support focus areas'
+	38      (000000a0) invoke-static        v0, v1, Landroid/util/Log;->i(Ljava/lang/String; Ljava/lang/String;)I
+	39      (000000a6) goto                 -8
+

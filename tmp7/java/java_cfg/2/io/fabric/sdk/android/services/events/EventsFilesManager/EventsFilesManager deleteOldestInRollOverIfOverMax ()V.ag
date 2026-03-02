@@ -1,0 +1,97 @@
+# Lio/fabric/sdk/android/services/events/EventsFilesManager;->deleteOldestInRollOverIfOverMax()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:void
+
+deleteOldestInRollOverIfOverMax-BB@0x0 : [ deleteOldestInRollOverIfOverMax-BB@0x20 deleteOldestInRollOverIfOverMax-BB@0x22 ]
+	0       (00000000) iget-object          v0, v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->eventStorage Lio/fabric/sdk/android/services/events/EventsStorage;
+	1       (00000004) invoke-interface     v0, Lio/fabric/sdk/android/services/events/EventsStorage;->getAllFilesInRollOverDirectory()Ljava/util/List;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->getMaxFilesToKeep()I
+	4       (00000012) move-result          v1
+	5       (00000014) invoke-interface     v0, Ljava/util/List;->size()I
+	6       (0000001a) move-result          v2
+	7       (0000001c) if-gt                v2, v1, +3
+
+deleteOldestInRollOverIfOverMax-BB@0x20 : 
+	8       (00000020) return-void          
+
+deleteOldestInRollOverIfOverMax-BB@0x22 : [ deleteOldestInRollOverIfOverMax-BB@0x9a ]
+	9       (00000022) invoke-interface     v0, Ljava/util/List;->size()I
+	10      (00000028) move-result          v2
+	11      (0000002a) sub-int/2addr        v2, v1
+	12      (0000002c) iget-object          v3, v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->context Landroid/content/Context;
+	13      (00000030) sget-object          v4, Ljava/util/Locale;->US Ljava/util/Locale;
+	14      (00000034) const-string         v5, 'Found %d files in  roll over directory, this is greater than %d, deleting %d oldest files'
+	15      (00000038) const/4              v6, 3
+	16      (0000003a) new-array            v6, v6, [Ljava/lang/Object;
+	17      (0000003e) const/4              v7, 0
+	18      (00000040) invoke-interface     v0, Ljava/util/List;->size()I
+	19      (00000046) move-result          v8
+	20      (00000048) invoke-static        v8, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	21      (0000004e) move-result-object   v8
+	22      (00000050) aput-object          v8, v6, v7
+	23      (00000054) const/4              v7, 1
+	24      (00000056) invoke-static        v1, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	25      (0000005c) move-result-object   v1
+	26      (0000005e) aput-object          v1, v6, v7
+	27      (00000062) const/4              v1, 2
+	28      (00000064) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	29      (0000006a) move-result-object   v7
+	30      (0000006c) aput-object          v7, v6, v1
+	31      (00000070) invoke-static        v4, v5, v6, Ljava/lang/String;->format(Ljava/util/Locale; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	32      (00000076) move-result-object   v1
+	33      (00000078) invoke-static        v3, v1, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlled(Landroid/content/Context; Ljava/lang/String;)V
+	34      (0000007e) new-instance         v1, Ljava/util/TreeSet;
+	35      (00000082) new-instance         v3, Lio/fabric/sdk/android/services/events/EventsFilesManager$1;
+	36      (00000086) invoke-direct        v3, v9, Lio/fabric/sdk/android/services/events/EventsFilesManager$1;-><init>(Lio/fabric/sdk/android/services/events/EventsFilesManager;)V
+	37      (0000008c) invoke-direct        v1, v3, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
+	38      (00000092) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	39      (00000098) move-result-object   v3
+
+deleteOldestInRollOverIfOverMax-BB@0x9a : [ deleteOldestInRollOverIfOverMax-BB@0xa6 deleteOldestInRollOverIfOverMax-BB@0xd4 ]
+	40      (0000009a) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	41      (000000a0) move-result          v0
+	42      (000000a2) if-eqz               v0, +19
+
+deleteOldestInRollOverIfOverMax-BB@0xa6 : [ deleteOldestInRollOverIfOverMax-BB@0x9a ]
+	43      (000000a6) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	44      (000000ac) move-result-object   v0
+	45      (000000ae) check-cast           v0, Ljava/io/File;
+	46      (000000b2) invoke-virtual       v0, Ljava/io/File;->getName()Ljava/lang/String;
+	47      (000000b8) move-result-object   v4
+	48      (000000ba) invoke-virtual       v9, v4, Lio/fabric/sdk/android/services/events/EventsFilesManager;->parseCreationTimestampFromFileName(Ljava/lang/String;)J
+	49      (000000c0) move-result-wide     v4
+	50      (000000c2) new-instance         v6, Lio/fabric/sdk/android/services/events/EventsFilesManager$FileWithTimestamp;
+	51      (000000c6) invoke-direct        v6, v0, v4, v5, Lio/fabric/sdk/android/services/events/EventsFilesManager$FileWithTimestamp;-><init>(Ljava/io/File; J)V
+	52      (000000cc) invoke-virtual       v1, v6, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+	53      (000000d2) goto                 -1c
+
+deleteOldestInRollOverIfOverMax-BB@0xd4 : [ deleteOldestInRollOverIfOverMax-BB@0xe6 ]
+	54      (000000d4) new-instance         v3, Ljava/util/ArrayList;
+	55      (000000d8) invoke-direct        v3, Ljava/util/ArrayList;-><init>()V
+	56      (000000de) invoke-virtual       v1, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
+	57      (000000e4) move-result-object   v1
+
+deleteOldestInRollOverIfOverMax-BB@0xe6 : [ deleteOldestInRollOverIfOverMax-BB@0xf2 deleteOldestInRollOverIfOverMax-BB@0x114 ]
+	58      (000000e6) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	59      (000000ec) move-result          v0
+	60      (000000ee) if-eqz               v0, +13
+
+deleteOldestInRollOverIfOverMax-BB@0xf2 : [ deleteOldestInRollOverIfOverMax-BB@0x114 deleteOldestInRollOverIfOverMax-BB@0xe6 ]
+	61      (000000f2) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	62      (000000f8) move-result-object   v0
+	63      (000000fa) check-cast           v0, Lio/fabric/sdk/android/services/events/EventsFilesManager$FileWithTimestamp;
+	64      (000000fe) iget-object          v0, v0, Lio/fabric/sdk/android/services/events/EventsFilesManager$FileWithTimestamp;->file Ljava/io/File;
+	65      (00000102) invoke-virtual       v3, v0, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	66      (00000108) invoke-virtual       v3, Ljava/util/ArrayList;->size()I
+	67      (0000010e) move-result          v0
+	68      (00000110) if-ne                v0, v2, -15
+
+deleteOldestInRollOverIfOverMax-BB@0x114 : [ deleteOldestInRollOverIfOverMax-BB@0x20 ]
+	69      (00000114) iget-object          v0, v9, Lio/fabric/sdk/android/services/events/EventsFilesManager;->eventStorage Lio/fabric/sdk/android/services/events/EventsStorage;
+	70      (00000118) invoke-interface     v0, v3, Lio/fabric/sdk/android/services/events/EventsStorage;->deleteFilesInRollOverDirectory(Ljava/util/List;)V
+	71      (0000011e) goto                 -7f
+

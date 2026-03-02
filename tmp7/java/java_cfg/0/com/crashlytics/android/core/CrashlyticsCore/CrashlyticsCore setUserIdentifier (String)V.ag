@@ -1,0 +1,26 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;->setUserIdentifier(Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:void
+
+setUserIdentifier-BB@0x0 : [ setUserIdentifier-BB@0x8 setUserIdentifier-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v4, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled Z
+	1       (00000004) if-eqz               v0, +3
+
+setUserIdentifier-BB@0x8 : 
+	2       (00000008) return-void          
+
+setUserIdentifier-BB@0xa : [ setUserIdentifier-BB@0x8 ]
+	3       (0000000a) invoke-static        v5, Lcom/crashlytics/android/core/CrashlyticsCore;->sanitizeAttribute(Ljava/lang/String;)Ljava/lang/String;
+	4       (00000010) move-result-object   v0
+	5       (00000012) iput-object          v0, v4, Lcom/crashlytics/android/core/CrashlyticsCore;->userId Ljava/lang/String;
+	6       (00000016) iget-object          v0, v4, Lcom/crashlytics/android/core/CrashlyticsCore;->handler Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;
+	7       (0000001a) iget-object          v1, v4, Lcom/crashlytics/android/core/CrashlyticsCore;->userId Ljava/lang/String;
+	8       (0000001e) iget-object          v2, v4, Lcom/crashlytics/android/core/CrashlyticsCore;->userName Ljava/lang/String;
+	9       (00000022) iget-object          v3, v4, Lcom/crashlytics/android/core/CrashlyticsCore;->userEmail Ljava/lang/String;
+	10      (00000026) invoke-virtual       v0, v1, v2, v3, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->cacheUserData(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	11      (0000002c) goto                 -12
+

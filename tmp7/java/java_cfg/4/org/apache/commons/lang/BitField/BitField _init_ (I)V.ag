@@ -1,0 +1,27 @@
+# Lorg/apache/commons/lang/BitField;-><init>(I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x10 <init>-BB@0x22 ]
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput                 v3, v2, Lorg/apache/commons/lang/BitField;->_mask I
+	2       (0000000a) const/4              v0, 0
+	3       (0000000c) if-eqz               v3, +b
+
+<init>-BB@0x10 : [ <init>-BB@0x18 <init>-BB@0x22 ]
+	4       (00000010) and-int/lit8         v1, v3, 1
+	5       (00000014) if-nez               v1, +7
+
+<init>-BB@0x18 : [ <init>-BB@0x10 ]
+	6       (00000018) add-int/lit8         v0, v0, 1
+	7       (0000001c) shr-int/lit8         v3, v3, 1
+	8       (00000020) goto                 -8
+
+<init>-BB@0x22 : 
+	9       (00000022) iput                 v0, v2, Lorg/apache/commons/lang/BitField;->_shift_count I
+	10      (00000026) return-void          
+

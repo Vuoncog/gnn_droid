@@ -1,0 +1,103 @@
+# Lorg/apache/commons/lang/exception/ExceptionUtils;->getRootCauseStackTrace(Ljava/lang/Throwable;)[Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:java.lang.Throwable
+#
+# - return:java.lang.String[]
+
+getRootCauseStackTrace-BB@0x0 : [ getRootCauseStackTrace-BB@0x6 getRootCauseStackTrace-BB@0xc ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) if-nez               v9, +5
+
+getRootCauseStackTrace-BB@0x6 : [ getRootCauseStackTrace-BB@0xa ]
+	2       (00000006) sget-object          v0, Lorg/apache/commons/lang/ArrayUtils;->EMPTY_STRING_ARRAY [Ljava/lang/String;
+
+getRootCauseStackTrace-BB@0xa : 
+	3       (0000000a) return-object        v0
+
+getRootCauseStackTrace-BB@0xc : [ getRootCauseStackTrace-BB@0x32 ]
+	4       (0000000c) invoke-static        v9, Lorg/apache/commons/lang/exception/ExceptionUtils;->getThrowables(Ljava/lang/Throwable;)[Ljava/lang/Throwable;
+	5       (00000012) move-result-object   v6
+	6       (00000014) array-length         v4, v6
+	7       (00000016) new-instance         v7, Ljava/util/ArrayList;
+	8       (0000001a) invoke-direct        v7, Ljava/util/ArrayList;-><init>()V
+	9       (00000020) add-int/lit8         v0, v4, -1
+	10      (00000024) aget-object          v0, v6, v0
+	11      (00000028) invoke-static        v0, Lorg/apache/commons/lang/exception/ExceptionUtils;->getStackFrameList(Ljava/lang/Throwable;)Ljava/util/List;
+	12      (0000002e) move-result-object   v3
+	13      (00000030) move                 v0, v4
+
+getRootCauseStackTrace-BB@0x32 : [ getRootCauseStackTrace-BB@0x3a getRootCauseStackTrace-BB@0xd2 ]
+	14      (00000032) add-int/lit8         v5, v0, -1
+	15      (00000036) if-ltz               v5, +4e
+
+getRootCauseStackTrace-BB@0x3a : [ getRootCauseStackTrace-BB@0x3e getRootCauseStackTrace-BB@0xe8 ]
+	16      (0000003a) if-eqz               v5, +57
+
+getRootCauseStackTrace-BB@0x3e : [ getRootCauseStackTrace-BB@0x56 ]
+	17      (0000003e) add-int/lit8         v0, v5, -1
+	18      (00000042) aget-object          v0, v6, v0
+	19      (00000046) invoke-static        v0, Lorg/apache/commons/lang/exception/ExceptionUtils;->getStackFrameList(Ljava/lang/Throwable;)Ljava/util/List;
+	20      (0000004c) move-result-object   v0
+	21      (0000004e) invoke-static        v3, v0, Lorg/apache/commons/lang/exception/ExceptionUtils;->removeCommonFrames(Ljava/util/List; Ljava/util/List;)V
+	22      (00000054) move-object          v2, v0
+
+getRootCauseStackTrace-BB@0x56 : [ getRootCauseStackTrace-BB@0x5e getRootCauseStackTrace-BB@0x92 ]
+	23      (00000056) add-int/lit8         v0, v4, -1
+	24      (0000005a) if-ne                v5, v0, +1c
+
+getRootCauseStackTrace-BB@0x5e : [ getRootCauseStackTrace-BB@0x70 ]
+	25      (0000005e) aget-object          v0, v6, v5
+	26      (00000062) invoke-virtual       v0, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+	27      (00000068) move-result-object   v0
+	28      (0000006a) invoke-virtual       v7, v0, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+getRootCauseStackTrace-BB@0x70 : [ getRootCauseStackTrace-BB@0x72 ]
+	29      (00000070) move                 v0, v1
+
+getRootCauseStackTrace-BB@0x72 : [ getRootCauseStackTrace-BB@0x7e getRootCauseStackTrace-BB@0xcc ]
+	30      (00000072) invoke-interface     v3, Ljava/util/List;->size()I
+	31      (00000078) move-result          v8
+	32      (0000007a) if-ge                v0, v8, +29
+
+getRootCauseStackTrace-BB@0x7e : [ getRootCauseStackTrace-BB@0x72 ]
+	33      (0000007e) invoke-interface     v3, v0, Ljava/util/List;->get(I)Ljava/lang/Object;
+	34      (00000084) move-result-object   v8
+	35      (00000086) invoke-virtual       v7, v8, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	36      (0000008c) add-int/lit8         v0, v0, 1
+	37      (00000090) goto                 -f
+
+getRootCauseStackTrace-BB@0x92 : [ getRootCauseStackTrace-BB@0x70 ]
+	38      (00000092) new-instance         v0, Ljava/lang/StringBuffer;
+	39      (00000096) invoke-direct        v0, Ljava/lang/StringBuffer;-><init>()V
+	40      (0000009c) const-string         v8, ' [wrapped] '
+	41      (000000a0) invoke-virtual       v0, v8, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	42      (000000a6) move-result-object   v0
+	43      (000000a8) aget-object          v8, v6, v5
+	44      (000000ac) invoke-virtual       v8, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+	45      (000000b2) move-result-object   v8
+	46      (000000b4) invoke-virtual       v0, v8, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	47      (000000ba) move-result-object   v0
+	48      (000000bc) invoke-virtual       v0, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	49      (000000c2) move-result-object   v0
+	50      (000000c4) invoke-virtual       v7, v0, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	51      (000000ca) goto                 -2d
+
+getRootCauseStackTrace-BB@0xcc : [ getRootCauseStackTrace-BB@0x32 ]
+	52      (000000cc) move                 v0, v5
+	53      (000000ce) move-object          v3, v2
+	54      (000000d0) goto                 -4f
+
+getRootCauseStackTrace-BB@0xd2 : [ getRootCauseStackTrace-BB@0xa ]
+	55      (000000d2) new-array            v0, v1, [Ljava/lang/String;
+	56      (000000d6) invoke-virtual       v7, v0, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	57      (000000dc) move-result-object   v0
+	58      (000000de) check-cast           v0, [Ljava/lang/String;
+	59      (000000e2) check-cast           v0, [Ljava/lang/String;
+	60      (000000e6) goto                 -6e
+
+getRootCauseStackTrace-BB@0xe8 : [ getRootCauseStackTrace-BB@0x56 ]
+	61      (000000e8) move-object          v2, v3
+	62      (000000ea) goto                 -4a
+

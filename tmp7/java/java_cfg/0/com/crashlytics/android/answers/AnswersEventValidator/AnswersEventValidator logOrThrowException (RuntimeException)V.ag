@@ -1,0 +1,23 @@
+# Lcom/crashlytics/android/answers/AnswersEventValidator;->logOrThrowException(Ljava/lang/RuntimeException;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.RuntimeException
+#
+# - return:void
+
+logOrThrowException-BB@0x0 : [ logOrThrowException-BB@0x8 logOrThrowException-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v3, Lcom/crashlytics/android/answers/AnswersEventValidator;->failFast Z
+	1       (00000004) if-eqz               v0, +3
+
+logOrThrowException-BB@0x8 : 
+	2       (00000008) throw                v4
+
+logOrThrowException-BB@0xa : 
+	3       (0000000a) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	4       (00000010) move-result-object   v0
+	5       (00000012) const-string         v1, 'Answers'
+	6       (00000016) const-string         v2, 'Invalid user input detected'
+	7       (0000001a) invoke-interface     v0, v1, v2, v4, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	8       (00000020) return-void          
+

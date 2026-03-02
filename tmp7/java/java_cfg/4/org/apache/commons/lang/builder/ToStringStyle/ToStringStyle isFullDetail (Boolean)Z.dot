@@ -1,0 +1,63 @@
+digraph {
+	graph [bb="0,0,1156,357",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_4cd0a3ecc867aa85433ef2d57e8bdc4c {
+		graph [bb="8,8,1148,349",
+			label="Lorg/apache/commons/lang/builder/ToStringStyle;.isFullDetail->(Ljava/lang/Boolean;)Z\nLocal registers v0 ... v1\nparam v2 = java.lang.Boolean\nreturn = \
+boolean",
+			lheight=0.83,
+			lp="578,315",
+			lwidth=7.94
+		];
+		struct_75bf90842b729d8b508be8ab6d04b6f6	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="436,249.5",
+			width=2.0972];
+		struct_6dd6f4a3d842f1fadbc95b9d578a9199	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-boolean </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7777BB">v1</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/builder/ToStringStyle;-&gt;defaultFullDetail Z</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="350,144.5",
+			width=9.2639];
+		struct_75bf90842b729d8b508be8ab6d04b6f6:tail -> struct_6dd6f4a3d842f1fadbc95b9d578a9199:header	[color=red,
+			pos="e,38,161.5 371,234.5 336.08,234.5 82.543,204.65 43.14,170.31"];
+		struct_0d9e33fbe8bc95fa3e4130d7310c5703	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/Boolean;-&gt;booleanValue()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="921,144.5",
+			width=6.0833];
+		struct_75bf90842b729d8b508be8ab6d04b6f6:tail -> struct_0d9e33fbe8bc95fa3e4130d7310c5703:header	[color=green,
+			pos="e,712,180.5 382,231.5 382,161.78 626.35,210.48 693,190 697.51,188.61 699.9,186.24 702.34,184.21"];
+		struct_3bde551c5d26f8aeee77be39dcac32ff	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="423,39.5",
+			width=1.7361];
+		struct_6dd6f4a3d842f1fadbc95b9d578a9199:tail -> struct_3bde551c5d26f8aeee77be39dcac32ff:header	[color=blue,
+			pos="e,371,53.5 38,126.5 38,91.063 296.3,58.039 360.62,53.929"];
+		struct_0d9e33fbe8bc95fa3e4130d7310c5703:tail -> struct_3bde551c5d26f8aeee77be39dcac32ff:header	[color=blue,
+			pos="e,382,56.5 712,107.5 702.75,107.5 701.9,101.54 693,99 629.47,80.852 407.24,121.54 383.97,66.593"];
+	}
+}

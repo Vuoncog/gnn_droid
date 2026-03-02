@@ -1,0 +1,54 @@
+digraph {
+	graph [bb="0,0,872,416",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_dc0cb38ccd1fc115dc7a2219b6f020d3 {
+		graph [bb="8,8,864,408",
+			label="Lcom/crashlytics/android/core/MetaDataStore;.valueOrNull->(Lorg/json/JSONObject; Ljava/lang/String;)Ljava/lang/String;\nLocal registers \
+v0 ... v1\nparam v2 = org.json.JSONObject\nparam v3 = java.lang.String\nreturn = java.lang.String",
+			lheight=1.04,
+			lp="436,366.5",
+			lwidth=11.06
+		];
+		struct_8d91041efdcfd4d9597e8fdd7c1204cf	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v2</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#DF3A01">Lorg/json/JSONObject;-&gt;isNull(Ljava/lang/String;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7272CC">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7272CC">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="438,260.5",
+			width=7.4444];
+		struct_08877fec4424d37dae2ebd8fb4c832df	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v2</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lorg/json/JSONObject;-&gt;optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="426,133.5",
+			width=11.375];
+		struct_8d91041efdcfd4d9597e8fdd7c1204cf:tail -> struct_08877fec4424d37dae2ebd8fb4c832df:header	[color=red,
+			pos="e,42,161.5 191,209.5 191,143.73 57.851,221.59 43.288,171.52"];
+		struct_e0b6453dadc78d941e01a2a4920ad611	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="436,39.5",
+			width=2.4722];
+		struct_8d91041efdcfd4d9597e8fdd7c1204cf:tail -> struct_e0b6453dadc78d941e01a2a4920ad611:header	[color=green,
+			pos="e,372,56.5 191,209.5 191,136.69 795.17,221.09 845,168 865.99,145.64 865.69,121.63 845,99 776.23,23.771 399.08,152.66 373.38,66.476"];
+		struct_08877fec4424d37dae2ebd8fb4c832df:tail -> struct_e0b6453dadc78d941e01a2a4920ad611:header	[color=blue,
+			pos="e,372,56.5 42,104.5 42,-40.092 356.08,192.82 371.42,66.658"];
+	}
+}

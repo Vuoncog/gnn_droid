@@ -1,0 +1,27 @@
+# Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;->hasName()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+hasName-BB@0x0 : [ hasName-BB@0x8 hasName-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;->name Ljava/lang/String;
+	1       (00000004) if-eqz               v0, +c
+
+hasName-BB@0x8 : [ hasName-BB@0x18 hasName-BB@0x1c ]
+	2       (00000008) iget-object          v0, v1, Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;->name Ljava/lang/String;
+	3       (0000000c) invoke-virtual       v0, Ljava/lang/String;->length()I
+	4       (00000012) move-result          v0
+	5       (00000014) if-lez               v0, +4
+
+hasName-BB@0x18 : [ hasName-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+hasName-BB@0x1a : 
+	7       (0000001a) return               v0
+
+hasName-BB@0x1c : [ hasName-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

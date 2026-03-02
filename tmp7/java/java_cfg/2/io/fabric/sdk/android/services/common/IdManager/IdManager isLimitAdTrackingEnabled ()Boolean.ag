@@ -1,0 +1,25 @@
+# Lio/fabric/sdk/android/services/common/IdManager;->isLimitAdTrackingEnabled()Ljava/lang/Boolean; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.Boolean
+
+isLimitAdTrackingEnabled-BB@0x0 : [ isLimitAdTrackingEnabled-BB@0xa isLimitAdTrackingEnabled-BB@0x22 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-boolean         v1, v2, Lio/fabric/sdk/android/services/common/IdManager;->collectHardwareIds Z
+	2       (00000006) if-eqz               v1, +e
+
+isLimitAdTrackingEnabled-BB@0xa : [ isLimitAdTrackingEnabled-BB@0x16 isLimitAdTrackingEnabled-BB@0x22 ]
+	3       (0000000a) invoke-virtual       v2, Lio/fabric/sdk/android/services/common/IdManager;->getAdvertisingInfo()Lio/fabric/sdk/android/services/common/AdvertisingInfo;
+	4       (00000010) move-result-object   v1
+	5       (00000012) if-eqz               v1, +8
+
+isLimitAdTrackingEnabled-BB@0x16 : [ isLimitAdTrackingEnabled-BB@0x22 ]
+	6       (00000016) iget-boolean         v0, v1, Lio/fabric/sdk/android/services/common/AdvertisingInfo;->limitAdTrackingEnabled Z
+	7       (0000001a) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	8       (00000020) move-result-object   v0
+
+isLimitAdTrackingEnabled-BB@0x22 : 
+	9       (00000022) return-object        v0
+

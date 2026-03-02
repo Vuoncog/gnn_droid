@@ -1,0 +1,63 @@
+digraph {
+	graph [bb="0,0,1522,606",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_be9740c0159053357f28ab637b2e3eba {
+		graph [bb="8,8,1514,598",
+			label="Lcom/crashlytics/android/answers/SessionAnalyticsManager;.enable->()V\nLocal registers v0 ... v3\nreturn = void",
+			lheight=0.62,
+			lp="761,571.5",
+			lwidth=6.71
+		];
+		struct_6df812d6906a6b42393cd0ac1022d3a7	[height=4.3194,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/SessionAnalyticsManager;-&gt;eventsHandler Lcom/crashlytics/android/answers/AnswersEventsHandler;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/AnswersEventsHandler;-&gt;enable()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/SessionAnalyticsManager;-&gt;lifecycleManager Lio/fabric/sdk/android/ActivityLifecycleManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#0000FF">Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7272CC">v2</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/SessionAnalyticsManager;-&gt;backgroundManager Lcom/crashlytics/android/answers/BackgroundManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#7272CC">v2</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/AnswersLifecycleCallbacks;-&gt;&lt;init&gt;(Lcom/crashlytics/android/answers/SessionAnalyticsManager; Lcom/crashlytics/android/answers/BackgroundManager;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/ActivityLifecycleManager;-&gt;registerCallbacks(Lio/fabric/sdk/android/ActivityLifecycleManager$Callbacks;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/SessionAnalyticsManager;-&gt;backgroundManager Lcom/crashlytics/android/answers/BackgroundManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/BackgroundManager;-&gt;registerListener(Lcom/crashlytics/android/answers/BackgroundManager$Listener;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/SessionAnalyticsManager;-&gt;installedAt J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/SessionAnalyticsManager;-&gt;isFirstLaunch(J)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="761,381.5",
+			width=20.694];
+		struct_229f3e01dee8eaeff4f036d041d4fad2	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/SessionAnalyticsManager;-&gt;onInstall()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/SessionAnalyticsManager;-&gt;preferenceManager Lcom/crashlytics/android/answers/AnswersPreferenceManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">46</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/AnswersPreferenceManager;-&gt;setAnalyticsLaunched()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="600,144.5",
+			width=16.222];
+		struct_6df812d6906a6b42393cd0ac1022d3a7:tail -> struct_229f3e01dee8eaeff4f036d041d4fad2:header	[color=red,
+			pos="e,41,183.5 41,231.5 41,214 41,207.27 41,193.64"];
+		struct_87137394e2ba8ec3bddf36e4cb1cf1ee	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="671,39.5",
+			width=2.0556];
+		struct_6df812d6906a6b42393cd0ac1022d3a7:tail -> struct_87137394e2ba8ec3bddf36e4cb1cf1ee:header	[color=green,
+			pos="e,622,56.5 41,231.5 41,167.46 1148.5,236.09 1193,190 1221.1,160.89 1220.5,128.64 1193,99 1152.1,54.924 678.27,113.05 626.57,65.799"];
+		struct_229f3e01dee8eaeff4f036d041d4fad2:tail -> struct_87137394e2ba8ec3bddf36e4cb1cf1ee:header	[color=blue,
+			pos="e,607,53.5 41,104.5 41,74.716 516.6,55.74 596.98,53.686"];
+	}
+}

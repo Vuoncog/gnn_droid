@@ -1,0 +1,23 @@
+# Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->getMaxFilesToKeep()I [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getMaxFilesToKeep-BB@0x0 : [ getMaxFilesToKeep-BB@0x8 getMaxFilesToKeep-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->analyticsSettingsData Lio/fabric/sdk/android/services/settings/AnalyticsSettingsData;
+	1       (00000004) if-nez               v0, +7
+
+getMaxFilesToKeep-BB@0x8 : [ getMaxFilesToKeep-BB@0x10 ]
+	2       (00000008) invoke-super         v1, Lio/fabric/sdk/android/services/events/EventsFilesManager;->getMaxFilesToKeep()I
+	3       (0000000e) move-result          v0
+
+getMaxFilesToKeep-BB@0x10 : 
+	4       (00000010) return               v0
+
+getMaxFilesToKeep-BB@0x12 : [ getMaxFilesToKeep-BB@0x10 ]
+	5       (00000012) iget-object          v0, v1, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->analyticsSettingsData Lio/fabric/sdk/android/services/settings/AnalyticsSettingsData;
+	6       (00000016) iget                 v0, v0, Lio/fabric/sdk/android/services/settings/AnalyticsSettingsData;->maxPendingSendFileCount I
+	7       (0000001a) goto                 -5
+

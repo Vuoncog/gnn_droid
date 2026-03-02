@@ -1,0 +1,23 @@
+# La/a/b/a/b/a/a/a;->a(La/a/b/a/b/a/b;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:a.a.b.a.b.a.b
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x6 a-BB@0x8 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) if-nez               v3, +3
+
+a-BB@0x6 : 
+	2       (00000006) return-void          
+
+a-BB@0x8 : [ a-BB@0x6 ]
+	3       (00000008) iget-object          v0, v2, La/a/b/a/b/a/a/a;->a Ljava/util/List;
+	4       (0000000c) invoke-interface     v0, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	5       (00000012) const/4              v0, 0
+	6       (00000014) invoke-virtual       v3, v2, v0, La/a/b/a/b/a/b;->a(La/a/b/a/b/a/h; Z)V
+	7       (0000001a) invoke-virtual       v2, v1, v1, v1, La/a/b/a/b/a/a/a;->a(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)V
+	8       (00000020) goto                 -d
+

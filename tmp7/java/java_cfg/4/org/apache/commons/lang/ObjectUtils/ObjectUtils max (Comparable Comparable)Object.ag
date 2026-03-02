@@ -1,0 +1,22 @@
+# Lorg/apache/commons/lang/ObjectUtils;->max(Ljava/lang/Comparable; Ljava/lang/Comparable;)Ljava/lang/Object; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Comparable
+# - v2:java.lang.Comparable
+#
+# - return:java.lang.Object
+
+max-BB@0x0 : [ max-BB@0xe max-BB@0x10 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v1, v2, v0, Lorg/apache/commons/lang/ObjectUtils;->compare(Ljava/lang/Comparable; Ljava/lang/Comparable; Z)I
+	2       (00000008) move-result          v0
+	3       (0000000a) if-ltz               v0, +3
+
+max-BB@0xe : 
+	4       (0000000e) return-object        v1
+
+max-BB@0x10 : [ max-BB@0xe ]
+	5       (00000010) move-object          v1, v2
+	6       (00000012) goto                 -2
+

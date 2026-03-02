@@ -1,0 +1,130 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->getParam(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:java.lang.String
+# - v11:java.lang.String
+#
+# - return:java.lang.String
+
+getParam-BB@0x0 : [ getParam-BB@0x10 getParam-BB@0x1c ]
+	0       (00000000) const/16             v7, 34
+	1       (00000004) const/4              v2, 0
+	2       (00000006) const/16             v6, 59
+	3       (0000000a) const/4              v5, -1
+	4       (0000000c) if-eqz               v10, +8
+
+getParam-BB@0x10 : [ getParam-BB@0x1c getParam-BB@0x20 ]
+	5       (00000010) invoke-virtual       v10, Ljava/lang/String;->length()I
+	6       (00000016) move-result          v0
+	7       (00000018) if-nez               v0, +4
+
+getParam-BB@0x1c : [ getParam-BB@0x1e ]
+	8       (0000001c) move-object          v0, v2
+
+getParam-BB@0x1e : 
+	9       (0000001e) return-object        v0
+
+getParam-BB@0x20 : [ getParam-BB@0x38 getParam-BB@0x3c ]
+	10      (00000020) invoke-virtual       v10, Ljava/lang/String;->length()I
+	11      (00000026) move-result          v1
+	12      (00000028) invoke-virtual       v10, v6, Ljava/lang/String;->indexOf(I)I
+	13      (0000002e) move-result          v0
+	14      (00000030) add-int/lit8         v3, v0, 1
+	15      (00000034) if-eqz               v3, +4
+
+getParam-BB@0x38 : [ getParam-BB@0x3c getParam-BB@0x40 ]
+	16      (00000038) if-ne                v3, v1, +4
+
+getParam-BB@0x3c : [ getParam-BB@0x1e ]
+	17      (0000003c) move-object          v0, v2
+	18      (0000003e) goto                 -10
+
+getParam-BB@0x40 : [ getParam-BB@0x4c getParam-BB@0xf6 ]
+	19      (00000040) invoke-virtual       v10, v6, v3, Ljava/lang/String;->indexOf(I I)I
+	20      (00000046) move-result          v0
+	21      (00000048) if-ne                v0, v5, +57
+
+getParam-BB@0x4c : [ getParam-BB@0x50 ]
+	22      (0000004c) move                 v0, v3
+	23      (0000004e) move                 v3, v1
+
+getParam-BB@0x50 : [ getParam-BB@0x54 getParam-BB@0xf2 ]
+	24      (00000050) if-ge                v0, v3, +51
+
+getParam-BB@0x54 : [ getParam-BB@0x64 getParam-BB@0xd8 ]
+	25      (00000054) const/16             v4, 61
+	26      (00000058) invoke-virtual       v10, v4, v0, Ljava/lang/String;->indexOf(I I)I
+	27      (0000005e) move-result          v4
+	28      (00000060) if-eq                v4, v5, +3c
+
+getParam-BB@0x64 : [ getParam-BB@0x68 getParam-BB@0xd8 ]
+	29      (00000064) if-ge                v4, v3, +3a
+
+getParam-BB@0x68 : [ getParam-BB@0x84 getParam-BB@0xd8 ]
+	30      (00000068) invoke-virtual       v10, v0, v4, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	31      (0000006e) move-result-object   v0
+	32      (00000070) invoke-virtual       v0, Ljava/lang/String;->trim()Ljava/lang/String;
+	33      (00000076) move-result-object   v0
+	34      (00000078) invoke-virtual       v11, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	35      (0000007e) move-result          v0
+	36      (00000080) if-eqz               v0, +2c
+
+getParam-BB@0x84 : [ getParam-BB@0xa4 getParam-BB@0xd8 ]
+	37      (00000084) add-int/lit8         v0, v4, 1
+	38      (00000088) invoke-virtual       v10, v0, v3, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	39      (0000008e) move-result-object   v0
+	40      (00000090) invoke-virtual       v0, Ljava/lang/String;->trim()Ljava/lang/String;
+	41      (00000096) move-result-object   v0
+	42      (00000098) invoke-virtual       v0, Ljava/lang/String;->length()I
+	43      (0000009e) move-result          v4
+	44      (000000a0) if-eqz               v4, +1c
+
+getParam-BB@0xa4 : [ getParam-BB@0xaa getParam-BB@0x1e ]
+	45      (000000a4) const/4              v1, 2
+	46      (000000a6) if-le                v4, v1, -44
+
+getParam-BB@0xaa : [ getParam-BB@0xb8 getParam-BB@0x1e ]
+	47      (000000aa) const/4              v1, 0
+	48      (000000ac) invoke-virtual       v0, v1, Ljava/lang/String;->charAt(I)C
+	49      (000000b2) move-result          v1
+	50      (000000b4) if-ne                v7, v1, -4b
+
+getParam-BB@0xb8 : [ getParam-BB@0xc8 getParam-BB@0x1e ]
+	51      (000000b8) add-int/lit8         v1, v4, -1
+	52      (000000bc) invoke-virtual       v0, v1, Ljava/lang/String;->charAt(I)C
+	53      (000000c2) move-result          v1
+	54      (000000c4) if-ne                v7, v1, -53
+
+getParam-BB@0xc8 : [ getParam-BB@0x1e ]
+	55      (000000c8) const/4              v1, 1
+	56      (000000ca) add-int/lit8         v2, v4, -1
+	57      (000000ce) invoke-virtual       v0, v1, v2, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	58      (000000d4) move-result-object   v0
+	59      (000000d6) goto                 -5c
+
+getParam-BB@0xd8 : [ getParam-BB@0xe8 getParam-BB@0xea ]
+	60      (000000d8) add-int/lit8         v3, v3, 1
+	61      (000000dc) invoke-virtual       v10, v6, v3, Ljava/lang/String;->indexOf(I I)I
+	62      (000000e2) move-result          v0
+	63      (000000e4) if-ne                v0, v5, +3
+
+getParam-BB@0xe8 : [ getParam-BB@0xea ]
+	64      (000000e8) move                 v0, v1
+
+getParam-BB@0xea : [ getParam-BB@0x50 ]
+	65      (000000ea) move                 v8, v0
+	66      (000000ec) move                 v0, v3
+	67      (000000ee) move                 v3, v8
+	68      (000000f0) goto                 -50
+
+getParam-BB@0xf2 : [ getParam-BB@0x1e ]
+	69      (000000f2) move-object          v0, v2
+	70      (000000f4) goto                 -6b
+
+getParam-BB@0xf6 : [ getParam-BB@0x50 ]
+	71      (000000f6) move                 v8, v0
+	72      (000000f8) move                 v0, v3
+	73      (000000fa) move                 v3, v8
+	74      (000000fc) goto                 -56
+

@@ -1,0 +1,37 @@
+# Lorg/apache/commons/io/input/ReaderInputStream;->read()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+read-BB@0x0 : [ read-BB@0x10 read-BB@0x22 ]
+	0       (00000000) iget-object          v0, v1, Lorg/apache/commons/io/input/ReaderInputStream;->encoderOut Ljava/nio/ByteBuffer;
+	1       (00000004) invoke-virtual       v0, Ljava/nio/ByteBuffer;->hasRemaining()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +b
+
+read-BB@0x10 : [ read-BB@0x20 ]
+	4       (00000010) iget-object          v0, v1, Lorg/apache/commons/io/input/ReaderInputStream;->encoderOut Ljava/nio/ByteBuffer;
+	5       (00000014) invoke-virtual       v0, Ljava/nio/ByteBuffer;->get()B
+	6       (0000001a) move-result          v0
+	7       (0000001c) and-int/lit16        v0, v0, 255
+
+read-BB@0x20 : 
+	8       (00000020) return               v0
+
+read-BB@0x22 : [ read-BB@0x30 read-BB@0x0 ]
+	9       (00000022) invoke-direct        v1, Lorg/apache/commons/io/input/ReaderInputStream;->fillBuffer()V
+	10      (00000028) iget-boolean         v0, v1, Lorg/apache/commons/io/input/ReaderInputStream;->endOfInput Z
+	11      (0000002c) if-eqz               v0, -16
+
+read-BB@0x30 : [ read-BB@0x40 read-BB@0x0 ]
+	12      (00000030) iget-object          v0, v1, Lorg/apache/commons/io/input/ReaderInputStream;->encoderOut Ljava/nio/ByteBuffer;
+	13      (00000034) invoke-virtual       v0, Ljava/nio/ByteBuffer;->hasRemaining()Z
+	14      (0000003a) move-result          v0
+	15      (0000003c) if-nez               v0, -1e
+
+read-BB@0x40 : [ read-BB@0x20 ]
+	16      (00000040) const/4              v0, -1
+	17      (00000042) goto                 -11
+

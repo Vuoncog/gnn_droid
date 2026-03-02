@@ -1,0 +1,22 @@
+# Lorg/apache/commons/io/input/ProxyInputStream;->available()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+available-BB@0x0 : [ available-BB@0x8 ]
+	0       (00000000) invoke-super         v1, Ljava/io/FilterInputStream;->available()I
+	1       (00000006) move-result          v0
+	0:5
+	(Ljava/io/IOException; -> a available-BB@0xa)
+
+available-BB@0x8 : 
+	2       (00000008) return               v0
+
+available-BB@0xa : [ available-BB@0x8 ]
+	3       (0000000a) move-exception       v0
+	4       (0000000c) invoke-virtual       v1, v0, Lorg/apache/commons/io/input/ProxyInputStream;->handleIOException(Ljava/io/IOException;)V
+	5       (00000012) const/4              v0, 0
+	6       (00000014) goto                 -6
+

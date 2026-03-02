@@ -1,0 +1,39 @@
+# Lcom/a/a/e/a/a;->a(Landroid/content/Intent; I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Intent
+# - v4:int
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0x20 ]
+	0       (00000000) iget-object          v0, v2, Lcom/a/a/e/a/a;->h Landroid/app/Fragment;
+	1       (00000004) if-eqz               v0, +e
+
+a-BB@0x8 : [ a-BB@0x14 a-BB@0x1e ]
+	2       (00000008) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	3       (0000000c) const/16             v1, 11
+	4       (00000010) if-lt                v0, v1, +7
+
+a-BB@0x14 : [ a-BB@0x1e ]
+	5       (00000014) iget-object          v0, v2, Lcom/a/a/e/a/a;->h Landroid/app/Fragment;
+	6       (00000018) invoke-virtual       v0, v3, v4, Landroid/app/Fragment;->startActivityForResult(Landroid/content/Intent; I)V
+
+a-BB@0x1e : 
+	7       (0000001e) return-void          
+
+a-BB@0x20 : [ a-BB@0x28 a-BB@0x34 ]
+	8       (00000020) iget-object          v0, v2, Lcom/a/a/e/a/a;->i Landroid/support/a/a/r;
+	9       (00000024) if-eqz               v0, +8
+
+a-BB@0x28 : [ a-BB@0x1e ]
+	10      (00000028) iget-object          v0, v2, Lcom/a/a/e/a/a;->i Landroid/support/a/a/r;
+	11      (0000002c) invoke-virtual       v0, v3, v4, Landroid/support/a/a/r;->a(Landroid/content/Intent; I)V
+	12      (00000032) goto                 -a
+
+a-BB@0x34 : [ a-BB@0x1e ]
+	13      (00000034) iget-object          v0, v2, Lcom/a/a/e/a/a;->g Landroid/app/Activity;
+	14      (00000038) invoke-virtual       v0, v3, v4, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent; I)V
+	15      (0000003e) goto                 -10
+

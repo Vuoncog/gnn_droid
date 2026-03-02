@@ -1,0 +1,56 @@
+# Lcom/unlocker/e;->a(Ljava/io/OutputStream;)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.io.OutputStream
+#
+# - return:long
+
+a-BB@0x0 : [ a-BB@0x14 ]
+	0       (00000000) invoke-static        Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'logcat -d -v threadtime'
+	3       (0000000c) invoke-virtual       v0, v1, Ljava/lang/Runtime;->exec(Ljava/lang/String;)Ljava/lang/Process;
+	4       (00000012) move-result-object   v1
+
+a-BB@0x14 : [ a-BB@0x24 ]
+	5       (00000014) invoke-virtual       v1, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) invoke-static        v0, v5, Lorg/apache/commons/io/IOUtils;->copyLarge(Ljava/io/InputStream; Ljava/io/OutputStream;)J
+	8       (00000022) move-result-wide     v2
+	14:21
+	(Ljava/lang/Throwable; -> 3e a-BB@0x3e)
+
+a-BB@0x24 : [ a-BB@0x2a ]
+	9       (00000024) invoke-virtual       v1, Ljava/lang/Process;->destroy()V
+	24:29
+	(Ljava/lang/Exception; -> 2c a-BB@0x2c)
+
+a-BB@0x2a : 
+	10      (0000002a) return-wide          v2
+
+a-BB@0x2c : [ a-BB@0x2a ]
+	11      (0000002c) move-exception       v0
+	12      (0000002e) const-string         v1, 'UNLOCKER-LogStream'
+	13      (00000032) const-string         v4, 'Failed to destroy logcat process'
+	14      (00000036) invoke-static        v1, v4, v0, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	15      (0000003c) goto                 -9
+
+a-BB@0x3e : [ a-BB@0x40 ]
+	16      (0000003e) move-exception       v0
+
+a-BB@0x40 : [ a-BB@0x46 ]
+	17      (00000040) invoke-virtual       v1, Ljava/lang/Process;->destroy()V
+	40:45
+	(Ljava/lang/Exception; -> 48 a-BB@0x48)
+
+a-BB@0x46 : 
+	18      (00000046) throw                v0
+
+a-BB@0x48 : [ a-BB@0x46 ]
+	19      (00000048) move-exception       v1
+	20      (0000004a) const-string         v2, 'UNLOCKER-LogStream'
+	21      (0000004e) const-string         v3, 'Failed to destroy logcat process'
+	22      (00000052) invoke-static        v2, v3, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	23      (00000058) goto                 -9
+

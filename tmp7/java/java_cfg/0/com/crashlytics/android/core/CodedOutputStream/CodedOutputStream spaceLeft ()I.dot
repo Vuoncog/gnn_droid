@@ -1,0 +1,54 @@
+digraph {
+	graph [bb="0,0,1305,344",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_d72dca72cb3d5d588b356424a56ebe67 {
+		graph [bb="8,8,1297,336",
+			label="Lcom/crashlytics/android/core/CodedOutputStream;.spaceLeft->()I\nLocal registers v0 ... v2\nreturn = int",
+			lheight=0.62,
+			lp="652.5,309.5",
+			lwidth=6.08
+		];
+		struct_f87b3b29a3dc11e3bdff8aa72af2544e	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;output Ljava/io/OutputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="654,240.5",
+			width=10.347];
+		struct_f408198cf4e75649a9d6934e9ae8e2f7	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;limit I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;position I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sub-int/2addr </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7777BB">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="300,93",
+			width=7.875];
+		struct_f87b3b29a3dc11e3bdff8aa72af2544e:tail -> struct_f408198cf4e75649a9d6934e9ae8e2f7:header	[color=red,
+			pos="e,42,143 303,211.5 303,95.202 57.564,252.82 42.703,153.11"];
+		struct_193acf86f6ada186ed824ce2aa466809	[height=2.1389,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/lang/UnsupportedOperationException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="red"><br/>'spaceLeft() can only be called<br/>on CodedOutputStreams that are<br/>writing to a flat array.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7777BB">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/UnsupportedOperationException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="945,93",
+			width=9.5417];
+		struct_f87b3b29a3dc11e3bdff8aa72af2544e:tail -> struct_193acf86f6ada186ed824ce2aa466809:header	[color=green,
+			pos="e,627,164 303,211.5 303,142.43 594.93,227.25 624.58,173.81"];
+	}
+}

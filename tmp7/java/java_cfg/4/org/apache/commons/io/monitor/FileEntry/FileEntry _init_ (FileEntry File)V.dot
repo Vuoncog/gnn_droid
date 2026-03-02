@@ -1,0 +1,57 @@
+digraph {
+	graph [bb="0,0,1536,377",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_bbe05f95d6a37bdbbe2d67fc38c0bef3 {
+		graph [bb="8,8,1528,369",
+			label="Lorg/apache/commons/io/monitor/FileEntry;.<init>->(Lorg/apache/commons/io/monitor/FileEntry; Ljava/io/File;)V\nLocal registers v0 \
+... v2\nparam v3 = org.apache.commons.io.monitor.FileEntry\nparam v4 = java.io.File\nreturn = void",
+			lheight=1.04,
+			lp="768,327.5",
+			lwidth=10.42
+		];
+		struct_7da771f2a25286ee496fd1ae1cf4bf4f	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/Object;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#8E8E5B">v4</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="531,243.5",
+			width=5.0556];
+		struct_e60f8d361e26ae952ec25590728af23e	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#0000FF">Ljava/lang/IllegalArgumentException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7A7AAD">v1</FONT>, <FONT color="red">'File is missing'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#7A7AAD">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/IllegalArgumentException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#848484">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="336,94.5",
+			width=8.8889];
+		struct_7da771f2a25286ee496fd1ae1cf4bf4f:tail -> struct_e60f8d361e26ae952ec25590728af23e:header	[color=red,
+			pos="e,41,144.5 359,217.5 290.04,217.5 64.562,217.05 42.707,154.61"];
+		struct_ed93764f34db68a779b36b57d4f71060	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#8E8E5B">v4</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/monitor/FileEntry;-&gt;file Ljava/io/File;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#7070D6">v3</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/monitor/FileEntry;-&gt;parent Lorg/apache/commons/io/monitor/FileEntry;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8E8E5B">v4</FONT>, <FONT color="#DF3A01">Ljava/io/File;-&gt;getName()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#848484">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/monitor/FileEntry;-&gt;name Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1097,94.5",
+			width=11.75];
+		struct_7da771f2a25286ee496fd1ae1cf4bf4f:tail -> struct_ed93764f34db68a779b36b57d4f71060:header	[color=green,
+			pos="e,684,163.5 370,214.5 370,148.3 601.79,192.67 665,173 669.51,171.6 671.9,169.22 674.34,167.2"];
+	}
+}

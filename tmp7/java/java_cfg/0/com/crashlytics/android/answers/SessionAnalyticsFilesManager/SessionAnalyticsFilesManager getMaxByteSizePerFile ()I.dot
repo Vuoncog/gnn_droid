@@ -1,0 +1,64 @@
+digraph {
+	graph [bb="0,0,2001,364",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_059f197d29c6e0b79f9303c8cdbbf091 {
+		graph [bb="8,8,1993,356",
+			label="Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;.getMaxByteSizePerFile->()I\nLocal registers v0 ... v1\nreturn = int",
+			lheight=0.62,
+			lp="1000.5,329.5",
+			lwidth=8.56
+		];
+		struct_5d82cd0b5b561835e8d2828115700683	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;-&gt;analyticsSettingsData Lio/fabric/sdk/android/services/settings/AnalyticsSettingsData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="998,260.5",
+			width=16.569];
+		struct_514dd80502ab8b491f5a131bdacebec1	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-super </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/events/EventsFilesManager;-&gt;getMaxByteSizePerFile()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="391,144.5",
+			width=10.403];
+		struct_5d82cd0b5b561835e8d2828115700683:tail -> struct_514dd80502ab8b491f5a131bdacebec1:header	[color=red,
+			pos="e,38,172.5 412,234.5 372.92,234.5 84.453,217.39 42.965,181.28"];
+		struct_49e078e0c3d410292a3390e5dcf21231	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;-&gt;analyticsSettingsData Lio/fabric/sdk/android/services/settings/AnalyticsSettingsData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/settings/AnalyticsSettingsData;-&gt;maxByteSizePerFile I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1384,144.5",
+			width=16.681];
+		struct_5d82cd0b5b561835e8d2828115700683:tail -> struct_49e078e0c3d410292a3390e5dcf21231:header	[color=green,
+			pos="e,809,183.5 423,231.5 423,148.78 776.54,259.6 806.92,193.51"];
+		struct_b59fd7eb7c744e244210d9318d014500	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="466,39.5",
+			width=1.8472];
+		struct_514dd80502ab8b491f5a131bdacebec1:tail -> struct_b59fd7eb7c744e244210d9318d014500:header	[color=blue,
+			pos="e,410,53.5 38,115.5 38,76.052 330.55,55.93 399.79,53.707"];
+		struct_49e078e0c3d410292a3390e5dcf21231:tail -> struct_b59fd7eb7c744e244210d9318d014500:header	[color=blue,
+			pos="e,425,56.5 794,107.5 784.75,107.5 783.91,101.47 775,99 740.28,89.362 473.25,94.642 430.71,65.053"];
+	}
+}

@@ -1,0 +1,36 @@
+# Lcom/crashlytics/android/answers/AnswersEventsHandler$6;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x1a run-BB@0x28 ]
+	0       (00000000) iget-object          v0, v4, Lcom/crashlytics/android/answers/AnswersEventsHandler$6;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	1       (00000004) iget-object          v0, v0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->strategy Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;
+	2       (00000008) iget-object          v1, v4, Lcom/crashlytics/android/answers/AnswersEventsHandler$6;->val$eventBuilder Lcom/crashlytics/android/answers/SessionEvent$Builder;
+	3       (0000000c) invoke-interface     v0, v1, Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;->processEvent(Lcom/crashlytics/android/answers/SessionEvent$Builder;)V
+	4       (00000012) iget-boolean         v0, v4, Lcom/crashlytics/android/answers/AnswersEventsHandler$6;->val$flush Z
+	5       (00000016) if-eqz               v0, +9
+	0:27
+	(Ljava/lang/Exception; -> 2a run-BB@0x2a)
+
+run-BB@0x1a : [ run-BB@0x28 ]
+	6       (0000001a) iget-object          v0, v4, Lcom/crashlytics/android/answers/AnswersEventsHandler$6;->this$0 Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	7       (0000001e) iget-object          v0, v0, Lcom/crashlytics/android/answers/AnswersEventsHandler;->strategy Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;
+	8       (00000022) invoke-interface     v0, Lcom/crashlytics/android/answers/SessionAnalyticsManagerStrategy;->rollFileOver()Z
+	0:27
+	(Ljava/lang/Exception; -> 2a run-BB@0x2a)
+
+run-BB@0x28 : 
+	9       (00000028) return-void          
+
+run-BB@0x2a : [ run-BB@0x28 ]
+	10      (0000002a) move-exception       v0
+	11      (0000002c) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	12      (00000032) move-result-object   v1
+	13      (00000034) const-string         v2, 'Answers'
+	14      (00000038) const-string         v3, 'Failed to process event'
+	15      (0000003c) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	16      (00000042) goto                 -d
+

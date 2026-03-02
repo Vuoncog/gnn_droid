@@ -1,0 +1,25 @@
+# Lio/fabric/sdk/android/services/events/QueueFileEventStorage;->createTargetDirectory()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+createTargetDirectory-BB@0x0 : [ createTargetDirectory-BB@0x26 createTargetDirectory-BB@0x30 ]
+	0       (00000000) new-instance         v0, Ljava/io/File;
+	1       (00000004) iget-object          v1, v3, Lio/fabric/sdk/android/services/events/QueueFileEventStorage;->workingDirectory Ljava/io/File;
+	2       (00000008) iget-object          v2, v3, Lio/fabric/sdk/android/services/events/QueueFileEventStorage;->targetDirectoryName Ljava/lang/String;
+	3       (0000000c) invoke-direct        v0, v1, v2, Ljava/io/File;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	4       (00000012) iput-object          v0, v3, Lio/fabric/sdk/android/services/events/QueueFileEventStorage;->targetDirectory Ljava/io/File;
+	5       (00000016) iget-object          v0, v3, Lio/fabric/sdk/android/services/events/QueueFileEventStorage;->targetDirectory Ljava/io/File;
+	6       (0000001a) invoke-virtual       v0, Ljava/io/File;->exists()Z
+	7       (00000020) move-result          v0
+	8       (00000022) if-nez               v0, +7
+
+createTargetDirectory-BB@0x26 : [ createTargetDirectory-BB@0x30 ]
+	9       (00000026) iget-object          v0, v3, Lio/fabric/sdk/android/services/events/QueueFileEventStorage;->targetDirectory Ljava/io/File;
+	10      (0000002a) invoke-virtual       v0, Ljava/io/File;->mkdirs()Z
+
+createTargetDirectory-BB@0x30 : 
+	11      (00000030) return-void          
+

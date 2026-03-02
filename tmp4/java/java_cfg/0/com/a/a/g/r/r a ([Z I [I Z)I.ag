@@ -1,0 +1,55 @@
+# Lcom/a/a/g/r;->a([Z I [I Z)I [access_flags=protected static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:boolean[]
+# - v9:int
+# - v10:int[]
+# - v11:boolean
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0xa ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) array-length         v6, v10
+	2       (00000004) move                 v4, v1
+	3       (00000006) move                 v5, v1
+	4       (00000008) move                 v2, v9
+
+a-BB@0xa : [ a-BB@0xe a-BB@0x3e ]
+	5       (0000000a) if-ge                v4, v6, +1a
+
+a-BB@0xe : [ a-BB@0x14 ]
+	6       (0000000e) aget                 v7, v10, v4
+	7       (00000012) move                 v0, v1
+
+a-BB@0x14 : [ a-BB@0x18 a-BB@0x28 ]
+	8       (00000014) if-ge                v0, v7, +a
+
+a-BB@0x18 : [ a-BB@0x14 ]
+	9       (00000018) add-int/lit8         v3, v2, 1
+	10      (0000001c) aput-boolean         v11, v8, v2
+	11      (00000020) add-int/lit8         v0, v0, 1
+	12      (00000024) move                 v2, v3
+	13      (00000026) goto                 -9
+
+a-BB@0x28 : [ a-BB@0x2e a-BB@0x3a ]
+	14      (00000028) add-int/2addr        v5, v7
+	15      (0000002a) if-nez               v11, +8
+
+a-BB@0x2e : [ a-BB@0x30 ]
+	16      (0000002e) const/4              v0, 1
+
+a-BB@0x30 : [ a-BB@0xa ]
+	17      (00000030) add-int/lit8         v3, v4, 1
+	18      (00000034) move                 v4, v3
+	19      (00000036) move                 v11, v0
+	20      (00000038) goto                 -17
+
+a-BB@0x3a : [ a-BB@0x30 ]
+	21      (0000003a) move                 v0, v1
+	22      (0000003c) goto                 -6
+
+a-BB@0x3e : 
+	23      (0000003e) return               v5
+

@@ -1,0 +1,13 @@
+# Lorg/apache/commons/io/input/CharSequenceInputStream;->available()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+available-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/apache/commons/io/input/CharSequenceInputStream;->cbuf Ljava/nio/CharBuffer;
+	1       (00000004) invoke-virtual       v0, Ljava/nio/CharBuffer;->remaining()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

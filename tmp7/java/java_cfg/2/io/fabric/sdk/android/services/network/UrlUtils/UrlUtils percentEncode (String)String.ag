@@ -1,0 +1,89 @@
+# Lio/fabric/sdk/android/services/network/UrlUtils;->percentEncode(Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+#
+# - return:java.lang.String
+
+percentEncode-BB@0x0 : [ percentEncode-BB@0x4 percentEncode-BB@0xa ]
+	0       (00000000) if-nez               v7, +5
+
+percentEncode-BB@0x4 : [ percentEncode-BB@0x8 ]
+	1       (00000004) const-string         v0, ''
+
+percentEncode-BB@0x8 : 
+	2       (00000008) return-object        v0
+
+percentEncode-BB@0xa : [ percentEncode-BB@0x26 ]
+	3       (0000000a) new-instance         v1, Ljava/lang/StringBuilder;
+	4       (0000000e) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000014) invoke-static        v7, Lio/fabric/sdk/android/services/network/UrlUtils;->urlEncode(Ljava/lang/String;)Ljava/lang/String;
+	6       (0000001a) move-result-object   v2
+	7       (0000001c) invoke-virtual       v2, Ljava/lang/String;->length()I
+	8       (00000022) move-result          v3
+	9       (00000024) const/4              v0, 0
+
+percentEncode-BB@0x26 : [ percentEncode-BB@0x2a percentEncode-BB@0xae ]
+	10      (00000026) if-ge                v0, v3, +44
+
+percentEncode-BB@0x2a : [ percentEncode-BB@0x3a percentEncode-BB@0x4a ]
+	11      (0000002a) invoke-virtual       v2, v0, Ljava/lang/String;->charAt(I)C
+	12      (00000030) move-result          v4
+	13      (00000032) const/16             v5, 42
+	14      (00000036) if-ne                v4, v5, +a
+
+percentEncode-BB@0x3a : [ percentEncode-BB@0x44 ]
+	15      (0000003a) const-string         v4, '%2A'
+	16      (0000003e) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+percentEncode-BB@0x44 : [ percentEncode-BB@0x26 ]
+	17      (00000044) add-int/lit8         v0, v0, 1
+	18      (00000048) goto                 -11
+
+percentEncode-BB@0x4a : [ percentEncode-BB@0x52 percentEncode-BB@0x5e ]
+	19      (0000004a) const/16             v5, 43
+	20      (0000004e) if-ne                v4, v5, +8
+
+percentEncode-BB@0x52 : [ percentEncode-BB@0x44 ]
+	21      (00000052) const-string         v4, '%20'
+	22      (00000056) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (0000005c) goto                 -c
+
+percentEncode-BB@0x5e : [ percentEncode-BB@0x66 percentEncode-BB@0xa6 ]
+	24      (0000005e) const/16             v5, 37
+	25      (00000062) if-ne                v4, v5, +22
+
+percentEncode-BB@0x66 : [ percentEncode-BB@0x6e percentEncode-BB@0xa6 ]
+	26      (00000066) add-int/lit8         v5, v0, 2
+	27      (0000006a) if-ge                v5, v3, +1e
+
+percentEncode-BB@0x6e : [ percentEncode-BB@0x82 percentEncode-BB@0xa6 ]
+	28      (0000006e) add-int/lit8         v5, v0, 1
+	29      (00000072) invoke-virtual       v2, v5, Ljava/lang/String;->charAt(I)C
+	30      (00000078) move-result          v5
+	31      (0000007a) const/16             v6, 55
+	32      (0000007e) if-ne                v5, v6, +14
+
+percentEncode-BB@0x82 : [ percentEncode-BB@0x96 percentEncode-BB@0xa6 ]
+	33      (00000082) add-int/lit8         v5, v0, 2
+	34      (00000086) invoke-virtual       v2, v5, Ljava/lang/String;->charAt(I)C
+	35      (0000008c) move-result          v5
+	36      (0000008e) const/16             v6, 69
+	37      (00000092) if-ne                v5, v6, +a
+
+percentEncode-BB@0x96 : [ percentEncode-BB@0x44 ]
+	38      (00000096) const/16             v4, 126
+	39      (0000009a) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	40      (000000a0) add-int/lit8         v0, v0, 2
+	41      (000000a4) goto                 -30
+
+percentEncode-BB@0xa6 : [ percentEncode-BB@0x44 ]
+	42      (000000a6) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	43      (000000ac) goto                 -34
+
+percentEncode-BB@0xae : [ percentEncode-BB@0x8 ]
+	44      (000000ae) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	45      (000000b4) move-result-object   v0
+	46      (000000b6) goto                 -57
+

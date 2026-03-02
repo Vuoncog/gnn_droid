@@ -1,0 +1,70 @@
+# Lcom/a/a/a/b/a;->a(Lcom/a/a/t; Lcom/a/a/t; I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:com.a.a.t
+# - v11:com.a.a.t
+# - v12:int
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0x52 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-static        v10, v11, Lcom/a/a/a/b/a;->a(Lcom/a/a/t; Lcom/a/a/t;)F
+	2       (00000008) move-result          v0
+	3       (0000000a) int-to-float         v1, v12
+	4       (0000000c) div-float            v1, v0, v1
+	5       (00000010) invoke-virtual       v10, Lcom/a/a/t;->a()F
+	6       (00000016) move-result          v3
+	7       (00000018) invoke-virtual       v10, Lcom/a/a/t;->b()F
+	8       (0000001e) move-result          v4
+	9       (00000020) invoke-virtual       v11, Lcom/a/a/t;->a()F
+	10      (00000026) move-result          v5
+	11      (00000028) invoke-virtual       v10, Lcom/a/a/t;->a()F
+	12      (0000002e) move-result          v6
+	13      (00000030) sub-float/2addr      v5, v6
+	14      (00000032) mul-float/2addr      v5, v1
+	15      (00000034) div-float/2addr      v5, v0
+	16      (00000036) invoke-virtual       v11, Lcom/a/a/t;->b()F
+	17      (0000003c) move-result          v6
+	18      (0000003e) invoke-virtual       v10, Lcom/a/a/t;->b()F
+	19      (00000044) move-result          v7
+	20      (00000046) sub-float/2addr      v6, v7
+	21      (00000048) mul-float/2addr      v1, v6
+	22      (0000004a) div-float            v6, v1, v0
+	23      (0000004e) move                 v1, v2
+	24      (00000050) move                 v0, v2
+
+a-BB@0x52 : [ a-BB@0x56 a-BB@0x96 ]
+	25      (00000052) if-ge                v1, v12, +22
+
+a-BB@0x56 : [ a-BB@0x82 a-BB@0x90 ]
+	26      (00000056) iget-object          v2, v9, Lcom/a/a/a/b/a;->a Lcom/a/a/c/b;
+	27      (0000005a) int-to-float         v7, v1
+	28      (0000005c) mul-float/2addr      v7, v5
+	29      (0000005e) add-float/2addr      v7, v3
+	30      (00000060) invoke-static        v7, Lcom/a/a/c/a/a;->a(F)I
+	31      (00000066) move-result          v7
+	32      (00000068) int-to-float         v8, v1
+	33      (0000006a) mul-float/2addr      v8, v6
+	34      (0000006c) add-float/2addr      v8, v4
+	35      (0000006e) invoke-static        v8, Lcom/a/a/c/a/a;->a(F)I
+	36      (00000074) move-result          v8
+	37      (00000076) invoke-virtual       v2, v7, v8, Lcom/a/a/c/b;->a(I I)Z
+	38      (0000007c) move-result          v2
+	39      (0000007e) if-eqz               v2, +9
+
+a-BB@0x82 : [ a-BB@0x90 ]
+	40      (00000082) const/4              v2, 1
+	41      (00000084) sub-int              v7, v12, v1
+	42      (00000088) add-int/lit8         v7, v7, -1
+	43      (0000008c) shl-int/2addr        v2, v7
+	44      (0000008e) or-int/2addr         v0, v2
+
+a-BB@0x90 : [ a-BB@0x52 ]
+	45      (00000090) add-int/lit8         v1, v1, 1
+	46      (00000094) goto                 -21
+
+a-BB@0x96 : 
+	47      (00000096) return               v0
+

@@ -1,0 +1,28 @@
+# Lorg/apache/commons/lang/StringUtils;->containsNone(Ljava/lang/String; Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.lang.String
+#
+# - return:boolean
+
+containsNone-BB@0x0 : [ containsNone-BB@0x4 containsNone-BB@0x8 ]
+	0       (00000000) if-eqz               v1, +4
+
+containsNone-BB@0x4 : [ containsNone-BB@0x8 containsNone-BB@0xc ]
+	1       (00000004) if-nez               v2, +4
+
+containsNone-BB@0x8 : [ containsNone-BB@0xa ]
+	2       (00000008) const/4              v0, 1
+
+containsNone-BB@0xa : 
+	3       (0000000a) return               v0
+
+containsNone-BB@0xc : [ containsNone-BB@0xa ]
+	4       (0000000c) invoke-virtual       v2, Ljava/lang/String;->toCharArray()[C
+	5       (00000012) move-result-object   v0
+	6       (00000014) invoke-static        v1, v0, Lorg/apache/commons/lang/StringUtils;->containsNone(Ljava/lang/String; [C)Z
+	7       (0000001a) move-result          v0
+	8       (0000001c) goto                 -9
+

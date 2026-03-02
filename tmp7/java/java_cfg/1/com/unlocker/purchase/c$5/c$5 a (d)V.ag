@@ -1,0 +1,20 @@
+# Lcom/unlocker/purchase/c$5;->a(Lcom/unlocker/billing/d;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.unlocker.billing.d
+#
+# - return:void
+
+a-BB@0x0 : 
+	0       (00000000) const-string         v0, 'UNLOCKER-PurchManager'
+	1       (00000004) const-string         v1, 'Reporting on completed purchase...'
+	2       (00000008) invoke-static        v0, v1, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	3       (0000000e) iget-object          v0, v2, Lcom/unlocker/purchase/c$5;->b Lcom/unlocker/purchase/c;
+	4       (00000012) iget-object          v1, v2, Lcom/unlocker/purchase/c$5;->a Lcom/unlocker/b;
+	5       (00000016) invoke-static        v0, v1, Lcom/unlocker/purchase/c;->a(Lcom/unlocker/purchase/c; Lcom/unlocker/b;)V
+	6       (0000001c) new-instance         v0, Lcom/unlocker/purchase/c$5$1;
+	7       (00000020) invoke-direct        v0, v2, Lcom/unlocker/purchase/c$5$1;-><init>(Lcom/unlocker/purchase/c$5;)V
+	8       (00000026) invoke-direct        v2, v3, v0, Lcom/unlocker/purchase/c$5;->a(Lcom/unlocker/billing/d; Lcom/unlocker/b;)V
+	9       (0000002c) return-void          
+

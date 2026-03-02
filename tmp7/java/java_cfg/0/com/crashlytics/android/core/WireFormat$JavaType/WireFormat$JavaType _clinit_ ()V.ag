@@ -1,0 +1,97 @@
+# Lcom/crashlytics/android/core/WireFormat$JavaType;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v8, 4
+	1       (00000002) const/4              v7, 3
+	2       (00000004) const/4              v6, 2
+	3       (00000006) const/4              v5, 1
+	4       (00000008) const/4              v4, 0
+	5       (0000000a) new-instance         v0, Lcom/crashlytics/android/core/WireFormat$JavaType;
+	6       (0000000e) const-string         v1, 'INT'
+	7       (00000012) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	8       (00000018) move-result-object   v2
+	9       (0000001a) invoke-direct        v0, v1, v4, v2, Lcom/crashlytics/android/core/WireFormat$JavaType;-><init>(Ljava/lang/String; I Ljava/lang/Object;)V
+	10      (00000020) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->INT Lcom/crashlytics/android/core/WireFormat$JavaType;
+	11      (00000024) new-instance         v0, Lcom/crashlytics/android/core/WireFormat$JavaType;
+	12      (00000028) const-string         v1, 'LONG'
+	13      (0000002c) const-wide/16        v2, 0 # [0.0]
+	14      (00000030) invoke-static        v2, v3, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	15      (00000036) move-result-object   v2
+	16      (00000038) invoke-direct        v0, v1, v5, v2, Lcom/crashlytics/android/core/WireFormat$JavaType;-><init>(Ljava/lang/String; I Ljava/lang/Object;)V
+	17      (0000003e) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->LONG Lcom/crashlytics/android/core/WireFormat$JavaType;
+	18      (00000042) new-instance         v0, Lcom/crashlytics/android/core/WireFormat$JavaType;
+	19      (00000046) const-string         v1, 'FLOAT'
+	20      (0000004a) const/4              v2, 0
+	21      (0000004c) invoke-static        v2, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+	22      (00000052) move-result-object   v2
+	23      (00000054) invoke-direct        v0, v1, v6, v2, Lcom/crashlytics/android/core/WireFormat$JavaType;-><init>(Ljava/lang/String; I Ljava/lang/Object;)V
+	24      (0000005a) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->FLOAT Lcom/crashlytics/android/core/WireFormat$JavaType;
+	25      (0000005e) new-instance         v0, Lcom/crashlytics/android/core/WireFormat$JavaType;
+	26      (00000062) const-string         v1, 'DOUBLE'
+	27      (00000066) const-wide/16        v2, 0 # [0.0]
+	28      (0000006a) invoke-static        v2, v3, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+	29      (00000070) move-result-object   v2
+	30      (00000072) invoke-direct        v0, v1, v7, v2, Lcom/crashlytics/android/core/WireFormat$JavaType;-><init>(Ljava/lang/String; I Ljava/lang/Object;)V
+	31      (00000078) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->DOUBLE Lcom/crashlytics/android/core/WireFormat$JavaType;
+	32      (0000007c) new-instance         v0, Lcom/crashlytics/android/core/WireFormat$JavaType;
+	33      (00000080) const-string         v1, 'BOOLEAN'
+	34      (00000084) invoke-static        v4, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	35      (0000008a) move-result-object   v2
+	36      (0000008c) invoke-direct        v0, v1, v8, v2, Lcom/crashlytics/android/core/WireFormat$JavaType;-><init>(Ljava/lang/String; I Ljava/lang/Object;)V
+	37      (00000092) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->BOOLEAN Lcom/crashlytics/android/core/WireFormat$JavaType;
+	38      (00000096) new-instance         v0, Lcom/crashlytics/android/core/WireFormat$JavaType;
+	39      (0000009a) const-string         v1, 'STRING'
+	40      (0000009e) const/4              v2, 5
+	41      (000000a0) const-string         v3, ''
+	42      (000000a4) invoke-direct        v0, v1, v2, v3, Lcom/crashlytics/android/core/WireFormat$JavaType;-><init>(Ljava/lang/String; I Ljava/lang/Object;)V
+	43      (000000aa) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->STRING Lcom/crashlytics/android/core/WireFormat$JavaType;
+	44      (000000ae) new-instance         v0, Lcom/crashlytics/android/core/WireFormat$JavaType;
+	45      (000000b2) const-string         v1, 'BYTE_STRING'
+	46      (000000b6) const/4              v2, 6
+	47      (000000b8) sget-object          v3, Lcom/crashlytics/android/core/ByteString;->EMPTY Lcom/crashlytics/android/core/ByteString;
+	48      (000000bc) invoke-direct        v0, v1, v2, v3, Lcom/crashlytics/android/core/WireFormat$JavaType;-><init>(Ljava/lang/String; I Ljava/lang/Object;)V
+	49      (000000c2) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->BYTE_STRING Lcom/crashlytics/android/core/WireFormat$JavaType;
+	50      (000000c6) new-instance         v0, Lcom/crashlytics/android/core/WireFormat$JavaType;
+	51      (000000ca) const-string         v1, 'ENUM'
+	52      (000000ce) const/4              v2, 7
+	53      (000000d0) const/4              v3, 0
+	54      (000000d2) invoke-direct        v0, v1, v2, v3, Lcom/crashlytics/android/core/WireFormat$JavaType;-><init>(Ljava/lang/String; I Ljava/lang/Object;)V
+	55      (000000d8) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->ENUM Lcom/crashlytics/android/core/WireFormat$JavaType;
+	56      (000000dc) new-instance         v0, Lcom/crashlytics/android/core/WireFormat$JavaType;
+	57      (000000e0) const-string         v1, 'MESSAGE'
+	58      (000000e4) const/16             v2, 8
+	59      (000000e8) const/4              v3, 0
+	60      (000000ea) invoke-direct        v0, v1, v2, v3, Lcom/crashlytics/android/core/WireFormat$JavaType;-><init>(Ljava/lang/String; I Ljava/lang/Object;)V
+	61      (000000f0) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->MESSAGE Lcom/crashlytics/android/core/WireFormat$JavaType;
+	62      (000000f4) const/16             v0, 9
+	63      (000000f8) new-array            v0, v0, [Lcom/crashlytics/android/core/WireFormat$JavaType;
+	64      (000000fc) sget-object          v1, Lcom/crashlytics/android/core/WireFormat$JavaType;->INT Lcom/crashlytics/android/core/WireFormat$JavaType;
+	65      (00000100) aput-object          v1, v0, v4
+	66      (00000104) sget-object          v1, Lcom/crashlytics/android/core/WireFormat$JavaType;->LONG Lcom/crashlytics/android/core/WireFormat$JavaType;
+	67      (00000108) aput-object          v1, v0, v5
+	68      (0000010c) sget-object          v1, Lcom/crashlytics/android/core/WireFormat$JavaType;->FLOAT Lcom/crashlytics/android/core/WireFormat$JavaType;
+	69      (00000110) aput-object          v1, v0, v6
+	70      (00000114) sget-object          v1, Lcom/crashlytics/android/core/WireFormat$JavaType;->DOUBLE Lcom/crashlytics/android/core/WireFormat$JavaType;
+	71      (00000118) aput-object          v1, v0, v7
+	72      (0000011c) sget-object          v1, Lcom/crashlytics/android/core/WireFormat$JavaType;->BOOLEAN Lcom/crashlytics/android/core/WireFormat$JavaType;
+	73      (00000120) aput-object          v1, v0, v8
+	74      (00000124) const/4              v1, 5
+	75      (00000126) sget-object          v2, Lcom/crashlytics/android/core/WireFormat$JavaType;->STRING Lcom/crashlytics/android/core/WireFormat$JavaType;
+	76      (0000012a) aput-object          v2, v0, v1
+	77      (0000012e) const/4              v1, 6
+	78      (00000130) sget-object          v2, Lcom/crashlytics/android/core/WireFormat$JavaType;->BYTE_STRING Lcom/crashlytics/android/core/WireFormat$JavaType;
+	79      (00000134) aput-object          v2, v0, v1
+	80      (00000138) const/4              v1, 7
+	81      (0000013a) sget-object          v2, Lcom/crashlytics/android/core/WireFormat$JavaType;->ENUM Lcom/crashlytics/android/core/WireFormat$JavaType;
+	82      (0000013e) aput-object          v2, v0, v1
+	83      (00000142) const/16             v1, 8
+	84      (00000146) sget-object          v2, Lcom/crashlytics/android/core/WireFormat$JavaType;->MESSAGE Lcom/crashlytics/android/core/WireFormat$JavaType;
+	85      (0000014a) aput-object          v2, v0, v1
+	86      (0000014e) sput-object          v0, Lcom/crashlytics/android/core/WireFormat$JavaType;->$VALUES [Lcom/crashlytics/android/core/WireFormat$JavaType;
+	87      (00000152) return-void          
+

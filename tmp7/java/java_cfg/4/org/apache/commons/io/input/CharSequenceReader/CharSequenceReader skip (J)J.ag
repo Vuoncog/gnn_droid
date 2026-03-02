@@ -1,0 +1,57 @@
+# Lorg/apache/commons/io/input/CharSequenceReader;->skip(J)J [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:long
+#
+# - return:long
+
+skip-BB@0x0 : [ skip-BB@0xc skip-BB@0x3e ]
+	0       (00000000) const-wide/16        v0, 0 # [0.0]
+	1       (00000004) cmp-long             v0, v6, v0
+	2       (00000008) if-gez               v0, +1b
+
+skip-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	4       (00000010) new-instance         v1, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) const-string         v2, 'Number of characters to skip is less than zero: '
+	7       (0000001e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v1
+	9       (00000026) invoke-virtual       v1, v6, v7, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000034) move-result-object   v1
+	13      (00000036) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	14      (0000003c) throw                v0
+
+skip-BB@0x3e : [ skip-BB@0x52 skip-BB@0x58 ]
+	15      (0000003e) iget                 v0, v5, Lorg/apache/commons/io/input/CharSequenceReader;->idx I
+	16      (00000042) iget-object          v1, v5, Lorg/apache/commons/io/input/CharSequenceReader;->charSequence Ljava/lang/CharSequence;
+	17      (00000046) invoke-interface     v1, Ljava/lang/CharSequence;->length()I
+	18      (0000004c) move-result          v1
+	19      (0000004e) if-lt                v0, v1, +5
+
+skip-BB@0x52 : [ skip-BB@0x56 ]
+	20      (00000052) const-wide/16        v0, -1 # [-1.0]
+
+skip-BB@0x56 : 
+	21      (00000056) return-wide          v0
+
+skip-BB@0x58 : [ skip-BB@0x56 ]
+	22      (00000058) iget-object          v0, v5, Lorg/apache/commons/io/input/CharSequenceReader;->charSequence Ljava/lang/CharSequence;
+	23      (0000005c) invoke-interface     v0, Ljava/lang/CharSequence;->length()I
+	24      (00000062) move-result          v0
+	25      (00000064) int-to-long          v0, v0
+	26      (00000066) iget                 v2, v5, Lorg/apache/commons/io/input/CharSequenceReader;->idx I
+	27      (0000006a) int-to-long          v2, v2
+	28      (0000006c) add-long/2addr       v2, v6
+	29      (0000006e) invoke-static        v0, v1, v2, v3, Ljava/lang/Math;->min(J J)J
+	30      (00000074) move-result-wide     v0
+	31      (00000076) long-to-int          v0, v0
+	32      (00000078) iget                 v1, v5, Lorg/apache/commons/io/input/CharSequenceReader;->idx I
+	33      (0000007c) sub-int              v1, v0, v1
+	34      (00000080) iput                 v0, v5, Lorg/apache/commons/io/input/CharSequenceReader;->idx I
+	35      (00000084) int-to-long          v0, v1
+	36      (00000086) goto                 -18
+

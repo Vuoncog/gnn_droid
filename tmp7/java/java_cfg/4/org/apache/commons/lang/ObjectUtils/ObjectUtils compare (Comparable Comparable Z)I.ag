@@ -1,0 +1,50 @@
+# Lorg/apache/commons/lang/ObjectUtils;->compare(Ljava/lang/Comparable; Ljava/lang/Comparable; Z)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Comparable
+# - v3:java.lang.Comparable
+# - v4:boolean
+#
+# - return:int
+
+compare-BB@0x0 : [ compare-BB@0x8 compare-BB@0xc ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, -1
+	2       (00000004) if-ne                v2, v3, +4
+
+compare-BB@0x8 : [ compare-BB@0xa ]
+	3       (00000008) const/4              v0, 0
+
+compare-BB@0xa : 
+	4       (0000000a) return               v0
+
+compare-BB@0xc : [ compare-BB@0x10 compare-BB@0x18 ]
+	5       (0000000c) if-nez               v2, +6
+
+compare-BB@0x10 : [ compare-BB@0x14 compare-BB@0xa ]
+	6       (00000010) if-nez               v4, -3
+
+compare-BB@0x14 : [ compare-BB@0xa ]
+	7       (00000014) move                 v0, v1
+	8       (00000016) goto                 -6
+
+compare-BB@0x18 : [ compare-BB@0x1c compare-BB@0x28 ]
+	9       (00000018) if-nez               v3, +8
+
+compare-BB@0x1c : [ compare-BB@0x20 compare-BB@0x24 ]
+	10      (0000001c) if-eqz               v4, +4
+
+compare-BB@0x20 : [ compare-BB@0xa ]
+	11      (00000020) move                 v0, v1
+	12      (00000022) goto                 -c
+
+compare-BB@0x24 : [ compare-BB@0x20 ]
+	13      (00000024) move                 v1, v0
+	14      (00000026) goto                 -3
+
+compare-BB@0x28 : [ compare-BB@0xa ]
+	15      (00000028) invoke-interface     v2, v3, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+	16      (0000002e) move-result          v0
+	17      (00000030) goto                 -13
+

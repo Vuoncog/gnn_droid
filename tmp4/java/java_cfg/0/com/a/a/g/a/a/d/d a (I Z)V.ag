@@ -1,0 +1,69 @@
+# Lcom/a/a/g/a/a/d;->a(I Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:boolean
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x6 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) move                 v1, v2
+	2       (00000004) move                 v3, v2
+
+a-BB@0x6 : [ a-BB@0x16 a-BB@0x3e ]
+	3       (00000006) iget-object          v0, v5, Lcom/a/a/g/a/a/d;->h Ljava/util/List;
+	4       (0000000a) invoke-interface     v0, Ljava/util/List;->size()I
+	5       (00000010) move-result          v0
+	6       (00000012) if-ge                v3, v0, +16
+
+a-BB@0x16 : [ a-BB@0x32 a-BB@0x48 ]
+	7       (00000016) iget-object          v0, v5, Lcom/a/a/g/a/a/d;->h Ljava/util/List;
+	8       (0000001a) invoke-interface     v0, v3, Ljava/util/List;->get(I)Ljava/lang/Object;
+	9       (00000020) move-result-object   v0
+	10      (00000022) check-cast           v0, Lcom/a/a/g/a/a/c;
+	11      (00000026) invoke-virtual       v0, Lcom/a/a/g/a/a/c;->b()I
+	12      (0000002c) move-result          v4
+	13      (0000002e) if-le                v4, v6, +d
+
+a-BB@0x32 : [ a-BB@0x3e ]
+	14      (00000032) iget-object          v2, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	15      (00000036) invoke-virtual       v0, v2, Lcom/a/a/g/a/a/c;->a(Ljava/util/List;)Z
+	16      (0000003c) move-result          v2
+
+a-BB@0x3e : [ a-BB@0x42 a-BB@0x46 ]
+	17      (0000003e) if-nez               v2, +4
+
+a-BB@0x42 : [ a-BB@0x46 a-BB@0x5c ]
+	18      (00000042) if-eqz               v1, +d
+
+a-BB@0x46 : 
+	19      (00000046) return-void          
+
+a-BB@0x48 : [ a-BB@0x6 ]
+	20      (00000048) iget-object          v1, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	21      (0000004c) invoke-virtual       v0, v1, Lcom/a/a/g/a/a/c;->a(Ljava/util/List;)Z
+	22      (00000052) move-result          v0
+	23      (00000054) add-int/lit8         v3, v3, 1
+	24      (00000058) move                 v1, v0
+	25      (0000005a) goto                 -2a
+
+a-BB@0x5c : [ a-BB@0x70 a-BB@0x46 ]
+	26      (0000005c) iget-object          v0, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	27      (00000060) iget-object          v1, v5, Lcom/a/a/g/a/a/d;->h Ljava/util/List;
+	28      (00000064) invoke-static        v0, v1, Lcom/a/a/g/a/a/d;->a(Ljava/lang/Iterable; Ljava/lang/Iterable;)Z
+	29      (0000006a) move-result          v0
+	30      (0000006c) if-nez               v0, -13
+
+a-BB@0x70 : [ a-BB@0x46 ]
+	31      (00000070) iget-object          v0, v5, Lcom/a/a/g/a/a/d;->h Ljava/util/List;
+	32      (00000074) new-instance         v1, Lcom/a/a/g/a/a/c;
+	33      (00000078) iget-object          v2, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	34      (0000007c) invoke-direct        v1, v2, v6, v7, Lcom/a/a/g/a/a/c;-><init>(Ljava/util/List; I Z)V
+	35      (00000082) invoke-interface     v0, v3, v1, Ljava/util/List;->add(I Ljava/lang/Object;)V
+	36      (00000088) iget-object          v0, v5, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	37      (0000008c) iget-object          v1, v5, Lcom/a/a/g/a/a/d;->h Ljava/util/List;
+	38      (00000090) invoke-static        v0, v1, Lcom/a/a/g/a/a/d;->a(Ljava/util/List; Ljava/util/List;)V
+	39      (00000096) goto                 -28
+

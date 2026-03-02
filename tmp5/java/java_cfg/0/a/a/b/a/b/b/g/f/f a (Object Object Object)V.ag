@@ -1,0 +1,30 @@
+# La/a/b/a/b/b/g/f;->a(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)V [access_flags=public final synthetic]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+# - v4:java.lang.Object
+# - v5:java.lang.Object
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x18 a-BB@0x36 ]
+	0       (00000000) check-cast           v3, Ljava/lang/Boolean;
+	1       (00000004) invoke-virtual       v3, Ljava/lang/Boolean;->booleanValue()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) iget-object          v1, v2, La/a/b/a/b/b/g/f;->a La/a/b/a/b/b/g/e;
+	4       (00000010) iget-boolean         v1, v1, La/a/b/a/b/b/g/e;->e Z
+	5       (00000014) if-eq                v0, v1, +11
+
+a-BB@0x18 : [ a-BB@0x36 ]
+	6       (00000018) iget-object          v0, v2, La/a/b/a/b/b/g/f;->a La/a/b/a/b/b/g/e;
+	7       (0000001c) invoke-virtual       v3, Ljava/lang/Boolean;->booleanValue()Z
+	8       (00000022) move-result          v1
+	9       (00000024) iput-boolean         v1, v0, La/a/b/a/b/b/g/e;->e Z
+	10      (00000028) iget-object          v0, v2, La/a/b/a/b/b/g/f;->a La/a/b/a/b/b/g/e;
+	11      (0000002c) iget-object          v0, v0, La/a/b/a/b/b/g/e;->d La/a/b/a/b/a/b;
+	12      (00000030) invoke-virtual       v0, v2, La/a/b/a/b/a/b;->b(Ljava/lang/Object;)V
+
+a-BB@0x36 : 
+	13      (00000036) return-void          
+

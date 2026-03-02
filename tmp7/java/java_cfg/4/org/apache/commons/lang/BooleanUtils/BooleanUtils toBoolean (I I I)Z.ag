@@ -1,0 +1,32 @@
+# Lorg/apache/commons/lang/BooleanUtils;->toBoolean(I I I)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:int
+#
+# - return:boolean
+
+toBoolean-BB@0x0 : [ toBoolean-BB@0x4 toBoolean-BB@0x8 ]
+	0       (00000000) if-ne                v2, v3, +4
+
+toBoolean-BB@0x4 : [ toBoolean-BB@0x6 ]
+	1       (00000004) const/4              v0, 1
+
+toBoolean-BB@0x6 : 
+	2       (00000006) return               v0
+
+toBoolean-BB@0x8 : [ toBoolean-BB@0xc toBoolean-BB@0x10 ]
+	3       (00000008) if-ne                v2, v4, +4
+
+toBoolean-BB@0xc : [ toBoolean-BB@0x6 ]
+	4       (0000000c) const/4              v0, 0
+	5       (0000000e) goto                 -4
+
+toBoolean-BB@0x10 : 
+	6       (00000010) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	7       (00000014) const-string         v1, 'The Integer did not match either specified value'
+	8       (00000018) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	9       (0000001e) throw                v0
+

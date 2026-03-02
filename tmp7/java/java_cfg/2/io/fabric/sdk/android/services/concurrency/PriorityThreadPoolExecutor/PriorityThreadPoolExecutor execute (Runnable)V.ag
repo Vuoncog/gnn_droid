@@ -1,0 +1,26 @@
+# Lio/fabric/sdk/android/services/concurrency/PriorityThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Runnable
+#
+# - return:void
+
+execute-BB@0x0 : [ execute-BB@0xc execute-BB@0x14 ]
+	0       (00000000) invoke-static        v2, Lio/fabric/sdk/android/services/concurrency/PriorityTask;->isProperDelegate(Ljava/lang/Object;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +6
+
+execute-BB@0xc : [ execute-BB@0x12 ]
+	3       (0000000c) invoke-super         v1, v2, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
+
+execute-BB@0x12 : 
+	4       (00000012) return-void          
+
+execute-BB@0x14 : [ execute-BB@0x12 ]
+	5       (00000014) const/4              v0, 0
+	6       (00000016) invoke-virtual       v1, v2, v0, Lio/fabric/sdk/android/services/concurrency/PriorityThreadPoolExecutor;->newTaskFor(Ljava/lang/Runnable; Ljava/lang/Object;)Ljava/util/concurrent/RunnableFuture;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) invoke-super         v1, v0, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
+	9       (00000024) goto                 -9
+

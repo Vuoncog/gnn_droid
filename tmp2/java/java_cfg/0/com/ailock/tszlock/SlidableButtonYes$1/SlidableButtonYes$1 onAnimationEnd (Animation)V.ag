@@ -1,0 +1,31 @@
+# Lcom/ailock/tszlock/SlidableButtonYes$1;->onAnimationEnd(Landroid/view/animation/Animation;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.animation.Animation
+#
+# - return:void
+
+onAnimationEnd-BB@0x0 : [ onAnimationEnd-BB@0x36 onAnimationEnd-BB@0x44 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-object          v1, v3, Lcom/ailock/tszlock/SlidableButtonYes$1;->this$0 Lcom/ailock/tszlock/SlidableButtonYes;
+	2       (00000006) invoke-virtual       v1, v2, Lcom/ailock/tszlock/SlidableButtonYes;->setAnimating(Z)V
+	3       (0000000c) iget-object          v1, v3, Lcom/ailock/tszlock/SlidableButtonYes$1;->this$0 Lcom/ailock/tszlock/SlidableButtonYes;
+	4       (00000010) invoke-virtual       v1, Lcom/ailock/tszlock/SlidableButtonYes;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	5       (00000016) move-result-object   v0
+	6       (00000018) check-cast           v0, Landroid/widget/RelativeLayout$LayoutParams;
+	7       (0000001c) iput                 v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin I
+	8       (00000020) iget-object          v1, v3, Lcom/ailock/tszlock/SlidableButtonYes$1;->this$0 Lcom/ailock/tszlock/SlidableButtonYes;
+	9       (00000024) invoke-virtual       v1, v0, Lcom/ailock/tszlock/SlidableButtonYes;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+	10      (0000002a) iget-object          v1, v3, Lcom/ailock/tszlock/SlidableButtonYes$1;->this$0 Lcom/ailock/tszlock/SlidableButtonYes;
+	11      (0000002e) iget-object          v1, v1, Lcom/ailock/tszlock/SlidableButtonYes;->mListener Lcom/ailock/tszlock/ITouchListener;
+	12      (00000032) if-eqz               v1, +9
+
+onAnimationEnd-BB@0x36 : [ onAnimationEnd-BB@0x44 ]
+	13      (00000036) iget-object          v1, v3, Lcom/ailock/tszlock/SlidableButtonYes$1;->this$0 Lcom/ailock/tszlock/SlidableButtonYes;
+	14      (0000003a) iget-object          v1, v1, Lcom/ailock/tszlock/SlidableButtonYes;->mListener Lcom/ailock/tszlock/ITouchListener;
+	15      (0000003e) invoke-interface     v1, Lcom/ailock/tszlock/ITouchListener;->onSlideLeft()V
+
+onAnimationEnd-BB@0x44 : 
+	16      (00000044) return-void          
+

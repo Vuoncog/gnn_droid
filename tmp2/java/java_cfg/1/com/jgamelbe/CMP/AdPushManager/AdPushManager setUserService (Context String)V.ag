@@ -1,0 +1,31 @@
+# Lcom/jgamelbe/CMP/AdPushManager;->setUserService(Landroid/content/Context; Ljava/lang/String;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:java.lang.String
+#
+# - return:void
+
+setUserService-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lcom/jgamelbe/CMP/AdPushManager;->b Ljava/lang/String;
+	1       (00000004) new-instance         v1, Ljava/lang/StringBuilder;
+	2       (00000008) const-string         v2, '[AdPushManager] setUserService='
+	3       (0000000c) invoke-direct        v1, v2, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	4       (00000012) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	7       (00000020) move-result-object   v1
+	8       (00000022) invoke-static        v0, v1, Lcom/jgamelbe/CMP/e/g;->c(Ljava/lang/String; Ljava/lang/String;)V
+	9       (00000028) invoke-static        Lcom/jgamelbe/CMP/e/r;->a()Lcom/jgamelbe/CMP/e/r;
+	10      (0000002e) move-result-object   v0
+	11      (00000030) invoke-static        Lcom/jgamelbe/CMP/e/r;->a()Lcom/jgamelbe/CMP/e/r;
+	12      (00000036) move-result-object   v1
+	13      (00000038) iget-object          v1, v1, Lcom/jgamelbe/CMP/e/r;->g Ljava/lang/Class;
+	14      (0000003c) invoke-static        v1, v4, Lcom/jgamelbe/CMP/AdPushManager;->a(Ljava/lang/Class; Ljava/lang/String;)Ljava/lang/Class;
+	15      (00000042) move-result-object   v1
+	16      (00000044) iput-object          v1, v0, Lcom/jgamelbe/CMP/e/r;->g Ljava/lang/Class;
+	17      (00000048) const-string         v0, 'adService'
+	18      (0000004c) invoke-static        v3, v0, v4, Lcom/jgamelbe/CMP/e/o;->b(Landroid/content/Context; Ljava/lang/String; Ljava/lang/String;)V
+	19      (00000052) return-void          
+

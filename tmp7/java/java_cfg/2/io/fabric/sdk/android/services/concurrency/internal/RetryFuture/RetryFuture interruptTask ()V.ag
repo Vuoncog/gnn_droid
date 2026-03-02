@@ -1,0 +1,21 @@
+# Lio/fabric/sdk/android/services/concurrency/internal/RetryFuture;->interruptTask()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+interruptTask-BB@0x0 : [ interruptTask-BB@0x16 interruptTask-BB@0x1c ]
+	0       (00000000) iget-object          v0, v2, Lio/fabric/sdk/android/services/concurrency/internal/RetryFuture;->runner Ljava/util/concurrent/atomic/AtomicReference;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-virtual       v0, v1, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) check-cast           v0, Ljava/lang/Thread;
+	5       (00000012) if-eqz               v0, +5
+
+interruptTask-BB@0x16 : [ interruptTask-BB@0x1c ]
+	6       (00000016) invoke-virtual       v0, Ljava/lang/Thread;->interrupt()V
+
+interruptTask-BB@0x1c : 
+	7       (0000001c) return-void          
+

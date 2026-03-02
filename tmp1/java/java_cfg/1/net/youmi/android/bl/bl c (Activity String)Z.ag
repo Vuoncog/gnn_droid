@@ -1,0 +1,176 @@
+# Lnet/youmi/android/bl;->c(Landroid/app/Activity; Ljava/lang/String;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.app.Activity
+# - v9:java.lang.String
+#
+# - return:boolean
+
+c-BB@0x0 : [ c-BB@0x6 ]
+	0       (00000000) const/4              v5, -1
+	1       (00000002) const/4              v7, 0
+	2       (00000004) const/4              v6, 0
+
+c-BB@0x6 : [ c-BB@0x16 c-BB@0x128 ]
+	3       (00000006) const-string         v0, 'youmi://geo/'
+	4       (0000000a) invoke-virtual       v9, v0, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	5       (00000010) move-result          v0
+	6       (00000012) if-nez               v0, +8b
+	6:41
+	(Ljava/lang/Exception; -> 126 c-BB@0x126)
+
+c-BB@0x16 : [ c-BB@0x3a c-BB@0x142 ]
+	7       (00000016) const-string         v0, 'youmi://geo/'
+	8       (0000001a) invoke-virtual       v0, Ljava/lang/String;->length()I
+	9       (00000020) move-result          v0
+	10      (00000022) invoke-virtual       v9, v0, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	11      (00000028) move-result-object   v0
+	12      (0000002a) const-string         v1, '/'
+	13      (0000002e) invoke-virtual       v0, v1, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	14      (00000034) move-result          v1
+	15      (00000036) if-le                v1, v5, +86
+	6:41
+	(Ljava/lang/Exception; -> 126 c-BB@0x126)
+
+c-BB@0x3a : [ c-BB@0x44 ]
+	16      (0000003a) const/4              v2, 0
+	17      (0000003c) invoke-virtual       v0, v2, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	18      (00000042) move-result-object   v2
+
+c-BB@0x44 : [ c-BB@0x54 c-BB@0x13c ]
+	19      (00000044) invoke-virtual       v0, Ljava/lang/String;->length()I
+	20      (0000004a) move-result          v3
+	21      (0000004c) add-int/lit8         v4, v1, 1
+	22      (00000050) if-le                v3, v4, +76
+	44:5d
+	(Ljava/lang/Exception; -> 11e c-BB@0x11e)
+
+c-BB@0x54 : [ c-BB@0x62 ]
+	23      (00000054) add-int/lit8         v1, v1, 1
+	24      (00000058) invoke-virtual       v0, v1, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	25      (0000005e) move-result-object   v0
+	26      (00000060) move-object          v1, v2
+
+c-BB@0x62 : [ c-BB@0x66 c-BB@0x136 ]
+	27      (00000062) if-eqz               v0, +6a
+
+c-BB@0x66 : [ c-BB@0x76 c-BB@0x136 ]
+	28      (00000066) const-string         v2, '/'
+	29      (0000006a) invoke-virtual       v0, v2, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	30      (00000070) move-result          v2
+	31      (00000072) if-le                v2, v5, +62
+	66:101
+	(Ljava/lang/Exception; -> 126 c-BB@0x126)
+
+c-BB@0x76 : [ c-BB@0x90 c-BB@0x130 ]
+	32      (00000076) const/4              v3, 0
+	33      (00000078) invoke-virtual       v0, v3, v2, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	34      (0000007e) move-result-object   v3
+	35      (00000080) invoke-virtual       v0, Ljava/lang/String;->length()I
+	36      (00000086) move-result          v4
+	37      (00000088) add-int/lit8         v5, v2, 1
+	38      (0000008c) if-le                v4, v5, +52
+	66:101
+	(Ljava/lang/Exception; -> 126 c-BB@0x126)
+
+c-BB@0x90 : [ c-BB@0x9e ]
+	39      (00000090) add-int/lit8         v2, v2, 1
+	40      (00000094) invoke-virtual       v0, v2, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	41      (0000009a) move-result-object   v0
+	42      (0000009c) move-object          v2, v3
+	66:101
+	(Ljava/lang/Exception; -> 126 c-BB@0x126)
+
+c-BB@0x9e : [ c-BB@0xa2 c-BB@0x11a ]
+	43      (0000009e) if-eqz               v1, +3e
+	66:101
+	(Ljava/lang/Exception; -> 126 c-BB@0x126)
+
+c-BB@0xa2 : [ c-BB@0xa6 c-BB@0x11a ]
+	44      (000000a2) if-eqz               v2, +3c
+	66:101
+	(Ljava/lang/Exception; -> 126 c-BB@0x126)
+
+c-BB@0xa6 : [ c-BB@0xaa c-BB@0x11a ]
+	45      (000000a6) if-eqz               v0, +3a
+	66:101
+	(Ljava/lang/Exception; -> 126 c-BB@0x126)
+
+c-BB@0xaa : [ c-BB@0x102 ]
+	46      (000000aa) new-instance         v3, Ljava/lang/StringBuilder;
+	47      (000000ae) const-string         v4, 'geo:'
+	48      (000000b2) invoke-direct        v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	49      (000000b8) invoke-virtual       v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	50      (000000be) move-result-object   v0
+	51      (000000c0) const-string         v3, ','
+	52      (000000c4) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000ca) move-result-object   v0
+	54      (000000cc) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	55      (000000d2) move-result-object   v0
+	56      (000000d4) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	57      (000000da) move-result-object   v0
+	58      (000000dc) new-instance         v2, Landroid/content/Intent;
+	59      (000000e0) const-string         v3, 'android.intent.action.VIEW'
+	60      (000000e4) invoke-static        v0, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+	61      (000000ea) move-result-object   v0
+	62      (000000ec) invoke-direct        v2, v3, v0, Landroid/content/Intent;-><init>(Ljava/lang/String; Landroid/net/Uri;)V
+	63      (000000f2) const/high16         v0, 4096 # [2.524354896707238e-29]
+	64      (000000f6) invoke-virtual       v2, v0, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+	65      (000000fc) invoke-virtual       v8, v2, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+	66:101
+	(Ljava/lang/Exception; -> 126 c-BB@0x126)
+
+c-BB@0x102 : [ c-BB@0x11a ]
+	66      (00000102) invoke-static        Lnet/youmi/android/aj;->a()Lnet/youmi/android/ax;
+	67      (00000108) move-result-object   v0
+	68      (0000010a) invoke-virtual       v0, Lnet/youmi/android/ax;->f()I
+	69      (00000110) move-result          v0
+	70      (00000112) const/4              v2, 3
+	71      (00000114) invoke-static        v8, v0, v1, v2, Lnet/youmi/android/a;->b(Landroid/app/Activity; I Ljava/lang/String; I)V
+	102:119
+	(Ljava/lang/Exception; -> 12c c-BB@0x12c)
+
+c-BB@0x11a : [ c-BB@0x11c ]
+	72      (0000011a) const/4              v0, 1
+
+c-BB@0x11c : 
+	73      (0000011c) return               v0
+
+c-BB@0x11e : [ c-BB@0x62 ]
+	74      (0000011e) move-exception       v0
+	75      (00000120) move-object          v0, v6
+	76      (00000122) move-object          v1, v2
+	77      (00000124) goto                 -61
+
+c-BB@0x126 : [ c-BB@0x128 ]
+	78      (00000126) move-exception       v0
+
+c-BB@0x128 : [ c-BB@0x11c ]
+	79      (00000128) move                 v0, v7
+	80      (0000012a) goto                 -7
+
+c-BB@0x12c : [ c-BB@0x11a ]
+	81      (0000012c) move-exception       v0
+	82      (0000012e) goto                 -a
+
+c-BB@0x130 : [ c-BB@0x9e ]
+	83      (00000130) move-object          v0, v6
+	84      (00000132) move-object          v2, v3
+	85      (00000134) goto                 -4b
+
+c-BB@0x136 : [ c-BB@0x9e ]
+	86      (00000136) move-object          v0, v6
+	87      (00000138) move-object          v2, v6
+	88      (0000013a) goto                 -4e
+
+c-BB@0x13c : [ c-BB@0x62 ]
+	89      (0000013c) move-object          v0, v6
+	90      (0000013e) move-object          v1, v2
+	91      (00000140) goto                 -6f
+
+c-BB@0x142 : [ c-BB@0x62 ]
+	92      (00000142) move-object          v0, v6
+	93      (00000144) move-object          v1, v6
+	94      (00000146) goto                 -72
+

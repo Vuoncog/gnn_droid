@@ -1,0 +1,54 @@
+# Lnet/youmi/android/bs;-><init>(Lnet/youmi/android/bb; Landroid/app/Activity; I Lnet/youmi/android/ak;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:net.youmi.android.bb
+# - v7:android.app.Activity
+# - v8:int
+# - v9:net.youmi.android.ak
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/16             v4, 16
+	1       (00000004) const/16             v3, 8
+	2       (00000008) const/4              v2, 2
+	3       (0000000a) const/4              v1, -2
+	4       (0000000c) iput-object          v6, v5, Lnet/youmi/android/bs;->f Lnet/youmi/android/bb;
+	5       (00000010) invoke-direct        v5, v7, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+	6       (00000016) new-instance         v0, Landroid/widget/TextView;
+	7       (0000001a) invoke-direct        v0, v7, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+	8       (00000020) iput-object          v0, v5, Lnet/youmi/android/bs;->a Landroid/widget/TextView;
+	9       (00000024) iget-object          v0, v5, Lnet/youmi/android/bs;->a Landroid/widget/TextView;
+	10      (00000028) invoke-virtual       v0, v2, Landroid/widget/TextView;->setMaxLines(I)V
+	11      (0000002e) iget-object          v0, v5, Lnet/youmi/android/bs;->a Landroid/widget/TextView;
+	12      (00000032) invoke-virtual       v0, v4, Landroid/widget/TextView;->setGravity(I)V
+	13      (00000038) iget-object          v0, v5, Lnet/youmi/android/bs;->a Landroid/widget/TextView;
+	14      (0000003c) invoke-virtual       v0, v8, Landroid/widget/TextView;->setTextColor(I)V
+	15      (00000042) new-instance         v0, Landroid/widget/TextView;
+	16      (00000046) invoke-direct        v0, v7, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+	17      (0000004c) iput-object          v0, v5, Lnet/youmi/android/bs;->b Landroid/widget/TextView;
+	18      (00000050) iget-object          v0, v5, Lnet/youmi/android/bs;->b Landroid/widget/TextView;
+	19      (00000054) invoke-virtual       v0, v2, Landroid/widget/TextView;->setMaxLines(I)V
+	20      (0000005a) iget-object          v0, v5, Lnet/youmi/android/bs;->b Landroid/widget/TextView;
+	21      (0000005e) invoke-virtual       v0, v4, Landroid/widget/TextView;->setGravity(I)V
+	22      (00000064) iget-object          v0, v5, Lnet/youmi/android/bs;->b Landroid/widget/TextView;
+	23      (00000068) invoke-virtual       v0, v8, Landroid/widget/TextView;->setTextColor(I)V
+	24      (0000006e) iget-object          v0, v5, Lnet/youmi/android/bs;->a Landroid/widget/TextView;
+	25      (00000072) invoke-virtual       v0, v3, Landroid/widget/TextView;->setVisibility(I)V
+	26      (00000078) iget-object          v0, v5, Lnet/youmi/android/bs;->b Landroid/widget/TextView;
+	27      (0000007c) invoke-virtual       v0, v3, Landroid/widget/TextView;->setVisibility(I)V
+	28      (00000082) new-instance         v0, Landroid/widget/FrameLayout$LayoutParams;
+	29      (00000086) invoke-direct        v0, v1, v1, Landroid/widget/FrameLayout$LayoutParams;-><init>(I I)V
+	30      (0000008c) iget-object          v1, v5, Lnet/youmi/android/bs;->a Landroid/widget/TextView;
+	31      (00000090) invoke-virtual       v5, v1, v0, Lnet/youmi/android/bs;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	32      (00000096) iget-object          v1, v5, Lnet/youmi/android/bs;->b Landroid/widget/TextView;
+	33      (0000009a) invoke-virtual       v5, v1, v0, Lnet/youmi/android/bs;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	34      (000000a0) invoke-static        v9, Lnet/youmi/android/r;->a(Lnet/youmi/android/ak;)Landroid/view/animation/Animation;
+	35      (000000a6) move-result-object   v0
+	36      (000000a8) iput-object          v0, v5, Lnet/youmi/android/bs;->d Landroid/view/animation/Animation;
+	37      (000000ac) invoke-static        v9, Lnet/youmi/android/r;->b(Lnet/youmi/android/ak;)Landroid/view/animation/Animation;
+	38      (000000b2) move-result-object   v0
+	39      (000000b4) iput-object          v0, v5, Lnet/youmi/android/bs;->e Landroid/view/animation/Animation;
+	40      (000000b8) return-void          
+

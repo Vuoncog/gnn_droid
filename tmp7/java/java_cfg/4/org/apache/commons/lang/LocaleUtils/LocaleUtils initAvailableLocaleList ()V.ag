@@ -1,0 +1,37 @@
+# Lorg/apache/commons/lang/LocaleUtils;->initAvailableLocaleList()V [access_flags=private static synchronized]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+initAvailableLocaleList-BB@0x0 : [ initAvailableLocaleList-BB@0x6 ]
+	0       (00000000) const-class          v1, Lorg/apache/commons/lang/LocaleUtils;
+	1       (00000004) monitor-enter        v1
+
+initAvailableLocaleList-BB@0x6 : [ initAvailableLocaleList-BB@0xe initAvailableLocaleList-BB@0x2a ]
+	2       (00000006) sget-object          v0, Lorg/apache/commons/lang/LocaleUtils;->cAvailableLocaleList Ljava/util/List;
+	3       (0000000a) if-nez               v0, +10
+	6:29
+	(Ljava/lang/Throwable; -> 2e initAvailableLocaleList-BB@0x2e)
+
+initAvailableLocaleList-BB@0xe : [ initAvailableLocaleList-BB@0x2a ]
+	4       (0000000e) invoke-static        Ljava/util/Locale;->getAvailableLocales()[Ljava/util/Locale;
+	5       (00000014) move-result-object   v0
+	6       (00000016) invoke-static        v0, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) invoke-static        v0, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+	9       (00000024) move-result-object   v0
+	10      (00000026) sput-object          v0, Lorg/apache/commons/lang/LocaleUtils;->cAvailableLocaleList Ljava/util/List;
+	6:29
+	(Ljava/lang/Throwable; -> 2e initAvailableLocaleList-BB@0x2e)
+
+initAvailableLocaleList-BB@0x2a : 
+	11      (0000002a) monitor-exit         v1
+	12      (0000002c) return-void          
+
+initAvailableLocaleList-BB@0x2e : 
+	13      (0000002e) move-exception       v0
+	14      (00000030) monitor-exit         v1
+	15      (00000032) throw                v0
+

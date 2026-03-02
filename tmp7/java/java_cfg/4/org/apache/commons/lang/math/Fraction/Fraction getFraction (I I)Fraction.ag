@@ -1,0 +1,43 @@
+# Lorg/apache/commons/lang/math/Fraction;->getFraction(I I)Lorg/apache/commons/lang/math/Fraction; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:org.apache.commons.lang.math.Fraction
+
+getFraction-BB@0x0 : [ getFraction-BB@0x8 getFraction-BB@0x18 ]
+	0       (00000000) const/high16         v0, -32768 # [-0.0]
+	1       (00000004) if-nez               v3, +a
+
+getFraction-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/ArithmeticException;
+	3       (0000000c) const-string         v1, 'The denominator must not be zero'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+getFraction-BB@0x18 : [ getFraction-BB@0x1c getFraction-BB@0x38 ]
+	6       (00000018) if-gez               v3, +10
+
+getFraction-BB@0x1c : [ getFraction-BB@0x20 getFraction-BB@0x24 ]
+	7       (0000001c) if-eq                v2, v0, +4
+
+getFraction-BB@0x20 : [ getFraction-BB@0x24 getFraction-BB@0x34 ]
+	8       (00000020) if-ne                v3, v0, +a
+
+getFraction-BB@0x24 : 
+	9       (00000024) new-instance         v0, Ljava/lang/ArithmeticException;
+	10      (00000028) const-string         v1, "overflow: can't negate"
+	11      (0000002c) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	12      (00000032) throw                v0
+
+getFraction-BB@0x34 : [ getFraction-BB@0x38 ]
+	13      (00000034) neg-int              v2, v2
+	14      (00000036) neg-int              v3, v3
+
+getFraction-BB@0x38 : 
+	15      (00000038) new-instance         v0, Lorg/apache/commons/lang/math/Fraction;
+	16      (0000003c) invoke-direct        v0, v2, v3, Lorg/apache/commons/lang/math/Fraction;-><init>(I I)V
+	17      (00000042) return-object        v0
+

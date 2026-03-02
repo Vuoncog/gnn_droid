@@ -1,0 +1,26 @@
+# La/a/b/a/b/a/d/c;->a(La/a/b/a/i/e/a; La/a/b/a/k/a;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:a.a.b.a.i.e.a
+# - v3:a.a.b.a.k.a
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0x16 ]
+	0       (00000000) iget                 v0, v1, La/a/b/a/b/a/d/c;->a I
+	1       (00000004) if-lez               v0, +9
+
+a-BB@0x8 : [ a-BB@0x14 ]
+	2       (00000008) iget                 v0, v1, La/a/b/a/b/a/d/c;->a I
+	3       (0000000c) add-int/lit8         v0, v0, -1
+	4       (00000010) iput                 v0, v1, La/a/b/a/b/a/d/c;->a I
+
+a-BB@0x14 : 
+	5       (00000014) return-void          
+
+a-BB@0x16 : [ a-BB@0x14 ]
+	6       (00000016) iget-object          v0, v1, La/a/b/a/b/a/d/c;->b La/a/b/a/b/a/g;
+	7       (0000001a) invoke-interface     v0, v2, v3, La/a/b/a/b/a/g;->a(La/a/b/a/i/e/a; La/a/b/a/k/a;)V
+	8       (00000020) goto                 -6
+

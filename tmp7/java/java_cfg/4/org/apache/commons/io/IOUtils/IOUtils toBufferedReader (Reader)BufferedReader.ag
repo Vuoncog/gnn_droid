@@ -1,0 +1,24 @@
+# Lorg/apache/commons/io/IOUtils;->toBufferedReader(Ljava/io/Reader;)Ljava/io/BufferedReader; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.Reader
+#
+# - return:java.io.BufferedReader
+
+toBufferedReader-BB@0x0 : [ toBufferedReader-BB@0x8 toBufferedReader-BB@0xe ]
+	0       (00000000) instance-of          v0, v1, Ljava/io/BufferedReader;
+	1       (00000004) if-eqz               v0, +5
+
+toBufferedReader-BB@0x8 : [ toBufferedReader-BB@0xc ]
+	2       (00000008) check-cast           v1, Ljava/io/BufferedReader;
+
+toBufferedReader-BB@0xc : 
+	3       (0000000c) return-object        v1
+
+toBufferedReader-BB@0xe : [ toBufferedReader-BB@0xc ]
+	4       (0000000e) new-instance         v0, Ljava/io/BufferedReader;
+	5       (00000012) invoke-direct        v0, v1, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+	6       (00000018) move-object          v1, v0
+	7       (0000001a) goto                 -7
+

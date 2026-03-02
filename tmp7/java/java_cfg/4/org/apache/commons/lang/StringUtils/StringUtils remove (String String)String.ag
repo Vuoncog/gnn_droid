@@ -1,0 +1,29 @@
+# Lorg/apache/commons/lang/StringUtils;->remove(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:java.lang.String
+#
+# - return:java.lang.String
+
+remove-BB@0x0 : [ remove-BB@0xc remove-BB@0x18 ]
+	0       (00000000) invoke-static        v2, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +8
+
+remove-BB@0xc : [ remove-BB@0x18 remove-BB@0x1a ]
+	3       (0000000c) invoke-static        v3, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +3
+
+remove-BB@0x18 : 
+	6       (00000018) return-object        v2
+
+remove-BB@0x1a : [ remove-BB@0x18 ]
+	7       (0000001a) const-string         v0, ''
+	8       (0000001e) const/4              v1, -1
+	9       (00000020) invoke-static        v2, v3, v0, v1, Lorg/apache/commons/lang/StringUtils;->replace(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; I)Ljava/lang/String;
+	10      (00000026) move-result-object   v2
+	11      (00000028) goto                 -8
+

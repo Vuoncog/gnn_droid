@@ -1,0 +1,37 @@
+# Lorg/apache/commons/lang/builder/CompareToBuilder;->append(S S)Lorg/apache/commons/lang/builder/CompareToBuilder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:short
+# - v3:short
+#
+# - return:org.apache.commons.lang.builder.CompareToBuilder
+
+append-BB@0x0 : [ append-BB@0x8 append-BB@0xa ]
+	0       (00000000) iget                 v0, v1, Lorg/apache/commons/lang/builder/CompareToBuilder;->comparison I
+	1       (00000004) if-eqz               v0, +3
+
+append-BB@0x8 : 
+	2       (00000008) return-object        v1
+
+append-BB@0xa : [ append-BB@0xe append-BB@0x16 ]
+	3       (0000000a) if-ge                v2, v3, +6
+
+append-BB@0xe : [ append-BB@0x10 ]
+	4       (0000000e) const/4              v0, -1
+
+append-BB@0x10 : [ append-BB@0x8 ]
+	5       (00000010) iput                 v0, v1, Lorg/apache/commons/lang/builder/CompareToBuilder;->comparison I
+	6       (00000014) goto                 -6
+
+append-BB@0x16 : [ append-BB@0x1a append-BB@0x1e ]
+	7       (00000016) if-le                v2, v3, +4
+
+append-BB@0x1a : [ append-BB@0x10 ]
+	8       (0000001a) const/4              v0, 1
+	9       (0000001c) goto                 -6
+
+append-BB@0x1e : [ append-BB@0x10 ]
+	10      (0000001e) const/4              v0, 0
+	11      (00000020) goto                 -8
+

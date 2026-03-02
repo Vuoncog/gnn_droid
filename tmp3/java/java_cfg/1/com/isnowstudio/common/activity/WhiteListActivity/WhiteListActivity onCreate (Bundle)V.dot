@@ -1,0 +1,134 @@
+digraph {
+	graph [bb="0,0,1792,1447",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_a38c2ac6dfcfbe3e4ff92875600e0f91 {
+		graph [bb="8,8,1784,1439",
+			label="Lcom/isnowstudio/common/activity/WhiteListActivity;.onCreate->(Landroid/os/Bundle;)V\nLocal registers v0 ... v6\nparam v7 = android.os.Bundle\nreturn = \
+void",
+			lheight=0.83,
+			lp="896,1405",
+			lwidth=8.11
+		];
+		struct_8495f32a6d50df6ba4a18cd8b8b9442a	[height=5.8472,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v5</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#92924C">v2</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-super </FONT> <FONT color="#8C8C66">v6</FONT>, <FONT color="#85857F">v7</FONT>, <FONT color="#DF3A01">Landroid/app/ListActivity;-&gt;onCreate(Landroid/os/Bundle;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="red">'whitelist'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v6</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#92924C">v2</FONT>, <FONT color="#DF3A01">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;getSharedPreferences(Ljava/lang/String; I)Landroid/content/SharedPreferences;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#8C8C66">v6</FONT>, <FONT color="#088A08">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;b Landroid/content/SharedPreferences;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v6</FONT>, <FONT color="#DF3A01">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;getIntent()Landroid/content/Intent;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7979B2">v1</FONT>, <FONT color="red">'sys_app'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#7979B2">v1</FONT>, <FONT color="#92924C">v2</FONT>, <FONT color="#DF3A01">Landroid/content/Intent;-&gt;getBooleanExtra(Ljava/lang/String; Z)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7979B2">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v6</FONT>, <FONT color="#DF3A01">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;getPackageManager()Landroid/content/pm/PackageManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#92924C">v2</FONT>, <FONT color="#DF3A01">Landroid/content/pm/PackageManager;-&gt;getInstalledApplications(I)Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;iterator()Ljava/util/Iterator;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#92924C">v2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="601,1152.5",
+			width=15.708];
+		struct_c863d40a0ec42eefc581ea032bb22f4b	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">46</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#92924C">v2</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;hasNext()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x29</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="241,860.5",
+			width=5.6944];
+		struct_8495f32a6d50df6ba4a18cd8b8b9442a:tail -> struct_c863d40a0ec42eefc581ea032bb22f4b:header	[color=blue,
+			pos="e,61,899.5 61,947.5 61,930 61,923.27 61,909.64"];
+		struct_dc67f433c8e07f128a51154922a3008f	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">52</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#92924C">v2</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;next()Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">58</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#0000FF">Landroid/content/pm/ApplicationInfo;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7979B2">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="304,623.5",
+			width=6.8889];
+		struct_c863d40a0ec42eefc581ea032bb22f4b:tail -> struct_dc67f433c8e07f128a51154922a3008f:header	[color=red,
+			pos="e,81,673.5 61,820.5 61,758.04 78.946,741.17 80.839,683.52"];
+		struct_0d6b6ac6162475c83bbb78f09c7dff0c	[height=4.3194,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#0000FF">Lcom/isnowstudio/common/activity/c;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7979B2">v1</FONT>, <FONT color="#8C8C66">v6</FONT>, <FONT color="#088A08">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;d Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#8C8C66">v6</FONT>, <FONT color="#8C8C66">v6</FONT>, <FONT color="#7979B2">v1</FONT>, <FONT color="#DF3A01">Lcom/isnowstudio/common/activity/c;-&gt;&lt;init&gt;(Lcom/isnowstudio/common/activity/WhiteListActivity; Landroid/content/Context; Ljava/util/List;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ae</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#8C8C66">v6</FONT>, <FONT color="#088A08">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;c Lcom/isnowstudio/common/activity/c;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#8C8C66">v6</FONT>, <FONT color="#088A08">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;c Lcom/isnowstudio/common/activity/c;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v6</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;setListAdapter(Landroid/widget/ListAdapter;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">bc</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v6</FONT>, <FONT color="#DF3A01">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;getListView()Landroid/widget/ListView;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#999933">v5</FONT>, <FONT color="#DF3A01">Landroid/widget/ListView;-&gt;setTextFilterEnabled(Z)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ca</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#7979B2">v1</FONT>, <FONT color="#0000FF">Lcom/isnowstudio/common/activity/a;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ce</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7979B2">v1</FONT>, <FONT color="#8C8C66">v6</FONT>, <FONT color="#DF3A01">Lcom/isnowstudio/common/activity/a;-&gt;&lt;init&gt;(Lcom/isnowstudio/common/activity/WhiteListActivity;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">d4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#7979B2">v1</FONT>, <FONT color="#DF3A01">Landroid/widget/ListView;-&gt;setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">da</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1173,623.5",
+			width=16.75];
+		struct_c863d40a0ec42eefc581ea032bb22f4b:tail -> struct_0d6b6ac6162475c83bbb78f09c7dff0c:header	[color=green,
+			pos="e,580,769.5 61,820.5 61,764.75 507.32,794.04 561,779 565.55,777.73 567.94,775.35 570.37,773.29"];
+		struct_d889e44a8b1f2dd02a94a1379a6a5f1a	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">62</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#088A08">Landroid/content/pm/ApplicationInfo;-&gt;flags I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">66</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">and-int/lit8 </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#7272CC">v3</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eq </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#999933">v5</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x-12</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="261,386.5",
+			width=6.25];
+		struct_dc67f433c8e07f128a51154922a3008f:tail -> struct_d889e44a8b1f2dd02a94a1379a6a5f1a:header	[color=red,
+			pos="e,61,425.5 81,572.5 81,510.04 63.054,493.17 61.161,435.52"];
+		struct_21a106e3d5a0c7e335121ffe17879d18	[height=4.0139,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#0000FF">Lcom/isnowstudio/common/activity/b;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">72</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7272CC">v3</FONT>, <FONT color="#8C8C66">v6</FONT>, <FONT color="#DF3A01">Lcom/isnowstudio/common/activity/b;-&gt;&lt;init&gt;(Lcom/isnowstudio/common/activity/WhiteListActivity;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">78</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#6C6CE5">v4</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#088A08">Landroid/content/pm/ApplicationInfo;-&gt;packageName Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#6C6CE5">v4</FONT>, <FONT color="#7272CC">v3</FONT>, <FONT color="#088A08">Lcom/isnowstudio/common/activity/b;-&gt;a Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">80</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#6C6CE5">v4</FONT>, <FONT color="#088A08">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;a Ljava/util/Map;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">84</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#088A08">Landroid/content/pm/ApplicationInfo;-&gt;packageName Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">88</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#6C6CE5">v4</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Ljava/util/Map;-&gt;containsKey(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">90</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-boolean </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#7272CC">v3</FONT>, <FONT color="#088A08">Lcom/isnowstudio/common/activity/b;-&gt;c Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">94</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#8C8C66">v6</FONT>, <FONT color="#088A08">Lcom/isnowstudio/common/activity/WhiteListActivity;-&gt;d Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">98</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#7272CC">v3</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;add(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">9e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2c</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="478,160.5",
+			width=12.278];
+		struct_dc67f433c8e07f128a51154922a3008f:tail -> struct_21a106e3d5a0c7e335121ffe17879d18:header	[color=green,
+			pos="e,61,298.5 81,572.5 81,378.19 381.81,589.94 495,432 518.56,399.13 522.17,370.96 495,341 432.44,272.02 89.357,385.85 62.649,308.86"];
+		struct_d889e44a8b1f2dd02a94a1379a6a5f1a:tail -> struct_c863d40a0ec42eefc581ea032bb22f4b:header	[color=green,
+			pos="e,46,896.5 46,349.5 17.807,349.5 15.77,820.3 39.888,888.34"];
+		struct_d889e44a8b1f2dd02a94a1379a6a5f1a:tail -> struct_21a106e3d5a0c7e335121ffe17879d18:header	[color=red,
+			pos="e,61,298.5 61,346.5 61,329 61,322.27 61,308.64"];
+		struct_21a106e3d5a0c7e335121ffe17879d18:tail -> struct_c863d40a0ec42eefc581ea032bb22f4b:header	[color=blue,
+			pos="e,46,896.5 46,24.5 41.514,24.5 -45.591,836.27 36.357,893.34"];
+	}
+}

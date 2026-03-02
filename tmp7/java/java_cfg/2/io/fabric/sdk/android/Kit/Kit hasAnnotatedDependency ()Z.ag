@@ -1,0 +1,21 @@
+# Lio/fabric/sdk/android/Kit;->hasAnnotatedDependency()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+hasAnnotatedDependency-BB@0x0 : [ hasAnnotatedDependency-BB@0x8 hasAnnotatedDependency-BB@0xc ]
+	0       (00000000) iget-object          v0, v1, Lio/fabric/sdk/android/Kit;->dependsOnAnnotation Lio/fabric/sdk/android/services/concurrency/DependsOn;
+	1       (00000004) if-eqz               v0, +4
+
+hasAnnotatedDependency-BB@0x8 : [ hasAnnotatedDependency-BB@0xa ]
+	2       (00000008) const/4              v0, 1
+
+hasAnnotatedDependency-BB@0xa : 
+	3       (0000000a) return               v0
+
+hasAnnotatedDependency-BB@0xc : [ hasAnnotatedDependency-BB@0xa ]
+	4       (0000000c) const/4              v0, 0
+	5       (0000000e) goto                 -2
+

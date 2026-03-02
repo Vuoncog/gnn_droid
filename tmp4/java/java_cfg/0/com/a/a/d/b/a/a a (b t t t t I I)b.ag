@@ -1,0 +1,60 @@
+# Lcom/a/a/d/b/a;->a(Lcom/a/a/c/b; Lcom/a/a/t; Lcom/a/a/t; Lcom/a/a/t; Lcom/a/a/t; I I)Lcom/a/a/c/b; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v20
+# - v21:com.a.a.c.b
+# - v22:com.a.a.t
+# - v23:com.a.a.t
+# - v24:com.a.a.t
+# - v25:com.a.a.t
+# - v26:int
+# - v27:int
+#
+# - return:com.a.a.c.b
+
+a-BB@0x0 : 
+	0       (00000000) invoke-static        Lcom/a/a/c/i;->a()Lcom/a/a/c/i;
+	1       (00000006) move-result-object   v1
+	2       (00000008) const/high16         v5, 16128 # [0.5]
+	3       (0000000c) const/high16         v6, 16128 # [0.5]
+	4       (00000010) move/from16          v0, v26
+	5       (00000014) int-to-float         v2, v0
+	6       (00000016) const/high16         v3, 16128 # [0.5]
+	7       (0000001a) sub-float            v7, v2, v3
+	8       (0000001e) const/high16         v8, 16128 # [0.5]
+	9       (00000022) move/from16          v0, v26
+	10      (00000026) int-to-float         v2, v0
+	11      (00000028) const/high16         v3, 16128 # [0.5]
+	12      (0000002c) sub-float            v9, v2, v3
+	13      (00000030) move/from16          v0, v27
+	14      (00000034) int-to-float         v2, v0
+	15      (00000036) const/high16         v3, 16128 # [0.5]
+	16      (0000003a) sub-float            v10, v2, v3
+	17      (0000003e) const/high16         v11, 16128 # [0.5]
+	18      (00000042) move/from16          v0, v27
+	19      (00000046) int-to-float         v2, v0
+	20      (00000048) const/high16         v3, 16128 # [0.5]
+	21      (0000004c) sub-float            v12, v2, v3
+	22      (00000050) invoke-virtual/range v22, Lcom/a/a/t;->a()F
+	23      (00000056) move-result          v13
+	24      (00000058) invoke-virtual/range v22, Lcom/a/a/t;->b()F
+	25      (0000005e) move-result          v14
+	26      (00000060) invoke-virtual/range v25, Lcom/a/a/t;->a()F
+	27      (00000066) move-result          v15
+	28      (00000068) invoke-virtual/range v25, Lcom/a/a/t;->b()F
+	29      (0000006e) move-result          v16
+	30      (00000070) invoke-virtual/range v24, Lcom/a/a/t;->a()F
+	31      (00000076) move-result          v17
+	32      (00000078) invoke-virtual/range v24, Lcom/a/a/t;->b()F
+	33      (0000007e) move-result          v18
+	34      (00000080) invoke-virtual/range v23, Lcom/a/a/t;->a()F
+	35      (00000086) move-result          v19
+	36      (00000088) invoke-virtual/range v23, Lcom/a/a/t;->b()F
+	37      (0000008e) move-result          v20
+	38      (00000090) move-object/from16   v2, v21
+	39      (00000094) move/from16          v3, v26
+	40      (00000098) move/from16          v4, v27
+	41      (0000009c) invoke-virtual/range v1 ... v20, Lcom/a/a/c/i;->a(Lcom/a/a/c/b; I I F F F F F F F F F F F F F F F F)Lcom/a/a/c/b;
+	42      (000000a2) move-result-object   v1
+	43      (000000a4) return-object        v1
+

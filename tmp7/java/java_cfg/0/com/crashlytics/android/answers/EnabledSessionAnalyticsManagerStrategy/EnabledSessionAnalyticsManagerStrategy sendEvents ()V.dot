@@ -1,0 +1,271 @@
+digraph {
+	graph [bb="0,0,1551,2631",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_17c6ae9006dc5944883ed252fe74e6d4 {
+		graph [bb="8,8,1543,2623",
+			label="Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;.sendEvents->()V\nLocal registers v0 ... v9\nreturn = void",
+			lheight=0.62,
+			lp="775.5,2596.5",
+			lwidth=8.62
+		];
+		struct_0eca16ac4802f4eca03832e40db81d1c	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v1</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;filesSender Lio/fabric/sdk/android/services/events/FilesSender;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#939347">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="682,2516.5",
+			width=15.625];
+		struct_d5ce91bebe08eb02151c45d551396a13	[height=1.8333,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;context Landroid/content/Context;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#999933">v1</FONT>, <FONT color="red"><br/>"skipping files send because we<br/>don't yet know the target<br/>endpoint"</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;logControlled(Landroid/content/Context; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="567,2149",
+			width=13.694];
+		struct_0eca16ac4802f4eca03832e40db81d1c:tail -> struct_d5ce91bebe08eb02151c45d551396a13:header	[color=red,
+			pos="e,99,2209 130,2479.5 12.418,2479.5 94.071,2338.4 98.79,2219.3"];
+		struct_deeb6c875e9c126fffaeac15d2f04cf3	[height=2.7917,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;context Landroid/content/Context;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#898970">v2</FONT>, <FONT color="red">'Sending all files'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#898970">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;logControlled(Landroid/content/Context; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;filesManager Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;-&gt;getBatchOfFilesToSend()Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#939347">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-object </FONT> <FONT color="#898970">v2</FONT>, <FONT color="#939347">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="884,2333.5",
+			width=17.236];
+		struct_0eca16ac4802f4eca03832e40db81d1c:tail -> struct_deeb6c875e9c126fffaeac15d2f04cf3:header	[color=green,
+			pos="e,274,2424.5 141,2476.5 141,2447.6 224.89,2428.2 263.89,2425"];
+		struct_b199e17fdc2721437cfa26a8cfb3cddd	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="91,39.5",
+			width=2.0694];
+		struct_d5ce91bebe08eb02151c45d551396a13:tail -> struct_b199e17fdc2721437cfa26a8cfb3cddd:header	[color=blue,
+			pos="e,27,53.5 84,2092 16.619,2092 17,2023.4 17,1956 17,1956 17,1956 17,144.5 17,107.79 -7.9868,63.235 17.027,54.884"];
+		struct_b3026c65716ad1a525c3952e3d94f433	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#898970">v2</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;size()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">40</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-lez </FONT> <FONT color="#999933">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x32</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1359,2019.5",
+			width=4.875];
+		struct_deeb6c875e9c126fffaeac15d2f04cf3:tail -> struct_b3026c65716ad1a525c3952e3d94f433:header	[color=blue,
+			pos="e,1194,2055.5 289,2238.5 289,2195.1 1030.3,2234.6 1069,2215 1146.1,2176 1107.5,2065.1 1183.6,2056.1"];
+		struct_c587f48cab564c5a61cb4fa8333c8580	[height=6.2222,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;context Landroid/content/Context;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">48</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#848484">v3</FONT>, <FONT color="#088A08">Ljava/util/Locale;-&gt;US Ljava/util/Locale;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v4</FONT>, <FONT color="red"><br/>'attempt to send batch of %d<br/>files'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">50</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7A7AAD">v5</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">52</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-array </FONT> <FONT color="#7A7AAD">v5</FONT>, <FONT color="#7A7AAD">v5</FONT>, <FONT color="#0000FF">[Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">56</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7575C1">v6</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">58</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#898970">v2</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;size()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7070D6">v7</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">60</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7070D6">v7</FONT>, <FONT color="#DF3A01">Ljava/lang/Integer;-&gt;valueOf(I)Ljava/lang/Integer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">66</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7070D6">v7</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">68</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aput-object </FONT> <FONT color="#7070D6">v7</FONT>, <FONT color="#7A7AAD">v5</FONT>, <FONT color="#7575C1">v6</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#848484">v3</FONT>, <FONT color="#7F7F99">v4</FONT>, <FONT color="#7A7AAD">v5</FONT>, <FONT color="#DF3A01">Ljava/lang/String;-&gt;format(Ljava/util/Locale; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">72</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#848484">v3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">74</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#848484">v3</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;logControlled(Landroid/content/Context; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;filesSender Lio/fabric/sdk/android/services/events/FilesSender;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#898970">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/events/FilesSender;-&gt;send(Ljava/util/List;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">84</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#848484">v3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">86</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#848484">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xd</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="687,1713",
+			width=15.736];
+		struct_b3026c65716ad1a525c3952e3d94f433:tail -> struct_c587f48cab564c5a61cb4fa8333c8580:header	[color=red,
+			pos="e,146,1931 1194,1982.5 1166.5,1982.5 256.36,1962.6 155.12,1935.8"];
+		struct_1e470c5774d940c901fa237f991b7804	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#939347">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x-46</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="146,251.5",
+			width=2.3611];
+		struct_b3026c65716ad1a525c3952e3d94f433:tail -> struct_1e470c5774d940c901fa237f991b7804:header	[color=green,
+			pos="e,86,268.5 1209,1979.5 1209,1948 1317.8,1954.4 1344,1937 1452.6,1865.1 1534,1844.2 1534,1714 1534,1714 1534,1714 1534,502 1534,355.63 \
+1403.7,358.86 1265,312 1205.6,291.94 182.13,330.39 92.287,276.53"];
+		struct_5d97a14508ba2d8b216b67c3ee3ebd17	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-object </FONT> <FONT color="#6B6BEA">v8</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#939347">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ca</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-object </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#6B6BEA">v8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="792,787.5",
+			width=2.6944];
+		struct_b3026c65716ad1a525c3952e3d94f433:tail -> struct_5d97a14508ba2d8b216b67c3ee3ebd17:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="1444.5,1278.5",
+			pos="e,720,837.5 1209,1979.5 1209,1932.8 1274,1971.9 1305,1937 1374,1859.5 1374,1817.7 1374,1714 1374,1714 1374,1714 1374,961.5 1374,\
+797.21 1181.6,876.95 1018,862 987.95,859.25 766.68,868.69 726.31,845.56"];
+		struct_e50f40b14fa205150be2d2ff71103956	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#898970">v2</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;size()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">90</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">92</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/2addr </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#939347">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="272,1406.5",
+			width=4.875];
+		struct_c587f48cab564c5a61cb4fa8333c8580:tail -> struct_e50f40b14fa205150be2d2ff71103956:header	[color=red,
+			pos="e,122,1445.5 146,1495 146,1474.4 128.91,1470.7 123.57,1455.4"];
+		struct_3f0d2b0eaa0d20af119f65aa7ef1c6ac	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#848484">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="115,1158.5",
+			width=2.1806];
+		struct_c587f48cab564c5a61cb4fa8333c8580:tail -> struct_3f0d2b0eaa0d20af119f65aa7ef1c6ac:header	[color=green,
+			pos="e,47,1172.5 131,1498 103.01,1498 102.08,1476.2 88,1452 58.324,1401 -7.1832,1199.1 37.043,1174.9"];
+		struct_c587f48cab564c5a61cb4fa8333c8580:tail -> struct_5d97a14508ba2d8b216b67c3ee3ebd17:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="1284.5,1207.5",
+			pos="e,720,837.5 146,1495 146,1460.1 422.47,1457 457,1452 835.11,1397.4 1057.8,1613.6 1307,1324 1333.4,1293.3 1332.7,1264.2 1307,1233 \
+1280.2,1200.5 1240.8,1247.5 1214,1215 1209.8,1209.9 1212.1,1206.4 1214,1200 1255.8,1061.6 1424.3,1001.9 1327,895 1238.2,797.42 746.91,\
+963.79 721.06,847.57"];
+		struct_5b8ae949a1ffca216d66e7e03b37c847	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">94</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;filesManager Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">98</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#898970">v2</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;-&gt;deleteSentFiles(Ljava/util/List;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">9e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="677,1278.5",
+			width=17.236];
+		struct_e50f40b14fa205150be2d2ff71103956:tail -> struct_5b8ae949a1ffca216d66e7e03b37c847:header	[color=blue,
+			pos="e,82,1317.5 107,1369.5 84.762,1369.5 82.293,1349.7 82.029,1327.7"];
+		struct_5b8ae949a1ffca216d66e7e03b37c847:tail -> struct_3f0d2b0eaa0d20af119f65aa7ef1c6ac:header	[color=blue,
+			pos="e,62,1175.5 82,1238.5 82,1212.9 66.824,1206.4 62.911,1185.7"];
+		struct_9173c4f97e12073aa1462100f4d33412	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">108</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#939347">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-1f</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="228,1082.5",
+			width=2.8194];
+		struct_5b8ae949a1ffca216d66e7e03b37c847:tail -> struct_9173c4f97e12073aa1462100f4d33412:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="250.5,1207.5",
+			pos="e,156,1110.5 82,1238.5 82,1179.1 171.12,1232.1 203,1182 214.22,1164.4 213.83,1152.9 203,1135 193.17,1118.8 168.73,1128.1 159.55,\
+1120"];
+		struct_3f0d2b0eaa0d20af119f65aa7ef1c6ac:tail -> struct_1e470c5774d940c901fa237f991b7804:header	[color=red,
+			pos="e,71,265.5 47,1143.5 6.9383,1143.5 37,1003.6 37,963.5 37,963.5 37,963.5 37,502 37,452.53 20.426,289.97 61.094,267.97"];
+		struct_ce7134eb2006d7867e1705ff7c44787a	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;filesManager Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;-&gt;getBatchOfFilesToSend()Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">be</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-object </FONT> <FONT color="#898970">v2</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-45</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="697,962.5",
+			width=17.236];
+		struct_3f0d2b0eaa0d20af119f65aa7ef1c6ac:tail -> struct_ce7134eb2006d7867e1705ff7c44787a:header	[color=green,
+			pos="e,87,1020.5 62,1140.5 62,1089.7 36.414,1029.4 76.968,1021.4"];
+		struct_1e470c5774d940c901fa237f991b7804:tail -> struct_b199e17fdc2721437cfa26a8cfb3cddd:header	[color=green,
+			pos="e,42,56.5 71,236.5 29.296,236.5 41.231,176.25 41.966,66.566"];
+		struct_3f2fa519b225c71bf95a57568be26190	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;filesManager Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ac</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;-&gt;deleteOldestInRollOverIfOverMax()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-4d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="681,145.5",
+			width=17.236];
+		struct_1e470c5774d940c901fa237f991b7804:tail -> struct_3f2fa519b225c71bf95a57568be26190:header	[color=red,
+			pos="e,86,184.5 86,233.5 86,215.64 86,208.76 86,194.85"];
+		struct_3f2fa519b225c71bf95a57568be26190:tail -> struct_b199e17fdc2721437cfa26a8cfb3cddd:header	[color=blue,
+			pos="e,42,56.5 71,108.5 60.353,108.5 48.063,83.396 43.668,66.696"];
+		struct_ce7134eb2006d7867e1705ff7c44787a:tail -> struct_b3026c65716ad1a525c3952e3d94f433:header	[color=blue,
+			pos="e,1209,2058.5 102,900.5 102,889.16 84.361,893.32 76.5,901.5 56.708,922.08 57.011,1009.1 76.5,1030 96.453,1051.4 309.94,1044.8 339,\
+1048 565.95,1072.7 1206,1027 1355,1200 1364.6,1211.2 1354.2,1218.4 1352,1233 1344.6,1281.3 1337,1293.1 1337,1342 1337,1714 1337,\
+1714 1337,1714 1337,1818.4 1332.5,1859 1263,1937 1237.1,1966.1 1204.5,1941.1 1183.5,1974 1163.5,2005.3 1157.8,2030.7 1183.5,2057.5 \
+1188,2062.2 1195.9,2065.6 1201.6,2065.4"];
+		struct_ce7134eb2006d7867e1705ff7c44787a:tail -> struct_5d97a14508ba2d8b216b67c3ee3ebd17:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="374.5,869.5",
+			pos="e,705,834.5 102,900.5 102,868.64 610.74,838.04 694.85,834.78"];
+		struct_85d893b58ec2ed3a6bc52cc5b19e2326	[height=5.3056,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">cc</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#898970">v2</FONT>, <FONT color="#8E8E5B">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;-&gt;context Landroid/content/Context;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">d0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#848484">v3</FONT>, <FONT color="#0000FF">Ljava/lang/StringBuilder;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">d4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#848484">v3</FONT>, <FONT color="#DF3A01">Ljava/lang/StringBuilder;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">da</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v4</FONT>, <FONT color="red"><br/>'Failed to send batch of<br/>analytics files to server: '</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">de</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#848484">v3</FONT>, <FONT color="#7F7F99">v4</FONT>, <FONT color="#DF3A01">Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#848484">v3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#DF3A01">Ljava/lang/Exception;-&gt;getMessage()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ec</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ee</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#848484">v3</FONT>, <FONT color="#7F7F99">v4</FONT>, <FONT color="#DF3A01">Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">f4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#848484">v3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">f6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#848484">v3</FONT>, <FONT color="#DF3A01">Ljava/lang/StringBuilder;-&gt;toString()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">fc</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#848484">v3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">fe</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#898970">v2</FONT>, <FONT color="#848484">v3</FONT>, <FONT color="#939347">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;logControlledError(Landroid/content/Context; Ljava/lang/String; Ljava/lang/Throwable;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">104</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#939347">v0</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">106</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-31</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="656,503",
+			width=16.653];
+		struct_5d97a14508ba2d8b216b67c3ee3ebd17:tail -> struct_85d893b58ec2ed3a6bc52cc5b19e2326:header	[color=blue,
+			pos="e,86,688 705,739.5 672.85,739.5 163.34,724.75 93.832,694.83"];
+		struct_85d893b58ec2ed3a6bc52cc5b19e2326:tail -> struct_1e470c5774d940c901fa237f991b7804:header	[color=blue,
+			pos="e,86,268.5 86,318 86,299.78 86,292.88 86,278.55"];
+		struct_9173c4f97e12073aa1462100f4d33412:tail -> struct_85d893b58ec2ed3a6bc52cc5b19e2326:header	[color=blue,
+			pos="e,67,685 137,1056.5 120.57,1056.5 77.322,1043.5 68,1030 48.029,1001 31.579,734.53 58.667,691"];
+	}
+}

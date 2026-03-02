@@ -1,0 +1,27 @@
+# Lio/fabric/sdk/android/services/common/QueueFile;->writeInts([B [I)V [access_flags=private static varargs]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:byte[]
+# - v5:int[]
+#
+# - return:void
+
+writeInts-BB@0x0 : [ writeInts-BB@0x6 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) array-length         v2, v5
+	2       (00000004) move                 v1, v0
+
+writeInts-BB@0x6 : [ writeInts-BB@0xa writeInts-BB@0x1e ]
+	3       (00000006) if-ge                v0, v2, +c
+
+writeInts-BB@0xa : [ writeInts-BB@0x6 ]
+	4       (0000000a) aget                 v3, v5, v0
+	5       (0000000e) invoke-static        v4, v1, v3, Lio/fabric/sdk/android/services/common/QueueFile;->writeInt([B I I)V
+	6       (00000014) add-int/lit8         v1, v1, 4
+	7       (00000018) add-int/lit8         v0, v0, 1
+	8       (0000001c) goto                 -b
+
+writeInts-BB@0x1e : 
+	9       (0000001e) return-void          
+

@@ -1,0 +1,21 @@
+# Lorg/apache/commons/io/output/ThresholdingOutputStream;->write([B I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:byte[]
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+write-BB@0x0 : 
+	0       (00000000) invoke-virtual       v4, v7, Lorg/apache/commons/io/output/ThresholdingOutputStream;->checkThreshold(I)V
+	1       (00000006) invoke-virtual       v4, Lorg/apache/commons/io/output/ThresholdingOutputStream;->getStream()Ljava/io/OutputStream;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) invoke-virtual       v0, v5, v6, v7, Ljava/io/OutputStream;->write([B I I)V
+	4       (00000014) iget-wide            v0, v4, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written J
+	5       (00000018) int-to-long          v2, v7
+	6       (0000001a) add-long/2addr       v0, v2
+	7       (0000001c) iput-wide            v0, v4, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written J
+	8       (00000020) return-void          
+

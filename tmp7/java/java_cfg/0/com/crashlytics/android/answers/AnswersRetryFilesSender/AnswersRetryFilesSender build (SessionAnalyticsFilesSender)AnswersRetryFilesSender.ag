@@ -1,0 +1,27 @@
+# Lcom/crashlytics/android/answers/AnswersRetryFilesSender;->build(Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;)Lcom/crashlytics/android/answers/AnswersRetryFilesSender; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:com.crashlytics.android.answers.SessionAnalyticsFilesSender
+#
+# - return:com.crashlytics.android.answers.AnswersRetryFilesSender
+
+build-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/crashlytics/android/answers/RandomBackoff;
+	1       (00000004) new-instance         v1, Lio/fabric/sdk/android/services/concurrency/internal/ExponentialBackoff;
+	2       (00000008) const-wide/16        v2, 1000 # [1000.0]
+	3       (0000000c) const/16             v4, 8
+	4       (00000010) invoke-direct        v1, v2, v3, v4, Lio/fabric/sdk/android/services/concurrency/internal/ExponentialBackoff;-><init>(J I)V
+	5       (00000016) const-wide           v2, 4591870180066957722 # [0.1]
+	6       (00000020) invoke-direct        v0, v1, v2, v3, Lcom/crashlytics/android/answers/RandomBackoff;-><init>(Lio/fabric/sdk/android/services/concurrency/internal/Backoff; D)V
+	7       (00000026) new-instance         v1, Lio/fabric/sdk/android/services/concurrency/internal/DefaultRetryPolicy;
+	8       (0000002a) const/4              v2, 5
+	9       (0000002c) invoke-direct        v1, v2, Lio/fabric/sdk/android/services/concurrency/internal/DefaultRetryPolicy;-><init>(I)V
+	10      (00000032) new-instance         v2, Lio/fabric/sdk/android/services/concurrency/internal/RetryState;
+	11      (00000036) invoke-direct        v2, v0, v1, Lio/fabric/sdk/android/services/concurrency/internal/RetryState;-><init>(Lio/fabric/sdk/android/services/concurrency/internal/Backoff; Lio/fabric/sdk/android/services/concurrency/internal/RetryPolicy;)V
+	12      (0000003c) new-instance         v0, Lcom/crashlytics/android/answers/RetryManager;
+	13      (00000040) invoke-direct        v0, v2, Lcom/crashlytics/android/answers/RetryManager;-><init>(Lio/fabric/sdk/android/services/concurrency/internal/RetryState;)V
+	14      (00000046) new-instance         v1, Lcom/crashlytics/android/answers/AnswersRetryFilesSender;
+	15      (0000004a) invoke-direct        v1, v5, v0, Lcom/crashlytics/android/answers/AnswersRetryFilesSender;-><init>(Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender; Lcom/crashlytics/android/answers/RetryManager;)V
+	16      (00000050) return-object        v1
+

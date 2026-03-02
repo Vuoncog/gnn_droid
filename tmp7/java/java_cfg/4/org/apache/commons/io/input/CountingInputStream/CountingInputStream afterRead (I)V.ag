@@ -1,0 +1,30 @@
+# Lorg/apache/commons/io/input/CountingInputStream;->afterRead(I)V [access_flags=protected synchronized]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+afterRead-BB@0x0 : [ afterRead-BB@0x8 afterRead-BB@0x14 ]
+	0       (00000000) monitor-enter        v4
+	1       (00000002) const/4              v0, -1
+	2       (00000004) if-eq                v5, v0, +8
+
+afterRead-BB@0x8 : [ afterRead-BB@0x14 ]
+	3       (00000008) iget-wide            v0, v4, Lorg/apache/commons/io/input/CountingInputStream;->count J
+	4       (0000000c) int-to-long          v2, v5
+	5       (0000000e) add-long/2addr       v0, v2
+	6       (00000010) iput-wide            v0, v4, Lorg/apache/commons/io/input/CountingInputStream;->count J
+	8:13
+	(Ljava/lang/Throwable; -> 18 afterRead-BB@0x18)
+
+afterRead-BB@0x14 : 
+	7       (00000014) monitor-exit         v4
+	8       (00000016) return-void          
+
+afterRead-BB@0x18 : 
+	9       (00000018) move-exception       v0
+	10      (0000001a) monitor-exit         v4
+	11      (0000001c) throw                v0
+

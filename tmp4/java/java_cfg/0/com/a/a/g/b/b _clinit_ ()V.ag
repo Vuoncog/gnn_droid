@@ -1,0 +1,29 @@
+# Lcom/a/a/g/b;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v1, 4
+	1       (00000002) new-array            v0, v1, [C
+	2       (00000006) fill-array-data      v0, +1b (0x3c)
+	3       (0000000c) sput-object          v0, Lcom/a/a/g/b;->a [C
+	4       (00000010) new-array            v0, v1, [C
+	5       (00000014) fill-array-data      v0, +1c (0x4c)
+	6       (0000001a) sput-object          v0, Lcom/a/a/g/b;->b [C
+	7       (0000001e) new-array            v0, v1, [C
+	8       (00000022) fill-array-data      v0, +1d (0x5c)
+	9       (00000028) sput-object          v0, Lcom/a/a/g/b;->c [C
+	10      (0000002c) sget-object          v0, Lcom/a/a/g/b;->a [C
+	11      (00000030) const/4              v1, 0
+	12      (00000032) aget-char            v0, v0, v1
+	13      (00000036) sput-char            v0, Lcom/a/a/g/b;->d C
+	14      (0000003a) return-void          
+
+<clinit>-BB@0x3c : 
+	15      (0000003c) fill-array-data-payload bytearray(b'A\x00B\x00C\x00D\x00') | \x41\x00\x42\x00\x43\x00\x44\x00
+	16      (0000004c) fill-array-data-payload bytearray(b'T\x00N\x00*\x00E\x00') | \x54\x00\x4e\x00\x2a\x00\x45\x00
+	17      (0000005c) fill-array-data-payload bytearray(b'/\x00:\x00+\x00.\x00') | \x2f\x00\x3a\x00\x2b\x00\x2e\x00
+

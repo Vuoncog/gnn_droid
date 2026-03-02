@@ -1,0 +1,60 @@
+# Lorg/apache/commons/lang/LocaleUtils;->localeLookupList(Ljava/util/Locale; Ljava/util/Locale;)Ljava/util/List; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.Locale
+# - v5:java.util.Locale
+#
+# - return:java.util.List
+
+localeLookupList-BB@0x0 : [ localeLookupList-BB@0x10 localeLookupList-BB@0x8c ]
+	0       (00000000) new-instance         v0, Ljava/util/ArrayList;
+	1       (00000004) const/4              v1, 4
+	2       (00000006) invoke-direct        v0, v1, Ljava/util/ArrayList;-><init>(I)V
+	3       (0000000c) if-eqz               v4, +40
+
+localeLookupList-BB@0x10 : [ localeLookupList-BB@0x2a localeLookupList-BB@0x4a ]
+	4       (00000010) invoke-interface     v0, v4, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	5       (00000016) invoke-virtual       v4, Ljava/util/Locale;->getVariant()Ljava/lang/String;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) invoke-virtual       v1, Ljava/lang/String;->length()I
+	8       (00000024) move-result          v1
+	9       (00000026) if-lez               v1, +12
+
+localeLookupList-BB@0x2a : [ localeLookupList-BB@0x4a ]
+	10      (0000002a) new-instance         v1, Ljava/util/Locale;
+	11      (0000002e) invoke-virtual       v4, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-virtual       v4, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+	14      (0000003c) move-result-object   v3
+	15      (0000003e) invoke-direct        v1, v2, v3, Ljava/util/Locale;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	16      (00000044) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+localeLookupList-BB@0x4a : [ localeLookupList-BB@0x5e localeLookupList-BB@0x7a ]
+	17      (0000004a) invoke-virtual       v4, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+	18      (00000050) move-result-object   v1
+	19      (00000052) invoke-virtual       v1, Ljava/lang/String;->length()I
+	20      (00000058) move-result          v1
+	21      (0000005a) if-lez               v1, +10
+
+localeLookupList-BB@0x5e : [ localeLookupList-BB@0x7a ]
+	22      (0000005e) new-instance         v1, Ljava/util/Locale;
+	23      (00000062) invoke-virtual       v4, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+	24      (00000068) move-result-object   v2
+	25      (0000006a) const-string         v3, ''
+	26      (0000006e) invoke-direct        v1, v2, v3, Ljava/util/Locale;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	27      (00000074) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+localeLookupList-BB@0x7a : [ localeLookupList-BB@0x86 localeLookupList-BB@0x8c ]
+	28      (0000007a) invoke-interface     v0, v5, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	29      (00000080) move-result          v1
+	30      (00000082) if-nez               v1, +5
+
+localeLookupList-BB@0x86 : [ localeLookupList-BB@0x8c ]
+	31      (00000086) invoke-interface     v0, v5, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+localeLookupList-BB@0x8c : 
+	32      (0000008c) invoke-static        v0, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+	33      (00000092) move-result-object   v0
+	34      (00000094) return-object        v0
+

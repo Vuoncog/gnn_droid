@@ -1,0 +1,84 @@
+# Lcom/mangosoft/android/wallpapers/util/SiteUtils;->convertStreamToString(Ljava/io/InputStream;)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.io.InputStream
+#
+# - return:java.lang.String
+
+convertStreamToString-BB@0x0 : [ convertStreamToString-BB@0x24 ]
+	0       (00000000) new-instance         v1, Ljava/io/BufferedReader;
+	1       (00000004) new-instance         v3, Ljava/io/InputStreamReader;
+	2       (00000008) invoke-direct        v3, v5, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+	3       (0000000e) const/16             v4, 8192
+	4       (00000012) invoke-direct        v1, v3, v4, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader; I)V
+	5       (00000018) new-instance         v2, Ljava/lang/StringBuilder;
+	6       (0000001c) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	7       (00000022) const/4              v0, 0
+
+convertStreamToString-BB@0x24 : [ convertStreamToString-BB@0x30 convertStreamToString-BB@0x40 ]
+	8       (00000024) invoke-virtual       v1, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+	9       (0000002a) move-result-object   v0
+	10      (0000002c) if-nez               v0, +a
+	24:29
+	(Ljava/lang/Throwable; -> 7c convertStreamToString-BB@0x7c)
+	(Ljava/io/IOException; -> 6e convertStreamToString-BB@0x6e)
+
+convertStreamToString-BB@0x30 : [ convertStreamToString-BB@0x36 ]
+	11      (00000030) invoke-virtual       v5, Ljava/io/InputStream;->close()V
+	30:35
+	(Ljava/io/IOException; -> 8a convertStreamToString-BB@0x8a)
+
+convertStreamToString-BB@0x36 : 
+	12      (00000036) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	13      (0000003c) move-result-object   v3
+	14      (0000003e) return-object        v3
+
+convertStreamToString-BB@0x40 : [ convertStreamToString-BB@0x24 ]
+	15      (00000040) new-instance         v3, Ljava/lang/StringBuilder;
+	16      (00000044) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	17      (0000004a) move-result-object   v4
+	18      (0000004c) invoke-direct        v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	19      (00000052) const-string         v4, '\n'
+	20      (00000056) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (0000005c) move-result-object   v3
+	22      (0000005e) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (00000064) move-result-object   v3
+	24      (00000066) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (0000006c) goto                 -24
+	40:6b
+	(Ljava/lang/Throwable; -> 7c convertStreamToString-BB@0x7c)
+	(Ljava/io/IOException; -> 6e convertStreamToString-BB@0x6e)
+
+convertStreamToString-BB@0x6e : [ convertStreamToString-BB@0x70 ]
+	26      (0000006e) move-exception       v3
+
+convertStreamToString-BB@0x70 : [ convertStreamToString-BB@0x36 ]
+	27      (00000070) invoke-virtual       v5, Ljava/io/InputStream;->close()V
+	28      (00000076) goto                 -20
+	70:75
+	(Ljava/io/IOException; -> 78 convertStreamToString-BB@0x78)
+
+convertStreamToString-BB@0x78 : [ convertStreamToString-BB@0x36 ]
+	29      (00000078) move-exception       v3
+	30      (0000007a) goto                 -22
+
+convertStreamToString-BB@0x7c : [ convertStreamToString-BB@0x7e ]
+	31      (0000007c) move-exception       v3
+
+convertStreamToString-BB@0x7e : [ convertStreamToString-BB@0x84 ]
+	32      (0000007e) invoke-virtual       v5, Ljava/io/InputStream;->close()V
+	7e:83
+	(Ljava/io/IOException; -> 86 convertStreamToString-BB@0x86)
+
+convertStreamToString-BB@0x84 : 
+	33      (00000084) throw                v3
+
+convertStreamToString-BB@0x86 : [ convertStreamToString-BB@0x84 ]
+	34      (00000086) move-exception       v4
+	35      (00000088) goto                 -2
+
+convertStreamToString-BB@0x8a : [ convertStreamToString-BB@0x36 ]
+	36      (0000008a) move-exception       v3
+	37      (0000008c) goto                 -2b
+

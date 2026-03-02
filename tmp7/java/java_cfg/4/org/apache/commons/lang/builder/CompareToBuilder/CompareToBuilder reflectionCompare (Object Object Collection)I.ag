@@ -1,0 +1,17 @@
+# Lorg/apache/commons/lang/builder/CompareToBuilder;->reflectionCompare(Ljava/lang/Object; Ljava/lang/Object; Ljava/util/Collection;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+# - v2:java.lang.Object
+# - v3:java.util.Collection
+#
+# - return:int
+
+reflectionCompare-BB@0x0 : 
+	0       (00000000) invoke-static        v3, Lorg/apache/commons/lang/builder/ReflectionToStringBuilder;->toNoNullStringArray(Ljava/util/Collection;)[Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v1, v2, v0, Lorg/apache/commons/lang/builder/CompareToBuilder;->reflectionCompare(Ljava/lang/Object; Ljava/lang/Object; [Ljava/lang/String;)I
+	3       (0000000e) move-result          v0
+	4       (00000010) return               v0
+

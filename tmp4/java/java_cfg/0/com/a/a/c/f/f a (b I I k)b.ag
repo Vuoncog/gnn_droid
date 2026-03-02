@@ -1,0 +1,97 @@
+# Lcom/a/a/c/f;->a(Lcom/a/a/c/b; I I Lcom/a/a/c/k;)Lcom/a/a/c/b; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:com.a.a.c.b
+# - v11:int
+# - v12:int
+# - v13:com.a.a.c.k
+#
+# - return:com.a.a.c.b
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0xe ]
+	0       (00000000) const/high16         v8, 16128 # [0.5]
+	1       (00000004) const/4              v1, 0
+	2       (00000006) if-lez               v11, +4
+
+a-BB@0xa : [ a-BB@0xe a-BB@0x18 ]
+	3       (0000000a) if-gtz               v12, +7
+
+a-BB@0xe : 
+	4       (0000000e) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	5       (00000014) move-result-object   v0
+	6       (00000016) throw                v0
+
+a-BB@0x18 : [ a-BB@0x2c ]
+	7       (00000018) new-instance         v3, Lcom/a/a/c/b;
+	8       (0000001c) invoke-direct        v3, v11, v12, Lcom/a/a/c/b;-><init>(I I)V
+	9       (00000022) mul-int/lit8         v0, v11, 2
+	10      (00000026) new-array            v4, v0, [F
+	11      (0000002a) move                 v2, v1
+
+a-BB@0x2c : [ a-BB@0x30 a-BB@0xaa ]
+	12      (0000002c) if-ge                v2, v12, +3f
+
+a-BB@0x30 : [ a-BB@0x3a ]
+	13      (00000030) array-length         v5, v4
+	14      (00000032) int-to-float         v0, v2
+	15      (00000034) add-float            v6, v0, v8
+	16      (00000038) move                 v0, v1
+
+a-BB@0x3a : [ a-BB@0x3e a-BB@0x58 ]
+	17      (0000003a) if-ge                v0, v5, +f
+
+a-BB@0x3e : [ a-BB@0x3a ]
+	18      (0000003e) div-int/lit8         v7, v0, 2
+	19      (00000042) int-to-float         v7, v7
+	20      (00000044) add-float/2addr      v7, v8
+	21      (00000046) aput                 v7, v4, v0
+	22      (0000004a) add-int/lit8         v7, v0, 1
+	23      (0000004e) aput                 v6, v4, v7
+	24      (00000052) add-int/lit8         v0, v0, 2
+	25      (00000056) goto                 -e
+
+a-BB@0x58 : [ a-BB@0x66 ]
+	26      (00000058) invoke-virtual       v13, v4, Lcom/a/a/c/k;->a([F)V
+	27      (0000005e) invoke-static        v10, v4, Lcom/a/a/c/f;->a(Lcom/a/a/c/b; [F)V
+	28      (00000064) move                 v0, v1
+
+a-BB@0x66 : [ a-BB@0x6a a-BB@0xa2 ]
+	29      (00000066) if-ge                v0, v5, +1e
+
+a-BB@0x6a : [ a-BB@0x86 a-BB@0x90 ]
+	30      (0000006a) aget                 v6, v4, v0
+	31      (0000006e) float-to-int         v6, v6
+	32      (00000070) add-int/lit8         v7, v0, 1
+	33      (00000074) aget                 v7, v4, v7
+	34      (00000078) float-to-int         v7, v7
+	35      (0000007a) invoke-virtual       v10, v6, v7, Lcom/a/a/c/b;->a(I I)Z
+	36      (00000080) move-result          v6
+	37      (00000082) if-eqz               v6, +7
+	6a:8f
+	(Ljava/lang/ArrayIndexOutOfBoundsException; -> 96 a-BB@0x96)
+
+a-BB@0x86 : [ a-BB@0x90 ]
+	38      (00000086) div-int/lit8         v6, v0, 2
+	39      (0000008a) invoke-virtual       v3, v6, v2, Lcom/a/a/c/b;->b(I I)V
+	6a:8f
+	(Ljava/lang/ArrayIndexOutOfBoundsException; -> 96 a-BB@0x96)
+
+a-BB@0x90 : [ a-BB@0x66 ]
+	40      (00000090) add-int/lit8         v0, v0, 2
+	41      (00000094) goto                 -17
+
+a-BB@0x96 : 
+	42      (00000096) move-exception       v0
+	43      (00000098) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	44      (0000009e) move-result-object   v0
+	45      (000000a0) throw                v0
+
+a-BB@0xa2 : [ a-BB@0x2c ]
+	46      (000000a2) add-int/lit8         v0, v2, 1
+	47      (000000a6) move                 v2, v0
+	48      (000000a8) goto                 -3e
+
+a-BB@0xaa : 
+	49      (000000aa) return-object        v3
+

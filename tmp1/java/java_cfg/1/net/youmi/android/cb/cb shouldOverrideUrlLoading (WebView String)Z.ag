@@ -1,0 +1,113 @@
+# Lnet/youmi/android/cb;->shouldOverrideUrlLoading(Landroid/webkit/WebView; Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.webkit.WebView
+# - v6:java.lang.String
+#
+# - return:boolean
+
+shouldOverrideUrlLoading-BB@0x0 : [ shouldOverrideUrlLoading-BB@0x2 ]
+	0       (00000000) const/4              v3, 1
+
+shouldOverrideUrlLoading-BB@0x2 : [ shouldOverrideUrlLoading-BB@0x16 shouldOverrideUrlLoading-BB@0x1c ]
+	1       (00000002) iget-object          v0, v4, Lnet/youmi/android/cb;->a Lnet/youmi/android/cq;
+	2       (00000006) iget-object          v0, v0, Lnet/youmi/android/cq;->f Lnet/youmi/android/AdActivity;
+	3       (0000000a) invoke-static        v0, v5, v6, Lnet/youmi/android/bl;->a(Landroid/app/Activity; Landroid/webkit/WebView; Ljava/lang/String;)Z
+	4       (00000010) move-result          v0
+	5       (00000012) if-eqz               v0, +5
+	2:f
+	(Ljava/lang/Exception; -> 1a shouldOverrideUrlLoading-BB@0x1a)
+
+shouldOverrideUrlLoading-BB@0x16 : [ shouldOverrideUrlLoading-BB@0x18 ]
+	6       (00000016) move                 v0, v3
+
+shouldOverrideUrlLoading-BB@0x18 : 
+	7       (00000018) return               v0
+
+shouldOverrideUrlLoading-BB@0x1a : [ shouldOverrideUrlLoading-BB@0x1c ]
+	8       (0000001a) move-exception       v0
+
+shouldOverrideUrlLoading-BB@0x1c : [ shouldOverrideUrlLoading-BB@0x30 shouldOverrideUrlLoading-BB@0x34 ]
+	9       (0000001c) iget-object          v0, v4, Lnet/youmi/android/cb;->a Lnet/youmi/android/cq;
+	10      (00000020) iget-object          v0, v0, Lnet/youmi/android/cq;->f Lnet/youmi/android/AdActivity;
+	11      (00000024) invoke-static        v0, v6, Lnet/youmi/android/ad;->f(Landroid/app/Activity; Ljava/lang/String;)Z
+	12      (0000002a) move-result          v0
+	13      (0000002c) if-eqz               v0, +4
+	1c:59
+	(Ljava/lang/Exception; -> 64 shouldOverrideUrlLoading-BB@0x64)
+
+shouldOverrideUrlLoading-BB@0x30 : [ shouldOverrideUrlLoading-BB@0x18 ]
+	14      (00000030) move                 v0, v3
+	15      (00000032) goto                 -d
+	1c:59
+	(Ljava/lang/Exception; -> 64 shouldOverrideUrlLoading-BB@0x64)
+
+shouldOverrideUrlLoading-BB@0x34 : [ shouldOverrideUrlLoading-BB@0x48 shouldOverrideUrlLoading-BB@0x4c ]
+	16      (00000034) iget-object          v0, v4, Lnet/youmi/android/cb;->a Lnet/youmi/android/cq;
+	17      (00000038) iget-object          v0, v0, Lnet/youmi/android/cq;->f Lnet/youmi/android/AdActivity;
+	18      (0000003c) invoke-static        v0, v6, Lnet/youmi/android/ad;->c(Landroid/app/Activity; Ljava/lang/String;)Z
+	19      (00000042) move-result          v0
+	20      (00000044) if-eqz               v0, +4
+	1c:59
+	(Ljava/lang/Exception; -> 64 shouldOverrideUrlLoading-BB@0x64)
+
+shouldOverrideUrlLoading-BB@0x48 : [ shouldOverrideUrlLoading-BB@0x18 ]
+	21      (00000048) move                 v0, v3
+	22      (0000004a) goto                 -19
+	1c:59
+	(Ljava/lang/Exception; -> 64 shouldOverrideUrlLoading-BB@0x64)
+
+shouldOverrideUrlLoading-BB@0x4c : [ shouldOverrideUrlLoading-BB@0x60 shouldOverrideUrlLoading-BB@0x66 ]
+	23      (0000004c) iget-object          v0, v4, Lnet/youmi/android/cb;->a Lnet/youmi/android/cq;
+	24      (00000050) iget-object          v0, v0, Lnet/youmi/android/cq;->f Lnet/youmi/android/AdActivity;
+	25      (00000054) invoke-static        v0, v6, Lnet/youmi/android/ad;->d(Landroid/app/Activity; Ljava/lang/String;)Z
+	26      (0000005a) move-result          v0
+	27      (0000005c) if-eqz               v0, +5
+
+shouldOverrideUrlLoading-BB@0x60 : [ shouldOverrideUrlLoading-BB@0x18 ]
+	28      (00000060) move                 v0, v3
+	29      (00000062) goto                 -25
+
+shouldOverrideUrlLoading-BB@0x64 : [ shouldOverrideUrlLoading-BB@0x66 ]
+	30      (00000064) move-exception       v0
+
+shouldOverrideUrlLoading-BB@0x66 : [ shouldOverrideUrlLoading-BB@0x80 shouldOverrideUrlLoading-BB@0xa8 ]
+	31      (00000066) invoke-virtual       v6, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+	32      (0000006c) move-result-object   v0
+	33      (0000006e) const-string         v1, 'market://'
+	34      (00000072) invoke-virtual       v0, v1, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	35      (00000078) move-result          v0
+	36      (0000007a) const/4              v1, -1
+	37      (0000007c) if-le                v0, v1, +16
+	66:ad
+	(Ljava/lang/Exception; -> b8 shouldOverrideUrlLoading-BB@0xb8)
+
+shouldOverrideUrlLoading-BB@0x80 : [ shouldOverrideUrlLoading-BB@0x18 ]
+	38      (00000080) new-instance         v0, Landroid/content/Intent;
+	39      (00000084) const-string         v1, 'android.intent.action.VIEW'
+	40      (00000088) invoke-static        v6, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+	41      (0000008e) move-result-object   v2
+	42      (00000090) invoke-direct        v0, v1, v2, Landroid/content/Intent;-><init>(Ljava/lang/String; Landroid/net/Uri;)V
+	43      (00000096) iget-object          v1, v4, Lnet/youmi/android/cb;->a Lnet/youmi/android/cq;
+	44      (0000009a) iget-object          v1, v1, Lnet/youmi/android/cq;->f Lnet/youmi/android/AdActivity;
+	45      (0000009e) invoke-virtual       v1, v0, Lnet/youmi/android/AdActivity;->startActivity(Landroid/content/Intent;)V
+	46      (000000a4) move                 v0, v3
+	47      (000000a6) goto                 -47
+	66:ad
+	(Ljava/lang/Exception; -> b8 shouldOverrideUrlLoading-BB@0xb8)
+
+shouldOverrideUrlLoading-BB@0xa8 : [ shouldOverrideUrlLoading-BB@0xae ]
+	48      (000000a8) invoke-virtual       v5, v6, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
+	66:ad
+	(Ljava/lang/Exception; -> b8 shouldOverrideUrlLoading-BB@0xb8)
+
+shouldOverrideUrlLoading-BB@0xae : [ shouldOverrideUrlLoading-BB@0x18 ]
+	49      (000000ae) invoke-super         v4, v5, v6, Landroid/webkit/WebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView; Ljava/lang/String;)Z
+	50      (000000b4) move-result          v0
+	51      (000000b6) goto                 -4f
+
+shouldOverrideUrlLoading-BB@0xb8 : [ shouldOverrideUrlLoading-BB@0xae ]
+	52      (000000b8) move-exception       v0
+	53      (000000ba) goto                 -6
+

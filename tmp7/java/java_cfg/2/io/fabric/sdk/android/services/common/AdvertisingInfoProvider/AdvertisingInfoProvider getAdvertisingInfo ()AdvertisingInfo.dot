@@ -1,0 +1,73 @@
+digraph {
+	graph [bb="0,0,2508,523",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_865ff4058a5da058d1e9390e8a676c29 {
+		graph [bb="8,8,2500,515",
+			label="Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;.getAdvertisingInfo->()Lio/fabric/sdk/android/services/common/AdvertisingInfo;\nLocal \
+registers v0 ... v4\nreturn = io.fabric.sdk.android.services.common.AdvertisingInfo",
+			lheight=0.62,
+			lp="1254,488.5",
+			lwidth=13.29
+		];
+		struct_0e94c9f571c91a5a368af827cb2b63fd	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;getInfoFromPreferences()Lio/fabric/sdk/android/services/common/AdvertisingInfo;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8E8E5B">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#8E8E5B">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;isInfoValid(Lio/fabric/sdk/android/services/common/AdvertisingInfo;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#848484">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#848484">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x11</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1225,386.5",
+			width=16.375];
+		struct_d4299b9ded6a94de0fa9b743d36c99c2	[height=2.5556,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#848484">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="red">'Fabric'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7070D6">v3</FONT>, <FONT color="red"><br/>'Using AdvertisingInfo from<br/>Preference Store'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#7070D6">v3</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;d(Ljava/lang/String; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#8E8E5B">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;refreshInfoIfNeededAsync(Lio/fabric/sdk/android/services/common/AdvertisingInfo;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="626,191",
+			width=16.944];
+		struct_0e94c9f571c91a5a368af827cb2b63fd:tail -> struct_d4299b9ded6a94de0fa9b743d36c99c2:header	[color=red,
+			pos="e,41,277 646,327.5 614.58,327.5 116.59,312.94 48.654,283.68"];
+		struct_c20b700340475fc43aee00a71d2926c3	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;getAdvertisingInfoFromStrategies()Lio/fabric/sdk/android/services/common/AdvertisingInfo;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8E8E5B">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#8E8E5B">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;storeInfoToPreferences(Lio/fabric/sdk/android/services/common/AdvertisingInfo;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">40</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1873,191",
+			width=17.181];
+		struct_0e94c9f571c91a5a368af827cb2b63fd:tail -> struct_c20b700340475fc43aee00a71d2926c3:header	[color=green,
+			pos="e,1265,238 661,324.5 661,259.45 1191.7,320.36 1245,283 1259,273.18 1250,251.24 1255.8,242.11"];
+		struct_2fbe4a64b3b149d548afabaf2f442539	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#8E8E5B">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="724,39.5",
+			width=2.4722];
+		struct_d4299b9ded6a94de0fa9b743d36c99c2:tail -> struct_2fbe4a64b3b149d548afabaf2f442539:header	[color=blue,
+			pos="e,645,53.5 41,105 41,73.164 550.65,55.497 634.84,53.66"];
+		struct_c20b700340475fc43aee00a71d2926c3:tail -> struct_2fbe4a64b3b149d548afabaf2f442539:header	[color=blue,
+			pos="e,660,56.5 1265,143 1243.5,143 1262.6,111.28 1245,99 1194.3,63.718 714.73,115.62 664.29,65.799"];
+	}
+}

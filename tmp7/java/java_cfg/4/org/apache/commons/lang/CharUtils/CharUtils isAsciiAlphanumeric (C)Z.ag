@@ -1,0 +1,42 @@
+# Lorg/apache/commons/lang/CharUtils;->isAsciiAlphanumeric(C)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:char
+#
+# - return:boolean
+
+isAsciiAlphanumeric-BB@0x0 : [ isAsciiAlphanumeric-BB@0x8 isAsciiAlphanumeric-BB@0x10 ]
+	0       (00000000) const/16             v0, 65
+	1       (00000004) if-lt                v1, v0, +6
+
+isAsciiAlphanumeric-BB@0x8 : [ isAsciiAlphanumeric-BB@0x10 isAsciiAlphanumeric-BB@0x30 ]
+	2       (00000008) const/16             v0, 90
+	3       (0000000c) if-le                v1, v0, +12
+
+isAsciiAlphanumeric-BB@0x10 : [ isAsciiAlphanumeric-BB@0x18 isAsciiAlphanumeric-BB@0x20 ]
+	4       (00000010) const/16             v0, 97
+	5       (00000014) if-lt                v1, v0, +6
+
+isAsciiAlphanumeric-BB@0x18 : [ isAsciiAlphanumeric-BB@0x20 isAsciiAlphanumeric-BB@0x30 ]
+	6       (00000018) const/16             v0, 122
+	7       (0000001c) if-le                v1, v0, +a
+
+isAsciiAlphanumeric-BB@0x20 : [ isAsciiAlphanumeric-BB@0x28 isAsciiAlphanumeric-BB@0x34 ]
+	8       (00000020) const/16             v0, 48
+	9       (00000024) if-lt                v1, v0, +8
+
+isAsciiAlphanumeric-BB@0x28 : [ isAsciiAlphanumeric-BB@0x30 isAsciiAlphanumeric-BB@0x34 ]
+	10      (00000028) const/16             v0, 57
+	11      (0000002c) if-gt                v1, v0, +4
+
+isAsciiAlphanumeric-BB@0x30 : [ isAsciiAlphanumeric-BB@0x32 ]
+	12      (00000030) const/4              v0, 1
+
+isAsciiAlphanumeric-BB@0x32 : 
+	13      (00000032) return               v0
+
+isAsciiAlphanumeric-BB@0x34 : [ isAsciiAlphanumeric-BB@0x32 ]
+	14      (00000034) const/4              v0, 0
+	15      (00000036) goto                 -2
+

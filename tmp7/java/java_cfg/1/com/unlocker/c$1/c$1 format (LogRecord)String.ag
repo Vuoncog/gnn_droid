@@ -1,0 +1,36 @@
+# Lcom/unlocker/c$1;->format(Ljava/util/logging/LogRecord;)Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.logging.LogRecord
+#
+# - return:java.lang.String
+
+format-BB@0x0 : [ format-BB@0xc format-BB@0x4e ]
+	0       (00000000) invoke-virtual       v5, Ljava/util/logging/LogRecord;->getThrown()Ljava/lang/Throwable;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +23
+
+format-BB@0xc : [ format-BB@0x4c ]
+	3       (0000000c) new-instance         v1, Ljava/io/StringWriter;
+	4       (00000010) invoke-direct        v1, Ljava/io/StringWriter;-><init>()V
+	5       (00000016) new-instance         v2, Ljava/io/PrintWriter;
+	6       (0000001a) invoke-direct        v2, v1, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+	7       (00000020) invoke-virtual       v5, Ljava/util/logging/LogRecord;->getMessage()Ljava/lang/String;
+	8       (00000026) move-result-object   v3
+	9       (00000028) invoke-virtual       v1, v3, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
+	10      (0000002e) const-string         v3, '\n'
+	11      (00000032) invoke-virtual       v1, v3, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
+	12      (00000038) invoke-virtual       v0, v2, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
+	13      (0000003e) invoke-virtual       v2, Ljava/io/PrintWriter;->flush()V
+	14      (00000044) invoke-virtual       v1, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+	15      (0000004a) move-result-object   v0
+
+format-BB@0x4c : 
+	16      (0000004c) return-object        v0
+
+format-BB@0x4e : [ format-BB@0x4c ]
+	17      (0000004e) invoke-virtual       v5, Ljava/util/logging/LogRecord;->getMessage()Ljava/lang/String;
+	18      (00000054) move-result-object   v0
+	19      (00000056) goto                 -5
+

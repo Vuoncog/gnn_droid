@@ -1,0 +1,53 @@
+# Lcom/ailock/tszlock/Tools;->getTimeFormat(I I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:java.lang.String
+
+getTimeFormat-BB@0x0 : [ getTimeFormat-BB@0x8 getTimeFormat-BB@0xc ]
+	0       (00000000) const-string         v0, ''
+	1       (00000004) if-nez               v3, +4
+
+getTimeFormat-BB@0x8 : [ getTimeFormat-BB@0xc ]
+	2       (00000008) const-string         v0, '0'
+
+getTimeFormat-BB@0xc : [ getTimeFormat-BB@0x42 getTimeFormat-BB@0x68 ]
+	3       (0000000c) new-instance         v1, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	5       (00000016) move-result-object   v2
+	6       (00000018) invoke-direct        v1, v2, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	7       (0000001e) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v1
+	9       (00000026) const-string         v2, ':'
+	10      (0000002a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (00000030) move-result-object   v1
+	12      (00000032) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) const/16             v1, 10
+	15      (0000003e) if-ge                v4, v1, +15
+
+getTimeFormat-BB@0x42 : [ getTimeFormat-BB@0x68 ]
+	16      (00000042) new-instance         v1, Ljava/lang/StringBuilder;
+	17      (00000046) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	18      (0000004c) move-result-object   v2
+	19      (0000004e) invoke-direct        v1, v2, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	20      (00000054) const-string         v2, '0'
+	21      (00000058) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (0000005e) move-result-object   v1
+	23      (00000060) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	24      (00000066) move-result-object   v0
+
+getTimeFormat-BB@0x68 : 
+	25      (00000068) new-instance         v1, Ljava/lang/StringBuilder;
+	26      (0000006c) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	27      (00000072) move-result-object   v2
+	28      (00000074) invoke-direct        v1, v2, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	29      (0000007a) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	30      (00000080) move-result-object   v1
+	31      (00000082) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	32      (00000088) move-result-object   v0
+	33      (0000008a) return-object        v0
+

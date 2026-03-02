@@ -1,0 +1,44 @@
+# La/a/b/a/a/e/d;->e()Ljava/lang/String; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.String
+
+e-BB@0x0 : [ e-BB@0x8 e-BB@0xe ]
+	0       (00000000) iget-object          v0, v2, La/a/b/a/a/e/d;->a La/a/b/a/a/a/b;
+	1       (00000004) if-nez               v0, +5
+
+e-BB@0x8 : [ e-BB@0xc ]
+	2       (00000008) const-string         v0, ''
+
+e-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+e-BB@0xe : [ e-BB@0x1a e-BB@0x24 ]
+	4       (0000000e) iget-object          v0, v2, La/a/b/a/a/e/d;->a La/a/b/a/a/a/b;
+	5       (00000012) instance-of          v0, v0, La/a/b/a/a/a/e;
+	6       (00000016) if-eqz               v0, +7
+
+e-BB@0x1a : [ e-BB@0xc ]
+	7       (0000001a) invoke-virtual       v2, La/a/b/a/a/e/d;->p()Ljava/lang/String;
+	8       (00000020) move-result-object   v0
+	9       (00000022) goto                 -b
+
+e-BB@0x24 : [ e-BB@0x34 e-BB@0x3a ]
+	10      (00000024) iget-object          v0, v2, La/a/b/a/a/e/d;->a La/a/b/a/a/a/b;
+	11      (00000028) invoke-virtual       v0, La/a/b/a/a/a/b;->b()La/a/b/a/b/b/c/i;
+	12      (0000002e) move-result-object   v0
+	13      (00000030) if-nez               v0, +5
+
+e-BB@0x34 : [ e-BB@0xc ]
+	14      (00000034) const-string         v0, ''
+	15      (00000038) goto                 -16
+
+e-BB@0x3a : [ e-BB@0xc ]
+	16      (0000003a) invoke-virtual       v2, La/a/b/a/a/e/d;->f()F
+	17      (00000040) move-result          v1
+	18      (00000042) invoke-virtual       v0, v1, La/a/b/a/b/b/c/i;->e(F)Ljava/lang/String;
+	19      (00000048) move-result-object   v0
+	20      (0000004a) goto                 -1f
+

@@ -1,0 +1,31 @@
+# Lorg/apache/commons/lang/CharSetUtils;->count(Ljava/lang/String; Ljava/lang/String;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:java.lang.String
+#
+# - return:int
+
+count-BB@0x0 : [ count-BB@0xe count-BB@0x1a ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v2, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-nez               v1, +8
+
+count-BB@0xe : [ count-BB@0x1a count-BB@0x1c ]
+	4       (0000000e) invoke-static        v3, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	5       (00000014) move-result          v1
+	6       (00000016) if-eqz               v1, +3
+
+count-BB@0x1a : 
+	7       (0000001a) return               v0
+
+count-BB@0x1c : [ count-BB@0x1a ]
+	8       (0000001c) const/4              v1, 1
+	9       (0000001e) new-array            v1, v1, [Ljava/lang/String;
+	10      (00000022) aput-object          v3, v1, v0
+	11      (00000026) invoke-static        v2, v1, Lorg/apache/commons/lang/CharSetUtils;->count(Ljava/lang/String; [Ljava/lang/String;)I
+	12      (0000002c) move-result          v0
+	13      (0000002e) goto                 -a
+

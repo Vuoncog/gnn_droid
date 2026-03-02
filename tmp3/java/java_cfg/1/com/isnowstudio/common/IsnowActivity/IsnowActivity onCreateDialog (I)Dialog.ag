@@ -1,0 +1,29 @@
+# Lcom/isnowstudio/common/IsnowActivity;->onCreateDialog(I)Landroid/app/Dialog; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:android.app.Dialog
+
+onCreateDialog-BB@0x0 : [ D:onCreateDialog-BB@0x6 0:onCreateDialog-BB@0x10 ]
+	0       (00000000) packed-switch        v2, +12 (0x24)
+
+onCreateDialog-BB@0x6 : [ onCreateDialog-BB@0xe ]
+	1       (00000006) invoke-super         v1, v2, Landroid/app/Activity;->onCreateDialog(I)Landroid/app/Dialog;
+	2       (0000000c) move-result-object   v0
+
+onCreateDialog-BB@0xe : 
+	3       (0000000e) return-object        v0
+
+onCreateDialog-BB@0x10 : [ onCreateDialog-BB@0xe ]
+	4       (00000010) invoke-virtual       v1, Lcom/isnowstudio/common/IsnowActivity;->getPackageName()Ljava/lang/String;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-static        v1, v0, Lcom/isnowstudio/common/c/c;->a(Landroid/app/Activity; Ljava/lang/String;)Landroid/app/Dialog;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) goto                 -9
+
+onCreateDialog-BB@0x22 : 
+	9       (00000022) nop                  
+	10      (00000024) packed-switch-payload 0
+

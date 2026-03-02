@@ -1,0 +1,27 @@
+# Lcom/unlocker/d;->b(Lcom/google/gson/JsonElement;)Lcom/google/gson/JsonElement; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.google.gson.JsonElement
+#
+# - return:com.google.gson.JsonElement
+
+b-BB@0x0 : [ b-BB@0x6 b-BB@0xa ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-nez               v2, +4
+
+b-BB@0x6 : [ b-BB@0x8 ]
+	2       (00000006) move-object          v2, v0
+
+b-BB@0x8 : 
+	3       (00000008) return-object        v2
+
+b-BB@0xa : [ b-BB@0x16 b-BB@0x8 ]
+	4       (0000000a) invoke-virtual       v2, Lcom/google/gson/JsonElement;->isJsonNull()Z
+	5       (00000010) move-result          v1
+	6       (00000012) if-eqz               v1, -5
+
+b-BB@0x16 : [ b-BB@0x8 ]
+	7       (00000016) move-object          v2, v0
+	8       (00000018) goto                 -8
+

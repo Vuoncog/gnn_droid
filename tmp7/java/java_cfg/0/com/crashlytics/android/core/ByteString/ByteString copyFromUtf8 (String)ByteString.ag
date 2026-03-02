@@ -1,0 +1,25 @@
+# Lcom/crashlytics/android/core/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:com.crashlytics.android.core.ByteString
+
+copyFromUtf8-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/crashlytics/android/core/ByteString;
+	1       (00000004) const-string         v1, 'UTF-8'
+	2       (00000008) invoke-virtual       v3, v1, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-direct        v0, v1, Lcom/crashlytics/android/core/ByteString;-><init>([B)V
+	5       (00000016) return-object        v0
+	0:15
+	(Ljava/io/UnsupportedEncodingException; -> 18 copyFromUtf8-BB@0x18)
+
+copyFromUtf8-BB@0x18 : 
+	6       (00000018) move-exception       v0
+	7       (0000001a) new-instance         v1, Ljava/lang/RuntimeException;
+	8       (0000001e) const-string         v2, 'UTF-8 not supported.'
+	9       (00000022) invoke-direct        v1, v2, v0, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String; Ljava/lang/Throwable;)V
+	10      (00000028) throw                v1
+

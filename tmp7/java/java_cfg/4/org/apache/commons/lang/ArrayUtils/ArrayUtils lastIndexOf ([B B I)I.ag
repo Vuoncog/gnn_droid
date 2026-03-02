@@ -1,0 +1,46 @@
+# Lorg/apache/commons/lang/ArrayUtils;->lastIndexOf([B B I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:byte[]
+# - v4:byte
+# - v5:int
+#
+# - return:int
+
+lastIndexOf-BB@0x0 : [ lastIndexOf-BB@0x6 lastIndexOf-BB@0x8 ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) if-nez               v3, +3
+
+lastIndexOf-BB@0x6 : 
+	2       (00000006) return               v0
+
+lastIndexOf-BB@0x8 : [ lastIndexOf-BB@0xc lastIndexOf-BB@0x6 ]
+	3       (00000008) if-ltz               v5, -1
+
+lastIndexOf-BB@0xc : [ lastIndexOf-BB@0x12 lastIndexOf-BB@0x18 ]
+	4       (0000000c) array-length         v1, v3
+	5       (0000000e) if-lt                v5, v1, +5
+
+lastIndexOf-BB@0x12 : [ lastIndexOf-BB@0x18 ]
+	6       (00000012) array-length         v1, v3
+	7       (00000014) add-int/lit8         v5, v1, -1
+
+lastIndexOf-BB@0x18 : [ lastIndexOf-BB@0x1a ]
+	8       (00000018) move                 v1, v5
+
+lastIndexOf-BB@0x1a : [ lastIndexOf-BB@0x1e lastIndexOf-BB@0x6 ]
+	9       (0000001a) if-ltz               v1, -a
+
+lastIndexOf-BB@0x1e : [ lastIndexOf-BB@0x26 lastIndexOf-BB@0x2a ]
+	10      (0000001e) aget-byte            v2, v3, v1
+	11      (00000022) if-ne                v4, v2, +4
+
+lastIndexOf-BB@0x26 : [ lastIndexOf-BB@0x6 ]
+	12      (00000026) move                 v0, v1
+	13      (00000028) goto                 -11
+
+lastIndexOf-BB@0x2a : [ lastIndexOf-BB@0x1a ]
+	14      (0000002a) add-int/lit8         v1, v1, -1
+	15      (0000002e) goto                 -a
+

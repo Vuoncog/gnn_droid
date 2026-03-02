@@ -1,0 +1,107 @@
+# Lorg/apache/commons/lang/CharSet;->add(Ljava/lang/String;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+#
+# - return:void
+
+add-BB@0x0 : [ add-BB@0xc add-BB@0xe ]
+	0       (00000000) const/16             v6, 94
+	1       (00000004) const/16             v5, 45
+	2       (00000008) if-nez               v8, +3
+
+add-BB@0xc : 
+	3       (0000000c) return-void          
+
+add-BB@0xe : [ add-BB@0x18 ]
+	4       (0000000e) invoke-virtual       v8, Ljava/lang/String;->length()I
+	5       (00000014) move-result          v1
+	6       (00000016) const/4              v0, 0
+
+add-BB@0x18 : [ add-BB@0x1c add-BB@0xc ]
+	7       (00000018) if-ge                v0, v1, -6
+
+add-BB@0x1c : [ add-BB@0x26 add-BB@0x72 ]
+	8       (0000001c) sub-int              v2, v1, v0
+	9       (00000020) const/4              v3, 4
+	10      (00000022) if-lt                v2, v3, +28
+
+add-BB@0x26 : [ add-BB@0x32 add-BB@0x72 ]
+	11      (00000026) invoke-virtual       v8, v0, Ljava/lang/String;->charAt(I)C
+	12      (0000002c) move-result          v3
+	13      (0000002e) if-ne                v3, v6, +22
+
+add-BB@0x32 : [ add-BB@0x42 add-BB@0x72 ]
+	14      (00000032) add-int/lit8         v3, v0, 2
+	15      (00000036) invoke-virtual       v8, v3, Ljava/lang/String;->charAt(I)C
+	16      (0000003c) move-result          v3
+	17      (0000003e) if-ne                v3, v5, +1a
+
+add-BB@0x42 : [ add-BB@0x18 ]
+	18      (00000042) iget-object          v2, v7, Lorg/apache/commons/lang/CharSet;->set Ljava/util/Set;
+	19      (00000046) add-int/lit8         v3, v0, 1
+	20      (0000004a) invoke-virtual       v8, v3, Ljava/lang/String;->charAt(I)C
+	21      (00000050) move-result          v3
+	22      (00000052) add-int/lit8         v4, v0, 3
+	23      (00000056) invoke-virtual       v8, v4, Ljava/lang/String;->charAt(I)C
+	24      (0000005c) move-result          v4
+	25      (0000005e) invoke-static        v3, v4, Lorg/apache/commons/lang/CharRange;->isNotIn(C C)Lorg/apache/commons/lang/CharRange;
+	26      (00000064) move-result-object   v3
+	27      (00000066) invoke-interface     v2, v3, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	28      (0000006c) add-int/lit8         v0, v0, 4
+	29      (00000070) goto                 -2c
+
+add-BB@0x72 : [ add-BB@0x78 add-BB@0xb4 ]
+	30      (00000072) const/4              v3, 3
+	31      (00000074) if-lt                v2, v3, +20
+
+add-BB@0x78 : [ add-BB@0x88 add-BB@0xb4 ]
+	32      (00000078) add-int/lit8         v3, v0, 1
+	33      (0000007c) invoke-virtual       v8, v3, Ljava/lang/String;->charAt(I)C
+	34      (00000082) move-result          v3
+	35      (00000084) if-ne                v3, v5, +18
+
+add-BB@0x88 : [ add-BB@0x18 ]
+	36      (00000088) iget-object          v2, v7, Lorg/apache/commons/lang/CharSet;->set Ljava/util/Set;
+	37      (0000008c) invoke-virtual       v8, v0, Ljava/lang/String;->charAt(I)C
+	38      (00000092) move-result          v3
+	39      (00000094) add-int/lit8         v4, v0, 2
+	40      (00000098) invoke-virtual       v8, v4, Ljava/lang/String;->charAt(I)C
+	41      (0000009e) move-result          v4
+	42      (000000a0) invoke-static        v3, v4, Lorg/apache/commons/lang/CharRange;->isIn(C C)Lorg/apache/commons/lang/CharRange;
+	43      (000000a6) move-result-object   v3
+	44      (000000a8) invoke-interface     v2, v3, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	45      (000000ae) add-int/lit8         v0, v0, 3
+	46      (000000b2) goto                 -4d
+
+add-BB@0xb4 : [ add-BB@0xba add-BB@0xea ]
+	47      (000000b4) const/4              v3, 2
+	48      (000000b6) if-lt                v2, v3, +1a
+
+add-BB@0xba : [ add-BB@0xc6 add-BB@0xea ]
+	49      (000000ba) invoke-virtual       v8, v0, Ljava/lang/String;->charAt(I)C
+	50      (000000c0) move-result          v2
+	51      (000000c2) if-ne                v2, v6, +14
+
+add-BB@0xc6 : [ add-BB@0x18 ]
+	52      (000000c6) iget-object          v2, v7, Lorg/apache/commons/lang/CharSet;->set Ljava/util/Set;
+	53      (000000ca) add-int/lit8         v3, v0, 1
+	54      (000000ce) invoke-virtual       v8, v3, Ljava/lang/String;->charAt(I)C
+	55      (000000d4) move-result          v3
+	56      (000000d6) invoke-static        v3, Lorg/apache/commons/lang/CharRange;->isNot(C)Lorg/apache/commons/lang/CharRange;
+	57      (000000dc) move-result-object   v3
+	58      (000000de) invoke-interface     v2, v3, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	59      (000000e4) add-int/lit8         v0, v0, 2
+	60      (000000e8) goto                 -68
+
+add-BB@0xea : [ add-BB@0x18 ]
+	61      (000000ea) iget-object          v2, v7, Lorg/apache/commons/lang/CharSet;->set Ljava/util/Set;
+	62      (000000ee) invoke-virtual       v8, v0, Ljava/lang/String;->charAt(I)C
+	63      (000000f4) move-result          v3
+	64      (000000f6) invoke-static        v3, Lorg/apache/commons/lang/CharRange;->is(C)Lorg/apache/commons/lang/CharRange;
+	65      (000000fc) move-result-object   v3
+	66      (000000fe) invoke-interface     v2, v3, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+	67      (00000104) add-int/lit8         v0, v0, 1
+	68      (00000108) goto                 -78
+

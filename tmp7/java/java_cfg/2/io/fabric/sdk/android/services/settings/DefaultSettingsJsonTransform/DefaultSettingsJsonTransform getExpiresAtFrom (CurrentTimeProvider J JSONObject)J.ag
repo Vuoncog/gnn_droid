@@ -1,0 +1,32 @@
+# Lio/fabric/sdk/android/services/settings/DefaultSettingsJsonTransform;->getExpiresAtFrom(Lio/fabric/sdk/android/services/common/CurrentTimeProvider; J Lorg/json/JSONObject;)J [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:io.fabric.sdk.android.services.common.CurrentTimeProvider
+# - v7:long
+# - v8:org.json.JSONObject
+#
+# - return:long
+
+getExpiresAtFrom-BB@0x0 : [ getExpiresAtFrom-BB@0x10 getExpiresAtFrom-BB@0x1e ]
+	0       (00000000) const-string         v0, 'expires_at'
+	1       (00000004) invoke-virtual       v8, v0, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +9
+
+getExpiresAtFrom-BB@0x10 : [ getExpiresAtFrom-BB@0x1c ]
+	4       (00000010) const-string         v0, 'expires_at'
+	5       (00000014) invoke-virtual       v8, v0, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+	6       (0000001a) move-result-wide     v0
+
+getExpiresAtFrom-BB@0x1c : 
+	7       (0000001c) return-wide          v0
+
+getExpiresAtFrom-BB@0x1e : [ getExpiresAtFrom-BB@0x1c ]
+	8       (0000001e) invoke-interface     v5, Lio/fabric/sdk/android/services/common/CurrentTimeProvider;->getCurrentTimeMillis()J
+	9       (00000024) move-result-wide     v0
+	10      (00000026) const-wide/16        v2, 1000 # [1000.0]
+	11      (0000002a) mul-long/2addr       v2, v6
+	12      (0000002c) add-long/2addr       v0, v2
+	13      (0000002e) goto                 -9
+

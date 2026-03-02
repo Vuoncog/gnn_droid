@@ -1,0 +1,86 @@
+digraph {
+	graph [bb="0,0,2364,621",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_aef51bae3ca2e9933a20ffd0ae73e63a {
+		graph [bb="8,8,2356,613",
+			label="Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;.storeInfoToPreferences->(Lio/fabric/sdk/android/services/common/\
+AdvertisingInfo;)V\nLocal registers v0 ... v4\nparam v5 = io.fabric.sdk.android.services.common.AdvertisingInfo\nreturn = void",
+			lheight=0.83,
+			lp="1182,579",
+			lwidth=13.83
+		];
+		struct_d7c5ee41f0cb064bda909abf7518f222	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;isInfoValid(Lio/fabric/sdk/android/services/common/AdvertisingInfo;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x1e</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1164,491.5",
+			width=15.375];
+		struct_664333fd64fd490e1e0f1dab71f1274e	[height=4.3194,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#999933">v4</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;preferenceStore Lio/fabric/sdk/android/services/persistence/PreferenceStore;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#999933">v4</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;preferenceStore Lio/fabric/sdk/android/services/persistence/PreferenceStore;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/persistence/PreferenceStore;-&gt;edit()Landroid/content/SharedPreferences$Editor;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="red">'advertising_id'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#6E6EDD">v3</FONT>, <FONT color="#909055">v5</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/AdvertisingInfo;-&gt;advertisingId Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#6E6EDD">v3</FONT>, <FONT color="#DF3A01">Landroid/content/SharedPreferences$Editor;-&gt;putString(Ljava/lang/String; Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="red">'limit_ad_tracking_enabled'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-boolean </FONT> <FONT color="#6E6EDD">v3</FONT>, <FONT color="#909055">v5</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/AdvertisingInfo;-&gt;limitAdTrackingEnabled Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#6E6EDD">v3</FONT>, <FONT color="#DF3A01">Landroid/content/SharedPreferences$Editor;-&gt;putBoolean(Ljava/lang/String; Z)Landroid/content/SharedPreferences$Editor;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/persistence/PreferenceStore;-&gt;save(Landroid/content/SharedPreferences$Editor;)Z</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="598,254.5",
+			width=16.167];
+		struct_d7c5ee41f0cb064bda909abf7518f222:tail -> struct_664333fd64fd490e1e0f1dab71f1274e:header	[color=red,
+			pos="e,41,403.5 632,451.5 632,191.44 56.48,654.53 41.305,413.54"];
+		struct_dd94b7eb2327de8dc620935777dc84ee	[height=4.0139,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#999933">v4</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;preferenceStore Lio/fabric/sdk/android/services/persistence/PreferenceStore;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">48</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#999933">v4</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;-&gt;preferenceStore Lio/fabric/sdk/android/services/persistence/PreferenceStore;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/persistence/PreferenceStore;-&gt;edit()Landroid/content/SharedPreferences$Editor;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">52</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">54</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="red">'advertising_id'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">58</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Landroid/content/SharedPreferences$Editor;-&gt;remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">60</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="red">'limit_ad_tracking_enabled'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">64</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Landroid/content/SharedPreferences$Editor;-&gt;remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/persistence/PreferenceStore;-&gt;save(Landroid/content/SharedPreferences$Editor;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">72</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-18</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1773,254.5",
+			width=15.958];
+		struct_d7c5ee41f0cb064bda909abf7518f222:tail -> struct_dd94b7eb2327de8dc620935777dc84ee:header	[color=green,
+			pos="e,1209,389.5 632,451.5 632,389.44 1132.7,436.21 1189,410 1196.2,406.64 1197.2,399.47 1200.1,394.57"];
+		struct_114ae79cfd2b6f6f35d9acbb4fb727ef	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="682,39.5",
+			width=2.0694];
+		struct_664333fd64fd490e1e0f1dab71f1274e:tail -> struct_114ae79cfd2b6f6f35d9acbb4fb727ef:header	[color=blue,
+			pos="e,618,53.5 41,104.5 41,74.142 525.85,55.675 607.79,53.68"];
+		struct_dd94b7eb2327de8dc620935777dc84ee:tail -> struct_114ae79cfd2b6f6f35d9acbb4fb727ef:header	[color=blue,
+			pos="e,633,56.5 1209,118.5 1196.6,118.5 1200.3,104.11 1189,99 1135.6,74.876 686.31,113.75 637.33,65.735"];
+	}
+}

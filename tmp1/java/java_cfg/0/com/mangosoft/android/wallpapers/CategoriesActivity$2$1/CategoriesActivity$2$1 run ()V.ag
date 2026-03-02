@@ -1,0 +1,26 @@
+# Lcom/mangosoft/android/wallpapers/CategoriesActivity$2$1;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) iget-object          v0, v4, Lcom/mangosoft/android/wallpapers/CategoriesActivity$2$1;->this$1 Lcom/mangosoft/android/wallpapers/CategoriesActivity$2;
+	1       (00000004) invoke-static        v0, Lcom/mangosoft/android/wallpapers/CategoriesActivity$2;->access$0(Lcom/mangosoft/android/wallpapers/CategoriesActivity$2;)Lcom/mangosoft/android/wallpapers/CategoriesActivity;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-static        v0, Lcom/mangosoft/android/wallpapers/CategoriesActivity;->access$3(Lcom/mangosoft/android/wallpapers/CategoriesActivity;)Landroid/widget/ListView;
+	4       (00000012) move-result-object   v0
+	5       (00000014) new-instance         v1, Lcom/mangosoft/android/wallpapers/CategoryRowAdapter;
+	6       (00000018) iget-object          v2, v4, Lcom/mangosoft/android/wallpapers/CategoriesActivity$2$1;->this$1 Lcom/mangosoft/android/wallpapers/CategoriesActivity$2;
+	7       (0000001c) invoke-static        v2, Lcom/mangosoft/android/wallpapers/CategoriesActivity$2;->access$0(Lcom/mangosoft/android/wallpapers/CategoriesActivity$2;)Lcom/mangosoft/android/wallpapers/CategoriesActivity;
+	8       (00000022) move-result-object   v2
+	9       (00000024) iget-object          v3, v4, Lcom/mangosoft/android/wallpapers/CategoriesActivity$2$1;->this$1 Lcom/mangosoft/android/wallpapers/CategoriesActivity$2;
+	10      (00000028) invoke-static        v3, Lcom/mangosoft/android/wallpapers/CategoriesActivity$2;->access$0(Lcom/mangosoft/android/wallpapers/CategoriesActivity$2;)Lcom/mangosoft/android/wallpapers/CategoriesActivity;
+	11      (0000002e) move-result-object   v3
+	12      (00000030) invoke-static        v3, Lcom/mangosoft/android/wallpapers/CategoriesActivity;->access$0(Lcom/mangosoft/android/wallpapers/CategoriesActivity;)Ljava/util/List;
+	13      (00000036) move-result-object   v3
+	14      (00000038) invoke-direct        v1, v2, v3, Lcom/mangosoft/android/wallpapers/CategoryRowAdapter;-><init>(Landroid/app/Activity; Ljava/util/List;)V
+	15      (0000003e) invoke-virtual       v0, v1, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+	16      (00000044) return-void          
+

@@ -1,0 +1,78 @@
+# Lcom/a/a/g/g;->a([I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int[]
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0xa ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) array-length         v5, v7
+	2       (00000004) array-length         v3, v7
+	3       (00000006) move                 v0, v2
+	4       (00000008) move                 v4, v2
+
+a-BB@0xa : [ a-BB@0xe a-BB@0x1c ]
+	5       (0000000a) if-ge                v0, v3, +9
+
+a-BB@0xe : [ a-BB@0xa ]
+	6       (0000000e) aget                 v1, v7, v0
+	7       (00000012) add-int/2addr        v1, v4
+	8       (00000014) add-int/lit8         v0, v0, 1
+	9       (00000018) move                 v4, v1
+	10      (0000001a) goto                 -8
+
+a-BB@0x1c : [ a-BB@0x20 ]
+	11      (0000001c) move                 v3, v2
+	12      (0000001e) move                 v0, v2
+
+a-BB@0x20 : [ a-BB@0x24 a-BB@0x4a ]
+	13      (00000020) if-ge                v3, v5, +15
+
+a-BB@0x24 : [ a-BB@0x42 a-BB@0x48 ]
+	14      (00000024) aget                 v1, v7, v3
+	15      (00000028) int-to-float         v1, v1
+	16      (0000002a) const/high16         v6, 16656 # [9.0]
+	17      (0000002e) mul-float/2addr      v1, v6
+	18      (00000030) int-to-float         v6, v4
+	19      (00000032) div-float/2addr      v1, v6
+	20      (00000034) invoke-static        v1, Ljava/lang/Math;->round(F)I
+	21      (0000003a) move-result          v6
+	22      (0000003c) const/4              v1, 1
+	23      (0000003e) if-lt                v6, v1, +5
+
+a-BB@0x42 : [ a-BB@0x48 a-BB@0x4c ]
+	24      (00000042) const/4              v1, 4
+	25      (00000044) if-le                v6, v1, +4
+
+a-BB@0x48 : [ a-BB@0x4a ]
+	26      (00000048) const/4              v0, -1
+
+a-BB@0x4a : 
+	27      (0000004a) return               v0
+
+a-BB@0x4c : [ a-BB@0x54 a-BB@0x68 ]
+	28      (0000004c) and-int/lit8         v1, v3, 1
+	29      (00000050) if-nez               v1, +c
+
+a-BB@0x54 : [ a-BB@0x56 ]
+	30      (00000054) move                 v1, v2
+
+a-BB@0x56 : [ a-BB@0x5a a-BB@0x6a ]
+	31      (00000056) if-ge                v1, v6, +a
+
+a-BB@0x5a : [ a-BB@0x56 ]
+	32      (0000005a) shl-int/lit8         v0, v0, 1
+	33      (0000005e) or-int/lit8          v0, v0, 1
+	34      (00000062) add-int/lit8         v1, v1, 1
+	35      (00000066) goto                 -8
+
+a-BB@0x68 : [ a-BB@0x6a ]
+	36      (00000068) shl-int/2addr        v0, v6
+
+a-BB@0x6a : [ a-BB@0x20 ]
+	37      (0000006a) add-int/lit8         v1, v3, 1
+	38      (0000006e) move                 v3, v1
+	39      (00000070) goto                 -28
+

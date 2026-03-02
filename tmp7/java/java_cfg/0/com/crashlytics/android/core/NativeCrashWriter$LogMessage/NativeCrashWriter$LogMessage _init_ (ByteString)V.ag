@@ -1,0 +1,16 @@
+# Lcom/crashlytics/android/core/NativeCrashWriter$LogMessage;-><init>(Lcom/crashlytics/android/core/ByteString;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.crashlytics.android.core.ByteString
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 6
+	1       (00000002) const/4              v1, 0
+	2       (00000004) new-array            v1, v1, [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;
+	3       (00000008) invoke-direct        v2, v0, v1, Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-><init>(I [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;)V
+	4       (0000000e) iput-object          v3, v2, Lcom/crashlytics/android/core/NativeCrashWriter$LogMessage;->logBytes Lcom/crashlytics/android/core/ByteString;
+	5       (00000012) return-void          
+

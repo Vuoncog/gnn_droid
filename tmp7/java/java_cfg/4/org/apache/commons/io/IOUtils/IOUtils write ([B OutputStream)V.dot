@@ -1,0 +1,50 @@
+digraph {
+	graph [bb="0,0,496,328",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_c400fbfc3f7e62d4b36490443384f87f {
+		graph [bb="8,8,488,320",
+			label="Lorg/apache/commons/io/IOUtils;.write->([B Ljava/io/OutputStream;)V\nLocal registers v0 ... v-1\nparam v0 = byte[]\nparam v1 = java.io.OutputStream\nreturn = \
+void",
+			lheight=1.04,
+			lp="248,278.5",
+			lwidth=6.44
+		];
+		struct_170eb60379038bf68fea4e3447e94f4c	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="248,205.5",
+			width=2.0972];
+		struct_0c786b859acf5dedeef16ee9b16e4ac6	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/io/OutputStream;-&gt;write([B)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="234,122.5",
+			width=6.0556];
+		struct_170eb60379038bf68fea4e3447e94f4c:tail -> struct_0c786b859acf5dedeef16ee9b16e4ac6:header	[color=red,
+			pos="e,37,139.5 194,187.5 194,118.38 53.122,202.61 38.264,149.67"];
+		struct_1acbd318937cb81a94d61cbc1617c877	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="248,39.5",
+			width=1.9444];
+		struct_170eb60379038bf68fea4e3447e94f4c:tail -> struct_1acbd318937cb81a94d61cbc1617c877:header	[color=green,
+			pos="e,199,56.5 194,187.5 194,127.45 421.94,191.6 461,146 474.59,130.14 474.54,114.91 461,99 425.17,56.885 226.25,108.22 201.52,66.204"];
+		struct_0c786b859acf5dedeef16ee9b16e4ac6:tail -> struct_1acbd318937cb81a94d61cbc1617c877:header	[color=blue,
+			pos="e,199,56.5 37,104.5 37,33.219 182.96,121.67 197.79,66.615"];
+	}
+}

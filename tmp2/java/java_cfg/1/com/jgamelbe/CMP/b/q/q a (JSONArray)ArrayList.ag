@@ -1,0 +1,43 @@
+# Lcom/jgamelbe/CMP/b/q;->a(Lorg/json/JSONArray;)Ljava/util/ArrayList; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:org.json.JSONArray
+#
+# - return:java.util.ArrayList
+
+a-BB@0x0 : [ a-BB@0xe a-BB@0x34 ]
+	0       (00000000) new-instance         v0, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) if-eqz               v4, +15
+
+a-BB@0xe : [ a-BB@0x1a a-BB@0x34 ]
+	3       (0000000e) invoke-virtual       v4, Lorg/json/JSONArray;->length()I
+	4       (00000014) move-result          v1
+	5       (00000016) if-lez               v1, +f
+
+a-BB@0x1a : [ a-BB@0x26 ]
+	6       (0000001a) new-instance         v1, Ljava/util/ArrayList;
+	7       (0000001e) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	8       (00000024) const/4              v0, 0
+
+a-BB@0x26 : [ a-BB@0x32 a-BB@0x36 ]
+	9       (00000026) invoke-virtual       v4, Lorg/json/JSONArray;->length()I
+	10      (0000002c) move-result          v2
+	11      (0000002e) if-lt                v0, v2, +4
+
+a-BB@0x32 : [ a-BB@0x34 ]
+	12      (00000032) move-object          v0, v1
+
+a-BB@0x34 : 
+	13      (00000034) return-object        v0
+
+a-BB@0x36 : [ a-BB@0x26 ]
+	14      (00000036) invoke-virtual       v4, v0, Lorg/json/JSONArray;->optJSONObject(I)Lorg/json/JSONObject;
+	15      (0000003c) move-result-object   v2
+	16      (0000003e) invoke-static        v2, Lcom/jgamelbe/CMP/c/f;->a(Lorg/json/JSONObject;)Lcom/jgamelbe/CMP/c/f;
+	17      (00000044) move-result-object   v2
+	18      (00000046) invoke-virtual       v1, v2, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	19      (0000004c) add-int/lit8         v0, v0, 1
+	20      (00000050) goto                 -15
+

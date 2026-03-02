@@ -1,0 +1,14 @@
+# Lorg/apache/commons/lang/BitField;->getShortValue(S)S [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:short
+#
+# - return:short
+
+getShortValue-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, v2, Lorg/apache/commons/lang/BitField;->getValue(I)I
+	1       (00000006) move-result          v0
+	2       (00000008) int-to-short         v0, v0
+	3       (0000000a) return               v0
+

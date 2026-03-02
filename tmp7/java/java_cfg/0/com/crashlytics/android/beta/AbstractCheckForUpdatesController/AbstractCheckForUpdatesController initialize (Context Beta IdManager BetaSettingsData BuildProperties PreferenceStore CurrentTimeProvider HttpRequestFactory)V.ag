@@ -1,0 +1,34 @@
+# Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->initialize(Landroid/content/Context; Lcom/crashlytics/android/beta/Beta; Lio/fabric/sdk/android/services/common/IdManager; Lio/fabric/sdk/android/services/settings/BetaSettingsData; Lcom/crashlytics/android/beta/BuildProperties; Lio/fabric/sdk/android/services/persistence/PreferenceStore; Lio/fabric/sdk/android/services/common/CurrentTimeProvider; Lio/fabric/sdk/android/services/network/HttpRequestFactory;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:com.crashlytics.android.beta.Beta
+# - v4:io.fabric.sdk.android.services.common.IdManager
+# - v5:io.fabric.sdk.android.services.settings.BetaSettingsData
+# - v6:com.crashlytics.android.beta.BuildProperties
+# - v7:io.fabric.sdk.android.services.persistence.PreferenceStore
+# - v8:io.fabric.sdk.android.services.common.CurrentTimeProvider
+# - v9:io.fabric.sdk.android.services.network.HttpRequestFactory
+#
+# - return:void
+
+initialize-BB@0x0 : [ initialize-BB@0x2c initialize-BB@0x32 ]
+	0       (00000000) iput-object          v2, v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->context Landroid/content/Context;
+	1       (00000004) iput-object          v3, v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->beta Lcom/crashlytics/android/beta/Beta;
+	2       (00000008) iput-object          v4, v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->idManager Lio/fabric/sdk/android/services/common/IdManager;
+	3       (0000000c) iput-object          v5, v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->betaSettings Lio/fabric/sdk/android/services/settings/BetaSettingsData;
+	4       (00000010) iput-object          v6, v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->buildProps Lcom/crashlytics/android/beta/BuildProperties;
+	5       (00000014) iput-object          v7, v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->preferenceStore Lio/fabric/sdk/android/services/persistence/PreferenceStore;
+	6       (00000018) iput-object          v8, v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->currentTimeProvider Lio/fabric/sdk/android/services/common/CurrentTimeProvider;
+	7       (0000001c) iput-object          v9, v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->httpRequestFactory Lio/fabric/sdk/android/services/network/HttpRequestFactory;
+	8       (00000020) invoke-virtual       v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->signalInitialized()Z
+	9       (00000026) move-result          v0
+	10      (00000028) if-eqz               v0, +5
+
+initialize-BB@0x2c : [ initialize-BB@0x32 ]
+	11      (0000002c) invoke-virtual       v1, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->checkForUpdates()V
+
+initialize-BB@0x32 : 
+	12      (00000032) return-void          
+

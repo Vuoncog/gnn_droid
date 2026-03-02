@@ -1,0 +1,104 @@
+# Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->send(Ljava/util/List;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:java.util.List
+#
+# - return:boolean
+
+send-BB@0x0 : [ send-BB@0x4c ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-virtual       v8, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->getHttpRequest()Lio/fabric/sdk/android/services/network/HttpRequest;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) const-string         v1, 'X-CRASHLYTICS-API-CLIENT-TYPE'
+	4       (0000000e) const-string         v3, 'android'
+	5       (00000012) invoke-virtual       v0, v1, v3, Lio/fabric/sdk/android/services/network/HttpRequest;->header(Ljava/lang/String; Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) const-string         v1, 'X-CRASHLYTICS-API-CLIENT-VERSION'
+	8       (0000001e) iget-object          v3, v8, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->kit Lio/fabric/sdk/android/Kit;
+	9       (00000022) invoke-virtual       v3, Lio/fabric/sdk/android/Kit;->getVersion()Ljava/lang/String;
+	10      (00000028) move-result-object   v3
+	11      (0000002a) invoke-virtual       v0, v1, v3, Lio/fabric/sdk/android/services/network/HttpRequest;->header(Ljava/lang/String; Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest;
+	12      (00000030) move-result-object   v0
+	13      (00000032) const-string         v1, 'X-CRASHLYTICS-API-KEY'
+	14      (00000036) iget-object          v3, v8, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->apiKey Ljava/lang/String;
+	15      (0000003a) invoke-virtual       v0, v1, v3, Lio/fabric/sdk/android/services/network/HttpRequest;->header(Ljava/lang/String; Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest;
+	16      (00000040) move-result-object   v3
+	17      (00000042) invoke-interface     v9, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	18      (00000048) move-result-object   v4
+	19      (0000004a) move                 v1, v2
+
+send-BB@0x4c : [ send-BB@0x58 send-BB@0xa4 ]
+	20      (0000004c) invoke-interface     v4, Ljava/util/Iterator;->hasNext()Z
+	21      (00000052) move-result          v0
+	22      (00000054) if-eqz               v0, +28
+
+send-BB@0x58 : [ send-BB@0x4c ]
+	23      (00000058) invoke-interface     v4, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	24      (0000005e) move-result-object   v0
+	25      (00000060) check-cast           v0, Ljava/io/File;
+	26      (00000064) new-instance         v5, Ljava/lang/StringBuilder;
+	27      (00000068) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	28      (0000006e) const-string         v6, 'session_analytics_file_'
+	29      (00000072) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (00000078) move-result-object   v5
+	31      (0000007a) invoke-virtual       v5, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	32      (00000080) move-result-object   v5
+	33      (00000082) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	34      (00000088) move-result-object   v5
+	35      (0000008a) invoke-virtual       v0, Ljava/io/File;->getName()Ljava/lang/String;
+	36      (00000090) move-result-object   v6
+	37      (00000092) const-string         v7, 'application/vnd.crashlytics.android.events'
+	38      (00000096) invoke-virtual       v3, v5, v6, v7, v0, Lio/fabric/sdk/android/services/network/HttpRequest;->part(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/io/File;)Lio/fabric/sdk/android/services/network/HttpRequest;
+	39      (0000009c) add-int/lit8         v0, v1, 1
+	40      (000000a0) move                 v1, v0
+	41      (000000a2) goto                 -2b
+
+send-BB@0xa4 : [ send-BB@0x14c send-BB@0x14e ]
+	42      (000000a4) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	43      (000000aa) move-result-object   v0
+	44      (000000ac) const-string         v1, 'Answers'
+	45      (000000b0) new-instance         v4, Ljava/lang/StringBuilder;
+	46      (000000b4) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	47      (000000ba) const-string         v5, 'Sending '
+	48      (000000be) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000c4) move-result-object   v4
+	50      (000000c6) invoke-interface     v9, Ljava/util/List;->size()I
+	51      (000000cc) move-result          v5
+	52      (000000ce) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	53      (000000d4) move-result-object   v4
+	54      (000000d6) const-string         v5, ' analytics files to '
+	55      (000000da) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	56      (000000e0) move-result-object   v4
+	57      (000000e2) invoke-virtual       v8, Lcom/crashlytics/android/answers/SessionAnalyticsFilesSender;->getUrl()Ljava/lang/String;
+	58      (000000e8) move-result-object   v5
+	59      (000000ea) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	60      (000000f0) move-result-object   v4
+	61      (000000f2) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	62      (000000f8) move-result-object   v4
+	63      (000000fa) invoke-interface     v0, v1, v4, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	64      (00000100) invoke-virtual       v3, Lio/fabric/sdk/android/services/network/HttpRequest;->code()I
+	65      (00000106) move-result          v0
+	66      (00000108) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	67      (0000010e) move-result-object   v1
+	68      (00000110) const-string         v3, 'Answers'
+	69      (00000114) new-instance         v4, Ljava/lang/StringBuilder;
+	70      (00000118) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	71      (0000011e) const-string         v5, 'Response code for analytics file send is '
+	72      (00000122) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	73      (00000128) move-result-object   v4
+	74      (0000012a) invoke-virtual       v4, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	75      (00000130) move-result-object   v4
+	76      (00000132) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	77      (00000138) move-result-object   v4
+	78      (0000013a) invoke-interface     v1, v3, v4, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	79      (00000140) invoke-static        v0, Lio/fabric/sdk/android/services/common/ResponseParser;->parse(I)I
+	80      (00000146) move-result          v0
+	81      (00000148) if-nez               v0, +3
+
+send-BB@0x14c : [ send-BB@0x14e ]
+	82      (0000014c) const/4              v2, 1
+
+send-BB@0x14e : 
+	83      (0000014e) return               v2
+

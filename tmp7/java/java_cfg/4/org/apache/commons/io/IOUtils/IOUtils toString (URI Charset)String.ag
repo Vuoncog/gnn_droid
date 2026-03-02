@@ -1,0 +1,18 @@
+# Lorg/apache/commons/io/IOUtils;->toString(Ljava/net/URI; Ljava/nio/charset/Charset;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.net.URI
+# - v3:java.nio.charset.Charset
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Ljava/net/URI;->toURL()Ljava/net/URL;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v3, Lorg/apache/commons/io/Charsets;->toCharset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-static        v0, v1, Lorg/apache/commons/io/IOUtils;->toString(Ljava/net/URL; Ljava/nio/charset/Charset;)Ljava/lang/String;
+	5       (00000016) move-result-object   v0
+	6       (00000018) return-object        v0
+

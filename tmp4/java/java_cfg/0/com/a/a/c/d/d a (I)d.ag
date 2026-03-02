@@ -1,0 +1,29 @@
+# Lcom/a/a/c/d;->a(I)Lcom/a/a/c/d; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:com.a.a.c.d
+
+a-BB@0x0 : [ a-BB@0x4 a-BB@0xc ]
+	0       (00000000) if-ltz               v2, +6
+
+a-BB@0x4 : [ a-BB@0xc a-BB@0x16 ]
+	1       (00000004) const/16             v0, 900
+	2       (00000008) if-lt                v2, v0, +7
+
+a-BB@0xc : 
+	3       (0000000c) invoke-static        Lcom/a/a/h;->a()Lcom/a/a/h;
+	4       (00000012) move-result-object   v0
+	5       (00000014) throw                v0
+
+a-BB@0x16 : 
+	6       (00000016) sget-object          v0, Lcom/a/a/c/d;->B Ljava/util/Map;
+	7       (0000001a) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	8       (00000020) move-result-object   v1
+	9       (00000022) invoke-interface     v0, v1, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	10      (00000028) move-result-object   v0
+	11      (0000002a) check-cast           v0, Lcom/a/a/c/d;
+	12      (0000002e) return-object        v0
+

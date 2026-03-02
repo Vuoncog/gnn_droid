@@ -1,0 +1,39 @@
+# La/a/b/a/b/b/j/a/b/a;->a(Ljava/lang/String;)La/a/b/a/a/a; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:a.a.b.a.a.a
+
+a-BB@0x0 : [ a-BB@0x10 a-BB@0x20 ]
+	0       (00000000) const-string         v0, 'scn'
+	1       (00000004) invoke-virtual       v0, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +a
+
+a-BB@0x10 : [ a-BB@0x1e ]
+	4       (00000010) new-instance         v0, La/a/b/a/b/b/j/a/c/b;
+	5       (00000014) iget-object          v1, v2, La/a/b/a/b/b/j/a/b/a;->b La/a/b/a/a/e;
+	6       (00000018) invoke-direct        v0, v1, La/a/b/a/b/b/j/a/c/b;-><init>(La/a/b/a/a/e;)V
+
+a-BB@0x1e : 
+	7       (0000001e) return-object        v0
+
+a-BB@0x20 : [ a-BB@0x30 a-BB@0x40 ]
+	8       (00000020) const-string         v0, 'fx'
+	9       (00000024) invoke-virtual       v0, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	10      (0000002a) move-result          v0
+	11      (0000002c) if-eqz               v0, +a
+
+a-BB@0x30 : [ a-BB@0x1e ]
+	12      (00000030) new-instance         v0, La/a/b/a/b/b/j/a/c/a;
+	13      (00000034) iget-object          v1, v2, La/a/b/a/b/b/j/a/b/a;->b La/a/b/a/a/e;
+	14      (00000038) invoke-direct        v0, v1, La/a/b/a/b/b/j/a/c/a;-><init>(La/a/b/a/a/e;)V
+	15      (0000003e) goto                 -10
+
+a-BB@0x40 : [ a-BB@0x1e ]
+	16      (00000040) invoke-super         v2, v3, La/a/b/a/a/c/c;->a(Ljava/lang/String;)La/a/b/a/a/a;
+	17      (00000046) move-result-object   v0
+	18      (00000048) goto                 -15
+

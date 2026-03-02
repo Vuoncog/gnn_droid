@@ -1,0 +1,24 @@
+# Lorg/apache/commons/lang/StringUtils;->strip(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.lang.String
+#
+# - return:java.lang.String
+
+strip-BB@0x0 : [ strip-BB@0xc strip-BB@0xe ]
+	0       (00000000) invoke-static        v1, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +3
+
+strip-BB@0xc : 
+	3       (0000000c) return-object        v1
+
+strip-BB@0xe : [ strip-BB@0xc ]
+	4       (0000000e) invoke-static        v1, v2, Lorg/apache/commons/lang/StringUtils;->stripStart(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	5       (00000014) move-result-object   v0
+	6       (00000016) invoke-static        v0, v2, Lorg/apache/commons/lang/StringUtils;->stripEnd(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	7       (0000001c) move-result-object   v1
+	8       (0000001e) goto                 -9
+

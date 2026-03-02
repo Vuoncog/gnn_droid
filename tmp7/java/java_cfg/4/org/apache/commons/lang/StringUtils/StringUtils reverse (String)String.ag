@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/StringUtils;->reverse(Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+#
+# - return:java.lang.String
+
+reverse-BB@0x0 : [ reverse-BB@0x4 reverse-BB@0x8 ]
+	0       (00000000) if-nez               v1, +4
+
+reverse-BB@0x4 : [ reverse-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+reverse-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+reverse-BB@0x8 : [ reverse-BB@0x6 ]
+	3       (00000008) new-instance         v0, Lorg/apache/commons/lang/text/StrBuilder;
+	4       (0000000c) invoke-direct        v0, v1, Lorg/apache/commons/lang/text/StrBuilder;-><init>(Ljava/lang/String;)V
+	5       (00000012) invoke-virtual       v0, Lorg/apache/commons/lang/text/StrBuilder;->reverse()Lorg/apache/commons/lang/text/StrBuilder;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-virtual       v0, Lorg/apache/commons/lang/text/StrBuilder;->toString()Ljava/lang/String;
+	8       (00000020) move-result-object   v0
+	9       (00000022) goto                 -e
+

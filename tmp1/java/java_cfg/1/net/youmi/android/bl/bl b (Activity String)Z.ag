@@ -1,0 +1,125 @@
+# Lnet/youmi/android/bl;->b(Landroid/app/Activity; Ljava/lang/String;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.app.Activity
+# - v9:java.lang.String
+#
+# - return:boolean
+
+b-BB@0x0 : [ b-BB@0x4 ]
+	0       (00000000) const/4              v7, 1
+	1       (00000002) const/4              v6, 0
+
+b-BB@0x4 : [ b-BB@0x14 b-BB@0xac ]
+	2       (00000004) const-string         v0, 'youmi://sms/'
+	3       (00000008) invoke-virtual       v9, v0, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	4       (0000000e) move-result          v0
+	5       (00000010) if-nez               v0, +4e
+	4:43
+	(Ljava/lang/Exception; -> aa b-BB@0xaa)
+
+b-BB@0x14 : [ b-BB@0x3c b-BB@0xa4 ]
+	6       (00000014) const-string         v0, 'youmi://sms/'
+	7       (00000018) invoke-virtual       v0, Ljava/lang/String;->length()I
+	8       (0000001e) move-result          v0
+	9       (00000020) invoke-virtual       v9, v0, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	10      (00000026) move-result-object   v0
+	11      (00000028) const-string         v1, '/'
+	12      (0000002c) invoke-virtual       v0, v1, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	13      (00000032) move-result          v1
+	14      (00000034) const/4              v2, 0
+	15      (00000036) const/4              v3, -1
+	16      (00000038) if-le                v1, v3, +36
+	4:43
+	(Ljava/lang/Exception; -> aa b-BB@0xaa)
+
+b-BB@0x3c : [ b-BB@0x46 ]
+	17      (0000003c) const/4              v3, 0
+	18      (0000003e) invoke-virtual       v0, v3, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	19      (00000044) move-result-object   v3
+
+b-BB@0x46 : [ b-BB@0x56 b-BB@0xbc ]
+	20      (00000046) invoke-virtual       v0, Ljava/lang/String;->length()I
+	21      (0000004c) move-result          v4
+	22      (0000004e) add-int/lit8         v5, v1, 1
+	23      (00000052) if-le                v4, v5, +35
+	46:5f
+	(Ljava/lang/Exception; -> 9c b-BB@0x9c)
+
+b-BB@0x56 : [ b-BB@0x66 b-BB@0xb8 ]
+	24      (00000056) add-int/lit8         v1, v1, 1
+	25      (0000005a) invoke-virtual       v0, v1, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	26      (00000060) move-result-object   v0
+	27      (00000062) if-eqz               v0, +2b
+
+b-BB@0x66 : [ b-BB@0x70 ]
+	28      (00000066) invoke-static        v0, Lnet/youmi/android/v;->a(Ljava/lang/String;)Ljava/lang/String;
+	29      (0000006c) move-result-object   v0
+	30      (0000006e) move-object          v1, v3
+	66:6b
+	(Ljava/lang/Exception; -> b4 b-BB@0xb4)
+
+b-BB@0x70 : [ b-BB@0x74 b-BB@0xac ]
+	31      (00000070) if-eqz               v1, +1e
+
+b-BB@0x74 : [ b-BB@0x80 b-BB@0x98 ]
+	32      (00000074) invoke-static        v8, v1, v0, Lnet/youmi/android/ad;->a(Landroid/app/Activity; Ljava/lang/String; Ljava/lang/String;)Z
+	33      (0000007a) move-result          v0
+	34      (0000007c) if-eqz               v0, +e
+	74:79
+	(Ljava/lang/Exception; -> aa b-BB@0xaa)
+
+b-BB@0x80 : [ b-BB@0x98 ]
+	35      (00000080) invoke-static        Lnet/youmi/android/aj;->a()Lnet/youmi/android/ax;
+	36      (00000086) move-result-object   v0
+	37      (00000088) invoke-virtual       v0, Lnet/youmi/android/ax;->f()I
+	38      (0000008e) move-result          v0
+	39      (00000090) const/4              v2, 1
+	40      (00000092) invoke-static        v8, v0, v1, v2, Lnet/youmi/android/a;->b(Landroid/app/Activity; I Ljava/lang/String; I)V
+	80:97
+	(Ljava/lang/Exception; -> b0 b-BB@0xb0)
+
+b-BB@0x98 : [ b-BB@0x9a ]
+	41      (00000098) move                 v0, v7
+
+b-BB@0x9a : 
+	42      (0000009a) return               v0
+
+b-BB@0x9c : [ b-BB@0xa0 ]
+	43      (0000009c) move-exception       v0
+	44      (0000009e) move-object          v0, v2
+
+b-BB@0xa0 : [ b-BB@0x70 ]
+	45      (000000a0) move-object          v1, v3
+	46      (000000a2) goto                 -19
+
+b-BB@0xa4 : [ b-BB@0x70 ]
+	47      (000000a4) move-object          v1, v0
+	48      (000000a6) move-object          v0, v2
+	49      (000000a8) goto                 -1c
+
+b-BB@0xaa : [ b-BB@0xac ]
+	50      (000000aa) move-exception       v0
+
+b-BB@0xac : [ b-BB@0x9a ]
+	51      (000000ac) move                 v0, v6
+	52      (000000ae) goto                 -a
+
+b-BB@0xb0 : [ b-BB@0x98 ]
+	53      (000000b0) move-exception       v0
+	54      (000000b2) goto                 -d
+
+b-BB@0xb4 : [ b-BB@0xa0 ]
+	55      (000000b4) move-exception       v1
+	56      (000000b6) goto                 -b
+
+b-BB@0xb8 : [ b-BB@0x70 ]
+	57      (000000b8) move-object          v1, v3
+	58      (000000ba) goto                 -25
+
+b-BB@0xbc : [ b-BB@0x70 ]
+	59      (000000bc) move-object          v0, v2
+	60      (000000be) move-object          v1, v3
+	61      (000000c0) goto                 -28
+

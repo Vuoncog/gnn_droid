@@ -1,0 +1,57 @@
+# Lorg/apache/commons/io/FileUtils;->forceDelete(Ljava/io/File;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.File
+#
+# - return:void
+
+forceDelete-BB@0x0 : [ forceDelete-BB@0xc forceDelete-BB@0x14 ]
+	0       (00000000) invoke-virtual       v3, Ljava/io/File;->isDirectory()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +6
+
+forceDelete-BB@0xc : [ forceDelete-BB@0x12 ]
+	3       (0000000c) invoke-static        v3, Lorg/apache/commons/io/FileUtils;->deleteDirectory(Ljava/io/File;)V
+
+forceDelete-BB@0x12 : 
+	4       (00000012) return-void          
+
+forceDelete-BB@0x14 : [ forceDelete-BB@0x28 forceDelete-BB@0x12 ]
+	5       (00000014) invoke-virtual       v3, Ljava/io/File;->exists()Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) invoke-virtual       v3, Ljava/io/File;->delete()Z
+	8       (00000022) move-result          v1
+	9       (00000024) if-nez               v1, -9
+
+forceDelete-BB@0x28 : [ forceDelete-BB@0x2c forceDelete-BB@0x5e ]
+	10      (00000028) if-nez               v0, +1b
+
+forceDelete-BB@0x2c : 
+	11      (0000002c) new-instance         v0, Ljava/io/FileNotFoundException;
+	12      (00000030) new-instance         v1, Ljava/lang/StringBuilder;
+	13      (00000034) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	14      (0000003a) const-string         v2, 'File does not exist: '
+	15      (0000003e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v1
+	17      (00000046) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	18      (0000004c) move-result-object   v1
+	19      (0000004e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (00000054) move-result-object   v1
+	21      (00000056) invoke-direct        v0, v1, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
+	22      (0000005c) throw                v0
+
+forceDelete-BB@0x5e : 
+	23      (0000005e) new-instance         v0, Ljava/lang/StringBuilder;
+	24      (00000062) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	25      (00000068) const-string         v1, 'Unable to delete file: '
+	26      (0000006c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (00000072) move-result-object   v0
+	28      (00000074) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	29      (0000007a) move-result-object   v0
+	30      (0000007c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	31      (00000082) move-result-object   v0
+	32      (00000084) new-instance         v1, Ljava/io/IOException;
+	33      (00000088) invoke-direct        v1, v0, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	34      (0000008e) throw                v1
+

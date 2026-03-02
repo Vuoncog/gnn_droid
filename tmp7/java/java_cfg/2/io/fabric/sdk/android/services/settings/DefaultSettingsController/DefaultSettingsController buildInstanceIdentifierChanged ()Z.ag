@@ -1,0 +1,26 @@
+# Lio/fabric/sdk/android/services/settings/DefaultSettingsController;->buildInstanceIdentifierChanged()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+buildInstanceIdentifierChanged-BB@0x0 : [ buildInstanceIdentifierChanged-BB@0x1c buildInstanceIdentifierChanged-BB@0x20 ]
+	0       (00000000) invoke-virtual       v2, Lio/fabric/sdk/android/services/settings/DefaultSettingsController;->getStoredBuildInstanceIdentifier()Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v2, Lio/fabric/sdk/android/services/settings/DefaultSettingsController;->getBuildInstanceIdentifierFromContext()Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v0, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-nez               v0, +4
+
+buildInstanceIdentifierChanged-BB@0x1c : [ buildInstanceIdentifierChanged-BB@0x1e ]
+	7       (0000001c) const/4              v0, 1
+
+buildInstanceIdentifierChanged-BB@0x1e : 
+	8       (0000001e) return               v0
+
+buildInstanceIdentifierChanged-BB@0x20 : [ buildInstanceIdentifierChanged-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

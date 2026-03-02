@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/math/Fraction;->negate()Lorg/apache/commons/lang/math/Fraction; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:org.apache.commons.lang.math.Fraction
+
+negate-BB@0x0 : [ negate-BB@0xc negate-BB@0x1c ]
+	0       (00000000) iget                 v0, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	1       (00000004) const/high16         v1, -32768 # [-0.0]
+	2       (00000008) if-ne                v0, v1, +a
+
+negate-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/lang/ArithmeticException;
+	4       (00000010) const-string         v1, 'overflow: too large to negate'
+	5       (00000014) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	6       (0000001a) throw                v0
+
+negate-BB@0x1c : 
+	7       (0000001c) new-instance         v0, Lorg/apache/commons/lang/math/Fraction;
+	8       (00000020) iget                 v1, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	9       (00000024) neg-int              v1, v1
+	10      (00000026) iget                 v2, v3, Lorg/apache/commons/lang/math/Fraction;->denominator I
+	11      (0000002a) invoke-direct        v0, v1, v2, Lorg/apache/commons/lang/math/Fraction;-><init>(I I)V
+	12      (00000030) return-object        v0
+

@@ -1,0 +1,20 @@
+# Lorg/apache/commons/lang/ObjectUtils;->cloneIfPossible(Ljava/lang/Object;)Ljava/lang/Object; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+#
+# - return:java.lang.Object
+
+cloneIfPossible-BB@0x0 : [ cloneIfPossible-BB@0xc cloneIfPossible-BB@0xe ]
+	0       (00000000) invoke-static        v1, Lorg/apache/commons/lang/ObjectUtils;->clone(Ljava/lang/Object;)Ljava/lang/Object;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-nez               v0, +3
+
+cloneIfPossible-BB@0xc : 
+	3       (0000000c) return-object        v1
+
+cloneIfPossible-BB@0xe : [ cloneIfPossible-BB@0xc ]
+	4       (0000000e) move-object          v1, v0
+	5       (00000010) goto                 -2
+

@@ -1,0 +1,34 @@
+# Lorg/apache/commons/lang/math/JVMRandom;->bitsRequired(J)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:long
+#
+# - return:int
+
+bitsRequired-BB@0x0 : [ bitsRequired-BB@0xa ]
+	0       (00000000) const-wide/16        v6, 0 # [0.0]
+	1       (00000004) const/4              v4, 1
+	2       (00000006) const/4              v0, 0
+	3       (00000008) move-wide            v2, v8
+
+bitsRequired-BB@0xa : [ bitsRequired-BB@0x12 bitsRequired-BB@0x18 ]
+	4       (0000000a) cmp-long             v1, v2, v6
+	5       (0000000e) if-gez               v1, +5
+
+bitsRequired-BB@0x12 : [ bitsRequired-BB@0x16 ]
+	6       (00000012) rsub-int/lit8        v0, v0, 64
+
+bitsRequired-BB@0x16 : 
+	7       (00000016) return               v0
+
+bitsRequired-BB@0x18 : [ bitsRequired-BB@0x20 bitsRequired-BB@0x16 ]
+	8       (00000018) cmp-long             v1, v8, v6
+	9       (0000001c) if-eqz               v1, -3
+
+bitsRequired-BB@0x20 : [ bitsRequired-BB@0xa ]
+	10      (00000020) add-int/lit8         v0, v0, 1
+	11      (00000024) shl-long/2addr       v2, v4
+	12      (00000026) shr-long/2addr       v8, v4
+	13      (00000028) goto                 -f
+

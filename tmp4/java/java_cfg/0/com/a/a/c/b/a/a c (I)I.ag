@@ -1,0 +1,26 @@
+# Lcom/a/a/c/b/a;->c(I)I [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:int
+
+c-BB@0x0 : [ c-BB@0x4 c-BB@0x10 ]
+	0       (00000000) if-nez               v4, +8
+
+c-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/ArithmeticException;
+	2       (00000008) invoke-direct        v0, Ljava/lang/ArithmeticException;-><init>()V
+	3       (0000000e) throw                v0
+
+c-BB@0x10 : 
+	4       (00000010) iget-object          v0, v3, Lcom/a/a/c/b/a;->i [I
+	5       (00000014) iget                 v1, v3, Lcom/a/a/c/b/a;->m I
+	6       (00000018) iget-object          v2, v3, Lcom/a/a/c/b/a;->j [I
+	7       (0000001c) aget                 v2, v2, v4
+	8       (00000020) sub-int/2addr        v1, v2
+	9       (00000022) add-int/lit8         v1, v1, -1
+	10      (00000026) aget                 v0, v0, v1
+	11      (0000002a) return               v0
+

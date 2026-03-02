@@ -1,0 +1,66 @@
+# Lcom/jgamelbe/CMP/JavaScriptCallBack;->checkInstalled(Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+#
+# - return:boolean
+
+checkInstalled-BB@0x0 : [ checkInstalled-BB@0x1e ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v0, v5, Lcom/jgamelbe/CMP/JavaScriptCallBack;->b Landroid/content/Context;
+	2       (00000006) invoke-virtual       v0, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) invoke-virtual       v0, v1, Landroid/content/pm/PackageManager;->getInstalledPackages(I)Ljava/util/List;
+	5       (00000014) move-result-object   v0
+	6       (00000016) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	7       (0000001c) move-result-object   v2
+
+checkInstalled-BB@0x1e : [ checkInstalled-BB@0x2a checkInstalled-BB@0x2e ]
+	8       (0000001e) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	9       (00000024) move-result          v0
+	10      (00000026) if-nez               v0, +4
+
+checkInstalled-BB@0x2a : [ checkInstalled-BB@0x2c ]
+	11      (0000002a) move                 v0, v1
+
+checkInstalled-BB@0x2c : 
+	12      (0000002c) return               v0
+
+checkInstalled-BB@0x2e : [ checkInstalled-BB@0x42 checkInstalled-BB@0x1e ]
+	13      (0000002e) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	14      (00000034) move-result-object   v0
+	15      (00000036) check-cast           v0, Landroid/content/pm/PackageInfo;
+	16      (0000003a) iget-object          v3, v0, Landroid/content/pm/PackageInfo;->versionName Ljava/lang/String;
+	17      (0000003e) if-eqz               v3, -10
+
+checkInstalled-BB@0x42 : [ checkInstalled-BB@0x4a checkInstalled-BB@0x5e ]
+	18      (00000042) iget-object          v3, v0, Landroid/content/pm/PackageInfo;->versionName Ljava/lang/String;
+	19      (00000046) if-eqz               v3, +c
+
+checkInstalled-BB@0x4a : [ checkInstalled-BB@0x5e checkInstalled-BB@0x1e ]
+	20      (0000004a) iget-object          v3, v0, Landroid/content/pm/PackageInfo;->versionName Ljava/lang/String;
+	21      (0000004e) sget-object          v4, Landroid/os/Build$VERSION;->RELEASE Ljava/lang/String;
+	22      (00000052) invoke-virtual       v3, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	23      (00000058) move-result          v3
+	24      (0000005a) if-nez               v3, -1e
+
+checkInstalled-BB@0x5e : [ checkInstalled-BB@0x6e checkInstalled-BB@0x1e ]
+	25      (0000005e) iget-object          v3, v0, Landroid/content/pm/PackageInfo;->applicationInfo Landroid/content/pm/ApplicationInfo;
+	26      (00000062) iget                 v3, v3, Landroid/content/pm/ApplicationInfo;->flags I
+	27      (00000066) and-int/lit8         v3, v3, 1
+	28      (0000006a) if-gtz               v3, -26
+
+checkInstalled-BB@0x6e : [ checkInstalled-BB@0x76 checkInstalled-BB@0x1e ]
+	29      (0000006e) iget-object          v0, v0, Landroid/content/pm/PackageInfo;->packageName Ljava/lang/String;
+	30      (00000072) if-eqz               v0, -2a
+
+checkInstalled-BB@0x76 : [ checkInstalled-BB@0x82 checkInstalled-BB@0x1e ]
+	31      (00000076) invoke-virtual       v0, v6, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	32      (0000007c) move-result          v0
+	33      (0000007e) if-eqz               v0, -30
+
+checkInstalled-BB@0x82 : [ checkInstalled-BB@0x2c ]
+	34      (00000082) const/4              v0, 1
+	35      (00000084) goto                 -2c
+

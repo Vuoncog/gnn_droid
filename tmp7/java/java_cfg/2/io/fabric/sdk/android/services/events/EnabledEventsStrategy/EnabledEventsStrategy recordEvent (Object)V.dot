@@ -1,0 +1,72 @@
+digraph {
+	graph [bb="0,0,1293.7,611",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_a66c64138e1a2086270728a4aa466f0b {
+		graph [bb="57.747,8,1285.7,603",
+			label="Lio/fabric/sdk/android/services/events/EnabledEventsStrategy;.recordEvent->(Ljava/lang/Object;)V\nLocal registers v0 ... v3\nparam \
+v4 = java.lang.Object\nreturn = void",
+			lheight=0.83,
+			lp="671.75,569",
+			lwidth=8.94
+		];
+		struct_c8e6513ed413cb7d248ab4346a28437e	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v3</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/events/EnabledEventsStrategy;-&gt;context Landroid/content/Context;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#848484">v4</FONT>, <FONT color="#DF3A01">Ljava/lang/Object;-&gt;toString()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7A7AAD">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7A7AAD">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;logControlled(Landroid/content/Context; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="558.75,470.5",
+			width=13.583];
+		struct_ed92a563872ca05ce2f9c844a9e2ef39	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v3</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/events/EnabledEventsStrategy;-&gt;filesManager Lio/fabric/sdk/android/services/events/EventsFilesManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v4</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/events/EventsFilesManager;-&gt;writeEvent(Ljava/lang/Object;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="616.75,342.5",
+			width=15.306];
+		struct_c8e6513ed413cb7d248ab4346a28437e:tail -> struct_ed92a563872ca05ce2f9c844a9e2ef39:header	[color=blue,
+			pos="e,90.747,370.5 90.747,419.5 90.747,401.64 90.747,394.76 90.747,380.85"];
+		struct_8ff0eccd4d7cecb2cd6cfafcca3087b2	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8E8E5B">v3</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/events/EnabledEventsStrategy;-&gt;scheduleTimeBasedRollOverIfNeeded()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="515.75,50.5",
+			width=12.222];
+		struct_ed92a563872ca05ce2f9c844a9e2ef39:tail -> struct_8ff0eccd4d7cecb2cd6cfafcca3087b2:header	[color=blue,
+			pos="e,85.747,75.5 75.747,316.5 -28.002,316.5 -21.979,90.783 75.686,76.235"];
+		struct_25683abe3ceab8c5ab4b6370e86db0f2	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7A7AAD">v1</FONT>, <FONT color="#8E8E5B">v3</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/events/EnabledEventsStrategy;-&gt;context Landroid/content/Context;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7070D6">v2</FONT>, <FONT color="red">'Failed to write event.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7A7AAD">v1</FONT>, <FONT color="#7070D6">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;logControlledError(Landroid/content/Context; Ljava/lang/String; Ljava/lang/Throwable;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-c</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="681.75,189.5",
+			width=16.542];
+		struct_ed92a563872ca05ce2f9c844a9e2ef39:tail -> struct_25683abe3ceab8c5ab4b6370e86db0f2:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="174.75,282.5",
+			pos="e,111.75,250.5 90.747,313.5 90.747,287.67 106.82,281.41 110.84,260.47"];
+		struct_25683abe3ceab8c5ab4b6370e86db0f2:tail -> struct_8ff0eccd4d7cecb2cd6cfafcca3087b2:header	[color=blue,
+			pos="e,100.75,78.5 111.75,127.5 111.75,109.02 104.2,102.85 101.61,88.599"];
+	}
+}

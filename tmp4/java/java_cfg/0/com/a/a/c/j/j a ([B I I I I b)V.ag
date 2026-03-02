@@ -1,0 +1,54 @@
+# Lcom/a/a/c/j;->a([B I I I I Lcom/a/a/c/b;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:byte[]
+# - v8:int
+# - v9:int
+# - v10:int
+# - v11:int
+# - v12:com.a.a.c.b
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x10 ]
+	0       (00000000) const/16             v6, 8
+	1       (00000004) const/4              v1, 0
+	2       (00000006) mul-int              v0, v9, v11
+	3       (0000000a) add-int/2addr        v0, v8
+	4       (0000000c) move                 v2, v0
+	5       (0000000e) move                 v3, v1
+
+a-BB@0x10 : [ a-BB@0x14 a-BB@0x4a ]
+	6       (00000010) if-ge                v3, v6, +1d
+
+a-BB@0x14 : [ a-BB@0x16 ]
+	7       (00000014) move                 v0, v1
+
+a-BB@0x16 : [ a-BB@0x1a a-BB@0x3e ]
+	8       (00000016) if-ge                v0, v6, +14
+
+a-BB@0x1a : [ a-BB@0x2a a-BB@0x38 ]
+	9       (0000001a) add-int              v4, v2, v0
+	10      (0000001e) aget-byte            v4, v7, v4
+	11      (00000022) and-int/lit16        v4, v4, 255
+	12      (00000026) if-gt                v4, v10, +9
+
+a-BB@0x2a : [ a-BB@0x38 ]
+	13      (0000002a) add-int              v4, v8, v0
+	14      (0000002e) add-int              v5, v9, v3
+	15      (00000032) invoke-virtual       v12, v4, v5, Lcom/a/a/c/b;->b(I I)V
+
+a-BB@0x38 : [ a-BB@0x16 ]
+	16      (00000038) add-int/lit8         v0, v0, 1
+	17      (0000003c) goto                 -13
+
+a-BB@0x3e : [ a-BB@0x10 ]
+	18      (0000003e) add-int/lit8         v3, v3, 1
+	19      (00000042) add-int              v0, v2, v11
+	20      (00000046) move                 v2, v0
+	21      (00000048) goto                 -1c
+
+a-BB@0x4a : 
+	22      (0000004a) return-void          
+

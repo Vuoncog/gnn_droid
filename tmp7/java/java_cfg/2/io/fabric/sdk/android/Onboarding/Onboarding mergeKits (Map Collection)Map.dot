@@ -1,0 +1,97 @@
+digraph {
+	graph [bb="0,0,923.55,851",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_f5a2e94e07d60eab8d2e6f2457253018 {
+		graph [bb="21.546,8,915.55,843",
+			label="Lio/fabric/sdk/android/Onboarding;.mergeKits->(Ljava/util/Map; Ljava/util/Collection;)Ljava/util/Map;\nLocal registers v0 ... v6\nparam \
+v7 = java.util.Map\nparam v8 = java.util.Collection\nreturn = java.util.Map",
+			lheight=1.04,
+			lp="468.55,801.5",
+			lwidth=9.18
+		];
+		struct_98f1b8c39f3c23461a5472b3e9be4cb3	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v8</FONT>, <FONT color="#DF3A01">Ljava/util/Collection;-&gt;iterator()Ljava/util/Iterator;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#92924C">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="470.55,717.5",
+			width=7.2778];
+		struct_1e75ded701f60665b1edcf034e6b6634	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#92924C">v1</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;hasNext()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x29</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="409.55,601.5",
+			width=5.6944];
+		struct_98f1b8c39f3c23461a5472b3e9be4cb3:tail -> struct_1e75ded701f60665b1edcf034e6b6634:header	[color=blue,
+			pos="e,229.55,640.5 229.55,688.5 229.55,671 229.55,664.27 229.55,650.64"];
+		struct_093d5d4af4711398cbfa32efa1a1483d	[height=2.7917,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#92924C">v1</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;next()Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#0000FF">Lio/fabric/sdk/android/Kit;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Kit;-&gt;getIdentifier()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#85857F">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v7</FONT>, <FONT color="#85857F">v2</FONT>, <FONT color="#DF3A01">Ljava/util/Map;-&gt;containsKey(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#85857F">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#85857F">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x-14</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="320.55,419.5",
+			width=8.0694];
+		struct_1e75ded701f60665b1edcf034e6b6634:tail -> struct_093d5d4af4711398cbfa32efa1a1483d:header	[color=red,
+			pos="e,55.546,513.5 229.55,561.5 229.55,485.04 71.476,583.6 56.657,523.55"];
+		struct_20aa41401c585265d72e97e83a30d3c6	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">62</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#7F7F99">v7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="718.55,419.5",
+			width=2.4722];
+		struct_1e75ded701f60665b1edcf034e6b6634:tail -> struct_20aa41401c585265d72e97e83a30d3c6:header	[color=green,
+			pos="e,639.55,433.5 229.55,561.5 229.55,474.12 555.44,578.28 620.55,520 646.66,496.62 610.11,446.27 629.61,435.54"];
+		struct_093d5d4af4711398cbfa32efa1a1483d:tail -> struct_1e75ded701f60665b1edcf034e6b6634:header	[color=green,
+			pos="e,229.55,640.5 55.546,324.5 55.546,313.16 37.907,317.32 30.046,325.5 0.087759,356.66 9.8887,481.77 30.046,520 74.019,603.41 185.81,\
+640.82 219.68,642.91"];
+		struct_6912d3c263576a2628b0518d5acdff5c	[height=3.7083,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Kit;-&gt;getIdentifier()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#85857F">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#7979B2">v3</FONT>, <FONT color="#0000FF">Lio/fabric/sdk/android/KitInfo;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">40</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Kit;-&gt;getIdentifier()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">46</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7272CC">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">48</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Kit;-&gt;getVersion()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8C8C66">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">50</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#6C6CE5">v5</FONT>, <FONT color="red">'binary'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">54</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7979B2">v3</FONT>, <FONT color="#7272CC">v4</FONT>, <FONT color="#8C8C66">v0</FONT>, <FONT color="#6C6CE5">v5</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/KitInfo;-&gt;&lt;init&gt;(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v7</FONT>, <FONT color="#85857F">v2</FONT>, <FONT color="#7979B2">v3</FONT>, <FONT color="#DF3A01">Ljava/util/Map;-&gt;put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">60</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2c</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="468.55,149.5",
+			width=12.181];
+		struct_093d5d4af4711398cbfa32efa1a1483d:tail -> struct_6912d3c263576a2628b0518d5acdff5c:header	[color=red,
+			pos="e,55.546,276.5 55.546,324.5 55.546,307 55.546,300.27 55.546,286.64"];
+		struct_6912d3c263576a2628b0518d5acdff5c:tail -> struct_1e75ded701f60665b1edcf034e6b6634:header	[color=blue,
+			pos="e,229.55,640.5 55.546,21.5 55.546,10.158 37.907,14.324 30.046,22.5 -10.078,64.228 -9.9411,241.14 30.046,283 90.473,346.26 756.12,\
+255.74 816.55,319 878.25,383.6 877.83,455 816.55,520 723.08,619.12 298.01,456.88 204.55,556 179.09,583 178.83,612.74 204.55,639.5 \
+208.88,644.01 216.25,647.28 221.87,647.3"];
+	}
+}

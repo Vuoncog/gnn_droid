@@ -1,0 +1,25 @@
+# Lorg/apache/commons/io/input/ClassLoaderObjectInputStream;->resolveClass(Ljava/io/ObjectStreamClass;)Ljava/lang/Class; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.ObjectStreamClass
+#
+# - return:java.lang.Class
+
+resolveClass-BB@0x0 : [ resolveClass-BB@0x1a resolveClass-BB@0x1c ]
+	0       (00000000) invoke-virtual       v4, Ljava/io/ObjectStreamClass;->getName()Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) iget-object          v2, v3, Lorg/apache/commons/io/input/ClassLoaderObjectInputStream;->classLoader Ljava/lang/ClassLoader;
+	4       (0000000e) invoke-static        v0, v1, v2, Ljava/lang/Class;->forName(Ljava/lang/String; Z Ljava/lang/ClassLoader;)Ljava/lang/Class;
+	5       (00000014) move-result-object   v0
+	6       (00000016) if-eqz               v0, +3
+
+resolveClass-BB@0x1a : 
+	7       (0000001a) return-object        v0
+
+resolveClass-BB@0x1c : [ resolveClass-BB@0x1a ]
+	8       (0000001c) invoke-super         v3, v4, Ljava/io/ObjectInputStream;->resolveClass(Ljava/io/ObjectStreamClass;)Ljava/lang/Class;
+	9       (00000022) move-result-object   v0
+	10      (00000024) goto                 -5
+

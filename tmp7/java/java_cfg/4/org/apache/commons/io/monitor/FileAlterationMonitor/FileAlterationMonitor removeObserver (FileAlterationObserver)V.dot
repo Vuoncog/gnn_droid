@@ -1,0 +1,55 @@
+digraph {
+	graph [bb="0,0,945,379",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_cc04df0c276dd9bb4be05bfdbf038242 {
+		graph [bb="10,8,937,371",
+			label="Lorg/apache/commons/io/monitor/FileAlterationMonitor;.removeObserver->(Lorg/apache/commons/io/monitor/FileAlterationObserver;)V\nLocal \
+registers v0 ... v1\nparam v2 = org.apache.commons.io.monitor.FileAlterationObserver\nreturn = void",
+			lheight=0.83,
+			lp="473.5,337",
+			lwidth=12.65
+		];
+		struct_587e4afeafa282aef96e3702d687bbe3	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="467,271.5",
+			width=2.0833];
+		struct_7753b4a64b834ac48d3155b2c6db0080	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7777BB">v1</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/monitor/FileAlterationMonitor;-&gt;observers Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;remove(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x-6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="391,155.5",
+			width=10.361];
+		struct_587e4afeafa282aef96e3702d687bbe3:tail -> struct_7753b4a64b834ac48d3155b2c6db0080:header	[color=red,
+			pos="e,43,205.5 413,253.5 413,91.24 58.728,359.34 43.505,215.57"];
+		struct_7a179b48ec93bacc43966d6700d31759	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="462,39.5",
+			width=2.0694];
+		struct_587e4afeafa282aef96e3702d687bbe3:tail -> struct_7a179b48ec93bacc43966d6700d31759:header	[color=green,
+			pos="e,413,56.5 413,253.5 413,172.97 719.42,272.12 773,212 806.42,174.51 806.37,136.54 773,99 721.99,41.614 441.18,128.19 414.96,66.684"];
+		struct_7753b4a64b834ac48d3155b2c6db0080:tail -> struct_7753b4a64b834ac48d3155b2c6db0080:header	[color=green,
+			pos="e,40.5,204.81 40.5,105.19 11.353,78.557 0,80.592 0,155 0,222.43 9.3239,230.43 32.766,211.51"];
+		struct_7753b4a64b834ac48d3155b2c6db0080:tail -> struct_7a179b48ec93bacc43966d6700d31759:header	[color=red,
+			pos="e,398,53.5 43,104.5 43,67.063 321.14,54.955 387.87,53.627"];
+	}
+}

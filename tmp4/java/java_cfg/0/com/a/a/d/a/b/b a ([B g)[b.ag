@@ -1,0 +1,213 @@
+# Lcom/a/a/d/a/b;->a([B Lcom/a/a/d/a/g;)[Lcom/a/a/d/a/b; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:byte[]
+# - v14:com.a.a.d.a.g
+#
+# - return:com.a.a.d.a.b[]
+
+a-BB@0x0 : [ a-BB@0x18 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-virtual       v14, Lcom/a/a/d/a/g;->g()Lcom/a/a/d/a/j;
+	2       (00000008) move-result-object   v5
+	3       (0000000a) invoke-virtual       v5, Lcom/a/a/d/a/j;->b()[Lcom/a/a/d/a/i;
+	4       (00000010) move-result-object   v6
+	5       (00000012) array-length         v3, v6
+	6       (00000014) move                 v0, v1
+	7       (00000016) move                 v2, v1
+
+a-BB@0x18 : [ a-BB@0x1c a-BB@0x30 ]
+	8       (00000018) if-ge                v0, v3, +c
+
+a-BB@0x1c : [ a-BB@0x18 ]
+	9       (0000001c) aget-object          v4, v6, v0
+	10      (00000020) invoke-virtual       v4, Lcom/a/a/d/a/i;->a()I
+	11      (00000026) move-result          v4
+	12      (00000028) add-int/2addr        v2, v4
+	13      (0000002a) add-int/lit8         v0, v0, 1
+	14      (0000002e) goto                 -b
+
+a-BB@0x30 : [ a-BB@0x3a ]
+	15      (00000030) new-array            v8, v2, [Lcom/a/a/d/a/b;
+	16      (00000034) array-length         v7, v6
+	17      (00000036) move                 v4, v1
+	18      (00000038) move                 v2, v1
+
+a-BB@0x3a : [ a-BB@0x3e a-BB@0x8a ]
+	19      (0000003a) if-ge                v4, v7, +28
+
+a-BB@0x3e : [ a-BB@0x44 ]
+	20      (0000003e) aget-object          v9, v6, v4
+	21      (00000042) move                 v0, v1
+
+a-BB@0x44 : [ a-BB@0x50 a-BB@0x82 ]
+	22      (00000044) invoke-virtual       v9, Lcom/a/a/d/a/i;->a()I
+	23      (0000004a) move-result          v3
+	24      (0000004c) if-ge                v0, v3, +1b
+
+a-BB@0x50 : [ a-BB@0x44 ]
+	25      (00000050) invoke-virtual       v9, Lcom/a/a/d/a/i;->b()I
+	26      (00000056) move-result          v10
+	27      (00000058) invoke-virtual       v5, Lcom/a/a/d/a/j;->a()I
+	28      (0000005e) move-result          v3
+	29      (00000060) add-int              v11, v3, v10
+	30      (00000064) add-int/lit8         v3, v2, 1
+	31      (00000068) new-instance         v12, Lcom/a/a/d/a/b;
+	32      (0000006c) new-array            v11, v11, [B
+	33      (00000070) invoke-direct        v12, v10, v11, Lcom/a/a/d/a/b;-><init>(I [B)V
+	34      (00000076) aput-object          v12, v8, v2
+	35      (0000007a) add-int/lit8         v0, v0, 1
+	36      (0000007e) move                 v2, v3
+	37      (00000080) goto                 -1e
+
+a-BB@0x82 : [ a-BB@0x3a ]
+	38      (00000082) add-int/lit8         v0, v4, 1
+	39      (00000086) move                 v4, v0
+	40      (00000088) goto                 -27
+
+a-BB@0x8a : [ a-BB@0xa8 ]
+	41      (0000008a) aget-object          v0, v8, v1
+	42      (0000008e) iget-object          v0, v0, Lcom/a/a/d/a/b;->b [B
+	43      (00000092) array-length         v0, v0
+	44      (00000094) invoke-virtual       v5, Lcom/a/a/d/a/j;->a()I
+	45      (0000009a) move-result          v3
+	46      (0000009c) sub-int              v3, v0, v3
+	47      (000000a0) add-int/lit8         v7, v3, -1
+	48      (000000a4) move                 v5, v1
+	49      (000000a6) move                 v6, v1
+
+a-BB@0xa8 : [ a-BB@0xac a-BB@0xd6 ]
+	50      (000000a8) if-ge                v5, v7, +17
+
+a-BB@0xac : [ a-BB@0xae ]
+	51      (000000ac) move                 v0, v1
+
+a-BB@0xae : [ a-BB@0xb2 a-BB@0xce ]
+	52      (000000ae) if-ge                v0, v2, +10
+
+a-BB@0xb2 : [ a-BB@0xae ]
+	53      (000000b2) aget-object          v4, v8, v0
+	54      (000000b6) iget-object          v9, v4, Lcom/a/a/d/a/b;->b [B
+	55      (000000ba) add-int/lit8         v4, v6, 1
+	56      (000000be) aget-byte            v6, v13, v6
+	57      (000000c2) aput-byte            v6, v9, v5
+	58      (000000c6) add-int/lit8         v0, v0, 1
+	59      (000000ca) move                 v6, v4
+	60      (000000cc) goto                 -f
+
+a-BB@0xce : [ a-BB@0xa8 ]
+	61      (000000ce) add-int/lit8         v0, v5, 1
+	62      (000000d2) move                 v5, v0
+	63      (000000d4) goto                 -16
+
+a-BB@0xd6 : [ a-BB@0xe6 a-BB@0x118 ]
+	64      (000000d6) invoke-virtual       v14, Lcom/a/a/d/a/g;->a()I
+	65      (000000dc) move-result          v0
+	66      (000000de) const/16             v4, 24
+	67      (000000e2) if-ne                v0, v4, +1b
+
+a-BB@0xe6 : [ a-BB@0xea ]
+	68      (000000e6) const/4              v0, 1
+	69      (000000e8) move                 v7, v0
+
+a-BB@0xea : [ a-BB@0xee a-BB@0x11c ]
+	70      (000000ea) if-eqz               v7, +19
+
+a-BB@0xee : [ a-BB@0xf2 ]
+	71      (000000ee) const/16             v0, 8
+
+a-BB@0xf2 : [ a-BB@0xf4 ]
+	72      (000000f2) move                 v4, v1
+
+a-BB@0xf4 : [ a-BB@0xf8 a-BB@0x120 ]
+	73      (000000f4) if-ge                v4, v0, +16
+
+a-BB@0xf8 : [ a-BB@0xf4 ]
+	74      (000000f8) aget-object          v5, v8, v4
+	75      (000000fc) iget-object          v9, v5, Lcom/a/a/d/a/b;->b [B
+	76      (00000100) add-int/lit8         v10, v3, -1
+	77      (00000104) add-int/lit8         v5, v6, 1
+	78      (00000108) aget-byte            v6, v13, v6
+	79      (0000010c) aput-byte            v6, v9, v10
+	80      (00000110) add-int/lit8         v4, v4, 1
+	81      (00000114) move                 v6, v5
+	82      (00000116) goto                 -11
+
+a-BB@0x118 : [ a-BB@0xea ]
+	83      (00000118) move                 v7, v1
+	84      (0000011a) goto                 -18
+
+a-BB@0x11c : [ a-BB@0xf2 ]
+	85      (0000011c) move                 v0, v2
+	86      (0000011e) goto                 -16
+
+a-BB@0x120 : [ a-BB@0x12c ]
+	87      (00000120) aget-object          v0, v8, v1
+	88      (00000124) iget-object          v0, v0, Lcom/a/a/d/a/b;->b [B
+	89      (00000128) array-length         v9, v0
+	90      (0000012a) move                 v0, v6
+
+a-BB@0x12c : [ a-BB@0x130 a-BB@0x17e ]
+	91      (0000012c) if-ge                v3, v9, +29
+
+a-BB@0x130 : [ a-BB@0x134 ]
+	92      (00000130) move                 v5, v1
+	93      (00000132) move                 v6, v0
+
+a-BB@0x134 : [ a-BB@0x138 a-BB@0x176 ]
+	94      (00000134) if-ge                v5, v2, +21
+
+a-BB@0x138 : [ a-BB@0x13c a-BB@0x16e ]
+	95      (00000138) if-eqz               v7, +1b
+
+a-BB@0x13c : [ a-BB@0x144 ]
+	96      (0000013c) add-int/lit8         v0, v5, 8
+	97      (00000140) rem-int/2addr        v0, v2
+	98      (00000142) move                 v4, v0
+
+a-BB@0x144 : [ a-BB@0x148 a-BB@0x172 ]
+	99      (00000144) if-eqz               v7, +17
+
+a-BB@0x148 : [ a-BB@0x14e a-BB@0x172 ]
+	100     (00000148) const/4              v0, 7
+	101     (0000014a) if-le                v4, v0, +14
+
+a-BB@0x14e : [ a-BB@0x152 ]
+	102     (0000014e) add-int/lit8         v0, v3, -1
+
+a-BB@0x152 : [ a-BB@0x134 ]
+	103     (00000152) aget-object          v4, v8, v4
+	104     (00000156) iget-object          v10, v4, Lcom/a/a/d/a/b;->b [B
+	105     (0000015a) add-int/lit8         v4, v6, 1
+	106     (0000015e) aget-byte            v6, v13, v6
+	107     (00000162) aput-byte            v6, v10, v0
+	108     (00000166) add-int/lit8         v5, v5, 1
+	109     (0000016a) move                 v6, v4
+	110     (0000016c) goto                 -1c
+
+a-BB@0x16e : [ a-BB@0x144 ]
+	111     (0000016e) move                 v4, v5
+	112     (00000170) goto                 -16
+
+a-BB@0x172 : [ a-BB@0x152 ]
+	113     (00000172) move                 v0, v3
+	114     (00000174) goto                 -11
+
+a-BB@0x176 : [ a-BB@0x12c ]
+	115     (00000176) add-int/lit8         v3, v3, 1
+	116     (0000017a) move                 v0, v6
+	117     (0000017c) goto                 -28
+
+a-BB@0x17e : [ a-BB@0x184 a-BB@0x190 ]
+	118     (0000017e) array-length         v1, v13
+	119     (00000180) if-eq                v0, v1, +8
+
+a-BB@0x184 : 
+	120     (00000184) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	121     (00000188) invoke-direct        v0, Ljava/lang/IllegalArgumentException;-><init>()V
+	122     (0000018e) throw                v0
+
+a-BB@0x190 : 
+	123     (00000190) return-object        v8
+

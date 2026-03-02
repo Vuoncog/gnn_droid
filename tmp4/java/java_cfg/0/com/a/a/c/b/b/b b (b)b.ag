@@ -1,0 +1,85 @@
+# Lcom/a/a/c/b/b;->b(Lcom/a/a/c/b/b;)Lcom/a/a/c/b/b; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v13
+# - v14:com.a.a.c.b.b
+#
+# - return:com.a.a.c.b.b
+
+b-BB@0x0 : [ b-BB@0x16 b-BB@0x26 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v0, v13, Lcom/a/a/c/b/b;->a Lcom/a/a/c/b/a;
+	2       (00000006) iget-object          v2, v14, Lcom/a/a/c/b/b;->a Lcom/a/a/c/b/a;
+	3       (0000000a) invoke-virtual       v0, v2, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	4       (00000010) move-result          v0
+	5       (00000012) if-nez               v0, +a
+
+b-BB@0x16 : 
+	6       (00000016) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	7       (0000001a) const-string         v1, 'GenericGFPolys do not have same GenericGF field'
+	8       (0000001e) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	9       (00000024) throw                v0
+
+b-BB@0x26 : [ b-BB@0x32 b-BB@0x3e ]
+	10      (00000026) invoke-virtual       v13, Lcom/a/a/c/b/b;->c()Z
+	11      (0000002c) move-result          v0
+	12      (0000002e) if-nez               v0, +8
+
+b-BB@0x32 : [ b-BB@0x3e b-BB@0x4c ]
+	13      (00000032) invoke-virtual       v14, Lcom/a/a/c/b/b;->c()Z
+	14      (00000038) move-result          v0
+	15      (0000003a) if-eqz               v0, +9
+
+b-BB@0x3e : [ b-BB@0x4a ]
+	16      (0000003e) iget-object          v0, v13, Lcom/a/a/c/b/b;->a Lcom/a/a/c/b/a;
+	17      (00000042) invoke-virtual       v0, Lcom/a/a/c/b/a;->a()Lcom/a/a/c/b/b;
+	18      (00000048) move-result-object   v0
+
+b-BB@0x4a : 
+	19      (0000004a) return-object        v0
+
+b-BB@0x4c : [ b-BB@0x66 ]
+	20      (0000004c) iget-object          v3, v13, Lcom/a/a/c/b/b;->b [I
+	21      (00000050) array-length         v4, v3
+	22      (00000052) iget-object          v5, v14, Lcom/a/a/c/b/b;->b [I
+	23      (00000056) array-length         v6, v5
+	24      (00000058) add-int              v0, v4, v6
+	25      (0000005c) add-int/lit8         v0, v0, -1
+	26      (00000060) new-array            v7, v0, [I
+	27      (00000064) move                 v2, v1
+
+b-BB@0x66 : [ b-BB@0x6a b-BB@0xaa ]
+	28      (00000066) if-ge                v2, v4, +22
+
+b-BB@0x6a : [ b-BB@0x70 ]
+	29      (0000006a) aget                 v8, v3, v2
+	30      (0000006e) move                 v0, v1
+
+b-BB@0x70 : [ b-BB@0x74 b-BB@0xa2 ]
+	31      (00000070) if-ge                v0, v6, +19
+
+b-BB@0x74 : [ b-BB@0x70 ]
+	32      (00000074) add-int              v9, v2, v0
+	33      (00000078) add-int              v10, v2, v0
+	34      (0000007c) aget                 v10, v7, v10
+	35      (00000080) iget-object          v11, v13, Lcom/a/a/c/b/b;->a Lcom/a/a/c/b/a;
+	36      (00000084) aget                 v12, v5, v0
+	37      (00000088) invoke-virtual       v11, v8, v12, Lcom/a/a/c/b/a;->c(I I)I
+	38      (0000008e) move-result          v11
+	39      (00000090) invoke-static        v10, v11, Lcom/a/a/c/b/a;->b(I I)I
+	40      (00000096) move-result          v10
+	41      (00000098) aput                 v10, v7, v9
+	42      (0000009c) add-int/lit8         v0, v0, 1
+	43      (000000a0) goto                 -18
+
+b-BB@0xa2 : [ b-BB@0x66 ]
+	44      (000000a2) add-int/lit8         v0, v2, 1
+	45      (000000a6) move                 v2, v0
+	46      (000000a8) goto                 -21
+
+b-BB@0xaa : [ b-BB@0x4a ]
+	47      (000000aa) new-instance         v0, Lcom/a/a/c/b/b;
+	48      (000000ae) iget-object          v1, v13, Lcom/a/a/c/b/b;->a Lcom/a/a/c/b/a;
+	49      (000000b2) invoke-direct        v0, v1, v7, Lcom/a/a/c/b/b;-><init>(Lcom/a/a/c/b/a; [I)V
+	50      (000000b8) goto                 -37
+

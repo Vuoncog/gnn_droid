@@ -1,0 +1,21 @@
+# Lio/fabric/sdk/android/services/concurrency/AsyncTask;->postResult(Ljava/lang/Object;)Ljava/lang/Object; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.Object
+#
+# - return:java.lang.Object
+
+postResult-BB@0x0 : 
+	0       (00000000) const/4              v4, 1
+	1       (00000002) sget-object          v0, Lio/fabric/sdk/android/services/concurrency/AsyncTask;->handler Lio/fabric/sdk/android/services/concurrency/AsyncTask$InternalHandler;
+	2       (00000006) new-instance         v1, Lio/fabric/sdk/android/services/concurrency/AsyncTask$AsyncTaskResult;
+	3       (0000000a) new-array            v2, v4, [Ljava/lang/Object;
+	4       (0000000e) const/4              v3, 0
+	5       (00000010) aput-object          v6, v2, v3
+	6       (00000014) invoke-direct        v1, v5, v2, Lio/fabric/sdk/android/services/concurrency/AsyncTask$AsyncTaskResult;-><init>(Lio/fabric/sdk/android/services/concurrency/AsyncTask; [Ljava/lang/Object;)V
+	7       (0000001a) invoke-virtual       v0, v4, v1, Lio/fabric/sdk/android/services/concurrency/AsyncTask$InternalHandler;->obtainMessage(I Ljava/lang/Object;)Landroid/os/Message;
+	8       (00000020) move-result-object   v0
+	9       (00000022) invoke-virtual       v0, Landroid/os/Message;->sendToTarget()V
+	10      (00000028) return-object        v6
+

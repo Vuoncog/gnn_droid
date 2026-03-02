@@ -1,0 +1,77 @@
+# Lnet/youmi/android/ce;-><init>(Lnet/youmi/android/bb; Landroid/app/Activity; Lnet/youmi/android/ak; Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:net.youmi.android.bb
+# - v7:android.app.Activity
+# - v8:net.youmi.android.ak
+# - v9:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x4a <init>-BB@0x9c ]
+	0       (00000000) const/16             v1, 8
+	1       (00000004) iput-object          v6, v5, Lnet/youmi/android/ce;->f Lnet/youmi/android/bb;
+	2       (00000008) invoke-direct        v5, v7, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+	3       (0000000e) new-instance         v0, Landroid/widget/ImageView;
+	4       (00000012) invoke-direct        v0, v7, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+	5       (00000018) iput-object          v0, v5, Lnet/youmi/android/ce;->a Landroid/widget/ImageView;
+	6       (0000001c) new-instance         v0, Landroid/widget/ImageView;
+	7       (00000020) invoke-direct        v0, v7, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+	8       (00000026) iput-object          v0, v5, Lnet/youmi/android/ce;->b Landroid/widget/ImageView;
+	9       (0000002a) iget-object          v0, v5, Lnet/youmi/android/ce;->a Landroid/widget/ImageView;
+	10      (0000002e) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setVisibility(I)V
+	11      (00000034) iget-object          v0, v5, Lnet/youmi/android/ce;->b Landroid/widget/ImageView;
+	12      (00000038) invoke-virtual       v0, v1, Landroid/widget/ImageView;->setVisibility(I)V
+	13      (0000003e) invoke-virtual       v8, Lnet/youmi/android/ak;->d()I
+	14      (00000044) move-result          v0
+	15      (00000046) if-eqz               v9, +2b
+
+<init>-BB@0x4a : [ <init>-BB@0x60 ]
+	16      (0000004a) invoke-virtual       v8, Lnet/youmi/android/ak;->e()I
+	17      (00000050) move-result          v0
+	18      (00000052) invoke-virtual       v8, Lnet/youmi/android/ak;->e()I
+	19      (00000058) move-result          v1
+	20      (0000005a) move                 v4, v1
+	21      (0000005c) move                 v1, v0
+	22      (0000005e) move                 v0, v4
+
+<init>-BB@0x60 : [ <init>-BB@0x82 <init>-BB@0xbc ]
+	23      (00000060) new-instance         v2, Landroid/widget/FrameLayout$LayoutParams;
+	24      (00000064) invoke-direct        v2, v1, v0, Landroid/widget/FrameLayout$LayoutParams;-><init>(I I)V
+	25      (0000006a) iget-object          v0, v5, Lnet/youmi/android/ce;->a Landroid/widget/ImageView;
+	26      (0000006e) invoke-virtual       v5, v0, v2, Lnet/youmi/android/ce;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	27      (00000074) iget-object          v0, v5, Lnet/youmi/android/ce;->b Landroid/widget/ImageView;
+	28      (00000078) invoke-virtual       v5, v0, v2, Lnet/youmi/android/ce;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	29      (0000007e) if-eqz               v9, +1f
+
+<init>-BB@0x82 : [ <init>-BB@0x9a ]
+	30      (00000082) invoke-static        v8, Lnet/youmi/android/r;->c(Lnet/youmi/android/ak;)Landroid/view/animation/Animation;
+	31      (00000088) move-result-object   v0
+	32      (0000008a) iput-object          v0, v5, Lnet/youmi/android/ce;->d Landroid/view/animation/Animation;
+	33      (0000008e) invoke-static        v8, Lnet/youmi/android/r;->d(Lnet/youmi/android/ak;)Landroid/view/animation/Animation;
+	34      (00000094) move-result-object   v0
+	35      (00000096) iput-object          v0, v5, Lnet/youmi/android/ce;->e Landroid/view/animation/Animation;
+
+<init>-BB@0x9a : 
+	36      (0000009a) return-void          
+
+<init>-BB@0x9c : [ <init>-BB@0x60 ]
+	37      (0000009c) const/4              v1, -1
+	38      (0000009e) iget-object          v2, v5, Lnet/youmi/android/ce;->a Landroid/widget/ImageView;
+	39      (000000a2) sget-object          v3, Landroid/widget/ImageView$ScaleType;->FIT_XY Landroid/widget/ImageView$ScaleType;
+	40      (000000a6) invoke-virtual       v2, v3, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+	41      (000000ac) iget-object          v2, v5, Lnet/youmi/android/ce;->b Landroid/widget/ImageView;
+	42      (000000b0) sget-object          v3, Landroid/widget/ImageView$ScaleType;->FIT_XY Landroid/widget/ImageView$ScaleType;
+	43      (000000b4) invoke-virtual       v2, v3, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+	44      (000000ba) goto                 -2d
+
+<init>-BB@0xbc : [ <init>-BB@0x9a ]
+	45      (000000bc) invoke-static        v8, Lnet/youmi/android/r;->a(Lnet/youmi/android/ak;)Landroid/view/animation/Animation;
+	46      (000000c2) move-result-object   v0
+	47      (000000c4) iput-object          v0, v5, Lnet/youmi/android/ce;->d Landroid/view/animation/Animation;
+	48      (000000c8) invoke-static        v8, Lnet/youmi/android/r;->b(Lnet/youmi/android/ak;)Landroid/view/animation/Animation;
+	49      (000000ce) move-result-object   v0
+	50      (000000d0) iput-object          v0, v5, Lnet/youmi/android/ce;->e Landroid/view/animation/Animation;
+	51      (000000d4) goto                 -1d
+

@@ -1,0 +1,59 @@
+digraph {
+	graph [bb="0,0,904.12,483",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_3fc565a0db04b8c7e381bbae491c3fd9 {
+		graph [bb="42.115,8,896.12,475",
+			label="Lnet/youmi/android/ci;.a->(Ljava/lang/String;)Landroid/graphics/Bitmap;\nLocal registers v0 ... v1\nparam v2 = java.lang.String\nreturn = \
+android.graphics.Bitmap",
+			lheight=0.83,
+			lp="469.12,441",
+			lwidth=6.60
+		];
+		struct_a443bbff055b9b50ab7a1f0490950198	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/Object;-&gt;getClass()Ljava/lang/Class;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/Class;-&gt;getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Landroid/graphics/BitmapFactory;-&gt;decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="469.12,320.5",
+			width=11.625];
+		struct_42c7d93f6bee8580bb43053556507c4a	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="150.12,39.5",
+			width=2.4722];
+		struct_a443bbff055b9b50ab7a1f0490950198:tail -> struct_42c7d93f6bee8580bb43053556507c4a:header	[color=blue,
+			pos="e,71.115,53.5 61.115,250.5 -22.957,250.5 -17.209,69.329 60.721,54.467"];
+		struct_01efa9398230466c232264b7e9a42032	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#888877">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="181.12,145.5",
+			width=2.7083];
+		struct_a443bbff055b9b50ab7a1f0490950198:tail -> struct_01efa9398230466c232264b7e9a42032:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="144.62,216.5",
+			pos="e,94.115,181.5 76.115,247.5 76.115,221.13 66.787,190.86 84.137,183.29"];
+		struct_01efa9398230466c232264b7e9a42032:tail -> struct_42c7d93f6bee8580bb43053556507c4a:header	[color=blue,
+			pos="e,86.115,56.5 94.115,108.5 74.021,108.5 82.556,87.366 85.353,66.581"];
+	}
+}

@@ -1,0 +1,35 @@
+# Lorg/apache/commons/lang/builder/ToStringStyle;->append(Ljava/lang/StringBuffer; Ljava/lang/String; [C Ljava/lang/Boolean;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.StringBuffer
+# - v3:java.lang.String
+# - v4:char[]
+# - v5:java.lang.Boolean
+#
+# - return:void
+
+append-BB@0x0 : [ append-BB@0xa append-BB@0x18 ]
+	0       (00000000) invoke-virtual       v1, v2, v3, Lorg/apache/commons/lang/builder/ToStringStyle;->appendFieldStart(Ljava/lang/StringBuffer; Ljava/lang/String;)V
+	1       (00000006) if-nez               v4, +9
+
+append-BB@0xa : [ append-BB@0x10 ]
+	2       (0000000a) invoke-virtual       v1, v2, v3, Lorg/apache/commons/lang/builder/ToStringStyle;->appendNullText(Ljava/lang/StringBuffer; Ljava/lang/String;)V
+
+append-BB@0x10 : 
+	3       (00000010) invoke-virtual       v1, v2, v3, Lorg/apache/commons/lang/builder/ToStringStyle;->appendFieldEnd(Ljava/lang/StringBuffer; Ljava/lang/String;)V
+	4       (00000016) return-void          
+
+append-BB@0x18 : [ append-BB@0x24 append-BB@0x2c ]
+	5       (00000018) invoke-virtual       v1, v5, Lorg/apache/commons/lang/builder/ToStringStyle;->isFullDetail(Ljava/lang/Boolean;)Z
+	6       (0000001e) move-result          v0
+	7       (00000020) if-eqz               v0, +6
+
+append-BB@0x24 : [ append-BB@0x10 ]
+	8       (00000024) invoke-virtual       v1, v2, v3, v4, Lorg/apache/commons/lang/builder/ToStringStyle;->appendDetail(Ljava/lang/StringBuffer; Ljava/lang/String; [C)V
+	9       (0000002a) goto                 -d
+
+append-BB@0x2c : [ append-BB@0x10 ]
+	10      (0000002c) invoke-virtual       v1, v2, v3, v4, Lorg/apache/commons/lang/builder/ToStringStyle;->appendSummary(Ljava/lang/StringBuffer; Ljava/lang/String; [C)V
+	11      (00000032) goto                 -11
+

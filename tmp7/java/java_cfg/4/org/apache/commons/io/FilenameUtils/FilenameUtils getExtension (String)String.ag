@@ -1,0 +1,33 @@
+# Lorg/apache/commons/io/FilenameUtils;->getExtension(Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:java.lang.String
+
+getExtension-BB@0x0 : [ getExtension-BB@0x4 getExtension-BB@0x8 ]
+	0       (00000000) if-nez               v2, +4
+
+getExtension-BB@0x4 : [ getExtension-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+getExtension-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+getExtension-BB@0x8 : [ getExtension-BB@0x16 getExtension-BB@0x1c ]
+	3       (00000008) invoke-static        v2, Lorg/apache/commons/io/FilenameUtils;->indexOfExtension(Ljava/lang/String;)I
+	4       (0000000e) move-result          v0
+	5       (00000010) const/4              v1, -1
+	6       (00000012) if-ne                v0, v1, +5
+
+getExtension-BB@0x16 : [ getExtension-BB@0x6 ]
+	7       (00000016) const-string         v0, ''
+	8       (0000001a) goto                 -a
+
+getExtension-BB@0x1c : [ getExtension-BB@0x6 ]
+	9       (0000001c) add-int/lit8         v0, v0, 1
+	10      (00000020) invoke-virtual       v2, v0, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	11      (00000026) move-result-object   v0
+	12      (00000028) goto                 -11
+

@@ -1,0 +1,36 @@
+# Lorg/apache/commons/io/filefilter/NameFileFilter;-><init>(Ljava/util/List; Lorg/apache/commons/io/IOCase;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.util.List
+# - v4:org.apache.commons.io.IOCase
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xa <init>-BB@0x1a ]
+	0       (00000000) invoke-direct        v2, Lorg/apache/commons/io/filefilter/AbstractFileFilter;-><init>()V
+	1       (00000006) if-nez               v3, +a
+
+<init>-BB@0xa : 
+	2       (0000000a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	3       (0000000e) const-string         v1, 'The list of names must not be null'
+	4       (00000012) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	5       (00000018) throw                v0
+
+<init>-BB@0x1a : [ <init>-BB@0x3a <init>-BB@0x3e ]
+	6       (0000001a) invoke-interface     v3, Ljava/util/List;->size()I
+	7       (00000020) move-result          v0
+	8       (00000022) new-array            v0, v0, [Ljava/lang/String;
+	9       (00000026) invoke-interface     v3, v0, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	10      (0000002c) move-result-object   v0
+	11      (0000002e) check-cast           v0, [Ljava/lang/String;
+	12      (00000032) iput-object          v0, v2, Lorg/apache/commons/io/filefilter/NameFileFilter;->names [Ljava/lang/String;
+	13      (00000036) if-nez               v4, +4
+
+<init>-BB@0x3a : [ <init>-BB@0x3e ]
+	14      (0000003a) sget-object          v4, Lorg/apache/commons/io/IOCase;->SENSITIVE Lorg/apache/commons/io/IOCase;
+
+<init>-BB@0x3e : 
+	15      (0000003e) iput-object          v4, v2, Lorg/apache/commons/io/filefilter/NameFileFilter;->caseSensitivity Lorg/apache/commons/io/IOCase;
+	16      (00000042) return-void          
+

@@ -1,0 +1,34 @@
+# Lorg/apache/commons/io/filefilter/PrefixFileFilter;-><init>(Ljava/lang/String; Lorg/apache/commons/io/IOCase;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:org.apache.commons.io.IOCase
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xa <init>-BB@0x1a ]
+	0       (00000000) invoke-direct        v2, Lorg/apache/commons/io/filefilter/AbstractFileFilter;-><init>()V
+	1       (00000006) if-nez               v3, +a
+
+<init>-BB@0xa : 
+	2       (0000000a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	3       (0000000e) const-string         v1, 'The prefix must not be null'
+	4       (00000012) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	5       (00000018) throw                v0
+
+<init>-BB@0x1a : [ <init>-BB@0x2e <init>-BB@0x32 ]
+	6       (0000001a) const/4              v0, 1
+	7       (0000001c) new-array            v0, v0, [Ljava/lang/String;
+	8       (00000020) const/4              v1, 0
+	9       (00000022) aput-object          v3, v0, v1
+	10      (00000026) iput-object          v0, v2, Lorg/apache/commons/io/filefilter/PrefixFileFilter;->prefixes [Ljava/lang/String;
+	11      (0000002a) if-nez               v4, +4
+
+<init>-BB@0x2e : [ <init>-BB@0x32 ]
+	12      (0000002e) sget-object          v4, Lorg/apache/commons/io/IOCase;->SENSITIVE Lorg/apache/commons/io/IOCase;
+
+<init>-BB@0x32 : 
+	13      (00000032) iput-object          v4, v2, Lorg/apache/commons/io/filefilter/PrefixFileFilter;->caseSensitivity Lorg/apache/commons/io/IOCase;
+	14      (00000036) return-void          
+

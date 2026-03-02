@@ -1,0 +1,130 @@
+# Lcom/a/a/a/b/a;->a([Lcom/a/a/t; F F)[Lcom/a/a/t; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:com.a.a.t[]
+# - v11:float
+# - v12:float
+#
+# - return:com.a.a.t[]
+
+a-BB@0x0 : 
+	0       (00000000) const/high16         v0, 16384 # [2.0]
+	1       (00000004) mul-float/2addr      v0, v11
+	2       (00000006) div-float            v0, v12, v0
+	3       (0000000a) const/4              v1, 0
+	4       (0000000c) aget-object          v1, v10, v1
+	5       (00000010) invoke-virtual       v1, Lcom/a/a/t;->a()F
+	6       (00000016) move-result          v1
+	7       (00000018) const/4              v2, 2
+	8       (0000001a) aget-object          v2, v10, v2
+	9       (0000001e) invoke-virtual       v2, Lcom/a/a/t;->a()F
+	10      (00000024) move-result          v2
+	11      (00000026) sub-float/2addr      v1, v2
+	12      (00000028) const/4              v2, 0
+	13      (0000002a) aget-object          v2, v10, v2
+	14      (0000002e) invoke-virtual       v2, Lcom/a/a/t;->b()F
+	15      (00000034) move-result          v2
+	16      (00000036) const/4              v3, 2
+	17      (00000038) aget-object          v3, v10, v3
+	18      (0000003c) invoke-virtual       v3, Lcom/a/a/t;->b()F
+	19      (00000042) move-result          v3
+	20      (00000044) sub-float/2addr      v2, v3
+	21      (00000046) const/4              v3, 0
+	22      (00000048) aget-object          v3, v10, v3
+	23      (0000004c) invoke-virtual       v3, Lcom/a/a/t;->a()F
+	24      (00000052) move-result          v3
+	25      (00000054) const/4              v4, 2
+	26      (00000056) aget-object          v4, v10, v4
+	27      (0000005a) invoke-virtual       v4, Lcom/a/a/t;->a()F
+	28      (00000060) move-result          v4
+	29      (00000062) add-float/2addr      v3, v4
+	30      (00000064) const/high16         v4, 16384 # [2.0]
+	31      (00000068) div-float/2addr      v3, v4
+	32      (0000006a) const/4              v4, 0
+	33      (0000006c) aget-object          v4, v10, v4
+	34      (00000070) invoke-virtual       v4, Lcom/a/a/t;->b()F
+	35      (00000076) move-result          v4
+	36      (00000078) const/4              v5, 2
+	37      (0000007a) aget-object          v5, v10, v5
+	38      (0000007e) invoke-virtual       v5, Lcom/a/a/t;->b()F
+	39      (00000084) move-result          v5
+	40      (00000086) add-float/2addr      v4, v5
+	41      (00000088) const/high16         v5, 16384 # [2.0]
+	42      (0000008c) div-float/2addr      v4, v5
+	43      (0000008e) new-instance         v5, Lcom/a/a/t;
+	44      (00000092) mul-float            v6, v0, v1
+	45      (00000096) add-float/2addr      v6, v3
+	46      (00000098) mul-float            v7, v0, v2
+	47      (0000009c) add-float/2addr      v7, v4
+	48      (0000009e) invoke-direct        v5, v6, v7, Lcom/a/a/t;-><init>(F F)V
+	49      (000000a4) new-instance         v6, Lcom/a/a/t;
+	50      (000000a8) mul-float/2addr      v1, v0
+	51      (000000aa) sub-float            v1, v3, v1
+	52      (000000ae) mul-float/2addr      v2, v0
+	53      (000000b0) sub-float            v2, v4, v2
+	54      (000000b4) invoke-direct        v6, v1, v2, Lcom/a/a/t;-><init>(F F)V
+	55      (000000ba) const/4              v1, 1
+	56      (000000bc) aget-object          v1, v10, v1
+	57      (000000c0) invoke-virtual       v1, Lcom/a/a/t;->a()F
+	58      (000000c6) move-result          v1
+	59      (000000c8) const/4              v2, 3
+	60      (000000ca) aget-object          v2, v10, v2
+	61      (000000ce) invoke-virtual       v2, Lcom/a/a/t;->a()F
+	62      (000000d4) move-result          v2
+	63      (000000d6) sub-float/2addr      v1, v2
+	64      (000000d8) const/4              v2, 1
+	65      (000000da) aget-object          v2, v10, v2
+	66      (000000de) invoke-virtual       v2, Lcom/a/a/t;->b()F
+	67      (000000e4) move-result          v2
+	68      (000000e6) const/4              v3, 3
+	69      (000000e8) aget-object          v3, v10, v3
+	70      (000000ec) invoke-virtual       v3, Lcom/a/a/t;->b()F
+	71      (000000f2) move-result          v3
+	72      (000000f4) sub-float/2addr      v2, v3
+	73      (000000f6) const/4              v3, 1
+	74      (000000f8) aget-object          v3, v10, v3
+	75      (000000fc) invoke-virtual       v3, Lcom/a/a/t;->a()F
+	76      (00000102) move-result          v3
+	77      (00000104) const/4              v4, 3
+	78      (00000106) aget-object          v4, v10, v4
+	79      (0000010a) invoke-virtual       v4, Lcom/a/a/t;->a()F
+	80      (00000110) move-result          v4
+	81      (00000112) add-float/2addr      v3, v4
+	82      (00000114) const/high16         v4, 16384 # [2.0]
+	83      (00000118) div-float/2addr      v3, v4
+	84      (0000011a) const/4              v4, 1
+	85      (0000011c) aget-object          v4, v10, v4
+	86      (00000120) invoke-virtual       v4, Lcom/a/a/t;->b()F
+	87      (00000126) move-result          v4
+	88      (00000128) const/4              v7, 3
+	89      (0000012a) aget-object          v7, v10, v7
+	90      (0000012e) invoke-virtual       v7, Lcom/a/a/t;->b()F
+	91      (00000134) move-result          v7
+	92      (00000136) add-float/2addr      v4, v7
+	93      (00000138) const/high16         v7, 16384 # [2.0]
+	94      (0000013c) div-float/2addr      v4, v7
+	95      (0000013e) new-instance         v7, Lcom/a/a/t;
+	96      (00000142) mul-float            v8, v0, v1
+	97      (00000146) add-float/2addr      v8, v3
+	98      (00000148) mul-float            v9, v0, v2
+	99      (0000014c) add-float/2addr      v9, v4
+	100     (0000014e) invoke-direct        v7, v8, v9, Lcom/a/a/t;-><init>(F F)V
+	101     (00000154) new-instance         v8, Lcom/a/a/t;
+	102     (00000158) mul-float/2addr      v1, v0
+	103     (0000015a) sub-float            v1, v3, v1
+	104     (0000015e) mul-float/2addr      v0, v2
+	105     (00000160) sub-float            v0, v4, v0
+	106     (00000164) invoke-direct        v8, v1, v0, Lcom/a/a/t;-><init>(F F)V
+	107     (0000016a) const/4              v0, 4
+	108     (0000016c) new-array            v0, v0, [Lcom/a/a/t;
+	109     (00000170) const/4              v1, 0
+	110     (00000172) aput-object          v5, v0, v1
+	111     (00000176) const/4              v1, 1
+	112     (00000178) aput-object          v7, v0, v1
+	113     (0000017c) const/4              v1, 2
+	114     (0000017e) aput-object          v6, v0, v1
+	115     (00000182) const/4              v1, 3
+	116     (00000184) aput-object          v8, v0, v1
+	117     (00000188) return-object        v0
+

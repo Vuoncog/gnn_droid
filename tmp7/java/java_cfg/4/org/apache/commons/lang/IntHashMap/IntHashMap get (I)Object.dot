@@ -1,0 +1,104 @@
+digraph {
+	graph [bb="0,0,1632,633",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_e2ce01647fbfa7e349d99098a7036f84 {
+		graph [bb="8,8,1624,625",
+			label="Lorg/apache/commons/lang/IntHashMap;.get->(I)Ljava/lang/Object;\nLocal registers v0 ... v3\nparam v4 = int\nreturn = java.lang.Object",
+			lheight=0.83,
+			lp="816,591",
+			lwidth=6.22
+		];
+		struct_efc5b6b8b3fa68cf321a44782e8fec77	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/IntHashMap;-&gt;table [Lorg/apache/commons/lang/IntHashMap$Entry;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const </FONT> <FONT color="#848484">v1</FONT>, <FONT color="green">0x7fffffff</FONT> ; [nan] </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">and-int/2addr </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#7A7AAD">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">array-length </FONT> <FONT color="#7070D6">v2</FONT>, <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">rem-int/2addr </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#7070D6">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="960,470.5",
+			width=11.708];
+		struct_9d8a53c457edcb9ebece15d132f28d61	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xc</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="617,332.5",
+			width=2.1806];
+		struct_efc5b6b8b3fa68cf321a44782e8fec77:tail -> struct_9d8a53c457edcb9ebece15d132f28d61:header	[color=blue,
+			pos="e,564,349.5 564,397.5 564,380 564,373.27 564,359.64"];
+		struct_150bdf451151f6bcabe4a8b5f10ffafa	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/IntHashMap$Entry;-&gt;hash I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ne </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#7A7AAD">v4</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="799,238.5",
+			width=7.2361];
+		struct_9d8a53c457edcb9ebece15d132f28d61:tail -> struct_150bdf451151f6bcabe4a8b5f10ffafa:header	[color=red,
+			pos="e,564,266.5 564,314.5 564,297 564,290.27 564,276.64"];
+		struct_d4b29a4a0409034f84f13df2d587081d	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1407,238.5",
+			width=2.4028];
+		struct_9d8a53c457edcb9ebece15d132f28d61:tail -> struct_d4b29a4a0409034f84f13df2d587081d:header	[color=green,
+			pos="e,1331,263.5 564,314.5 564,294.34 1228.9,266.77 1321,263.77"];
+		struct_4b99d1ec2ac26e1c720940bf49bb4dbc	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/IntHashMap$Entry;-&gt;value Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1254,133.5",
+			width=9.5];
+		struct_150bdf451151f6bcabe4a8b5f10ffafa:tail -> struct_4b99d1ec2ac26e1c720940bf49bb4dbc:header	[color=red,
+			pos="e,922,147.5 564,209.5 564,133.6 835.42,202.55 903,168 909.74,164.55 910.71,157.7 913.25,152.86"];
+		struct_275bbdbcacc7810c7ffe19b2e5e2178a	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/IntHashMap$Entry;-&gt;next Lorg/apache/commons/lang/IntHashMap$Entry;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-b</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="455,133.5",
+			width=12.194];
+		struct_150bdf451151f6bcabe4a8b5f10ffafa:tail -> struct_275bbdbcacc7810c7ffe19b2e5e2178a:header	[color=green,
+			pos="e,41,161.5 549,212.5 522.8,212.5 111.45,193.18 48.937,167.87"];
+		struct_3befcfa5eeb5df78db81cca529b7e13d	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1264,39.5",
+			width=2.4722];
+		struct_4b99d1ec2ac26e1c720940bf49bb4dbc:tail -> struct_3befcfa5eeb5df78db81cca529b7e13d:header	[color=blue,
+			pos="e,1200,56.5 937,115.5 937,-0.66748 1184.3,165.64 1199.3,66.571"];
+		struct_275bbdbcacc7810c7ffe19b2e5e2178a:tail -> struct_9d8a53c457edcb9ebece15d132f28d61:header	[color=blue,
+			pos="e,549,346.5 41,104.5 41,4.1026 -187.7,343.33 538.78,346.48"];
+		struct_d4b29a4a0409034f84f13df2d587081d:tail -> struct_3befcfa5eeb5df78db81cca529b7e13d:header	[color=blue,
+			pos="e,1200,56.5 1346,209.5 1346,151.21 1567.2,212.36 1605,168 1624.9,144.66 1625.5,121.79 1605,99 1546.9,34.513 1227.8,137.85 1201.7,\
+66.624"];
+	}
+}

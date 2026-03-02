@@ -1,0 +1,22 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->setConnectionFactory(Lio/fabric/sdk/android/services/network/HttpRequest$ConnectionFactory;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:io.fabric.sdk.android.services.network.HttpRequest$ConnectionFactory
+#
+# - return:void
+
+setConnectionFactory-BB@0x0 : [ setConnectionFactory-BB@0x4 setConnectionFactory-BB@0xe ]
+	0       (00000000) if-nez               v1, +7
+
+setConnectionFactory-BB@0x4 : [ setConnectionFactory-BB@0xc ]
+	1       (00000004) sget-object          v0, Lio/fabric/sdk/android/services/network/HttpRequest$ConnectionFactory;->DEFAULT Lio/fabric/sdk/android/services/network/HttpRequest$ConnectionFactory;
+	2       (00000008) sput-object          v0, Lio/fabric/sdk/android/services/network/HttpRequest;->CONNECTION_FACTORY Lio/fabric/sdk/android/services/network/HttpRequest$ConnectionFactory;
+
+setConnectionFactory-BB@0xc : 
+	3       (0000000c) return-void          
+
+setConnectionFactory-BB@0xe : [ setConnectionFactory-BB@0xc ]
+	4       (0000000e) sput-object          v1, Lio/fabric/sdk/android/services/network/HttpRequest;->CONNECTION_FACTORY Lio/fabric/sdk/android/services/network/HttpRequest$ConnectionFactory;
+	5       (00000012) goto                 -3
+

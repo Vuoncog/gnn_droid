@@ -1,0 +1,20 @@
+# Lcom/unlocker/purchase/c;->a(Lcom/google/gson/JsonElement; Ljava/lang/String;)Lcom/google/gson/JsonElement; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.google.gson.JsonElement
+# - v4:java.lang.String
+#
+# - return:com.google.gson.JsonElement
+
+a-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/google/gson/JsonParser;
+	1       (00000004) invoke-direct        v0, Lcom/google/gson/JsonParser;-><init>()V
+	2       (0000000a) invoke-virtual       v3, Lcom/google/gson/JsonElement;->toString()Ljava/lang/String;
+	3       (00000010) move-result-object   v1
+	4       (00000012) invoke-direct        v2, v1, v4, Lcom/unlocker/purchase/c;->b(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v0, v1, Lcom/google/gson/JsonParser;->parse(Ljava/lang/String;)Lcom/google/gson/JsonElement;
+	7       (00000020) move-result-object   v0
+	8       (00000022) return-object        v0
+

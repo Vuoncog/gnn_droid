@@ -1,0 +1,26 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->getStringsFileValue(Landroid/content/Context; Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+# - v2:java.lang.String
+#
+# - return:java.lang.String
+
+getStringsFileValue-BB@0x0 : [ getStringsFileValue-BB@0x10 getStringsFileValue-BB@0x1a ]
+	0       (00000000) const-string         v0, 'string'
+	1       (00000004) invoke-static        v1, v2, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->getResourcesIdentifier(Landroid/content/Context; Ljava/lang/String; Ljava/lang/String;)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-lez               v0, +7
+
+getStringsFileValue-BB@0x10 : [ getStringsFileValue-BB@0x18 ]
+	4       (00000010) invoke-virtual       v1, v0, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	5       (00000016) move-result-object   v0
+
+getStringsFileValue-BB@0x18 : 
+	6       (00000018) return-object        v0
+
+getStringsFileValue-BB@0x1a : [ getStringsFileValue-BB@0x18 ]
+	7       (0000001a) const-string         v0, ''
+	8       (0000001e) goto                 -3
+

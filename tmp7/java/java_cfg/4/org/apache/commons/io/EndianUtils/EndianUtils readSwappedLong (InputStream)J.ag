@@ -1,0 +1,30 @@
+# Lorg/apache/commons/io/EndianUtils;->readSwappedLong(Ljava/io/InputStream;)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.io.InputStream
+#
+# - return:long
+
+readSwappedLong-BB@0x0 : [ readSwappedLong-BB@0xc ]
+	0       (00000000) const/16             v4, 8
+	1       (00000004) const/4              v1, 0
+	2       (00000006) new-array            v2, v4, [B
+	3       (0000000a) move                 v0, v1
+
+readSwappedLong-BB@0xc : [ readSwappedLong-BB@0x10 readSwappedLong-BB@0x24 ]
+	4       (0000000c) if-ge                v0, v4, +c
+
+readSwappedLong-BB@0x10 : [ readSwappedLong-BB@0xc ]
+	5       (00000010) invoke-static        v5, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
+	6       (00000016) move-result          v3
+	7       (00000018) int-to-byte          v3, v3
+	8       (0000001a) aput-byte            v3, v2, v0
+	9       (0000001e) add-int/lit8         v0, v0, 1
+	10      (00000022) goto                 -b
+
+readSwappedLong-BB@0x24 : 
+	11      (00000024) invoke-static        v2, v1, Lorg/apache/commons/io/EndianUtils;->readSwappedLong([B I)J
+	12      (0000002a) move-result-wide     v0
+	13      (0000002c) return-wide          v0
+

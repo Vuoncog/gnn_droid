@@ -1,0 +1,16 @@
+# Lorg/apache/commons/io/FileUtils;->checksumCRC32(Ljava/io/File;)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+#
+# - return:long
+
+checksumCRC32-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/zip/CRC32;
+	1       (00000004) invoke-direct        v0, Ljava/util/zip/CRC32;-><init>()V
+	2       (0000000a) invoke-static        v2, v0, Lorg/apache/commons/io/FileUtils;->checksum(Ljava/io/File; Ljava/util/zip/Checksum;)Ljava/util/zip/Checksum;
+	3       (00000010) invoke-virtual       v0, Ljava/util/zip/CRC32;->getValue()J
+	4       (00000016) move-result-wide     v0
+	5       (00000018) return-wide          v0
+

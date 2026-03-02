@@ -1,0 +1,20 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore$7$3;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.DialogInterface
+# - v4:int
+#
+# - return:void
+
+onClick-BB@0x0 : 
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget-object          v0, v2, Lcom/crashlytics/android/core/CrashlyticsCore$7$3;->this$1 Lcom/crashlytics/android/core/CrashlyticsCore$7;
+	2       (00000006) iget-object          v0, v0, Lcom/crashlytics/android/core/CrashlyticsCore$7;->this$0 Lcom/crashlytics/android/core/CrashlyticsCore;
+	3       (0000000a) invoke-virtual       v0, v1, Lcom/crashlytics/android/core/CrashlyticsCore;->setShouldSendUserReportsWithoutPrompting(Z)V
+	4       (00000010) iget-object          v0, v2, Lcom/crashlytics/android/core/CrashlyticsCore$7$3;->this$1 Lcom/crashlytics/android/core/CrashlyticsCore$7;
+	5       (00000014) iget-object          v0, v0, Lcom/crashlytics/android/core/CrashlyticsCore$7;->val$latch Lcom/crashlytics/android/core/CrashlyticsCore$OptInLatch;
+	6       (00000018) invoke-virtual       v0, v1, Lcom/crashlytics/android/core/CrashlyticsCore$OptInLatch;->setOptIn(Z)V
+	7       (0000001e) invoke-interface     v3, Landroid/content/DialogInterface;->dismiss()V
+	8       (00000024) return-void          
+

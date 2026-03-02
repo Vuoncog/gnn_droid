@@ -1,0 +1,39 @@
+# Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;->getSSLSocketFactory()Ljavax/net/ssl/SSLSocketFactory; [access_flags=private synchronized]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:javax.net.ssl.SSLSocketFactory
+
+getSSLSocketFactory-BB@0x0 : [ getSSLSocketFactory-BB@0x2 ]
+	0       (00000000) monitor-enter        v1
+
+getSSLSocketFactory-BB@0x2 : [ getSSLSocketFactory-BB@0xa getSSLSocketFactory-BB@0x1e ]
+	1       (00000002) iget-object          v0, v1, Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;->sslSocketFactory Ljavax/net/ssl/SSLSocketFactory;
+	2       (00000006) if-nez               v0, +c
+	2:21
+	(Ljava/lang/Throwable; -> 26 getSSLSocketFactory-BB@0x26)
+
+getSSLSocketFactory-BB@0xa : [ getSSLSocketFactory-BB@0x12 getSSLSocketFactory-BB@0x1e ]
+	3       (0000000a) iget-boolean         v0, v1, Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;->attemptedSslInit Z
+	4       (0000000e) if-nez               v0, +8
+	2:21
+	(Ljava/lang/Throwable; -> 26 getSSLSocketFactory-BB@0x26)
+
+getSSLSocketFactory-BB@0x12 : [ getSSLSocketFactory-BB@0x1e ]
+	5       (00000012) invoke-direct        v1, Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;->initSSLSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) iput-object          v0, v1, Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;->sslSocketFactory Ljavax/net/ssl/SSLSocketFactory;
+	2:21
+	(Ljava/lang/Throwable; -> 26 getSSLSocketFactory-BB@0x26)
+
+getSSLSocketFactory-BB@0x1e : 
+	8       (0000001e) iget-object          v0, v1, Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;->sslSocketFactory Ljavax/net/ssl/SSLSocketFactory;
+	9       (00000022) monitor-exit         v1
+	10      (00000024) return-object        v0
+
+getSSLSocketFactory-BB@0x26 : 
+	11      (00000026) move-exception       v0
+	12      (00000028) monitor-exit         v1
+	13      (0000002a) throw                v0
+

@@ -1,0 +1,30 @@
+# Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;->isHttps(Ljava/lang/String;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:boolean
+
+isHttps-BB@0x0 : [ isHttps-BB@0x4 isHttps-BB@0x24 ]
+	0       (00000000) if-eqz               v3, +12
+
+isHttps-BB@0x4 : [ isHttps-BB@0x20 isHttps-BB@0x24 ]
+	1       (00000004) sget-object          v0, Ljava/util/Locale;->US Ljava/util/Locale;
+	2       (00000008) invoke-virtual       v3, v0, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) const-string         v1, 'https'
+	5       (00000014) invoke-virtual       v0, v1, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-eqz               v0, +4
+
+isHttps-BB@0x20 : [ isHttps-BB@0x22 ]
+	8       (00000020) const/4              v0, 1
+
+isHttps-BB@0x22 : 
+	9       (00000022) return               v0
+
+isHttps-BB@0x24 : [ isHttps-BB@0x22 ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -2
+

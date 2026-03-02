@@ -1,0 +1,25 @@
+# Lorg/apache/commons/lang/math/Fraction;->hashCode()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+hashCode-BB@0x0 : [ hashCode-BB@0x8 hashCode-BB@0x26 ]
+	0       (00000000) iget                 v0, v2, Lorg/apache/commons/lang/math/Fraction;->hashCode I
+	1       (00000004) if-nez               v0, +11
+
+hashCode-BB@0x8 : [ hashCode-BB@0x26 ]
+	2       (00000008) invoke-virtual       v2, Lorg/apache/commons/lang/math/Fraction;->getNumerator()I
+	3       (0000000e) move-result          v0
+	4       (00000010) add-int/lit16        v0, v0, 629
+	5       (00000014) mul-int/lit8         v0, v0, 37
+	6       (00000018) invoke-virtual       v2, Lorg/apache/commons/lang/math/Fraction;->getDenominator()I
+	7       (0000001e) move-result          v1
+	8       (00000020) add-int/2addr        v0, v1
+	9       (00000022) iput                 v0, v2, Lorg/apache/commons/lang/math/Fraction;->hashCode I
+
+hashCode-BB@0x26 : 
+	10      (00000026) iget                 v0, v2, Lorg/apache/commons/lang/math/Fraction;->hashCode I
+	11      (0000002a) return               v0
+

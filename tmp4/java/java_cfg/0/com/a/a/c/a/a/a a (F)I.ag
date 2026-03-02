@@ -1,0 +1,25 @@
+# Lcom/a/a/c/a/a;->a(F)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:float
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0x14 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) cmpg-float           v0, v1, v0
+	2       (00000006) if-gez               v0, +7
+
+a-BB@0xa : [ a-BB@0xe ]
+	3       (0000000a) const/high16         v0, -16640 # [-0.5]
+
+a-BB@0xe : 
+	4       (0000000e) add-float/2addr      v0, v1
+	5       (00000010) float-to-int         v0, v0
+	6       (00000012) return               v0
+
+a-BB@0x14 : [ a-BB@0xe ]
+	7       (00000014) const/high16         v0, 16128 # [0.5]
+	8       (00000018) goto                 -5
+

@@ -1,0 +1,24 @@
+# Lorg/apache/commons/io/LineIterator;->nextLine()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.String
+
+nextLine-BB@0x0 : [ nextLine-BB@0xc nextLine-BB@0x1c ]
+	0       (00000000) invoke-virtual       v2, Lorg/apache/commons/io/LineIterator;->hasNext()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +a
+
+nextLine-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/util/NoSuchElementException;
+	4       (00000010) const-string         v1, 'No more lines'
+	5       (00000014) invoke-direct        v0, v1, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+	6       (0000001a) throw                v0
+
+nextLine-BB@0x1c : 
+	7       (0000001c) iget-object          v0, v2, Lorg/apache/commons/io/LineIterator;->cachedLine Ljava/lang/String;
+	8       (00000020) const/4              v1, 0
+	9       (00000022) iput-object          v1, v2, Lorg/apache/commons/io/LineIterator;->cachedLine Ljava/lang/String;
+	10      (00000026) return-object        v0
+

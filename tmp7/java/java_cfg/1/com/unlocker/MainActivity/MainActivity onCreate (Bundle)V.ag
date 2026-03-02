@@ -1,0 +1,47 @@
+# Lcom/unlocker/MainActivity;->onCreate(Landroid/os/Bundle;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x12 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) invoke-super         v5, v6, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+	2       (00000008) const/high16         v0, 32516 # [1.754580954436089e+38]
+	3       (0000000c) invoke-virtual       v5, v0, Lcom/unlocker/MainActivity;->setContentView(I)V
+
+onCreate-BB@0x12 : [ onCreate-BB@0x32 ]
+	4       (00000012) invoke-virtual       v5, Lcom/unlocker/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) invoke-virtual       v5, Lcom/unlocker/MainActivity;->getPackageName()Ljava/lang/String;
+	7       (00000020) move-result-object   v1
+	8       (00000022) const/4              v2, 0
+	9       (00000024) invoke-virtual       v0, v1, v2, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String; I)Landroid/content/pm/PackageInfo;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) iget-object          v0, v0, Landroid/content/pm/PackageInfo;->versionName Ljava/lang/String;
+	12      (00000030) move-object          v1, v0
+	12:2f
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 62 onCreate-BB@0x62)
+
+onCreate-BB@0x32 : 
+	13      (00000032) const/high16         v0, 32519 # [1.7944577943096364e+38]
+	14      (00000036) invoke-virtual       v5, v0, Lcom/unlocker/MainActivity;->findViewById(I)Landroid/view/View;
+	15      (0000003c) move-result-object   v0
+	16      (0000003e) check-cast           v0, Landroid/widget/TextView;
+	17      (00000042) const                v2, 2131034120 # [1.7678748569867064e+38]
+	18      (00000048) const/4              v3, 1
+	19      (0000004a) new-array            v3, v3, [Ljava/lang/Object;
+	20      (0000004e) aput-object          v1, v3, v4
+	21      (00000052) invoke-virtual       v5, v2, v3, Lcom/unlocker/MainActivity;->getString(I [Ljava/lang/Object;)Ljava/lang/String;
+	22      (00000058) move-result-object   v1
+	23      (0000005a) invoke-virtual       v0, v1, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	24      (00000060) return-void          
+
+onCreate-BB@0x62 : [ onCreate-BB@0x32 ]
+	25      (00000062) move-exception       v0
+	26      (00000064) const-string         v0, '?'
+	27      (00000068) move-object          v1, v0
+	28      (0000006a) goto                 -1c
+

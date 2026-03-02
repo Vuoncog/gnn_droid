@@ -1,0 +1,23 @@
+# Lcom/crashlytics/android/core/internal/models/SessionEventData;-><init>(J Lcom/crashlytics/android/core/internal/models/SignalData; [Lcom/crashlytics/android/core/internal/models/ThreadData; [Lcom/crashlytics/android/core/internal/models/BinaryImageData; [Lcom/crashlytics/android/core/internal/models/CustomAttributeData; Lcom/crashlytics/android/core/internal/models/DeviceData;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:long
+# - v4:com.crashlytics.android.core.internal.models.SignalData
+# - v5:com.crashlytics.android.core.internal.models.ThreadData[]
+# - v6:com.crashlytics.android.core.internal.models.BinaryImageData[]
+# - v7:com.crashlytics.android.core.internal.models.CustomAttributeData[]
+# - v8:com.crashlytics.android.core.internal.models.DeviceData
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-wide            v2, v1, Lcom/crashlytics/android/core/internal/models/SessionEventData;->timestamp J
+	2       (0000000a) iput-object          v4, v1, Lcom/crashlytics/android/core/internal/models/SessionEventData;->signal Lcom/crashlytics/android/core/internal/models/SignalData;
+	3       (0000000e) iput-object          v5, v1, Lcom/crashlytics/android/core/internal/models/SessionEventData;->threads [Lcom/crashlytics/android/core/internal/models/ThreadData;
+	4       (00000012) iput-object          v6, v1, Lcom/crashlytics/android/core/internal/models/SessionEventData;->binaryImages [Lcom/crashlytics/android/core/internal/models/BinaryImageData;
+	5       (00000016) iput-object          v7, v1, Lcom/crashlytics/android/core/internal/models/SessionEventData;->customAttributes [Lcom/crashlytics/android/core/internal/models/CustomAttributeData;
+	6       (0000001a) iput-object          v8, v1, Lcom/crashlytics/android/core/internal/models/SessionEventData;->deviceData Lcom/crashlytics/android/core/internal/models/DeviceData;
+	7       (0000001e) return-void          
+

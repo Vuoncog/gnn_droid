@@ -1,0 +1,33 @@
+# Lorg/apache/commons/io/input/XmlStreamReader;-><init>(Ljava/io/InputStream; Z Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.io.InputStream
+# - v6:boolean
+# - v7:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v4, Ljava/io/Reader;-><init>()V
+	1       (00000006) iput-object          v7, v4, Lorg/apache/commons/io/input/XmlStreamReader;->defaultEncoding Ljava/lang/String;
+	2       (0000000a) new-instance         v0, Lorg/apache/commons/io/input/BOMInputStream;
+	3       (0000000e) new-instance         v1, Ljava/io/BufferedInputStream;
+	4       (00000012) const/16             v2, 4096
+	5       (00000016) invoke-direct        v1, v5, v2, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream; I)V
+	6       (0000001c) const/4              v2, 0
+	7       (0000001e) sget-object          v3, Lorg/apache/commons/io/input/XmlStreamReader;->BOMS [Lorg/apache/commons/io/ByteOrderMark;
+	8       (00000022) invoke-direct        v0, v1, v2, v3, Lorg/apache/commons/io/input/BOMInputStream;-><init>(Ljava/io/InputStream; Z [Lorg/apache/commons/io/ByteOrderMark;)V
+	9       (00000028) new-instance         v1, Lorg/apache/commons/io/input/BOMInputStream;
+	10      (0000002c) const/4              v2, 1
+	11      (0000002e) sget-object          v3, Lorg/apache/commons/io/input/XmlStreamReader;->XML_GUESS_BYTES [Lorg/apache/commons/io/ByteOrderMark;
+	12      (00000032) invoke-direct        v1, v0, v2, v3, Lorg/apache/commons/io/input/BOMInputStream;-><init>(Ljava/io/InputStream; Z [Lorg/apache/commons/io/ByteOrderMark;)V
+	13      (00000038) invoke-direct        v4, v0, v1, v6, Lorg/apache/commons/io/input/XmlStreamReader;->doRawStream(Lorg/apache/commons/io/input/BOMInputStream; Lorg/apache/commons/io/input/BOMInputStream; Z)Ljava/lang/String;
+	14      (0000003e) move-result-object   v0
+	15      (00000040) iput-object          v0, v4, Lorg/apache/commons/io/input/XmlStreamReader;->encoding Ljava/lang/String;
+	16      (00000044) new-instance         v0, Ljava/io/InputStreamReader;
+	17      (00000048) iget-object          v2, v4, Lorg/apache/commons/io/input/XmlStreamReader;->encoding Ljava/lang/String;
+	18      (0000004c) invoke-direct        v0, v1, v2, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream; Ljava/lang/String;)V
+	19      (00000052) iput-object          v0, v4, Lorg/apache/commons/io/input/XmlStreamReader;->reader Ljava/io/Reader;
+	20      (00000056) return-void          
+

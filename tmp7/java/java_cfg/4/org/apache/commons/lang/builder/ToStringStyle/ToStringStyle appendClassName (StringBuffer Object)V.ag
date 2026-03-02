@@ -1,0 +1,39 @@
+# Lorg/apache/commons/lang/builder/ToStringStyle;->appendClassName(Ljava/lang/StringBuffer; Ljava/lang/Object;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.StringBuffer
+# - v3:java.lang.Object
+#
+# - return:void
+
+appendClassName-BB@0x0 : [ appendClassName-BB@0x8 appendClassName-BB@0x30 ]
+	0       (00000000) iget-boolean         v0, v1, Lorg/apache/commons/lang/builder/ToStringStyle;->useClassName Z
+	1       (00000004) if-eqz               v0, +16
+
+appendClassName-BB@0x8 : [ appendClassName-BB@0xc appendClassName-BB@0x30 ]
+	2       (00000008) if-eqz               v3, +14
+
+appendClassName-BB@0xc : [ appendClassName-BB@0x1a appendClassName-BB@0x32 ]
+	3       (0000000c) invoke-static        v3, Lorg/apache/commons/lang/builder/ToStringStyle;->register(Ljava/lang/Object;)V
+	4       (00000012) iget-boolean         v0, v1, Lorg/apache/commons/lang/builder/ToStringStyle;->useShortClassName Z
+	5       (00000016) if-eqz               v0, +e
+
+appendClassName-BB@0x1a : [ appendClassName-BB@0x30 ]
+	6       (0000001a) invoke-virtual       v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	7       (00000020) move-result-object   v0
+	8       (00000022) invoke-virtual       v1, v0, Lorg/apache/commons/lang/builder/ToStringStyle;->getShortClassName(Ljava/lang/Class;)Ljava/lang/String;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) invoke-virtual       v2, v0, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+appendClassName-BB@0x30 : 
+	11      (00000030) return-void          
+
+appendClassName-BB@0x32 : [ appendClassName-BB@0x30 ]
+	12      (00000032) invoke-virtual       v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) invoke-virtual       v0, Ljava/lang/Class;->getName()Ljava/lang/String;
+	15      (00000040) move-result-object   v0
+	16      (00000042) invoke-virtual       v2, v0, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	17      (00000048) goto                 -c
+

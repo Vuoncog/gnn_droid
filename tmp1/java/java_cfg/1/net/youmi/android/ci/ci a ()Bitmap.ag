@@ -1,0 +1,33 @@
+# Lnet/youmi/android/ci;->a()Landroid/graphics/Bitmap; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.graphics.Bitmap
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0xe ]
+	0       (00000000) iget-object          v0, v1, Lnet/youmi/android/ci;->s Landroid/graphics/Bitmap;
+	1       (00000004) if-eqz               v0, +5
+
+a-BB@0x8 : [ a-BB@0xc ]
+	2       (00000008) iget-object          v0, v1, Lnet/youmi/android/ci;->s Landroid/graphics/Bitmap;
+
+a-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+a-BB@0xe : [ a-BB@0x1e ]
+	4       (0000000e) const-string         v0, 'a4.png'
+	5       (00000012) invoke-virtual       v1, v0, Lnet/youmi/android/ci;->a(Ljava/lang/String;)Landroid/graphics/Bitmap;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) iput-object          v0, v1, Lnet/youmi/android/ci;->s Landroid/graphics/Bitmap;
+	e:1d
+	(Ljava/lang/Exception; -> 24 a-BB@0x24)
+
+a-BB@0x1e : [ a-BB@0xc ]
+	8       (0000001e) iget-object          v0, v1, Lnet/youmi/android/ci;->s Landroid/graphics/Bitmap;
+	9       (00000022) goto                 -b
+
+a-BB@0x24 : [ a-BB@0x1e ]
+	10      (00000024) move-exception       v0
+	11      (00000026) goto                 -4
+

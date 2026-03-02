@@ -1,0 +1,32 @@
+# Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->scheduleTimeBasedRollOverIfNeeded()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+scheduleTimeBasedRollOverIfNeeded-BB@0x0 : [ scheduleTimeBasedRollOverIfNeeded-BB@0xa scheduleTimeBasedRollOverIfNeeded-BB@0x24 ]
+	0       (00000000) iget                 v0, v4, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds I
+	1       (00000004) const/4              v1, -1
+	2       (00000006) if-eq                v0, v1, +f
+
+scheduleTimeBasedRollOverIfNeeded-BB@0xa : [ scheduleTimeBasedRollOverIfNeeded-BB@0xc ]
+	3       (0000000a) const/4              v0, 1
+
+scheduleTimeBasedRollOverIfNeeded-BB@0xc : [ scheduleTimeBasedRollOverIfNeeded-BB@0x10 scheduleTimeBasedRollOverIfNeeded-BB@0x22 ]
+	4       (0000000c) if-eqz               v0, +b
+
+scheduleTimeBasedRollOverIfNeeded-BB@0x10 : [ scheduleTimeBasedRollOverIfNeeded-BB@0x22 ]
+	5       (00000010) iget                 v0, v4, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds I
+	6       (00000014) int-to-long          v0, v0
+	7       (00000016) iget                 v2, v4, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverIntervalSeconds I
+	8       (0000001a) int-to-long          v2, v2
+	9       (0000001c) invoke-virtual       v4, v0, v1, v2, v3, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->scheduleTimeBasedFileRollOver(J J)V
+
+scheduleTimeBasedRollOverIfNeeded-BB@0x22 : 
+	10      (00000022) return-void          
+
+scheduleTimeBasedRollOverIfNeeded-BB@0x24 : [ scheduleTimeBasedRollOverIfNeeded-BB@0xc ]
+	11      (00000024) const/4              v0, 0
+	12      (00000026) goto                 -d
+

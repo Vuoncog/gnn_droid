@@ -1,0 +1,71 @@
+# Lnet/youmi/android/ay;->a(Ljava/lang/String; [B)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+# - v6:byte[]
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x4 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) const/4              v2, 0
+
+a-BB@0x4 : [ a-BB@0x10 a-BB@0x14 ]
+	2       (00000004) invoke-virtual       v4, v5, Lnet/youmi/android/ay;->a(Ljava/lang/String;)Ljava/lang/String;
+	3       (0000000a) move-result-object   v0
+	4       (0000000c) if-nez               v5, +4
+	4:23
+	(Ljava/lang/Exception; -> 4e a-BB@0x4e)
+
+a-BB@0x10 : [ a-BB@0x12 ]
+	5       (00000010) move                 v0, v2
+	4:23
+	(Ljava/lang/Exception; -> 4e a-BB@0x4e)
+
+a-BB@0x12 : 
+	6       (00000012) return               v0
+	4:23
+	(Ljava/lang/Exception; -> 4e a-BB@0x4e)
+
+a-BB@0x14 : [ a-BB@0x2a a-BB@0x2e ]
+	7       (00000014) new-instance         v1, Ljava/io/File;
+	8       (00000018) invoke-direct        v1, v0, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	9       (0000001e) invoke-virtual       v1, Ljava/io/File;->exists()Z
+	10      (00000024) move-result          v0
+	11      (00000026) if-eqz               v0, +4
+
+a-BB@0x2a : [ a-BB@0x12 ]
+	12      (0000002a) move                 v0, v3
+	13      (0000002c) goto                 -d
+
+a-BB@0x2e : [ a-BB@0x3e ]
+	14      (0000002e) new-instance         v0, Ljava/io/FileOutputStream;
+	15      (00000032) invoke-direct        v0, v1, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+	16      (00000038) invoke-virtual       v0, v6, Ljava/io/FileOutputStream;->write([B)V
+	2e:3d
+	(Ljava/lang/Exception; -> 48 a-BB@0x48)
+
+a-BB@0x3e : [ a-BB@0x44 ]
+	17      (0000003e) invoke-virtual       v0, Ljava/io/FileOutputStream;->close()V
+	3e:43
+	(Ljava/lang/Exception; -> 54 a-BB@0x54)
+
+a-BB@0x44 : [ a-BB@0x12 ]
+	18      (00000044) move                 v0, v3
+	19      (00000046) goto                 -1a
+
+a-BB@0x48 : [ a-BB@0x12 ]
+	20      (00000048) move-exception       v0
+	21      (0000004a) move                 v0, v2
+	22      (0000004c) goto                 -1d
+
+a-BB@0x4e : [ a-BB@0x12 ]
+	23      (0000004e) move-exception       v0
+	24      (00000050) move                 v0, v2
+	25      (00000052) goto                 -20
+
+a-BB@0x54 : [ a-BB@0x44 ]
+	26      (00000054) move-exception       v0
+	27      (00000056) goto                 -9
+

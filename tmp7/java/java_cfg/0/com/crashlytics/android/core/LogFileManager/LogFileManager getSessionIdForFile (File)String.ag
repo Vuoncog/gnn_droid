@@ -1,0 +1,28 @@
+# Lcom/crashlytics/android/core/LogFileManager;->getSessionIdForFile(Ljava/io/File;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.File
+#
+# - return:java.lang.String
+
+getSessionIdForFile-BB@0x0 : [ getSessionIdForFile-BB@0x1a getSessionIdForFile-BB@0x1c ]
+	0       (00000000) invoke-virtual       v4, Ljava/io/File;->getName()Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, '.temp'
+	3       (0000000c) invoke-virtual       v0, v1, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+	4       (00000012) move-result          v1
+	5       (00000014) const/4              v2, -1
+	6       (00000016) if-ne                v1, v2, +3
+
+getSessionIdForFile-BB@0x1a : 
+	7       (0000001a) return-object        v0
+
+getSessionIdForFile-BB@0x1c : [ getSessionIdForFile-BB@0x1a ]
+	8       (0000001c) const-string         v2, 'crashlytics-userlog-'
+	9       (00000020) invoke-virtual       v2, Ljava/lang/String;->length()I
+	10      (00000026) move-result          v2
+	11      (00000028) invoke-virtual       v0, v2, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	12      (0000002e) move-result-object   v0
+	13      (00000030) goto                 -b
+

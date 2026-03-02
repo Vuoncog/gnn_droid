@@ -1,0 +1,51 @@
+# Lcom/a/a/a/c/c;->a(I)Lcom/a/a/c/b/a; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:com.a.a.c.b.a
+
+a-BB@0x0 : [ D:a-BB@0x6 4:a-BB@0x38 5:a-BB@0x6 6:a-BB@0x3e 7:a-BB@0x6 8:a-BB@0x44 9:a-BB@0x6 10:a-BB@0x4a 11:a-BB@0x6 12:a-BB@0x50 ]
+	0       (00000000) packed-switch        v3, +2c (0x58)
+
+a-BB@0x6 : 
+	1       (00000006) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (0000000a) new-instance         v1, Ljava/lang/StringBuilder;
+	3       (0000000e) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	4       (00000014) const-string         v2, 'Unsupported word size '
+	5       (00000018) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001e) move-result-object   v1
+	7       (00000020) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	8       (00000026) move-result-object   v1
+	9       (00000028) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	10      (0000002e) move-result-object   v1
+	11      (00000030) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	12      (00000036) throw                v0
+
+a-BB@0x38 : [ a-BB@0x3c ]
+	13      (00000038) sget-object          v0, Lcom/a/a/c/b/a;->d Lcom/a/a/c/b/a;
+
+a-BB@0x3c : 
+	14      (0000003c) return-object        v0
+
+a-BB@0x3e : [ a-BB@0x3c ]
+	15      (0000003e) sget-object          v0, Lcom/a/a/c/b/a;->c Lcom/a/a/c/b/a;
+	16      (00000042) goto                 -3
+
+a-BB@0x44 : [ a-BB@0x3c ]
+	17      (00000044) sget-object          v0, Lcom/a/a/c/b/a;->g Lcom/a/a/c/b/a;
+	18      (00000048) goto                 -6
+
+a-BB@0x4a : [ a-BB@0x3c ]
+	19      (0000004a) sget-object          v0, Lcom/a/a/c/b/a;->b Lcom/a/a/c/b/a;
+	20      (0000004e) goto                 -9
+
+a-BB@0x50 : [ a-BB@0x3c ]
+	21      (00000050) sget-object          v0, Lcom/a/a/c/b/a;->a Lcom/a/a/c/b/a;
+	22      (00000054) goto                 -c
+
+a-BB@0x56 : 
+	23      (00000056) nop                  
+	24      (00000058) packed-switch-payload 4 5 6 7 8 9 a b c
+

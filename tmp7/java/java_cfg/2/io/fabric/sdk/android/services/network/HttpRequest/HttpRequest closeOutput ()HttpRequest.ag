@@ -1,0 +1,47 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->closeOutput()Lio/fabric/sdk/android/services/network/HttpRequest; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:io.fabric.sdk.android.services.network.HttpRequest
+
+closeOutput-BB@0x0 : [ closeOutput-BB@0x8 closeOutput-BB@0xa ]
+	0       (00000000) iget-object          v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+	1       (00000004) if-nez               v0, +3
+
+closeOutput-BB@0x8 : 
+	2       (00000008) return-object        v2
+
+closeOutput-BB@0xa : [ closeOutput-BB@0x12 closeOutput-BB@0x20 ]
+	3       (0000000a) iget-boolean         v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->multipart Z
+	4       (0000000e) if-eqz               v0, +9
+
+closeOutput-BB@0x12 : [ closeOutput-BB@0x20 ]
+	5       (00000012) iget-object          v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+	6       (00000016) const-string         v1, '\r\n--00content0boundary00--\r\n'
+	7       (0000001a) invoke-virtual       v0, v1, Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;->write(Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+
+closeOutput-BB@0x20 : [ closeOutput-BB@0x28 closeOutput-BB@0x3a ]
+	8       (00000020) iget-boolean         v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->ignoreCloseExceptions Z
+	9       (00000024) if-eqz               v0, +b
+
+closeOutput-BB@0x28 : [ closeOutput-BB@0x32 ]
+	10      (00000028) iget-object          v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+	11      (0000002c) invoke-virtual       v0, Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;->close()V
+	28:31
+	(Ljava/io/IOException; -> 46 closeOutput-BB@0x46)
+
+closeOutput-BB@0x32 : [ closeOutput-BB@0x8 ]
+	12      (00000032) const/4              v0, 0
+	13      (00000034) iput-object          v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+	14      (00000038) goto                 -18
+
+closeOutput-BB@0x3a : [ closeOutput-BB@0x32 ]
+	15      (0000003a) iget-object          v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+	16      (0000003e) invoke-virtual       v0, Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;->close()V
+	17      (00000044) goto                 -9
+
+closeOutput-BB@0x46 : [ closeOutput-BB@0x32 ]
+	18      (00000046) move-exception       v0
+	19      (00000048) goto                 -b
+

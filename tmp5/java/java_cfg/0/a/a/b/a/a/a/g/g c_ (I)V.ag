@@ -1,0 +1,33 @@
+# La/a/b/a/a/a/g;->c_(I)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+c_-BB@0x0 : [ c_-BB@0x8 c_-BB@0xa ]
+	0       (00000000) iget-object          v0, v3, La/a/b/a/a/a/g;->a La/a/b/a/b/a/g;
+	1       (00000004) if-nez               v0, +3
+
+c_-BB@0x8 : 
+	2       (00000008) return-void          
+
+c_-BB@0xa : [ c_-BB@0x8 ]
+	3       (0000000a) iget-object          v1, v3, La/a/b/a/a/a/g;->b La/a/b/a/b/b/c/i;
+	4       (0000000e) iget-object          v0, v3, La/a/b/a/a/a/g;->a La/a/b/a/b/a/g;
+	5       (00000012) invoke-interface     v0, La/a/b/a/b/a/g;->e()Ljava/lang/Object;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) check-cast           v0, Ljava/lang/Float;
+	8       (0000001e) invoke-virtual       v0, Ljava/lang/Float;->floatValue()F
+	9       (00000024) move-result          v0
+	10      (00000026) invoke-virtual       v1, v0, La/a/b/a/b/b/c/i;->c(F)F
+	11      (0000002c) move-result          v0
+	12      (0000002e) iget-object          v1, v3, La/a/b/a/a/a/g;->b La/a/b/a/b/b/c/i;
+	13      (00000032) iget                 v1, v1, La/a/b/a/b/b/c/i;->f F
+	14      (00000036) int-to-float         v2, v4
+	15      (00000038) mul-float/2addr      v1, v2
+	16      (0000003a) add-float/2addr      v0, v1
+	17      (0000003c) invoke-virtual       v3, v0, La/a/b/a/a/a/g;->a(F)V
+	18      (00000042) goto                 -1d
+

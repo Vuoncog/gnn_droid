@@ -1,0 +1,30 @@
+# Lio/fabric/sdk/android/services/events/EventsHandler$4;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x22 ]
+	0       (00000000) iget-object          v0, v3, Lio/fabric/sdk/android/services/events/EventsHandler$4;->this$0 Lio/fabric/sdk/android/services/events/EventsHandler;
+	1       (00000004) iget-object          v0, v0, Lio/fabric/sdk/android/services/events/EventsHandler;->strategy Lio/fabric/sdk/android/services/events/EventsStrategy;
+	2       (00000008) iget-object          v1, v3, Lio/fabric/sdk/android/services/events/EventsHandler$4;->this$0 Lio/fabric/sdk/android/services/events/EventsHandler;
+	3       (0000000c) iget-object          v2, v3, Lio/fabric/sdk/android/services/events/EventsHandler$4;->this$0 Lio/fabric/sdk/android/services/events/EventsHandler;
+	4       (00000010) invoke-virtual       v2, Lio/fabric/sdk/android/services/events/EventsHandler;->getDisabledEventsStrategy()Lio/fabric/sdk/android/services/events/EventsStrategy;
+	5       (00000016) move-result-object   v2
+	6       (00000018) iput-object          v2, v1, Lio/fabric/sdk/android/services/events/EventsHandler;->strategy Lio/fabric/sdk/android/services/events/EventsStrategy;
+	7       (0000001c) invoke-interface     v0, Lio/fabric/sdk/android/services/events/EventsStrategy;->deleteAllEvents()V
+	0:21
+	(Ljava/lang/Exception; -> 24 run-BB@0x24)
+
+run-BB@0x22 : 
+	8       (00000022) return-void          
+
+run-BB@0x24 : [ run-BB@0x22 ]
+	9       (00000024) move-exception       v0
+	10      (00000026) iget-object          v1, v3, Lio/fabric/sdk/android/services/events/EventsHandler$4;->this$0 Lio/fabric/sdk/android/services/events/EventsHandler;
+	11      (0000002a) iget-object          v1, v1, Lio/fabric/sdk/android/services/events/EventsHandler;->context Landroid/content/Context;
+	12      (0000002e) const-string         v2, 'Failed to disable events.'
+	13      (00000032) invoke-static        v1, v2, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlledError(Landroid/content/Context; Ljava/lang/String; Ljava/lang/Throwable;)V
+	14      (00000038) goto                 -b
+

@@ -1,0 +1,23 @@
+# Lcom/mangosoft/android/wallpapers/util/SiteUtils;->closeStream(Ljava/io/Closeable;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.Closeable
+#
+# - return:void
+
+closeStream-BB@0x0 : [ closeStream-BB@0x4 closeStream-BB@0xa ]
+	0       (00000000) if-eqz               v1, +5
+
+closeStream-BB@0x4 : [ closeStream-BB@0xa ]
+	1       (00000004) invoke-interface     v1, Ljava/io/Closeable;->close()V
+	4:9
+	(Ljava/io/IOException; -> c closeStream-BB@0xc)
+
+closeStream-BB@0xa : 
+	2       (0000000a) return-void          
+
+closeStream-BB@0xc : [ closeStream-BB@0xa ]
+	3       (0000000c) move-exception       v0
+	4       (0000000e) goto                 -2
+

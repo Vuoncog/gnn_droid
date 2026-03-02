@@ -1,0 +1,21 @@
+# Lcom/jgamelbe/CMP/b/n;->a(Lorg/json/JSONObject; Lcom/jgamelbe/CMP/b/i;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:org.json.JSONObject
+# - v3:com.jgamelbe.CMP.b.i
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x10 a-BB@0x16 ]
+	0       (00000000) const-string         v0, 'productInfo'
+	1       (00000004) invoke-virtual       v2, v0, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +5
+
+a-BB@0x10 : [ a-BB@0x16 ]
+	4       (00000010) invoke-virtual       v1, v0, Lcom/jgamelbe/CMP/b/n;->c(Lorg/json/JSONObject;)V
+
+a-BB@0x16 : 
+	5       (00000016) return-void          
+

@@ -1,0 +1,17 @@
+# Lorg/apache/commons/io/filefilter/RegexFileFilter;->accept(Ljava/io/File; Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+# - v3:java.lang.String
+#
+# - return:boolean
+
+accept-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/apache/commons/io/filefilter/RegexFileFilter;->pattern Ljava/util/regex/Pattern;
+	1       (00000004) invoke-virtual       v0, v3, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, Ljava/util/regex/Matcher;->matches()Z
+	4       (00000012) move-result          v0
+	5       (00000014) return               v0
+

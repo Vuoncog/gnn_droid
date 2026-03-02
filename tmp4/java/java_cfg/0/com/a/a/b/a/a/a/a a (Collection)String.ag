@@ -1,0 +1,58 @@
+# Lcom/a/a/b/a/a/a;->a(Ljava/util/Collection;)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.util.Collection
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x4 a-BB@0x10 ]
+	0       (00000000) if-eqz               v3, +8
+
+a-BB@0x4 : [ a-BB@0x10 a-BB@0x16 ]
+	1       (00000004) invoke-interface     v3, Ljava/util/Collection;->isEmpty()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +5
+
+a-BB@0x10 : [ a-BB@0x14 ]
+	4       (00000010) const-string         v0, '[]'
+
+a-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+a-BB@0x16 : [ a-BB@0x32 ]
+	6       (00000016) new-instance         v1, Ljava/lang/StringBuilder;
+	7       (0000001a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	8       (00000020) const/16             v0, 91
+	9       (00000024) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	10      (0000002a) invoke-interface     v3, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+	11      (00000030) move-result-object   v2
+
+a-BB@0x32 : [ a-BB@0x3e a-BB@0x70 ]
+	12      (00000032) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	13      (00000038) move-result          v0
+	14      (0000003a) if-eqz               v0, +1b
+
+a-BB@0x3e : [ a-BB@0x64 a-BB@0x32 ]
+	15      (0000003e) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	16      (00000044) move-result-object   v0
+	17      (00000046) check-cast           v0, [I
+	18      (0000004a) invoke-static        v0, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+	19      (00000050) move-result-object   v0
+	20      (00000052) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000058) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	22      (0000005e) move-result          v0
+	23      (00000060) if-eqz               v0, -17
+
+a-BB@0x64 : [ a-BB@0x32 ]
+	24      (00000064) const-string         v0, ', '
+	25      (00000068) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (0000006e) goto                 -1e
+
+a-BB@0x70 : [ a-BB@0x14 ]
+	27      (00000070) const/16             v0, 93
+	28      (00000074) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	29      (0000007a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (00000080) move-result-object   v0
+	31      (00000082) goto                 -37
+

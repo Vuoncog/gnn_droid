@@ -1,0 +1,74 @@
+digraph {
+	graph [bb="0,0,1063.6,645",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_0fb316e20df1c6dc80d840e53c08965d {
+		graph [bb="8,8,1038,637",
+			label="Lio/fabric/sdk/android/services/common/IdManager;.getAndroidId->()Ljava/lang/String;\nLocal registers v0 ... v3\nreturn = java.lang.String",
+			lheight=0.62,
+			lp="523,610.5",
+			lwidth=7.99
+		];
+		struct_5f06861b6cc3b866d3b956691ed2a598	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-boolean </FONT> <FONT color="#8C8C66">v1</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/IdManager;-&gt;collectHardwareIds Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8C8C66">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x1a</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="525,530.5",
+			width=9.6806];
+		struct_1b2bc675e046c4fa20c32b54fd1ee4d1	[height=3.4028,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#8C8C66">v1</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/IdManager;-&gt;appContext Landroid/content/Context;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v1</FONT>, <FONT color="#DF3A01">Landroid/content/Context;-&gt;getContentResolver()Landroid/content/ContentResolver;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8C8C66">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7272CC">v2</FONT>, <FONT color="red">'android_id'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#8C8C66">v1</FONT>, <FONT color="#7272CC">v2</FONT>, <FONT color="#DF3A01">Landroid/provider/Settings$Secure;-&gt;getString(Landroid/content/ContentResolver; Ljava/lang/String;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8C8C66">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7272CC">v2</FONT>, <FONT color="red">'9774d56d682e549c'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7272CC">v2</FONT>, <FONT color="#8C8C66">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7272CC">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7272CC">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="513,326.5",
+			width=13.792];
+		struct_5f06861b6cc3b866d3b956691ed2a598:tail -> struct_1b2bc675e046c4fa20c32b54fd1ee4d1:header	[color=red,
+			pos="e,42,442.5 198,490.5 198,421.78 58.019,505.27 43.256,452.61"];
+		struct_89c55fc4e245e6adb4c01f607b0eec80	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="941,39.5",
+			width=2.4583];
+		struct_5f06861b6cc3b866d3b956691ed2a598:tail -> struct_89c55fc4e245e6adb4c01f607b0eec80:header	[color=green,
+			pos="e,878,56.5 198,490.5 198,399.16 956.07,515.2 1019,449 1094,370.08 1059.5,305.06 1019,204 1003.3,164.96 895.38,110.43 879.86,66.549"];
+		struct_b47433df509f83e6308d959ca4ff6e4e	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7F7F99">v3</FONT>, <FONT color="#8C8C66">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/IdManager;-&gt;formatId(Ljava/lang/String;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="450,133.5",
+			width=12.028];
+		struct_1b2bc675e046c4fa20c32b54fd1ee4d1:tail -> struct_b47433df509f83e6308d959ca4ff6e4e:header	[color=red,
+			pos="e,42,161.5 42,209.5 42,192 42,185.27 42,171.64"];
+		struct_1b2bc675e046c4fa20c32b54fd1ee4d1:tail -> struct_89c55fc4e245e6adb4c01f607b0eec80:header	[color=green,
+			pos="e,878,56.5 42,209.5 42,114.94 826.79,236.47 892,168 913.15,145.79 896.86,129.28 892,99 889.46,83.199 881.94,78.186 879.1,66.468"];
+		struct_b47433df509f83e6308d959ca4ff6e4e:tail -> struct_89c55fc4e245e6adb4c01f607b0eec80:header	[color=blue,
+			pos="e,863,53.5 42,104.5 42,60.809 750.66,54.044 852.88,53.534"];
+	}
+}

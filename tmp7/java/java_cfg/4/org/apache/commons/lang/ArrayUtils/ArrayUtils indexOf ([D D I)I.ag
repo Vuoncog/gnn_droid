@@ -1,0 +1,45 @@
+# Lorg/apache/commons/lang/ArrayUtils;->indexOf([D D I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:double[]
+# - v7:double
+# - v8:int
+#
+# - return:int
+
+indexOf-BB@0x0 : [ indexOf-BB@0xe indexOf-BB@0x12 ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) invoke-static        v5, Lorg/apache/commons/lang/ArrayUtils;->isEmpty([D)Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-eqz               v1, +4
+
+indexOf-BB@0xe : [ indexOf-BB@0x10 ]
+	4       (0000000e) move                 v8, v0
+
+indexOf-BB@0x10 : 
+	5       (00000010) return               v8
+
+indexOf-BB@0x12 : [ indexOf-BB@0x16 indexOf-BB@0x18 ]
+	6       (00000012) if-gez               v8, +3
+
+indexOf-BB@0x16 : [ indexOf-BB@0x18 ]
+	7       (00000016) const/4              v8, 0
+
+indexOf-BB@0x18 : [ indexOf-BB@0x1e indexOf-BB@0x30 ]
+	8       (00000018) array-length         v1, v5
+	9       (0000001a) if-ge                v8, v1, +b
+
+indexOf-BB@0x1e : [ indexOf-BB@0x2a indexOf-BB@0x10 ]
+	10      (0000001e) aget-wide            v2, v5, v8
+	11      (00000022) cmpl-double          v1, v6, v2
+	12      (00000026) if-eqz               v1, -b
+
+indexOf-BB@0x2a : [ indexOf-BB@0x18 ]
+	13      (0000002a) add-int/lit8         v8, v8, 1
+	14      (0000002e) goto                 -b
+
+indexOf-BB@0x30 : [ indexOf-BB@0x10 ]
+	15      (00000030) move                 v8, v0
+	16      (00000032) goto                 -11
+

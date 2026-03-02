@@ -1,0 +1,27 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->isDebuggerAttached()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:boolean
+
+isDebuggerAttached-BB@0x0 : [ isDebuggerAttached-BB@0xc isDebuggerAttached-BB@0x18 ]
+	0       (00000000) invoke-static        Landroid/os/Debug;->isDebuggerConnected()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +8
+
+isDebuggerAttached-BB@0xc : [ isDebuggerAttached-BB@0x18 isDebuggerAttached-BB@0x1c ]
+	3       (0000000c) invoke-static        Landroid/os/Debug;->waitingForDebugger()Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +4
+
+isDebuggerAttached-BB@0x18 : [ isDebuggerAttached-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+isDebuggerAttached-BB@0x1a : 
+	7       (0000001a) return               v0
+
+isDebuggerAttached-BB@0x1c : [ isDebuggerAttached-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

@@ -1,0 +1,24 @@
+# La/a/b/a/b/b/j/a/c/a;->e()Ljava/lang/String; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.String
+
+e-BB@0x0 : [ e-BB@0x8 e-BB@0xe ]
+	0       (00000000) iget-object          v0, v2, La/a/b/a/b/b/j/a/c/a;->c La/a/b/a/a/a/f;
+	1       (00000004) if-nez               v0, +5
+
+e-BB@0x8 : [ e-BB@0xc ]
+	2       (00000008) const-string         v0, ''
+
+e-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+e-BB@0xe : [ e-BB@0xc ]
+	4       (0000000e) iget-object          v0, v2, La/a/b/a/b/b/j/a/c/a;->c La/a/b/a/a/a/f;
+	5       (00000012) const-string         v1, '[value]'
+	6       (00000016) invoke-virtual       v0, v1, La/a/b/a/a/a/f;->a(Ljava/lang/String;)Ljava/lang/String;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) goto                 -9
+

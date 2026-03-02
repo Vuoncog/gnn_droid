@@ -1,0 +1,61 @@
+# Lcom/a/a/c/k;->a([F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v17
+# - v18:float[]
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x50 ]
+	0       (00000000) move-object/from16   v0, v18
+	1       (00000004) array-length         v2, v0
+	2       (00000006) move-object/from16   v0, v17
+	3       (0000000a) iget                 v3, v0, Lcom/a/a/c/k;->a F
+	4       (0000000e) move-object/from16   v0, v17
+	5       (00000012) iget                 v4, v0, Lcom/a/a/c/k;->b F
+	6       (00000016) move-object/from16   v0, v17
+	7       (0000001a) iget                 v5, v0, Lcom/a/a/c/k;->c F
+	8       (0000001e) move-object/from16   v0, v17
+	9       (00000022) iget                 v6, v0, Lcom/a/a/c/k;->d F
+	10      (00000026) move-object/from16   v0, v17
+	11      (0000002a) iget                 v7, v0, Lcom/a/a/c/k;->e F
+	12      (0000002e) move-object/from16   v0, v17
+	13      (00000032) iget                 v8, v0, Lcom/a/a/c/k;->f F
+	14      (00000036) move-object/from16   v0, v17
+	15      (0000003a) iget                 v9, v0, Lcom/a/a/c/k;->g F
+	16      (0000003e) move-object/from16   v0, v17
+	17      (00000042) iget                 v10, v0, Lcom/a/a/c/k;->h F
+	18      (00000046) move-object/from16   v0, v17
+	19      (0000004a) iget                 v11, v0, Lcom/a/a/c/k;->i F
+	20      (0000004e) const/4              v1, 0
+
+a-BB@0x50 : [ a-BB@0x54 a-BB@0x98 ]
+	21      (00000050) if-ge                v1, v2, +24
+
+a-BB@0x54 : [ a-BB@0x50 ]
+	22      (00000054) aget                 v12, v18, v1
+	23      (00000058) add-int/lit8         v13, v1, 1
+	24      (0000005c) aget                 v13, v18, v13
+	25      (00000060) mul-float            v14, v5, v12
+	26      (00000064) mul-float            v15, v8, v13
+	27      (00000068) add-float/2addr      v14, v15
+	28      (0000006a) add-float/2addr      v14, v11
+	29      (0000006c) mul-float            v15, v3, v12
+	30      (00000070) mul-float            v16, v6, v13
+	31      (00000074) add-float            v15, v15, v16
+	32      (00000078) add-float/2addr      v15, v9
+	33      (0000007a) div-float/2addr      v15, v14
+	34      (0000007c) aput                 v15, v18, v1
+	35      (00000080) add-int/lit8         v15, v1, 1
+	36      (00000084) mul-float/2addr      v12, v4
+	37      (00000086) mul-float/2addr      v13, v7
+	38      (00000088) add-float/2addr      v12, v13
+	39      (0000008a) add-float/2addr      v12, v10
+	40      (0000008c) div-float/2addr      v12, v14
+	41      (0000008e) aput                 v12, v18, v15
+	42      (00000092) add-int/lit8         v1, v1, 2
+	43      (00000096) goto                 -23
+
+a-BB@0x98 : 
+	44      (00000098) return-void          
+

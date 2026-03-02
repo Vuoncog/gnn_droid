@@ -1,0 +1,38 @@
+# Lcom/crashlytics/android/core/LogFileManager;->setCurrentSession(Ljava/lang/String;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:void
+
+setCurrentSession-BB@0x0 : [ setCurrentSession-BB@0x16 setCurrentSession-BB@0x18 ]
+	0       (00000000) iget-object          v0, v3, Lcom/crashlytics/android/core/LogFileManager;->currentLog Lcom/crashlytics/android/core/FileLogStore;
+	1       (00000004) invoke-interface     v0, Lcom/crashlytics/android/core/FileLogStore;->closeLogFile()V
+	2       (0000000a) sget-object          v0, Lcom/crashlytics/android/core/LogFileManager;->NOOP_LOG_STORE Lcom/crashlytics/android/core/LogFileManager$NoopLogStore;
+	3       (0000000e) iput-object          v0, v3, Lcom/crashlytics/android/core/LogFileManager;->currentLog Lcom/crashlytics/android/core/FileLogStore;
+	4       (00000012) if-nez               v4, +3
+
+setCurrentSession-BB@0x16 : 
+	5       (00000016) return-void          
+
+setCurrentSession-BB@0x18 : [ setCurrentSession-BB@0x24 setCurrentSession-BB@0x3c ]
+	6       (00000018) invoke-direct        v3, Lcom/crashlytics/android/core/LogFileManager;->isLoggingEnabled()Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-nez               v0, +e
+
+setCurrentSession-BB@0x24 : [ setCurrentSession-BB@0x16 ]
+	9       (00000024) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) const-string         v1, 'CrashlyticsCore'
+	12      (00000030) const-string         v2, 'Preferences requested no custom logs. Aborting log file creation.'
+	13      (00000034) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	14      (0000003a) goto                 -12
+
+setCurrentSession-BB@0x3c : [ setCurrentSession-BB@0x16 ]
+	15      (0000003c) invoke-direct        v3, v4, Lcom/crashlytics/android/core/LogFileManager;->getWorkingFileForSession(Ljava/lang/String;)Ljava/io/File;
+	16      (00000042) move-result-object   v0
+	17      (00000044) const/high16         v1, 1 # [9.183549615799121e-41]
+	18      (00000048) invoke-virtual       v3, v0, v1, Lcom/crashlytics/android/core/LogFileManager;->setLogFile(Ljava/io/File; I)V
+	19      (0000004e) goto                 -1c
+

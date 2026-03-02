@@ -1,0 +1,43 @@
+# Lorg/apache/commons/lang/StringUtils;->isAllLowerCase(Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:boolean
+
+isAllLowerCase-BB@0x0 : [ isAllLowerCase-BB@0x6 isAllLowerCase-BB@0x12 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-eqz               v4, +8
+
+isAllLowerCase-BB@0x6 : [ isAllLowerCase-BB@0x12 isAllLowerCase-BB@0x14 ]
+	2       (00000006) invoke-static        v4, Lorg/apache/commons/lang/StringUtils;->isEmpty(Ljava/lang/String;)Z
+	3       (0000000c) move-result          v1
+	4       (0000000e) if-eqz               v1, +3
+
+isAllLowerCase-BB@0x12 : 
+	5       (00000012) return               v0
+
+isAllLowerCase-BB@0x14 : [ isAllLowerCase-BB@0x1e ]
+	6       (00000014) invoke-virtual       v4, Ljava/lang/String;->length()I
+	7       (0000001a) move-result          v2
+	8       (0000001c) move                 v1, v0
+
+isAllLowerCase-BB@0x1e : [ isAllLowerCase-BB@0x22 isAllLowerCase-BB@0x3c ]
+	9       (0000001e) if-ge                v1, v2, +f
+
+isAllLowerCase-BB@0x22 : [ isAllLowerCase-BB@0x36 isAllLowerCase-BB@0x12 ]
+	10      (00000022) invoke-virtual       v4, v1, Ljava/lang/String;->charAt(I)C
+	11      (00000028) move-result          v3
+	12      (0000002a) invoke-static        v3, Ljava/lang/Character;->isLowerCase(C)Z
+	13      (00000030) move-result          v3
+	14      (00000032) if-eqz               v3, -10
+
+isAllLowerCase-BB@0x36 : [ isAllLowerCase-BB@0x1e ]
+	15      (00000036) add-int/lit8         v1, v1, 1
+	16      (0000003a) goto                 -e
+
+isAllLowerCase-BB@0x3c : [ isAllLowerCase-BB@0x12 ]
+	17      (0000003c) const/4              v0, 1
+	18      (0000003e) goto                 -16
+

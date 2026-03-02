@@ -1,0 +1,71 @@
+digraph {
+	graph [bb="0,0,1373,476",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_1b76e2735e37e987303d752d16dff87f {
+		graph [bb="8,8,1365,468",
+			label="Lorg/apache/commons/io/FileUtils;.lineIterator->(Ljava/io/File; Ljava/lang/String;)Lorg/apache/commons/io/LineIterator;\nLocal registers \
+v0 ... v1\nparam v2 = java.io.File\nparam v3 = java.lang.String\nreturn = org.apache.commons.io.LineIterator",
+			lheight=1.04,
+			lp="686.5,426.5",
+			lwidth=11.00
+		];
+		struct_ecde69a273bc696cee112d0b8f74ae3c	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v1</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="290,353.5",
+			width=2.2917];
+		struct_5830c54a0c1d5ff8fe98566669429df4	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#8C8C66">v2</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/FileUtils;-&gt;openInputStream(Ljava/io/File;)Ljava/io/FileInputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/IOUtils;-&gt;lineIterator(Ljava/io/InputStream; Ljava/lang/String;)Lorg/apache/commons/io/LineIterator;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7272CC">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#7272CC">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="727,225.5",
+			width=14.528];
+		struct_ecde69a273bc696cee112d0b8f74ae3c:tail -> struct_5830c54a0c1d5ff8fe98566669429df4:header	[color=blue,
+			pos="e,229,286.5 229,335.5 229,317.64 229,310.76 229,296.85"];
+		struct_c5e1eeb6eaf38bd43bb2c8481c6fb17b	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#7272CC">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/IOUtils;-&gt;closeQuietly(Ljava/io/InputStream;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#7272CC">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="347,61.5",
+			width=9.1806];
+		struct_5830c54a0c1d5ff8fe98566669429df4:tail -> struct_c5e1eeb6eaf38bd43bb2c8481c6fb17b:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="156,132.5",
+			pos="e,42,100.5 214,166.5 176.42,166.5 62.896,145.38 44.524,110.25"];
+		struct_5f4482222b6b389b24aa2a4c5991eb24	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#7272CC">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/IOUtils;-&gt;closeQuietly(Ljava/io/InputStream;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#7272CC">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1026,61.5",
+			width=9.1806];
+		struct_5830c54a0c1d5ff8fe98566669429df4:tail -> struct_5f4482222b6b389b24aa2a4c5991eb24:header	[color=black,
+			label="Ljava/lang/RuntimeException;",
+			lp="574,132.5",
+			pos="e,706,97.5 229,163.5 229,137.86 662.46,114.41 687,107 691.52,105.64 693.91,103.26 696.35,101.23"];
+	}
+}

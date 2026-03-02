@@ -1,0 +1,31 @@
+# Lcom/crashlytics/android/beta/Beta;->canCheckForUpdates(Lio/fabric/sdk/android/services/settings/BetaSettingsData; Lcom/crashlytics/android/beta/BuildProperties;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:io.fabric.sdk.android.services.settings.BetaSettingsData
+# - v3:com.crashlytics.android.beta.BuildProperties
+#
+# - return:boolean
+
+canCheckForUpdates-BB@0x0 : [ canCheckForUpdates-BB@0x4 canCheckForUpdates-BB@0x1c ]
+	0       (00000000) if-eqz               v2, +e
+
+canCheckForUpdates-BB@0x4 : [ canCheckForUpdates-BB@0x14 canCheckForUpdates-BB@0x1c ]
+	1       (00000004) iget-object          v0, v2, Lio/fabric/sdk/android/services/settings/BetaSettingsData;->updateUrl Ljava/lang/String;
+	2       (00000008) invoke-static        v0, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +6
+
+canCheckForUpdates-BB@0x14 : [ canCheckForUpdates-BB@0x18 canCheckForUpdates-BB@0x1c ]
+	5       (00000014) if-eqz               v3, +4
+
+canCheckForUpdates-BB@0x18 : [ canCheckForUpdates-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+canCheckForUpdates-BB@0x1a : 
+	7       (0000001a) return               v0
+
+canCheckForUpdates-BB@0x1c : [ canCheckForUpdates-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

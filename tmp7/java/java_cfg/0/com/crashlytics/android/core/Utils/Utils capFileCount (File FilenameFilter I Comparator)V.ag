@@ -1,0 +1,42 @@
+# Lcom/crashlytics/android/core/Utils;->capFileCount(Ljava/io/File; Ljava/io/FilenameFilter; I Ljava/util/Comparator;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.io.File
+# - v6:java.io.FilenameFilter
+# - v7:int
+# - v8:java.util.Comparator
+#
+# - return:void
+
+capFileCount-BB@0x0 : [ capFileCount-BB@0xc capFileCount-BB@0x2a ]
+	0       (00000000) invoke-virtual       v5, v6, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
+	1       (00000006) move-result-object   v2
+	2       (00000008) if-eqz               v2, +11
+
+capFileCount-BB@0xc : [ capFileCount-BB@0x12 capFileCount-BB@0x2a ]
+	3       (0000000c) array-length         v0, v2
+	4       (0000000e) if-le                v0, v7, +e
+
+capFileCount-BB@0x12 : [ capFileCount-BB@0x1e ]
+	5       (00000012) invoke-static        v2, v8, Ljava/util/Arrays;->sort([Ljava/lang/Object; Ljava/util/Comparator;)V
+	6       (00000018) array-length         v1, v2
+	7       (0000001a) array-length         v3, v2
+	8       (0000001c) const/4              v0, 0
+
+capFileCount-BB@0x1e : [ capFileCount-BB@0x22 capFileCount-BB@0x2a ]
+	9       (0000001e) if-ge                v0, v3, +6
+
+capFileCount-BB@0x22 : [ capFileCount-BB@0x2a capFileCount-BB@0x2c ]
+	10      (00000022) aget-object          v4, v2, v0
+	11      (00000026) if-gt                v1, v7, +3
+
+capFileCount-BB@0x2a : 
+	12      (0000002a) return-void          
+
+capFileCount-BB@0x2c : [ capFileCount-BB@0x1e ]
+	13      (0000002c) invoke-virtual       v4, Ljava/io/File;->delete()Z
+	14      (00000032) add-int/lit8         v1, v1, -1
+	15      (00000036) add-int/lit8         v0, v0, 1
+	16      (0000003a) goto                 -e
+

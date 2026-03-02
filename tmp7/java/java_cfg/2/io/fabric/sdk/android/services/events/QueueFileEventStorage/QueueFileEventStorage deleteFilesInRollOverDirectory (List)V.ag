@@ -1,0 +1,38 @@
+# Lio/fabric/sdk/android/services/events/QueueFileEventStorage;->deleteFilesInRollOverDirectory(Ljava/util/List;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.util.List
+#
+# - return:void
+
+deleteFilesInRollOverDirectory-BB@0x0 : [ deleteFilesInRollOverDirectory-BB@0x8 ]
+	0       (00000000) invoke-interface     v8, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	1       (00000006) move-result-object   v1
+
+deleteFilesInRollOverDirectory-BB@0x8 : [ deleteFilesInRollOverDirectory-BB@0x14 deleteFilesInRollOverDirectory-BB@0x52 ]
+	2       (00000008) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +21
+
+deleteFilesInRollOverDirectory-BB@0x14 : [ deleteFilesInRollOverDirectory-BB@0x8 ]
+	5       (00000014) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, Ljava/io/File;
+	8       (00000020) iget-object          v2, v7, Lio/fabric/sdk/android/services/events/QueueFileEventStorage;->context Landroid/content/Context;
+	9       (00000024) const-string         v3, 'deleting sent analytics file %s'
+	10      (00000028) const/4              v4, 1
+	11      (0000002a) new-array            v4, v4, [Ljava/lang/Object;
+	12      (0000002e) const/4              v5, 0
+	13      (00000030) invoke-virtual       v0, Ljava/io/File;->getName()Ljava/lang/String;
+	14      (00000036) move-result-object   v6
+	15      (00000038) aput-object          v6, v4, v5
+	16      (0000003c) invoke-static        v3, v4, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	17      (00000042) move-result-object   v3
+	18      (00000044) invoke-static        v2, v3, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlled(Landroid/content/Context; Ljava/lang/String;)V
+	19      (0000004a) invoke-virtual       v0, Ljava/io/File;->delete()Z
+	20      (00000050) goto                 -24
+
+deleteFilesInRollOverDirectory-BB@0x52 : 
+	21      (00000052) return-void          
+

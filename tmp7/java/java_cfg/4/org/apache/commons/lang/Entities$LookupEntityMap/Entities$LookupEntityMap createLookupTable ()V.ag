@@ -1,0 +1,27 @@
+# Lorg/apache/commons/lang/Entities$LookupEntityMap;->createLookupTable()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+createLookupTable-BB@0x0 : [ createLookupTable-BB@0xe ]
+	0       (00000000) const/16             v3, 256
+	1       (00000004) new-array            v0, v3, [Ljava/lang/String;
+	2       (00000008) iput-object          v0, v4, Lorg/apache/commons/lang/Entities$LookupEntityMap;->lookupTable [Ljava/lang/String;
+	3       (0000000c) const/4              v0, 0
+
+createLookupTable-BB@0xe : [ createLookupTable-BB@0x12 createLookupTable-BB@0x28 ]
+	4       (0000000e) if-ge                v0, v3, +d
+
+createLookupTable-BB@0x12 : [ createLookupTable-BB@0xe ]
+	5       (00000012) iget-object          v1, v4, Lorg/apache/commons/lang/Entities$LookupEntityMap;->lookupTable [Ljava/lang/String;
+	6       (00000016) invoke-super         v4, v0, Lorg/apache/commons/lang/Entities$PrimitiveEntityMap;->name(I)Ljava/lang/String;
+	7       (0000001c) move-result-object   v2
+	8       (0000001e) aput-object          v2, v1, v0
+	9       (00000022) add-int/lit8         v0, v0, 1
+	10      (00000026) goto                 -c
+
+createLookupTable-BB@0x28 : 
+	11      (00000028) return-void          
+

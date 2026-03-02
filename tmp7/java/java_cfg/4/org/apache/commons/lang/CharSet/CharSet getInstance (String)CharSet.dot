@@ -1,0 +1,66 @@
+digraph {
+	graph [bb="0,0,1106,423",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_cce45ef5decfc454d639ef957a434e86 {
+		graph [bb="8,8,1098,415",
+			label="Lorg/apache/commons/lang/CharSet;.getInstance->(Ljava/lang/String;)Lorg/apache/commons/lang/CharSet;\nLocal registers v0 ... v0\nparam \
+v1 = java.lang.String\nreturn = org.apache.commons.lang.CharSet",
+			lheight=0.83,
+			lp="553,381",
+			lwidth=9.93
+		];
+		struct_24b350d9b2776a2463d58a0cb12f8cf2	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/CharSet;-&gt;COMMON Ljava/util/Map;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Ljava/util/Map;-&gt;get(Ljava/lang/Object;)Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="538,282.5",
+			width=8.3611];
+		struct_9541866d49d5c59540d077a58d95cd54	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Lorg/apache/commons/lang/CharSet;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="224,144.5",
+			width=5.7639];
+		struct_24b350d9b2776a2463d58a0cb12f8cf2:tail -> struct_9541866d49d5c59540d077a58d95cd54:header	[color=red,
+			pos="e,42,161.5 247,234.5 202.04,234.5 63.492,213.2 44.231,171.35"];
+		struct_5a093c19f8ef441dd25f5fa5797d02e5	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Lorg/apache/commons/lang/CharSet;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/CharSet;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="770,144.5",
+			width=8.8889];
+		struct_24b350d9b2776a2463d58a0cb12f8cf2:tail -> struct_5a093c19f8ef441dd25f5fa5797d02e5:header	[color=green,
+			pos="e,475,183.5 258,231.5 258,136.39 459.19,271.52 474.13,193.5"];
+		struct_ad811e364d84dba44e6278cc4beba458	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="322,39.5",
+			width=2.4722];
+		struct_9541866d49d5c59540d077a58d95cd54:tail -> struct_ad811e364d84dba44e6278cc4beba458:header	[color=blue,
+			pos="e,243,53.5 42,126.5 42,81.949 176.89,56.771 232.91,53.798"];
+		struct_5a093c19f8ef441dd25f5fa5797d02e5:tail -> struct_ad811e364d84dba44e6278cc4beba458:header	[color=blue,
+			pos="e,258,56.5 460,107.5 450.75,107.5 449.77,101.95 441,99 404.83,86.835 281.88,96.282 261.02,66.111"];
+	}
+}

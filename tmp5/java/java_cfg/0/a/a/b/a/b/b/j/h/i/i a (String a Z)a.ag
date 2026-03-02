@@ -1,0 +1,30 @@
+# La/a/b/a/b/b/j/h/i;->a(Ljava/lang/String; La/a/b/a/i/f/a; Z)La/a/b/a/b/b/a; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:a.a.b.a.i.f.a
+# - v5:boolean
+#
+# - return:a.a.b.a.b.b.a
+
+a-BB@0x0 : [ a-BB@0xe a-BB@0x12 ]
+	0       (00000000) invoke-virtual       v2, v3, La/a/b/a/b/b/j/h/i;->a(Ljava/lang/String;)[La/a/b/a/b/b/h/a;
+	1       (00000006) move-result-object   v0
+	2       (00000008) array-length         v1, v0
+	3       (0000000a) if-nez               v1, +4
+
+a-BB@0xe : [ a-BB@0x10 ]
+	4       (0000000e) const/4              v0, 0
+
+a-BB@0x10 : 
+	5       (00000010) return-object        v0
+
+a-BB@0x12 : [ a-BB@0x10 ]
+	6       (00000012) array-length         v1, v0
+	7       (00000014) add-int/lit8         v1, v1, -1
+	8       (00000018) aget-object          v0, v0, v1
+	9       (0000001c) invoke-virtual       v0, v4, v5, La/a/b/a/b/b/h/a;->a(La/a/b/a/i/f/a; Z)La/a/b/a/b/b/a;
+	10      (00000022) move-result-object   v0
+	11      (00000024) goto                 -a
+

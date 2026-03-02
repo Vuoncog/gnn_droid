@@ -1,0 +1,27 @@
+# Lorg/apache/commons/lang/exception/ExceptionUtils;->getCauseMethodNameList()Ljava/util/ArrayList; [access_flags=private static]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.util.ArrayList
+
+getCauseMethodNameList-BB@0x0 : [ getCauseMethodNameList-BB@0x6 ]
+	0       (00000000) sget-object          v1, Lorg/apache/commons/lang/exception/ExceptionUtils;->CAUSE_METHOD_NAMES_LOCK Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+
+getCauseMethodNameList-BB@0x6 : 
+	2       (00000006) new-instance         v0, Ljava/util/ArrayList;
+	3       (0000000a) sget-object          v2, Lorg/apache/commons/lang/exception/ExceptionUtils;->CAUSE_METHOD_NAMES [Ljava/lang/String;
+	4       (0000000e) invoke-static        v2, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	5       (00000014) move-result-object   v2
+	6       (00000016) invoke-direct        v0, v2, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+	7       (0000001c) monitor-exit         v1
+	8       (0000001e) return-object        v0
+	6:23
+	(Ljava/lang/Throwable; -> 20 getCauseMethodNameList-BB@0x20)
+
+getCauseMethodNameList-BB@0x20 : 
+	9       (00000020) move-exception       v0
+	10      (00000022) monitor-exit         v1
+	11      (00000024) throw                v0
+

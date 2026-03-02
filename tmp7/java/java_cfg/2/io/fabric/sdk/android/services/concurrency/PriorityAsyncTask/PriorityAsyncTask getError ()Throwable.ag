@@ -1,0 +1,16 @@
+# Lio/fabric/sdk/android/services/concurrency/PriorityAsyncTask;->getError()Ljava/lang/Throwable; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.lang.Throwable
+
+getError-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Lio/fabric/sdk/android/services/concurrency/PriorityAsyncTask;->getDelegate()Lio/fabric/sdk/android/services/concurrency/Dependency;
+	1       (00000006) move-result-object   v0
+	2       (00000008) check-cast           v0, Lio/fabric/sdk/android/services/concurrency/PriorityProvider;
+	3       (0000000c) check-cast           v0, Lio/fabric/sdk/android/services/concurrency/Task;
+	4       (00000010) invoke-interface     v0, Lio/fabric/sdk/android/services/concurrency/Task;->getError()Ljava/lang/Throwable;
+	5       (00000016) move-result-object   v0
+	6       (00000018) return-object        v0
+

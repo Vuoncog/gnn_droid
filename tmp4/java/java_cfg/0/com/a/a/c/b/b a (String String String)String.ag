@@ -1,0 +1,58 @@
+# Lcom/a/a/c/b;->a(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+# - v7:java.lang.String
+# - v8:java.lang.String
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x1c ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) new-instance         v4, Ljava/lang/StringBuilder;
+	2       (00000006) iget                 v0, v5, Lcom/a/a/c/b;->b I
+	3       (0000000a) iget                 v2, v5, Lcom/a/a/c/b;->a I
+	4       (0000000e) add-int/lit8         v2, v2, 1
+	5       (00000012) mul-int/2addr        v0, v2
+	6       (00000014) invoke-direct        v4, v0, Ljava/lang/StringBuilder;-><init>(I)V
+	7       (0000001a) move                 v0, v1
+
+a-BB@0x1c : [ a-BB@0x24 a-BB@0x58 ]
+	8       (0000001c) iget                 v2, v5, Lcom/a/a/c/b;->b I
+	9       (00000020) if-ge                v0, v2, +1c
+
+a-BB@0x24 : [ a-BB@0x26 ]
+	10      (00000024) move                 v2, v1
+
+a-BB@0x26 : [ a-BB@0x2e a-BB@0x4c ]
+	11      (00000026) iget                 v3, v5, Lcom/a/a/c/b;->a I
+	12      (0000002a) if-ge                v2, v3, +11
+
+a-BB@0x2e : [ a-BB@0x3a a-BB@0x48 ]
+	13      (0000002e) invoke-virtual       v5, v2, v0, Lcom/a/a/c/b;->a(I I)Z
+	14      (00000034) move-result          v3
+	15      (00000036) if-eqz               v3, +9
+
+a-BB@0x3a : [ a-BB@0x3c ]
+	16      (0000003a) move-object          v3, v6
+
+a-BB@0x3c : [ a-BB@0x26 ]
+	17      (0000003c) invoke-virtual       v4, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (00000042) add-int/lit8         v2, v2, 1
+	19      (00000046) goto                 -10
+
+a-BB@0x48 : [ a-BB@0x3c ]
+	20      (00000048) move-object          v3, v7
+	21      (0000004a) goto                 -7
+
+a-BB@0x4c : [ a-BB@0x1c ]
+	22      (0000004c) invoke-virtual       v4, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000052) add-int/lit8         v0, v0, 1
+	24      (00000056) goto                 -1d
+
+a-BB@0x58 : 
+	25      (00000058) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	26      (0000005e) move-result-object   v0
+	27      (00000060) return-object        v0
+

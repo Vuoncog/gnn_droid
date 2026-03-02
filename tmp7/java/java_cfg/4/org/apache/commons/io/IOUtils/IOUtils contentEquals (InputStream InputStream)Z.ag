@@ -1,0 +1,65 @@
+# Lorg/apache/commons/io/IOUtils;->contentEquals(Ljava/io/InputStream; Ljava/io/InputStream;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.InputStream
+# - v5:java.io.InputStream
+#
+# - return:boolean
+
+contentEquals-BB@0x0 : [ contentEquals-BB@0xc contentEquals-BB@0x18 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) const/4              v3, -1
+	2       (00000004) instance-of          v0, v4, Ljava/io/BufferedInputStream;
+	3       (00000008) if-nez               v0, +8
+
+contentEquals-BB@0xc : [ contentEquals-BB@0x18 ]
+	4       (0000000c) new-instance         v0, Ljava/io/BufferedInputStream;
+	5       (00000010) invoke-direct        v0, v4, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
+	6       (00000016) move-object          v4, v0
+
+contentEquals-BB@0x18 : [ contentEquals-BB@0x20 contentEquals-BB@0x2c ]
+	7       (00000018) instance-of          v0, v5, Ljava/io/BufferedInputStream;
+	8       (0000001c) if-nez               v0, +8
+
+contentEquals-BB@0x20 : [ contentEquals-BB@0x2c ]
+	9       (00000020) new-instance         v0, Ljava/io/BufferedInputStream;
+	10      (00000024) invoke-direct        v0, v5, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
+	11      (0000002a) move-object          v5, v0
+
+contentEquals-BB@0x2c : [ contentEquals-BB@0x34 ]
+	12      (0000002c) invoke-virtual       v4, Ljava/io/InputStream;->read()I
+	13      (00000032) move-result          v0
+
+contentEquals-BB@0x34 : [ contentEquals-BB@0x38 contentEquals-BB@0x50 ]
+	14      (00000034) if-eq                v3, v0, +e
+
+contentEquals-BB@0x38 : [ contentEquals-BB@0x44 contentEquals-BB@0x46 ]
+	15      (00000038) invoke-virtual       v5, Ljava/io/InputStream;->read()I
+	16      (0000003e) move-result          v2
+	17      (00000040) if-eq                v0, v2, +3
+
+contentEquals-BB@0x44 : 
+	18      (00000044) return               v1
+
+contentEquals-BB@0x46 : [ contentEquals-BB@0x34 ]
+	19      (00000046) invoke-virtual       v4, Ljava/io/InputStream;->read()I
+	20      (0000004c) move-result          v0
+	21      (0000004e) goto                 -d
+
+contentEquals-BB@0x50 : [ contentEquals-BB@0x5c contentEquals-BB@0x62 ]
+	22      (00000050) invoke-virtual       v5, Ljava/io/InputStream;->read()I
+	23      (00000056) move-result          v0
+	24      (00000058) if-ne                v0, v3, +5
+
+contentEquals-BB@0x5c : [ contentEquals-BB@0x5e ]
+	25      (0000005c) const/4              v0, 1
+
+contentEquals-BB@0x5e : [ contentEquals-BB@0x44 ]
+	26      (0000005e) move                 v1, v0
+	27      (00000060) goto                 -e
+
+contentEquals-BB@0x62 : [ contentEquals-BB@0x5e ]
+	28      (00000062) move                 v0, v1
+	29      (00000064) goto                 -3
+

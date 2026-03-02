@@ -1,0 +1,23 @@
+# Lcom/crashlytics/android/core/CodedOutputStream;->writeRawVarint32(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+writeRawVarint32-BB@0x0 : [ writeRawVarint32-BB@0x8 writeRawVarint32-BB@0x10 ]
+	0       (00000000) and-int/lit8         v0, v2, -128
+	1       (00000004) if-nez               v0, +6
+
+writeRawVarint32-BB@0x8 : 
+	2       (00000008) invoke-virtual       v1, v2, Lcom/crashlytics/android/core/CodedOutputStream;->writeRawByte(I)V
+	3       (0000000e) return-void          
+
+writeRawVarint32-BB@0x10 : [ writeRawVarint32-BB@0x0 ]
+	4       (00000010) and-int/lit8         v0, v2, 127
+	5       (00000014) or-int/lit16         v0, v0, 128
+	6       (00000018) invoke-virtual       v1, v0, Lcom/crashlytics/android/core/CodedOutputStream;->writeRawByte(I)V
+	7       (0000001e) ushr-int/lit8        v2, v2, 7
+	8       (00000022) goto                 -11
+

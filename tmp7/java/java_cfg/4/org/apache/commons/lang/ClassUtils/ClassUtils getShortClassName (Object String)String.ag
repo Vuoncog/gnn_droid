@@ -1,0 +1,22 @@
+# Lorg/apache/commons/lang/ClassUtils;->getShortClassName(Ljava/lang/Object; Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+# - v2:java.lang.String
+#
+# - return:java.lang.String
+
+getShortClassName-BB@0x0 : [ getShortClassName-BB@0x4 getShortClassName-BB@0x6 ]
+	0       (00000000) if-nez               v1, +3
+
+getShortClassName-BB@0x4 : 
+	1       (00000004) return-object        v2
+
+getShortClassName-BB@0x6 : [ getShortClassName-BB@0x4 ]
+	2       (00000006) invoke-virtual       v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) invoke-static        v0, Lorg/apache/commons/lang/ClassUtils;->getShortClassName(Ljava/lang/Class;)Ljava/lang/String;
+	5       (00000014) move-result-object   v2
+	6       (00000016) goto                 -9
+

@@ -1,0 +1,31 @@
+# Lorg/apache/commons/io/comparator/CompositeFileComparator;-><init>([Ljava/util/Comparator;)V [access_flags=public varargs constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.Comparator[]
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xc <init>-BB@0x1a ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-direct        v3, Lorg/apache/commons/io/comparator/AbstractFileComparator;-><init>()V
+	2       (00000008) if-nez               v4, +9
+
+<init>-BB@0xc : [ <init>-BB@0x18 ]
+	3       (0000000c) sget-object          v0, Lorg/apache/commons/io/comparator/CompositeFileComparator;->NO_COMPARATORS [Ljava/util/Comparator;
+	4       (00000010) check-cast           v0, [Ljava/util/Comparator;
+	5       (00000014) iput-object          v0, v3, Lorg/apache/commons/io/comparator/CompositeFileComparator;->delegates [Ljava/util/Comparator;
+
+<init>-BB@0x18 : 
+	6       (00000018) return-void          
+
+<init>-BB@0x1a : [ <init>-BB@0x18 ]
+	7       (0000001a) array-length         v0, v4
+	8       (0000001c) new-array            v0, v0, [Ljava/util/Comparator;
+	9       (00000020) check-cast           v0, [Ljava/util/Comparator;
+	10      (00000024) iput-object          v0, v3, Lorg/apache/commons/io/comparator/CompositeFileComparator;->delegates [Ljava/util/Comparator;
+	11      (00000028) iget-object          v0, v3, Lorg/apache/commons/io/comparator/CompositeFileComparator;->delegates [Ljava/util/Comparator;
+	12      (0000002c) array-length         v1, v4
+	13      (0000002e) invoke-static        v4, v2, v0, v2, v1, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	14      (00000034) goto                 -e
+

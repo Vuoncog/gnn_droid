@@ -1,0 +1,72 @@
+# Lcom/a/a/g/a/a/a/t;->a()Lcom/a/a/g/a/a/a/p; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:com.a.a.g.a.a.a.p
+
+a-BB@0x0 : [ a-BB@0x1c a-BB@0x50 ]
+	0       (00000000) iget-object          v0, v4, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	1       (00000004) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->a()I
+	2       (0000000a) move-result          v2
+	3       (0000000c) iget-object          v0, v4, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	4       (00000010) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->b()Z
+	5       (00000016) move-result          v0
+	6       (00000018) if-eqz               v0, +1c
+
+a-BB@0x1c : [ a-BB@0x2c ]
+	7       (0000001c) invoke-direct        v4, Lcom/a/a/g/a/a/a/t;->d()Lcom/a/a/g/a/a/a/l;
+	8       (00000022) move-result-object   v0
+	9       (00000024) invoke-virtual       v0, Lcom/a/a/g/a/a/a/l;->b()Z
+	10      (0000002a) move-result          v1
+
+a-BB@0x2c : [ a-BB@0x3c a-BB@0x84 ]
+	11      (0000002c) iget-object          v3, v4, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	12      (00000030) invoke-virtual       v3, Lcom/a/a/g/a/a/a/m;->a()I
+	13      (00000036) move-result          v3
+	14      (00000038) if-eq                v2, v3, +26
+
+a-BB@0x3c : [ a-BB@0x3e ]
+	15      (0000003c) const/4              v2, 1
+
+a-BB@0x3e : [ a-BB@0x42 a-BB@0x88 ]
+	16      (0000003e) if-nez               v2, +25
+
+a-BB@0x42 : [ a-BB@0x46 a-BB@0x88 ]
+	17      (00000042) if-nez               v1, +23
+
+a-BB@0x46 : 
+	18      (00000046) invoke-virtual       v0, Lcom/a/a/g/a/a/a/l;->a()Lcom/a/a/g/a/a/a/p;
+	19      (0000004c) move-result-object   v0
+	20      (0000004e) return-object        v0
+
+a-BB@0x50 : [ a-BB@0x60 a-BB@0x72 ]
+	21      (00000050) iget-object          v0, v4, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	22      (00000054) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->c()Z
+	23      (0000005a) move-result          v0
+	24      (0000005c) if-eqz               v0, +b
+
+a-BB@0x60 : [ a-BB@0x2c ]
+	25      (00000060) invoke-direct        v4, Lcom/a/a/g/a/a/a/t;->c()Lcom/a/a/g/a/a/a/l;
+	26      (00000066) move-result-object   v0
+	27      (00000068) invoke-virtual       v0, Lcom/a/a/g/a/a/a/l;->b()Z
+	28      (0000006e) move-result          v1
+	29      (00000070) goto                 -22
+
+a-BB@0x72 : [ a-BB@0x2c ]
+	30      (00000072) invoke-direct        v4, Lcom/a/a/g/a/a/a/t;->b()Lcom/a/a/g/a/a/a/l;
+	31      (00000078) move-result-object   v0
+	32      (0000007a) invoke-virtual       v0, Lcom/a/a/g/a/a/a/l;->b()Z
+	33      (00000080) move-result          v1
+	34      (00000082) goto                 -2b
+
+a-BB@0x84 : [ a-BB@0x3e ]
+	35      (00000084) const/4              v2, 0
+	36      (00000086) goto                 -24
+
+a-BB@0x88 : [ a-BB@0x8c a-BB@0x0 ]
+	37      (00000088) if-eqz               v1, -44
+
+a-BB@0x8c : [ a-BB@0x46 ]
+	38      (0000008c) goto                 -23
+

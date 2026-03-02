@@ -1,0 +1,47 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->getTrimmedNonFatalFiles(Ljava/lang/String; [Ljava/io/File; I)[Ljava/io/File; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+# - v9:java.io.File[]
+# - v10:int
+#
+# - return:java.io.File[]
+
+getTrimmedNonFatalFiles-BB@0x0 : [ getTrimmedNonFatalFiles-BB@0x6 getTrimmedNonFatalFiles-BB@0x7a ]
+	0       (00000000) array-length         v0, v9
+	1       (00000002) if-le                v0, v10, +3c
+
+getTrimmedNonFatalFiles-BB@0x6 : [ getTrimmedNonFatalFiles-BB@0x7a ]
+	2       (00000006) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) const-string         v1, 'CrashlyticsCore'
+	5       (00000012) sget-object          v2, Ljava/util/Locale;->US Ljava/util/Locale;
+	6       (00000016) const-string         v3, 'Trimming down to %d logged exceptions.'
+	7       (0000001a) const/4              v4, 1
+	8       (0000001c) new-array            v4, v4, [Ljava/lang/Object;
+	9       (00000020) const/4              v5, 0
+	10      (00000022) invoke-static        v10, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	11      (00000028) move-result-object   v6
+	12      (0000002a) aput-object          v6, v4, v5
+	13      (0000002e) invoke-static        v2, v3, v4, Ljava/lang/String;->format(Ljava/util/Locale; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	14      (00000034) move-result-object   v2
+	15      (00000036) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	16      (0000003c) invoke-direct        v7, v8, v10, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->trimSessionEventFiles(Ljava/lang/String; I)V
+	17      (00000042) new-instance         v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$FileNameContainsFilter;
+	18      (00000046) new-instance         v1, Ljava/lang/StringBuilder;
+	19      (0000004a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	20      (00000050) invoke-virtual       v1, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000056) move-result-object   v1
+	22      (00000058) const-string         v2, 'SessionEvent'
+	23      (0000005c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000062) move-result-object   v1
+	25      (00000064) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	26      (0000006a) move-result-object   v1
+	27      (0000006c) invoke-direct        v0, v1, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$FileNameContainsFilter;-><init>(Ljava/lang/String;)V
+	28      (00000072) invoke-direct        v7, v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->listFilesMatching(Ljava/io/FilenameFilter;)[Ljava/io/File;
+	29      (00000078) move-result-object   v9
+
+getTrimmedNonFatalFiles-BB@0x7a : 
+	30      (0000007a) return-object        v9
+

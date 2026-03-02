@@ -1,0 +1,21 @@
+# Lcom/crashlytics/android/answers/Answers;->onException(Lio/fabric/sdk/android/services/common/Crash$LoggedException;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:io.fabric.sdk.android.services.common.Crash$LoggedException
+#
+# - return:void
+
+onException-BB@0x0 : [ onException-BB@0x8 onException-BB@0x1a ]
+	0       (00000000) iget-object          v0, v2, Lcom/crashlytics/android/answers/Answers;->analyticsManager Lcom/crashlytics/android/answers/SessionAnalyticsManager;
+	1       (00000004) if-eqz               v0, +b
+
+onException-BB@0x8 : [ onException-BB@0x1a ]
+	2       (00000008) iget-object          v0, v2, Lcom/crashlytics/android/answers/Answers;->analyticsManager Lcom/crashlytics/android/answers/SessionAnalyticsManager;
+	3       (0000000c) invoke-virtual       v3, Lio/fabric/sdk/android/services/common/Crash$LoggedException;->getSessionId()Ljava/lang/String;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-virtual       v0, v1, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->onError(Ljava/lang/String;)V
+
+onException-BB@0x1a : 
+	6       (0000001a) return-void          
+

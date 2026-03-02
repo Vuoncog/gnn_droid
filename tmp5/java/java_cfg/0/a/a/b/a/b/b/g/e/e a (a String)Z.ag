@@ -1,0 +1,91 @@
+# La/a/b/a/b/b/g/e;->a(La/a/b/a/c/a; Ljava/lang/String;)Z [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:a.a.b.a.c.a
+# - v9:java.lang.String
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x3e a-BB@0x54 ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) new-instance         v0, Ljava/lang/StringBuilder;
+	3       (00000008) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	4       (0000000e) invoke-virtual       v0, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000014) move-result-object   v0
+	6       (00000016) const-string         v3, '.layer'
+	7       (0000001a) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000020) move-result-object   v0
+	9       (00000022) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	10      (00000028) move-result-object   v0
+	11      (0000002a) invoke-virtual       v8, v0, La/a/b/a/c/a;->d(Ljava/lang/String;)Ljava/io/File;
+	12      (00000030) move-result-object   v3
+	13      (00000032) invoke-virtual       v3, Ljava/io/File;->exists()Z
+	14      (00000038) move-result          v0
+	15      (0000003a) if-nez               v0, +d
+
+a-BB@0x3e : [ a-BB@0x4a a-BB@0x54 ]
+	16      (0000003e) invoke-virtual       v3, Ljava/io/File;->createNewFile()Z
+	17      (00000044) move-result          v0
+	18      (00000046) if-nez               v0, +7
+	3e:43
+	(Ljava/io/IOException; -> 4e a-BB@0x4e)
+
+a-BB@0x4a : [ a-BB@0x4c ]
+	19      (0000004a) move                 v0, v1
+
+a-BB@0x4c : 
+	20      (0000004c) return               v0
+
+a-BB@0x4e : [ a-BB@0x4c ]
+	21      (0000004e) move-exception       v0
+	22      (00000050) move                 v0, v1
+	23      (00000052) goto                 -3
+
+a-BB@0x54 : [ a-BB@0x8c ]
+	24      (00000054) new-instance         v4, La/a/a/a;
+	25      (00000058) invoke-direct        v4, La/a/a/a;-><init>()V
+	26      (0000005e) const-string         v0, 'maxVisibleChannelCount'
+	27      (00000062) iget                 v5, v7, La/a/b/a/b/b/g/e;->g I
+	28      (00000066) invoke-virtual       v4, v0, v5, La/a/a/a;->a(Ljava/lang/String; I)V
+	29      (0000006c) const-string         v0, 'fileVersion'
+	30      (00000070) invoke-virtual       v4, v0, v2, La/a/a/a;->a(Ljava/lang/String; I)V
+	31      (00000076) new-instance         v5, La/a/a/d;
+	32      (0000007a) invoke-direct        v5, La/a/a/d;-><init>()V
+	33      (00000080) iget-object          v0, v7, La/a/b/a/b/b/g/e;->h Ljava/util/List;
+	34      (00000084) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	35      (0000008a) move-result-object   v6
+
+a-BB@0x8c : [ a-BB@0x98 a-BB@0xb4 ]
+	36      (0000008c) invoke-interface     v6, Ljava/util/Iterator;->hasNext()Z
+	37      (00000092) move-result          v0
+	38      (00000094) if-eqz               v0, +10
+
+a-BB@0x98 : [ a-BB@0x8c ]
+	39      (00000098) invoke-interface     v6, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	40      (0000009e) move-result-object   v0
+	41      (000000a0) check-cast           v0, La/a/b/a/b/b/g/c;
+	42      (000000a4) invoke-interface     v0, La/a/b/a/b/b/g/c;->f_()La/a/a/a;
+	43      (000000aa) move-result-object   v0
+	44      (000000ac) invoke-virtual       v5, v0, La/a/a/d;->a(La/a/a/a;)V
+	45      (000000b2) goto                 -13
+
+a-BB@0xb4 : [ a-BB@0xc8 ]
+	46      (000000b4) const-string         v0, 'layers'
+	47      (000000b8) invoke-virtual       v4, v0, v5, La/a/a/a;->a(Ljava/lang/String; La/a/a/c;)V
+	48      (000000be) new-instance         v0, La/a/a/b;
+	49      (000000c2) invoke-direct        v0, v4, La/a/a/b;-><init>(La/a/a/c;)V
+
+a-BB@0xc8 : [ a-BB@0x4c ]
+	50      (000000c8) invoke-virtual       v0, v3, La/a/a/b;->a(Ljava/io/File;)V
+	51      (000000ce) move                 v0, v2
+	52      (000000d0) goto                 -42
+	c8:cd
+	(Ljava/io/IOException; -> d2 a-BB@0xd2)
+
+a-BB@0xd2 : [ a-BB@0x4c ]
+	53      (000000d2) move-exception       v0
+	54      (000000d4) move                 v0, v1
+	55      (000000d6) goto                 -45
+

@@ -1,0 +1,25 @@
+# Lnet/youmi/android/bx;->a(Landroid/content/Context; Ljava/lang/String;)Z [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:java.lang.String
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0xe a-BB@0x12 ]
+	0       (00000000) invoke-virtual       v2, v3, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, -1
+	3       (0000000a) if-ne                v0, v1, +4
+
+a-BB@0xe : [ a-BB@0x10 ]
+	4       (0000000e) const/4              v0, 0
+
+a-BB@0x10 : 
+	5       (00000010) return               v0
+
+a-BB@0x12 : [ a-BB@0x10 ]
+	6       (00000012) const/4              v0, 1
+	7       (00000014) goto                 -2
+

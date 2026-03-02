@@ -1,0 +1,24 @@
+# Lio/fabric/sdk/android/services/concurrency/PriorityFutureTask;->checkAndInitDelegate(Ljava/lang/Object;)Lio/fabric/sdk/android/services/concurrency/Dependency; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:io.fabric.sdk.android.services.concurrency.Dependency
+
+checkAndInitDelegate-BB@0x0 : [ checkAndInitDelegate-BB@0xc checkAndInitDelegate-BB@0x12 ]
+	0       (00000000) invoke-static        v2, Lio/fabric/sdk/android/services/concurrency/PriorityTask;->isProperDelegate(Ljava/lang/Object;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +5
+
+checkAndInitDelegate-BB@0xc : [ checkAndInitDelegate-BB@0x10 ]
+	3       (0000000c) check-cast           v2, Lio/fabric/sdk/android/services/concurrency/Dependency;
+
+checkAndInitDelegate-BB@0x10 : 
+	4       (00000010) return-object        v2
+
+checkAndInitDelegate-BB@0x12 : [ checkAndInitDelegate-BB@0x10 ]
+	5       (00000012) new-instance         v2, Lio/fabric/sdk/android/services/concurrency/PriorityTask;
+	6       (00000016) invoke-direct        v2, Lio/fabric/sdk/android/services/concurrency/PriorityTask;-><init>()V
+	7       (0000001c) goto                 -6
+

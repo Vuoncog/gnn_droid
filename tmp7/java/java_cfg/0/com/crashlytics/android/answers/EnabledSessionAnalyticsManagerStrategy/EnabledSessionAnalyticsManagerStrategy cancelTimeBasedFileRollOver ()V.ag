@@ -1,0 +1,30 @@
+# Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->cancelTimeBasedFileRollOver()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+cancelTimeBasedFileRollOver-BB@0x0 : [ cancelTimeBasedFileRollOver-BB@0x10 cancelTimeBasedFileRollOver-BB@0x42 ]
+	0       (00000000) iget-object          v0, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef Ljava/util/concurrent/atomic/AtomicReference;
+	1       (00000004) invoke-virtual       v0, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +1b
+
+cancelTimeBasedFileRollOver-BB@0x10 : [ cancelTimeBasedFileRollOver-BB@0x42 ]
+	4       (00000010) iget-object          v0, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context Landroid/content/Context;
+	5       (00000014) const-string         v1, 'Cancelling time-based rollover because no events are currently being generated.'
+	6       (00000018) invoke-static        v0, v1, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlled(Landroid/content/Context; Ljava/lang/String;)V
+	7       (0000001e) iget-object          v0, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef Ljava/util/concurrent/atomic/AtomicReference;
+	8       (00000022) invoke-virtual       v0, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) check-cast           v0, Ljava/util/concurrent/ScheduledFuture;
+	11      (0000002e) const/4              v1, 0
+	12      (00000030) invoke-interface     v0, v1, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
+	13      (00000036) iget-object          v0, v2, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->rolloverFutureRef Ljava/util/concurrent/atomic/AtomicReference;
+	14      (0000003a) const/4              v1, 0
+	15      (0000003c) invoke-virtual       v0, v1, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+cancelTimeBasedFileRollOver-BB@0x42 : 
+	16      (00000042) return-void          
+

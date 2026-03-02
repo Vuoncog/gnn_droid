@@ -1,0 +1,18 @@
+# Lorg/apache/commons/io/Charsets;->toCharset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:java.nio.charset.Charset
+#
+# - return:java.nio.charset.Charset
+
+toCharset-BB@0x0 : [ toCharset-BB@0x4 toCharset-BB@0xc ]
+	0       (00000000) if-nez               v0, +6
+
+toCharset-BB@0x4 : [ toCharset-BB@0xc ]
+	1       (00000004) invoke-static        Ljava/nio/charset/Charset;->defaultCharset()Ljava/nio/charset/Charset;
+	2       (0000000a) move-result-object   v0
+
+toCharset-BB@0xc : 
+	3       (0000000c) return-object        v0
+

@@ -1,0 +1,36 @@
+# Lorg/apache/commons/lang/CharUtils;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x18 ]
+	0       (00000000) const/16             v1, 128
+	1       (00000004) new-array            v0, v1, [Ljava/lang/String;
+	2       (00000008) sput-object          v0, Lorg/apache/commons/lang/CharUtils;->CHAR_STRING_ARRAY [Ljava/lang/String;
+	3       (0000000c) new-array            v0, v1, [Ljava/lang/Character;
+	4       (00000010) sput-object          v0, Lorg/apache/commons/lang/CharUtils;->CHAR_ARRAY [Ljava/lang/Character;
+	5       (00000014) const/16             v0, 127
+
+<clinit>-BB@0x18 : [ <clinit>-BB@0x1c <clinit>-BB@0x4e ]
+	6       (00000018) if-ltz               v0, +1b
+
+<clinit>-BB@0x1c : [ <clinit>-BB@0x18 ]
+	7       (0000001c) sget-object          v1, Lorg/apache/commons/lang/CharUtils;->CHAR_STRING_ARRAY [Ljava/lang/String;
+	8       (00000020) const-string         v2, '\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7f'
+	9       (00000024) add-int/lit8         v3, v0, 1
+	10      (00000028) invoke-virtual       v2, v0, v3, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	11      (0000002e) move-result-object   v2
+	12      (00000030) aput-object          v2, v1, v0
+	13      (00000034) sget-object          v1, Lorg/apache/commons/lang/CharUtils;->CHAR_ARRAY [Ljava/lang/Character;
+	14      (00000038) new-instance         v2, Ljava/lang/Character;
+	15      (0000003c) int-to-char          v3, v0
+	16      (0000003e) invoke-direct        v2, v3, Ljava/lang/Character;-><init>(C)V
+	17      (00000044) aput-object          v2, v1, v0
+	18      (00000048) add-int/lit8         v0, v0, -1
+	19      (0000004c) goto                 -1a
+
+<clinit>-BB@0x4e : 
+	20      (0000004e) return-void          
+

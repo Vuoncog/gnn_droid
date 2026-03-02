@@ -1,0 +1,56 @@
+digraph {
+	graph [bb="0,0,1156,453",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_c456b94581847a393d5aecc7133c382a {
+		graph [bb="8,8,1148,445",
+			label="Lio/fabric/sdk/android/services/network/HttpRequest;.head->(Ljava/lang/CharSequence; Ljava/util/Map; Z)Lio/fabric/sdk/android/services/\
+network/HttpRequest;\nLocal registers v0 ... v0\nparam v1 = java.lang.CharSequence\nparam v2 = java.util.Map\nparam v3 = boolean\nreturn = \
+io.fabric.sdk.android.services.network.HttpRequest",
+			lheight=1.25,
+			lp="578,396",
+			lwidth=14.71
+		];
+		struct_351dfa467a10163ad4883641e1912319	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;append(Ljava/lang/CharSequence; Ljava/util/Map;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7272CC">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="580,293.5",
+			width=14.111];
+		struct_c7b94e67f9a44b436fb2bd46c78a4631	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;encode(Ljava/lang/CharSequence;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="465,177.5",
+			width=12.472];
+		struct_351dfa467a10163ad4883641e1912319:tail -> struct_c7b94e67f9a44b436fb2bd46c78a4631:header	[color=red,
+			pos="e,41,205.5 93,253.5 93,225.98 53.188,233.95 43.234,215.3"];
+		struct_f97c3beb45bbe851b5084c4218af9b23	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;head(Ljava/lang/CharSequence;)Lio/fabric/sdk/android/services/network/HttpRequest;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="578,61.5",
+			width=15.611];
+		struct_351dfa467a10163ad4883641e1912319:tail -> struct_f97c3beb45bbe851b5084c4218af9b23:header	[color=green,
+			pos="e,41,100.5 93,253.5 93,161.16 859.36,278.9 923,212 944.14,189.78 944.16,165.2 923,143 857.83,74.609 100.41,189.49 44.284,110.52"];
+		struct_c7b94e67f9a44b436fb2bd46c78a4631:tail -> struct_f97c3beb45bbe851b5084c4218af9b23:header	[color=blue,
+			pos="e,41,100.5 41,148.5 41,131 41,124.27 41,110.64"];
+	}
+}

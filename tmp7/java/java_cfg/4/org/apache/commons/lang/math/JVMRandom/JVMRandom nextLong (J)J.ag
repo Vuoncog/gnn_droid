@@ -1,0 +1,51 @@
+# Lorg/apache/commons/lang/math/JVMRandom;->nextLong(J)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:long
+#
+# - return:long
+
+nextLong-BB@0x0 : [ nextLong-BB@0x10 nextLong-BB@0x20 ]
+	0       (00000000) const-wide/16        v8, 1 # [1.0]
+	1       (00000004) const-wide/16        v6, 0 # [0.0]
+	2       (00000008) cmp-long             v0, v10, v6
+	3       (0000000c) if-gtz               v0, +a
+
+nextLong-BB@0x10 : 
+	4       (00000010) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	5       (00000014) const-string         v1, 'Upper bound for nextInt must be positive'
+	6       (00000018) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	7       (0000001e) throw                v0
+
+nextLong-BB@0x20 : [ nextLong-BB@0x2c nextLong-BB@0x48 ]
+	8       (00000020) neg-long             v0, v10
+	9       (00000022) and-long/2addr       v0, v10
+	10      (00000024) cmp-long             v0, v0, v10
+	11      (00000028) if-nez               v0, +10
+
+nextLong-BB@0x2c : [ nextLong-BB@0x46 ]
+	12      (0000002c) invoke-static        Lorg/apache/commons/lang/math/JVMRandom;->next63bits()J
+	13      (00000032) move-result-wide     v0
+	14      (00000034) sub-long             v2, v10, v8
+	15      (00000038) invoke-static        v2, v3, Lorg/apache/commons/lang/math/JVMRandom;->bitsRequired(J)I
+	16      (0000003e) move-result          v2
+	17      (00000040) rsub-int/lit8        v2, v2, 63
+	18      (00000044) shr-long/2addr       v0, v2
+
+nextLong-BB@0x46 : 
+	19      (00000046) return-wide          v0
+
+nextLong-BB@0x48 : [ nextLong-BB@0x64 nextLong-BB@0x48 ]
+	20      (00000048) invoke-static        Lorg/apache/commons/lang/math/JVMRandom;->next63bits()J
+	21      (0000004e) move-result-wide     v2
+	22      (00000050) rem-long             v0, v2, v10
+	23      (00000054) sub-long/2addr       v2, v0
+	24      (00000056) sub-long             v4, v10, v8
+	25      (0000005a) add-long/2addr       v2, v4
+	26      (0000005c) cmp-long             v2, v2, v6
+	27      (00000060) if-ltz               v2, -c
+
+nextLong-BB@0x64 : [ nextLong-BB@0x46 ]
+	28      (00000064) goto                 -f
+

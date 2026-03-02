@@ -1,0 +1,35 @@
+# Lcom/a/a/g/g;->a(I)C [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:char
+
+a-BB@0x0 : [ a-BB@0x2 ]
+	0       (00000000) const/4              v0, 0
+
+a-BB@0x2 : [ a-BB@0xc a-BB@0x28 ]
+	1       (00000002) sget-object          v1, Lcom/a/a/g/g;->b [I
+	2       (00000006) array-length         v1, v1
+	3       (00000008) if-ge                v0, v1, +10
+
+a-BB@0xc : [ a-BB@0x18 a-BB@0x22 ]
+	4       (0000000c) sget-object          v1, Lcom/a/a/g/g;->b [I
+	5       (00000010) aget                 v1, v1, v0
+	6       (00000014) if-ne                v1, v2, +7
+
+a-BB@0x18 : 
+	7       (00000018) sget-object          v1, Lcom/a/a/g/g;->a [C
+	8       (0000001c) aget-char            v0, v1, v0
+	9       (00000020) return               v0
+
+a-BB@0x22 : [ a-BB@0x2 ]
+	10      (00000022) add-int/lit8         v0, v0, 1
+	11      (00000026) goto                 -12
+
+a-BB@0x28 : 
+	12      (00000028) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	13      (0000002e) move-result-object   v0
+	14      (00000030) throw                v0
+

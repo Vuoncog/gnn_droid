@@ -1,0 +1,23 @@
+# Lorg/apache/commons/lang/CharRange$CharacterIterator;->next()Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.Object
+
+next-BB@0x0 : [ next-BB@0x8 next-BB@0x14 ]
+	0       (00000000) iget-boolean         v0, v2, Lorg/apache/commons/lang/CharRange$CharacterIterator;->hasNext Z
+	1       (00000004) if-nez               v0, +8
+
+next-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/util/NoSuchElementException;
+	3       (0000000c) invoke-direct        v0, Ljava/util/NoSuchElementException;-><init>()V
+	4       (00000012) throw                v0
+
+next-BB@0x14 : 
+	5       (00000014) iget-char            v0, v2, Lorg/apache/commons/lang/CharRange$CharacterIterator;->current C
+	6       (00000018) invoke-direct        v2, Lorg/apache/commons/lang/CharRange$CharacterIterator;->prepareNext()V
+	7       (0000001e) new-instance         v1, Ljava/lang/Character;
+	8       (00000022) invoke-direct        v1, v0, Ljava/lang/Character;-><init>(C)V
+	9       (00000028) return-object        v1
+

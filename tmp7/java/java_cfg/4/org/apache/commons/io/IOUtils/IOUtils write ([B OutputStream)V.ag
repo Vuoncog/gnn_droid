@@ -1,0 +1,18 @@
+# Lorg/apache/commons/io/IOUtils;->write([B Ljava/io/OutputStream;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:byte[]
+# - v1:java.io.OutputStream
+#
+# - return:void
+
+write-BB@0x0 : [ write-BB@0x4 write-BB@0xa ]
+	0       (00000000) if-eqz               v0, +5
+
+write-BB@0x4 : [ write-BB@0xa ]
+	1       (00000004) invoke-virtual       v1, v0, Ljava/io/OutputStream;->write([B)V
+
+write-BB@0xa : 
+	2       (0000000a) return-void          
+

@@ -1,0 +1,22 @@
+# Lio/fabric/sdk/android/services/persistence/PreferenceStoreStrategy;->save(Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Object
+#
+# - return:void
+
+save-BB@0x0 : 
+	0       (00000000) iget-object          v0, v4, Lio/fabric/sdk/android/services/persistence/PreferenceStoreStrategy;->store Lio/fabric/sdk/android/services/persistence/PreferenceStore;
+	1       (00000004) iget-object          v1, v4, Lio/fabric/sdk/android/services/persistence/PreferenceStoreStrategy;->store Lio/fabric/sdk/android/services/persistence/PreferenceStore;
+	2       (00000008) invoke-interface     v1, Lio/fabric/sdk/android/services/persistence/PreferenceStore;->edit()Landroid/content/SharedPreferences$Editor;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) iget-object          v2, v4, Lio/fabric/sdk/android/services/persistence/PreferenceStoreStrategy;->key Ljava/lang/String;
+	5       (00000014) iget-object          v3, v4, Lio/fabric/sdk/android/services/persistence/PreferenceStoreStrategy;->serializer Lio/fabric/sdk/android/services/persistence/SerializationStrategy;
+	6       (00000018) invoke-interface     v3, v5, Lio/fabric/sdk/android/services/persistence/SerializationStrategy;->serialize(Ljava/lang/Object;)Ljava/lang/String;
+	7       (0000001e) move-result-object   v3
+	8       (00000020) invoke-interface     v1, v2, v3, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String; Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+	9       (00000026) move-result-object   v1
+	10      (00000028) invoke-interface     v0, v1, Lio/fabric/sdk/android/services/persistence/PreferenceStore;->save(Landroid/content/SharedPreferences$Editor;)Z
+	11      (0000002e) return-void          
+

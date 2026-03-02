@@ -1,0 +1,35 @@
+# Lorg/apache/commons/io/input/BOMInputStream;->reset()V [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+reset-BB@0x0 : [ reset-BB@0x2 ]
+	0       (00000000) monitor-enter        v1
+
+reset-BB@0x2 : [ reset-BB@0x12 reset-BB@0x18 ]
+	1       (00000002) iget                 v0, v1, Lorg/apache/commons/io/input/BOMInputStream;->markFbIndex I
+	2       (00000006) iput                 v0, v1, Lorg/apache/commons/io/input/BOMInputStream;->fbIndex I
+	3       (0000000a) iget-boolean         v0, v1, Lorg/apache/commons/io/input/BOMInputStream;->markedAtStart Z
+	4       (0000000e) if-eqz               v0, +5
+	2:21
+	(Ljava/lang/Throwable; -> 26 reset-BB@0x26)
+
+reset-BB@0x12 : [ reset-BB@0x18 ]
+	5       (00000012) const/4              v0, 0
+	6       (00000014) iput-object          v0, v1, Lorg/apache/commons/io/input/BOMInputStream;->firstBytes [I
+	2:21
+	(Ljava/lang/Throwable; -> 26 reset-BB@0x26)
+
+reset-BB@0x18 : 
+	7       (00000018) iget-object          v0, v1, Lorg/apache/commons/io/input/BOMInputStream;->in Ljava/io/InputStream;
+	8       (0000001c) invoke-virtual       v0, Ljava/io/InputStream;->reset()V
+	9       (00000022) monitor-exit         v1
+	10      (00000024) return-void          
+
+reset-BB@0x26 : 
+	11      (00000026) move-exception       v0
+	12      (00000028) monitor-exit         v1
+	13      (0000002a) throw                v0
+

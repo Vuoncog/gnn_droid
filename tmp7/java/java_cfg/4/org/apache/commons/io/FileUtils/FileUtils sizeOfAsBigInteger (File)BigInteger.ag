@@ -1,0 +1,46 @@
+# Lorg/apache/commons/io/FileUtils;->sizeOfAsBigInteger(Ljava/io/File;)Ljava/math/BigInteger; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+#
+# - return:java.math.BigInteger
+
+sizeOfAsBigInteger-BB@0x0 : [ sizeOfAsBigInteger-BB@0xc sizeOfAsBigInteger-BB@0x3e ]
+	0       (00000000) invoke-virtual       v2, Ljava/io/File;->exists()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +1b
+
+sizeOfAsBigInteger-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) const-string         v1, ' does not exist'
+	8       (00000022) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (00000030) move-result-object   v0
+	12      (00000032) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	13      (00000036) invoke-direct        v1, v0, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	14      (0000003c) throw                v1
+
+sizeOfAsBigInteger-BB@0x3e : [ sizeOfAsBigInteger-BB@0x4a sizeOfAsBigInteger-BB@0x54 ]
+	15      (0000003e) invoke-virtual       v2, Ljava/io/File;->isDirectory()Z
+	16      (00000044) move-result          v0
+	17      (00000046) if-eqz               v0, +7
+
+sizeOfAsBigInteger-BB@0x4a : [ sizeOfAsBigInteger-BB@0x52 ]
+	18      (0000004a) invoke-static        v2, Lorg/apache/commons/io/FileUtils;->sizeOfDirectoryAsBigInteger(Ljava/io/File;)Ljava/math/BigInteger;
+	19      (00000050) move-result-object   v0
+
+sizeOfAsBigInteger-BB@0x52 : 
+	20      (00000052) return-object        v0
+
+sizeOfAsBigInteger-BB@0x54 : [ sizeOfAsBigInteger-BB@0x52 ]
+	21      (00000054) invoke-virtual       v2, Ljava/io/File;->length()J
+	22      (0000005a) move-result-wide     v0
+	23      (0000005c) invoke-static        v0, v1, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+	24      (00000062) move-result-object   v0
+	25      (00000064) goto                 -9
+

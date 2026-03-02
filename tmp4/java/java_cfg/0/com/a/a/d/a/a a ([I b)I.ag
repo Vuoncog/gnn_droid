@@ -1,0 +1,50 @@
+# Lcom/a/a/d/a;->a([I Lcom/a/a/c/b;)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int[]
+# - v6:com.a.a.c.b
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0x14 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) invoke-virtual       v6, Lcom/a/a/c/b;->f()I
+	2       (00000008) move-result          v1
+	3       (0000000a) aget                 v0, v5, v4
+	4       (0000000e) const/4              v2, 1
+	5       (00000010) aget                 v2, v5, v2
+
+a-BB@0x14 : [ a-BB@0x18 a-BB@0x2a ]
+	6       (00000014) if-ge                v0, v1, +b
+
+a-BB@0x18 : [ a-BB@0x24 a-BB@0x2a ]
+	7       (00000018) invoke-virtual       v6, v0, v2, Lcom/a/a/c/b;->a(I I)Z
+	8       (0000001e) move-result          v3
+	9       (00000020) if-eqz               v3, +5
+
+a-BB@0x24 : [ a-BB@0x14 ]
+	10      (00000024) add-int/lit8         v0, v0, 1
+	11      (00000028) goto                 -a
+
+a-BB@0x2a : [ a-BB@0x2e a-BB@0x38 ]
+	12      (0000002a) if-ne                v0, v1, +7
+
+a-BB@0x2e : 
+	13      (0000002e) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	14      (00000034) move-result-object   v0
+	15      (00000036) throw                v0
+
+a-BB@0x38 : [ a-BB@0x42 a-BB@0x4c ]
+	16      (00000038) aget                 v1, v5, v4
+	17      (0000003c) sub-int/2addr        v0, v1
+	18      (0000003e) if-nez               v0, +7
+
+a-BB@0x42 : 
+	19      (00000042) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	20      (00000048) move-result-object   v0
+	21      (0000004a) throw                v0
+
+a-BB@0x4c : 
+	22      (0000004c) return               v0
+

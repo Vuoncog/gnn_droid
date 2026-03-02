@@ -1,0 +1,16 @@
+# Lcom/crashlytics/android/answers/StartCheckoutEvent;->priceToMicros(Ljava/math/BigDecimal;)J [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.math.BigDecimal
+#
+# - return:long
+
+priceToMicros-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lcom/crashlytics/android/answers/StartCheckoutEvent;->MICRO_CONSTANT Ljava/math/BigDecimal;
+	1       (00000004) invoke-virtual       v0, v3, Ljava/math/BigDecimal;->multiply(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, Ljava/math/BigDecimal;->longValue()J
+	4       (00000012) move-result-wide     v0
+	5       (00000014) return-wide          v0
+

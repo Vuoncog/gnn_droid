@@ -1,0 +1,69 @@
+# Lorg/apache/commons/io/output/ByteArrayOutputStream;->needNewBuffer(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+needNewBuffer-BB@0x0 : [ needNewBuffer-BB@0x18 needNewBuffer-BB@0x4e ]
+	0       (00000000) iget                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex I
+	1       (00000004) iget-object          v1, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->buffers Ljava/util/List;
+	2       (00000008) invoke-interface     v1, Ljava/util/List;->size()I
+	3       (0000000e) move-result          v1
+	4       (00000010) add-int/lit8         v1, v1, -1
+	5       (00000014) if-ge                v0, v1, +1d
+
+needNewBuffer-BB@0x18 : [ needNewBuffer-BB@0x4c ]
+	6       (00000018) iget                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum I
+	7       (0000001c) iget-object          v1, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer [B
+	8       (00000020) array-length         v1, v1
+	9       (00000022) add-int/2addr        v0, v1
+	10      (00000024) iput                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum I
+	11      (00000028) iget                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex I
+	12      (0000002c) add-int/lit8         v0, v0, 1
+	13      (00000030) iput                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex I
+	14      (00000034) iget-object          v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->buffers Ljava/util/List;
+	15      (00000038) iget                 v1, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex I
+	16      (0000003c) invoke-interface     v0, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	17      (00000042) move-result-object   v0
+	18      (00000044) check-cast           v0, [B
+	19      (00000048) iput-object          v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer [B
+
+needNewBuffer-BB@0x4c : 
+	20      (0000004c) return-void          
+
+needNewBuffer-BB@0x4e : [ needNewBuffer-BB@0x56 needNewBuffer-BB@0x80 ]
+	21      (0000004e) iget-object          v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer [B
+	22      (00000052) if-nez               v0, +17
+
+needNewBuffer-BB@0x56 : [ needNewBuffer-BB@0x5c ]
+	23      (00000056) const/4              v0, 0
+	24      (00000058) iput                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum I
+
+needNewBuffer-BB@0x5c : [ needNewBuffer-BB@0x4c ]
+	25      (0000005c) iget                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex I
+	26      (00000060) add-int/lit8         v0, v0, 1
+	27      (00000064) iput                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex I
+	28      (00000068) new-array            v0, v3, [B
+	29      (0000006c) iput-object          v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer [B
+	30      (00000070) iget-object          v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->buffers Ljava/util/List;
+	31      (00000074) iget-object          v1, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer [B
+	32      (00000078) invoke-interface     v0, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	33      (0000007e) goto                 -19
+
+needNewBuffer-BB@0x80 : [ needNewBuffer-BB@0x5c ]
+	34      (00000080) iget-object          v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer [B
+	35      (00000084) array-length         v0, v0
+	36      (00000086) shl-int/lit8         v0, v0, 1
+	37      (0000008a) iget                 v1, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum I
+	38      (0000008e) sub-int              v1, v3, v1
+	39      (00000092) invoke-static        v0, v1, Ljava/lang/Math;->max(I I)I
+	40      (00000098) move-result          v3
+	41      (0000009a) iget                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum I
+	42      (0000009e) iget-object          v1, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer [B
+	43      (000000a2) array-length         v1, v1
+	44      (000000a4) add-int/2addr        v0, v1
+	45      (000000a6) iput                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum I
+	46      (000000aa) goto                 -27
+

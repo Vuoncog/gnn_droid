@@ -1,0 +1,85 @@
+# Lcom/crashlytics/android/answers/Answers;->doInBackground()Ljava/lang/Boolean; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.lang.Boolean
+
+doInBackground-BB@0x0 : [ doInBackground-BB@0x2 ]
+	0       (00000000) const/4              v4, 0
+
+doInBackground-BB@0x2 : [ doInBackground-BB@0x16 doInBackground-BB@0x38 ]
+	1       (00000002) invoke-static        Lio/fabric/sdk/android/services/settings/Settings;->getInstance()Lio/fabric/sdk/android/services/settings/Settings;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) invoke-virtual       v0, Lio/fabric/sdk/android/services/settings/Settings;->awaitSettingsData()Lio/fabric/sdk/android/services/settings/SettingsData;
+	4       (00000010) move-result-object   v0
+	5       (00000012) if-nez               v0, +13
+	2:a3
+	(Ljava/lang/Exception; -> a8 doInBackground-BB@0xa8)
+
+doInBackground-BB@0x16 : [ doInBackground-BB@0x36 ]
+	6       (00000016) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) const-string         v1, 'Answers'
+	9       (00000022) const-string         v2, 'Failed to retrieve settings'
+	10      (00000026) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String;)V
+	11      (0000002c) const/4              v0, 0
+	12      (0000002e) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	13      (00000034) move-result-object   v0
+	2:a3
+	(Ljava/lang/Exception; -> a8 doInBackground-BB@0xa8)
+
+doInBackground-BB@0x36 : 
+	14      (00000036) return-object        v0
+	2:a3
+	(Ljava/lang/Exception; -> a8 doInBackground-BB@0xa8)
+
+doInBackground-BB@0x38 : [ doInBackground-BB@0x44 doInBackground-BB@0x7c ]
+	15      (00000038) iget-object          v1, v0, Lio/fabric/sdk/android/services/settings/SettingsData;->featuresData Lio/fabric/sdk/android/services/settings/FeaturesSettingsData;
+	16      (0000003c) iget-boolean         v1, v1, Lio/fabric/sdk/android/services/settings/FeaturesSettingsData;->collectAnalytics Z
+	17      (00000040) if-eqz               v1, +1e
+	2:a3
+	(Ljava/lang/Exception; -> a8 doInBackground-BB@0xa8)
+
+doInBackground-BB@0x44 : [ doInBackground-BB@0x36 ]
+	18      (00000044) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	19      (0000004a) move-result-object   v1
+	20      (0000004c) const-string         v2, 'Answers'
+	21      (00000050) const-string         v3, 'Analytics collection enabled'
+	22      (00000054) invoke-interface     v1, v2, v3, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	23      (0000005a) iget-object          v1, v5, Lcom/crashlytics/android/answers/Answers;->analyticsManager Lcom/crashlytics/android/answers/SessionAnalyticsManager;
+	24      (0000005e) iget-object          v0, v0, Lio/fabric/sdk/android/services/settings/SettingsData;->analyticsSettingsData Lio/fabric/sdk/android/services/settings/AnalyticsSettingsData;
+	25      (00000062) invoke-virtual       v5, Lcom/crashlytics/android/answers/Answers;->getOverridenSpiEndpoint()Ljava/lang/String;
+	26      (00000068) move-result-object   v2
+	27      (0000006a) invoke-virtual       v1, v0, v2, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->setAnalyticsSettingsData(Lio/fabric/sdk/android/services/settings/AnalyticsSettingsData; Ljava/lang/String;)V
+	28      (00000070) const/4              v0, 1
+	29      (00000072) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	30      (00000078) move-result-object   v0
+	31      (0000007a) goto                 -22
+	2:a3
+	(Ljava/lang/Exception; -> a8 doInBackground-BB@0xa8)
+
+doInBackground-BB@0x7c : [ doInBackground-BB@0x36 ]
+	32      (0000007c) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	33      (00000082) move-result-object   v0
+	34      (00000084) const-string         v1, 'Answers'
+	35      (00000088) const-string         v2, 'Analytics collection disabled'
+	36      (0000008c) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	37      (00000092) iget-object          v0, v5, Lcom/crashlytics/android/answers/Answers;->analyticsManager Lcom/crashlytics/android/answers/SessionAnalyticsManager;
+	38      (00000096) invoke-virtual       v0, Lcom/crashlytics/android/answers/SessionAnalyticsManager;->disable()V
+	39      (0000009c) const/4              v0, 0
+	40      (0000009e) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	41      (000000a4) move-result-object   v0
+	42      (000000a6) goto                 -38
+
+doInBackground-BB@0xa8 : [ doInBackground-BB@0x36 ]
+	43      (000000a8) move-exception       v0
+	44      (000000aa) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	45      (000000b0) move-result-object   v1
+	46      (000000b2) const-string         v2, 'Answers'
+	47      (000000b6) const-string         v3, 'Error dealing with settings'
+	48      (000000ba) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	49      (000000c0) invoke-static        v4, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	50      (000000c6) move-result-object   v0
+	51      (000000c8) goto                 -49
+

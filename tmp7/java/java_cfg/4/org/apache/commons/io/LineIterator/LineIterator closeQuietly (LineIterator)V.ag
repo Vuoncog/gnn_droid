@@ -1,0 +1,17 @@
+# Lorg/apache/commons/io/LineIterator;->closeQuietly(Lorg/apache/commons/io/LineIterator;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:org.apache.commons.io.LineIterator
+#
+# - return:void
+
+closeQuietly-BB@0x0 : [ closeQuietly-BB@0x4 closeQuietly-BB@0xa ]
+	0       (00000000) if-eqz               v0, +5
+
+closeQuietly-BB@0x4 : [ closeQuietly-BB@0xa ]
+	1       (00000004) invoke-virtual       v0, Lorg/apache/commons/io/LineIterator;->close()V
+
+closeQuietly-BB@0xa : 
+	2       (0000000a) return-void          
+

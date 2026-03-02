@@ -1,0 +1,41 @@
+# Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->performUpdateCheck()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+performUpdateCheck-BB@0x0 : 
+	0       (00000000) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'Beta'
+	3       (0000000c) const-string         v2, 'Performing update check'
+	4       (00000010) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	5       (00000016) new-instance         v0, Lio/fabric/sdk/android/services/common/ApiKey;
+	6       (0000001a) invoke-direct        v0, Lio/fabric/sdk/android/services/common/ApiKey;-><init>()V
+	7       (00000020) iget-object          v1, v8, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->context Landroid/content/Context;
+	8       (00000024) invoke-virtual       v0, v1, Lio/fabric/sdk/android/services/common/ApiKey;->getValue(Landroid/content/Context;)Ljava/lang/String;
+	9       (0000002a) move-result-object   v7
+	10      (0000002c) iget-object          v0, v8, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->idManager Lio/fabric/sdk/android/services/common/IdManager;
+	11      (00000030) invoke-virtual       v0, Lio/fabric/sdk/android/services/common/IdManager;->getDeviceIdentifiers()Ljava/util/Map;
+	12      (00000036) move-result-object   v0
+	13      (00000038) sget-object          v1, Lio/fabric/sdk/android/services/common/IdManager$DeviceIdentifierType;->FONT_TOKEN Lio/fabric/sdk/android/services/common/IdManager$DeviceIdentifierType;
+	14      (0000003c) invoke-interface     v0, v1, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	15      (00000042) move-result-object   v0
+	16      (00000044) move-object          v6, v0
+	17      (00000046) check-cast           v6, Ljava/lang/String;
+	18      (0000004a) new-instance         v0, Lcom/crashlytics/android/beta/CheckForUpdatesRequest;
+	19      (0000004e) iget-object          v1, v8, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->beta Lcom/crashlytics/android/beta/Beta;
+	20      (00000052) iget-object          v2, v8, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->beta Lcom/crashlytics/android/beta/Beta;
+	21      (00000056) invoke-virtual       v2, Lcom/crashlytics/android/beta/Beta;->getOverridenSpiEndpoint()Ljava/lang/String;
+	22      (0000005c) move-result-object   v2
+	23      (0000005e) iget-object          v3, v8, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->betaSettings Lio/fabric/sdk/android/services/settings/BetaSettingsData;
+	24      (00000062) iget-object          v3, v3, Lio/fabric/sdk/android/services/settings/BetaSettingsData;->updateUrl Ljava/lang/String;
+	25      (00000066) iget-object          v4, v8, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->httpRequestFactory Lio/fabric/sdk/android/services/network/HttpRequestFactory;
+	26      (0000006a) new-instance         v5, Lcom/crashlytics/android/beta/CheckForUpdatesResponseTransform;
+	27      (0000006e) invoke-direct        v5, Lcom/crashlytics/android/beta/CheckForUpdatesResponseTransform;-><init>()V
+	28      (00000074) invoke-direct/range  v0 ... v5, Lcom/crashlytics/android/beta/CheckForUpdatesRequest;-><init>(Lio/fabric/sdk/android/Kit; Ljava/lang/String; Ljava/lang/String; Lio/fabric/sdk/android/services/network/HttpRequestFactory; Lcom/crashlytics/android/beta/CheckForUpdatesResponseTransform;)V
+	29      (0000007a) iget-object          v1, v8, Lcom/crashlytics/android/beta/AbstractCheckForUpdatesController;->buildProps Lcom/crashlytics/android/beta/BuildProperties;
+	30      (0000007e) invoke-virtual       v0, v7, v6, v1, Lcom/crashlytics/android/beta/CheckForUpdatesRequest;->invoke(Ljava/lang/String; Ljava/lang/String; Lcom/crashlytics/android/beta/BuildProperties;)Lcom/crashlytics/android/beta/CheckForUpdatesResponse;
+	31      (00000084) return-void          
+

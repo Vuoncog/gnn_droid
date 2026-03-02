@@ -1,0 +1,40 @@
+# Lcom/a/a/b/a/c;->onError(Landroid/media/MediaPlayer; I I)Z [access_flags=public synchronized]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.media.MediaPlayer
+# - v3:int
+# - v4:int
+#
+# - return:boolean
+
+onError-BB@0x0 : [ onError-BB@0xa onError-BB@0x1a ]
+	0       (00000000) monitor-enter        v1
+	1       (00000002) const/16             v0, 100
+	2       (00000006) if-ne                v3, v0, +a
+
+onError-BB@0xa : [ onError-BB@0x14 ]
+	3       (0000000a) iget-object          v0, v1, Lcom/a/a/b/a/c;->b Landroid/app/Activity;
+	4       (0000000e) invoke-virtual       v0, Landroid/app/Activity;->finish()V
+	a:13
+	(Ljava/lang/Throwable; -> 2e onError-BB@0x2e)
+
+onError-BB@0x14 : 
+	5       (00000014) const/4              v0, 1
+	6       (00000016) monitor-exit         v1
+	7       (00000018) return               v0
+
+onError-BB@0x1a : [ onError-BB@0x14 ]
+	8       (0000001a) invoke-virtual       v2, Landroid/media/MediaPlayer;->release()V
+	9       (00000020) const/4              v0, 0
+	10      (00000022) iput-object          v0, v1, Lcom/a/a/b/a/c;->c Landroid/media/MediaPlayer;
+	11      (00000026) invoke-virtual       v1, Lcom/a/a/b/a/c;->a()V
+	12      (0000002c) goto                 -c
+	1a:2b
+	(Ljava/lang/Throwable; -> 2e onError-BB@0x2e)
+
+onError-BB@0x2e : 
+	13      (0000002e) move-exception       v0
+	14      (00000030) monitor-exit         v1
+	15      (00000032) throw                v0
+

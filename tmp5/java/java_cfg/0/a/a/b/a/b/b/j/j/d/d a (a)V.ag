@@ -1,0 +1,34 @@
+# La/a/b/a/b/b/j/j/d;->a(La/a/b/a/b/b/b/a;)V [access_flags=final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:a.a.b.a.b.b.b.a
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x1a a-BB@0x34 ]
+	0       (00000000) iget-object          v0, v4, La/a/b/a/b/b/b/a;->j La/a/b/a/b/b/b/e/g;
+	1       (00000004) iget-object          v0, v0, La/a/b/a/b/b/b/e/g;->b La/a/b/a/b/a/b;
+	2       (00000008) iget-object          v1, v3, La/a/b/a/b/b/j/j/d;->a [La/a/b/a/b/a/b;
+	3       (0000000c) const/4              v2, 1
+	4       (0000000e) invoke-static        v0, v1, v2, La/a/b/a/b/b/n/d;->a(La/a/b/a/b/a/b; [La/a/b/a/b/a/b; Z)Z
+	5       (00000014) move-result          v0
+	6       (00000016) if-nez               v0, +f
+
+a-BB@0x1a : [ a-BB@0x34 ]
+	7       (0000001a) iget-object          v0, v4, La/a/b/a/b/b/b/a;->j La/a/b/a/b/b/b/e/g;
+	8       (0000001e) iget-object          v0, v0, La/a/b/a/b/b/b/e/g;->a La/a/b/a/b/a/b;
+	9       (00000022) iget-object          v1, v3, La/a/b/a/b/b/j/j/d;->c La/a/b/a/b/b/a;
+	10      (00000026) iget-object          v1, v1, La/a/b/a/b/b/a;->f [La/a/b/a/b/a/b;
+	11      (0000002a) const/4              v2, 0
+	12      (0000002c) invoke-static        v0, v1, v2, La/a/b/a/b/b/n/d;->a(La/a/b/a/b/a/b; [La/a/b/a/b/a/b; Z)Z
+	13      (00000032) move-result          v0
+
+a-BB@0x34 : 
+	14      (00000034) iget-object          v1, v4, La/a/b/a/b/b/b/a;->j La/a/b/a/b/b/b/e/g;
+	15      (00000038) iget-object          v1, v1, La/a/b/a/b/b/b/e/g;->c La/a/b/a/b/a/b;
+	16      (0000003c) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	17      (00000042) move-result-object   v0
+	18      (00000044) invoke-virtual       v1, v0, v3, La/a/b/a/b/a/b;->a(Ljava/lang/Object; Ljava/lang/Object;)V
+	19      (0000004a) return-void          
+

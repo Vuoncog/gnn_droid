@@ -1,0 +1,21 @@
+# Lorg/apache/commons/lang/math/LongRange;->getMaximumNumber()Ljava/lang/Number; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:java.lang.Number
+
+getMaximumNumber-BB@0x0 : [ getMaximumNumber-BB@0x8 getMaximumNumber-BB@0x1a ]
+	0       (00000000) iget-object          v0, v4, Lorg/apache/commons/lang/math/LongRange;->maxObject Ljava/lang/Long;
+	1       (00000004) if-nez               v0, +b
+
+getMaximumNumber-BB@0x8 : [ getMaximumNumber-BB@0x1a ]
+	2       (00000008) new-instance         v0, Ljava/lang/Long;
+	3       (0000000c) iget-wide            v2, v4, Lorg/apache/commons/lang/math/LongRange;->max J
+	4       (00000010) invoke-direct        v0, v2, v3, Ljava/lang/Long;-><init>(J)V
+	5       (00000016) iput-object          v0, v4, Lorg/apache/commons/lang/math/LongRange;->maxObject Ljava/lang/Long;
+
+getMaximumNumber-BB@0x1a : 
+	6       (0000001a) iget-object          v0, v4, Lorg/apache/commons/lang/math/LongRange;->maxObject Ljava/lang/Long;
+	7       (0000001e) return-object        v0
+

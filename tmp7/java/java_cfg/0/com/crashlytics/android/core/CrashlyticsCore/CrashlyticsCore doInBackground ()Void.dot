@@ -1,0 +1,249 @@
+digraph {
+	graph [bb="0,0,1878.1,1968",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_4614f12faa0554b98651d07a1241898b {
+		graph [bb="12.064,8,1699.1,1960",
+			label="Lcom/crashlytics/android/core/CrashlyticsCore;.doInBackground->()Ljava/lang/Void;\nLocal registers v0 ... v5\nreturn = java.lang.Void",
+			lheight=0.62,
+			lp="855.56,1933.5",
+			lwidth=7.62
+		];
+		struct_18ad9cbe6cb322cf215b595ab3e92eee	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v4</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;markInitializationStarted()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#909055">v5</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;handler Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;-&gt;cleanInvalidTempFiles()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1093.1,1842.5",
+			width=14.25];
+		struct_569fdb3afe8953cc0809006b3c43d7d6	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/services/settings/Settings;-&gt;getInstance()Lio/fabric/sdk/android/services/settings/Settings;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/settings/Settings;-&gt;awaitSettingsData()Lio/fabric/sdk/android/services/settings/SettingsData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x11</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1081.1,1681.5",
+			width=14.042];
+		struct_18ad9cbe6cb322cf215b595ab3e92eee:tail -> struct_569fdb3afe8953cc0809006b3c43d7d6:header	[color=blue,
+			pos="e,601.06,1742.5 601.06,1791.5 601.06,1773.6 601.06,1766.8 601.06,1752.8"];
+		struct_c0610cc95af9727d8c695fb9175e3ae1	[height=2.5556,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="red">'CrashlyticsCore'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="red"><br/>'Received null settings,<br/>skipping initialization!'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;w(Ljava/lang/String; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;markInitializationComplete()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="386.06,1376",
+			width=10.153];
+		struct_569fdb3afe8953cc0809006b3c43d7d6:tail -> struct_c0610cc95af9727d8c695fb9175e3ae1:header	[color=red,
+			pos="e,46.064,1462 586.06,1622.5 464.3,1622.5 68.532,1589.1 46.98,1472.1"];
+		struct_223bf1dc51fcdcd1c1e72f79d6f0dbc9	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#888877">v0</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/settings/SettingsData;-&gt;featuresData Lio/fabric/sdk/android/services/settings/FeaturesSettingsData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">48</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-boolean </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/settings/FeaturesSettingsData;-&gt;collectReports Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x11</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1139.1,1531.5",
+			width=14.778];
+		struct_569fdb3afe8953cc0809006b3c43d7d6:tail -> struct_223bf1dc51fcdcd1c1e72f79d6f0dbc9:header	[color=green,
+			pos="e,617.06,1567.5 601.06,1619.5 601.06,1599.5 595.45,1577 607.26,1569.8"];
+		struct_4515624a78b08cd4a7e114b776109af2	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">be</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="864.06,452.5",
+			width=2.7083];
+		struct_569fdb3afe8953cc0809006b3c43d7d6:tail -> struct_4515624a78b08cd4a7e114b776109af2:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="158.56,1198.5",
+			pos="e,777.06,466.5 586.06,1622.5 525.16,1622.5 555.61,1529.7 598.06,1486 646.41,1436.3 706.94,1519.8 753.06,1468 759.86,1460.4 760.19,\
+1291.3 753.06,1284 701.51,1231 139.62,1319 88.064,1266 46.216,1223 46.213,1174 88.064,1131 139.85,1077.8 704.27,1166.2 756.06,1113 \
+764.59,1104.2 764.53,901.81 756.06,893 721.55,857.07 355.34,890.71 308.06,875 177.62,831.66 117.11,821.62 53.064,700 47.732,689.87 \
+45.127,502.24 53.064,494 66.204,480.35 678.41,468.03 766.9,466.63"];
+		struct_09136e4246ba5bbfb86bf4369fda4618	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">de</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;markInitializationComplete()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1337.1,61.5",
+			width=9.8333];
+		struct_569fdb3afe8953cc0809006b3c43d7d6:tail -> struct_09136e4246ba5bbfb86bf4369fda4618:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="1805.6,796.5",
+			pos="e,1008.1,100.5 601.06,1619.5 601.06,1559.5 1638.5,1620.2 1680.1,1577 1719.7,1535.8 2070.1,2429.1 1655.1,494 1621.1,335.65 1643.6,\
+255.14 1514.1,158 1493.2,142.32 1079,130.68 1016.1,106.69"];
+		struct_2c5e5111193a9c50acf1e437a3f12b5f	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#999933">v4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="125.06,61.5",
+			width=2.4722];
+		struct_c0610cc95af9727d8c695fb9175e3ae1:tail -> struct_2c5e5111193a9c50acf1e437a3f12b5f:header	[color=blue,
+			pos="e,46.064,75.5 31.064,1293 27.098,1293 21.064,1279.7 21.064,1004 21.064,1004 21.064,1004 21.064,267 21.064,184.85 -34.654,84.544 \
+35.795,76.075"];
+		struct_b3cba9dfa089a071517c7e9c2f05fd52	[height=3.0556,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">50</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">56</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">58</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="red">'CrashlyticsCore'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="red"><br/>'Collection of crash reports<br/>disabled in Crashlytics<br/>settings.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">60</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;d(Ljava/lang/String; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">66</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;markInitializationComplete()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-15</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="391.06,1003",
+			width=10.111];
+		struct_223bf1dc51fcdcd1c1e72f79d6f0dbc9:tail -> struct_b3cba9dfa089a071517c7e9c2f05fd52:header	[color=red,
+			pos="e,52.064,1107 632.06,1491.5 632.06,1433.7 723.04,1512.4 760.06,1468 766.61,1460.1 767.2,1291.3 760.06,1284 732.76,1256 83.723,1293.7 \
+56.064,1266 8.5297,1218.4 47.803,1181.5 51.752,1117.1"];
+		struct_334dfc17fce3eda964302bdf88c1db00	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#909055">v5</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;handler Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">72</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;-&gt;finalizeSessions()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">78</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;getCreateReportSpiCall(Lio/fabric/sdk/android/services/settings/SettingsData;)Lcom/crashlytics/android/core/CreateReportSpiCall;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">80</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x11</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="954.06,1198.5",
+			width=19.347];
+		struct_223bf1dc51fcdcd1c1e72f79d6f0dbc9:tail -> struct_334dfc17fce3eda964302bdf88c1db00:header	[color=green,
+			pos="e,283.06,1259.5 632.06,1491.5 632.06,1459.5 753.38,1492.4 774.06,1468 826.96,1405.6 830.43,1343.2 774.06,1284 738.77,1246.9 338.11,\
+1305.8 288.16,1268.3"];
+		struct_223bf1dc51fcdcd1c1e72f79d6f0dbc9:tail -> struct_4515624a78b08cd4a7e114b776109af2:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="858.56,1003",
+			pos="e,792.06,469.5 632.06,1491.5 632.06,1430.6 727.87,1514.6 767.06,1468 773.64,1460.2 774.17,1291.4 767.06,1284 727.05,1242.6 289.07,\
+1307.4 249.06,1266 228.22,1244.4 228.23,1152.6 249.06,1131 288.76,1089.9 723.37,1154.1 763.06,1113 797.02,1077.8 796.87,928.31 763.06,\
+893 731.22,859.74 380.91,908.26 349.06,875 300.81,824.6 300.75,768.34 349.06,718 382.79,682.86 752.96,734.77 787.06,700 803.43,683.32 \
+794.1,526.62 792.33,479.76"];
+		struct_223bf1dc51fcdcd1c1e72f79d6f0dbc9:tail -> struct_09136e4246ba5bbfb86bf4369fda4618:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="1581.6,597",
+			pos="e,1008.1,100.5 632.06,1491.5 632.06,1454 762.23,1474.9 799.06,1468 1185.4,1395.7 1415.9,1574 1660.1,1266 1678.7,1242.5 1677.1,1155.7 \
+1660.1,1131 1647.4,1112.6 1628.8,1128.9 1613.1,1113 1533.5,1032.8 1548.6,985.24 1524.1,875 1497.3,754.65 1509.1,721.29 1509.1,598 \
+1509.1,598 1509.1,598 1509.1,267 1509.1,211.43 1059.5,164.37 1012.1,109.7"];
+		struct_b3cba9dfa089a071517c7e9c2f05fd52:tail -> struct_2c5e5111193a9c50acf1e437a3f12b5f:header	[color=blue,
+			pos="e,46.064,75.5 52.064,899 52.064,765.13 41.064,731.87 41.064,598 41.064,598 41.064,598 41.064,267 41.064,248.46 28.707,116.91 39.59,\
+83.302"];
+		struct_a28235f3dd65abd0541711c8161f9626	[height=2.8611,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">84</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="red">'CrashlyticsCore'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">90</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="red"><br/>'Unable to create a call to<br/>upload reports.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">94</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7F7F99">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;w(Ljava/lang/String; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">9a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;markInitializationComplete()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2f</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="420.06,597",
+			width=10.153];
+		struct_334dfc17fce3eda964302bdf88c1db00:tail -> struct_a28235f3dd65abd0541711c8161f9626:header	[color=red,
+			pos="e,80.064,694 283.06,1136.5 283.06,1100.7 902.21,1138.8 927.06,1113 935.55,1104.2 935.57,901.78 927.06,893 905.1,870.32 388.3,886.92 \
+359.06,875 263.53,836.04 279.55,765.71 188.06,718 148.04,697.13 90.49,735.79 81.317,704.23"];
+		struct_261bf4e5517b188d580327ca38c71da5	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#0000FF">Lcom/crashlytics/android/core/ReportUploader;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/ReportUploader;-&gt;&lt;init&gt;(Lcom/crashlytics/android/core/CreateReportSpiCall;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ac</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#909055">v5</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;delay F</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/ReportUploader;-&gt;uploadReports(F)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;markInitializationComplete()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">bc</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-3d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1005.1,796.5",
+			width=12.917];
+		struct_334dfc17fce3eda964302bdf88c1db00:tail -> struct_261bf4e5517b188d580327ca38c71da5:header	[color=green,
+			pos="e,565.06,868.5 283.06,1136.5 283.06,1099.9 915.66,1139.3 941.06,1113 1009,1042.6 1007.9,964.35 941.06,893 914.67,864.84 617.4,903.36 \
+571.11,876.75"];
+		struct_334dfc17fce3eda964302bdf88c1db00:tail -> struct_4515624a78b08cd4a7e114b776109af2:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="460.56,796.5",
+			pos="e,792.06,469.5 283.06,1136.5 283.06,1100.3 908.94,1139 934.06,1113 942.55,1104.2 942.56,901.78 934.06,893 892.01,849.53 432.12,918.47 \
+390.06,875 341.55,824.85 341.83,768.43 390.06,718 421.12,685.53 763.01,732.47 794.06,700 809.88,683.46 795,516.87 794.06,494 793.79,\
+487.35 793.11,483.76 792.62,479.5"];
+		struct_334dfc17fce3eda964302bdf88c1db00:tail -> struct_09136e4246ba5bbfb86bf4369fda4618:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="1363.6,452.5",
+			pos="e,1008.1,100.5 283.06,1136.5 283.06,1098.3 933.88,1121.9 971.06,1113 1213.5,1054.7 1345.3,1085.4 1479.1,875 1516.5,816.12 1501.4,\
+784.11 1479.1,718 1465.9,679.12 1051.7,194.57 1011.2,110.21"];
+		struct_a28235f3dd65abd0541711c8161f9626:tail -> struct_2c5e5111193a9c50acf1e437a3f12b5f:header	[color=blue,
+			pos="e,61.064,78.5 65.064,503 43.138,503 58.523,156.48 60.795,88.801"];
+		struct_261bf4e5517b188d580327ca38c71da5:tail -> struct_2c5e5111193a9c50acf1e437a3f12b5f:header	[color=blue,
+			pos="e,61.064,78.5 565.06,723.5 565.06,677.65 944.96,732.74 977.06,700 998.15,678.49 1009.4,180.19 989.06,158 955.88,121.85 151.21,129.3 \
+67.998,86.051"];
+		struct_261bf4e5517b188d580327ca38c71da5:tail -> struct_4515624a78b08cd4a7e114b776109af2:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="902.56,597",
+			pos="e,792.06,469.5 565.06,723.5 565.06,670.8 765.69,739.07 801.06,700 862.51,632.13 817.1,584.14 801.06,494 799.79,486.86 796.6,483.61 \
+794.38,479.34"];
+		struct_261bf4e5517b188d580327ca38c71da5:tail -> struct_09136e4246ba5bbfb86bf4369fda4618:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="1142.6,403.5",
+			pos="e,1008.1,100.5 565.06,723.5 565.06,674.65 970.34,735.34 1004.1,700 1185.7,509.68 1012.6,370.52 1008.1,110.59"];
+		struct_60dc8033b42e7f9653a1de58a362f820	[height=3.0556,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="red">'CrashlyticsCore'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">cc</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#6E6EDD">v3</FONT>, <FONT color="red"><br/>'Crashlytics encountered a<br/>problem during asynchronous<br/>initialization.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">d0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7F7F99">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#6E6EDD">v3</FONT>, <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">d6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CrashlyticsCore;-&gt;markInitializationComplete()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">dc</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-4d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="530.06,268",
+			width=12.5];
+		struct_4515624a78b08cd4a7e114b776109af2:tail -> struct_60dc8033b42e7f9653a1de58a362f820:header	[color=blue,
+			pos="e,105.06,372 777.06,437.5 741.97,437.5 184.37,413 112.64,379.13"];
+		struct_60dc8033b42e7f9653a1de58a362f820:tail -> struct_2c5e5111193a9c50acf1e437a3f12b5f:header	[color=blue,
+			pos="e,61.064,78.5 90.064,167 72.036,167 63.411,115.55 61.487,88.606"];
+		struct_60dc8033b42e7f9653a1de58a362f820:tail -> struct_09136e4246ba5bbfb86bf4369fda4618:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="381.56,132.5",
+			pos="e,993.06,97.5 105.06,164 105.06,116.61 874.65,98.987 982.78,97.591"];
+	}
+}

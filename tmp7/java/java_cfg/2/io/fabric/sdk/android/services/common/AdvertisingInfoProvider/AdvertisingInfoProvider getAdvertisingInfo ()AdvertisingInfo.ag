@@ -1,0 +1,31 @@
+# Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;->getAdvertisingInfo()Lio/fabric/sdk/android/services/common/AdvertisingInfo; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:io.fabric.sdk.android.services.common.AdvertisingInfo
+
+getAdvertisingInfo-BB@0x0 : [ getAdvertisingInfo-BB@0x14 getAdvertisingInfo-BB@0x32 ]
+	0       (00000000) invoke-virtual       v4, Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;->getInfoFromPreferences()Lio/fabric/sdk/android/services/common/AdvertisingInfo;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-direct        v4, v0, Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;->isInfoValid(Lio/fabric/sdk/android/services/common/AdvertisingInfo;)Z
+	3       (0000000e) move-result          v1
+	4       (00000010) if-eqz               v1, +11
+
+getAdvertisingInfo-BB@0x14 : [ getAdvertisingInfo-BB@0x30 ]
+	5       (00000014) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) const-string         v2, 'Fabric'
+	8       (00000020) const-string         v3, 'Using AdvertisingInfo from Preference Store'
+	9       (00000024) invoke-interface     v1, v2, v3, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	10      (0000002a) invoke-direct        v4, v0, Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;->refreshInfoIfNeededAsync(Lio/fabric/sdk/android/services/common/AdvertisingInfo;)V
+
+getAdvertisingInfo-BB@0x30 : 
+	11      (00000030) return-object        v0
+
+getAdvertisingInfo-BB@0x32 : [ getAdvertisingInfo-BB@0x30 ]
+	12      (00000032) invoke-direct        v4, Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;->getAdvertisingInfoFromStrategies()Lio/fabric/sdk/android/services/common/AdvertisingInfo;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) invoke-direct        v4, v0, Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;->storeInfoToPreferences(Lio/fabric/sdk/android/services/common/AdvertisingInfo;)V
+	15      (00000040) goto                 -8
+

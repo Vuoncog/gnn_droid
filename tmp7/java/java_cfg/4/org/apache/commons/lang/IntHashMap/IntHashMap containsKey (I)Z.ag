@@ -1,0 +1,37 @@
+# Lorg/apache/commons/lang/IntHashMap;->containsKey(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:boolean
+
+containsKey-BB@0x0 : [ containsKey-BB@0x14 ]
+	0       (00000000) iget-object          v0, v3, Lorg/apache/commons/lang/IntHashMap;->table [Lorg/apache/commons/lang/IntHashMap$Entry;
+	1       (00000004) const                v1, 2147483647 # [nan]
+	2       (0000000a) and-int/2addr        v1, v4
+	3       (0000000c) array-length         v2, v0
+	4       (0000000e) rem-int/2addr        v1, v2
+	5       (00000010) aget-object          v0, v0, v1
+
+containsKey-BB@0x14 : [ containsKey-BB@0x18 containsKey-BB@0x2a ]
+	6       (00000014) if-eqz               v0, +b
+
+containsKey-BB@0x18 : [ containsKey-BB@0x20 containsKey-BB@0x24 ]
+	7       (00000018) iget                 v1, v0, Lorg/apache/commons/lang/IntHashMap$Entry;->hash I
+	8       (0000001c) if-ne                v1, v4, +4
+
+containsKey-BB@0x20 : [ containsKey-BB@0x22 ]
+	9       (00000020) const/4              v0, 1
+
+containsKey-BB@0x22 : 
+	10      (00000022) return               v0
+
+containsKey-BB@0x24 : [ containsKey-BB@0x14 ]
+	11      (00000024) iget-object          v0, v0, Lorg/apache/commons/lang/IntHashMap$Entry;->next Lorg/apache/commons/lang/IntHashMap$Entry;
+	12      (00000028) goto                 -a
+
+containsKey-BB@0x2a : [ containsKey-BB@0x22 ]
+	13      (0000002a) const/4              v0, 0
+	14      (0000002c) goto                 -5
+

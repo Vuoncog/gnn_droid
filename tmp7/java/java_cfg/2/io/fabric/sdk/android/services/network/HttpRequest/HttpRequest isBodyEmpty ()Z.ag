@@ -1,0 +1,22 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->isBodyEmpty()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isBodyEmpty-BB@0x0 : [ isBodyEmpty-BB@0xc isBodyEmpty-BB@0x10 ]
+	0       (00000000) invoke-virtual       v1, Lio/fabric/sdk/android/services/network/HttpRequest;->contentLength()I
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +4
+
+isBodyEmpty-BB@0xc : [ isBodyEmpty-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+isBodyEmpty-BB@0xe : 
+	4       (0000000e) return               v0
+
+isBodyEmpty-BB@0x10 : [ isBodyEmpty-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

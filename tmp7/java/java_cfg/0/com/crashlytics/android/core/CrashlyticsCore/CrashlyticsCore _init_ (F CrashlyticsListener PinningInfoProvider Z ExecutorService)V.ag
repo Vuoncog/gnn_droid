@@ -1,0 +1,41 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;-><init>(F Lcom/crashlytics/android/core/CrashlyticsListener; Lcom/crashlytics/android/core/PinningInfoProvider; Z Ljava/util/concurrent/ExecutorService;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:float
+# - v4:com.crashlytics.android.core.CrashlyticsListener
+# - v5:com.crashlytics.android.core.PinningInfoProvider
+# - v6:boolean
+# - v7:java.util.concurrent.ExecutorService
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x1c <init>-BB@0x52 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v2, Lio/fabric/sdk/android/Kit;-><init>()V
+	2       (00000008) iput-object          v0, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->userId Ljava/lang/String;
+	3       (0000000c) iput-object          v0, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->userEmail Ljava/lang/String;
+	4       (00000010) iput-object          v0, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->userName Ljava/lang/String;
+	5       (00000014) iput                 v3, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->delay F
+	6       (00000018) if-eqz               v4, +1d
+
+<init>-BB@0x1c : 
+	7       (0000001c) iput-object          v4, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->listener Lcom/crashlytics/android/core/CrashlyticsListener;
+	8       (00000020) iput-object          v5, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->pinningInfo Lcom/crashlytics/android/core/PinningInfoProvider;
+	9       (00000024) iput-boolean         v6, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->disabled Z
+	10      (00000028) new-instance         v0, Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;
+	11      (0000002c) invoke-direct        v0, v7, Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;-><init>(Ljava/util/concurrent/ExecutorService;)V
+	12      (00000032) iput-object          v0, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->executorServiceWrapper Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;
+	13      (00000036) new-instance         v0, Ljava/util/concurrent/ConcurrentHashMap;
+	14      (0000003a) invoke-direct        v0, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+	15      (00000040) iput-object          v0, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->attributes Ljava/util/concurrent/ConcurrentHashMap;
+	16      (00000044) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	17      (0000004a) move-result-wide     v0
+	18      (0000004c) iput-wide            v0, v2, Lcom/crashlytics/android/core/CrashlyticsCore;->startTime J
+	19      (00000050) return-void          
+
+<init>-BB@0x52 : [ <init>-BB@0x1c ]
+	20      (00000052) new-instance         v4, Lcom/crashlytics/android/core/CrashlyticsCore$NoOpListener;
+	21      (00000056) invoke-direct        v4, v0, Lcom/crashlytics/android/core/CrashlyticsCore$NoOpListener;-><init>(Lcom/crashlytics/android/core/CrashlyticsCore$1;)V
+	22      (0000005c) goto                 -20
+

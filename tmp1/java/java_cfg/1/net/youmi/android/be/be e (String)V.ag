@@ -1,0 +1,23 @@
+# Lnet/youmi/android/be;->e(Ljava/lang/String;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:void
+
+e-BB@0x0 : [ e-BB@0x4 e-BB@0x12 ]
+	0       (00000000) if-eqz               v2, +9
+
+e-BB@0x4 : [ e-BB@0xc ]
+	1       (00000004) invoke-virtual       v2, Ljava/lang/String;->trim()Ljava/lang/String;
+	2       (0000000a) move-result-object   v0
+
+e-BB@0xc : 
+	3       (0000000c) iput-object          v0, v1, Lnet/youmi/android/be;->e Ljava/lang/String;
+	4       (00000010) return-void          
+
+e-BB@0x12 : [ e-BB@0xc ]
+	5       (00000012) move-object          v0, v2
+	6       (00000014) goto                 -4
+

@@ -1,0 +1,30 @@
+# Lorg/apache/commons/lang/builder/ToStringStyle;->unregister(Ljava/lang/Object;)V [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:void
+
+unregister-BB@0x0 : [ unregister-BB@0x4 unregister-BB@0x2e ]
+	0       (00000000) if-eqz               v2, +17
+
+unregister-BB@0x4 : [ unregister-BB@0x10 unregister-BB@0x2e ]
+	1       (00000004) invoke-static        Lorg/apache/commons/lang/builder/ToStringStyle;->getRegistry()Ljava/util/Map;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +11
+
+unregister-BB@0x10 : [ unregister-BB@0x22 unregister-BB@0x2e ]
+	4       (00000010) invoke-interface     v0, v2, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+	5       (00000016) invoke-interface     v0, Ljava/util/Map;->isEmpty()Z
+	6       (0000001c) move-result          v0
+	7       (0000001e) if-eqz               v0, +8
+
+unregister-BB@0x22 : [ unregister-BB@0x2e ]
+	8       (00000022) sget-object          v0, Lorg/apache/commons/lang/builder/ToStringStyle;->REGISTRY Ljava/lang/ThreadLocal;
+	9       (00000026) const/4              v1, 0
+	10      (00000028) invoke-virtual       v0, v1, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+unregister-BB@0x2e : 
+	11      (0000002e) return-void          
+

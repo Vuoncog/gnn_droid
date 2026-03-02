@@ -1,0 +1,27 @@
+# Lcom/ailock/tszlock/UnLockActivity;->onSlideRight()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onSlideRight-BB@0x0 : [ onSlideRight-BB@0x8 onSlideRight-BB@0x3a ]
+	0       (00000000) iget-boolean         v1, v2, Lcom/ailock/tszlock/UnLockActivity;->unlock Z
+	1       (00000004) if-nez               v1, +1b
+
+onSlideRight-BB@0x8 : [ onSlideRight-BB@0x3a ]
+	2       (00000008) const/4              v1, 1
+	3       (0000000a) iput-boolean         v1, v2, Lcom/ailock/tszlock/UnLockActivity;->unlock Z
+	4       (0000000e) new-instance         v0, Lcom/ailock/tszlock/RingPlay;
+	5       (00000012) invoke-direct        v0, v2, Lcom/ailock/tszlock/RingPlay;-><init>(Landroid/content/Context;)V
+	6       (00000018) invoke-virtual       v0, Lcom/ailock/tszlock/RingPlay;->postPlay()V
+	7       (0000001e) invoke-virtual       v2, Lcom/ailock/tszlock/UnLockActivity;->getApplicationContext()Landroid/content/Context;
+	8       (00000024) move-result-object   v1
+	9       (00000026) invoke-static        v1, Lcom/ailock/tszlock/AlarmReceiver;->sendGetAdMessage(Landroid/content/Context;)V
+	10      (0000002c) invoke-virtual       v2, Lcom/ailock/tszlock/UnLockActivity;->finish()V
+	11      (00000032) const/4              v1, 0
+	12      (00000034) invoke-virtual       v2, v1, Lcom/ailock/tszlock/UnLockActivity;->setVisible(Z)V
+
+onSlideRight-BB@0x3a : 
+	13      (0000003a) return-void          
+

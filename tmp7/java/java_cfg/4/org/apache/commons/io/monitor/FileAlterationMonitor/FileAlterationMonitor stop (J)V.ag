@@ -1,0 +1,79 @@
+# Lorg/apache/commons/io/monitor/FileAlterationMonitor;->stop(J)V [access_flags=public synchronized]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:long
+#
+# - return:void
+
+stop-BB@0x0 : [ stop-BB@0x2 ]
+	0       (00000000) monitor-enter        v3
+
+stop-BB@0x2 : [ stop-BB@0xa stop-BB@0x20 ]
+	1       (00000002) iget-boolean         v0, v3, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->running Z
+	2       (00000006) if-nez               v0, +d
+	2:19
+	(Ljava/lang/Throwable; -> 1a stop-BB@0x1a)
+
+stop-BB@0xa : 
+	3       (0000000a) new-instance         v0, Ljava/lang/IllegalStateException;
+	4       (0000000e) const-string         v1, 'Monitor is not running'
+	5       (00000012) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	6       (00000018) throw                v0
+	2:19
+	(Ljava/lang/Throwable; -> 1a stop-BB@0x1a)
+
+stop-BB@0x1a : 
+	7       (0000001a) move-exception       v0
+	8       (0000001c) monitor-exit         v3
+	9       (0000001e) throw                v0
+
+stop-BB@0x20 : [ stop-BB@0x22 ]
+	10      (00000020) const/4              v0, 0
+
+stop-BB@0x22 : [ stop-BB@0x26 ]
+	11      (00000022) iput-boolean         v0, v3, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->running Z
+	22:25
+	(Ljava/lang/Throwable; -> 1a stop-BB@0x1a)
+
+stop-BB@0x26 : [ stop-BB@0x30 ]
+	12      (00000026) iget-object          v0, v3, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->thread Ljava/lang/Thread;
+	13      (0000002a) invoke-virtual       v0, v4, v5, Ljava/lang/Thread;->join(J)V
+	26:2f
+	(Ljava/lang/Throwable; -> 1a stop-BB@0x1a)
+	(Ljava/lang/InterruptedException; -> 5c stop-BB@0x5c)
+
+stop-BB@0x30 : [ stop-BB@0x3c ]
+	14      (00000030) iget-object          v0, v3, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->observers Ljava/util/List;
+	15      (00000034) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	16      (0000003a) move-result-object   v1
+	30:6b
+	(Ljava/lang/Throwable; -> 1a stop-BB@0x1a)
+
+stop-BB@0x3c : [ stop-BB@0x48 stop-BB@0x6e ]
+	17      (0000003c) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	18      (00000042) move-result          v0
+	19      (00000044) if-eqz               v0, +15
+	30:6b
+	(Ljava/lang/Throwable; -> 1a stop-BB@0x1a)
+
+stop-BB@0x48 : [ stop-BB@0x3c ]
+	20      (00000048) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	21      (0000004e) move-result-object   v0
+	22      (00000050) check-cast           v0, Lorg/apache/commons/io/monitor/FileAlterationObserver;
+	23      (00000054) invoke-virtual       v0, Lorg/apache/commons/io/monitor/FileAlterationObserver;->destroy()V
+	24      (0000005a) goto                 -f
+	30:6b
+	(Ljava/lang/Throwable; -> 1a stop-BB@0x1a)
+
+stop-BB@0x5c : [ stop-BB@0x30 ]
+	25      (0000005c) move-exception       v0
+	26      (0000005e) invoke-static        Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+	27      (00000064) move-result-object   v0
+	28      (00000066) invoke-virtual       v0, Ljava/lang/Thread;->interrupt()V
+	29      (0000006c) goto                 -1e
+
+stop-BB@0x6e : 
+	30      (0000006e) monitor-exit         v3
+	31      (00000070) return-void          
+

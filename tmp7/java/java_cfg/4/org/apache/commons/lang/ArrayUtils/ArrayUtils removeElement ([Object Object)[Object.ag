@@ -1,0 +1,27 @@
+# Lorg/apache/commons/lang/ArrayUtils;->removeElement([Ljava/lang/Object; Ljava/lang/Object;)[Ljava/lang/Object; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object[]
+# - v3:java.lang.Object
+#
+# - return:java.lang.Object[]
+
+removeElement-BB@0x0 : [ removeElement-BB@0xe removeElement-BB@0x18 ]
+	0       (00000000) invoke-static        v2, v3, Lorg/apache/commons/lang/ArrayUtils;->indexOf([Ljava/lang/Object; Ljava/lang/Object;)I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, -1
+	3       (0000000a) if-ne                v0, v1, +7
+
+removeElement-BB@0xe : [ removeElement-BB@0x16 ]
+	4       (0000000e) invoke-static        v2, Lorg/apache/commons/lang/ArrayUtils;->clone([Ljava/lang/Object;)[Ljava/lang/Object;
+	5       (00000014) move-result-object   v0
+
+removeElement-BB@0x16 : 
+	6       (00000016) return-object        v0
+
+removeElement-BB@0x18 : [ removeElement-BB@0x16 ]
+	7       (00000018) invoke-static        v2, v0, Lorg/apache/commons/lang/ArrayUtils;->remove([Ljava/lang/Object; I)[Ljava/lang/Object;
+	8       (0000001e) move-result-object   v0
+	9       (00000020) goto                 -5
+

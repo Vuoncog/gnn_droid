@@ -1,0 +1,16 @@
+# Lorg/apache/commons/lang/SystemUtils;->getOSMatches(Ljava/lang/String; Ljava/lang/String;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:java.lang.String
+#
+# - return:boolean
+
+getOSMatches-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lorg/apache/commons/lang/SystemUtils;->OS_NAME Ljava/lang/String;
+	1       (00000004) sget-object          v1, Lorg/apache/commons/lang/SystemUtils;->OS_VERSION Ljava/lang/String;
+	2       (00000008) invoke-static        v0, v1, v2, v3, Lorg/apache/commons/lang/SystemUtils;->isOSMatch(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) return               v0
+

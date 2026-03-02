@@ -1,0 +1,29 @@
+# Lio/fabric/sdk/android/services/network/PinningTrustManager;->checkSystemTrust([Ljava/security/cert/X509Certificate; Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.security.cert.X509Certificate[]
+# - v6:java.lang.String
+#
+# - return:void
+
+checkSystemTrust-BB@0x0 : [ checkSystemTrust-BB@0xa ]
+	0       (00000000) iget-object          v2, v4, Lio/fabric/sdk/android/services/network/PinningTrustManager;->systemTrustManagers [Ljavax/net/ssl/TrustManager;
+	1       (00000004) array-length         v3, v2
+	2       (00000006) const/4              v0, 0
+	3       (00000008) move                 v1, v0
+
+checkSystemTrust-BB@0xa : [ checkSystemTrust-BB@0xe checkSystemTrust-BB@0x24 ]
+	4       (0000000a) if-ge                v1, v3, +d
+
+checkSystemTrust-BB@0xe : [ checkSystemTrust-BB@0xa ]
+	5       (0000000e) aget-object          v0, v2, v1
+	6       (00000012) check-cast           v0, Ljavax/net/ssl/X509TrustManager;
+	7       (00000016) invoke-interface     v0, v5, v6, Ljavax/net/ssl/X509TrustManager;->checkServerTrusted([Ljava/security/cert/X509Certificate; Ljava/lang/String;)V
+	8       (0000001c) add-int/lit8         v0, v1, 1
+	9       (00000020) move                 v1, v0
+	10      (00000022) goto                 -c
+
+checkSystemTrust-BB@0x24 : 
+	11      (00000024) return-void          
+

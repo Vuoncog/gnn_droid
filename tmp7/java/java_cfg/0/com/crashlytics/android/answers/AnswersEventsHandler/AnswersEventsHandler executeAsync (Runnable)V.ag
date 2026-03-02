@@ -1,0 +1,26 @@
+# Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeAsync(Ljava/lang/Runnable;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Runnable
+#
+# - return:void
+
+executeAsync-BB@0x0 : [ executeAsync-BB@0xa ]
+	0       (00000000) iget-object          v0, v4, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executor Ljava/util/concurrent/ScheduledExecutorService;
+	1       (00000004) invoke-interface     v0, v5, Ljava/util/concurrent/ScheduledExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+	0:9
+	(Ljava/lang/Exception; -> c executeAsync-BB@0xc)
+
+executeAsync-BB@0xa : 
+	2       (0000000a) return-void          
+
+executeAsync-BB@0xc : [ executeAsync-BB@0xa ]
+	3       (0000000c) move-exception       v0
+	4       (0000000e) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	5       (00000014) move-result-object   v1
+	6       (00000016) const-string         v2, 'Answers'
+	7       (0000001a) const-string         v3, 'Failed to submit events task'
+	8       (0000001e) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	9       (00000024) goto                 -d
+

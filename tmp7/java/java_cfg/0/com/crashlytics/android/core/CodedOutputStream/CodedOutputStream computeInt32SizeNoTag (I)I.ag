@@ -1,0 +1,22 @@
+# Lcom/crashlytics/android/core/CodedOutputStream;->computeInt32SizeNoTag(I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:int
+
+computeInt32SizeNoTag-BB@0x0 : [ computeInt32SizeNoTag-BB@0x4 computeInt32SizeNoTag-BB@0xe ]
+	0       (00000000) if-ltz               v1, +7
+
+computeInt32SizeNoTag-BB@0x4 : [ computeInt32SizeNoTag-BB@0xc ]
+	1       (00000004) invoke-static        v1, Lcom/crashlytics/android/core/CodedOutputStream;->computeRawVarint32Size(I)I
+	2       (0000000a) move-result          v0
+
+computeInt32SizeNoTag-BB@0xc : 
+	3       (0000000c) return               v0
+
+computeInt32SizeNoTag-BB@0xe : [ computeInt32SizeNoTag-BB@0xc ]
+	4       (0000000e) const/16             v0, 10
+	5       (00000012) goto                 -3
+

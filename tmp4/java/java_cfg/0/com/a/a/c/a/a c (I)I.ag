@@ -1,0 +1,59 @@
+# Lcom/a/a/c/a;->c(I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:int
+
+c-BB@0x0 : [ c-BB@0x8 c-BB@0xe ]
+	0       (00000000) iget                 v0, v4, Lcom/a/a/c/a;->b I
+	1       (00000004) if-lt                v5, v0, +5
+
+c-BB@0x8 : [ c-BB@0xc ]
+	2       (00000008) iget                 v0, v4, Lcom/a/a/c/a;->b I
+
+c-BB@0xc : 
+	3       (0000000c) return               v0
+
+c-BB@0xe : [ c-BB@0x2c ]
+	4       (0000000e) div-int/lit8         v1, v5, 32
+	5       (00000012) iget-object          v0, v4, Lcom/a/a/c/a;->a [I
+	6       (00000016) aget                 v0, v0, v1
+	7       (0000001a) const/4              v2, 1
+	8       (0000001c) and-int/lit8         v3, v5, 31
+	9       (00000020) shl-int/2addr        v2, v3
+	10      (00000022) add-int/lit8         v2, v2, -1
+	11      (00000026) xor-int/lit8         v2, v2, -1
+	12      (0000002a) and-int/2addr        v0, v2
+
+c-BB@0x2c : [ c-BB@0x30 c-BB@0x4e ]
+	13      (0000002c) if-nez               v0, +11
+
+c-BB@0x30 : [ c-BB@0x3e c-BB@0x44 ]
+	14      (00000030) add-int/lit8         v1, v1, 1
+	15      (00000034) iget-object          v0, v4, Lcom/a/a/c/a;->a [I
+	16      (00000038) array-length         v0, v0
+	17      (0000003a) if-ne                v1, v0, +5
+
+c-BB@0x3e : [ c-BB@0xc ]
+	18      (0000003e) iget                 v0, v4, Lcom/a/a/c/a;->b I
+	19      (00000042) goto                 -1b
+
+c-BB@0x44 : [ c-BB@0x2c ]
+	20      (00000044) iget-object          v0, v4, Lcom/a/a/c/a;->a [I
+	21      (00000048) aget                 v0, v0, v1
+	22      (0000004c) goto                 -10
+
+c-BB@0x4e : [ c-BB@0x64 c-BB@0xc ]
+	23      (0000004e) mul-int/lit8         v1, v1, 32
+	24      (00000052) invoke-static        v0, Ljava/lang/Integer;->numberOfTrailingZeros(I)I
+	25      (00000058) move-result          v0
+	26      (0000005a) add-int/2addr        v0, v1
+	27      (0000005c) iget                 v1, v4, Lcom/a/a/c/a;->b I
+	28      (00000060) if-le                v0, v1, -2a
+
+c-BB@0x64 : [ c-BB@0xc ]
+	29      (00000064) iget                 v0, v4, Lcom/a/a/c/a;->b I
+	30      (00000068) goto                 -2e
+

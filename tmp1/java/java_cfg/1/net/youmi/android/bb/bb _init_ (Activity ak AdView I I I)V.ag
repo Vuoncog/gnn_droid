@@ -1,0 +1,29 @@
+# Lnet/youmi/android/bb;-><init>(Landroid/app/Activity; Lnet/youmi/android/ak; Lnet/youmi/android/AdView; I I I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.app.Activity
+# - v3:net.youmi.android.ak
+# - v4:net.youmi.android.AdView
+# - v5:int
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+	1       (00000006) const/4              v0, 0
+	2       (00000008) iput-boolean         v0, v1, Lnet/youmi/android/bb;->j Z
+	3       (0000000c) const/4              v0, 3
+	4       (0000000e) iput                 v0, v1, Lnet/youmi/android/bb;->l I
+	5       (00000012) new-instance         v0, Lnet/youmi/android/f;
+	6       (00000016) invoke-direct        v0, v1, Lnet/youmi/android/f;-><init>(Lnet/youmi/android/bb;)V
+	7       (0000001c) iput-object          v0, v1, Lnet/youmi/android/bb;->c Lnet/youmi/android/bp;
+	8       (00000020) iput-object          v3, v1, Lnet/youmi/android/bb;->n Lnet/youmi/android/ak;
+	9       (00000024) iput-object          v2, v1, Lnet/youmi/android/bb;->o Landroid/app/Activity;
+	10      (00000028) iput-object          v4, v1, Lnet/youmi/android/bb;->m Lnet/youmi/android/AdView;
+	11      (0000002c) invoke-direct        v1, v5, v6, v7, Lnet/youmi/android/bb;->a(I I I)V
+	12      (00000032) invoke-direct        v1, Lnet/youmi/android/bb;->f()V
+	13      (00000038) return-void          
+

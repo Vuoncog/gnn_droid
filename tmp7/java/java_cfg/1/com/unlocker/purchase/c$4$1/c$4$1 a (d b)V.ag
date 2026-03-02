@@ -1,0 +1,79 @@
+# Lcom/unlocker/purchase/c$4$1;->a(Lcom/unlocker/billing/d; Lcom/unlocker/billing/b;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:com.unlocker.billing.d
+# - v8:com.unlocker.billing.b
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x26 a-BB@0x54 ]
+	0       (00000000) const/4              v5, 1
+	1       (00000002) const/4              v4, 0
+	2       (00000004) iget-object          v0, v6, Lcom/unlocker/purchase/c$4$1;->a Lcom/unlocker/purchase/c$4;
+	3       (00000008) iget-object          v0, v0, Lcom/unlocker/purchase/c$4;->b Lcom/unlocker/purchase/c;
+	4       (0000000c) invoke-static        v0, Lcom/unlocker/purchase/c;->b(Lcom/unlocker/purchase/c;)V
+	5       (00000012) iget-object          v0, v6, Lcom/unlocker/purchase/c$4$1;->a Lcom/unlocker/purchase/c$4;
+	6       (00000016) iget-object          v0, v0, Lcom/unlocker/purchase/c$4;->b Lcom/unlocker/purchase/c;
+	7       (0000001a) invoke-static        v0, Lcom/unlocker/purchase/c;->c(Lcom/unlocker/purchase/c;)Z
+	8       (00000020) move-result          v0
+	9       (00000022) if-eqz               v0, +19
+
+a-BB@0x26 : [ a-BB@0x52 ]
+	10      (00000026) iget-object          v0, v6, Lcom/unlocker/purchase/c$4$1;->a Lcom/unlocker/purchase/c$4;
+	11      (0000002a) iget-object          v0, v0, Lcom/unlocker/purchase/c$4;->b Lcom/unlocker/purchase/c;
+	12      (0000002e) const-string         v1, 'tryConsume.consume'
+	13      (00000032) const-string         v2, 'manager is stopped'
+	14      (00000036) invoke-static        v0, v1, v2, Lcom/unlocker/purchase/c;->a(Lcom/unlocker/purchase/c; Ljava/lang/String; Ljava/lang/String;)V
+	15      (0000003c) iget-object          v0, v6, Lcom/unlocker/purchase/c$4$1;->a Lcom/unlocker/purchase/c$4;
+	16      (00000040) iget-object          v0, v0, Lcom/unlocker/purchase/c$4;->a Lcom/unlocker/b;
+	17      (00000044) invoke-static        v4, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	18      (0000004a) move-result-object   v1
+	19      (0000004c) invoke-interface     v0, v1, v4, Lcom/unlocker/b;->a(Ljava/lang/Object; Z)V
+
+a-BB@0x52 : 
+	20      (00000052) return-void          
+
+a-BB@0x54 : [ a-BB@0xb2 a-BB@0xc8 ]
+	21      (00000054) const-string         v0, 'UNLOCKER-PurchManager'
+	22      (00000058) const-string         v1, 'Purchase consumption success:%s; message:%s; code: %d'
+	23      (0000005c) const/4              v2, 3
+	24      (0000005e) new-array            v2, v2, [Ljava/lang/Object;
+	25      (00000062) invoke-virtual       v8, Lcom/unlocker/billing/b;->c()Z
+	26      (00000068) move-result          v3
+	27      (0000006a) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	28      (00000070) move-result-object   v3
+	29      (00000072) aput-object          v3, v2, v4
+	30      (00000076) invoke-virtual       v8, Lcom/unlocker/billing/b;->b()Ljava/lang/String;
+	31      (0000007c) move-result-object   v3
+	32      (0000007e) aput-object          v3, v2, v5
+	33      (00000082) const/4              v3, 2
+	34      (00000084) invoke-virtual       v8, Lcom/unlocker/billing/b;->a()I
+	35      (0000008a) move-result          v4
+	36      (0000008c) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	37      (00000092) move-result-object   v4
+	38      (00000094) aput-object          v4, v2, v3
+	39      (00000098) invoke-static        v1, v2, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	40      (0000009e) move-result-object   v1
+	41      (000000a0) invoke-static        v0, v1, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	42      (000000a6) invoke-virtual       v8, Lcom/unlocker/billing/b;->c()Z
+	43      (000000ac) move-result          v0
+	44      (000000ae) if-nez               v0, +d
+
+a-BB@0xb2 : [ a-BB@0xc8 ]
+	45      (000000b2) iget-object          v0, v6, Lcom/unlocker/purchase/c$4$1;->a Lcom/unlocker/purchase/c$4;
+	46      (000000b6) iget-object          v0, v0, Lcom/unlocker/purchase/c$4;->b Lcom/unlocker/purchase/c;
+	47      (000000ba) const-string         v1, 'tryConsume.consume'
+	48      (000000be) const-string         v2, 'failed to consume'
+	49      (000000c2) invoke-static        v0, v1, v2, Lcom/unlocker/purchase/c;->a(Lcom/unlocker/purchase/c; Ljava/lang/String; Ljava/lang/String;)V
+
+a-BB@0xc8 : [ a-BB@0x52 ]
+	50      (000000c8) iget-object          v0, v6, Lcom/unlocker/purchase/c$4$1;->a Lcom/unlocker/purchase/c$4;
+	51      (000000cc) iget-object          v0, v0, Lcom/unlocker/purchase/c$4;->a Lcom/unlocker/b;
+	52      (000000d0) invoke-virtual       v8, Lcom/unlocker/billing/b;->c()Z
+	53      (000000d6) move-result          v1
+	54      (000000d8) invoke-static        v1, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	55      (000000de) move-result-object   v1
+	56      (000000e0) invoke-interface     v0, v1, v5, Lcom/unlocker/b;->a(Ljava/lang/Object; Z)V
+	57      (000000e6) goto                 -4a
+

@@ -1,0 +1,70 @@
+digraph {
+	graph [bb="0,0,766,445",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_017e3d1ae7b703de70ab8bc26e9d75cb {
+		graph [bb="8,8,758,437",
+			label="Lorg/apache/commons/lang/BitField;.<init>->(I)V\nLocal registers v0 ... v2\nparam v3 = int\nreturn = void",
+			lheight=0.83,
+			lp="383,403",
+			lwidth=4.47
+		];
+		struct_7688c9b008feab0c7548540e09d54acd	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/Object;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/BitField;-&gt;_mask I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xb</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="366,304.5",
+			width=6.2222];
+		struct_d15c78f8fdaf22128b8ad8fecac10aa1	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">and-int/lit8 </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7272CC">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="138,177.5",
+			width=3.0694];
+		struct_7688c9b008feab0c7548540e09d54acd:tail -> struct_d15c78f8fdaf22128b8ad8fecac10aa1:header	[color=red,
+			pos="e,53,205.5 152,256.5 106.08,256.5 60.155,255.2 53.757,215.5"];
+		struct_eae06a6dcedd28cc89400585bc27dbcc	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/BitField;-&gt;_shift_count I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="502,61.5",
+			width=6.875];
+		struct_7688c9b008feab0c7548540e09d54acd:tail -> struct_eae06a6dcedd28cc89400585bc27dbcc:header	[color=green,
+			pos="e,280,89.5 163,253.5 163,207.42 229.45,248.16 258,212 290.13,171.3 281.35,147.86 280.13,99.514"];
+		struct_36f6acd726ea106e648df2a6b699ae19	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">shr-int/lit8 </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="126,61.5",
+			width=3.0556];
+		struct_d15c78f8fdaf22128b8ad8fecac10aa1:tail -> struct_36f6acd726ea106e648df2a6b699ae19:header	[color=red,
+			pos="e,41,100.5 53,148.5 53,130.46 44.925,124.51 42.023,110.82"];
+		struct_d15c78f8fdaf22128b8ad8fecac10aa1:tail -> struct_eae06a6dcedd28cc89400585bc27dbcc:header	[color=green,
+			pos="e,265,86.5 53,148.5 53,61.196 168.61,149.26 245,107 251.96,103.15 253.06,96.104 256.01,91.362"];
+		struct_36f6acd726ea106e648df2a6b699ae19:tail -> struct_d15c78f8fdaf22128b8ad8fecac10aa1:header	[color=blue,
+			pos="e,53,205.5 41,21.5 41,10.38 23.704,14.481 16,22.5 -10.02,49.581 13.797,69.509 16,107 18.56,150.56 -4.5363,174.88 27.5,204.5 32.184,\
+208.83 39.667,212.2 45.318,212.29"];
+	}
+}

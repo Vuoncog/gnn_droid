@@ -1,0 +1,26 @@
+# Lcom/jgamelbe/CMP/a;->onPageStarted(Landroid/webkit/WebView; Ljava/lang/String; Landroid/graphics/Bitmap;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.webkit.WebView
+# - v4:java.lang.String
+# - v5:android.graphics.Bitmap
+#
+# - return:void
+
+onPageStarted-BB@0x0 : [ onPageStarted-BB@0x10 onPageStarted-BB@0x24 ]
+	0       (00000000) iget-object          v0, v2, Lcom/jgamelbe/CMP/a;->a Lcom/jgamelbe/CMP/AdPushActivity;
+	1       (00000004) invoke-static        v0, Lcom/jgamelbe/CMP/AdPushActivity;->a(Lcom/jgamelbe/CMP/AdPushActivity;)Landroid/widget/ProgressBar;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +c
+
+onPageStarted-BB@0x10 : [ onPageStarted-BB@0x24 ]
+	4       (00000010) iget-object          v0, v2, Lcom/jgamelbe/CMP/a;->a Lcom/jgamelbe/CMP/AdPushActivity;
+	5       (00000014) invoke-static        v0, Lcom/jgamelbe/CMP/AdPushActivity;->a(Lcom/jgamelbe/CMP/AdPushActivity;)Landroid/widget/ProgressBar;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) const/4              v1, 0
+	8       (0000001e) invoke-virtual       v0, v1, Landroid/widget/ProgressBar;->setVisibility(I)V
+
+onPageStarted-BB@0x24 : 
+	9       (00000024) return-void          
+

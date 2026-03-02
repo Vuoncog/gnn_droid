@@ -1,0 +1,42 @@
+# Lcom/crashlytics/android/core/NativeCrashWriter;->createThreadsMessage([Lcom/crashlytics/android/core/internal/models/ThreadData;)Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:com.crashlytics.android.core.internal.models.ThreadData[]
+#
+# - return:com.crashlytics.android.core.NativeCrashWriter$RepeatedMessage
+
+createThreadsMessage-BB@0x0 : [ createThreadsMessage-BB@0x4 createThreadsMessage-BB@0x36 ]
+	0       (00000000) if-eqz               v5, +1b
+
+createThreadsMessage-BB@0x4 : [ createThreadsMessage-BB@0xa ]
+	1       (00000004) array-length         v0, v5
+	2       (00000006) new-array            v0, v0, [Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;
+
+createThreadsMessage-BB@0xa : [ createThreadsMessage-BB@0xc ]
+	3       (0000000a) const/4              v1, 0
+
+createThreadsMessage-BB@0xc : [ createThreadsMessage-BB@0x12 createThreadsMessage-BB@0x3c ]
+	4       (0000000c) array-length         v2, v0
+	5       (0000000e) if-ge                v1, v2, +17
+
+createThreadsMessage-BB@0x12 : [ createThreadsMessage-BB@0xc ]
+	6       (00000012) aget-object          v2, v5, v1
+	7       (00000016) new-instance         v3, Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;
+	8       (0000001a) iget-object          v4, v2, Lcom/crashlytics/android/core/internal/models/ThreadData;->frames [Lcom/crashlytics/android/core/internal/models/ThreadData$FrameData;
+	9       (0000001e) invoke-static        v4, Lcom/crashlytics/android/core/NativeCrashWriter;->createFramesMessage([Lcom/crashlytics/android/core/internal/models/ThreadData$FrameData;)Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;
+	10      (00000024) move-result-object   v4
+	11      (00000026) invoke-direct        v3, v2, v4, Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;-><init>(Lcom/crashlytics/android/core/internal/models/ThreadData; Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;)V
+	12      (0000002c) aput-object          v3, v0, v1
+	13      (00000030) add-int/lit8         v1, v1, 1
+	14      (00000034) goto                 -14
+
+createThreadsMessage-BB@0x36 : [ createThreadsMessage-BB@0xa ]
+	15      (00000036) sget-object          v0, Lcom/crashlytics/android/core/NativeCrashWriter;->EMPTY_THREAD_MESSAGES [Lcom/crashlytics/android/core/NativeCrashWriter$ThreadMessage;
+	16      (0000003a) goto                 -18
+
+createThreadsMessage-BB@0x3c : 
+	17      (0000003c) new-instance         v1, Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;
+	18      (00000040) invoke-direct        v1, v0, Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;-><init>([Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;)V
+	19      (00000046) return-object        v1
+

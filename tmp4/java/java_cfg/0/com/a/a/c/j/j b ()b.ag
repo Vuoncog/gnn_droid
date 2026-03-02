@@ -1,0 +1,66 @@
+# Lcom/a/a/c/j;->b()Lcom/a/a/c/b; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:com.a.a.c.b
+
+b-BB@0x0 : [ b-BB@0xc b-BB@0x12 ]
+	0       (00000000) const/16             v1, 40
+	1       (00000004) iget-object          v0, v7, Lcom/a/a/c/j;->a Lcom/a/a/c/b;
+	2       (00000008) if-eqz               v0, +5
+
+b-BB@0xc : [ b-BB@0x10 ]
+	3       (0000000c) iget-object          v0, v7, Lcom/a/a/c/j;->a Lcom/a/a/c/b;
+
+b-BB@0x10 : 
+	4       (00000010) return-object        v0
+
+b-BB@0x12 : [ b-BB@0x2e b-BB@0x7c ]
+	5       (00000012) invoke-virtual       v7, Lcom/a/a/c/j;->a()Lcom/a/a/i;
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-virtual       v0, Lcom/a/a/i;->b()I
+	8       (00000020) move-result          v3
+	9       (00000022) invoke-virtual       v0, Lcom/a/a/i;->c()I
+	10      (00000028) move-result          v4
+	11      (0000002a) if-lt                v3, v1, +29
+
+b-BB@0x2e : [ b-BB@0x32 b-BB@0x7c ]
+	12      (0000002e) if-lt                v4, v1, +27
+
+b-BB@0x32 : [ b-BB@0x46 b-BB@0x4a ]
+	13      (00000032) invoke-virtual       v0, Lcom/a/a/i;->a()[B
+	14      (00000038) move-result-object   v0
+	15      (0000003a) shr-int/lit8         v1, v3, 3
+	16      (0000003e) and-int/lit8         v2, v3, 7
+	17      (00000042) if-eqz               v2, +4
+
+b-BB@0x46 : [ b-BB@0x4a ]
+	18      (00000046) add-int/lit8         v1, v1, 1
+
+b-BB@0x4a : [ b-BB@0x56 b-BB@0x5a ]
+	19      (0000004a) shr-int/lit8         v2, v4, 3
+	20      (0000004e) and-int/lit8         v5, v4, 7
+	21      (00000052) if-eqz               v5, +4
+
+b-BB@0x56 : [ b-BB@0x5a ]
+	22      (00000056) add-int/lit8         v2, v2, 1
+
+b-BB@0x5a : [ b-BB@0x76 ]
+	23      (0000005a) invoke-static        v0, v1, v2, v3, v4, Lcom/a/a/c/j;->a([B I I I I)[[I
+	24      (00000060) move-result-object   v5
+	25      (00000062) new-instance         v6, Lcom/a/a/c/b;
+	26      (00000066) invoke-direct        v6, v3, v4, Lcom/a/a/c/b;-><init>(I I)V
+	27      (0000006c) invoke-static/range  v0 ... v6, Lcom/a/a/c/j;->a([B I I I I [[I Lcom/a/a/c/b;)V
+	28      (00000072) iput-object          v6, v7, Lcom/a/a/c/j;->a Lcom/a/a/c/b;
+
+b-BB@0x76 : [ b-BB@0x10 ]
+	29      (00000076) iget-object          v0, v7, Lcom/a/a/c/j;->a Lcom/a/a/c/b;
+	30      (0000007a) goto                 -35
+
+b-BB@0x7c : [ b-BB@0x76 ]
+	31      (0000007c) invoke-super         v7, Lcom/a/a/c/h;->b()Lcom/a/a/c/b;
+	32      (00000082) move-result-object   v0
+	33      (00000084) iput-object          v0, v7, Lcom/a/a/c/j;->a Lcom/a/a/c/b;
+	34      (00000088) goto                 -9
+

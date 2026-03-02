@@ -1,0 +1,88 @@
+# Lorg/apache/commons/io/filefilter/MagicNumberFileFilter;->accept(Ljava/io/File;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.io.File
+#
+# - return:boolean
+
+accept-BB@0x0 : [ accept-BB@0x6 accept-BB@0x5a ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-eqz               v7, +2c
+
+accept-BB@0x6 : [ accept-BB@0x12 accept-BB@0x5a ]
+	2       (00000006) invoke-virtual       v7, Ljava/io/File;->isFile()Z
+	3       (0000000c) move-result          v1
+	4       (0000000e) if-eqz               v1, +26
+
+accept-BB@0x12 : [ accept-BB@0x1e accept-BB@0x5a ]
+	5       (00000012) invoke-virtual       v7, Ljava/io/File;->canRead()Z
+	6       (00000018) move-result          v1
+	7       (0000001a) if-eqz               v1, +20
+
+accept-BB@0x1e : [ accept-BB@0x20 ]
+	8       (0000001e) const/4              v2, 0
+
+accept-BB@0x20 : [ accept-BB@0x38 ]
+	9       (00000020) iget-object          v1, v6, Lorg/apache/commons/io/filefilter/MagicNumberFileFilter;->magicNumbers [B
+	10      (00000024) array-length         v1, v1
+	11      (00000026) new-array            v3, v1, [B
+	12      (0000002a) new-instance         v1, Ljava/io/RandomAccessFile;
+	13      (0000002e) const-string         v4, 'r'
+	14      (00000032) invoke-direct        v1, v7, v4, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	20:37
+	(Ljava/lang/Throwable; -> 7c accept-BB@0x7c)
+	(Ljava/io/IOException; -> 70 accept-BB@0x70)
+
+accept-BB@0x38 : [ accept-BB@0x54 accept-BB@0x5c ]
+	15      (00000038) iget-wide            v4, v6, Lorg/apache/commons/io/filefilter/MagicNumberFileFilter;->byteOffset J
+	16      (0000003c) invoke-virtual       v1, v4, v5, Ljava/io/RandomAccessFile;->seek(J)V
+	17      (00000042) invoke-virtual       v1, v3, Ljava/io/RandomAccessFile;->read([B)I
+	18      (00000048) move-result          v2
+	19      (0000004a) iget-object          v4, v6, Lorg/apache/commons/io/filefilter/MagicNumberFileFilter;->magicNumbers [B
+	20      (0000004e) array-length         v4, v4
+	21      (00000050) if-eq                v2, v4, +6
+	38:4f
+	(Ljava/lang/Throwable; -> 88 accept-BB@0x88)
+	(Ljava/io/IOException; -> 8c accept-BB@0x8c)
+
+accept-BB@0x54 : [ accept-BB@0x5a ]
+	22      (00000054) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+
+accept-BB@0x5a : 
+	23      (0000005a) return               v0
+
+accept-BB@0x5c : [ accept-BB@0x5a ]
+	24      (0000005c) iget-object          v2, v6, Lorg/apache/commons/io/filefilter/MagicNumberFileFilter;->magicNumbers [B
+	25      (00000060) invoke-static        v2, v3, Ljava/util/Arrays;->equals([B [B)Z
+	26      (00000066) move-result          v0
+	27      (00000068) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	28      (0000006e) goto                 -a
+	5c:65
+	(Ljava/lang/Throwable; -> 88 accept-BB@0x88)
+	(Ljava/io/IOException; -> 8c accept-BB@0x8c)
+
+accept-BB@0x70 : [ accept-BB@0x74 ]
+	29      (00000070) move-exception       v1
+	30      (00000072) move-object          v1, v2
+
+accept-BB@0x74 : [ accept-BB@0x5a ]
+	31      (00000074) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	32      (0000007a) goto                 -10
+
+accept-BB@0x7c : [ accept-BB@0x80 ]
+	33      (0000007c) move-exception       v0
+	34      (0000007e) move-object          v1, v2
+
+accept-BB@0x80 : 
+	35      (00000080) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Closeable;)V
+	36      (00000086) throw                v0
+
+accept-BB@0x88 : [ accept-BB@0x80 ]
+	37      (00000088) move-exception       v0
+	38      (0000008a) goto                 -5
+
+accept-BB@0x8c : [ accept-BB@0x74 ]
+	39      (0000008c) move-exception       v2
+	40      (0000008e) goto                 -d
+

@@ -1,0 +1,25 @@
+# Lorg/apache/commons/lang/Entities;->unescape(Ljava/io/Writer; Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.Writer
+# - v3:java.lang.String
+#
+# - return:void
+
+unescape-BB@0x0 : [ unescape-BB@0x10 unescape-BB@0x18 ]
+	0       (00000000) const/16             v0, 38
+	1       (00000004) invoke-virtual       v3, v0, Ljava/lang/String;->indexOf(I)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-gez               v0, +6
+
+unescape-BB@0x10 : [ unescape-BB@0x16 ]
+	4       (00000010) invoke-virtual       v2, v3, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+unescape-BB@0x16 : 
+	5       (00000016) return-void          
+
+unescape-BB@0x18 : [ unescape-BB@0x16 ]
+	6       (00000018) invoke-direct        v1, v2, v3, v0, Lorg/apache/commons/lang/Entities;->doUnescape(Ljava/io/Writer; Ljava/lang/String; I)V
+	7       (0000001e) goto                 -4
+

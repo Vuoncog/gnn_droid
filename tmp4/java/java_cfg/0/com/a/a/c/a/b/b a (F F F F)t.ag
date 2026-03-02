@@ -1,0 +1,60 @@
+# Lcom/a/a/c/a/b;->a(F F F F)Lcom/a/a/t; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:float
+# - v9:float
+# - v10:float
+# - v11:float
+#
+# - return:com.a.a.t
+
+a-BB@0x0 : [ a-BB@0x26 ]
+	0       (00000000) invoke-static        v8, v9, v10, v11, Lcom/a/a/c/a/a;->a(F F F F)F
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-static        v0, Lcom/a/a/c/a/a;->a(F)I
+	3       (0000000e) move-result          v1
+	4       (00000010) sub-float            v0, v10, v8
+	5       (00000014) int-to-float         v2, v1
+	6       (00000016) div-float            v2, v0, v2
+	7       (0000001a) sub-float            v0, v11, v9
+	8       (0000001e) int-to-float         v3, v1
+	9       (00000020) div-float            v3, v0, v3
+	10      (00000024) const/4              v0, 0
+
+a-BB@0x26 : [ a-BB@0x2a a-BB@0x6c ]
+	11      (00000026) if-ge                v0, v1, +23
+
+a-BB@0x2a : [ a-BB@0x56 a-BB@0x66 ]
+	12      (0000002a) int-to-float         v4, v0
+	13      (0000002c) mul-float/2addr      v4, v2
+	14      (0000002e) add-float/2addr      v4, v8
+	15      (00000030) invoke-static        v4, Lcom/a/a/c/a/a;->a(F)I
+	16      (00000036) move-result          v4
+	17      (00000038) int-to-float         v5, v0
+	18      (0000003a) mul-float/2addr      v5, v3
+	19      (0000003c) add-float/2addr      v5, v9
+	20      (0000003e) invoke-static        v5, Lcom/a/a/c/a/a;->a(F)I
+	21      (00000044) move-result          v5
+	22      (00000046) iget-object          v6, v7, Lcom/a/a/c/a/b;->a Lcom/a/a/c/b;
+	23      (0000004a) invoke-virtual       v6, v4, v5, Lcom/a/a/c/b;->a(I I)Z
+	24      (00000050) move-result          v6
+	25      (00000052) if-eqz               v6, +a
+
+a-BB@0x56 : [ a-BB@0x64 ]
+	26      (00000056) new-instance         v0, Lcom/a/a/t;
+	27      (0000005a) int-to-float         v1, v4
+	28      (0000005c) int-to-float         v2, v5
+	29      (0000005e) invoke-direct        v0, v1, v2, Lcom/a/a/t;-><init>(F F)V
+
+a-BB@0x64 : 
+	30      (00000064) return-object        v0
+
+a-BB@0x66 : [ a-BB@0x26 ]
+	31      (00000066) add-int/lit8         v0, v0, 1
+	32      (0000006a) goto                 -22
+
+a-BB@0x6c : [ a-BB@0x64 ]
+	33      (0000006c) const/4              v0, 0
+	34      (0000006e) goto                 -5
+

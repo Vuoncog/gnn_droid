@@ -1,0 +1,24 @@
+# Lcom/jgamelbe/CMP/c/b;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x8 <clinit>-BB@0x18 ]
+	0       (00000000) const-string         v0, '----->'
+	1       (00000004) if-nez               v0, +a
+
+<clinit>-BB@0x8 : [ <clinit>-BB@0xc ]
+	2       (00000008) const-string         v0, 'MyCpaInstallCollector'
+
+<clinit>-BB@0xc : 
+	3       (0000000c) sput-object          v0, Lcom/jgamelbe/CMP/c/b;->a Ljava/lang/String;
+	4       (00000010) const/4              v0, 0
+	5       (00000012) sput-object          v0, Lcom/jgamelbe/CMP/c/b;->d Lcom/jgamelbe/CMP/c/b;
+	6       (00000016) return-void          
+
+<clinit>-BB@0x18 : [ <clinit>-BB@0xc ]
+	7       (00000018) const-string         v0, '----->'
+	8       (0000001c) goto                 -8
+

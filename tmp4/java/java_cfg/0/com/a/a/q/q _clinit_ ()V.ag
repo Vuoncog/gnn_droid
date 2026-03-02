@@ -1,0 +1,27 @@
+# Lcom/a/a/q;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x12 <clinit>-BB@0x22 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) const-string         v0, 'surefire.test.class.path'
+	2       (00000006) invoke-static        v0, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) if-eqz               v0, +a
+
+<clinit>-BB@0x12 : [ <clinit>-BB@0x14 ]
+	5       (00000012) const/4              v0, 1
+
+<clinit>-BB@0x14 : 
+	6       (00000014) sput-boolean         v0, Lcom/a/a/q;->a Z
+	7       (00000018) new-array            v0, v1, [Ljava/lang/StackTraceElement;
+	8       (0000001c) sput-object          v0, Lcom/a/a/q;->b [Ljava/lang/StackTraceElement;
+	9       (00000020) return-void          
+
+<clinit>-BB@0x22 : [ <clinit>-BB@0x14 ]
+	10      (00000022) move                 v0, v1
+	11      (00000024) goto                 -8
+

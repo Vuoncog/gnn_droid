@@ -1,0 +1,17 @@
+# Lio/fabric/sdk/android/services/persistence/PreferenceStoreStrategy;->clear()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+clear-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lio/fabric/sdk/android/services/persistence/PreferenceStoreStrategy;->store Lio/fabric/sdk/android/services/persistence/PreferenceStore;
+	1       (00000004) invoke-interface     v0, Lio/fabric/sdk/android/services/persistence/PreferenceStore;->edit()Landroid/content/SharedPreferences$Editor;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) iget-object          v1, v2, Lio/fabric/sdk/android/services/persistence/PreferenceStoreStrategy;->key Ljava/lang/String;
+	4       (00000010) invoke-interface     v0, v1, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-interface     v0, Landroid/content/SharedPreferences$Editor;->commit()Z
+	7       (0000001e) return-void          
+

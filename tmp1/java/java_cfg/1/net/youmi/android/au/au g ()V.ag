@@ -1,0 +1,271 @@
+# Lnet/youmi/android/au;->g()V [access_flags=private final]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:void
+
+g-BB@0x0 : [ g-BB@0xb4 g-BB@0xc4 ]
+	0       (00000000) const/4              v6, 2
+	1       (00000002) const/4              v4, 3
+	2       (00000004) const/4              v3, 0
+	3       (00000006) const/4              v5, 1
+	4       (00000008) const-string         v0, ''
+	5       (0000000c) new-instance         v1, Ljava/lang/StringBuilder;
+	6       (00000010) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	7       (00000016) move-result-object   v0
+	8       (00000018) invoke-direct        v1, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	9       (0000001e) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	10      (00000022) iget                 v2, v7, Lnet/youmi/android/au;->b I
+	11      (00000026) aget-byte            v0, v0, v2
+	12      (0000002a) int-to-char          v0, v0
+	13      (0000002c) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	14      (00000032) move-result-object   v0
+	15      (00000034) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	16      (0000003a) move-result-object   v0
+	17      (0000003c) new-instance         v1, Ljava/lang/StringBuilder;
+	18      (00000040) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	19      (00000046) move-result-object   v0
+	20      (00000048) invoke-direct        v1, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	21      (0000004e) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	22      (00000052) iget                 v2, v7, Lnet/youmi/android/au;->b I
+	23      (00000056) add-int/lit8         v2, v2, 1
+	24      (0000005a) aget-byte            v0, v0, v2
+	25      (0000005e) int-to-char          v0, v0
+	26      (00000060) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	27      (00000066) move-result-object   v0
+	28      (00000068) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	29      (0000006e) move-result-object   v0
+	30      (00000070) new-instance         v1, Ljava/lang/StringBuilder;
+	31      (00000074) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	32      (0000007a) move-result-object   v0
+	33      (0000007c) invoke-direct        v1, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	34      (00000082) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	35      (00000086) iget                 v2, v7, Lnet/youmi/android/au;->b I
+	36      (0000008a) add-int/lit8         v2, v2, 2
+	37      (0000008e) aget-byte            v0, v0, v2
+	38      (00000092) int-to-char          v0, v0
+	39      (00000094) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	40      (0000009a) move-result-object   v0
+	41      (0000009c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	42      (000000a2) move-result-object   v0
+	43      (000000a4) const-string         v1, 'GIF'
+	44      (000000a8) invoke-virtual       v0, v1, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	45      (000000ae) move-result          v0
+	46      (000000b0) if-nez               v0, +a
+
+g-BB@0xb4 : 
+	47      (000000b4) new-instance         v0, Ljava/io/IOException;
+	48      (000000b8) const-string         v1, 'this is not a gif image'
+	49      (000000bc) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	50      (000000c2) throw                v0
+
+g-BB@0xc4 : [ g-BB@0x174 g-BB@0x194 ]
+	51      (000000c4) const-string         v0, ''
+	52      (000000c8) new-instance         v1, Ljava/lang/StringBuilder;
+	53      (000000cc) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	54      (000000d2) move-result-object   v0
+	55      (000000d4) invoke-direct        v1, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	56      (000000da) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	57      (000000de) iget                 v2, v7, Lnet/youmi/android/au;->b I
+	58      (000000e2) add-int/lit8         v2, v2, 3
+	59      (000000e6) aget-byte            v0, v0, v2
+	60      (000000ea) int-to-char          v0, v0
+	61      (000000ec) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	62      (000000f2) move-result-object   v0
+	63      (000000f4) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	64      (000000fa) move-result-object   v0
+	65      (000000fc) new-instance         v1, Ljava/lang/StringBuilder;
+	66      (00000100) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	67      (00000106) move-result-object   v0
+	68      (00000108) invoke-direct        v1, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	69      (0000010e) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	70      (00000112) iget                 v2, v7, Lnet/youmi/android/au;->b I
+	71      (00000116) add-int/lit8         v2, v2, 4
+	72      (0000011a) aget-byte            v0, v0, v2
+	73      (0000011e) int-to-char          v0, v0
+	74      (00000120) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	75      (00000126) move-result-object   v0
+	76      (00000128) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	77      (0000012e) move-result-object   v0
+	78      (00000130) new-instance         v1, Ljava/lang/StringBuilder;
+	79      (00000134) invoke-static        v0, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	80      (0000013a) move-result-object   v0
+	81      (0000013c) invoke-direct        v1, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	82      (00000142) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	83      (00000146) iget                 v2, v7, Lnet/youmi/android/au;->b I
+	84      (0000014a) add-int/lit8         v2, v2, 5
+	85      (0000014e) aget-byte            v0, v0, v2
+	86      (00000152) int-to-char          v0, v0
+	87      (00000154) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	88      (0000015a) move-result-object   v0
+	89      (0000015c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	90      (00000162) move-result-object   v0
+	91      (00000164) const-string         v1, '87a'
+	92      (00000168) invoke-virtual       v0, v1, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	93      (0000016e) move-result          v1
+	94      (00000170) if-nez               v1, +12
+
+g-BB@0x174 : [ g-BB@0x184 g-BB@0x194 ]
+	95      (00000174) const-string         v1, '89a'
+	96      (00000178) invoke-virtual       v0, v1, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	97      (0000017e) move-result          v0
+	98      (00000180) if-nez               v0, +a
+
+g-BB@0x184 : 
+	99      (00000184) new-instance         v0, Ljava/io/IOException;
+	100     (00000188) const-string         v1, 'this is not a gif image'
+	101     (0000018c) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	102     (00000192) throw                v0
+
+g-BB@0x194 : [ g-BB@0x284 g-BB@0x2cc ]
+	103     (00000194) iget                 v0, v7, Lnet/youmi/android/au;->b I
+	104     (00000198) add-int/lit8         v0, v0, 6
+	105     (0000019c) iput                 v0, v7, Lnet/youmi/android/au;->b I
+	106     (000001a0) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	107     (000001a4) iget                 v1, v7, Lnet/youmi/android/au;->b I
+	108     (000001a8) invoke-static        v0, v1, v6, Lnet/youmi/android/u;->a([B I I)I
+	109     (000001ae) move-result          v0
+	110     (000001b0) iput                 v0, v7, Lnet/youmi/android/au;->c I
+	111     (000001b4) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	112     (000001b8) iget                 v1, v7, Lnet/youmi/android/au;->b I
+	113     (000001bc) add-int/lit8         v1, v1, 2
+	114     (000001c0) invoke-static        v0, v1, v6, Lnet/youmi/android/u;->a([B I I)I
+	115     (000001c6) move-result          v0
+	116     (000001c8) iput                 v0, v7, Lnet/youmi/android/au;->d I
+	117     (000001cc) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	118     (000001d0) iget                 v1, v7, Lnet/youmi/android/au;->b I
+	119     (000001d4) add-int/lit8         v1, v1, 4
+	120     (000001d8) aget-byte            v0, v0, v1
+	121     (000001dc) const/4              v1, 7
+	122     (000001de) invoke-static        v0, v1, v5, Lnet/youmi/android/u;->a(B I I)I
+	123     (000001e4) move-result          v0
+	124     (000001e6) iput                 v0, v7, Lnet/youmi/android/au;->e I
+	125     (000001ea) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	126     (000001ee) iget                 v1, v7, Lnet/youmi/android/au;->b I
+	127     (000001f2) add-int/lit8         v1, v1, 4
+	128     (000001f6) aget-byte            v0, v0, v1
+	129     (000001fa) const/4              v1, 4
+	130     (000001fc) invoke-static        v0, v1, v4, Lnet/youmi/android/u;->a(B I I)I
+	131     (00000202) move-result          v0
+	132     (00000204) iput                 v0, v7, Lnet/youmi/android/au;->f I
+	133     (00000208) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	134     (0000020c) iget                 v1, v7, Lnet/youmi/android/au;->b I
+	135     (00000210) add-int/lit8         v1, v1, 4
+	136     (00000214) aget-byte            v0, v0, v1
+	137     (00000218) invoke-static        v0, v4, v5, Lnet/youmi/android/u;->a(B I I)I
+	138     (0000021e) move-result          v0
+	139     (00000220) iput                 v0, v7, Lnet/youmi/android/au;->g I
+	140     (00000224) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	141     (00000228) iget                 v1, v7, Lnet/youmi/android/au;->b I
+	142     (0000022c) add-int/lit8         v1, v1, 4
+	143     (00000230) aget-byte            v0, v0, v1
+	144     (00000234) invoke-static        v0, v3, v4, Lnet/youmi/android/u;->a(B I I)I
+	145     (0000023a) move-result          v0
+	146     (0000023c) iput                 v0, v7, Lnet/youmi/android/au;->h I
+	147     (00000240) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	148     (00000244) iget                 v1, v7, Lnet/youmi/android/au;->b I
+	149     (00000248) add-int/lit8         v1, v1, 5
+	150     (0000024c) aget-byte            v0, v0, v1
+	151     (00000250) and-int/lit16        v0, v0, 255
+	152     (00000254) iput                 v0, v7, Lnet/youmi/android/au;->i I
+	153     (00000258) iget-object          v0, v7, Lnet/youmi/android/au;->a [B
+	154     (0000025c) iget                 v1, v7, Lnet/youmi/android/au;->b I
+	155     (00000260) add-int/lit8         v1, v1, 6
+	156     (00000264) aget-byte            v0, v0, v1
+	157     (00000268) and-int/lit16        v0, v0, 255
+	158     (0000026c) iput                 v0, v7, Lnet/youmi/android/au;->k I
+	159     (00000270) iget                 v0, v7, Lnet/youmi/android/au;->b I
+	160     (00000274) add-int/lit8         v0, v0, 7
+	161     (00000278) iput                 v0, v7, Lnet/youmi/android/au;->b I
+	162     (0000027c) iget                 v0, v7, Lnet/youmi/android/au;->e I
+	163     (00000280) if-ne                v0, v5, +26
+
+g-BB@0x284 : [ g-BB@0x2cc ]
+	164     (00000284) iget                 v0, v7, Lnet/youmi/android/au;->b I
+	165     (00000288) iput                 v0, v7, Lnet/youmi/android/au;->m I
+	166     (0000028c) iget                 v0, v7, Lnet/youmi/android/au;->h I
+	167     (00000290) add-int/lit8         v0, v0, 1
+	168     (00000294) shl-int              v0, v5, v0
+	169     (00000298) iput                 v0, v7, Lnet/youmi/android/au;->l I
+	170     (0000029c) iget                 v0, v7, Lnet/youmi/android/au;->b I
+	171     (000002a0) iget                 v1, v7, Lnet/youmi/android/au;->l I
+	172     (000002a4) mul-int/lit8         v1, v1, 3
+	173     (000002a8) add-int/2addr        v0, v1
+	174     (000002aa) iput                 v0, v7, Lnet/youmi/android/au;->b I
+	175     (000002ae) iget                 v0, v7, Lnet/youmi/android/au;->m I
+	176     (000002b2) iget                 v1, v7, Lnet/youmi/android/au;->l I
+	177     (000002b6) invoke-direct        v7, v0, v1, Lnet/youmi/android/au;->a(I I)V
+	178     (000002bc) iget-object          v0, v7, Lnet/youmi/android/au;->v [I
+	179     (000002c0) iget                 v1, v7, Lnet/youmi/android/au;->i I
+	180     (000002c4) aget                 v0, v0, v1
+	181     (000002c8) iput                 v0, v7, Lnet/youmi/android/au;->j I
+
+g-BB@0x2cc : [ g-BB@0x2da ]
+	182     (000002cc) const/4              v0, 0
+	183     (000002ce) check-cast           v0, [I
+	184     (000002d2) iput                 v3, v7, Lnet/youmi/android/au;->n I
+	185     (000002d6) move-object          v1, v0
+	186     (000002d8) move                 v0, v3
+
+g-BB@0x2da : [ g-BB@0x2de g-BB@0x2e0 ]
+	187     (000002da) if-eqz               v0, +3
+
+g-BB@0x2de : 
+	188     (000002de) return-void          
+
+g-BB@0x2e0 : [ g-BB@0x2fe g-BB@0x2de ]
+	189     (000002e0) iget-object          v2, v7, Lnet/youmi/android/au;->a [B
+	190     (000002e4) iget                 v3, v7, Lnet/youmi/android/au;->b I
+	191     (000002e8) add-int/lit8         v4, v3, 1
+	192     (000002ec) iput                 v4, v7, Lnet/youmi/android/au;->b I
+	193     (000002f0) aget-byte            v2, v2, v3
+	194     (000002f4) and-int/lit16        v2, v2, 255
+	195     (000002f8) const/4              v3, -1
+	196     (000002fa) if-eq                v2, v3, -e
+
+g-BB@0x2fe : [ D:g-BB@0x304 33:g-BB@0x306 44:g-BB@0x32c 59:g-BB@0x362 ]
+	197     (000002fe) sparse-switch        v2, +35 (0x368)
+
+g-BB@0x304 : [ g-BB@0x2da ]
+	198     (00000304) goto                 -15
+
+g-BB@0x306 : [ D:g-BB@0x324 249:g-BB@0x358 ]
+	199     (00000306) iget-object          v2, v7, Lnet/youmi/android/au;->a [B
+	200     (0000030a) iget                 v3, v7, Lnet/youmi/android/au;->b I
+	201     (0000030e) add-int/lit8         v4, v3, 1
+	202     (00000312) iput                 v4, v7, Lnet/youmi/android/au;->b I
+	203     (00000316) aget-byte            v2, v2, v3
+	204     (0000031a) and-int/lit16        v2, v2, 255
+	205     (0000031e) packed-switch        v2, +33 (0x384)
+
+g-BB@0x324 : [ g-BB@0x2da ]
+	206     (00000324) invoke-direct        v7, Lnet/youmi/android/au;->h()V
+	207     (0000032a) goto                 -28
+
+g-BB@0x32c : [ g-BB@0x2da ]
+	208     (0000032c) new-instance         v2, Lnet/youmi/android/o;
+	209     (00000330) invoke-direct        v2, v7, Lnet/youmi/android/o;-><init>(Lnet/youmi/android/au;)V
+	210     (00000336) invoke-static        v2, Lnet/youmi/android/o;->a(Lnet/youmi/android/o;)V
+	211     (0000033c) iput-object          v1, v2, Lnet/youmi/android/o;->n [I
+	212     (00000340) iget-object          v3, v7, Lnet/youmi/android/au;->p Ljava/util/Vector;
+	213     (00000344) invoke-virtual       v3, v2, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
+	214     (0000034a) iget                 v2, v7, Lnet/youmi/android/au;->n I
+	215     (0000034e) add-int/lit8         v2, v2, 1
+	216     (00000352) iput                 v2, v7, Lnet/youmi/android/au;->n I
+	217     (00000356) goto                 -3e
+
+g-BB@0x358 : [ g-BB@0x2da ]
+	218     (00000358) invoke-direct        v7, Lnet/youmi/android/au;->i()[I
+	219     (0000035e) move-result-object   v1
+	220     (00000360) goto                 -43
+
+g-BB@0x362 : [ g-BB@0x2da ]
+	221     (00000362) move                 v0, v5
+	222     (00000364) goto                 -45
+
+g-BB@0x366 : 
+	223     (00000366) nop                  
+	224     (00000368) sparse-switch-payload 21 2c 3b
+	225     (00000384) packed-switch-payload f9
+

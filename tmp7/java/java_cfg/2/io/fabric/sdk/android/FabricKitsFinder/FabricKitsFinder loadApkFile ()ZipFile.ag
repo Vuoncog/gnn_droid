@@ -1,0 +1,13 @@
+# Lio/fabric/sdk/android/FabricKitsFinder;->loadApkFile()Ljava/util/zip/ZipFile; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.util.zip.ZipFile
+
+loadApkFile-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/zip/ZipFile;
+	1       (00000004) iget-object          v1, v2, Lio/fabric/sdk/android/FabricKitsFinder;->apkFileName Ljava/lang/String;
+	2       (00000008) invoke-direct        v0, v1, Ljava/util/zip/ZipFile;-><init>(Ljava/lang/String;)V
+	3       (0000000e) return-object        v0
+

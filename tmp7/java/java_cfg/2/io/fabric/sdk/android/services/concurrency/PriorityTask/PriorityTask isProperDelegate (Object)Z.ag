@@ -1,0 +1,44 @@
+# Lio/fabric/sdk/android/services/concurrency/PriorityTask;->isProperDelegate(Ljava/lang/Object;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object
+#
+# - return:boolean
+
+isProperDelegate-BB@0x0 : [ isProperDelegate-BB@0x2 ]
+	0       (00000000) const/4              v3, 0
+
+isProperDelegate-BB@0x2 : [ isProperDelegate-BB@0x1a isProperDelegate-BB@0x26 ]
+	1       (00000002) move-object          v0, v4
+	2       (00000004) check-cast           v0, Lio/fabric/sdk/android/services/concurrency/Dependency;
+	3       (00000008) move-object          v1, v0
+	4       (0000000a) move-object          v0, v4
+	5       (0000000c) check-cast           v0, Lio/fabric/sdk/android/services/concurrency/Task;
+	6       (00000010) move-object          v2, v0
+	7       (00000012) check-cast           v4, Lio/fabric/sdk/android/services/concurrency/PriorityProvider;
+	8       (00000016) if-eqz               v1, +8
+	2:15
+	(Ljava/lang/ClassCastException; -> 2a isProperDelegate-BB@0x2a)
+
+isProperDelegate-BB@0x1a : [ isProperDelegate-BB@0x1e isProperDelegate-BB@0x26 ]
+	9       (0000001a) if-eqz               v2, +6
+
+isProperDelegate-BB@0x1e : [ isProperDelegate-BB@0x22 isProperDelegate-BB@0x26 ]
+	10      (0000001e) if-eqz               v4, +4
+
+isProperDelegate-BB@0x22 : [ isProperDelegate-BB@0x24 ]
+	11      (00000022) const/4              v1, 1
+
+isProperDelegate-BB@0x24 : 
+	12      (00000024) return               v1
+
+isProperDelegate-BB@0x26 : [ isProperDelegate-BB@0x24 ]
+	13      (00000026) move                 v1, v3
+	14      (00000028) goto                 -2
+
+isProperDelegate-BB@0x2a : [ isProperDelegate-BB@0x24 ]
+	15      (0000002a) move-exception       v1
+	16      (0000002c) move                 v1, v3
+	17      (0000002e) goto                 -5
+

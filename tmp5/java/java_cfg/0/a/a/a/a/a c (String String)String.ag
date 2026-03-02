@@ -1,0 +1,23 @@
+# La/a/a/a;->c(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:java.lang.String
+#
+# - return:java.lang.String
+
+c-BB@0x0 : [ c-BB@0xc c-BB@0xe ]
+	0       (00000000) invoke-virtual       v2, v3, La/a/a/a;->b(Ljava/lang/String;)La/a/a/d;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-nez               v0, +3
+
+c-BB@0xc : 
+	3       (0000000c) return-object        v4
+
+c-BB@0xe : [ c-BB@0xc ]
+	4       (0000000e) iget-object          v0, v0, La/a/a/d;->b [Ljava/lang/String;
+	5       (00000012) const/4              v1, 0
+	6       (00000014) aget-object          v4, v0, v1
+	7       (00000018) goto                 -6
+

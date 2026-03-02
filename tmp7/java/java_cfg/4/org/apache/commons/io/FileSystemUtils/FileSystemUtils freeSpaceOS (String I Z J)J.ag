@@ -1,0 +1,75 @@
+# Lorg/apache/commons/io/FileSystemUtils;->freeSpaceOS(Ljava/lang/String; I Z J)J [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+# - v9:int
+# - v10:boolean
+# - v11:long
+#
+# - return:long
+
+freeSpaceOS-BB@0x0 : [ freeSpaceOS-BB@0x4 freeSpaceOS-BB@0x14 ]
+	0       (00000000) if-nez               v7, +a
+
+freeSpaceOS-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) const-string         v1, 'Path must not be empty'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+freeSpaceOS-BB@0x14 : [ D:freeSpaceOS-BB@0x1a 0:freeSpaceOS-BB@0x70 1:freeSpaceOS-BB@0x2a 2:freeSpaceOS-BB@0x48 3:freeSpaceOS-BB@0x5c ]
+	5       (00000014) packed-switch        v8, +36 (0x80)
+
+freeSpaceOS-BB@0x1a : 
+	6       (0000001a) new-instance         v0, Ljava/lang/IllegalStateException;
+	7       (0000001e) const-string         v1, 'Exception caught when determining operating system'
+	8       (00000022) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	9       (00000028) throw                v0
+
+freeSpaceOS-BB@0x2a : [ freeSpaceOS-BB@0x2e freeSpaceOS-BB@0x3e ]
+	10      (0000002a) if-eqz               v9, +a
+
+freeSpaceOS-BB@0x2e : [ freeSpaceOS-BB@0x3c ]
+	11      (0000002e) invoke-virtual       v6, v7, v10, v11, Lorg/apache/commons/io/FileSystemUtils;->freeSpaceWindows(Ljava/lang/String; J)J
+	12      (00000034) move-result-wide     v0
+	13      (00000036) const-wide/16        v2, 1024 # [1024.0]
+	14      (0000003a) div-long/2addr       v0, v2
+
+freeSpaceOS-BB@0x3c : 
+	15      (0000003c) return-wide          v0
+
+freeSpaceOS-BB@0x3e : [ freeSpaceOS-BB@0x3c ]
+	16      (0000003e) invoke-virtual       v6, v7, v10, v11, Lorg/apache/commons/io/FileSystemUtils;->freeSpaceWindows(Ljava/lang/String; J)J
+	17      (00000044) move-result-wide     v0
+	18      (00000046) goto                 -5
+
+freeSpaceOS-BB@0x48 : [ freeSpaceOS-BB@0x3c ]
+	19      (00000048) const/4              v3, 0
+	20      (0000004a) move-object          v0, v6
+	21      (0000004c) move-object          v1, v7
+	22      (0000004e) move                 v2, v9
+	23      (00000050) move-wide            v4, v10
+	24      (00000052) invoke-virtual/range v0 ... v5, Lorg/apache/commons/io/FileSystemUtils;->freeSpaceUnix(Ljava/lang/String; Z Z J)J
+	25      (00000058) move-result-wide     v0
+	26      (0000005a) goto                 -f
+
+freeSpaceOS-BB@0x5c : [ freeSpaceOS-BB@0x3c ]
+	27      (0000005c) const/4              v3, 1
+	28      (0000005e) move-object          v0, v6
+	29      (00000060) move-object          v1, v7
+	30      (00000062) move                 v2, v9
+	31      (00000064) move-wide            v4, v10
+	32      (00000066) invoke-virtual/range v0 ... v5, Lorg/apache/commons/io/FileSystemUtils;->freeSpaceUnix(Ljava/lang/String; Z Z J)J
+	33      (0000006c) move-result-wide     v0
+	34      (0000006e) goto                 -19
+
+freeSpaceOS-BB@0x70 : 
+	35      (00000070) new-instance         v0, Ljava/lang/IllegalStateException;
+	36      (00000074) const-string         v1, 'Unsupported operating system'
+	37      (00000078) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	38      (0000007e) throw                v0
+
+freeSpaceOS-BB@0x80 : 
+	39      (00000080) packed-switch-payload 0 1 2 3
+

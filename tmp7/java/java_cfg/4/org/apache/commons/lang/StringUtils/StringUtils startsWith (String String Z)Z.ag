@@ -1,0 +1,47 @@
+# Lorg/apache/commons/lang/StringUtils;->startsWith(Ljava/lang/String; Ljava/lang/String; Z)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+# - v7:java.lang.String
+# - v8:boolean
+#
+# - return:boolean
+
+startsWith-BB@0x0 : [ startsWith-BB@0x6 startsWith-BB@0xa ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) if-eqz               v6, +4
+
+startsWith-BB@0x6 : [ startsWith-BB@0xa startsWith-BB@0x16 ]
+	2       (00000006) if-nez               v7, +8
+
+startsWith-BB@0xa : [ startsWith-BB@0xe startsWith-BB@0x14 ]
+	3       (0000000a) if-nez               v6, +5
+
+startsWith-BB@0xe : [ startsWith-BB@0x12 startsWith-BB@0x14 ]
+	4       (0000000e) if-nez               v7, +3
+
+startsWith-BB@0x12 : [ startsWith-BB@0x14 ]
+	5       (00000012) const/4              v2, 1
+
+startsWith-BB@0x14 : 
+	6       (00000014) return               v2
+
+startsWith-BB@0x16 : [ startsWith-BB@0x2a startsWith-BB@0x14 ]
+	7       (00000016) invoke-virtual       v7, Ljava/lang/String;->length()I
+	8       (0000001c) move-result          v0
+	9       (0000001e) invoke-virtual       v6, Ljava/lang/String;->length()I
+	10      (00000024) move-result          v1
+	11      (00000026) if-gt                v0, v1, -9
+
+startsWith-BB@0x2a : [ startsWith-BB@0x14 ]
+	12      (0000002a) invoke-virtual       v7, Ljava/lang/String;->length()I
+	13      (00000030) move-result          v5
+	14      (00000032) move-object          v0, v6
+	15      (00000034) move                 v1, v8
+	16      (00000036) move-object          v3, v7
+	17      (00000038) move                 v4, v2
+	18      (0000003a) invoke-virtual/range v0 ... v5, Ljava/lang/String;->regionMatches(Z I Ljava/lang/String; I I)Z
+	19      (00000040) move-result          v2
+	20      (00000042) goto                 -17
+

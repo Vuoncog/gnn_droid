@@ -1,0 +1,32 @@
+# Lcom/a/a/g/a/a/a/f;->a()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x18 a-BB@0x22 ]
+	0       (00000000) invoke-virtual       v3, Lcom/a/a/g/a/a/a/f;->b()Lcom/a/a/c/a;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, Lcom/a/a/c/a;->a()I
+	3       (0000000e) move-result          v0
+	4       (00000010) const/16             v1, 60
+	5       (00000014) if-eq                v0, v1, +7
+
+a-BB@0x18 : 
+	6       (00000018) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) throw                v0
+
+a-BB@0x22 : 
+	9       (00000022) new-instance         v0, Ljava/lang/StringBuilder;
+	10      (00000026) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	11      (0000002c) const/4              v1, 5
+	12      (0000002e) invoke-virtual       v3, v0, v1, Lcom/a/a/g/a/a/a/f;->b(Ljava/lang/StringBuilder; I)V
+	13      (00000034) const/16             v1, 45
+	14      (00000038) const/16             v2, 15
+	15      (0000003c) invoke-virtual       v3, v0, v1, v2, Lcom/a/a/g/a/a/a/f;->b(Ljava/lang/StringBuilder; I I)V
+	16      (00000042) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) return-object        v0
+

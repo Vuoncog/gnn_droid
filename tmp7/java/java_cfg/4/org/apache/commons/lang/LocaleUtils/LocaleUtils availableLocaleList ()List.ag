@@ -1,0 +1,18 @@
+# Lorg/apache/commons/lang/LocaleUtils;->availableLocaleList()Ljava/util/List; [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:java.util.List
+
+availableLocaleList-BB@0x0 : [ availableLocaleList-BB@0x8 availableLocaleList-BB@0xe ]
+	0       (00000000) sget-object          v0, Lorg/apache/commons/lang/LocaleUtils;->cAvailableLocaleList Ljava/util/List;
+	1       (00000004) if-nez               v0, +5
+
+availableLocaleList-BB@0x8 : [ availableLocaleList-BB@0xe ]
+	2       (00000008) invoke-static        Lorg/apache/commons/lang/LocaleUtils;->initAvailableLocaleList()V
+
+availableLocaleList-BB@0xe : 
+	3       (0000000e) sget-object          v0, Lorg/apache/commons/lang/LocaleUtils;->cAvailableLocaleList Ljava/util/List;
+	4       (00000012) return-object        v0
+

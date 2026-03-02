@@ -1,0 +1,54 @@
+# Lcom/a/a/c/b/b;->a(I I)Lcom/a/a/c/b/b; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:int
+#
+# - return:com.a.a.c.b.b
+
+a-BB@0x0 : [ a-BB@0x4 a-BB@0x10 ]
+	0       (00000000) if-gez               v6, +8
+
+a-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) invoke-direct        v0, Ljava/lang/IllegalArgumentException;-><init>()V
+	3       (0000000e) throw                v0
+
+a-BB@0x10 : [ a-BB@0x14 a-BB@0x22 ]
+	4       (00000010) if-nez               v7, +9
+
+a-BB@0x14 : [ a-BB@0x20 ]
+	5       (00000014) iget-object          v0, v5, Lcom/a/a/c/b/b;->a Lcom/a/a/c/b/a;
+	6       (00000018) invoke-virtual       v0, Lcom/a/a/c/b/a;->a()Lcom/a/a/c/b/b;
+	7       (0000001e) move-result-object   v0
+
+a-BB@0x20 : 
+	8       (00000020) return-object        v0
+
+a-BB@0x22 : [ a-BB@0x32 ]
+	9       (00000022) iget-object          v0, v5, Lcom/a/a/c/b/b;->b [I
+	10      (00000026) array-length         v1, v0
+	11      (00000028) add-int              v0, v1, v6
+	12      (0000002c) new-array            v2, v0, [I
+	13      (00000030) const/4              v0, 0
+
+a-BB@0x32 : [ a-BB@0x36 a-BB@0x54 ]
+	14      (00000032) if-ge                v0, v1, +11
+
+a-BB@0x36 : [ a-BB@0x32 ]
+	15      (00000036) iget-object          v3, v5, Lcom/a/a/c/b/b;->a Lcom/a/a/c/b/a;
+	16      (0000003a) iget-object          v4, v5, Lcom/a/a/c/b/b;->b [I
+	17      (0000003e) aget                 v4, v4, v0
+	18      (00000042) invoke-virtual       v3, v4, v7, Lcom/a/a/c/b/a;->c(I I)I
+	19      (00000048) move-result          v3
+	20      (0000004a) aput                 v3, v2, v0
+	21      (0000004e) add-int/lit8         v0, v0, 1
+	22      (00000052) goto                 -10
+
+a-BB@0x54 : [ a-BB@0x20 ]
+	23      (00000054) new-instance         v0, Lcom/a/a/c/b/b;
+	24      (00000058) iget-object          v1, v5, Lcom/a/a/c/b/b;->a Lcom/a/a/c/b/a;
+	25      (0000005c) invoke-direct        v0, v1, v2, Lcom/a/a/c/b/b;-><init>(Lcom/a/a/c/b/a; [I)V
+	26      (00000062) goto                 -21
+

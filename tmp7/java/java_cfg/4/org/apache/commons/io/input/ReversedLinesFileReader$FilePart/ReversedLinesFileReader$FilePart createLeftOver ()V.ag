@@ -1,0 +1,30 @@
+# Lorg/apache/commons/io/input/ReversedLinesFileReader$FilePart;->createLeftOver()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+createLeftOver-BB@0x0 : [ createLeftOver-BB@0xe createLeftOver-BB@0x2c ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget                 v0, v4, Lorg/apache/commons/io/input/ReversedLinesFileReader$FilePart;->currentLastBytePos I
+	2       (00000006) add-int/lit8         v0, v0, 1
+	3       (0000000a) if-lez               v0, +11
+
+createLeftOver-BB@0xe : [ createLeftOver-BB@0x24 ]
+	4       (0000000e) new-array            v1, v0, [B
+	5       (00000012) iput-object          v1, v4, Lorg/apache/commons/io/input/ReversedLinesFileReader$FilePart;->leftOver [B
+	6       (00000016) iget-object          v1, v4, Lorg/apache/commons/io/input/ReversedLinesFileReader$FilePart;->data [B
+	7       (0000001a) iget-object          v2, v4, Lorg/apache/commons/io/input/ReversedLinesFileReader$FilePart;->leftOver [B
+	8       (0000001e) invoke-static        v1, v3, v2, v3, v0, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+
+createLeftOver-BB@0x24 : 
+	9       (00000024) const/4              v0, -1
+	10      (00000026) iput                 v0, v4, Lorg/apache/commons/io/input/ReversedLinesFileReader$FilePart;->currentLastBytePos I
+	11      (0000002a) return-void          
+
+createLeftOver-BB@0x2c : [ createLeftOver-BB@0x24 ]
+	12      (0000002c) const/4              v0, 0
+	13      (0000002e) iput-object          v0, v4, Lorg/apache/commons/io/input/ReversedLinesFileReader$FilePart;->leftOver [B
+	14      (00000032) goto                 -7
+

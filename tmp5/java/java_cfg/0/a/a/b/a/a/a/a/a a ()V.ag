@@ -1,0 +1,21 @@
+# La/a/b/a/a/a/a;->a()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0x18 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v0, v2, La/a/b/a/a/a/a;->a La/a/b/a/b/a/g;
+	2       (00000006) if-eqz               v0, +9
+
+a-BB@0xa : [ a-BB@0x18 ]
+	3       (0000000a) iget-object          v0, v2, La/a/b/a/a/a/a;->a La/a/b/a/b/a/g;
+	4       (0000000e) invoke-interface     v0, v2, La/a/b/a/b/a/g;->a(La/a/b/a/b/a/h;)V
+	5       (00000014) iput-object          v1, v2, La/a/b/a/a/a/a;->a La/a/b/a/b/a/g;
+
+a-BB@0x18 : 
+	6       (00000018) iput-object          v1, v2, La/a/b/a/a/a/a;->b La/a/b/a/b/b/c/i;
+	7       (0000001c) return-void          
+

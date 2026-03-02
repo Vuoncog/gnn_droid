@@ -1,0 +1,38 @@
+# Lcom/crashlytics/android/beta/DeviceTokenLoader;->determineDeviceToken(Ljava/util/zip/ZipInputStream;)Ljava/lang/String; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.zip.ZipInputStream
+#
+# - return:java.lang.String
+
+determineDeviceToken-BB@0x0 : [ determineDeviceToken-BB@0xc determineDeviceToken-BB@0x46 ]
+	0       (00000000) invoke-virtual       v4, Ljava/util/zip/ZipInputStream;->getNextEntry()Ljava/util/zip/ZipEntry;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +1f
+
+determineDeviceToken-BB@0xc : [ determineDeviceToken-BB@0x24 determineDeviceToken-BB@0x46 ]
+	3       (0000000c) invoke-virtual       v0, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+	4       (00000012) move-result-object   v0
+	5       (00000014) const-string         v1, 'assets/com.crashlytics.android.beta/dirfactor-device-token='
+	6       (00000018) invoke-virtual       v0, v1, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+	7       (0000001e) move-result          v1
+	8       (00000020) if-eqz               v1, +13
+
+determineDeviceToken-BB@0x24 : [ determineDeviceToken-BB@0x44 ]
+	9       (00000024) const-string         v1, 'assets/com.crashlytics.android.beta/dirfactor-device-token='
+	10      (00000028) invoke-virtual       v1, Ljava/lang/String;->length()I
+	11      (0000002e) move-result          v1
+	12      (00000030) invoke-virtual       v0, Ljava/lang/String;->length()I
+	13      (00000036) move-result          v2
+	14      (00000038) add-int/lit8         v2, v2, -1
+	15      (0000003c) invoke-virtual       v0, v1, v2, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	16      (00000042) move-result-object   v0
+
+determineDeviceToken-BB@0x44 : 
+	17      (00000044) return-object        v0
+
+determineDeviceToken-BB@0x46 : [ determineDeviceToken-BB@0x44 ]
+	18      (00000046) const-string         v0, ''
+	19      (0000004a) goto                 -3
+

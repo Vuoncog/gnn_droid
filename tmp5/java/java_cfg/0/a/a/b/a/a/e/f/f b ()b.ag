@@ -1,0 +1,44 @@
+# La/a/b/a/a/e/f;->b()La/a/b/a/a/b; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:a.a.b.a.a.b
+
+b-BB@0x0 : [ b-BB@0x3c ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-super         v7, La/a/b/a/a/e/d;->b()La/a/b/a/a/b;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) const-string         v1, 'Channel'
+	4       (0000000e) invoke-static        v1, La/a/b/a/a/b;->a(Ljava/lang/String;)La/a/b/a/a/b;
+	5       (00000014) move-result-object   v3
+	6       (00000016) const-string         v1, 'source'
+	7       (0000001a) iput-object          v1, v3, La/a/b/a/a/b;->b Ljava/lang/String;
+	8       (0000001e) iget-object          v1, v2, La/a/b/a/a/b;->f Ljava/util/List;
+	9       (00000022) invoke-interface     v1, v0, v3, Ljava/util/List;->add(I Ljava/lang/Object;)V
+	10      (00000028) iget-object          v1, v7, La/a/b/a/a/e/f;->j La/a/b/a/a/e;
+	11      (0000002c) invoke-interface     v1, La/a/b/a/a/e;->b()La/a/b/a/b/b/a;
+	12      (00000032) move-result-object   v1
+	13      (00000034) iget-object          v4, v1, La/a/b/a/b/b/a;->a [La/a/b/a/b/b/b/a;
+	14      (00000038) array-length         v5, v4
+	15      (0000003a) move                 v1, v0
+
+b-BB@0x3c : [ b-BB@0x40 b-BB@0x6c ]
+	16      (0000003c) if-ge                v0, v5, +18
+
+b-BB@0x40 : [ b-BB@0x3c ]
+	17      (00000040) aget-object          v6, v4, v0
+	18      (00000044) invoke-virtual       v6, La/a/b/a/b/b/b/a;->toString()Ljava/lang/String;
+	19      (0000004a) move-result-object   v6
+	20      (0000004c) invoke-static        v6, La/a/b/a/a/b;->a(Ljava/lang/String;)La/a/b/a/a/b;
+	21      (00000052) move-result-object   v6
+	22      (00000054) invoke-virtual       v6, v1, La/a/b/a/a/b;->b(I)La/a/b/a/a/b;
+	23      (0000005a) move-result-object   v6
+	24      (0000005c) invoke-virtual       v3, v6, La/a/b/a/a/b;->a(La/a/b/a/a/b;)La/a/b/a/a/b;
+	25      (00000062) add-int/lit8         v1, v1, 1
+	26      (00000066) add-int/lit8         v0, v0, 1
+	27      (0000006a) goto                 -17
+
+b-BB@0x6c : 
+	28      (0000006c) return-object        v2
+

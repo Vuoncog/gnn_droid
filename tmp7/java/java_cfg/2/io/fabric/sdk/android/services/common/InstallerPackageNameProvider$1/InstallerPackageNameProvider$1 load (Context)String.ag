@@ -1,0 +1,23 @@
+# Lio/fabric/sdk/android/services/common/InstallerPackageNameProvider$1;->load(Landroid/content/Context;)Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:java.lang.String
+
+load-BB@0x0 : [ load-BB@0x1c load-BB@0x20 ]
+	0       (00000000) invoke-virtual       v3, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v3, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v0, v1, Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
+	5       (00000016) move-result-object   v0
+	6       (00000018) if-nez               v0, +4
+
+load-BB@0x1c : [ load-BB@0x20 ]
+	7       (0000001c) const-string         v0, ''
+
+load-BB@0x20 : 
+	8       (00000020) return-object        v0
+

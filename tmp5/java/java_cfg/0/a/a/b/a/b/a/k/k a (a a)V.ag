@@ -1,0 +1,94 @@
+# La/a/b/a/b/a/k;->a(La/a/b/a/i/e/a; La/a/b/a/k/a;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:a.a.b.a.i.e.a
+# - v10:a.a.b.a.k.a
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xc a-BB@0xe ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-byte            v0, v9, La/a/b/a/i/e/a;->b B
+	2       (00000006) const/4              v1, 3
+	3       (00000008) if-eq                v0, v1, +3
+
+a-BB@0xc : 
+	4       (0000000c) return-void          
+
+a-BB@0xe : [ a-BB@0x26 ]
+	5       (0000000e) iget-object          v0, v9, La/a/b/a/i/e/a;->c Ljava/lang/Object;
+	6       (00000012) check-cast           v0, Ljava/lang/String;
+	7       (00000016) invoke-virtual       v0, Ljava/lang/String;->length()I
+	8       (0000001c) move-result          v6
+	9       (0000001e) move                 v5, v2
+	10      (00000020) move                 v1, v2
+	11      (00000022) move                 v3, v2
+	12      (00000024) move                 v4, v2
+
+a-BB@0x26 : [ a-BB@0x2a a-BB@0xc ]
+	13      (00000026) if-ge                v5, v6, -d
+
+a-BB@0x2a : [ D:a-BB@0x38 10:a-BB@0x64 32:a-BB@0x44 34:a-BB@0x74 ]
+	14      (0000002a) invoke-virtual       v0, v5, Ljava/lang/String;->charAt(I)C
+	15      (00000030) move-result          v7
+	16      (00000032) sparse-switch        v7, +37 (0xa0)
+
+a-BB@0x38 : [ D:a-BB@0x3e 0:a-BB@0x9a ]
+	17      (00000038) packed-switch        v1, +42 (0xbc)
+
+a-BB@0x3e : [ a-BB@0x26 ]
+	18      (0000003e) add-int/lit8         v5, v5, 1
+	19      (00000042) goto                 -e
+
+a-BB@0x44 : [ D:a-BB@0x4a 0:a-BB@0x3e 1:a-BB@0x4c ]
+	20      (00000044) packed-switch        v1, +42 (0xc8)
+
+a-BB@0x4a : [ a-BB@0x3e ]
+	21      (0000004a) goto                 -6
+
+a-BB@0x4c : [ a-BB@0x3e ]
+	22      (0000004c) invoke-virtual       v0, v4, v5, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	23      (00000052) move-result-object   v1
+	24      (00000054) invoke-direct        v8, v3, v1, La/a/b/a/b/a/k;->a(I Ljava/lang/String;)V
+	25      (0000005a) add-int/lit8         v1, v3, 1
+	26      (0000005e) move                 v3, v1
+	27      (00000060) move                 v1, v2
+	28      (00000062) goto                 -12
+
+a-BB@0x64 : [ a-BB@0xc ]
+	29      (00000064) invoke-virtual       v0, v4, v5, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	30      (0000006a) move-result-object   v0
+	31      (0000006c) invoke-direct        v8, v3, v0, La/a/b/a/b/a/k;->a(I Ljava/lang/String;)V
+	32      (00000072) goto                 -33
+
+a-BB@0x74 : [ D:a-BB@0x7a 0:a-BB@0x7c 1:a-BB@0x7a 2:a-BB@0x84 ]
+	33      (00000074) packed-switch        v1, +32 (0xd8)
+
+a-BB@0x7a : [ a-BB@0x3e ]
+	34      (0000007a) goto                 -1e
+
+a-BB@0x7c : [ a-BB@0x3e ]
+	35      (0000007c) const/4              v1, 2
+	36      (0000007e) add-int/lit8         v4, v5, 1
+	37      (00000082) goto                 -22
+
+a-BB@0x84 : [ a-BB@0x3e ]
+	38      (00000084) invoke-virtual       v0, v4, v5, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	39      (0000008a) move-result-object   v1
+	40      (0000008c) invoke-direct        v8, v3, v1, La/a/b/a/b/a/k;->a(I Ljava/lang/String;)V
+	41      (00000092) add-int/lit8         v3, v3, 1
+	42      (00000096) move                 v1, v2
+	43      (00000098) goto                 -2d
+
+a-BB@0x9a : [ a-BB@0x3e ]
+	44      (0000009a) const/4              v1, 1
+	45      (0000009c) move                 v4, v5
+	46      (0000009e) goto                 -30
+
+a-BB@0xa0 : 
+	47      (000000a0) sparse-switch-payload a 20 22
+	48      (000000bc) packed-switch-payload 0
+	49      (000000c8) packed-switch-payload 0 1
+	50      (000000d8) packed-switch-payload 0 1 2
+

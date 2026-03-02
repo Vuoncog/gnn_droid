@@ -1,0 +1,54 @@
+# Lcom/crashlytics/android/core/CodedOutputStream;->writeRawBytes([B I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:byte[]
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+writeRawBytes-BB@0x0 : [ writeRawBytes-BB@0xe writeRawBytes-BB@0x28 ]
+	0       (00000000) iget                 v0, v4, Lcom/crashlytics/android/core/CodedOutputStream;->limit I
+	1       (00000004) iget                 v1, v4, Lcom/crashlytics/android/core/CodedOutputStream;->position I
+	2       (00000008) sub-int/2addr        v0, v1
+	3       (0000000a) if-lt                v0, v7, +f
+
+writeRawBytes-BB@0xe : [ writeRawBytes-BB@0x26 ]
+	4       (0000000e) iget-object          v0, v4, Lcom/crashlytics/android/core/CodedOutputStream;->buffer [B
+	5       (00000012) iget                 v1, v4, Lcom/crashlytics/android/core/CodedOutputStream;->position I
+	6       (00000016) invoke-static        v5, v6, v0, v1, v7, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	7       (0000001c) iget                 v0, v4, Lcom/crashlytics/android/core/CodedOutputStream;->position I
+	8       (00000020) add-int/2addr        v0, v7
+	9       (00000022) iput                 v0, v4, Lcom/crashlytics/android/core/CodedOutputStream;->position I
+
+writeRawBytes-BB@0x26 : 
+	10      (00000026) return-void          
+
+writeRawBytes-BB@0x28 : [ writeRawBytes-BB@0x5e writeRawBytes-BB@0x70 ]
+	11      (00000028) iget                 v0, v4, Lcom/crashlytics/android/core/CodedOutputStream;->limit I
+	12      (0000002c) iget                 v1, v4, Lcom/crashlytics/android/core/CodedOutputStream;->position I
+	13      (00000030) sub-int/2addr        v0, v1
+	14      (00000032) iget-object          v1, v4, Lcom/crashlytics/android/core/CodedOutputStream;->buffer [B
+	15      (00000036) iget                 v2, v4, Lcom/crashlytics/android/core/CodedOutputStream;->position I
+	16      (0000003a) invoke-static        v5, v6, v1, v2, v0, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	17      (00000040) add-int              v1, v6, v0
+	18      (00000044) sub-int              v0, v7, v0
+	19      (00000048) iget                 v2, v4, Lcom/crashlytics/android/core/CodedOutputStream;->limit I
+	20      (0000004c) iput                 v2, v4, Lcom/crashlytics/android/core/CodedOutputStream;->position I
+	21      (00000050) invoke-direct        v4, Lcom/crashlytics/android/core/CodedOutputStream;->refreshBuffer()V
+	22      (00000056) iget                 v2, v4, Lcom/crashlytics/android/core/CodedOutputStream;->limit I
+	23      (0000005a) if-gt                v0, v2, +b
+
+writeRawBytes-BB@0x5e : [ writeRawBytes-BB@0x26 ]
+	24      (0000005e) iget-object          v2, v4, Lcom/crashlytics/android/core/CodedOutputStream;->buffer [B
+	25      (00000062) const/4              v3, 0
+	26      (00000064) invoke-static        v5, v1, v2, v3, v0, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	27      (0000006a) iput                 v0, v4, Lcom/crashlytics/android/core/CodedOutputStream;->position I
+	28      (0000006e) goto                 -24
+
+writeRawBytes-BB@0x70 : [ writeRawBytes-BB@0x26 ]
+	29      (00000070) iget-object          v2, v4, Lcom/crashlytics/android/core/CodedOutputStream;->output Ljava/io/OutputStream;
+	30      (00000074) invoke-virtual       v2, v5, v1, v0, Ljava/io/OutputStream;->write([B I I)V
+	31      (0000007a) goto                 -2a
+

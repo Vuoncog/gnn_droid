@@ -1,0 +1,158 @@
+# Lorg/apache/commons/io/FileUtils;->moveDirectory(Ljava/io/File; Ljava/io/File;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.File
+# - v4:java.io.File
+#
+# - return:void
+
+moveDirectory-BB@0x0 : [ moveDirectory-BB@0x4 moveDirectory-BB@0x14 ]
+	0       (00000000) if-nez               v3, +a
+
+moveDirectory-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/NullPointerException;
+	2       (00000008) const-string         v1, 'Source must not be null'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+moveDirectory-BB@0x14 : [ moveDirectory-BB@0x18 moveDirectory-BB@0x28 ]
+	5       (00000014) if-nez               v4, +a
+
+moveDirectory-BB@0x18 : 
+	6       (00000018) new-instance         v0, Ljava/lang/NullPointerException;
+	7       (0000001c) const-string         v1, 'Destination must not be null'
+	8       (00000020) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	9       (00000026) throw                v0
+
+moveDirectory-BB@0x28 : [ moveDirectory-BB@0x34 moveDirectory-BB@0x72 ]
+	10      (00000028) invoke-virtual       v3, Ljava/io/File;->exists()Z
+	11      (0000002e) move-result          v0
+	12      (00000030) if-nez               v0, +21
+
+moveDirectory-BB@0x34 : 
+	13      (00000034) new-instance         v0, Ljava/io/FileNotFoundException;
+	14      (00000038) new-instance         v1, Ljava/lang/StringBuilder;
+	15      (0000003c) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	16      (00000042) const-string         v2, "Source '"
+	17      (00000046) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004c) move-result-object   v1
+	19      (0000004e) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	20      (00000054) move-result-object   v1
+	21      (00000056) const-string         v2, "' does not exist"
+	22      (0000005a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000060) move-result-object   v1
+	24      (00000062) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	25      (00000068) move-result-object   v1
+	26      (0000006a) invoke-direct        v0, v1, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
+	27      (00000070) throw                v0
+
+moveDirectory-BB@0x72 : [ moveDirectory-BB@0x7e moveDirectory-BB@0xbc ]
+	28      (00000072) invoke-virtual       v3, Ljava/io/File;->isDirectory()Z
+	29      (00000078) move-result          v0
+	30      (0000007a) if-nez               v0, +21
+
+moveDirectory-BB@0x7e : 
+	31      (0000007e) new-instance         v0, Ljava/io/IOException;
+	32      (00000082) new-instance         v1, Ljava/lang/StringBuilder;
+	33      (00000086) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	34      (0000008c) const-string         v2, "Source '"
+	35      (00000090) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	36      (00000096) move-result-object   v1
+	37      (00000098) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	38      (0000009e) move-result-object   v1
+	39      (000000a0) const-string         v2, "' is not a directory"
+	40      (000000a4) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	41      (000000aa) move-result-object   v1
+	42      (000000ac) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	43      (000000b2) move-result-object   v1
+	44      (000000b4) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	45      (000000ba) throw                v0
+
+moveDirectory-BB@0xbc : [ moveDirectory-BB@0xc8 moveDirectory-BB@0x106 ]
+	46      (000000bc) invoke-virtual       v4, Ljava/io/File;->exists()Z
+	47      (000000c2) move-result          v0
+	48      (000000c4) if-eqz               v0, +21
+
+moveDirectory-BB@0xc8 : 
+	49      (000000c8) new-instance         v0, Lorg/apache/commons/io/FileExistsException;
+	50      (000000cc) new-instance         v1, Ljava/lang/StringBuilder;
+	51      (000000d0) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	52      (000000d6) const-string         v2, "Destination '"
+	53      (000000da) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (000000e0) move-result-object   v1
+	55      (000000e2) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	56      (000000e8) move-result-object   v1
+	57      (000000ea) const-string         v2, "' already exists"
+	58      (000000ee) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	59      (000000f4) move-result-object   v1
+	60      (000000f6) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	61      (000000fc) move-result-object   v1
+	62      (000000fe) invoke-direct        v0, v1, Lorg/apache/commons/io/FileExistsException;-><init>(Ljava/lang/String;)V
+	63      (00000104) throw                v0
+
+moveDirectory-BB@0x106 : [ moveDirectory-BB@0x112 moveDirectory-BB@0x1de ]
+	64      (00000106) invoke-virtual       v3, v4, Ljava/io/File;->renameTo(Ljava/io/File;)Z
+	65      (0000010c) move-result          v0
+	66      (0000010e) if-nez               v0, +68
+
+moveDirectory-BB@0x112 : [ moveDirectory-BB@0x12e moveDirectory-BB@0x174 ]
+	67      (00000112) invoke-virtual       v4, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
+	68      (00000118) move-result-object   v0
+	69      (0000011a) invoke-virtual       v3, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
+	70      (00000120) move-result-object   v1
+	71      (00000122) invoke-virtual       v0, v1, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+	72      (00000128) move-result          v0
+	73      (0000012a) if-eqz               v0, +25
+
+moveDirectory-BB@0x12e : 
+	74      (0000012e) new-instance         v0, Ljava/io/IOException;
+	75      (00000132) new-instance         v1, Ljava/lang/StringBuilder;
+	76      (00000136) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	77      (0000013c) const-string         v2, 'Cannot move directory: '
+	78      (00000140) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	79      (00000146) move-result-object   v1
+	80      (00000148) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	81      (0000014e) move-result-object   v1
+	82      (00000150) const-string         v2, ' to a subdirectory of itself: '
+	83      (00000154) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	84      (0000015a) move-result-object   v1
+	85      (0000015c) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	86      (00000162) move-result-object   v1
+	87      (00000164) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	88      (0000016a) move-result-object   v1
+	89      (0000016c) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	90      (00000172) throw                v0
+
+moveDirectory-BB@0x174 : [ moveDirectory-BB@0x18c moveDirectory-BB@0x1de ]
+	91      (00000174) invoke-static        v3, v4, Lorg/apache/commons/io/FileUtils;->copyDirectory(Ljava/io/File; Ljava/io/File;)V
+	92      (0000017a) invoke-static        v3, Lorg/apache/commons/io/FileUtils;->deleteDirectory(Ljava/io/File;)V
+	93      (00000180) invoke-virtual       v3, Ljava/io/File;->exists()Z
+	94      (00000186) move-result          v0
+	95      (00000188) if-eqz               v0, +2b
+
+moveDirectory-BB@0x18c : 
+	96      (0000018c) new-instance         v0, Ljava/io/IOException;
+	97      (00000190) new-instance         v1, Ljava/lang/StringBuilder;
+	98      (00000194) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	99      (0000019a) const-string         v2, "Failed to delete original directory '"
+	100     (0000019e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	101     (000001a4) move-result-object   v1
+	102     (000001a6) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	103     (000001ac) move-result-object   v1
+	104     (000001ae) const-string         v2, "' after copy to '"
+	105     (000001b2) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	106     (000001b8) move-result-object   v1
+	107     (000001ba) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	108     (000001c0) move-result-object   v1
+	109     (000001c2) const-string         v2, "'"
+	110     (000001c6) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	111     (000001cc) move-result-object   v1
+	112     (000001ce) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	113     (000001d4) move-result-object   v1
+	114     (000001d6) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	115     (000001dc) throw                v0
+
+moveDirectory-BB@0x1de : 
+	116     (000001de) return-void          
+

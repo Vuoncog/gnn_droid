@@ -1,0 +1,81 @@
+# Lcom/a/a/c/b;->a(I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:int
+# - v11:int
+# - v12:int
+# - v13:int
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x6 a-BB@0xa ]
+	0       (00000000) const/4              v8, 1
+	1       (00000002) if-ltz               v11, +4
+
+a-BB@0x6 : [ a-BB@0xa a-BB@0x1a ]
+	2       (00000006) if-gez               v10, +a
+
+a-BB@0xa : 
+	3       (0000000a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	4       (0000000e) const-string         v1, 'Left and top must be nonnegative'
+	5       (00000012) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	6       (00000018) throw                v0
+
+a-BB@0x1a : [ a-BB@0x1e a-BB@0x22 ]
+	7       (0000001a) if-lt                v13, v8, +4
+
+a-BB@0x1e : [ a-BB@0x22 a-BB@0x32 ]
+	8       (0000001e) if-ge                v12, v8, +a
+
+a-BB@0x22 : 
+	9       (00000022) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	10      (00000026) const-string         v1, 'Height and width must be at least 1'
+	11      (0000002a) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	12      (00000030) throw                v0
+
+a-BB@0x32 : [ a-BB@0x42 a-BB@0x4a ]
+	13      (00000032) add-int              v1, v10, v12
+	14      (00000036) add-int              v2, v11, v13
+	15      (0000003a) iget                 v0, v9, Lcom/a/a/c/b;->b I
+	16      (0000003e) if-gt                v2, v0, +6
+
+a-BB@0x42 : [ a-BB@0x4a a-BB@0x5e ]
+	17      (00000042) iget                 v0, v9, Lcom/a/a/c/b;->a I
+	18      (00000046) if-le                v1, v0, +c
+
+a-BB@0x4a : 
+	19      (0000004a) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	20      (0000004e) const-string         v1, 'The region must fit inside the matrix'
+	21      (00000052) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	22      (00000058) throw                v0
+
+a-BB@0x5a : [ a-BB@0x5e ]
+	23      (0000005a) add-int/lit8         v11, v11, 1
+
+a-BB@0x5e : [ a-BB@0x62 a-BB@0x92 ]
+	24      (0000005e) if-ge                v11, v2, +1a
+
+a-BB@0x62 : [ a-BB@0x6c ]
+	25      (00000062) iget                 v0, v9, Lcom/a/a/c/b;->c I
+	26      (00000066) mul-int              v3, v11, v0
+	27      (0000006a) move                 v0, v10
+
+a-BB@0x6c : [ a-BB@0x70 a-BB@0x5a ]
+	28      (0000006c) if-ge                v0, v1, -9
+
+a-BB@0x70 : [ a-BB@0x6c ]
+	29      (00000070) iget-object          v4, v9, Lcom/a/a/c/b;->d [I
+	30      (00000074) div-int/lit8         v5, v0, 32
+	31      (00000078) add-int/2addr        v5, v3
+	32      (0000007a) aget                 v6, v4, v5
+	33      (0000007e) and-int/lit8         v7, v0, 31
+	34      (00000082) shl-int              v7, v8, v7
+	35      (00000086) or-int/2addr         v6, v7
+	36      (00000088) aput                 v6, v4, v5
+	37      (0000008c) add-int/lit8         v0, v0, 1
+	38      (00000090) goto                 -12
+
+a-BB@0x92 : 
+	39      (00000092) return-void          
+

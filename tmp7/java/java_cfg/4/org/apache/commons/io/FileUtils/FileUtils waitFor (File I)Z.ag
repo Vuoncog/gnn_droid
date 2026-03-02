@@ -1,0 +1,60 @@
+# Lorg/apache/commons/io/FileUtils;->waitFor(Ljava/io/File; I)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.io.File
+# - v7:int
+#
+# - return:boolean
+
+waitFor-BB@0x0 : [ waitFor-BB@0x6 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) move                 v0, v1
+	2       (00000004) move                 v2, v1
+
+waitFor-BB@0x6 : [ waitFor-BB@0x12 waitFor-BB@0x3e ]
+	3       (00000006) invoke-virtual       v6, Ljava/io/File;->exists()Z
+	4       (0000000c) move-result          v3
+	5       (0000000e) if-nez               v3, +18
+
+waitFor-BB@0x12 : [ waitFor-BB@0x1e waitFor-BB@0x42 ]
+	6       (00000012) add-int/lit8         v3, v0, 1
+	7       (00000016) const/16             v4, 10
+	8       (0000001a) if-lt                v0, v4, +14
+
+waitFor-BB@0x1e : [ waitFor-BB@0x26 waitFor-BB@0x28 ]
+	9       (0000001e) add-int/lit8         v0, v2, 1
+	10      (00000022) if-le                v2, v7, +3
+
+waitFor-BB@0x26 : 
+	11      (00000026) return               v1
+
+waitFor-BB@0x28 : [ waitFor-BB@0x2c ]
+	12      (00000028) move                 v2, v0
+	13      (0000002a) move                 v0, v1
+
+waitFor-BB@0x2c : [ waitFor-BB@0x30 ]
+	14      (0000002c) const-wide/16        v4, 100 # [100.0]
+
+waitFor-BB@0x30 : [ waitFor-BB@0x6 ]
+	15      (00000030) invoke-static        v4, v5, Ljava/lang/Thread;->sleep(J)V
+	16      (00000036) goto                 -18
+	30:35
+	(Ljava/lang/InterruptedException; -> 38 waitFor-BB@0x38)
+	(Ljava/lang/Exception; -> 3c waitFor-BB@0x3c)
+
+waitFor-BB@0x38 : [ waitFor-BB@0x6 ]
+	17      (00000038) move-exception       v3
+	18      (0000003a) goto                 -1a
+
+waitFor-BB@0x3c : [ waitFor-BB@0x3e ]
+	19      (0000003c) move-exception       v0
+
+waitFor-BB@0x3e : [ waitFor-BB@0x26 ]
+	20      (0000003e) const/4              v1, 1
+	21      (00000040) goto                 -d
+
+waitFor-BB@0x42 : [ waitFor-BB@0x2c ]
+	22      (00000042) move                 v0, v3
+	23      (00000044) goto                 -c
+

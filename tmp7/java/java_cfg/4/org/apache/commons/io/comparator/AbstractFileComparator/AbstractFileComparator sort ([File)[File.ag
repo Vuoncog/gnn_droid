@@ -1,0 +1,17 @@
+# Lorg/apache/commons/io/comparator/AbstractFileComparator;->sort([Ljava/io/File;)[Ljava/io/File; [access_flags=public varargs]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.File[]
+#
+# - return:java.io.File[]
+
+sort-BB@0x0 : [ sort-BB@0x4 sort-BB@0xa ]
+	0       (00000000) if-eqz               v1, +5
+
+sort-BB@0x4 : [ sort-BB@0xa ]
+	1       (00000004) invoke-static        v1, v0, Ljava/util/Arrays;->sort([Ljava/lang/Object; Ljava/util/Comparator;)V
+
+sort-BB@0xa : 
+	2       (0000000a) return-object        v1
+

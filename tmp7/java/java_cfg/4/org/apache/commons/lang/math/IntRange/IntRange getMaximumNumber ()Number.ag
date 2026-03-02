@@ -1,0 +1,21 @@
+# Lorg/apache/commons/lang/math/IntRange;->getMaximumNumber()Ljava/lang/Number; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.Number
+
+getMaximumNumber-BB@0x0 : [ getMaximumNumber-BB@0x8 getMaximumNumber-BB@0x1a ]
+	0       (00000000) iget-object          v0, v2, Lorg/apache/commons/lang/math/IntRange;->maxObject Ljava/lang/Integer;
+	1       (00000004) if-nez               v0, +b
+
+getMaximumNumber-BB@0x8 : [ getMaximumNumber-BB@0x1a ]
+	2       (00000008) new-instance         v0, Ljava/lang/Integer;
+	3       (0000000c) iget                 v1, v2, Lorg/apache/commons/lang/math/IntRange;->max I
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/Integer;-><init>(I)V
+	5       (00000016) iput-object          v0, v2, Lorg/apache/commons/lang/math/IntRange;->maxObject Ljava/lang/Integer;
+
+getMaximumNumber-BB@0x1a : 
+	6       (0000001a) iget-object          v0, v2, Lorg/apache/commons/lang/math/IntRange;->maxObject Ljava/lang/Integer;
+	7       (0000001e) return-object        v0
+

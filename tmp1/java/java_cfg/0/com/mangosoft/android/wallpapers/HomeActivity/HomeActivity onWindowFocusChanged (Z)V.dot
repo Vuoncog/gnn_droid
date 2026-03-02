@@ -1,0 +1,57 @@
+digraph {
+	graph [bb="0,0,1044.8,467",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_41d36a68684c0b4b565fcb70f48b3a0e {
+		graph [bb="8,8,1028,459",
+			label="Lcom/mangosoft/android/wallpapers/HomeActivity;.onWindowFocusChanged->(Z)V\nLocal registers v0 ... v1\nparam v2 = boolean\nreturn = \
+void",
+			lheight=0.83,
+			lp="518,425",
+			lwidth=7.64
+		];
+		struct_df4a1ca76190555b8566e1e89b20e989	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-super </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#DF3A01">Landroid/app/Activity;-&gt;onWindowFocusChanged(Z)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-boolean </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/HomeActivity;-&gt;isLoaded Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7777BB">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x10</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="520,337.5",
+			width=8.6389];
+		struct_e3f377813c19c0faff4f5d0e8012a96a	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-boolean </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/HomeActivity;-&gt;isLoaded Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lcom/mangosoft/android/wallpapers/util/SiteUtils;-&gt;loading()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lcom/mangosoft/android/wallpapers/HomeActivity;-&gt;populateGallery()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#088A08">Lcom/mangosoft/android/wallpapers/HomeActivity;-&gt;handler Landroid/os/Handler;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7777BB">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lcom/mangosoft/android/wallpapers/util/SiteUtils;-&gt;showInfoFromWeb(Landroid/os/Handler; Landroid/app/Activity;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="508,177.5",
+			width=13.653];
+		struct_df4a1ca76190555b8566e1e89b20e989:tail -> struct_e3f377813c19c0faff4f5d0e8012a96a:header	[color=red,
+			pos="e,42,249.5 230,297.5 230,214.97 57.809,325.43 43.011,259.48"];
+		struct_fa1011a2fea9d643d315723e2e6d5122	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="518,39.5",
+			width=2.0556];
+		struct_df4a1ca76190555b8566e1e89b20e989:tail -> struct_fa1011a2fea9d643d315723e2e6d5122:header	[color=green,
+			pos="e,469,56.5 230,297.5 230,210.82 949.36,318.9 1009,256 1057,205.36 1056.4,150.24 1009,99 970.46,57.308 524.07,110.02 473.63,65.593"];
+		struct_e3f377813c19c0faff4f5d0e8012a96a:tail -> struct_fa1011a2fea9d643d315723e2e6d5122:header	[color=blue,
+			pos="e,469,56.5 42,104.5 42,-82.93 453.3,235.26 468.56,66.595"];
+	}
+}

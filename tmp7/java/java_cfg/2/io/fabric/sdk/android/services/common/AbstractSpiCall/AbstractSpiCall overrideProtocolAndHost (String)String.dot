@@ -1,0 +1,58 @@
+digraph {
+	graph [bb="0,0,1000.8,489",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_8ef8b26a979518120295eb78b17a43c2 {
+		graph [bb="8,8,984,481",
+			label="Lio/fabric/sdk/android/services/common/AbstractSpiCall;.overrideProtocolAndHost->(Ljava/lang/String;)Ljava/lang/String;\nLocal registers \
+v0 ... v2\nparam v3 = java.lang.String\nreturn = java.lang.String",
+			lheight=0.83,
+			lp="496,447",
+			lwidth=11.06
+		];
+		struct_25572afb64c86f3afef47c331006e5d6	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/AbstractSpiCall;-&gt;protocolAndHostOverride Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;isNullOrEmpty(Ljava/lang/String;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xe</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="498,348.5",
+			width=11.944];
+		struct_284a589e2375095b04e356cbef1e6dd8	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/AbstractSpiCall;-&gt;PROTOCOL_AND_HOST_PATTERN Ljava/util/regex/Pattern;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#DF3A01">Ljava/util/regex/Pattern;-&gt;matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/AbstractSpiCall;-&gt;protocolAndHostOverride Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7272CC">v1</FONT>, <FONT color="#DF3A01">Ljava/util/regex/Matcher;-&gt;replaceFirst(Ljava/lang/String;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="486,177.5",
+			width=13.042];
+		struct_25572afb64c86f3afef47c331006e5d6:tail -> struct_284a589e2375095b04e356cbef1e6dd8:header	[color=red,
+			pos="e,42,249.5 89,297.5 89,271.61 53.655,276.98 44.267,259.39"];
+		struct_a38d55359381c3745b9ab87fd49171f2	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#7F7F99">v3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="496,39.5",
+			width=2.4722];
+		struct_25572afb64c86f3afef47c331006e5d6:tail -> struct_a38d55359381c3745b9ab87fd49171f2:header	[color=green,
+			pos="e,432,56.5 89,297.5 89,200.06 897.75,326.51 965,256 1013.2,205.51 1012.3,150.26 965,99 926.98,57.825 486.36,109.38 436.57,65.481"];
+		struct_284a589e2375095b04e356cbef1e6dd8:tail -> struct_a38d55359381c3745b9ab87fd49171f2:header	[color=blue,
+			pos="e,432,56.5 42,104.5 42,-66.56 416.17,218.98 431.51,66.652"];
+	}
+}

@@ -1,0 +1,54 @@
+# Lcom/jgamelbe/CMP/a/c;->a(Landroid/content/Context; Lcom/jgamelbe/CMP/c/a; Z)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.content.Context
+# - v10:com.jgamelbe.CMP.c.a
+# - v11:boolean
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x16 a-BB@0x1a ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) const/4              v8, 1
+	2       (00000004) const/4              v7, 0
+	3       (00000006) sget-object          v0, Lcom/jgamelbe/CMP/a/c;->b Lcom/jgamelbe/CMP/a/a;
+	4       (0000000a) invoke-virtual       v0, v9, v10, v11, Lcom/jgamelbe/CMP/a/a;->a(Landroid/content/Context; Lcom/jgamelbe/CMP/c/a; Z)Z
+	5       (00000010) move-result          v0
+	6       (00000012) if-nez               v0, +4
+
+a-BB@0x16 : [ a-BB@0x18 ]
+	7       (00000016) move                 v0, v7
+
+a-BB@0x18 : 
+	8       (00000018) return               v0
+
+a-BB@0x1a : [ a-BB@0x1e a-BB@0x44 ]
+	9       (0000001a) if-nez               v11, +15
+
+a-BB@0x1e : [ a-BB@0x44 ]
+	10      (0000001e) iget-object          v0, v10, Lcom/jgamelbe/CMP/c/a;->a Ljava/lang/String;
+	11      (00000022) invoke-virtual       v0, Ljava/lang/String;->hashCode()I
+	12      (00000028) move-result          v1
+	13      (0000002a) const                v2, 17301633 # [2.4979616489977405e-38]
+	14      (00000030) iget-object          v3, v10, Lcom/jgamelbe/CMP/c/a;->b Ljava/lang/String;
+	15      (00000034) iget-object          v4, v10, Lcom/jgamelbe/CMP/c/a;->b Ljava/lang/String;
+	16      (00000038) const-string         v5, '准备下载安装...'
+	17      (0000003c) move-object          v0, v9
+	18      (0000003e) invoke-static/range  v0 ... v6, Lcom/jgamelbe/CMP/e/s;->a(Landroid/content/Context; I I Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Landroid/content/Intent;)V
+
+a-BB@0x44 : [ a-BB@0x4c a-BB@0x64 ]
+	19      (00000044) sget-boolean         v0, Lcom/jgamelbe/CMP/a/c;->c Z
+	20      (00000048) if-nez               v0, +e
+
+a-BB@0x4c : [ a-BB@0x64 ]
+	21      (0000004c) new-instance         v0, Lcom/jgamelbe/CMP/a/c;
+	22      (00000050) invoke-direct        v0, Lcom/jgamelbe/CMP/a/c;-><init>()V
+	23      (00000056) new-array            v1, v8, [Ljava/lang/Void;
+	24      (0000005a) aput-object          v6, v1, v7
+	25      (0000005e) invoke-virtual       v0, v1, Lcom/jgamelbe/CMP/a/c;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+a-BB@0x64 : [ a-BB@0x18 ]
+	26      (00000064) move                 v0, v8
+	27      (00000066) goto                 -27
+

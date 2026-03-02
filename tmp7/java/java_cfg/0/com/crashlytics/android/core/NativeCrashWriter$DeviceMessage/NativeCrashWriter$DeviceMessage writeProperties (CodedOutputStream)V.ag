@@ -1,0 +1,29 @@
+# Lcom/crashlytics/android/core/NativeCrashWriter$DeviceMessage;->writeProperties(Lcom/crashlytics/android/core/CodedOutputStream;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:com.crashlytics.android.core.CodedOutputStream
+#
+# - return:void
+
+writeProperties-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget                 v1, v4, Lcom/crashlytics/android/core/NativeCrashWriter$DeviceMessage;->batteryLevel F
+	2       (00000006) invoke-virtual       v5, v0, v1, Lcom/crashlytics/android/core/CodedOutputStream;->writeFloat(I F)V
+	3       (0000000c) const/4              v0, 2
+	4       (0000000e) iget                 v1, v4, Lcom/crashlytics/android/core/NativeCrashWriter$DeviceMessage;->batteryVelocity I
+	5       (00000012) invoke-virtual       v5, v0, v1, Lcom/crashlytics/android/core/CodedOutputStream;->writeSInt32(I I)V
+	6       (00000018) const/4              v0, 3
+	7       (0000001a) iget-boolean         v1, v4, Lcom/crashlytics/android/core/NativeCrashWriter$DeviceMessage;->proximityOn Z
+	8       (0000001e) invoke-virtual       v5, v0, v1, Lcom/crashlytics/android/core/CodedOutputStream;->writeBool(I Z)V
+	9       (00000024) const/4              v0, 4
+	10      (00000026) iget                 v1, v4, Lcom/crashlytics/android/core/NativeCrashWriter$DeviceMessage;->orientation I
+	11      (0000002a) invoke-virtual       v5, v0, v1, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt32(I I)V
+	12      (00000030) const/4              v0, 5
+	13      (00000032) iget-wide            v2, v4, Lcom/crashlytics/android/core/NativeCrashWriter$DeviceMessage;->ramUsed J
+	14      (00000036) invoke-virtual       v5, v0, v2, v3, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt64(I J)V
+	15      (0000003c) const/4              v0, 6
+	16      (0000003e) iget-wide            v2, v4, Lcom/crashlytics/android/core/NativeCrashWriter$DeviceMessage;->diskUsed J
+	17      (00000042) invoke-virtual       v5, v0, v2, v3, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt64(I J)V
+	18      (00000048) return-void          
+

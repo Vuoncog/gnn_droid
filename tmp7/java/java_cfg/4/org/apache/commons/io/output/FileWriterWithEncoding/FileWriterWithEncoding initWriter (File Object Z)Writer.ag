@@ -1,0 +1,121 @@
+# Lorg/apache/commons/io/output/FileWriterWithEncoding;->initWriter(Ljava/io/File; Ljava/lang/Object; Z)Ljava/io/Writer; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.File
+# - v5:java.lang.Object
+# - v6:boolean
+#
+# - return:java.io.Writer
+
+initWriter-BB@0x0 : [ initWriter-BB@0x6 initWriter-BB@0x16 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) if-nez               v4, +a
+
+initWriter-BB@0x6 : 
+	2       (00000006) new-instance         v0, Ljava/lang/NullPointerException;
+	3       (0000000a) const-string         v1, 'File is missing'
+	4       (0000000e) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	5       (00000014) throw                v0
+
+initWriter-BB@0x16 : [ initWriter-BB@0x1a initWriter-BB@0x2a ]
+	6       (00000016) if-nez               v5, +a
+
+initWriter-BB@0x1a : 
+	7       (0000001a) new-instance         v0, Ljava/lang/NullPointerException;
+	8       (0000001e) const-string         v1, 'Encoding is missing'
+	9       (00000022) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	10      (00000028) throw                v0
+
+initWriter-BB@0x2a : [ initWriter-BB@0x32 ]
+	11      (0000002a) invoke-virtual       v4, Ljava/io/File;->exists()Z
+	12      (00000030) move-result          v3
+
+initWriter-BB@0x32 : [ initWriter-BB@0x3c ]
+	13      (00000032) new-instance         v1, Ljava/io/FileOutputStream;
+	14      (00000036) invoke-direct        v1, v4, v6, Ljava/io/FileOutputStream;-><init>(Ljava/io/File; Z)V
+	32:3b
+	(Ljava/io/IOException; -> b6 initWriter-BB@0xb6)
+	(Ljava/lang/RuntimeException; -> b0 initWriter-BB@0xb0)
+
+initWriter-BB@0x3c : [ initWriter-BB@0x44 initWriter-BB@0x54 ]
+	15      (0000003c) instance-of          v0, v5, Ljava/nio/charset/Charset;
+	16      (00000040) if-eqz               v0, +a
+	3c:69
+	(Ljava/io/IOException; -> 6c initWriter-BB@0x6c)
+	(Ljava/lang/RuntimeException; -> 96 initWriter-BB@0x96)
+
+initWriter-BB@0x44 : [ initWriter-BB@0x52 ]
+	17      (00000044) new-instance         v0, Ljava/io/OutputStreamWriter;
+	18      (00000048) check-cast           v5, Ljava/nio/charset/Charset;
+	19      (0000004c) invoke-direct        v0, v1, v5, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream; Ljava/nio/charset/Charset;)V
+	3c:69
+	(Ljava/io/IOException; -> 6c initWriter-BB@0x6c)
+	(Ljava/lang/RuntimeException; -> 96 initWriter-BB@0x96)
+
+initWriter-BB@0x52 : 
+	20      (00000052) return-object        v0
+	3c:69
+	(Ljava/io/IOException; -> 6c initWriter-BB@0x6c)
+	(Ljava/lang/RuntimeException; -> 96 initWriter-BB@0x96)
+
+initWriter-BB@0x54 : [ initWriter-BB@0x5c initWriter-BB@0x86 ]
+	21      (00000054) instance-of          v0, v5, Ljava/nio/charset/CharsetEncoder;
+	22      (00000058) if-eqz               v0, +17
+	3c:69
+	(Ljava/io/IOException; -> 6c initWriter-BB@0x6c)
+	(Ljava/lang/RuntimeException; -> 96 initWriter-BB@0x96)
+
+initWriter-BB@0x5c : [ initWriter-BB@0x52 ]
+	23      (0000005c) new-instance         v0, Ljava/io/OutputStreamWriter;
+	24      (00000060) check-cast           v5, Ljava/nio/charset/CharsetEncoder;
+	25      (00000064) invoke-direct        v0, v1, v5, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream; Ljava/nio/charset/CharsetEncoder;)V
+	26      (0000006a) goto                 -c
+
+initWriter-BB@0x6c : [ initWriter-BB@0x6e ]
+	27      (0000006c) move-exception       v0
+
+initWriter-BB@0x6e : [ initWriter-BB@0x7e initWriter-BB@0x84 ]
+	28      (0000006e) invoke-static        v2, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Writer;)V
+	29      (00000074) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/OutputStream;)V
+	30      (0000007a) if-nez               v3, +5
+
+initWriter-BB@0x7e : [ initWriter-BB@0x84 ]
+	31      (0000007e) invoke-static        v4, Lorg/apache/commons/io/FileUtils;->deleteQuietly(Ljava/io/File;)Z
+
+initWriter-BB@0x84 : 
+	32      (00000084) throw                v0
+
+initWriter-BB@0x86 : [ initWriter-BB@0x52 ]
+	33      (00000086) new-instance         v0, Ljava/io/OutputStreamWriter;
+	34      (0000008a) check-cast           v5, Ljava/lang/String;
+	35      (0000008e) invoke-direct        v0, v1, v5, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream; Ljava/lang/String;)V
+	36      (00000094) goto                 -21
+	86:93
+	(Ljava/io/IOException; -> 6c initWriter-BB@0x6c)
+	(Ljava/lang/RuntimeException; -> 96 initWriter-BB@0x96)
+
+initWriter-BB@0x96 : [ initWriter-BB@0x98 ]
+	37      (00000096) move-exception       v0
+
+initWriter-BB@0x98 : [ initWriter-BB@0xa8 initWriter-BB@0xae ]
+	38      (00000098) invoke-static        v2, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/Writer;)V
+	39      (0000009e) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/OutputStream;)V
+	40      (000000a4) if-nez               v3, +5
+
+initWriter-BB@0xa8 : [ initWriter-BB@0xae ]
+	41      (000000a8) invoke-static        v4, Lorg/apache/commons/io/FileUtils;->deleteQuietly(Ljava/io/File;)Z
+
+initWriter-BB@0xae : 
+	42      (000000ae) throw                v0
+
+initWriter-BB@0xb0 : [ initWriter-BB@0x98 ]
+	43      (000000b0) move-exception       v0
+	44      (000000b2) move-object          v1, v2
+	45      (000000b4) goto                 -e
+
+initWriter-BB@0xb6 : [ initWriter-BB@0x6e ]
+	46      (000000b6) move-exception       v0
+	47      (000000b8) move-object          v1, v2
+	48      (000000ba) goto                 -26
+

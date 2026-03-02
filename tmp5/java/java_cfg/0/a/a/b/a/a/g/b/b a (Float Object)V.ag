@@ -1,0 +1,32 @@
+# La/a/b/a/a/g/b;->a(Ljava/lang/Float; Ljava/lang/Object;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Float
+# - v4:java.lang.Object
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x4 a-BB@0x36 ]
+	0       (00000000) if-eq                v4, v2, +1b
+
+a-BB@0x4 : [ a-BB@0x2e ]
+	1       (00000004) iget-object          v0, v2, La/a/b/a/a/g/b;->a La/a/b/a/a/a;
+	2       (00000008) invoke-virtual       v3, Ljava/lang/Float;->floatValue()F
+	3       (0000000e) move-result          v1
+	4       (00000010) invoke-virtual       v0, v1, La/a/b/a/a/a;->b(F)V
+	5       (00000016) iget-object          v0, v2, La/a/b/a/a/g/b;->a La/a/b/a/a/a;
+	6       (0000001a) invoke-virtual       v0, La/a/b/a/a/a;->i()F
+	7       (00000020) move-result          v0
+	8       (00000022) invoke-static        v0, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) iput-object          v0, v2, La/a/b/a/a/g/b;->c Ljava/lang/Object;
+
+a-BB@0x2e : 
+	11      (0000002e) invoke-virtual       v2, v4, La/a/b/a/a/g/b;->b(Ljava/lang/Object;)V
+	12      (00000034) return-void          
+
+a-BB@0x36 : [ a-BB@0x2e ]
+	13      (00000036) iput-object          v3, v2, La/a/b/a/a/g/b;->c Ljava/lang/Object;
+	14      (0000003a) goto                 -6
+

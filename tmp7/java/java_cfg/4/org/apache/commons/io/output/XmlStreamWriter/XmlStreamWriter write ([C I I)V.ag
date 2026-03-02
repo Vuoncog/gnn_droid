@@ -1,0 +1,25 @@
+# Lorg/apache/commons/io/output/XmlStreamWriter;->write([C I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:char[]
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+write-BB@0x0 : [ write-BB@0x8 write-BB@0x10 ]
+	0       (00000000) iget-object          v0, v1, Lorg/apache/commons/io/output/XmlStreamWriter;->xmlPrologWriter Ljava/io/StringWriter;
+	1       (00000004) if-eqz               v0, +6
+
+write-BB@0x8 : [ write-BB@0xe ]
+	2       (00000008) invoke-direct        v1, v2, v3, v4, Lorg/apache/commons/io/output/XmlStreamWriter;->detectEncoding([C I I)V
+
+write-BB@0xe : 
+	3       (0000000e) return-void          
+
+write-BB@0x10 : [ write-BB@0xe ]
+	4       (00000010) iget-object          v0, v1, Lorg/apache/commons/io/output/XmlStreamWriter;->writer Ljava/io/Writer;
+	5       (00000014) invoke-virtual       v0, v2, v3, v4, Ljava/io/Writer;->write([C I I)V
+	6       (0000001a) goto                 -6
+

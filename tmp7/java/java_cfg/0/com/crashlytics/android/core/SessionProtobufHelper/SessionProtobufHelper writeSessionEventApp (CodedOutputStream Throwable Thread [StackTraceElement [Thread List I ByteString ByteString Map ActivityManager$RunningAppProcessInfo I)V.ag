@@ -1,0 +1,60 @@
+# Lcom/crashlytics/android/core/SessionProtobufHelper;->writeSessionEventApp(Lcom/crashlytics/android/core/CodedOutputStream; Ljava/lang/Throwable; Ljava/lang/Thread; [Ljava/lang/StackTraceElement; [Ljava/lang/Thread; Ljava/util/List; I Lcom/crashlytics/android/core/ByteString; Lcom/crashlytics/android/core/ByteString; Ljava/util/Map; Landroid/app/ActivityManager$RunningAppProcessInfo; I)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:com.crashlytics.android.core.CodedOutputStream
+# - v4:java.lang.Throwable
+# - v5:java.lang.Thread
+# - v6:java.lang.StackTraceElement[]
+# - v7:java.lang.Thread[]
+# - v8:java.util.List
+# - v9:int
+# - v10:com.crashlytics.android.core.ByteString
+# - v11:com.crashlytics.android.core.ByteString
+# - v12:java.util.Map
+# - v13:android.app.ActivityManager$RunningAppProcessInfo
+# - v14:int
+#
+# - return:void
+
+writeSessionEventApp-BB@0x0 : [ writeSessionEventApp-BB@0x22 writeSessionEventApp-BB@0x34 ]
+	0       (00000000) const/4              v2, 3
+	1       (00000002) const/4              v0, 2
+	2       (00000004) invoke-virtual       v3, v2, v0, Lcom/crashlytics/android/core/CodedOutputStream;->writeTag(I I)V
+	3       (0000000a) invoke-static/range  v4 ... v14, Lcom/crashlytics/android/core/SessionProtobufHelper;->getEventAppSize(Ljava/lang/Throwable; Ljava/lang/Thread; [Ljava/lang/StackTraceElement; [Ljava/lang/Thread; Ljava/util/List; I Lcom/crashlytics/android/core/ByteString; Lcom/crashlytics/android/core/ByteString; Ljava/util/Map; Landroid/app/ActivityManager$RunningAppProcessInfo; I)I
+	4       (00000010) move-result          v0
+	5       (00000012) invoke-virtual       v3, v0, Lcom/crashlytics/android/core/CodedOutputStream;->writeRawVarint32(I)V
+	6       (00000018) invoke-static/range  v3 ... v11, Lcom/crashlytics/android/core/SessionProtobufHelper;->writeSessionEventAppExecution(Lcom/crashlytics/android/core/CodedOutputStream; Ljava/lang/Throwable; Ljava/lang/Thread; [Ljava/lang/StackTraceElement; [Ljava/lang/Thread; Ljava/util/List; I Lcom/crashlytics/android/core/ByteString; Lcom/crashlytics/android/core/ByteString;)V
+	7       (0000001e) if-eqz               v12, +b
+
+writeSessionEventApp-BB@0x22 : [ writeSessionEventApp-BB@0x2e writeSessionEventApp-BB@0x34 ]
+	8       (00000022) invoke-interface     v12, Ljava/util/Map;->isEmpty()Z
+	9       (00000028) move-result          v0
+	10      (0000002a) if-nez               v0, +5
+
+writeSessionEventApp-BB@0x2e : [ writeSessionEventApp-BB@0x34 ]
+	11      (0000002e) invoke-static        v3, v12, Lcom/crashlytics/android/core/SessionProtobufHelper;->writeSessionEventAppCustomAttributes(Lcom/crashlytics/android/core/CodedOutputStream; Ljava/util/Map;)V
+
+writeSessionEventApp-BB@0x34 : [ writeSessionEventApp-BB@0x38 writeSessionEventApp-BB@0x4c ]
+	12      (00000034) if-eqz               v13, +c
+
+writeSessionEventApp-BB@0x38 : [ writeSessionEventApp-BB@0x44 writeSessionEventApp-BB@0x56 ]
+	13      (00000038) iget                 v0, v13, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance I
+	14      (0000003c) const/16             v1, 100
+	15      (00000040) if-eq                v0, v1, +b
+
+writeSessionEventApp-BB@0x44 : [ writeSessionEventApp-BB@0x46 ]
+	16      (00000044) const/4              v0, 1
+
+writeSessionEventApp-BB@0x46 : [ writeSessionEventApp-BB@0x4c ]
+	17      (00000046) invoke-virtual       v3, v2, v0, Lcom/crashlytics/android/core/CodedOutputStream;->writeBool(I Z)V
+
+writeSessionEventApp-BB@0x4c : 
+	18      (0000004c) const/4              v0, 4
+	19      (0000004e) invoke-virtual       v3, v0, v14, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt32(I I)V
+	20      (00000054) return-void          
+
+writeSessionEventApp-BB@0x56 : [ writeSessionEventApp-BB@0x46 ]
+	21      (00000056) const/4              v0, 0
+	22      (00000058) goto                 -9
+

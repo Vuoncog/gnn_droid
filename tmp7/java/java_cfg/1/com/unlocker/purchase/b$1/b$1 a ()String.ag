@@ -1,0 +1,148 @@
+# Lcom/unlocker/purchase/b$1;->a()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x12 a-BB@0x22 ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) iget-object          v0, v7, Lcom/unlocker/purchase/b$1;->c Lcom/unlocker/purchase/b;
+	2       (00000006) invoke-virtual       v0, Lcom/unlocker/purchase/b;->a()Z
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-eqz               v0, +a
+
+a-BB@0x12 : 
+	5       (00000012) new-instance         v0, Lcom/unlocker/Util$UnrepeatableException;
+	6       (00000016) const-string         v1, 'Interrupted/Terminated'
+	7       (0000001a) invoke-direct        v0, v1, Lcom/unlocker/Util$UnrepeatableException;-><init>(Ljava/lang/String;)V
+	8       (00000020) throw                v0
+
+a-BB@0x22 : [ a-BB@0x98 ]
+	9       (00000022) iget-object          v0, v7, Lcom/unlocker/purchase/b$1;->c Lcom/unlocker/purchase/b;
+	10      (00000026) invoke-static        v0, Lcom/unlocker/purchase/b;->a(Lcom/unlocker/purchase/b;)Landroid/content/Context;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) iget-object          v1, v7, Lcom/unlocker/purchase/b$1;->c Lcom/unlocker/purchase/b;
+	13      (00000032) invoke-static        v1, Lcom/unlocker/purchase/b;->b(Lcom/unlocker/purchase/b;)Lcom/unlocker/purchase/Parameters;
+	14      (00000038) move-result-object   v1
+	15      (0000003a) iget-object          v1, v1, Lcom/unlocker/purchase/Parameters;->serverEndpointURL Ljava/lang/String;
+	16      (0000003e) iget-object          v2, v7, Lcom/unlocker/purchase/b$1;->a Ljava/lang/String;
+	17      (00000042) const/4              v3, 0
+	18      (00000044) invoke-static        v0, v1, v2, v3, Lcom/unlocker/Util;->a(Landroid/content/Context; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Ljava/net/HttpURLConnection;
+	19      (0000004a) move-result-object   v2
+	20      (0000004c) const-string         v0, 'POST'
+	21      (00000050) invoke-virtual       v2, v0, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
+	22      (00000056) invoke-virtual       v2, v4, Ljava/net/HttpURLConnection;->setDoInput(Z)V
+	23      (0000005c) invoke-virtual       v2, v4, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
+	24      (00000062) const/16             v0, 10000
+	25      (00000066) invoke-virtual       v2, v0, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
+	26      (0000006c) const/16             v0, 30000
+	27      (00000070) invoke-virtual       v2, v0, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
+	28      (00000076) invoke-static        Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
+	29      (0000007c) move-result-object   v0
+	30      (0000007e) iget-object          v1, v7, Lcom/unlocker/purchase/b$1;->b Lcom/unlocker/purchase/b$a;
+	31      (00000082) invoke-interface     v1, v0, Lcom/unlocker/purchase/b$a;->a(Ljava/util/Map;)V
+	32      (00000088) invoke-interface     v0, Ljava/util/Map;->entrySet()Ljava/util/Set;
+	33      (0000008e) move-result-object   v0
+	34      (00000090) invoke-interface     v0, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	35      (00000096) move-result-object   v3
+
+a-BB@0x98 : [ a-BB@0xa4 a-BB@0xd0 ]
+	36      (00000098) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	37      (0000009e) move-result          v0
+	38      (000000a0) if-eqz               v0, +18
+
+a-BB@0xa4 : [ a-BB@0x98 ]
+	39      (000000a4) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	40      (000000aa) move-result-object   v0
+	41      (000000ac) check-cast           v0, Ljava/util/Map$Entry;
+	42      (000000b0) invoke-interface     v0, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+	43      (000000b6) move-result-object   v1
+	44      (000000b8) check-cast           v1, Ljava/lang/String;
+	45      (000000bc) invoke-interface     v0, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+	46      (000000c2) move-result-object   v0
+	47      (000000c4) check-cast           v0, Ljava/lang/String;
+	48      (000000c8) invoke-virtual       v2, v1, v0, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String; Ljava/lang/String;)V
+	49      (000000ce) goto                 -1b
+
+a-BB@0xd0 : [ a-BB@0xd6 ]
+	50      (000000d0) invoke-virtual       v2, Ljava/net/HttpURLConnection;->connect()V
+
+a-BB@0xd6 : [ a-BB@0x112 a-BB@0x14e ]
+	51      (000000d6) iget-object          v0, v7, Lcom/unlocker/purchase/b$1;->b Lcom/unlocker/purchase/b$a;
+	52      (000000da) const-string         v1, 'utf-8'
+	53      (000000de) invoke-virtual       v2, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
+	54      (000000e4) move-result-object   v3
+	55      (000000e6) invoke-interface     v0, v1, v3, Lcom/unlocker/purchase/b$a;->a(Ljava/lang/String; Ljava/io/OutputStream;)V
+	56      (000000ec) invoke-virtual       v2, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
+	57      (000000f2) move-result-object   v0
+	58      (000000f4) invoke-virtual       v0, Ljava/io/OutputStream;->flush()V
+	59      (000000fa) invoke-virtual       v2, Ljava/net/HttpURLConnection;->getResponseCode()I
+	60      (00000100) move-result          v0
+	61      (00000102) invoke-virtual       v2, Ljava/net/HttpURLConnection;->getResponseMessage()Ljava/lang/String;
+	62      (00000108) move-result-object   v1
+	63      (0000010a) const/16             v3, 200
+	64      (0000010e) if-eq                v0, v3, +20
+	d6:143
+	(Ljava/lang/Throwable; -> 144 a-BB@0x144)
+
+a-BB@0x112 : 
+	65      (00000112) new-instance         v3, Ljava/lang/Exception;
+	66      (00000116) const-string         v4, 'Bad response (%d): %s'
+	67      (0000011a) const/4              v5, 2
+	68      (0000011c) new-array            v5, v5, [Ljava/lang/Object;
+	69      (00000120) const/4              v6, 0
+	70      (00000122) invoke-static        v0, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	71      (00000128) move-result-object   v0
+	72      (0000012a) aput-object          v0, v5, v6
+	73      (0000012e) const/4              v0, 1
+	74      (00000130) aput-object          v1, v5, v0
+	75      (00000134) invoke-static        v4, v5, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	76      (0000013a) move-result-object   v0
+	77      (0000013c) invoke-direct        v3, v0, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+	78      (00000142) throw                v3
+	d6:143
+	(Ljava/lang/Throwable; -> 144 a-BB@0x144)
+
+a-BB@0x144 : [ a-BB@0x146 ]
+	79      (00000144) move-exception       v0
+
+a-BB@0x146 : [ a-BB@0x14c ]
+	80      (00000146) invoke-virtual       v2, Ljava/net/HttpURLConnection;->disconnect()V
+	146:14b
+	(Ljava/lang/Exception; -> 17c a-BB@0x17c)
+
+a-BB@0x14c : 
+	81      (0000014c) throw                v0
+
+a-BB@0x14e : [ a-BB@0x162 ]
+	82      (0000014e) invoke-virtual       v2, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+	83      (00000154) move-result-object   v0
+	84      (00000156) const-string         v1, 'utf-8'
+	85      (0000015a) invoke-static        v0, v1, Lorg/apache/commons/io/IOUtils;->toString(Ljava/io/InputStream; Ljava/lang/String;)Ljava/lang/String;
+	86      (00000160) move-result-object   v0
+	14e:15f
+	(Ljava/lang/Throwable; -> 144 a-BB@0x144)
+
+a-BB@0x162 : [ a-BB@0x168 ]
+	87      (00000162) invoke-virtual       v2, Ljava/net/HttpURLConnection;->disconnect()V
+	162:167
+	(Ljava/lang/Exception; -> 16a a-BB@0x16a)
+
+a-BB@0x168 : 
+	88      (00000168) return-object        v0
+
+a-BB@0x16a : [ a-BB@0x168 ]
+	89      (0000016a) move-exception       v1
+	90      (0000016c) const-string         v2, 'UNLOCKER-HttpPostString'
+	91      (00000170) const-string         v3, 'Failed to close connection'
+	92      (00000174) invoke-static        v2, v3, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	93      (0000017a) goto                 -9
+
+a-BB@0x17c : [ a-BB@0x14c ]
+	94      (0000017c) move-exception       v1
+	95      (0000017e) const-string         v2, 'UNLOCKER-HttpPostString'
+	96      (00000182) const-string         v3, 'Failed to close connection'
+	97      (00000186) invoke-static        v2, v3, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	98      (0000018c) goto                 -20
+

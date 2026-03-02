@@ -1,0 +1,81 @@
+digraph {
+	graph [bb="0,0,616.6,543",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_f05dfe4612ba1cf177d406fdc8044f44 {
+		graph [bb="14.598,8,608.6,535",
+			label="Lorg/apache/commons/lang/math/IEEE754rUtils;.min->(F F)F\nLocal registers v0 ... v0\nparam v1 = float\nparam v2 = float\nreturn = \
+float",
+			lheight=1.04,
+			lp="311.6,493.5",
+			lwidth=5.56
+		];
+		struct_fd5ce95b06ee90c6773622885c9a31c3	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/Float;-&gt;isNaN(F)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="214.6,398.5",
+			width=4.9861];
+		struct_b0484cc84e7145dbc66d531fec50e475	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#7777BB">v2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="109.6,39.5",
+			width=1.7083];
+		struct_fd5ce95b06ee90c6773622885c9a31c3:tail -> struct_b0484cc84e7145dbc66d531fec50e475:header	[color=red,
+			pos="e,58.598,53.5 45.598,361.5 -19.429,361.5 -11.018,83.987 48.594,55.802"];
+		struct_9b606f016e7eac1f4ee3398800c029fd	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/Float;-&gt;isNaN(F)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="226.6,271.5",
+			width=5.0972];
+		struct_fd5ce95b06ee90c6773622885c9a31c3:tail -> struct_9b606f016e7eac1f4ee3398800c029fd:header	[color=green,
+			pos="e,68.598,310.5 56.598,358.5 56.598,340.46 64.673,334.51 67.575,320.82"];
+		struct_9e7e3640f96543793c92e3a01141ddae	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="#999933">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-8</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="117.6,144.5",
+			width=2.0694];
+		struct_9b606f016e7eac1f4ee3398800c029fd:tail -> struct_9e7e3640f96543793c92e3a01141ddae:header	[color=red,
+			pos="e,68.598,172.5 68.598,231.5 68.598,208.97 68.598,200.95 68.598,182.51"];
+		struct_1a245198d28c4cd7f190cb0a0913ae37	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#7777BB">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/Math;-&gt;min(F F)F</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7777BB">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="405.6,144.5",
+			width=5.4167];
+		struct_9b606f016e7eac1f4ee3398800c029fd:tail -> struct_1a245198d28c4cd7f190cb0a0913ae37:header	[color=green,
+			pos="e,235.6,183.5 68.598,231.5 68.598,158.04 219.69,250.77 234.44,193.54"];
+		struct_9e7e3640f96543793c92e3a01141ddae:tail -> struct_b0484cc84e7145dbc66d531fec50e475:header	[color=blue,
+			pos="e,68.598,56.5 68.598,115.5 68.598,92.965 68.598,84.955 68.598,66.505"];
+		struct_1a245198d28c4cd7f190cb0a0913ae37:tail -> struct_b0484cc84e7145dbc66d531fec50e475:header	[color=blue,
+			pos="e,68.598,56.5 220.6,107.5 210.94,107.5 209.65,102.37 200.6,99 146.34,78.783 77.528,113.44 69.394,66.607"];
+	}
+}

@@ -1,0 +1,22 @@
+# La/a/b/a/b/b/j/a/b/a;->b()La/a/b/a/a/c/b; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:a.a.b.a.a.c.b
+
+b-BB@0x0 : 
+	0       (00000000) invoke-super         v4, La/a/b/a/a/c/c;->b()La/a/b/a/a/c/b;
+	1       (00000006) move-result-object   v0
+	2       (00000008) new-instance         v1, La/a/b/a/a/c/a;
+	3       (0000000c) const-string         v2, 'Scenes'
+	4       (00000010) const-string         v3, 'scn'
+	5       (00000014) invoke-direct        v1, v2, v3, La/a/b/a/a/c/a;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	6       (0000001a) invoke-virtual       v0, v1, La/a/b/a/a/c/b;->add(Ljava/lang/Object;)Z
+	7       (00000020) new-instance         v1, La/a/b/a/a/c/a;
+	8       (00000024) const-string         v2, 'FX'
+	9       (00000028) const-string         v3, 'fx'
+	10      (0000002c) invoke-direct        v1, v2, v3, La/a/b/a/a/c/a;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	11      (00000032) invoke-virtual       v0, v1, La/a/b/a/a/c/b;->add(Ljava/lang/Object;)Z
+	12      (00000038) return-object        v0
+

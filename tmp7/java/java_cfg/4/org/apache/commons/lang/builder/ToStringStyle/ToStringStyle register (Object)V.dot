@@ -1,0 +1,80 @@
+digraph {
+	graph [bb="0,0,827.55,611",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_f48775ae2f8dd26c8f99b836c1938b8c {
+		graph [bb="8,8,808,603",
+			label="Lorg/apache/commons/lang/builder/ToStringStyle;.register->(Ljava/lang/Object;)V\nLocal registers v0 ... v1\nparam v2 = java.lang.Object\nreturn = \
+void",
+			lheight=0.83,
+			lp="408,569",
+			lwidth=7.50
+		];
+		struct_197168c0ef1ae63ba9074c22286fe225	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x16</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="449,503.5",
+			width=2.2083];
+		struct_d2216efc9cc1e3b730cc9e7786d337ee	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lorg/apache/commons/lang/builder/ToStringStyle;-&gt;getRegistry()Ljava/util/Map;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xc</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="439,398.5",
+			width=9.4583];
+		struct_197168c0ef1ae63ba9074c22286fe225:tail -> struct_d2216efc9cc1e3b730cc9e7786d337ee:header	[color=red,
+			pos="e,120,437.5 391,485.5 391,366.88 136.16,548.21 120.73,447.75"];
+		struct_ab6b282fcc95eb8fb2a70e15e2abe5a5	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="411,39.5",
+			width=2.0556];
+		struct_197168c0ef1ae63ba9074c22286fe225:tail -> struct_ab6b282fcc95eb8fb2a70e15e2abe5a5:header	[color=green,
+			pos="e,362,56.5 391,485.5 391,396.58 729.47,510.06 789,444 840.32,387.05 840.46,155.83 789,99 727.5,31.073 389.9,142.5 363.62,66.697"];
+		struct_0d654a853bda43d3c0ae954afecc3ca7	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#0000FF">Ljava/util/WeakHashMap;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Ljava/util/WeakHashMap;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/builder/ToStringStyle;-&gt;REGISTRY Ljava/lang/ThreadLocal;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Ljava/lang/ThreadLocal;-&gt;set(Ljava/lang/Object;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="388,260.5",
+			width=10.319];
+		struct_d2216efc9cc1e3b730cc9e7786d337ee:tail -> struct_0d654a853bda43d3c0ae954afecc3ca7:header	[color=red,
+			pos="e,42,310.5 120,358.5 120,321.77 56.491,345.39 44.086,320.44"];
+		struct_2c9ccfc5d7bcedc28328f66994d22430	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#7777BB">v1</FONT>, <FONT color="#DF3A01">Ljava/util/Map;-&gt;put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="401,133.5",
+			width=10.528];
+		struct_d2216efc9cc1e3b730cc9e7786d337ee:tail -> struct_2c9ccfc5d7bcedc28328f66994d22430:header	[color=green,
+			pos="e,47,161.5 120,358.5 120,286.24 719.56,369.7 769,317 786.18,298.69 786.23,222.27 769,204 716.24,148.04 103.18,233.87 50.592,170.91"];
+		struct_0d654a853bda43d3c0ae954afecc3ca7:tail -> struct_2c9ccfc5d7bcedc28328f66994d22430:header	[color=blue,
+			pos="e,47,161.5 42,209.5 42,191.91 45.365,185.31 46.574,171.67"];
+		struct_2c9ccfc5d7bcedc28328f66994d22430:tail -> struct_ab6b282fcc95eb8fb2a70e15e2abe5a5:header	[color=blue,
+			pos="e,362,56.5 47,104.5 47,-33.52 346.21,186.41 361.4,66.571"];
+	}
+}

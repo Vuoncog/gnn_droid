@@ -1,0 +1,16 @@
+# Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;->buildHttpRequest(Lio/fabric/sdk/android/services/network/HttpMethod; Ljava/lang/String;)Lio/fabric/sdk/android/services/network/HttpRequest; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:io.fabric.sdk.android.services.network.HttpMethod
+# - v3:java.lang.String
+#
+# - return:io.fabric.sdk.android.services.network.HttpRequest
+
+buildHttpRequest-BB@0x0 : 
+	0       (00000000) invoke-static        Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v1, v2, v3, v0, Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;->buildHttpRequest(Lio/fabric/sdk/android/services/network/HttpMethod; Ljava/lang/String; Ljava/util/Map;)Lio/fabric/sdk/android/services/network/HttpRequest;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) return-object        v0
+

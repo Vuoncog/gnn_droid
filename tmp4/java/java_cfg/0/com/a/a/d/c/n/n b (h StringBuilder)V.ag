@@ -1,0 +1,52 @@
+# Lcom/a/a/d/c/n;->b(Lcom/a/a/d/c/h; Ljava/lang/StringBuilder;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:com.a.a.d.c.h
+# - v6:java.lang.StringBuilder
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x42 b-BB@0x52 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) invoke-virtual       v5, Lcom/a/a/d/c/h;->j()V
+	2       (00000008) invoke-virtual       v5, Lcom/a/a/d/c/h;->i()Lcom/a/a/d/c/k;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-virtual       v0, Lcom/a/a/d/c/k;->h()I
+	5       (00000016) move-result          v0
+	6       (00000018) invoke-virtual       v5, Lcom/a/a/d/c/h;->d()I
+	7       (0000001e) move-result          v1
+	8       (00000020) sub-int/2addr        v0, v1
+	9       (00000022) invoke-virtual       v6, Ljava/lang/StringBuilder;->length()I
+	10      (00000028) move-result          v1
+	11      (0000002a) iget                 v2, v5, Lcom/a/a/d/c/h;->a I
+	12      (0000002e) sub-int              v1, v2, v1
+	13      (00000032) iput                 v1, v5, Lcom/a/a/d/c/h;->a I
+	14      (00000036) invoke-virtual       v5, Lcom/a/a/d/c/h;->h()I
+	15      (0000003c) move-result          v1
+	16      (0000003e) if-gt                v1, v3, +a
+
+b-BB@0x42 : [ b-BB@0x46 b-BB@0x52 ]
+	17      (00000042) if-gt                v0, v3, +8
+
+b-BB@0x46 : [ b-BB@0x52 b-BB@0x5c ]
+	18      (00000046) invoke-virtual       v5, Lcom/a/a/d/c/h;->h()I
+	19      (0000004c) move-result          v1
+	20      (0000004e) if-eq                v1, v0, +7
+
+b-BB@0x52 : [ b-BB@0x5c ]
+	21      (00000052) const/16             v0, 254
+	22      (00000056) invoke-virtual       v5, v0, Lcom/a/a/d/c/h;->a(C)V
+
+b-BB@0x5c : [ b-BB@0x68 b-BB@0x70 ]
+	23      (0000005c) invoke-virtual       v5, Lcom/a/a/d/c/h;->e()I
+	24      (00000062) move-result          v0
+	25      (00000064) if-gez               v0, +6
+
+b-BB@0x68 : [ b-BB@0x70 ]
+	26      (00000068) const/4              v0, 0
+	27      (0000006a) invoke-virtual       v5, v0, Lcom/a/a/d/c/h;->b(I)V
+
+b-BB@0x70 : 
+	28      (00000070) return-void          
+

@@ -1,0 +1,37 @@
+# Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->generateUniqueRollOverFileName()Ljava/lang/String; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:java.lang.String
+
+generateUniqueRollOverFileName-BB@0x0 : 
+	0       (00000000) invoke-static        Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+	1       (00000006) move-result-object   v0
+	2       (00000008) new-instance         v1, Ljava/lang/StringBuilder;
+	3       (0000000c) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	4       (00000012) const-string         v2, 'sa'
+	5       (00000016) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001c) move-result-object   v1
+	7       (0000001e) const-string         v2, '_'
+	8       (00000022) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-virtual       v0, Ljava/util/UUID;->toString()Ljava/lang/String;
+	11      (00000030) move-result-object   v0
+	12      (00000032) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) const-string         v1, '_'
+	15      (0000003e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v0
+	17      (00000046) iget-object          v1, v4, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->currentTimeProvider Lio/fabric/sdk/android/services/common/CurrentTimeProvider;
+	18      (0000004a) invoke-interface     v1, Lio/fabric/sdk/android/services/common/CurrentTimeProvider;->getCurrentTimeMillis()J
+	19      (00000050) move-result-wide     v2
+	20      (00000052) invoke-virtual       v0, v2, v3, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	21      (00000058) move-result-object   v0
+	22      (0000005a) const-string         v1, '.tap'
+	23      (0000005e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000064) move-result-object   v0
+	25      (00000066) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	26      (0000006c) move-result-object   v0
+	27      (0000006e) return-object        v0
+

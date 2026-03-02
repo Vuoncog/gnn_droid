@@ -1,0 +1,29 @@
+# Lorg/apache/commons/io/IOUtils;->copyLarge(Ljava/io/InputStream; Ljava/io/OutputStream; [B)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.InputStream
+# - v5:java.io.OutputStream
+# - v6:byte[]
+#
+# - return:long
+
+copyLarge-BB@0x0 : [ copyLarge-BB@0x4 ]
+	0       (00000000) const-wide/16        v0, 0 # [0.0]
+
+copyLarge-BB@0x4 : [ copyLarge-BB@0x12 copyLarge-BB@0x20 ]
+	1       (00000004) const/4              v2, -1
+	2       (00000006) invoke-virtual       v4, v6, Ljava/io/InputStream;->read([B)I
+	3       (0000000c) move-result          v3
+	4       (0000000e) if-eq                v2, v3, +9
+
+copyLarge-BB@0x12 : [ copyLarge-BB@0x4 ]
+	5       (00000012) const/4              v2, 0
+	6       (00000014) invoke-virtual       v5, v6, v2, v3, Ljava/io/OutputStream;->write([B I I)V
+	7       (0000001a) int-to-long          v2, v3
+	8       (0000001c) add-long/2addr       v0, v2
+	9       (0000001e) goto                 -d
+
+copyLarge-BB@0x20 : 
+	10      (00000020) return-wide          v0
+

@@ -1,0 +1,43 @@
+# Lorg/apache/commons/lang/ArrayUtils;->indexOf([J J I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:long[]
+# - v7:long
+# - v8:int
+#
+# - return:int
+
+indexOf-BB@0x0 : [ indexOf-BB@0x6 indexOf-BB@0xa ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) if-nez               v5, +4
+
+indexOf-BB@0x6 : [ indexOf-BB@0x8 ]
+	2       (00000006) move                 v8, v0
+
+indexOf-BB@0x8 : 
+	3       (00000008) return               v8
+
+indexOf-BB@0xa : [ indexOf-BB@0xe indexOf-BB@0x10 ]
+	4       (0000000a) if-gez               v8, +3
+
+indexOf-BB@0xe : [ indexOf-BB@0x10 ]
+	5       (0000000e) const/4              v8, 0
+
+indexOf-BB@0x10 : [ indexOf-BB@0x16 indexOf-BB@0x28 ]
+	6       (00000010) array-length         v1, v5
+	7       (00000012) if-ge                v8, v1, +b
+
+indexOf-BB@0x16 : [ indexOf-BB@0x22 indexOf-BB@0x8 ]
+	8       (00000016) aget-wide            v2, v5, v8
+	9       (0000001a) cmp-long             v1, v6, v2
+	10      (0000001e) if-eqz               v1, -b
+
+indexOf-BB@0x22 : [ indexOf-BB@0x10 ]
+	11      (00000022) add-int/lit8         v8, v8, 1
+	12      (00000026) goto                 -b
+
+indexOf-BB@0x28 : [ indexOf-BB@0x8 ]
+	13      (00000028) move                 v8, v0
+	14      (0000002a) goto                 -11
+

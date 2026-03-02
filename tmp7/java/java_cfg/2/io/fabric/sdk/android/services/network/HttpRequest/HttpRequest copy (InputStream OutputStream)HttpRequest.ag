@@ -1,0 +1,22 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->copy(Ljava/io/InputStream; Ljava/io/OutputStream;)Lio/fabric/sdk/android/services/network/HttpRequest; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.io.InputStream
+# - v8:java.io.OutputStream
+#
+# - return:io.fabric.sdk.android.services.network.HttpRequest
+
+copy-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lio/fabric/sdk/android/services/network/HttpRequest$6;
+	1       (00000004) iget-boolean         v3, v6, Lio/fabric/sdk/android/services/network/HttpRequest;->ignoreCloseExceptions Z
+	2       (00000008) move-object          v1, v6
+	3       (0000000a) move-object          v2, v7
+	4       (0000000c) move-object          v4, v7
+	5       (0000000e) move-object          v5, v8
+	6       (00000010) invoke-direct/range  v0 ... v5, Lio/fabric/sdk/android/services/network/HttpRequest$6;-><init>(Lio/fabric/sdk/android/services/network/HttpRequest; Ljava/io/Closeable; Z Ljava/io/InputStream; Ljava/io/OutputStream;)V
+	7       (00000016) invoke-virtual       v0, Lio/fabric/sdk/android/services/network/HttpRequest$6;->call()Ljava/lang/Object;
+	8       (0000001c) move-result-object   v0
+	9       (0000001e) check-cast           v0, Lio/fabric/sdk/android/services/network/HttpRequest;
+	10      (00000022) return-object        v0
+

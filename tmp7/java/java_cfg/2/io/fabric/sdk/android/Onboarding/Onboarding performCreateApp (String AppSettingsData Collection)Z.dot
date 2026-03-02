@@ -1,0 +1,41 @@
+digraph {
+	graph [bb="0,0,1584,485",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_4a18ee2c90927f8afeaff5d34cd8e025 {
+		graph [bb="8,8,1576,477",
+			label="Lio/fabric/sdk/android/Onboarding;.performCreateApp->(Ljava/lang/String; Lio/fabric/sdk/android/services/settings/AppSettingsData; \
+Ljava/util/Collection;)Z\nLocal registers v0 ... v5\nparam v6 = java.lang.String\nparam v7 = io.fabric.sdk.android.services.settings.AppSettingsData\nparam \
+v8 = java.util.Collection\nreturn = boolean",
+			lheight=1.25,
+			lp="792,428",
+			lwidth=14.29
+		];
+		struct_83c2f9f594c39d24a4600bf1aba01df6	[height=4.9306,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v5</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Onboarding;-&gt;getContext()Landroid/content/Context;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#939349">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#939349">v0</FONT>, <FONT color="#8D8D60">v6</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/settings/IconRequest;-&gt;build(Landroid/content/Context; Ljava/lang/String;)Lio/fabric/sdk/android/services/settings/IconRequest;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#939349">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v5</FONT>, <FONT color="#939349">v0</FONT>, <FONT color="#888877">v8</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Onboarding;-&gt;buildAppRequest(Lio/fabric/sdk/android/services/settings/IconRequest; Ljava/util/Collection;)Lio/fabric/sdk/android/services/settings/AppRequestData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#939349">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#82828D">v1</FONT>, <FONT color="#0000FF">Lio/fabric/sdk/android/services/settings/CreateAppSpiCall;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v5</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Onboarding;-&gt;getOverridenSpiEndpoint()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7C7CA4">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7777BB">v3</FONT>, <FONT color="#7171D1">v7</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/settings/AppSettingsData;-&gt;url Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#6B6BE8">v4</FONT>, <FONT color="#999933">v5</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/Onboarding;-&gt;requestFactory Lio/fabric/sdk/android/services/network/HttpRequestFactory;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#82828D">v1</FONT>, <FONT color="#999933">v5</FONT>, <FONT color="#7C7CA4">v2</FONT>, <FONT color="#7777BB">v3</FONT>, <FONT color="#6B6BE8">v4</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/settings/CreateAppSpiCall;-&gt;&lt;init&gt;(Lio/fabric/sdk/android/Kit; Ljava/lang/String; Ljava/lang/String; Lio/fabric/sdk/android/services/network/HttpRequestFactory;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#82828D">v1</FONT>, <FONT color="#939349">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/settings/CreateAppSpiCall;-&gt;invoke(Lio/fabric/sdk/android/services/settings/AppRequestData;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#939349">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#939349">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="792,193.5",
+			width=21.556];
+	}
+}

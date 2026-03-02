@@ -1,0 +1,27 @@
+# La/a/b/a/a/a/g;->g()Z [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+g-BB@0x0 : [ g-BB@0x20 g-BB@0x24 ]
+	0       (00000000) iget-object          v0, v2, La/a/b/a/a/a/g;->b La/a/b/a/b/b/c/i;
+	1       (00000004) invoke-virtual       v2, La/a/b/a/a/a/g;->f()F
+	2       (0000000a) move-result          v1
+	3       (0000000c) invoke-virtual       v0, v1, La/a/b/a/b/b/c/i;->a(F)F
+	4       (00000012) move-result          v0
+	5       (00000014) const/high16         v1, 16128 # [0.5]
+	6       (00000018) cmpl-float           v0, v0, v1
+	7       (0000001c) if-lez               v0, +4
+
+g-BB@0x20 : [ g-BB@0x22 ]
+	8       (00000020) const/4              v0, 1
+
+g-BB@0x22 : 
+	9       (00000022) return               v0
+
+g-BB@0x24 : [ g-BB@0x22 ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -2
+

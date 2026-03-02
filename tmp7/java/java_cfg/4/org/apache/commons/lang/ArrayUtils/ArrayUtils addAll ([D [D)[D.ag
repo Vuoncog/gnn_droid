@@ -1,0 +1,40 @@
+# Lorg/apache/commons/lang/ArrayUtils;->addAll([D [D)[D [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:double[]
+# - v5:double[]
+#
+# - return:double[]
+
+addAll-BB@0x0 : [ addAll-BB@0x6 addAll-BB@0x10 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) if-nez               v4, +7
+
+addAll-BB@0x6 : [ addAll-BB@0xe ]
+	2       (00000006) invoke-static        v5, Lorg/apache/commons/lang/ArrayUtils;->clone([D)[D
+	3       (0000000c) move-result-object   v0
+
+addAll-BB@0xe : 
+	4       (0000000e) return-object        v0
+
+addAll-BB@0x10 : [ addAll-BB@0x14 addAll-BB@0x1e ]
+	5       (00000010) if-nez               v5, +7
+
+addAll-BB@0x14 : [ addAll-BB@0xe ]
+	6       (00000014) invoke-static        v4, Lorg/apache/commons/lang/ArrayUtils;->clone([D)[D
+	7       (0000001a) move-result-object   v0
+	8       (0000001c) goto                 -7
+
+addAll-BB@0x1e : [ addAll-BB@0xe ]
+	9       (0000001e) array-length         v0, v4
+	10      (00000020) array-length         v1, v5
+	11      (00000022) add-int/2addr        v0, v1
+	12      (00000024) new-array            v0, v0, [D
+	13      (00000028) array-length         v1, v4
+	14      (0000002a) invoke-static        v4, v3, v0, v3, v1, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	15      (00000030) array-length         v1, v4
+	16      (00000032) array-length         v2, v5
+	17      (00000034) invoke-static        v5, v3, v0, v1, v2, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	18      (0000003a) goto                 -16
+

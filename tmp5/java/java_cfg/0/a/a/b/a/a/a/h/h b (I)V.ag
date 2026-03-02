@@ -1,0 +1,30 @@
+# La/a/b/a/a/a/h;->b(I)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x8 b-BB@0x10 ]
+	0       (00000000) iget                 v0, v3, La/a/b/a/a/a/h;->d I
+	1       (00000004) if-nez               v0, +6
+
+b-BB@0x8 : [ b-BB@0x10 b-BB@0x12 ]
+	2       (00000008) iget-object          v0, v3, La/a/b/a/a/a/h;->b La/a/b/a/b/b/c/i;
+	3       (0000000c) if-nez               v0, +3
+
+b-BB@0x10 : 
+	4       (00000010) return-void          
+
+b-BB@0x12 : [ b-BB@0x10 ]
+	5       (00000012) invoke-virtual       v3, La/a/b/a/a/a/h;->f()F
+	6       (00000018) move-result          v0
+	7       (0000001a) iget-object          v1, v3, La/a/b/a/a/a/h;->b La/a/b/a/b/b/c/i;
+	8       (0000001e) iget                 v1, v1, La/a/b/a/b/b/c/i;->f F
+	9       (00000022) int-to-float         v2, v4
+	10      (00000024) mul-float/2addr      v1, v2
+	11      (00000026) sub-float/2addr      v0, v1
+	12      (00000028) invoke-virtual       v3, v0, La/a/b/a/a/a/h;->a(F)V
+	13      (0000002e) goto                 -f
+

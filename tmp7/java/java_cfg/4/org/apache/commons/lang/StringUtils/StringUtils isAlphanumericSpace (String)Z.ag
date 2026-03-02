@@ -1,0 +1,44 @@
+# Lorg/apache/commons/lang/StringUtils;->isAlphanumericSpace(Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:boolean
+
+isAlphanumericSpace-BB@0x0 : [ isAlphanumericSpace-BB@0x6 isAlphanumericSpace-BB@0x8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-nez               v5, +3
+
+isAlphanumericSpace-BB@0x6 : 
+	2       (00000006) return               v0
+
+isAlphanumericSpace-BB@0x8 : [ isAlphanumericSpace-BB@0x12 ]
+	3       (00000008) invoke-virtual       v5, Ljava/lang/String;->length()I
+	4       (0000000e) move-result          v2
+	5       (00000010) move                 v1, v0
+
+isAlphanumericSpace-BB@0x12 : [ isAlphanumericSpace-BB@0x16 isAlphanumericSpace-BB@0x40 ]
+	6       (00000012) if-ge                v1, v2, +17
+
+isAlphanumericSpace-BB@0x16 : [ isAlphanumericSpace-BB@0x2a isAlphanumericSpace-BB@0x3a ]
+	7       (00000016) invoke-virtual       v5, v1, Ljava/lang/String;->charAt(I)C
+	8       (0000001c) move-result          v3
+	9       (0000001e) invoke-static        v3, Ljava/lang/Character;->isLetterOrDigit(C)Z
+	10      (00000024) move-result          v3
+	11      (00000026) if-nez               v3, +a
+
+isAlphanumericSpace-BB@0x2a : [ isAlphanumericSpace-BB@0x3a isAlphanumericSpace-BB@0x6 ]
+	12      (0000002a) invoke-virtual       v5, v1, Ljava/lang/String;->charAt(I)C
+	13      (00000030) move-result          v3
+	14      (00000032) const/16             v4, 32
+	15      (00000036) if-ne                v3, v4, -18
+
+isAlphanumericSpace-BB@0x3a : [ isAlphanumericSpace-BB@0x12 ]
+	16      (0000003a) add-int/lit8         v1, v1, 1
+	17      (0000003e) goto                 -16
+
+isAlphanumericSpace-BB@0x40 : [ isAlphanumericSpace-BB@0x6 ]
+	18      (00000040) const/4              v0, 1
+	19      (00000042) goto                 -1e
+

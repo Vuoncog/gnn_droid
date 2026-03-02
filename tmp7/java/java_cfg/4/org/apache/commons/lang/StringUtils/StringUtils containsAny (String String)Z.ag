@@ -1,0 +1,25 @@
+# Lorg/apache/commons/lang/StringUtils;->containsAny(Ljava/lang/String; Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.lang.String
+#
+# - return:boolean
+
+containsAny-BB@0x0 : [ containsAny-BB@0x4 containsAny-BB@0x8 ]
+	0       (00000000) if-nez               v2, +4
+
+containsAny-BB@0x4 : [ containsAny-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+containsAny-BB@0x6 : 
+	2       (00000006) return               v0
+
+containsAny-BB@0x8 : [ containsAny-BB@0x6 ]
+	3       (00000008) invoke-virtual       v2, Ljava/lang/String;->toCharArray()[C
+	4       (0000000e) move-result-object   v0
+	5       (00000010) invoke-static        v1, v0, Lorg/apache/commons/lang/StringUtils;->containsAny(Ljava/lang/String; [C)Z
+	6       (00000016) move-result          v0
+	7       (00000018) goto                 -9
+

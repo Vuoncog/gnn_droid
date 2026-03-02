@@ -1,0 +1,32 @@
+# Lio/fabric/sdk/android/services/concurrency/Priority;->compareTo(Lio/fabric/sdk/android/services/concurrency/PriorityProvider; Ljava/lang/Object;)I [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:io.fabric.sdk.android.services.concurrency.PriorityProvider
+# - v3:java.lang.Object
+#
+# - return:int
+
+compareTo-BB@0x0 : [ compareTo-BB@0x8 compareTo-BB@0x30 ]
+	0       (00000000) instance-of          v0, v3, Lio/fabric/sdk/android/services/concurrency/PriorityProvider;
+	1       (00000004) if-eqz               v0, +16
+
+compareTo-BB@0x8 : [ compareTo-BB@0x14 ]
+	2       (00000008) check-cast           v3, Lio/fabric/sdk/android/services/concurrency/PriorityProvider;
+	3       (0000000c) invoke-interface     v3, Lio/fabric/sdk/android/services/concurrency/PriorityProvider;->getPriority()Lio/fabric/sdk/android/services/concurrency/Priority;
+	4       (00000012) move-result-object   v0
+
+compareTo-BB@0x14 : 
+	5       (00000014) invoke-virtual       v0, Lio/fabric/sdk/android/services/concurrency/Priority;->ordinal()I
+	6       (0000001a) move-result          v0
+	7       (0000001c) invoke-interface     v2, Lio/fabric/sdk/android/services/concurrency/PriorityProvider;->getPriority()Lio/fabric/sdk/android/services/concurrency/Priority;
+	8       (00000022) move-result-object   v1
+	9       (00000024) invoke-virtual       v1, Lio/fabric/sdk/android/services/concurrency/Priority;->ordinal()I
+	10      (0000002a) move-result          v1
+	11      (0000002c) sub-int/2addr        v0, v1
+	12      (0000002e) return               v0
+
+compareTo-BB@0x30 : [ compareTo-BB@0x14 ]
+	13      (00000030) sget-object          v0, Lio/fabric/sdk/android/services/concurrency/Priority;->NORMAL Lio/fabric/sdk/android/services/concurrency/Priority;
+	14      (00000034) goto                 -10
+

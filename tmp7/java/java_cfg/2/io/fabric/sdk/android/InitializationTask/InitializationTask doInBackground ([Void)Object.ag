@@ -1,0 +1,26 @@
+# Lio/fabric/sdk/android/InitializationTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/Object; [access_flags=protected varargs]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Void[]
+#
+# - return:java.lang.Object
+
+doInBackground-BB@0x0 : [ doInBackground-BB@0x1a doInBackground-BB@0x26 ]
+	0       (00000000) const-string         v0, 'doInBackground'
+	1       (00000004) invoke-direct        v3, v0, Lio/fabric/sdk/android/InitializationTask;->createAndStartTimingMetric(Ljava/lang/String;)Lio/fabric/sdk/android/services/common/TimingMetric;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) const/4              v0, 0
+	4       (0000000e) invoke-virtual       v3, Lio/fabric/sdk/android/InitializationTask;->isCancelled()Z
+	5       (00000014) move-result          v2
+	6       (00000016) if-nez               v2, +8
+
+doInBackground-BB@0x1a : [ doInBackground-BB@0x26 ]
+	7       (0000001a) iget-object          v0, v3, Lio/fabric/sdk/android/InitializationTask;->kit Lio/fabric/sdk/android/Kit;
+	8       (0000001e) invoke-virtual       v0, Lio/fabric/sdk/android/Kit;->doInBackground()Ljava/lang/Object;
+	9       (00000024) move-result-object   v0
+
+doInBackground-BB@0x26 : 
+	10      (00000026) invoke-virtual       v1, Lio/fabric/sdk/android/services/common/TimingMetric;->stopMeasuring()V
+	11      (0000002c) return-object        v0
+

@@ -1,0 +1,53 @@
+# Lio/fabric/sdk/android/services/cache/AbstractValueCache;->get(Landroid/content/Context; Lio/fabric/sdk/android/services/cache/ValueLoader;)Ljava/lang/Object; [access_flags=public final synchronized]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:io.fabric.sdk.android.services.cache.ValueLoader
+#
+# - return:java.lang.Object
+
+get-BB@0x0 : [ get-BB@0x2 ]
+	0       (00000000) monitor-enter        v1
+
+get-BB@0x2 : [ get-BB@0xe get-BB@0x28 ]
+	1       (00000002) invoke-virtual       v1, v2, Lio/fabric/sdk/android/services/cache/AbstractValueCache;->getCached(Landroid/content/Context;)Ljava/lang/Object;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) if-nez               v0, +f
+	2:27
+	(Ljava/lang/Throwable; -> 36 get-BB@0x36)
+
+get-BB@0xe : [ get-BB@0x16 get-BB@0x2c ]
+	4       (0000000e) iget-object          v0, v1, Lio/fabric/sdk/android/services/cache/AbstractValueCache;->childCache Lio/fabric/sdk/android/services/cache/ValueCache;
+	5       (00000012) if-eqz               v0, +d
+	2:27
+	(Ljava/lang/Throwable; -> 36 get-BB@0x36)
+
+get-BB@0x16 : [ get-BB@0x22 ]
+	6       (00000016) iget-object          v0, v1, Lio/fabric/sdk/android/services/cache/AbstractValueCache;->childCache Lio/fabric/sdk/android/services/cache/ValueCache;
+	7       (0000001a) invoke-interface     v0, v2, v3, Lio/fabric/sdk/android/services/cache/ValueCache;->get(Landroid/content/Context; Lio/fabric/sdk/android/services/cache/ValueLoader;)Ljava/lang/Object;
+	8       (00000020) move-result-object   v0
+	2:27
+	(Ljava/lang/Throwable; -> 36 get-BB@0x36)
+
+get-BB@0x22 : [ get-BB@0x28 ]
+	9       (00000022) invoke-direct        v1, v2, v0, Lio/fabric/sdk/android/services/cache/AbstractValueCache;->cache(Landroid/content/Context; Ljava/lang/Object;)V
+	2:27
+	(Ljava/lang/Throwable; -> 36 get-BB@0x36)
+
+get-BB@0x28 : 
+	10      (00000028) monitor-exit         v1
+	11      (0000002a) return-object        v0
+
+get-BB@0x2c : [ get-BB@0x22 ]
+	12      (0000002c) invoke-interface     v3, v2, Lio/fabric/sdk/android/services/cache/ValueLoader;->load(Landroid/content/Context;)Ljava/lang/Object;
+	13      (00000032) move-result-object   v0
+	14      (00000034) goto                 -9
+	2c:31
+	(Ljava/lang/Throwable; -> 36 get-BB@0x36)
+
+get-BB@0x36 : 
+	15      (00000036) move-exception       v0
+	16      (00000038) monitor-exit         v1
+	17      (0000003a) throw                v0
+

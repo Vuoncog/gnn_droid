@@ -1,0 +1,40 @@
+# Lio/fabric/sdk/android/services/settings/DefaultSettingsJsonTransform;->buildPromptDataFrom(Lorg/json/JSONObject;)Lio/fabric/sdk/android/services/settings/PromptSettingsData; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:org.json.JSONObject
+#
+# - return:io.fabric.sdk.android.services.settings.PromptSettingsData
+
+buildPromptDataFrom-BB@0x0 : 
+	0       (00000000) const/4              v6, 1
+	1       (00000002) const-string         v0, 'title'
+	2       (00000006) const-string         v1, 'Send Crash Report?'
+	3       (0000000a) invoke-virtual       v9, v0, v1, Lorg/json/JSONObject;->optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	4       (00000010) move-result-object   v1
+	5       (00000012) const-string         v0, 'message'
+	6       (00000016) const-string         v2, 'Looks like we crashed! Please help us fix the problem by sending a crash report.'
+	7       (0000001a) invoke-virtual       v9, v0, v2, Lorg/json/JSONObject;->optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	8       (00000020) move-result-object   v2
+	9       (00000022) const-string         v0, 'send_button_title'
+	10      (00000026) const-string         v3, 'Send'
+	11      (0000002a) invoke-virtual       v9, v0, v3, Lorg/json/JSONObject;->optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	12      (00000030) move-result-object   v3
+	13      (00000032) const-string         v0, 'show_cancel_button'
+	14      (00000036) invoke-virtual       v9, v0, v6, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String; Z)Z
+	15      (0000003c) move-result          v4
+	16      (0000003e) const-string         v0, 'cancel_button_title'
+	17      (00000042) const-string         v5, "Don't Send"
+	18      (00000046) invoke-virtual       v9, v0, v5, Lorg/json/JSONObject;->optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	19      (0000004c) move-result-object   v5
+	20      (0000004e) const-string         v0, 'show_always_send_button'
+	21      (00000052) invoke-virtual       v9, v0, v6, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String; Z)Z
+	22      (00000058) move-result          v6
+	23      (0000005a) const-string         v0, 'always_send_button_title'
+	24      (0000005e) const-string         v7, 'Always Send'
+	25      (00000062) invoke-virtual       v9, v0, v7, Lorg/json/JSONObject;->optString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	26      (00000068) move-result-object   v7
+	27      (0000006a) new-instance         v0, Lio/fabric/sdk/android/services/settings/PromptSettingsData;
+	28      (0000006e) invoke-direct/range  v0 ... v7, Lio/fabric/sdk/android/services/settings/PromptSettingsData;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Z Ljava/lang/String; Z Ljava/lang/String;)V
+	29      (00000074) return-object        v0
+

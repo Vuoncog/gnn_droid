@@ -1,0 +1,255 @@
+# Lnet/youmi/android/bz;->a()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v11
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xe ]
+	0       (00000000) const/4              v10, 4
+	1       (00000002) const/4              v9, 2
+	2       (00000004) const/4              v8, 3
+	3       (00000006) const/4              v7, 1
+	4       (00000008) const/4              v6, 0
+	5       (0000000a) const/16             v0, 16
+
+a-BB@0xe : [ a-BB@0x16 a-BB@0x68 ]
+	6       (0000000e) const/16             v1, 79
+	7       (00000012) if-le                v0, v1, +2b
+
+a-BB@0x16 : [ a-BB@0x1e ]
+	8       (00000016) const/4              v0, 5
+	9       (00000018) new-array            v0, v0, [I
+	10      (0000001c) move                 v1, v6
+
+a-BB@0x1e : [ a-BB@0x24 a-BB@0xc0 ]
+	11      (0000001e) array-length         v2, v0
+	12      (00000020) if-lt                v1, v2, +50
+
+a-BB@0x24 : [ a-BB@0x26 ]
+	13      (00000024) move                 v1, v6
+
+a-BB@0x26 : [ a-BB@0x2e a-BB@0xd2 ]
+	14      (00000026) const/16             v2, 19
+	15      (0000002a) if-le                v1, v2, +54
+
+a-BB@0x2e : [ a-BB@0x32 ]
+	16      (0000002e) const/16             v1, 20
+
+a-BB@0x32 : [ a-BB@0x3a a-BB@0x146 ]
+	17      (00000032) const/16             v2, 39
+	18      (00000036) if-le                v1, v2, +88
+
+a-BB@0x3a : [ a-BB@0x3e ]
+	19      (0000003a) const/16             v1, 40
+
+a-BB@0x3e : [ a-BB@0x46 a-BB@0x1ba ]
+	20      (0000003e) const/16             v2, 59
+	21      (00000042) if-le                v1, v2, +bc
+
+a-BB@0x46 : [ a-BB@0x4a ]
+	22      (00000046) const/16             v1, 60
+
+a-BB@0x4a : [ a-BB@0x52 a-BB@0x22e ]
+	23      (0000004a) const/16             v2, 79
+	24      (0000004e) if-le                v1, v2, +f0
+
+a-BB@0x52 : [ a-BB@0x54 ]
+	25      (00000052) move                 v1, v6
+
+a-BB@0x54 : [ a-BB@0x5a a-BB@0x2a2 ]
+	26      (00000054) array-length         v2, v0
+	27      (00000056) if-lt                v1, v2, +126
+
+a-BB@0x5a : [ a-BB@0x5c ]
+	28      (0000005a) move                 v0, v6
+
+a-BB@0x5c : [ a-BB@0x66 a-BB@0x2c0 ]
+	29      (0000005c) iget-object          v1, v11, Lnet/youmi/android/bz;->c [I
+	30      (00000060) array-length         v1, v1
+	31      (00000062) if-lt                v0, v1, +12f
+
+a-BB@0x66 : 
+	32      (00000066) return-void          
+
+a-BB@0x68 : [ a-BB@0xe ]
+	33      (00000068) iget-object          v1, v11, Lnet/youmi/android/bz;->c [I
+	34      (0000006c) iget-object          v2, v11, Lnet/youmi/android/bz;->c [I
+	35      (00000070) sub-int              v3, v0, v8
+	36      (00000074) aget                 v2, v2, v3
+	37      (00000078) iget-object          v3, v11, Lnet/youmi/android/bz;->c [I
+	38      (0000007c) const/16             v4, 8
+	39      (00000080) sub-int              v4, v0, v4
+	40      (00000084) aget                 v3, v3, v4
+	41      (00000088) xor-int/2addr        v2, v3
+	42      (0000008a) iget-object          v3, v11, Lnet/youmi/android/bz;->c [I
+	43      (0000008e) const/16             v4, 14
+	44      (00000092) sub-int              v4, v0, v4
+	45      (00000096) aget                 v3, v3, v4
+	46      (0000009a) xor-int/2addr        v2, v3
+	47      (0000009c) iget-object          v3, v11, Lnet/youmi/android/bz;->c [I
+	48      (000000a0) const/16             v4, 16
+	49      (000000a4) sub-int              v4, v0, v4
+	50      (000000a8) aget                 v3, v3, v4
+	51      (000000ac) xor-int/2addr        v2, v3
+	52      (000000ae) invoke-direct        v11, v2, v7, Lnet/youmi/android/bz;->a(I I)I
+	53      (000000b4) move-result          v2
+	54      (000000b6) aput                 v2, v1, v0
+	55      (000000ba) add-int/lit8         v0, v0, 1
+	56      (000000be) goto                 -58
+
+a-BB@0xc0 : [ a-BB@0x1e ]
+	57      (000000c0) iget-object          v2, v11, Lnet/youmi/android/bz;->b [I
+	58      (000000c4) aget                 v2, v2, v1
+	59      (000000c8) aput                 v2, v0, v1
+	60      (000000cc) add-int/lit8         v1, v1, 1
+	61      (000000d0) goto                 -59
+
+a-BB@0xd2 : [ a-BB@0x26 ]
+	62      (000000d2) aget                 v2, v0, v6
+	63      (000000d6) const/4              v3, 5
+	64      (000000d8) invoke-direct        v11, v2, v3, Lnet/youmi/android/bz;->a(I I)I
+	65      (000000de) move-result          v2
+	66      (000000e0) aget                 v3, v0, v7
+	67      (000000e4) aget                 v4, v0, v9
+	68      (000000e8) aget                 v5, v0, v8
+	69      (000000ec) invoke-direct        v11, v3, v4, v5, Lnet/youmi/android/bz;->a(I I I)I
+	70      (000000f2) move-result          v3
+	71      (000000f4) add-int/2addr        v2, v3
+	72      (000000f6) aget                 v3, v0, v10
+	73      (000000fa) add-int/2addr        v2, v3
+	74      (000000fc) iget-object          v3, v11, Lnet/youmi/android/bz;->c [I
+	75      (00000100) aget                 v3, v3, v1
+	76      (00000104) add-int/2addr        v2, v3
+	77      (00000106) const                v3, 1518500249 # [1.836272250467123e+16]
+	78      (0000010c) add-int/2addr        v2, v3
+	79      (0000010e) aget                 v3, v0, v8
+	80      (00000112) aput                 v3, v0, v10
+	81      (00000116) aget                 v3, v0, v9
+	82      (0000011a) aput                 v3, v0, v8
+	83      (0000011e) aget                 v3, v0, v7
+	84      (00000122) const/16             v4, 30
+	85      (00000126) invoke-direct        v11, v3, v4, Lnet/youmi/android/bz;->a(I I)I
+	86      (0000012c) move-result          v3
+	87      (0000012e) aput                 v3, v0, v9
+	88      (00000132) aget                 v3, v0, v6
+	89      (00000136) aput                 v3, v0, v7
+	90      (0000013a) aput                 v2, v0, v6
+	91      (0000013e) add-int/lit8         v1, v1, 1
+	92      (00000142) goto/16              -8e
+
+a-BB@0x146 : [ a-BB@0x32 ]
+	93      (00000146) aget                 v2, v0, v6
+	94      (0000014a) const/4              v3, 5
+	95      (0000014c) invoke-direct        v11, v2, v3, Lnet/youmi/android/bz;->a(I I)I
+	96      (00000152) move-result          v2
+	97      (00000154) aget                 v3, v0, v7
+	98      (00000158) aget                 v4, v0, v9
+	99      (0000015c) aget                 v5, v0, v8
+	100     (00000160) invoke-direct        v11, v3, v4, v5, Lnet/youmi/android/bz;->b(I I I)I
+	101     (00000166) move-result          v3
+	102     (00000168) add-int/2addr        v2, v3
+	103     (0000016a) aget                 v3, v0, v10
+	104     (0000016e) add-int/2addr        v2, v3
+	105     (00000170) iget-object          v3, v11, Lnet/youmi/android/bz;->c [I
+	106     (00000174) aget                 v3, v3, v1
+	107     (00000178) add-int/2addr        v2, v3
+	108     (0000017a) const                v3, 1859775393 # [3.372155249992253e+28]
+	109     (00000180) add-int/2addr        v2, v3
+	110     (00000182) aget                 v3, v0, v8
+	111     (00000186) aput                 v3, v0, v10
+	112     (0000018a) aget                 v3, v0, v9
+	113     (0000018e) aput                 v3, v0, v8
+	114     (00000192) aget                 v3, v0, v7
+	115     (00000196) const/16             v4, 30
+	116     (0000019a) invoke-direct        v11, v3, v4, Lnet/youmi/android/bz;->a(I I)I
+	117     (000001a0) move-result          v3
+	118     (000001a2) aput                 v3, v0, v9
+	119     (000001a6) aget                 v3, v0, v6
+	120     (000001aa) aput                 v3, v0, v7
+	121     (000001ae) aput                 v2, v0, v6
+	122     (000001b2) add-int/lit8         v1, v1, 1
+	123     (000001b6) goto/16              -c2
+
+a-BB@0x1ba : [ a-BB@0x3e ]
+	124     (000001ba) aget                 v2, v0, v6
+	125     (000001be) const/4              v3, 5
+	126     (000001c0) invoke-direct        v11, v2, v3, Lnet/youmi/android/bz;->a(I I)I
+	127     (000001c6) move-result          v2
+	128     (000001c8) aget                 v3, v0, v7
+	129     (000001cc) aget                 v4, v0, v9
+	130     (000001d0) aget                 v5, v0, v8
+	131     (000001d4) invoke-direct        v11, v3, v4, v5, Lnet/youmi/android/bz;->c(I I I)I
+	132     (000001da) move-result          v3
+	133     (000001dc) add-int/2addr        v2, v3
+	134     (000001de) aget                 v3, v0, v10
+	135     (000001e2) add-int/2addr        v2, v3
+	136     (000001e4) iget-object          v3, v11, Lnet/youmi/android/bz;->c [I
+	137     (000001e8) aget                 v3, v3, v1
+	138     (000001ec) add-int/2addr        v2, v3
+	139     (000001ee) const                v3, -1894007588 # [-7.678463011887628e-30]
+	140     (000001f4) add-int/2addr        v2, v3
+	141     (000001f6) aget                 v3, v0, v8
+	142     (000001fa) aput                 v3, v0, v10
+	143     (000001fe) aget                 v3, v0, v9
+	144     (00000202) aput                 v3, v0, v8
+	145     (00000206) aget                 v3, v0, v7
+	146     (0000020a) const/16             v4, 30
+	147     (0000020e) invoke-direct        v11, v3, v4, Lnet/youmi/android/bz;->a(I I)I
+	148     (00000214) move-result          v3
+	149     (00000216) aput                 v3, v0, v9
+	150     (0000021a) aget                 v3, v0, v6
+	151     (0000021e) aput                 v3, v0, v7
+	152     (00000222) aput                 v2, v0, v6
+	153     (00000226) add-int/lit8         v1, v1, 1
+	154     (0000022a) goto/16              -f6
+
+a-BB@0x22e : [ a-BB@0x4a ]
+	155     (0000022e) aget                 v2, v0, v6
+	156     (00000232) const/4              v3, 5
+	157     (00000234) invoke-direct        v11, v2, v3, Lnet/youmi/android/bz;->a(I I)I
+	158     (0000023a) move-result          v2
+	159     (0000023c) aget                 v3, v0, v7
+	160     (00000240) aget                 v4, v0, v9
+	161     (00000244) aget                 v5, v0, v8
+	162     (00000248) invoke-direct        v11, v3, v4, v5, Lnet/youmi/android/bz;->b(I I I)I
+	163     (0000024e) move-result          v3
+	164     (00000250) add-int/2addr        v2, v3
+	165     (00000252) aget                 v3, v0, v10
+	166     (00000256) add-int/2addr        v2, v3
+	167     (00000258) iget-object          v3, v11, Lnet/youmi/android/bz;->c [I
+	168     (0000025c) aget                 v3, v3, v1
+	169     (00000260) add-int/2addr        v2, v3
+	170     (00000262) const                v3, -899497514 # [-3715189.5]
+	171     (00000268) add-int/2addr        v2, v3
+	172     (0000026a) aget                 v3, v0, v8
+	173     (0000026e) aput                 v3, v0, v10
+	174     (00000272) aget                 v3, v0, v9
+	175     (00000276) aput                 v3, v0, v8
+	176     (0000027a) aget                 v3, v0, v7
+	177     (0000027e) const/16             v4, 30
+	178     (00000282) invoke-direct        v11, v3, v4, Lnet/youmi/android/bz;->a(I I)I
+	179     (00000288) move-result          v3
+	180     (0000028a) aput                 v3, v0, v9
+	181     (0000028e) aget                 v3, v0, v6
+	182     (00000292) aput                 v3, v0, v7
+	183     (00000296) aput                 v2, v0, v6
+	184     (0000029a) add-int/lit8         v1, v1, 1
+	185     (0000029e) goto/16              -12a
+
+a-BB@0x2a2 : [ a-BB@0x54 ]
+	186     (000002a2) iget-object          v2, v11, Lnet/youmi/android/bz;->b [I
+	187     (000002a6) iget-object          v3, v11, Lnet/youmi/android/bz;->b [I
+	188     (000002aa) aget                 v3, v3, v1
+	189     (000002ae) aget                 v4, v0, v1
+	190     (000002b2) add-int/2addr        v3, v4
+	191     (000002b4) aput                 v3, v2, v1
+	192     (000002b8) add-int/lit8         v1, v1, 1
+	193     (000002bc) goto/16              -134
+
+a-BB@0x2c0 : [ a-BB@0x5c ]
+	194     (000002c0) iget-object          v1, v11, Lnet/youmi/android/bz;->c [I
+	195     (000002c4) aput                 v6, v1, v0
+	196     (000002c8) add-int/lit8         v0, v0, 1
+	197     (000002cc) goto/16              -138
+

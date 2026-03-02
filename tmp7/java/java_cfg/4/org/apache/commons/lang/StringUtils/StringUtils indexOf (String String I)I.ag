@@ -1,0 +1,42 @@
+# Lorg/apache/commons/lang/StringUtils;->indexOf(Ljava/lang/String; Ljava/lang/String; I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.lang.String
+# - v3:int
+#
+# - return:int
+
+indexOf-BB@0x0 : [ indexOf-BB@0x4 indexOf-BB@0x8 ]
+	0       (00000000) if-eqz               v1, +4
+
+indexOf-BB@0x4 : [ indexOf-BB@0x8 indexOf-BB@0xc ]
+	1       (00000004) if-nez               v2, +4
+
+indexOf-BB@0x8 : [ indexOf-BB@0xa ]
+	2       (00000008) const/4              v0, -1
+
+indexOf-BB@0xa : 
+	3       (0000000a) return               v0
+
+indexOf-BB@0xc : [ indexOf-BB@0x18 indexOf-BB@0x2e ]
+	4       (0000000c) invoke-virtual       v2, Ljava/lang/String;->length()I
+	5       (00000012) move-result          v0
+	6       (00000014) if-nez               v0, +d
+
+indexOf-BB@0x18 : [ indexOf-BB@0x24 indexOf-BB@0x2e ]
+	7       (00000018) invoke-virtual       v1, Ljava/lang/String;->length()I
+	8       (0000001e) move-result          v0
+	9       (00000020) if-lt                v3, v0, +7
+
+indexOf-BB@0x24 : [ indexOf-BB@0xa ]
+	10      (00000024) invoke-virtual       v1, Ljava/lang/String;->length()I
+	11      (0000002a) move-result          v0
+	12      (0000002c) goto                 -11
+
+indexOf-BB@0x2e : [ indexOf-BB@0xa ]
+	13      (0000002e) invoke-virtual       v1, v2, v3, Ljava/lang/String;->indexOf(Ljava/lang/String; I)I
+	14      (00000034) move-result          v0
+	15      (00000036) goto                 -16
+

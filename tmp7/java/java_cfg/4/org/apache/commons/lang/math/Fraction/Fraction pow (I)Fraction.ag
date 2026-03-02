@@ -1,0 +1,69 @@
+# Lorg/apache/commons/lang/math/Fraction;->pow(I)Lorg/apache/commons/lang/math/Fraction; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:org.apache.commons.lang.math.Fraction
+
+pow-BB@0x0 : [ pow-BB@0x6 pow-BB@0x8 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) if-ne                v3, v0, +3
+
+pow-BB@0x6 : 
+	2       (00000006) return-object        v2
+
+pow-BB@0x8 : [ pow-BB@0xc pow-BB@0x12 ]
+	3       (00000008) if-nez               v3, +5
+
+pow-BB@0xc : [ pow-BB@0x6 ]
+	4       (0000000c) sget-object          v2, Lorg/apache/commons/lang/math/Fraction;->ONE Lorg/apache/commons/lang/math/Fraction;
+	5       (00000010) goto                 -5
+
+pow-BB@0x12 : [ pow-BB@0x16 pow-BB@0x54 ]
+	6       (00000012) if-gez               v3, +21
+
+pow-BB@0x16 : [ pow-BB@0x1e pow-BB@0x40 ]
+	7       (00000016) const/high16         v0, -32768 # [-0.0]
+	8       (0000001a) if-ne                v3, v0, +13
+
+pow-BB@0x1e : [ pow-BB@0x6 ]
+	9       (0000001e) invoke-virtual       v2, Lorg/apache/commons/lang/math/Fraction;->invert()Lorg/apache/commons/lang/math/Fraction;
+	10      (00000024) move-result-object   v0
+	11      (00000026) const/4              v1, 2
+	12      (00000028) invoke-virtual       v0, v1, Lorg/apache/commons/lang/math/Fraction;->pow(I)Lorg/apache/commons/lang/math/Fraction;
+	13      (0000002e) move-result-object   v0
+	14      (00000030) div-int/lit8         v1, v3, 2
+	15      (00000034) neg-int              v1, v1
+	16      (00000036) invoke-virtual       v0, v1, Lorg/apache/commons/lang/math/Fraction;->pow(I)Lorg/apache/commons/lang/math/Fraction;
+	17      (0000003c) move-result-object   v2
+	18      (0000003e) goto                 -1c
+
+pow-BB@0x40 : [ pow-BB@0x6 ]
+	19      (00000040) invoke-virtual       v2, Lorg/apache/commons/lang/math/Fraction;->invert()Lorg/apache/commons/lang/math/Fraction;
+	20      (00000046) move-result-object   v0
+	21      (00000048) neg-int              v1, v3
+	22      (0000004a) invoke-virtual       v0, v1, Lorg/apache/commons/lang/math/Fraction;->pow(I)Lorg/apache/commons/lang/math/Fraction;
+	23      (00000050) move-result-object   v2
+	24      (00000052) goto                 -26
+
+pow-BB@0x54 : [ pow-BB@0x64 pow-BB@0x72 ]
+	25      (00000054) invoke-virtual       v2, v2, Lorg/apache/commons/lang/math/Fraction;->multiplyBy(Lorg/apache/commons/lang/math/Fraction;)Lorg/apache/commons/lang/math/Fraction;
+	26      (0000005a) move-result-object   v0
+	27      (0000005c) rem-int/lit8         v1, v3, 2
+	28      (00000060) if-nez               v1, +9
+
+pow-BB@0x64 : [ pow-BB@0x6 ]
+	29      (00000064) div-int/lit8         v1, v3, 2
+	30      (00000068) invoke-virtual       v0, v1, Lorg/apache/commons/lang/math/Fraction;->pow(I)Lorg/apache/commons/lang/math/Fraction;
+	31      (0000006e) move-result-object   v2
+	32      (00000070) goto                 -35
+
+pow-BB@0x72 : [ pow-BB@0x6 ]
+	33      (00000072) div-int/lit8         v1, v3, 2
+	34      (00000076) invoke-virtual       v0, v1, Lorg/apache/commons/lang/math/Fraction;->pow(I)Lorg/apache/commons/lang/math/Fraction;
+	35      (0000007c) move-result-object   v0
+	36      (0000007e) invoke-virtual       v0, v2, Lorg/apache/commons/lang/math/Fraction;->multiplyBy(Lorg/apache/commons/lang/math/Fraction;)Lorg/apache/commons/lang/math/Fraction;
+	37      (00000084) move-result-object   v2
+	38      (00000086) goto                 -40
+

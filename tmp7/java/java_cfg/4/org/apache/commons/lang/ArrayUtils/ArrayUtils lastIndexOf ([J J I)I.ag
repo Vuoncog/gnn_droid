@@ -1,0 +1,47 @@
+# Lorg/apache/commons/lang/ArrayUtils;->lastIndexOf([J J I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:long[]
+# - v7:long
+# - v8:int
+#
+# - return:int
+
+lastIndexOf-BB@0x0 : [ lastIndexOf-BB@0x6 lastIndexOf-BB@0x8 ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) if-nez               v5, +3
+
+lastIndexOf-BB@0x6 : 
+	2       (00000006) return               v0
+
+lastIndexOf-BB@0x8 : [ lastIndexOf-BB@0xc lastIndexOf-BB@0x6 ]
+	3       (00000008) if-ltz               v8, -1
+
+lastIndexOf-BB@0xc : [ lastIndexOf-BB@0x12 lastIndexOf-BB@0x18 ]
+	4       (0000000c) array-length         v1, v5
+	5       (0000000e) if-lt                v8, v1, +5
+
+lastIndexOf-BB@0x12 : [ lastIndexOf-BB@0x18 ]
+	6       (00000012) array-length         v1, v5
+	7       (00000014) add-int/lit8         v8, v1, -1
+
+lastIndexOf-BB@0x18 : [ lastIndexOf-BB@0x1a ]
+	8       (00000018) move                 v1, v8
+
+lastIndexOf-BB@0x1a : [ lastIndexOf-BB@0x1e lastIndexOf-BB@0x6 ]
+	9       (0000001a) if-ltz               v1, -a
+
+lastIndexOf-BB@0x1e : [ lastIndexOf-BB@0x2a lastIndexOf-BB@0x2e ]
+	10      (0000001e) aget-wide            v2, v5, v1
+	11      (00000022) cmp-long             v2, v6, v2
+	12      (00000026) if-nez               v2, +4
+
+lastIndexOf-BB@0x2a : [ lastIndexOf-BB@0x6 ]
+	13      (0000002a) move                 v0, v1
+	14      (0000002c) goto                 -13
+
+lastIndexOf-BB@0x2e : [ lastIndexOf-BB@0x1a ]
+	15      (0000002e) add-int/lit8         v1, v1, -1
+	16      (00000032) goto                 -c
+

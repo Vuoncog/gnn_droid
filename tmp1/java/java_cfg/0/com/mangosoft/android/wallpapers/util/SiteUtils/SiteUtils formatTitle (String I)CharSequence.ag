@@ -1,0 +1,26 @@
+# Lcom/mangosoft/android/wallpapers/util/SiteUtils;->formatTitle(Ljava/lang/String; I)Ljava/lang/CharSequence; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:int
+#
+# - return:java.lang.CharSequence
+
+formatTitle-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) const-string         v1, '<b><font color="#000000">'
+	2       (00000008) invoke-direct        v0, v1, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	3       (0000000e) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) move-result-object   v0
+	5       (00000016) const-string         v1, '</font></b>   '
+	6       (0000001a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v0
+	8       (00000022) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (00000030) move-result-object   v0
+	12      (00000032) invoke-static        v0, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) return-object        v0
+

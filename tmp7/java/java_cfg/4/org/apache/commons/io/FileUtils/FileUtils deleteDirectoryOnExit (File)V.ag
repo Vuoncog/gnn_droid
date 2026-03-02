@@ -1,0 +1,26 @@
+# Lorg/apache/commons/io/FileUtils;->deleteDirectoryOnExit(Ljava/io/File;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.File
+#
+# - return:void
+
+deleteDirectoryOnExit-BB@0x0 : [ deleteDirectoryOnExit-BB@0xc deleteDirectoryOnExit-BB@0xe ]
+	0       (00000000) invoke-virtual       v1, Ljava/io/File;->exists()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +3
+
+deleteDirectoryOnExit-BB@0xc : 
+	3       (0000000c) return-void          
+
+deleteDirectoryOnExit-BB@0xe : [ deleteDirectoryOnExit-BB@0x20 deleteDirectoryOnExit-BB@0xc ]
+	4       (0000000e) invoke-virtual       v1, Ljava/io/File;->deleteOnExit()V
+	5       (00000014) invoke-static        v1, Lorg/apache/commons/io/FileUtils;->isSymlink(Ljava/io/File;)Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-nez               v0, -8
+
+deleteDirectoryOnExit-BB@0x20 : [ deleteDirectoryOnExit-BB@0xc ]
+	8       (00000020) invoke-static        v1, Lorg/apache/commons/io/FileUtils;->cleanDirectoryOnExit(Ljava/io/File;)V
+	9       (00000026) goto                 -d
+

@@ -1,0 +1,21 @@
+# Lorg/apache/commons/io/EndianUtils;->readSwappedShort(Ljava/io/InputStream;)S [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.InputStream
+#
+# - return:short
+
+readSwappedShort-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
+	1       (00000006) move-result          v0
+	2       (00000008) and-int/lit16        v0, v0, 255
+	3       (0000000c) shl-int/lit8         v0, v0, 0
+	4       (00000010) invoke-static        v2, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
+	5       (00000016) move-result          v1
+	6       (00000018) and-int/lit16        v1, v1, 255
+	7       (0000001c) shl-int/lit8         v1, v1, 8
+	8       (00000020) add-int/2addr        v0, v1
+	9       (00000022) int-to-short         v0, v0
+	10      (00000024) return               v0
+

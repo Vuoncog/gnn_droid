@@ -1,0 +1,25 @@
+# Lorg/apache/commons/lang/ArrayUtils;->isNotEmpty([S)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:short[]
+#
+# - return:boolean
+
+isNotEmpty-BB@0x0 : [ isNotEmpty-BB@0x4 isNotEmpty-BB@0xe ]
+	0       (00000000) if-eqz               v1, +7
+
+isNotEmpty-BB@0x4 : [ isNotEmpty-BB@0xa isNotEmpty-BB@0xe ]
+	1       (00000004) array-length         v0, v1
+	2       (00000006) if-eqz               v0, +4
+
+isNotEmpty-BB@0xa : [ isNotEmpty-BB@0xc ]
+	3       (0000000a) const/4              v0, 1
+
+isNotEmpty-BB@0xc : 
+	4       (0000000c) return               v0
+
+isNotEmpty-BB@0xe : [ isNotEmpty-BB@0xc ]
+	5       (0000000e) const/4              v0, 0
+	6       (00000010) goto                 -2
+

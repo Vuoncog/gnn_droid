@@ -1,0 +1,49 @@
+# Lcom/mangosoft/android/wallpapers/ShareDialog;->sendSMS()V [access_flags=private final]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+sendSMS-BB@0x0 : [ sendSMS-BB@0x8 sendSMS-BB@0x3c ]
+	0       (00000000) iget-boolean         v2, v4, Lcom/mangosoft/android/wallpapers/ShareDialog;->isLocal Z
+	1       (00000004) if-eqz               v2, +1c
+
+sendSMS-BB@0x8 : [ sendSMS-BB@0x34 ]
+	2       (00000008) const-string         v0, '请下载“壁纸屋”这个android软件 , 很不错哦!'
+	3       (0000000c) new-instance         v1, Landroid/content/Intent;
+	4       (00000010) const-string         v2, 'android.intent.action.VIEW'
+	5       (00000014) invoke-direct        v1, v2, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	6       (0000001a) const-string         v2, 'sms_body'
+	7       (0000001e) invoke-virtual       v1, v2, v0, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+	8       (00000024) const-string         v2, 'vnd.android-dir/mms-sms'
+	9       (00000028) invoke-virtual       v1, v2, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+	10      (0000002e) invoke-virtual       v4, v1, Lcom/mangosoft/android/wallpapers/ShareDialog;->startActivity(Landroid/content/Intent;)V
+
+sendSMS-BB@0x34 : 
+	11      (00000034) invoke-virtual       v4, Lcom/mangosoft/android/wallpapers/ShareDialog;->finish()V
+	12      (0000003a) return-void          
+
+sendSMS-BB@0x3c : [ sendSMS-BB@0x34 ]
+	13      (0000003c) new-instance         v2, Ljava/lang/StringBuilder;
+	14      (00000040) const-string         v3, '壁纸下载链接http://awesomewp.com/public/download.php?name='
+	15      (00000044) invoke-direct        v2, v3, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	16      (0000004a) invoke-direct        v4, Lcom/mangosoft/android/wallpapers/ShareDialog;->getShareName()Ljava/lang/String;
+	17      (00000050) move-result-object   v3
+	18      (00000052) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000058) move-result-object   v2
+	20      (0000005a) const-string         v3, '\n\n'
+	21      (0000005e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (00000064) move-result-object   v2
+	23      (00000066) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	24      (0000006c) move-result-object   v0
+	25      (0000006e) new-instance         v1, Landroid/content/Intent;
+	26      (00000072) const-string         v2, 'android.intent.action.VIEW'
+	27      (00000076) invoke-direct        v1, v2, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	28      (0000007c) const-string         v2, 'sms_body'
+	29      (00000080) invoke-virtual       v1, v2, v0, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+	30      (00000086) const-string         v2, 'vnd.android-dir/mms-sms'
+	31      (0000008a) invoke-virtual       v1, v2, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+	32      (00000090) invoke-virtual       v4, v1, Lcom/mangosoft/android/wallpapers/ShareDialog;->startActivity(Landroid/content/Intent;)V
+	33      (00000096) goto                 -31
+

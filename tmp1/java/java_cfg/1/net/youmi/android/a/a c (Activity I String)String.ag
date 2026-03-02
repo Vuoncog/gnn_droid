@@ -1,0 +1,28 @@
+# Lnet/youmi/android/a;->c(Landroid/app/Activity; I Ljava/lang/String;)Ljava/lang/String; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.app.Activity
+# - v3:int
+# - v4:java.lang.String
+#
+# - return:java.lang.String
+
+c-BB@0x0 : [ c-BB@0x18 ]
+	0       (00000000) invoke-static        Lnet/youmi/android/cr;->e()Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v2, v3, v4, Lnet/youmi/android/a;->a(Landroid/app/Activity; I Ljava/lang/String;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-static        v0, v1, Lnet/youmi/android/t;->a(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	5       (00000016) move-result-object   v0
+	0:15
+	(Ljava/lang/Exception; -> 1a c-BB@0x1a)
+
+c-BB@0x18 : 
+	6       (00000018) return-object        v0
+
+c-BB@0x1a : [ c-BB@0x18 ]
+	7       (0000001a) move-exception       v0
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -3
+

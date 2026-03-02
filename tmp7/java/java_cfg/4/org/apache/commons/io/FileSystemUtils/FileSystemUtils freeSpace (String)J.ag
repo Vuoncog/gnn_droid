@@ -1,0 +1,18 @@
+# Lorg/apache/commons/io/FileSystemUtils;->freeSpace(Ljava/lang/String;)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String
+#
+# - return:long
+
+freeSpace-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lorg/apache/commons/io/FileSystemUtils;->INSTANCE Lorg/apache/commons/io/FileSystemUtils;
+	1       (00000004) sget                 v2, Lorg/apache/commons/io/FileSystemUtils;->OS I
+	2       (00000008) const/4              v3, 0
+	3       (0000000a) const-wide/16        v4, -1 # [-1.0]
+	4       (0000000e) move-object          v1, v6
+	5       (00000010) invoke-virtual/range v0 ... v5, Lorg/apache/commons/io/FileSystemUtils;->freeSpaceOS(Ljava/lang/String; I Z J)J
+	6       (00000016) move-result-wide     v0
+	7       (00000018) return-wide          v0
+

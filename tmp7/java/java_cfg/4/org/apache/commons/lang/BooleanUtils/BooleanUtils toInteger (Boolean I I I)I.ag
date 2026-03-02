@@ -1,0 +1,30 @@
+# Lorg/apache/commons/lang/BooleanUtils;->toInteger(Ljava/lang/Boolean; I I I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Boolean
+# - v2:int
+# - v3:int
+# - v4:int
+#
+# - return:int
+
+toInteger-BB@0x0 : [ toInteger-BB@0x4 toInteger-BB@0x6 ]
+	0       (00000000) if-nez               v1, +3
+
+toInteger-BB@0x4 : 
+	1       (00000004) return               v4
+
+toInteger-BB@0x6 : [ toInteger-BB@0x12 toInteger-BB@0x16 ]
+	2       (00000006) invoke-virtual       v1, Ljava/lang/Boolean;->booleanValue()Z
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-eqz               v0, +4
+
+toInteger-BB@0x12 : [ toInteger-BB@0x4 ]
+	5       (00000012) move                 v4, v2
+	6       (00000014) goto                 -8
+
+toInteger-BB@0x16 : [ toInteger-BB@0x12 ]
+	7       (00000016) move                 v2, v3
+	8       (00000018) goto                 -3
+

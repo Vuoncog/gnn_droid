@@ -1,0 +1,22 @@
+# Lorg/apache/commons/lang/CharUtils;->toIntValue(Ljava/lang/Character; I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Character
+# - v2:int
+#
+# - return:int
+
+toIntValue-BB@0x0 : [ toIntValue-BB@0x4 toIntValue-BB@0x6 ]
+	0       (00000000) if-nez               v1, +3
+
+toIntValue-BB@0x4 : 
+	1       (00000004) return               v2
+
+toIntValue-BB@0x6 : [ toIntValue-BB@0x4 ]
+	2       (00000006) invoke-virtual       v1, Ljava/lang/Character;->charValue()C
+	3       (0000000c) move-result          v0
+	4       (0000000e) invoke-static        v0, v2, Lorg/apache/commons/lang/CharUtils;->toIntValue(C I)I
+	5       (00000014) move-result          v2
+	6       (00000016) goto                 -9
+

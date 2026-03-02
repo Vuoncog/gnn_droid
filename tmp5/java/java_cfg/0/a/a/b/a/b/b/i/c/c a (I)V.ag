@@ -1,0 +1,33 @@
+# La/a/b/a/b/b/i/c;->a(I)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0x10 ]
+	0       (00000000) iput                 v3, v2, La/a/b/a/b/b/i/c;->a I
+	1       (00000004) if-nez               v3, +6
+
+a-BB@0x8 : [ a-BB@0xe ]
+	2       (00000008) invoke-virtual       v2, La/a/b/a/b/b/i/c;->a()V
+
+a-BB@0xe : 
+	3       (0000000e) return-void          
+
+a-BB@0x10 : [ a-BB@0x18 a-BB@0xe ]
+	4       (00000010) iget-boolean         v0, v2, La/a/b/a/b/b/i/c;->c Z
+	5       (00000014) if-nez               v0, -3
+
+a-BB@0x18 : [ a-BB@0xe ]
+	6       (00000018) const/4              v0, 1
+	7       (0000001a) iput-boolean         v0, v2, La/a/b/a/b/b/i/c;->c Z
+	8       (0000001e) new-instance         v0, Ljava/lang/Thread;
+	9       (00000022) const-string         v1, 'PeakHold'
+	10      (00000026) invoke-direct        v0, v2, v1, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable; Ljava/lang/String;)V
+	11      (0000002c) iput-object          v0, v2, La/a/b/a/b/b/i/c;->d Ljava/lang/Thread;
+	12      (00000030) iget-object          v0, v2, La/a/b/a/b/b/i/c;->d Ljava/lang/Thread;
+	13      (00000034) invoke-virtual       v0, Ljava/lang/Thread;->start()V
+	14      (0000003a) goto                 -16
+

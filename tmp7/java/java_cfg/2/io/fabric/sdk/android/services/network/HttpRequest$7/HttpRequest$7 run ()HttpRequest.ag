@@ -1,0 +1,30 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest$7;->run()Lio/fabric/sdk/android/services/network/HttpRequest; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:io.fabric.sdk.android.services.network.HttpRequest
+
+run-BB@0x0 : [ run-BB@0x10 ]
+	0       (00000000) iget-object          v0, v4, Lio/fabric/sdk/android/services/network/HttpRequest$7;->this$0 Lio/fabric/sdk/android/services/network/HttpRequest;
+	1       (00000004) invoke-static        v0, Lio/fabric/sdk/android/services/network/HttpRequest;->access$100(Lio/fabric/sdk/android/services/network/HttpRequest;)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) new-array            v0, v0, [C
+
+run-BB@0x10 : [ run-BB@0x22 run-BB@0x30 ]
+	4       (00000010) iget-object          v1, v4, Lio/fabric/sdk/android/services/network/HttpRequest$7;->val$input Ljava/io/Reader;
+	5       (00000014) invoke-virtual       v1, v0, Ljava/io/Reader;->read([C)I
+	6       (0000001a) move-result          v1
+	7       (0000001c) const/4              v2, -1
+	8       (0000001e) if-eq                v1, v2, +9
+
+run-BB@0x22 : [ run-BB@0x10 ]
+	9       (00000022) iget-object          v2, v4, Lio/fabric/sdk/android/services/network/HttpRequest$7;->val$output Ljava/io/Writer;
+	10      (00000026) const/4              v3, 0
+	11      (00000028) invoke-virtual       v2, v0, v3, v1, Ljava/io/Writer;->write([C I I)V
+	12      (0000002e) goto                 -f
+
+run-BB@0x30 : 
+	13      (00000030) iget-object          v0, v4, Lio/fabric/sdk/android/services/network/HttpRequest$7;->this$0 Lio/fabric/sdk/android/services/network/HttpRequest;
+	14      (00000034) return-object        v0
+

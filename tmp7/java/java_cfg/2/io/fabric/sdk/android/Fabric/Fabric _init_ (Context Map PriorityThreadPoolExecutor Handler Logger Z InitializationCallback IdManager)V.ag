@@ -1,0 +1,36 @@
+# Lio/fabric/sdk/android/Fabric;-><init>(Landroid/content/Context; Ljava/util/Map; Lio/fabric/sdk/android/services/concurrency/PriorityThreadPoolExecutor; Landroid/os/Handler; Lio/fabric/sdk/android/Logger; Z Lio/fabric/sdk/android/InitializationCallback; Lio/fabric/sdk/android/services/common/IdManager;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:java.util.Map
+# - v5:io.fabric.sdk.android.services.concurrency.PriorityThreadPoolExecutor
+# - v6:android.os.Handler
+# - v7:io.fabric.sdk.android.Logger
+# - v8:boolean
+# - v9:io.fabric.sdk.android.InitializationCallback
+# - v10:io.fabric.sdk.android.services.common.IdManager
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v3, v2, Lio/fabric/sdk/android/Fabric;->context Landroid/content/Context;
+	2       (0000000a) iput-object          v4, v2, Lio/fabric/sdk/android/Fabric;->kits Ljava/util/Map;
+	3       (0000000e) iput-object          v5, v2, Lio/fabric/sdk/android/Fabric;->executorService Ljava/util/concurrent/ExecutorService;
+	4       (00000012) iput-object          v6, v2, Lio/fabric/sdk/android/Fabric;->mainHandler Landroid/os/Handler;
+	5       (00000016) iput-object          v7, v2, Lio/fabric/sdk/android/Fabric;->logger Lio/fabric/sdk/android/Logger;
+	6       (0000001a) iput-boolean         v8, v2, Lio/fabric/sdk/android/Fabric;->debuggable Z
+	7       (0000001e) iput-object          v9, v2, Lio/fabric/sdk/android/Fabric;->initializationCallback Lio/fabric/sdk/android/InitializationCallback;
+	8       (00000022) new-instance         v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+	9       (00000026) const/4              v1, 0
+	10      (00000028) invoke-direct        v0, v1, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+	11      (0000002e) iput-object          v0, v2, Lio/fabric/sdk/android/Fabric;->initialized Ljava/util/concurrent/atomic/AtomicBoolean;
+	12      (00000032) invoke-interface     v4, Ljava/util/Map;->size()I
+	13      (00000038) move-result          v0
+	14      (0000003a) invoke-virtual       v2, v0, Lio/fabric/sdk/android/Fabric;->createKitInitializationCallback(I)Lio/fabric/sdk/android/InitializationCallback;
+	15      (00000040) move-result-object   v0
+	16      (00000042) iput-object          v0, v2, Lio/fabric/sdk/android/Fabric;->kitInitializationCallback Lio/fabric/sdk/android/InitializationCallback;
+	17      (00000046) iput-object          v10, v2, Lio/fabric/sdk/android/Fabric;->idManager Lio/fabric/sdk/android/services/common/IdManager;
+	18      (0000004a) return-void          
+

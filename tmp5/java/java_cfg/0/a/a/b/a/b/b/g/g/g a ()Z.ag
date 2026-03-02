@@ -1,0 +1,26 @@
+# La/a/b/a/b/b/g/g;->a()Z [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0x16 ]
+	0       (00000000) const/4              v1, -1
+	1       (00000002) iget                 v0, v2, La/a/b/a/b/b/g/g;->a I
+	2       (00000006) if-eq                v0, v1, +8
+
+a-BB@0xa : [ a-BB@0x12 a-BB@0x16 ]
+	3       (0000000a) iget                 v0, v2, La/a/b/a/b/b/g/g;->b I
+	4       (0000000e) if-eq                v0, v1, +4
+
+a-BB@0x12 : [ a-BB@0x14 ]
+	5       (00000012) const/4              v0, 1
+
+a-BB@0x14 : 
+	6       (00000014) return               v0
+
+a-BB@0x16 : [ a-BB@0x14 ]
+	7       (00000016) const/4              v0, 0
+	8       (00000018) goto                 -2
+

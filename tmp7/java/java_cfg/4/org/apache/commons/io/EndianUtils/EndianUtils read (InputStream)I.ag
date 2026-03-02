@@ -1,0 +1,23 @@
+# Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.InputStream
+#
+# - return:int
+
+read-BB@0x0 : [ read-BB@0xe read-BB@0x1e ]
+	0       (00000000) invoke-virtual       v2, Ljava/io/InputStream;->read()I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, -1
+	3       (0000000a) if-ne                v1, v0, +a
+
+read-BB@0xe : 
+	4       (0000000e) new-instance         v0, Ljava/io/EOFException;
+	5       (00000012) const-string         v1, 'Unexpected EOF reached'
+	6       (00000016) invoke-direct        v0, v1, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
+	7       (0000001c) throw                v0
+
+read-BB@0x1e : 
+	8       (0000001e) return               v0
+

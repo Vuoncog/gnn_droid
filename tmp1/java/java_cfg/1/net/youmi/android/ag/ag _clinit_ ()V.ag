@@ -1,0 +1,15 @@
+# Lnet/youmi/android/ag;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/Random;
+	1       (00000004) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	2       (0000000a) move-result-wide     v1
+	3       (0000000c) invoke-direct        v0, v1, v2, Ljava/util/Random;-><init>(J)V
+	4       (00000012) sput-object          v0, Lnet/youmi/android/ag;->a Ljava/util/Random;
+	5       (00000016) return-void          
+

@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/CharUtils;->isHighSurrogate(C)Z [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:char
+#
+# - return:boolean
+
+isHighSurrogate-BB@0x0 : [ isHighSurrogate-BB@0xa isHighSurrogate-BB@0x18 ]
+	0       (00000000) const                v0, 55296 # [7.748619988330508e-41]
+	1       (00000006) if-gt                v0, v1, +9
+
+isHighSurrogate-BB@0xa : [ isHighSurrogate-BB@0x14 isHighSurrogate-BB@0x18 ]
+	2       (0000000a) const                v0, 56319 # [7.891972821230937e-41]
+	3       (00000010) if-lt                v0, v1, +4
+
+isHighSurrogate-BB@0x14 : [ isHighSurrogate-BB@0x16 ]
+	4       (00000014) const/4              v0, 1
+
+isHighSurrogate-BB@0x16 : 
+	5       (00000016) return               v0
+
+isHighSurrogate-BB@0x18 : [ isHighSurrogate-BB@0x16 ]
+	6       (00000018) const/4              v0, 0
+	7       (0000001a) goto                 -2
+

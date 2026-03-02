@@ -1,0 +1,34 @@
+# Lorg/apache/commons/lang/math/Fraction;->divideBy(Lorg/apache/commons/lang/math/Fraction;)Lorg/apache/commons/lang/math/Fraction; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:org.apache.commons.lang.math.Fraction
+#
+# - return:org.apache.commons.lang.math.Fraction
+
+divideBy-BB@0x0 : [ divideBy-BB@0x4 divideBy-BB@0x14 ]
+	0       (00000000) if-nez               v3, +a
+
+divideBy-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	2       (00000008) const-string         v1, 'The fraction must not be null'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	4       (00000012) throw                v0
+
+divideBy-BB@0x14 : [ divideBy-BB@0x1c divideBy-BB@0x2c ]
+	5       (00000014) iget                 v0, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	6       (00000018) if-nez               v0, +a
+
+divideBy-BB@0x1c : 
+	7       (0000001c) new-instance         v0, Ljava/lang/ArithmeticException;
+	8       (00000020) const-string         v1, 'The fraction to divide by must not be zero'
+	9       (00000024) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	10      (0000002a) throw                v0
+
+divideBy-BB@0x2c : 
+	11      (0000002c) invoke-virtual       v3, Lorg/apache/commons/lang/math/Fraction;->invert()Lorg/apache/commons/lang/math/Fraction;
+	12      (00000032) move-result-object   v0
+	13      (00000034) invoke-virtual       v2, v0, Lorg/apache/commons/lang/math/Fraction;->multiplyBy(Lorg/apache/commons/lang/math/Fraction;)Lorg/apache/commons/lang/math/Fraction;
+	14      (0000003a) move-result-object   v0
+	15      (0000003c) return-object        v0
+

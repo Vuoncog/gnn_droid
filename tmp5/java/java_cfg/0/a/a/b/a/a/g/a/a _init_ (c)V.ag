@@ -1,0 +1,18 @@
+# La/a/b/a/a/g/a;-><init>(La/a/b/a/a/c;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:a.a.b.a.a.c
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) invoke-direct        v1, v0, La/a/b/a/b/a/b;-><init>(Ljava/lang/Object;)V
+	4       (00000010) iput-object          v2, v1, La/a/b/a/a/g/a;->a La/a/b/a/a/c;
+	5       (00000014) invoke-interface     v2, v1, La/a/b/a/a/c;->a(La/a/b/a/a/f;)V
+	6       (0000001a) invoke-virtual       v1, La/a/b/a/a/g/a;->b()V
+	7       (00000020) return-void          
+

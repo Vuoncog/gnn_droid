@@ -1,0 +1,112 @@
+digraph {
+	graph [bb="0,0,1719,758",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_4de72a65645c395272c3b17da29b1710 {
+		graph [bb="8,8,1711,750",
+			label="Lorg/apache/commons/io/monitor/FileAlterationObserver;.doMatch->(Lorg/apache/commons/io/monitor/FileEntry; Ljava/io/File;)V\nLocal \
+registers v0 ... v3\nparam v4 = org.apache.commons.io.monitor.FileEntry\nparam v5 = java.io.File\nreturn = void",
+			lheight=1.04,
+			lp="859.5,708.5",
+			lwidth=11.96
+		];
+		struct_f4da958dcda39589fdba3060115c9a0d	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/monitor/FileEntry;-&gt;refresh(Ljava/io/File;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x22</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="808,613.5",
+			width=9.1667];
+		struct_6e66d0c13aba201fa4a49b27dadfcdcb	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/monitor/FileAlterationObserver;-&gt;listeners Ljava/util/List;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#DF3A01">Ljava/util/List;-&gt;iterator()Ljava/util/Iterator;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7777BB">v1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="477,486.5",
+			width=10.375];
+		struct_f4da958dcda39589fdba3060115c9a0d:tail -> struct_6e66d0c13aba201fa4a49b27dadfcdcb:header	[color=red,
+			pos="e,129,525.5 488,576.5 450.78,576.5 175.94,567.36 134.28,534.2"];
+		struct_5ec20ff09ee9f57f0e1ca6459bc16f47	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="904,199.5",
+			width=2.0556];
+		struct_f4da958dcda39589fdba3060115c9a0d:tail -> struct_5ec20ff09ee9f57f0e1ca6459bc16f47:header	[color=green,
+			pos="e,855,216.5 499,573.5 499,492.75 806.26,592.27 860,532 886.92,501.81 860.45,481.44 860,441 858.93,344.71 855.27,318.15 855.01,226.75"];
+		struct_dff966b182d6d0d65bf4abd8e480a58b	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;hasNext()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#888877">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x16</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="324,359.5",
+			width=5.6944];
+		struct_6e66d0c13aba201fa4a49b27dadfcdcb:tail -> struct_dff966b182d6d0d65bf4abd8e480a58b:header	[color=blue,
+			pos="e,144,398.5 129,446.5 129,427.99 139.29,422.55 142.82,408.53"];
+		struct_d16b136eb11c12e555c44337a47f2560	[height=2.1806,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#DF3A01">Ljava/util/Iterator;-&gt;next()Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">check-cast </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#0000FF">Lorg/apache/commons/io/monitor/FileAlterationListener;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/monitor/FileEntry;-&gt;isDirectory()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#6E6EDD">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#6E6EDD">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="412,199.5",
+			width=8.1389];
+		struct_dff966b182d6d0d65bf4abd8e480a58b:tail -> struct_d16b136eb11c12e555c44337a47f2560:header	[color=red,
+			pos="e,144,271.5 144,319.5 144,302 144,295.27 144,281.64"];
+		struct_dff966b182d6d0d65bf4abd8e480a58b:tail -> struct_5ec20ff09ee9f57f0e1ca6459bc16f47:header	[color=green,
+			pos="e,840,213.5 144,319.5 144,247.91 723.29,310.66 787,278 816.54,262.86 805.95,223.19 829.95,215"];
+		struct_79afbe6af8176f6ab3eae09b3422533a	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/monitor/FileAlterationListener;-&gt;onDirectoryChange(Ljava/io/File;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-15</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="443,50.5",
+			width=11.847];
+		struct_d16b136eb11c12e555c44337a47f2560:tail -> struct_79afbe6af8176f6ab3eae09b3422533a:header	[color=red,
+			pos="e,42,78.5 144,126.5 144,80.312 57.315,121.07 43.77,88.467"];
+		struct_ba1934542bf8d73f0df6015d0bbb7662	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/monitor/FileAlterationListener;-&gt;onFileChange(Ljava/io/File;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-19</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1295,50.5",
+			width=11.319];
+		struct_d16b136eb11c12e555c44337a47f2560:tail -> struct_ba1934542bf8d73f0df6015d0bbb7662:header	[color=green,
+			pos="e,898,75.5 144,126.5 144,85.602 839.48,95.515 879,85 883.56,83.786 885.95,81.411 888.38,79.34"];
+		struct_79afbe6af8176f6ab3eae09b3422533a:tail -> struct_dff966b182d6d0d65bf4abd8e480a58b:header	[color=blue,
+			pos="e,129,395.5 42,21.5 42,10.158 24.361,14.324 16.5,22.5 -2.7532,42.523 11.696,57.641 16.5,85 41.263,226.04 -14.916,387.41 118.61,395.21"];
+		struct_ba1934542bf8d73f0df6015d0bbb7662:tail -> struct_dff966b182d6d0d65bf4abd8e480a58b:header	[color=blue,
+			pos="e,144,398.5 898,24.5 869.82,24.5 896.28,62.732 879,85 860.4,108.97 842.91,100.01 821,121 760.03,179.42 787.43,236.3 714,278 656.41,\
+310.71 164.4,265.77 119,314 93.563,341.02 93.288,370.74 119,397.5 123.33,402.01 130.7,405.28 136.32,405.3"];
+	}
+}

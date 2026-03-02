@@ -1,0 +1,433 @@
+# Lorg/apache/commons/lang/NumberUtils;->createNumber(Ljava/lang/String;)Ljava/lang/Number; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:java.lang.String
+#
+# - return:java.lang.Number
+
+createNumber-BB@0x0 : [ createNumber-BB@0x10 createNumber-BB@0x12 ]
+	0       (00000000) const-wide/16        v10, 0 # [0.0]
+	1       (00000004) const/4              v3, 1
+	2       (00000006) const/4              v1, 0
+	3       (00000008) const/4              v8, -1
+	4       (0000000a) const/4              v4, 0
+	5       (0000000c) if-nez               v12, +3
+
+createNumber-BB@0x10 : 
+	6       (00000010) return-object        v1
+
+createNumber-BB@0x12 : [ createNumber-BB@0x1e createNumber-BB@0x2e ]
+	7       (00000012) invoke-virtual       v12, Ljava/lang/String;->length()I
+	8       (00000018) move-result          v0
+	9       (0000001a) if-nez               v0, +a
+
+createNumber-BB@0x1e : 
+	10      (0000001e) new-instance         v0, Ljava/lang/NumberFormatException;
+	11      (00000022) const-string         v1, '"" is not a valid number.'
+	12      (00000026) invoke-direct        v0, v1, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+	13      (0000002c) throw                v0
+
+createNumber-BB@0x2e : [ createNumber-BB@0x3a createNumber-BB@0x80 ]
+	14      (0000002e) invoke-virtual       v12, Ljava/lang/String;->length()I
+	15      (00000034) move-result          v0
+	16      (00000036) if-ne                v0, v3, +25
+
+createNumber-BB@0x3a : [ createNumber-BB@0x4e createNumber-BB@0x80 ]
+	17      (0000003a) invoke-virtual       v12, v4, Ljava/lang/String;->charAt(I)C
+	18      (00000040) move-result          v0
+	19      (00000042) invoke-static        v0, Ljava/lang/Character;->isDigit(C)Z
+	20      (00000048) move-result          v0
+	21      (0000004a) if-nez               v0, +1b
+
+createNumber-BB@0x4e : 
+	22      (0000004e) new-instance         v0, Ljava/lang/NumberFormatException;
+	23      (00000052) new-instance         v1, Ljava/lang/StringBuffer;
+	24      (00000056) invoke-direct        v1, Ljava/lang/StringBuffer;-><init>()V
+	25      (0000005c) invoke-virtual       v1, v12, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	26      (00000062) move-result-object   v1
+	27      (00000064) const-string         v2, ' is not a valid number.'
+	28      (00000068) invoke-virtual       v1, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	29      (0000006e) move-result-object   v1
+	30      (00000070) invoke-virtual       v1, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	31      (00000076) move-result-object   v1
+	32      (00000078) invoke-direct        v0, v1, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+	33      (0000007e) throw                v0
+
+createNumber-BB@0x80 : [ createNumber-BB@0x90 createNumber-BB@0x10 ]
+	34      (00000080) const-string         v0, '--'
+	35      (00000084) invoke-virtual       v12, v0, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+	36      (0000008a) move-result          v0
+	37      (0000008c) if-nez               v0, -3e
+
+createNumber-BB@0x90 : [ createNumber-BB@0xa0 createNumber-BB@0xb0 ]
+	38      (00000090) const-string         v0, '0x'
+	39      (00000094) invoke-virtual       v12, v0, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+	40      (0000009a) move-result          v0
+	41      (0000009c) if-nez               v0, +a
+
+createNumber-BB@0xa0 : [ createNumber-BB@0xb0 createNumber-BB@0xba ]
+	42      (000000a0) const-string         v0, '-0x'
+	43      (000000a4) invoke-virtual       v12, v0, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+	44      (000000aa) move-result          v0
+	45      (000000ac) if-eqz               v0, +7
+
+createNumber-BB@0xb0 : [ createNumber-BB@0x10 ]
+	46      (000000b0) invoke-static        v12, Lorg/apache/commons/lang/NumberUtils;->createInteger(Ljava/lang/String;)Ljava/lang/Integer;
+	47      (000000b6) move-result-object   v1
+	48      (000000b8) goto                 -54
+
+createNumber-BB@0xba : [ createNumber-BB@0xfc createNumber-BB@0x1f6 ]
+	49      (000000ba) invoke-virtual       v12, Ljava/lang/String;->length()I
+	50      (000000c0) move-result          v0
+	51      (000000c2) add-int/lit8         v0, v0, -1
+	52      (000000c6) invoke-virtual       v12, v0, Ljava/lang/String;->charAt(I)C
+	53      (000000cc) move-result          v5
+	54      (000000ce) const/16             v0, 46
+	55      (000000d2) invoke-virtual       v12, v0, Ljava/lang/String;->indexOf(I)I
+	56      (000000d8) move-result          v2
+	57      (000000da) const/16             v0, 101
+	58      (000000de) invoke-virtual       v12, v0, Ljava/lang/String;->indexOf(I)I
+	59      (000000e4) move-result          v0
+	60      (000000e6) const/16             v6, 69
+	61      (000000ea) invoke-virtual       v12, v6, Ljava/lang/String;->indexOf(I)I
+	62      (000000f0) move-result          v6
+	63      (000000f2) add-int/2addr        v0, v6
+	64      (000000f4) add-int/lit8         v6, v0, 1
+	65      (000000f8) if-le                v2, v8, +7f
+
+createNumber-BB@0xfc : [ createNumber-BB@0x100 createNumber-BB@0x1e8 ]
+	66      (000000fc) if-le                v6, v8, +76
+
+createNumber-BB@0x100 : [ createNumber-BB@0x104 createNumber-BB@0x136 ]
+	67      (00000100) if-ge                v6, v2, +1b
+
+createNumber-BB@0x104 : 
+	68      (00000104) new-instance         v0, Ljava/lang/NumberFormatException;
+	69      (00000108) new-instance         v1, Ljava/lang/StringBuffer;
+	70      (0000010c) invoke-direct        v1, Ljava/lang/StringBuffer;-><init>()V
+	71      (00000112) invoke-virtual       v1, v12, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	72      (00000118) move-result-object   v1
+	73      (0000011a) const-string         v2, ' is not a valid number.'
+	74      (0000011e) invoke-virtual       v1, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	75      (00000124) move-result-object   v1
+	76      (00000126) invoke-virtual       v1, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	77      (0000012c) move-result-object   v1
+	78      (0000012e) invoke-direct        v0, v1, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+	79      (00000134) throw                v0
+
+createNumber-BB@0x136 : [ createNumber-BB@0x142 ]
+	80      (00000136) add-int/lit8         v0, v2, 1
+	81      (0000013a) invoke-virtual       v12, v0, v6, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	82      (00000140) move-result-object   v0
+
+createNumber-BB@0x142 : [ createNumber-BB@0x14a ]
+	83      (00000142) invoke-virtual       v12, v4, v2, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	84      (00000148) move-result-object   v2
+
+createNumber-BB@0x14a : [ createNumber-BB@0x156 createNumber-BB@0x2f4 ]
+	85      (0000014a) invoke-static        v5, Ljava/lang/Character;->isDigit(C)Z
+	86      (00000150) move-result          v7
+	87      (00000152) if-nez               v7, +d1
+
+createNumber-BB@0x156 : [ createNumber-BB@0x15a createNumber-BB@0x182 ]
+	88      (00000156) if-le                v6, v8, +16
+
+createNumber-BB@0x15a : [ createNumber-BB@0x16a createNumber-BB@0x182 ]
+	89      (0000015a) invoke-virtual       v12, Ljava/lang/String;->length()I
+	90      (00000160) move-result          v7
+	91      (00000162) add-int/lit8         v7, v7, -1
+	92      (00000166) if-ge                v6, v7, +e
+
+createNumber-BB@0x16a : [ createNumber-BB@0x182 ]
+	93      (0000016a) add-int/lit8         v1, v6, 1
+	94      (0000016e) invoke-virtual       v12, Ljava/lang/String;->length()I
+	95      (00000174) move-result          v6
+	96      (00000176) add-int/lit8         v6, v6, -1
+	97      (0000017a) invoke-virtual       v12, v1, v6, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	98      (00000180) move-result-object   v1
+
+createNumber-BB@0x182 : [ createNumber-BB@0x1a2 createNumber-BB@0x20c ]
+	99      (00000182) invoke-virtual       v12, Ljava/lang/String;->length()I
+	100     (00000188) move-result          v6
+	101     (0000018a) add-int/lit8         v6, v6, -1
+	102     (0000018e) invoke-virtual       v12, v4, v6, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	103     (00000194) move-result-object   v6
+	104     (00000196) invoke-static        v2, Lorg/apache/commons/lang/NumberUtils;->isAllZeros(Ljava/lang/String;)Z
+	105     (0000019c) move-result          v2
+	106     (0000019e) if-eqz               v2, +37
+
+createNumber-BB@0x1a2 : [ createNumber-BB@0x1ae createNumber-BB@0x20c ]
+	107     (000001a2) invoke-static        v1, Lorg/apache/commons/lang/NumberUtils;->isAllZeros(Ljava/lang/String;)Z
+	108     (000001a8) move-result          v2
+	109     (000001aa) if-eqz               v2, +31
+
+createNumber-BB@0x1ae : [ createNumber-BB@0x1b0 ]
+	110     (000001ae) move                 v2, v3
+
+createNumber-BB@0x1b0 : [ D:createNumber-BB@0x1b6 68:createNumber-BB@0x2be 70:createNumber-BB@0x294 76:createNumber-BB@0x210 100:createNumber-BB@0x2be 102:createNumber-BB@0x294 108:createNumber-BB@0x210 ]
+	111     (000001b0) sparse-switch        v5, +118 (0x3e0)
+
+createNumber-BB@0x1b6 : 
+	112     (000001b6) new-instance         v0, Ljava/lang/NumberFormatException;
+	113     (000001ba) new-instance         v1, Ljava/lang/StringBuffer;
+	114     (000001be) invoke-direct        v1, Ljava/lang/StringBuffer;-><init>()V
+	115     (000001c4) invoke-virtual       v1, v12, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	116     (000001ca) move-result-object   v1
+	117     (000001cc) const-string         v2, ' is not a valid number.'
+	118     (000001d0) invoke-virtual       v1, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	119     (000001d6) move-result-object   v1
+	120     (000001d8) invoke-virtual       v1, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	121     (000001de) move-result-object   v1
+	122     (000001e0) invoke-direct        v0, v1, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+	123     (000001e6) throw                v0
+
+createNumber-BB@0x1e8 : [ createNumber-BB@0x142 ]
+	124     (000001e8) add-int/lit8         v0, v2, 1
+	125     (000001ec) invoke-virtual       v12, v0, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	126     (000001f2) move-result-object   v0
+	127     (000001f4) goto                 -59
+
+createNumber-BB@0x1f6 : [ createNumber-BB@0x1fa createNumber-BB@0x208 ]
+	128     (000001f6) if-le                v6, v8, +9
+
+createNumber-BB@0x1fa : [ createNumber-BB@0x202 ]
+	129     (000001fa) invoke-virtual       v12, v4, v6, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	130     (00000200) move-result-object   v0
+
+createNumber-BB@0x202 : [ createNumber-BB@0x14a ]
+	131     (00000202) move-object          v2, v0
+	132     (00000204) move-object          v0, v1
+	133     (00000206) goto                 -5e
+
+createNumber-BB@0x208 : [ createNumber-BB@0x202 ]
+	134     (00000208) move-object          v0, v12
+	135     (0000020a) goto                 -4
+
+createNumber-BB@0x20c : [ createNumber-BB@0x1b0 ]
+	136     (0000020c) move                 v2, v4
+	137     (0000020e) goto                 -2f
+
+createNumber-BB@0x210 : [ createNumber-BB@0x214 createNumber-BB@0x262 ]
+	138     (00000210) if-nez               v0, +29
+
+createNumber-BB@0x214 : [ createNumber-BB@0x218 createNumber-BB@0x262 ]
+	139     (00000214) if-nez               v1, +27
+
+createNumber-BB@0x218 : [ createNumber-BB@0x228 createNumber-BB@0x23c ]
+	140     (00000218) invoke-virtual       v6, v4, Ljava/lang/String;->charAt(I)C
+	141     (0000021e) move-result          v0
+	142     (00000220) const/16             v1, 45
+	143     (00000224) if-ne                v0, v1, +c
+
+createNumber-BB@0x228 : [ createNumber-BB@0x23c createNumber-BB@0x248 ]
+	144     (00000228) invoke-virtual       v6, v3, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	145     (0000022e) move-result-object   v0
+	146     (00000230) invoke-static        v0, Lorg/apache/commons/lang/NumberUtils;->isDigits(Ljava/lang/String;)Z
+	147     (00000236) move-result          v0
+	148     (00000238) if-nez               v0, +8
+
+createNumber-BB@0x23c : [ createNumber-BB@0x248 createNumber-BB@0x262 ]
+	149     (0000023c) invoke-static        v6, Lorg/apache/commons/lang/NumberUtils;->isDigits(Ljava/lang/String;)Z
+	150     (00000242) move-result          v0
+	151     (00000244) if-eqz               v0, +f
+
+createNumber-BB@0x248 : [ createNumber-BB@0x10 ]
+	152     (00000248) invoke-static        v6, Lorg/apache/commons/lang/NumberUtils;->createLong(Ljava/lang/String;)Ljava/lang/Long;
+	153     (0000024e) move-result-object   v1
+	154     (00000250) goto/16              -120
+	248:24d
+	(Ljava/lang/NumberFormatException; -> 254 createNumber-BB@0x254)
+
+createNumber-BB@0x254 : [ createNumber-BB@0x10 ]
+	155     (00000254) move-exception       v0
+	156     (00000256) invoke-static        v6, Lorg/apache/commons/lang/NumberUtils;->createBigInteger(Ljava/lang/String;)Ljava/math/BigInteger;
+	157     (0000025c) move-result-object   v1
+	158     (0000025e) goto/16              -127
+
+createNumber-BB@0x262 : 
+	159     (00000262) new-instance         v0, Ljava/lang/NumberFormatException;
+	160     (00000266) new-instance         v1, Ljava/lang/StringBuffer;
+	161     (0000026a) invoke-direct        v1, Ljava/lang/StringBuffer;-><init>()V
+	162     (00000270) invoke-virtual       v1, v12, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	163     (00000276) move-result-object   v1
+	164     (00000278) const-string         v2, ' is not a valid number.'
+	165     (0000027c) invoke-virtual       v1, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	166     (00000282) move-result-object   v1
+	167     (00000284) invoke-virtual       v1, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	168     (0000028a) move-result-object   v1
+	169     (0000028c) invoke-direct        v0, v1, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+	170     (00000292) throw                v0
+
+createNumber-BB@0x294 : [ createNumber-BB@0x2a8 createNumber-BB@0x2be ]
+	171     (00000294) invoke-static        v6, Lorg/apache/commons/lang/NumberUtils;->createFloat(Ljava/lang/String;)Ljava/lang/Float;
+	172     (0000029a) move-result-object   v1
+	173     (0000029c) invoke-virtual       v1, Ljava/lang/Float;->isInfinite()Z
+	174     (000002a2) move-result          v0
+	175     (000002a4) if-nez               v0, +d
+	294:2ad
+	(Ljava/lang/NumberFormatException; -> 3da createNumber-BB@0x3da)
+
+createNumber-BB@0x2a8 : [ createNumber-BB@0x2ba createNumber-BB@0x10 ]
+	176     (000002a8) invoke-virtual       v1, Ljava/lang/Float;->floatValue()F
+	177     (000002ae) move-result          v0
+	178     (000002b0) const/4              v3, 0
+	179     (000002b2) cmpl-float           v0, v0, v3
+	180     (000002b6) if-nez               v0, -153
+
+createNumber-BB@0x2ba : [ createNumber-BB@0x2be createNumber-BB@0x10 ]
+	181     (000002ba) if-nez               v2, -155
+
+createNumber-BB@0x2be : [ createNumber-BB@0x2d2 createNumber-BB@0x2e8 ]
+	182     (000002be) invoke-static        v6, Lorg/apache/commons/lang/NumberUtils;->createDouble(Ljava/lang/String;)Ljava/lang/Double;
+	183     (000002c4) move-result-object   v1
+	184     (000002c6) invoke-virtual       v1, Ljava/lang/Double;->isInfinite()Z
+	185     (000002cc) move-result          v0
+	186     (000002ce) if-nez               v0, +d
+	2be:2d7
+	(Ljava/lang/NumberFormatException; -> 3d6 createNumber-BB@0x3d6)
+
+createNumber-BB@0x2d2 : [ createNumber-BB@0x2e4 createNumber-BB@0x10 ]
+	187     (000002d2) invoke-virtual       v1, Ljava/lang/Double;->floatValue()F
+	188     (000002d8) move-result          v0
+	189     (000002da) float-to-double      v4, v0
+	190     (000002dc) cmpl-double          v0, v4, v10
+	191     (000002e0) if-nez               v0, -168
+
+createNumber-BB@0x2e4 : [ createNumber-BB@0x2e8 createNumber-BB@0x10 ]
+	192     (000002e4) if-nez               v2, -16a
+
+createNumber-BB@0x2e8 : [ createNumber-BB@0x10 ]
+	193     (000002e8) invoke-static        v6, Lorg/apache/commons/lang/NumberUtils;->createBigDecimal(Ljava/lang/String;)Ljava/math/BigDecimal;
+	194     (000002ee) move-result-object   v1
+	195     (000002f0) goto/16              -170
+	2e8:2ed
+	(Ljava/lang/NumberFormatException; -> 3c8 createNumber-BB@0x3c8)
+
+createNumber-BB@0x2f4 : [ createNumber-BB@0x2f8 createNumber-BB@0x31c ]
+	196     (000002f4) if-le                v6, v8, +14
+
+createNumber-BB@0x2f8 : [ createNumber-BB@0x308 createNumber-BB@0x31c ]
+	197     (000002f8) invoke-virtual       v12, Ljava/lang/String;->length()I
+	198     (000002fe) move-result          v5
+	199     (00000300) add-int/lit8         v5, v5, -1
+	200     (00000304) if-ge                v6, v5, +c
+
+createNumber-BB@0x308 : [ createNumber-BB@0x31c ]
+	201     (00000308) add-int/lit8         v1, v6, 1
+	202     (0000030c) invoke-virtual       v12, Ljava/lang/String;->length()I
+	203     (00000312) move-result          v5
+	204     (00000314) invoke-virtual       v12, v1, v5, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	205     (0000031a) move-result-object   v1
+
+createNumber-BB@0x31c : [ createNumber-BB@0x320 createNumber-BB@0x34c ]
+	206     (0000031c) if-nez               v0, +18
+
+createNumber-BB@0x320 : [ createNumber-BB@0x324 createNumber-BB@0x34c ]
+	207     (00000320) if-nez               v1, +16
+
+createNumber-BB@0x324 : [ createNumber-BB@0x10 ]
+	208     (00000324) invoke-static        v12, Lorg/apache/commons/lang/NumberUtils;->createInteger(Ljava/lang/String;)Ljava/lang/Integer;
+	209     (0000032a) move-result-object   v1
+	210     (0000032c) goto/16              -18e
+	324:329
+	(Ljava/lang/NumberFormatException; -> 330 createNumber-BB@0x330)
+
+createNumber-BB@0x330 : [ createNumber-BB@0x332 ]
+	211     (00000330) move-exception       v0
+
+createNumber-BB@0x332 : [ createNumber-BB@0x10 ]
+	212     (00000332) invoke-static        v12, Lorg/apache/commons/lang/NumberUtils;->createLong(Ljava/lang/String;)Ljava/lang/Long;
+	213     (00000338) move-result-object   v1
+	214     (0000033a) goto/16              -195
+	332:337
+	(Ljava/lang/NumberFormatException; -> 33e createNumber-BB@0x33e)
+
+createNumber-BB@0x33e : [ createNumber-BB@0x10 ]
+	215     (0000033e) move-exception       v0
+	216     (00000340) invoke-static        v12, Lorg/apache/commons/lang/NumberUtils;->createBigInteger(Ljava/lang/String;)Ljava/math/BigInteger;
+	217     (00000346) move-result-object   v1
+	218     (00000348) goto/16              -19c
+
+createNumber-BB@0x34c : [ createNumber-BB@0x358 createNumber-BB@0x3c4 ]
+	219     (0000034c) invoke-static        v2, Lorg/apache/commons/lang/NumberUtils;->isAllZeros(Ljava/lang/String;)Z
+	220     (00000352) move-result          v0
+	221     (00000354) if-eqz               v0, +38
+
+createNumber-BB@0x358 : [ createNumber-BB@0x364 createNumber-BB@0x3c4 ]
+	222     (00000358) invoke-static        v1, Lorg/apache/commons/lang/NumberUtils;->isAllZeros(Ljava/lang/String;)Z
+	223     (0000035e) move-result          v0
+	224     (00000360) if-eqz               v0, +32
+
+createNumber-BB@0x364 : [ createNumber-BB@0x366 ]
+	225     (00000364) move                 v0, v3
+
+createNumber-BB@0x366 : [ createNumber-BB@0x37a createNumber-BB@0x390 ]
+	226     (00000366) invoke-static        v12, Lorg/apache/commons/lang/NumberUtils;->createFloat(Ljava/lang/String;)Ljava/lang/Float;
+	227     (0000036c) move-result-object   v1
+	228     (0000036e) invoke-virtual       v1, Ljava/lang/Float;->isInfinite()Z
+	229     (00000374) move-result          v2
+	230     (00000376) if-nez               v2, +d
+	366:37f
+	(Ljava/lang/NumberFormatException; -> 3d2 createNumber-BB@0x3d2)
+
+createNumber-BB@0x37a : [ createNumber-BB@0x38c createNumber-BB@0x10 ]
+	231     (0000037a) invoke-virtual       v1, Ljava/lang/Float;->floatValue()F
+	232     (00000380) move-result          v2
+	233     (00000382) const/4              v3, 0
+	234     (00000384) cmpl-float           v2, v2, v3
+	235     (00000388) if-nez               v2, -1bc
+
+createNumber-BB@0x38c : [ createNumber-BB@0x390 createNumber-BB@0x10 ]
+	236     (0000038c) if-nez               v0, -1be
+
+createNumber-BB@0x390 : [ createNumber-BB@0x3a4 createNumber-BB@0x3b8 ]
+	237     (00000390) invoke-static        v12, Lorg/apache/commons/lang/NumberUtils;->createDouble(Ljava/lang/String;)Ljava/lang/Double;
+	238     (00000396) move-result-object   v1
+	239     (00000398) invoke-virtual       v1, Ljava/lang/Double;->isInfinite()Z
+	240     (0000039e) move-result          v2
+	241     (000003a0) if-nez               v2, +c
+	390:3a9
+	(Ljava/lang/NumberFormatException; -> 3ce createNumber-BB@0x3ce)
+
+createNumber-BB@0x3a4 : [ createNumber-BB@0x3b4 createNumber-BB@0x10 ]
+	242     (000003a4) invoke-virtual       v1, Ljava/lang/Double;->doubleValue()D
+	243     (000003aa) move-result-wide     v2
+	244     (000003ac) cmpl-double          v2, v2, v10
+	245     (000003b0) if-nez               v2, -1d0
+
+createNumber-BB@0x3b4 : [ createNumber-BB@0x3b8 createNumber-BB@0x10 ]
+	246     (000003b4) if-nez               v0, -1d2
+
+createNumber-BB@0x3b8 : [ createNumber-BB@0x10 ]
+	247     (000003b8) invoke-static        v12, Lorg/apache/commons/lang/NumberUtils;->createBigDecimal(Ljava/lang/String;)Ljava/math/BigDecimal;
+	248     (000003be) move-result-object   v1
+	249     (000003c0) goto/16              -1d8
+
+createNumber-BB@0x3c4 : [ createNumber-BB@0x366 ]
+	250     (000003c4) move                 v0, v4
+	251     (000003c6) goto                 -30
+
+createNumber-BB@0x3c8 : [ createNumber-BB@0x1b6 ]
+	252     (000003c8) move-exception       v0
+	253     (000003ca) goto/16              -10a
+
+createNumber-BB@0x3ce : [ createNumber-BB@0x3b8 ]
+	254     (000003ce) move-exception       v0
+	255     (000003d0) goto                 -c
+
+createNumber-BB@0x3d2 : [ createNumber-BB@0x390 ]
+	256     (000003d2) move-exception       v1
+	257     (000003d4) goto                 -22
+
+createNumber-BB@0x3d6 : [ createNumber-BB@0x2e8 ]
+	258     (000003d6) move-exception       v0
+	259     (000003d8) goto                 -78
+
+createNumber-BB@0x3da : [ createNumber-BB@0x2be ]
+	260     (000003da) move-exception       v0
+	261     (000003dc) goto/16              -8f
+
+createNumber-BB@0x3e0 : 
+	262     (000003e0) sparse-switch-payload 44 46 4c 64 66 6c
+

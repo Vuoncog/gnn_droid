@@ -1,0 +1,22 @@
+# Lorg/apache/commons/io/IOUtils;->copyLarge(Ljava/io/InputStream; Ljava/io/OutputStream; J J)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:java.io.InputStream
+# - v11:java.io.OutputStream
+# - v12:long
+# - v13:long
+#
+# - return:long
+
+copyLarge-BB@0x0 : 
+	0       (00000000) const/16             v0, 4096
+	1       (00000004) new-array            v6, v0, [B
+	2       (00000008) move-object          v0, v8
+	3       (0000000a) move-object          v1, v9
+	4       (0000000c) move-wide            v2, v10
+	5       (0000000e) move-wide            v4, v12
+	6       (00000010) invoke-static/range  v0 ... v6, Lorg/apache/commons/io/IOUtils;->copyLarge(Ljava/io/InputStream; Ljava/io/OutputStream; J J [B)J
+	7       (00000016) move-result-wide     v0
+	8       (00000018) return-wide          v0
+

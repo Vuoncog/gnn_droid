@@ -1,0 +1,23 @@
+# Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-><init>(I [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;)V [access_flags=public varargs constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+# - v2:com.crashlytics.android.core.NativeCrashWriter$ProtobufMessage[]
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xe <init>-BB@0x14 ]
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput                 v1, v0, Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;->tag I
+	2       (0000000a) if-eqz               v2, +5
+
+<init>-BB@0xe : 
+	3       (0000000e) iput-object          v2, v0, Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;->children [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;
+	4       (00000012) return-void          
+
+<init>-BB@0x14 : [ <init>-BB@0xe ]
+	5       (00000014) invoke-static        Lcom/crashlytics/android/core/NativeCrashWriter;->access$000()[Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;
+	6       (0000001a) move-result-object   v2
+	7       (0000001c) goto                 -7
+

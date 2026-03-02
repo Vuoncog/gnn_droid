@@ -1,0 +1,33 @@
+# Lorg/apache/commons/lang/math/LongRange;->containsRange(Lorg/apache/commons/lang/math/Range;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:org.apache.commons.lang.math.Range
+#
+# - return:boolean
+
+containsRange-BB@0x0 : [ containsRange-BB@0x6 containsRange-BB@0x8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-nez               v5, +3
+
+containsRange-BB@0x6 : 
+	2       (00000006) return               v0
+
+containsRange-BB@0x8 : [ containsRange-BB@0x1c containsRange-BB@0x6 ]
+	3       (00000008) invoke-virtual       v5, Lorg/apache/commons/lang/math/Range;->getMinimumLong()J
+	4       (0000000e) move-result-wide     v2
+	5       (00000010) invoke-virtual       v4, v2, v3, Lorg/apache/commons/lang/math/LongRange;->containsLong(J)Z
+	6       (00000016) move-result          v1
+	7       (00000018) if-eqz               v1, -9
+
+containsRange-BB@0x1c : [ containsRange-BB@0x30 containsRange-BB@0x6 ]
+	8       (0000001c) invoke-virtual       v5, Lorg/apache/commons/lang/math/Range;->getMaximumLong()J
+	9       (00000022) move-result-wide     v2
+	10      (00000024) invoke-virtual       v4, v2, v3, Lorg/apache/commons/lang/math/LongRange;->containsLong(J)Z
+	11      (0000002a) move-result          v1
+	12      (0000002c) if-eqz               v1, -13
+
+containsRange-BB@0x30 : [ containsRange-BB@0x6 ]
+	13      (00000030) const/4              v0, 1
+	14      (00000032) goto                 -16
+

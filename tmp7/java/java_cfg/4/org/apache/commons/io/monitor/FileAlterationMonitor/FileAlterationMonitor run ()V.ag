@@ -1,0 +1,46 @@
+# Lorg/apache/commons/io/monitor/FileAlterationMonitor;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x8 run-BB@0x3c ]
+	0       (00000000) iget-boolean         v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->running Z
+	1       (00000004) if-eqz               v0, +1c
+
+run-BB@0x8 : [ run-BB@0x14 ]
+	2       (00000008) iget-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->observers Ljava/util/List;
+	3       (0000000c) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	4       (00000012) move-result-object   v1
+
+run-BB@0x14 : [ run-BB@0x20 run-BB@0x34 ]
+	5       (00000014) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-eqz               v0, +c
+
+run-BB@0x20 : [ run-BB@0x14 ]
+	8       (00000020) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	9       (00000026) move-result-object   v0
+	10      (00000028) check-cast           v0, Lorg/apache/commons/io/monitor/FileAlterationObserver;
+	11      (0000002c) invoke-virtual       v0, Lorg/apache/commons/io/monitor/FileAlterationObserver;->checkAndNotify()V
+	12      (00000032) goto                 -f
+
+run-BB@0x34 : [ run-BB@0x3c run-BB@0x3e ]
+	13      (00000034) iget-boolean         v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->running Z
+	14      (00000038) if-nez               v0, +3
+
+run-BB@0x3c : 
+	15      (0000003c) return-void          
+
+run-BB@0x3e : [ run-BB@0x0 ]
+	16      (0000003e) iget-wide            v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->interval J
+	17      (00000042) invoke-static        v0, v1, Ljava/lang/Thread;->sleep(J)V
+	18      (00000048) goto                 -24
+	3e:47
+	(Ljava/lang/InterruptedException; -> 4a run-BB@0x4a)
+
+run-BB@0x4a : [ run-BB@0x0 ]
+	19      (0000004a) move-exception       v0
+	20      (0000004c) goto                 -26
+

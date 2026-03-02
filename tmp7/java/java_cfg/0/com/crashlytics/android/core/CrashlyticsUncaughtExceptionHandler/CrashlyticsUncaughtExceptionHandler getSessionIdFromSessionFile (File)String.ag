@@ -1,0 +1,17 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->getSessionIdFromSessionFile(Ljava/io/File;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.File
+#
+# - return:java.lang.String
+
+getSessionIdFromSessionFile-BB@0x0 : 
+	0       (00000000) invoke-virtual       v4, Ljava/io/File;->getName()Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) const/16             v2, 35
+	4       (0000000e) invoke-virtual       v0, v1, v2, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	5       (00000014) move-result-object   v0
+	6       (00000016) return-object        v0
+

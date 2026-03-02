@@ -1,0 +1,64 @@
+# Lorg/apache/commons/io/input/BoundedInputStream;->read([B I I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:byte[]
+# - v10:int
+# - v11:int
+#
+# - return:int
+
+read-BB@0x0 : [ read-BB@0x12 read-BB@0x26 ]
+	0       (00000000) const-wide/16        v6, 0 # [0.0]
+	1       (00000004) const/4              v2, -1
+	2       (00000006) iget-wide            v0, v8, Lorg/apache/commons/io/input/BoundedInputStream;->max J
+	3       (0000000a) cmp-long             v0, v0, v6
+	4       (0000000e) if-ltz               v0, +c
+
+read-BB@0x12 : [ read-BB@0x22 read-BB@0x26 ]
+	5       (00000012) iget-wide            v0, v8, Lorg/apache/commons/io/input/BoundedInputStream;->pos J
+	6       (00000016) iget-wide            v4, v8, Lorg/apache/commons/io/input/BoundedInputStream;->max J
+	7       (0000001a) cmp-long             v0, v0, v4
+	8       (0000001e) if-ltz               v0, +4
+
+read-BB@0x22 : [ read-BB@0x24 ]
+	9       (00000022) move                 v0, v2
+
+read-BB@0x24 : 
+	10      (00000024) return               v0
+
+read-BB@0x26 : [ read-BB@0x32 read-BB@0x5c ]
+	11      (00000026) iget-wide            v0, v8, Lorg/apache/commons/io/input/BoundedInputStream;->max J
+	12      (0000002a) cmp-long             v0, v0, v6
+	13      (0000002e) if-ltz               v0, +17
+
+read-BB@0x32 : [ read-BB@0x46 ]
+	14      (00000032) int-to-long          v0, v11
+	15      (00000034) iget-wide            v4, v8, Lorg/apache/commons/io/input/BoundedInputStream;->max J
+	16      (00000038) iget-wide            v6, v8, Lorg/apache/commons/io/input/BoundedInputStream;->pos J
+	17      (0000003c) sub-long/2addr       v4, v6
+	18      (0000003e) invoke-static        v0, v1, v4, v5, Ljava/lang/Math;->min(J J)J
+	19      (00000044) move-result-wide     v0
+
+read-BB@0x46 : [ read-BB@0x58 read-BB@0x60 ]
+	20      (00000046) iget-object          v3, v8, Lorg/apache/commons/io/input/BoundedInputStream;->in Ljava/io/InputStream;
+	21      (0000004a) long-to-int          v0, v0
+	22      (0000004c) invoke-virtual       v3, v9, v10, v0, Ljava/io/InputStream;->read([B I I)I
+	23      (00000052) move-result          v0
+	24      (00000054) if-ne                v0, v2, +6
+
+read-BB@0x58 : [ read-BB@0x24 ]
+	25      (00000058) move                 v0, v2
+	26      (0000005a) goto                 -1b
+
+read-BB@0x5c : [ read-BB@0x46 ]
+	27      (0000005c) int-to-long          v0, v11
+	28      (0000005e) goto                 -c
+
+read-BB@0x60 : [ read-BB@0x24 ]
+	29      (00000060) iget-wide            v2, v8, Lorg/apache/commons/io/input/BoundedInputStream;->pos J
+	30      (00000064) int-to-long          v4, v0
+	31      (00000066) add-long/2addr       v2, v4
+	32      (00000068) iput-wide            v2, v8, Lorg/apache/commons/io/input/BoundedInputStream;->pos J
+	33      (0000006c) goto                 -24
+

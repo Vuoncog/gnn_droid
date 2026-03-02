@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/ClassUtils;->primitiveToWrapper(Ljava/lang/Class;)Ljava/lang/Class; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Class
+#
+# - return:java.lang.Class
+
+primitiveToWrapper-BB@0x0 : [ primitiveToWrapper-BB@0x4 primitiveToWrapper-BB@0x22 ]
+	0       (00000000) if-eqz               v1, +11
+
+primitiveToWrapper-BB@0x4 : [ primitiveToWrapper-BB@0x10 primitiveToWrapper-BB@0x22 ]
+	1       (00000004) invoke-virtual       v1, Ljava/lang/Class;->isPrimitive()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +b
+
+primitiveToWrapper-BB@0x10 : [ primitiveToWrapper-BB@0x22 ]
+	4       (00000010) sget-object          v0, Lorg/apache/commons/lang/ClassUtils;->primitiveWrapperMap Ljava/util/Map;
+	5       (00000014) invoke-interface     v0, v1, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, Ljava/lang/Class;
+	8       (00000020) move-object          v1, v0
+
+primitiveToWrapper-BB@0x22 : 
+	9       (00000022) return-object        v1
+

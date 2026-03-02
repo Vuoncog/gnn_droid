@@ -1,0 +1,49 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;->installExceptionHandler(Lcom/crashlytics/android/core/UnityVersionProvider;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:com.crashlytics.android.core.UnityVersionProvider
+#
+# - return:void
+
+installExceptionHandler-BB@0x0 : [ installExceptionHandler-BB@0x6a ]
+	0       (00000000) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'CrashlyticsCore'
+	3       (0000000c) const-string         v2, 'Installing exception handler...'
+	4       (00000010) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	5       (00000016) new-instance         v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;
+	6       (0000001a) invoke-static        Ljava/lang/Thread;->getDefaultUncaughtExceptionHandler()Ljava/lang/Thread$UncaughtExceptionHandler;
+	7       (00000020) move-result-object   v1
+	8       (00000022) iget-object          v2, v7, Lcom/crashlytics/android/core/CrashlyticsCore;->executorServiceWrapper Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper;
+	9       (00000026) invoke-virtual       v7, Lcom/crashlytics/android/core/CrashlyticsCore;->getIdManager()Lio/fabric/sdk/android/services/common/IdManager;
+	10      (0000002c) move-result-object   v3
+	11      (0000002e) iget-object          v5, v7, Lcom/crashlytics/android/core/CrashlyticsCore;->fileStore Lio/fabric/sdk/android/services/persistence/FileStore;
+	12      (00000032) move-object          v4, v8
+	13      (00000034) move-object          v6, v7
+	14      (00000036) invoke-direct/range  v0 ... v6, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;-><init>(Ljava/lang/Thread$UncaughtExceptionHandler; Lcom/crashlytics/android/core/CrashlyticsExecutorServiceWrapper; Lio/fabric/sdk/android/services/common/IdManager; Lcom/crashlytics/android/core/UnityVersionProvider; Lio/fabric/sdk/android/services/persistence/FileStore; Lcom/crashlytics/android/core/CrashlyticsCore;)V
+	15      (0000003c) iput-object          v0, v7, Lcom/crashlytics/android/core/CrashlyticsCore;->handler Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;
+	16      (00000040) iget-object          v0, v7, Lcom/crashlytics/android/core/CrashlyticsCore;->handler Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;
+	17      (00000044) invoke-virtual       v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->openSession()V
+	18      (0000004a) iget-object          v0, v7, Lcom/crashlytics/android/core/CrashlyticsCore;->handler Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;
+	19      (0000004e) invoke-static        v0, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+	20      (00000054) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	21      (0000005a) move-result-object   v0
+	22      (0000005c) const-string         v1, 'CrashlyticsCore'
+	23      (00000060) const-string         v2, 'Successfully installed exception handler.'
+	24      (00000064) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	0:69
+	(Ljava/lang/Exception; -> 6c installExceptionHandler-BB@0x6c)
+
+installExceptionHandler-BB@0x6a : 
+	25      (0000006a) return-void          
+
+installExceptionHandler-BB@0x6c : [ installExceptionHandler-BB@0x6a ]
+	26      (0000006c) move-exception       v0
+	27      (0000006e) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	28      (00000074) move-result-object   v1
+	29      (00000076) const-string         v2, 'CrashlyticsCore'
+	30      (0000007a) const-string         v3, 'There was a problem installing the exception handler.'
+	31      (0000007e) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	32      (00000084) goto                 -d
+

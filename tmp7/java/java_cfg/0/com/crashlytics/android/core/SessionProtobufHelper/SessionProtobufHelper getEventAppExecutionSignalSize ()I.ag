@@ -1,0 +1,26 @@
+# Lcom/crashlytics/android/core/SessionProtobufHelper;->getEventAppExecutionSignalSize()I [access_flags=private static]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+getEventAppExecutionSignalSize-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v1, 1
+	2       (00000004) sget-object          v2, Lcom/crashlytics/android/core/SessionProtobufHelper;->SIGNAL_DEFAULT_BYTE_STRING Lcom/crashlytics/android/core/ByteString;
+	3       (00000008) invoke-static        v1, v2, Lcom/crashlytics/android/core/CodedOutputStream;->computeBytesSize(I Lcom/crashlytics/android/core/ByteString;)I
+	4       (0000000e) move-result          v1
+	5       (00000010) add-int/2addr        v0, v1
+	6       (00000012) const/4              v1, 2
+	7       (00000014) sget-object          v2, Lcom/crashlytics/android/core/SessionProtobufHelper;->SIGNAL_DEFAULT_BYTE_STRING Lcom/crashlytics/android/core/ByteString;
+	8       (00000018) invoke-static        v1, v2, Lcom/crashlytics/android/core/CodedOutputStream;->computeBytesSize(I Lcom/crashlytics/android/core/ByteString;)I
+	9       (0000001e) move-result          v1
+	10      (00000020) add-int/2addr        v0, v1
+	11      (00000022) const/4              v1, 3
+	12      (00000024) const-wide/16        v2, 0 # [0.0]
+	13      (00000028) invoke-static        v1, v2, v3, Lcom/crashlytics/android/core/CodedOutputStream;->computeUInt64Size(I J)I
+	14      (0000002e) move-result          v1
+	15      (00000030) add-int/2addr        v0, v1
+	16      (00000032) return               v0
+

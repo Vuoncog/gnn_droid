@@ -1,0 +1,27 @@
+# La/a/b/a/b/b/j/i/c;->h()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+h-BB@0x0 : [ h-BB@0xc h-BB@0x2e ]
+	0       (00000000) invoke-virtual       v2, La/a/b/a/b/b/j/i/c;->e()Ljava/lang/Object;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +13
+
+h-BB@0xc : [ h-BB@0x24 h-BB@0x2e ]
+	3       (0000000c) invoke-virtual       v2, La/a/b/a/b/b/j/i/c;->e()Ljava/lang/Object;
+	4       (00000012) move-result-object   v0
+	5       (00000014) check-cast           v0, La/a/b/a/b/b/f;
+	6       (00000018) invoke-virtual       v0, La/a/b/a/b/b/f;->a()La/a/b/a/b/a/b;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) if-eqz               v0, +7
+
+h-BB@0x24 : [ h-BB@0x2e ]
+	9       (00000024) iget-object          v1, v2, La/a/b/a/b/b/j/i/c;->k La/a/b/a/b/b/j/i/e;
+	10      (00000028) invoke-virtual       v0, v1, La/a/b/a/b/a/b;->a(La/a/b/a/b/a/h;)V
+
+h-BB@0x2e : 
+	11      (0000002e) return-void          
+

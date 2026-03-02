@@ -1,0 +1,84 @@
+# Lio/fabric/sdk/android/services/settings/DefaultCachedSettingsIo;->writeCachedSettings(J Lorg/json/JSONObject;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:long
+# - v8:org.json.JSONObject
+#
+# - return:void
+
+writeCachedSettings-BB@0x0 : [ writeCachedSettings-BB@0x1a writeCachedSettings-BB@0x72 ]
+	0       (00000000) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'Fabric'
+	3       (0000000c) const-string         v2, 'Writing settings to cache file...'
+	4       (00000010) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	5       (00000016) if-eqz               v8, +2e
+
+writeCachedSettings-BB@0x1a : [ writeCachedSettings-BB@0x1c ]
+	6       (0000001a) const/4              v2, 0
+
+writeCachedSettings-BB@0x1c : [ writeCachedSettings-BB@0x54 ]
+	7       (0000001c) const-string         v0, 'expires_at'
+	8       (00000020) invoke-virtual       v8, v0, v6, v7, Lorg/json/JSONObject;->put(Ljava/lang/String; J)Lorg/json/JSONObject;
+	9       (00000026) new-instance         v1, Ljava/io/FileWriter;
+	10      (0000002a) new-instance         v0, Ljava/io/File;
+	11      (0000002e) new-instance         v3, Lio/fabric/sdk/android/services/persistence/FileStoreImpl;
+	12      (00000032) iget-object          v4, v5, Lio/fabric/sdk/android/services/settings/DefaultCachedSettingsIo;->kit Lio/fabric/sdk/android/Kit;
+	13      (00000036) invoke-direct        v3, v4, Lio/fabric/sdk/android/services/persistence/FileStoreImpl;-><init>(Lio/fabric/sdk/android/Kit;)V
+	14      (0000003c) invoke-virtual       v3, Lio/fabric/sdk/android/services/persistence/FileStoreImpl;->getFilesDir()Ljava/io/File;
+	15      (00000042) move-result-object   v3
+	16      (00000044) const-string         v4, 'com.crashlytics.settings.json'
+	17      (00000048) invoke-direct        v0, v3, v4, Ljava/io/File;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	18      (0000004e) invoke-direct        v1, v0, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V
+	1c:53
+	(Ljava/lang/Throwable; -> 9a writeCachedSettings-BB@0x9a)
+	(Ljava/lang/Exception; -> 74 writeCachedSettings-BB@0x74)
+
+writeCachedSettings-BB@0x54 : [ writeCachedSettings-BB@0x72 ]
+	19      (00000054) invoke-virtual       v8, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+	20      (0000005a) move-result-object   v0
+	21      (0000005c) invoke-virtual       v1, v0, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
+	22      (00000062) invoke-virtual       v1, Ljava/io/FileWriter;->flush()V
+	23      (00000068) const-string         v0, 'Failed to close settings writer.'
+	24      (0000006c) invoke-static        v1, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V
+	54:67
+	(Ljava/lang/Throwable; -> a8 writeCachedSettings-BB@0xa8)
+	(Ljava/lang/Exception; -> ae writeCachedSettings-BB@0xae)
+
+writeCachedSettings-BB@0x72 : 
+	25      (00000072) return-void          
+
+writeCachedSettings-BB@0x74 : [ writeCachedSettings-BB@0x78 ]
+	26      (00000074) move-exception       v0
+	27      (00000076) move-object          v1, v2
+
+writeCachedSettings-BB@0x78 : [ writeCachedSettings-BB@0x72 ]
+	28      (00000078) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	29      (0000007e) move-result-object   v2
+	30      (00000080) const-string         v3, 'Fabric'
+	31      (00000084) const-string         v4, 'Failed to cache settings'
+	32      (00000088) invoke-interface     v2, v3, v4, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	33      (0000008e) const-string         v0, 'Failed to close settings writer.'
+	34      (00000092) invoke-static        v1, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V
+	35      (00000098) goto                 -13
+	78:8d
+	(Ljava/lang/Throwable; -> a8 writeCachedSettings-BB@0xa8)
+
+writeCachedSettings-BB@0x9a : [ writeCachedSettings-BB@0x9c ]
+	36      (0000009a) move-exception       v0
+
+writeCachedSettings-BB@0x9c : 
+	37      (0000009c) const-string         v1, 'Failed to close settings writer.'
+	38      (000000a0) invoke-static        v2, v1, Lio/fabric/sdk/android/services/common/CommonUtils;->closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V
+	39      (000000a6) throw                v0
+
+writeCachedSettings-BB@0xa8 : [ writeCachedSettings-BB@0x9c ]
+	40      (000000a8) move-exception       v0
+	41      (000000aa) move-object          v2, v1
+	42      (000000ac) goto                 -8
+
+writeCachedSettings-BB@0xae : [ writeCachedSettings-BB@0x78 ]
+	43      (000000ae) move-exception       v0
+	44      (000000b0) goto                 -1c
+

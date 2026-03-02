@@ -1,0 +1,74 @@
+# Lorg/apache/commons/lang/math/Fraction;->getReducedFraction(I I)Lorg/apache/commons/lang/math/Fraction; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:org.apache.commons.lang.math.Fraction
+
+getReducedFraction-BB@0x0 : [ getReducedFraction-BB@0x8 getReducedFraction-BB@0x18 ]
+	0       (00000000) const/high16         v2, -32768 # [-0.0]
+	1       (00000004) if-nez               v4, +a
+
+getReducedFraction-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/ArithmeticException;
+	3       (0000000c) const-string         v1, 'The denominator must not be zero'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+getReducedFraction-BB@0x18 : [ getReducedFraction-BB@0x1c getReducedFraction-BB@0x22 ]
+	6       (00000018) if-nez               v3, +5
+
+getReducedFraction-BB@0x1c : [ getReducedFraction-BB@0x20 ]
+	7       (0000001c) sget-object          v0, Lorg/apache/commons/lang/math/Fraction;->ZERO Lorg/apache/commons/lang/math/Fraction;
+
+getReducedFraction-BB@0x20 : 
+	8       (00000020) return-object        v0
+
+getReducedFraction-BB@0x22 : [ getReducedFraction-BB@0x26 getReducedFraction-BB@0x74 ]
+	9       (00000022) if-ne                v4, v2, +29
+
+getReducedFraction-BB@0x26 : [ getReducedFraction-BB@0x2e getReducedFraction-BB@0x74 ]
+	10      (00000026) and-int/lit8         v0, v3, 1
+	11      (0000002a) if-nez               v0, +25
+
+getReducedFraction-BB@0x2e : [ getReducedFraction-BB@0x3a ]
+	12      (0000002e) div-int/lit8         v3, v3, 2
+	13      (00000032) div-int/lit8         v4, v4, 2
+	14      (00000036) move                 v0, v4
+	15      (00000038) move                 v1, v3
+
+getReducedFraction-BB@0x3a : [ getReducedFraction-BB@0x3e getReducedFraction-BB@0x5a ]
+	16      (0000003a) if-gez               v0, +10
+
+getReducedFraction-BB@0x3e : [ getReducedFraction-BB@0x42 getReducedFraction-BB@0x46 ]
+	17      (0000003e) if-eq                v1, v2, +4
+
+getReducedFraction-BB@0x42 : [ getReducedFraction-BB@0x46 getReducedFraction-BB@0x56 ]
+	18      (00000042) if-ne                v0, v2, +a
+
+getReducedFraction-BB@0x46 : 
+	19      (00000046) new-instance         v0, Ljava/lang/ArithmeticException;
+	20      (0000004a) const-string         v1, "overflow: can't negate"
+	21      (0000004e) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	22      (00000054) throw                v0
+
+getReducedFraction-BB@0x56 : [ getReducedFraction-BB@0x5a ]
+	23      (00000056) neg-int              v1, v1
+	24      (00000058) neg-int              v0, v0
+
+getReducedFraction-BB@0x5a : [ getReducedFraction-BB@0x20 ]
+	25      (0000005a) invoke-static        v1, v0, Lorg/apache/commons/lang/math/Fraction;->greatestCommonDivisor(I I)I
+	26      (00000060) move-result          v2
+	27      (00000062) div-int/2addr        v1, v2
+	28      (00000064) div-int              v2, v0, v2
+	29      (00000068) new-instance         v0, Lorg/apache/commons/lang/math/Fraction;
+	30      (0000006c) invoke-direct        v0, v1, v2, Lorg/apache/commons/lang/math/Fraction;-><init>(I I)V
+	31      (00000072) goto                 -29
+
+getReducedFraction-BB@0x74 : [ getReducedFraction-BB@0x3a ]
+	32      (00000074) move                 v0, v4
+	33      (00000076) move                 v1, v3
+	34      (00000078) goto                 -1f
+

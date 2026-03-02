@@ -1,0 +1,34 @@
+# Lorg/apache/commons/io/FileDeleteStrategy;->deleteQuietly(Ljava/io/File;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+#
+# - return:boolean
+
+deleteQuietly-BB@0x0 : [ deleteQuietly-BB@0x4 deleteQuietly-BB@0x10 ]
+	0       (00000000) if-eqz               v2, +8
+
+deleteQuietly-BB@0x4 : [ deleteQuietly-BB@0x10 deleteQuietly-BB@0x14 ]
+	1       (00000004) invoke-virtual       v2, Ljava/io/File;->exists()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +4
+
+deleteQuietly-BB@0x10 : [ deleteQuietly-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+deleteQuietly-BB@0x12 : 
+	5       (00000012) return               v0
+
+deleteQuietly-BB@0x14 : [ deleteQuietly-BB@0x12 ]
+	6       (00000014) invoke-virtual       v1, v2, Lorg/apache/commons/io/FileDeleteStrategy;->doDelete(Ljava/io/File;)Z
+	7       (0000001a) move-result          v0
+	8       (0000001c) goto                 -5
+	14:19
+	(Ljava/io/IOException; -> 1e deleteQuietly-BB@0x1e)
+
+deleteQuietly-BB@0x1e : [ deleteQuietly-BB@0x12 ]
+	9       (0000001e) move-exception       v0
+	10      (00000020) const/4              v0, 0
+	11      (00000022) goto                 -8
+

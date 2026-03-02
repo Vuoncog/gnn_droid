@@ -1,0 +1,68 @@
+# Lcom/isnowstudio/common/l;->a()V [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x62 a-BB@0xc6 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) new-instance         v0, Ljava/lang/StringBuilder;
+	2       (00000006) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000c) const-string         v1, 'refresh start time:'
+	4       (00000010) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	7       (0000001e) move-result-wide     v1
+	8       (00000020) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	9       (00000026) move-result-object   v0
+	10      (00000028) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (0000002e) new-instance         v0, Ljava/lang/StringBuilder;
+	12      (00000032) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	13      (00000038) const-string         v1, 'refresh start time:'
+	14      (0000003c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000042) move-result-object   v0
+	16      (00000044) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	17      (0000004a) move-result-wide     v1
+	18      (0000004c) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	19      (00000052) move-result-object   v0
+	20      (00000054) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	21      (0000005a) iget-object          v0, v4, Lcom/isnowstudio/common/l;->d Ljava/lang/String;
+	22      (0000005e) if-nez               v0, +34
+
+a-BB@0x62 : [ a-BB@0x74 ]
+	23      (00000062) iget-object          v0, v4, Lcom/isnowstudio/common/l;->b Landroid/content/Context;
+	24      (00000066) const                v1, 2131099662 # [1.7811683538891318e+38]
+	25      (0000006c) invoke-virtual       v0, v1, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	26      (00000072) move-result-object   v0
+
+a-BB@0x74 : [ a-BB@0x94 a-BB@0xaa ]
+	27      (00000074) iget-object          v1, v4, Lcom/isnowstudio/common/l;->b Landroid/content/Context;
+	28      (00000078) const-string         v2, ''
+	29      (0000007c) invoke-static        v1, v2, v0, v3, v3, Landroid/app/ProgressDialog;->show(Landroid/content/Context; Ljava/lang/CharSequence; Ljava/lang/CharSequence; Z Z)Landroid/app/ProgressDialog;
+	30      (00000082) move-result-object   v0
+	31      (00000084) iput-object          v0, v4, Lcom/isnowstudio/common/l;->a Landroid/app/ProgressDialog;
+	32      (00000088) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	33      (0000008c) const/16             v1, 11
+	34      (00000090) if-le                v0, v1, +d
+
+a-BB@0x94 : [ a-BB@0xaa ]
+	35      (00000094) iget-object          v0, v4, Lcom/isnowstudio/common/l;->a Landroid/app/ProgressDialog;
+	36      (00000098) invoke-virtual       v0, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
+	37      (0000009e) move-result-object   v0
+	38      (000000a0) const/4              v1, -1
+	39      (000000a2) const/4              v2, -2
+	40      (000000a4) invoke-virtual       v0, v1, v2, Landroid/view/Window;->setLayout(I I)V
+
+a-BB@0xaa : 
+	41      (000000aa) new-instance         v0, Ljava/lang/Thread;
+	42      (000000ae) new-instance         v1, Lcom/isnowstudio/common/n;
+	43      (000000b2) invoke-direct        v1, v4, Lcom/isnowstudio/common/n;-><init>(Lcom/isnowstudio/common/l;)V
+	44      (000000b8) invoke-direct        v0, v1, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+	45      (000000be) invoke-virtual       v0, Ljava/lang/Thread;->start()V
+	46      (000000c4) return-void          
+
+a-BB@0xc6 : [ a-BB@0x74 ]
+	47      (000000c6) iget-object          v0, v4, Lcom/isnowstudio/common/l;->d Ljava/lang/String;
+	48      (000000ca) goto                 -2b
+

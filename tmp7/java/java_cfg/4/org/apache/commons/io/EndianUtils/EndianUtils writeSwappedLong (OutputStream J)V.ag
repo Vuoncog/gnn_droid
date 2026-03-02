@@ -1,0 +1,61 @@
+# Lorg/apache/commons/io/EndianUtils;->writeSwappedLong(Ljava/io/OutputStream; J)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.io.OutputStream
+# - v7:long
+#
+# - return:void
+
+writeSwappedLong-BB@0x0 : 
+	0       (00000000) const-wide/16        v2, 255 # [255.0]
+	1       (00000004) const/4              v0, 0
+	2       (00000006) shr-long             v0, v6, v0
+	3       (0000000a) and-long/2addr       v0, v2
+	4       (0000000c) long-to-int          v0, v0
+	5       (0000000e) int-to-byte          v0, v0
+	6       (00000010) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	7       (00000016) const/16             v0, 8
+	8       (0000001a) shr-long             v0, v6, v0
+	9       (0000001e) and-long/2addr       v0, v2
+	10      (00000020) long-to-int          v0, v0
+	11      (00000022) int-to-byte          v0, v0
+	12      (00000024) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	13      (0000002a) const/16             v0, 16
+	14      (0000002e) shr-long             v0, v6, v0
+	15      (00000032) and-long/2addr       v0, v2
+	16      (00000034) long-to-int          v0, v0
+	17      (00000036) int-to-byte          v0, v0
+	18      (00000038) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	19      (0000003e) const/16             v0, 24
+	20      (00000042) shr-long             v0, v6, v0
+	21      (00000046) and-long/2addr       v0, v2
+	22      (00000048) long-to-int          v0, v0
+	23      (0000004a) int-to-byte          v0, v0
+	24      (0000004c) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	25      (00000052) const/16             v0, 32
+	26      (00000056) shr-long             v0, v6, v0
+	27      (0000005a) and-long/2addr       v0, v2
+	28      (0000005c) long-to-int          v0, v0
+	29      (0000005e) int-to-byte          v0, v0
+	30      (00000060) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	31      (00000066) const/16             v0, 40
+	32      (0000006a) shr-long             v0, v6, v0
+	33      (0000006e) and-long/2addr       v0, v2
+	34      (00000070) long-to-int          v0, v0
+	35      (00000072) int-to-byte          v0, v0
+	36      (00000074) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	37      (0000007a) const/16             v0, 48
+	38      (0000007e) shr-long             v0, v6, v0
+	39      (00000082) and-long/2addr       v0, v2
+	40      (00000084) long-to-int          v0, v0
+	41      (00000086) int-to-byte          v0, v0
+	42      (00000088) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	43      (0000008e) const/16             v0, 56
+	44      (00000092) shr-long             v0, v6, v0
+	45      (00000096) and-long/2addr       v0, v2
+	46      (00000098) long-to-int          v0, v0
+	47      (0000009a) int-to-byte          v0, v0
+	48      (0000009c) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	49      (000000a2) return-void          
+

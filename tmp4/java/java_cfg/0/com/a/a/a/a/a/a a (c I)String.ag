@@ -1,0 +1,52 @@
+# Lcom/a/a/a/a/a;->a(Lcom/a/a/a/a/c; I)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.a.a.a.a.c
+# - v3:int
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ D:a-BB@0x16 1:a-BB@0x26 2:a-BB@0x30 3:a-BB@0x3a 4:a-BB@0x44 5:a-BB@0x4e ]
+	0       (00000000) sget-object          v0, Lcom/a/a/a/a/b;->a [I
+	1       (00000004) invoke-virtual       v2, Lcom/a/a/a/a/c;->ordinal()I
+	2       (0000000a) move-result          v1
+	3       (0000000c) aget                 v0, v0, v1
+	4       (00000010) packed-switch        v0, +24 (0x58)
+
+a-BB@0x16 : 
+	5       (00000016) new-instance         v0, Ljava/lang/IllegalStateException;
+	6       (0000001a) const-string         v1, 'Bad table'
+	7       (0000001e) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	8       (00000024) throw                v0
+
+a-BB@0x26 : [ a-BB@0x2e ]
+	9       (00000026) sget-object          v0, Lcom/a/a/a/a/a;->a [Ljava/lang/String;
+	10      (0000002a) aget-object          v0, v0, v3
+
+a-BB@0x2e : 
+	11      (0000002e) return-object        v0
+
+a-BB@0x30 : [ a-BB@0x2e ]
+	12      (00000030) sget-object          v0, Lcom/a/a/a/a/a;->b [Ljava/lang/String;
+	13      (00000034) aget-object          v0, v0, v3
+	14      (00000038) goto                 -5
+
+a-BB@0x3a : [ a-BB@0x2e ]
+	15      (0000003a) sget-object          v0, Lcom/a/a/a/a/a;->c [Ljava/lang/String;
+	16      (0000003e) aget-object          v0, v0, v3
+	17      (00000042) goto                 -a
+
+a-BB@0x44 : [ a-BB@0x2e ]
+	18      (00000044) sget-object          v0, Lcom/a/a/a/a/a;->d [Ljava/lang/String;
+	19      (00000048) aget-object          v0, v0, v3
+	20      (0000004c) goto                 -f
+
+a-BB@0x4e : [ a-BB@0x2e ]
+	21      (0000004e) sget-object          v0, Lcom/a/a/a/a/a;->e [Ljava/lang/String;
+	22      (00000052) aget-object          v0, v0, v3
+	23      (00000056) goto                 -14
+
+a-BB@0x58 : 
+	24      (00000058) packed-switch-payload 1 2 3 4 5
+

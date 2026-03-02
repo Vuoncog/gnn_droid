@@ -1,0 +1,66 @@
+# Lcom/a/a/g/a;->b()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:int
+
+b-BB@0x0 : [ b-BB@0x4 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) move                 v0, v1
+
+b-BB@0x4 : [ b-BB@0xc b-BB@0x6e ]
+	2       (00000004) iget                 v2, v5, Lcom/a/a/g/a;->f I
+	3       (00000008) if-ge                v0, v2, +33
+
+b-BB@0xc : [ b-BB@0x1a b-BB@0x68 ]
+	4       (0000000c) invoke-direct        v5, v0, Lcom/a/a/g/a;->c(I)I
+	5       (00000012) move-result          v2
+	6       (00000014) const/4              v3, -1
+	7       (00000016) if-eq                v2, v3, +29
+
+b-BB@0x1a : [ b-BB@0x32 b-BB@0x68 ]
+	8       (0000001a) sget-object          v3, Lcom/a/a/g/a;->c [C
+	9       (0000001e) sget-object          v4, Lcom/a/a/g/a;->a [C
+	10      (00000022) aget-char            v2, v4, v2
+	11      (00000026) invoke-static        v3, v2, Lcom/a/a/g/a;->a([C C)Z
+	12      (0000002c) move-result          v2
+	13      (0000002e) if-eqz               v2, +1d
+
+b-BB@0x32 : [ b-BB@0x36 ]
+	14      (00000032) const/4              v3, 0
+	15      (00000034) move                 v2, v0
+
+b-BB@0x36 : [ b-BB@0x3e b-BB@0x4e ]
+	16      (00000036) add-int/lit8         v4, v0, 7
+	17      (0000003a) if-ge                v2, v4, +a
+
+b-BB@0x3e : [ b-BB@0x36 ]
+	18      (0000003e) iget-object          v4, v5, Lcom/a/a/g/a;->e [I
+	19      (00000042) aget                 v4, v4, v2
+	20      (00000046) add-int/2addr        v3, v4
+	21      (00000048) add-int/lit8         v2, v2, 1
+	22      (0000004c) goto                 -b
+
+b-BB@0x4e : [ b-BB@0x52 b-BB@0x66 ]
+	23      (0000004e) if-eq                v0, v1, +c
+
+b-BB@0x52 : [ b-BB@0x66 b-BB@0x68 ]
+	24      (00000052) iget-object          v2, v5, Lcom/a/a/g/a;->e [I
+	25      (00000056) add-int/lit8         v4, v0, -1
+	26      (0000005a) aget                 v2, v2, v4
+	27      (0000005e) div-int/lit8         v3, v3, 2
+	28      (00000062) if-lt                v2, v3, +3
+
+b-BB@0x66 : 
+	29      (00000066) return               v0
+
+b-BB@0x68 : [ b-BB@0x4 ]
+	30      (00000068) add-int/lit8         v0, v0, 2
+	31      (0000006c) goto                 -34
+
+b-BB@0x6e : 
+	32      (0000006e) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	33      (00000074) move-result-object   v0
+	34      (00000076) throw                v0
+

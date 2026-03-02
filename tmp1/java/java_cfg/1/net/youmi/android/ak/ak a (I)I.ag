@@ -1,0 +1,38 @@
+# Lnet/youmi/android/ak;->a(I)I [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0x6 a-BB@0x2a ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) if-gtz               v5, +14
+
+a-BB@0x6 : [ a-BB@0x8 ]
+	2       (00000006) move                 v0, v3
+
+a-BB@0x8 : [ a-BB@0x12 a-BB@0x28 ]
+	3       (00000008) iget                 v1, v4, Lnet/youmi/android/ak;->h I
+	4       (0000000c) const/4              v2, 4
+	5       (0000000e) if-lt                v1, v2, +d
+
+a-BB@0x12 : [ a-BB@0x26 a-BB@0x28 ]
+	6       (00000012) int-to-float         v0, v0
+	7       (00000014) iget                 v1, v4, Lnet/youmi/android/ak;->g F
+	8       (00000018) mul-float/2addr      v0, v1
+	9       (0000001a) invoke-static        v0, Ljava/lang/Math;->round(F)I
+	10      (00000020) move-result          v0
+	11      (00000022) if-gtz               v0, +3
+
+a-BB@0x26 : [ a-BB@0x28 ]
+	12      (00000026) move                 v0, v3
+
+a-BB@0x28 : 
+	13      (00000028) return               v0
+
+a-BB@0x2a : [ a-BB@0x8 ]
+	14      (0000002a) move                 v0, v5
+	15      (0000002c) goto                 -12
+

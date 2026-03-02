@@ -1,0 +1,28 @@
+# Lcom/crashlytics/android/answers/AnswersEventsHandler;->executeSync(Ljava/lang/Runnable;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Runnable
+#
+# - return:void
+
+executeSync-BB@0x0 : [ executeSync-BB@0x12 ]
+	0       (00000000) iget-object          v0, v4, Lcom/crashlytics/android/answers/AnswersEventsHandler;->executor Ljava/util/concurrent/ScheduledExecutorService;
+	1       (00000004) invoke-interface     v0, v5, Ljava/util/concurrent/ScheduledExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-interface     v0, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+	0:11
+	(Ljava/lang/Exception; -> 14 executeSync-BB@0x14)
+
+executeSync-BB@0x12 : 
+	4       (00000012) return-void          
+
+executeSync-BB@0x14 : [ executeSync-BB@0x12 ]
+	5       (00000014) move-exception       v0
+	6       (00000016) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	7       (0000001c) move-result-object   v1
+	8       (0000001e) const-string         v2, 'Answers'
+	9       (00000022) const-string         v3, 'Failed to run events task'
+	10      (00000026) invoke-interface     v1, v2, v3, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	11      (0000002c) goto                 -d
+

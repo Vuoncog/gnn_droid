@@ -1,0 +1,23 @@
+# La/a/b/a/b/a/c;->a(F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:float
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xc a-BB@0x20 ]
+	0       (00000000) iput                 v4, v3, La/a/b/a/b/a/c;->b F
+	1       (00000004) iget-object          v0, v3, La/a/b/a/b/a/c;->a La/a/b/a/b/a/h;
+	2       (00000008) if-eqz               v0, +c
+
+a-BB@0xc : [ a-BB@0x20 ]
+	3       (0000000c) iget-object          v0, v3, La/a/b/a/b/a/c;->a La/a/b/a/b/a/h;
+	4       (00000010) invoke-static        v4, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+	5       (00000016) move-result-object   v1
+	6       (00000018) const/4              v2, 0
+	7       (0000001a) invoke-interface     v0, v1, v2, v3, La/a/b/a/b/a/h;->a(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Object;)V
+
+a-BB@0x20 : 
+	8       (00000020) return-void          
+

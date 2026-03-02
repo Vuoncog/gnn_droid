@@ -1,0 +1,45 @@
+# Lio/fabric/sdk/android/services/common/AdvertisingInfoReflectionStrategy;->getInfo()Ljava/lang/Object; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:java.lang.Object
+
+getInfo-BB@0x0 : [ getInfo-BB@0x2 ]
+	0       (00000000) const/4              v0, 0
+
+getInfo-BB@0x2 : [ getInfo-BB@0x44 ]
+	1       (00000002) const-string         v1, 'com.google.android.gms.ads.identifier.AdvertisingIdClient'
+	2       (00000006) invoke-static        v1, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+	3       (0000000c) move-result-object   v1
+	4       (0000000e) const-string         v2, 'getAdvertisingIdInfo'
+	5       (00000012) const/4              v3, 1
+	6       (00000014) new-array            v3, v3, [Ljava/lang/Class;
+	7       (00000018) const/4              v4, 0
+	8       (0000001a) const-class          v5, Landroid/content/Context;
+	9       (0000001e) aput-object          v5, v3, v4
+	10      (00000022) invoke-virtual       v1, v2, v3, Ljava/lang/Class;->getMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+	11      (00000028) move-result-object   v1
+	12      (0000002a) const/4              v2, 0
+	13      (0000002c) const/4              v3, 1
+	14      (0000002e) new-array            v3, v3, [Ljava/lang/Object;
+	15      (00000032) const/4              v4, 0
+	16      (00000034) iget-object          v5, v6, Lio/fabric/sdk/android/services/common/AdvertisingInfoReflectionStrategy;->context Landroid/content/Context;
+	17      (00000038) aput-object          v5, v3, v4
+	18      (0000003c) invoke-virtual       v1, v2, v3, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+	19      (00000042) move-result-object   v0
+	2:41
+	(Ljava/lang/Exception; -> 46 getInfo-BB@0x46)
+
+getInfo-BB@0x44 : 
+	20      (00000044) return-object        v0
+
+getInfo-BB@0x46 : [ getInfo-BB@0x44 ]
+	21      (00000046) move-exception       v1
+	22      (00000048) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	23      (0000004e) move-result-object   v1
+	24      (00000050) const-string         v2, 'Fabric'
+	25      (00000054) const-string         v3, 'Could not call getAdvertisingIdInfo on com.google.android.gms.ads.identifier.AdvertisingIdClient'
+	26      (00000058) invoke-interface     v1, v2, v3, Lio/fabric/sdk/android/Logger;->w(Ljava/lang/String; Ljava/lang/String;)V
+	27      (0000005e) goto                 -d
+

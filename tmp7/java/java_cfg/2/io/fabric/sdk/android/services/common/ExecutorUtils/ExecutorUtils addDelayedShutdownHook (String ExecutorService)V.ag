@@ -1,0 +1,15 @@
+# Lio/fabric/sdk/android/services/common/ExecutorUtils;->addDelayedShutdownHook(Ljava/lang/String; Ljava/util/concurrent/ExecutorService;)V [access_flags=private static final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:java.util.concurrent.ExecutorService
+#
+# - return:void
+
+addDelayedShutdownHook-BB@0x0 : 
+	0       (00000000) const-wide/16        v0, 2 # [2.0]
+	1       (00000004) sget-object          v2, Ljava/util/concurrent/TimeUnit;->SECONDS Ljava/util/concurrent/TimeUnit;
+	2       (00000008) invoke-static        v3, v4, v0, v1, v2, Lio/fabric/sdk/android/services/common/ExecutorUtils;->addDelayedShutdownHook(Ljava/lang/String; Ljava/util/concurrent/ExecutorService; J Ljava/util/concurrent/TimeUnit;)V
+	3       (0000000e) return-void          
+

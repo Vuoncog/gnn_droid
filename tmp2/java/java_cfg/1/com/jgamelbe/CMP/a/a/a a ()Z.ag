@@ -1,0 +1,24 @@
+# Lcom/jgamelbe/CMP/a/a;->a()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x14 a-BB@0x18 ]
+	0       (00000000) iget-object          v0, v1, Lcom/jgamelbe/CMP/a/a;->b Ljava/util/concurrent/BlockingQueue;
+	1       (00000004) invoke-interface     v0, Ljava/util/concurrent/BlockingQueue;->remove()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Lcom/jgamelbe/CMP/a/b;
+	4       (00000010) if-eqz               v0, +4
+
+a-BB@0x14 : [ a-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+a-BB@0x16 : 
+	6       (00000016) return               v0
+
+a-BB@0x18 : [ a-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

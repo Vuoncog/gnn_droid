@@ -1,0 +1,25 @@
+# Lcom/crashlytics/android/core/ReportUploader;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lcom/crashlytics/android/core/ReportUploader$1;
+	1       (00000004) invoke-direct        v0, Lcom/crashlytics/android/core/ReportUploader$1;-><init>()V
+	2       (0000000a) sput-object          v0, Lcom/crashlytics/android/core/ReportUploader;->crashFileFilter Ljava/io/FilenameFilter;
+	3       (0000000e) const-string         v0, 'X-CRASHLYTICS-INVALID-SESSION'
+	4       (00000012) const-string         v1, '1'
+	5       (00000016) invoke-static        v0, v1, Ljava/util/Collections;->singletonMap(Ljava/lang/Object; Ljava/lang/Object;)Ljava/util/Map;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) sput-object          v0, Lcom/crashlytics/android/core/ReportUploader;->HEADER_INVALID_CLS_FILE Ljava/util/Map;
+	8       (00000022) const/4              v0, 6
+	9       (00000024) new-array            v0, v0, [S
+	10      (00000028) fill-array-data      v0, +6 (0x34)
+	11      (0000002e) sput-object          v0, Lcom/crashlytics/android/core/ReportUploader;->RETRY_INTERVALS [S
+	12      (00000032) return-void          
+
+<clinit>-BB@0x34 : 
+	13      (00000034) fill-array-data-payload bytearray(b'\n\x00\x14\x00\x1e\x00<\x00x\x00,\x01') | \x0a\x00\x14\x00\x1e\x00\x3c\x00\x78\x00\x2c\x01
+

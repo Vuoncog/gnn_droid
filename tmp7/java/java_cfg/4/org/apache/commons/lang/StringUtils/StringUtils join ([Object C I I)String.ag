@@ -1,0 +1,76 @@
+# Lorg/apache/commons/lang/StringUtils;->join([Ljava/lang/Object; C I I)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object[]
+# - v4:char
+# - v5:int
+# - v6:int
+#
+# - return:java.lang.String
+
+join-BB@0x0 : [ join-BB@0x4 join-BB@0x8 ]
+	0       (00000000) if-nez               v3, +4
+
+join-BB@0x4 : [ join-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+join-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+join-BB@0x8 : [ join-BB@0x10 join-BB@0x16 ]
+	3       (00000008) sub-int              v1, v6, v5
+	4       (0000000c) if-gtz               v1, +5
+
+join-BB@0x10 : [ join-BB@0x6 ]
+	5       (00000010) const-string         v0, ''
+	6       (00000014) goto                 -7
+
+join-BB@0x16 : [ join-BB@0x1e join-BB@0x5a ]
+	7       (00000016) aget-object          v0, v3, v5
+	8       (0000001a) if-nez               v0, +20
+
+join-BB@0x1e : [ join-BB@0x22 ]
+	9       (0000001e) const/16             v0, 16
+
+join-BB@0x22 : [ join-BB@0x34 ]
+	10      (00000022) add-int/lit8         v0, v0, 1
+	11      (00000026) mul-int/2addr        v0, v1
+	12      (00000028) new-instance         v1, Lorg/apache/commons/lang/text/StrBuilder;
+	13      (0000002c) invoke-direct        v1, v0, Lorg/apache/commons/lang/text/StrBuilder;-><init>(I)V
+	14      (00000032) move                 v0, v5
+
+join-BB@0x34 : [ join-BB@0x38 join-BB@0x70 ]
+	15      (00000034) if-ge                v0, v6, +1e
+
+join-BB@0x38 : [ join-BB@0x3c join-BB@0x42 ]
+	16      (00000038) if-le                v0, v5, +5
+
+join-BB@0x3c : [ join-BB@0x42 ]
+	17      (0000003c) invoke-virtual       v1, v4, Lorg/apache/commons/lang/text/StrBuilder;->append(C)Lorg/apache/commons/lang/text/StrBuilder;
+
+join-BB@0x42 : [ join-BB@0x4a join-BB@0x54 ]
+	18      (00000042) aget-object          v2, v3, v0
+	19      (00000046) if-eqz               v2, +7
+
+join-BB@0x4a : [ join-BB@0x54 ]
+	20      (0000004a) aget-object          v2, v3, v0
+	21      (0000004e) invoke-virtual       v1, v2, Lorg/apache/commons/lang/text/StrBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang/text/StrBuilder;
+
+join-BB@0x54 : [ join-BB@0x34 ]
+	22      (00000054) add-int/lit8         v0, v0, 1
+	23      (00000058) goto                 -12
+
+join-BB@0x5a : [ join-BB@0x22 ]
+	24      (0000005a) aget-object          v0, v3, v5
+	25      (0000005e) invoke-virtual       v0, Ljava/lang/Object;->toString()Ljava/lang/String;
+	26      (00000064) move-result-object   v0
+	27      (00000066) invoke-virtual       v0, Ljava/lang/String;->length()I
+	28      (0000006c) move-result          v0
+	29      (0000006e) goto                 -26
+
+join-BB@0x70 : [ join-BB@0x6 ]
+	30      (00000070) invoke-virtual       v1, Lorg/apache/commons/lang/text/StrBuilder;->toString()Ljava/lang/String;
+	31      (00000076) move-result-object   v0
+	32      (00000078) goto                 -39
+

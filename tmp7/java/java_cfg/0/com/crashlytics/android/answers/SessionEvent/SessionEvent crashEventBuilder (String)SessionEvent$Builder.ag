@@ -1,0 +1,19 @@
+# Lcom/crashlytics/android/answers/SessionEvent;->crashEventBuilder(Ljava/lang/String;)Lcom/crashlytics/android/answers/SessionEvent$Builder; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:com.crashlytics.android.answers.SessionEvent$Builder
+
+crashEventBuilder-BB@0x0 : 
+	0       (00000000) const-string         v0, 'sessionId'
+	1       (00000004) invoke-static        v0, v3, Ljava/util/Collections;->singletonMap(Ljava/lang/Object; Ljava/lang/Object;)Ljava/util/Map;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) new-instance         v1, Lcom/crashlytics/android/answers/SessionEvent$Builder;
+	4       (00000010) sget-object          v2, Lcom/crashlytics/android/answers/SessionEvent$Type;->CRASH Lcom/crashlytics/android/answers/SessionEvent$Type;
+	5       (00000014) invoke-direct        v1, v2, Lcom/crashlytics/android/answers/SessionEvent$Builder;-><init>(Lcom/crashlytics/android/answers/SessionEvent$Type;)V
+	6       (0000001a) invoke-virtual       v1, v0, Lcom/crashlytics/android/answers/SessionEvent$Builder;->details(Ljava/util/Map;)Lcom/crashlytics/android/answers/SessionEvent$Builder;
+	7       (00000020) move-result-object   v0
+	8       (00000022) return-object        v0
+

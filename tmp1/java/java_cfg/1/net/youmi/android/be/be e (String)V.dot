@@ -1,0 +1,63 @@
+digraph {
+	graph [bb="0,0,707,357",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_24c668911768efc72e2477a4b80a3f4f {
+		graph [bb="8,8,699,349",
+			label="Lnet/youmi/android/be;.e->(Ljava/lang/String;)V\nLocal registers v0 ... v1\nparam v2 = java.lang.String\nreturn = void",
+			lheight=0.83,
+			lp="353.5,315",
+			lwidth=4.39
+		];
+		struct_ea6b599b14d2330b72ffe94b4dfb9f49	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x9</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="333,249.5",
+			width=2.0972];
+		struct_aa342edd7f20adb386151c74aff754d1	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Ljava/lang/String;-&gt;trim()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="247,155.5",
+			width=6.4028];
+		struct_ea6b599b14d2330b72ffe94b4dfb9f49:tail -> struct_aa342edd7f20adb386151c74aff754d1:header	[color=red,
+			pos="e,38,183.5 268,234.5 244.58,234.5 79.018,214.64 44.354,191.71"];
+		struct_e816a49b7beeab761a033706b86e111f	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-object </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#999933">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="593,155.5",
+			width=2.7083];
+		struct_ea6b599b14d2330b72ffe94b4dfb9f49:tail -> struct_e816a49b7beeab761a033706b86e111f:header	[color=green,
+			pos="e,506,180.5 279,231.5 279,184.37 442.41,205.29 487,190 491.47,188.47 493.86,186.09 496.31,184.1"];
+		struct_764ff8789670bd92ff202c6d77f4df50	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#888877">v0</FONT>, <FONT color="#7777BB">v1</FONT>, <FONT color="#088A08">Lnet/youmi/android/be;-&gt;e Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="353,50.5",
+			width=6.8333];
+		struct_aa342edd7f20adb386151c74aff754d1:tail -> struct_764ff8789670bd92ff202c6d77f4df50:header	[color=blue,
+			pos="e,132,78.5 38,126.5 38,83.622 116.54,118.22 130.04,88.657"];
+		struct_e816a49b7beeab761a033706b86e111f:tail -> struct_764ff8789670bd92ff202c6d77f4df50:header	[color=blue,
+			pos="e,132,78.5 506,129.5 496.75,129.5 495.92,123.47 487,121 451.7,111.23 179.79,117.12 137.52,86.972"];
+	}
+}

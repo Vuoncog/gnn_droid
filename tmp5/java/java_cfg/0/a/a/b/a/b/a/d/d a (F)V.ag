@@ -1,0 +1,20 @@
+# La/a/b/a/b/a/d;->a(F)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:float
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xc a-BB@0x10 ]
+	0       (00000000) iget                 v0, v1, La/a/b/a/b/a/d;->c F
+	1       (00000004) cmpl-float           v0, v2, v0
+	2       (00000008) if-lez               v0, +4
+
+a-BB@0xc : [ a-BB@0x10 ]
+	3       (0000000c) iput                 v2, v1, La/a/b/a/b/a/d;->c F
+
+a-BB@0x10 : 
+	4       (00000010) invoke-super         v1, v2, La/a/b/a/b/a/c;->a(F)V
+	5       (00000016) return-void          
+

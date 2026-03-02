@@ -1,0 +1,24 @@
+# Lnet/youmi/android/a;->b()Z [access_flags=static]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+b-BB@0x0 : [ b-BB@0x14 b-BB@0x18 ]
+	0       (00000000) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	1       (00000006) move-result-wide     v0
+	2       (00000008) sget-wide            v2, Lnet/youmi/android/a;->a J
+	3       (0000000c) cmp-long             v0, v0, v2
+	4       (00000010) if-ltz               v0, +4
+
+b-BB@0x14 : [ b-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+b-BB@0x16 : 
+	6       (00000016) return               v0
+
+b-BB@0x18 : [ b-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

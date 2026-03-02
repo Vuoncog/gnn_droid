@@ -1,0 +1,59 @@
+digraph {
+	graph [bb="0,0,1130,526",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_de571ed2405651ee932bc0ab53b51f4b {
+		graph [bb="8,8,1122,518",
+			label="Lcom/ailock/tszlock/AlarmReceiver2;.onReceive->(Landroid/content/Context; Landroid/content/Intent;)V\nLocal registers v0 ... v4\nparam \
+v5 = android.content.Context\nparam v6 = android.content.Intent\nreturn = void",
+			lheight=1.04,
+			lp="565,476.5",
+			lwidth=9.56
+		];
+		struct_7eeea12c4b1ce9aec4cb3273259ebdc1	[height=2.4861,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v5</FONT>, <FONT color="#DF3A01">Landroid/preference/PreferenceManager;-&gt;getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8E8E5B">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#848484">v2</FONT>, <FONT color="red">'lockOpen'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7A7AAD">v3</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#8E8E5B">v1</FONT>, <FONT color="#848484">v2</FONT>, <FONT color="#7A7AAD">v3</FONT>, <FONT color="#DF3A01">Landroid/content/SharedPreferences;-&gt;getBoolean(Ljava/lang/String; Z)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7070D6">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7070D6">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xc</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="565,337.5",
+			width=15.25];
+		struct_06f3780e4c0017080ca27dfe7648b7dd	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#848484">v2</FONT>, <FONT color="#0000FF">Landroid/content/Intent;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-class </FONT> <FONT color="#7A7AAD">v3</FONT>, <FONT color="#0000FF">Lcom/ailock/tszlock/LockService;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#848484">v2</FONT>, <FONT color="#999933">v5</FONT>, <FONT color="#7A7AAD">v3</FONT>, <FONT color="#DF3A01">Landroid/content/Intent;-&gt;&lt;init&gt;(Landroid/content/Context; Ljava/lang/Class;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v5</FONT>, <FONT color="#848484">v2</FONT>, <FONT color="#DF3A01">Landroid/content/Context;-&gt;startService(Landroid/content/Intent;)Landroid/content/ComponentName;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="463,155.5",
+			width=12.417];
+		struct_7eeea12c4b1ce9aec4cb3273259ebdc1:tail -> struct_06f3780e4c0017080ca27dfe7648b7dd:header	[color=red,
+			pos="e,41,205.5 41,253.5 41,236 41,229.27 41,215.64"];
+		struct_1eede7f951da23832ca968e44f42db98	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="534,39.5",
+			width=2.0694];
+		struct_7eeea12c4b1ce9aec4cb3273259ebdc1:tail -> struct_1eede7f951da23832ca968e44f42db98:header	[color=green,
+			pos="e,485,56.5 41,253.5 41,155.84 851.59,282.67 919,212 953.66,175.66 952.74,136.2 919,99 856.44,30.02 513.36,143.85 486.65,66.86"];
+		struct_06f3780e4c0017080ca27dfe7648b7dd:tail -> struct_1eede7f951da23832ca968e44f42db98:header	[color=blue,
+			pos="e,470,53.5 41,104.5 41,59.029 382.87,53.941 459.73,53.531"];
+	}
+}

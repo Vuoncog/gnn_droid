@@ -1,0 +1,33 @@
+# Lcom/ailock/tszlock/UnLockActivity;->setPowerParams()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+setPowerParams-BB@0x0 : [ setPowerParams-BB@0x3e setPowerParams-BB@0x44 ]
+	0       (00000000) const/high16         v3, 17184 # [160.0]
+	1       (00000004) iget                 v4, v5, Lcom/ailock/tszlock/UnLockActivity;->density F
+	2       (00000008) mul-float/2addr      v3, v4
+	3       (0000000a) float-to-int         v2, v3
+	4       (0000000c) iget                 v3, v5, Lcom/ailock/tszlock/UnLockActivity;->powerValue I
+	5       (00000010) mul-int/2addr        v3, v2
+	6       (00000012) int-to-float         v3, v3
+	7       (00000014) const/high16         v4, 17096 # [100.0]
+	8       (00000018) div-float/2addr      v3, v4
+	9       (0000001a) float-to-int         v0, v3
+	10      (0000001c) new-instance         v1, Landroid/widget/RelativeLayout$LayoutParams;
+	11      (00000020) const/4              v3, -1
+	12      (00000022) invoke-direct        v1, v0, v3, Landroid/widget/RelativeLayout$LayoutParams;-><init>(I I)V
+	13      (00000028) iget-object          v3, v5, Lcom/ailock/tszlock/UnLockActivity;->powerContent Landroid/widget/ImageView;
+	14      (0000002c) invoke-virtual       v3, v1, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+	15      (00000032) iget                 v3, v5, Lcom/ailock/tszlock/UnLockActivity;->powerValue I
+	16      (00000036) const/16             v4, 20
+	17      (0000003a) if-lt                v3, v4, +5
+
+setPowerParams-BB@0x3e : [ setPowerParams-BB@0x44 ]
+	18      (0000003e) invoke-virtual       v5, Lcom/ailock/tszlock/UnLockActivity;->showBatteryAnim()V
+
+setPowerParams-BB@0x44 : 
+	19      (00000044) return-void          
+

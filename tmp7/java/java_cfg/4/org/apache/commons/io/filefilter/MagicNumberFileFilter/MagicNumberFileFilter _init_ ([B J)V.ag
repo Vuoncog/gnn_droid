@@ -1,0 +1,51 @@
+# Lorg/apache/commons/io/filefilter/MagicNumberFileFilter;-><init>([B J)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:byte[]
+# - v7:long
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xc <init>-BB@0x1c ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-direct        v4, Lorg/apache/commons/io/filefilter/AbstractFileFilter;-><init>()V
+	2       (00000008) if-nez               v5, +a
+
+<init>-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	4       (00000010) const-string         v1, 'The magic number cannot be null'
+	5       (00000014) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	6       (0000001a) throw                v0
+
+<init>-BB@0x1c : [ <init>-BB@0x22 <init>-BB@0x32 ]
+	7       (0000001c) array-length         v0, v5
+	8       (0000001e) if-nez               v0, +a
+
+<init>-BB@0x22 : 
+	9       (00000022) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	10      (00000026) const-string         v1, 'The magic number must contain at least one byte'
+	11      (0000002a) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	12      (00000030) throw                v0
+
+<init>-BB@0x32 : [ <init>-BB@0x3e <init>-BB@0x4e ]
+	13      (00000032) const-wide/16        v0, 0 # [0.0]
+	14      (00000036) cmp-long             v0, v6, v0
+	15      (0000003a) if-gez               v0, +a
+
+<init>-BB@0x3e : 
+	16      (0000003e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	17      (00000042) const-string         v1, 'The offset cannot be negative'
+	18      (00000046) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	19      (0000004c) throw                v0
+
+<init>-BB@0x4e : 
+	20      (0000004e) array-length         v0, v5
+	21      (00000050) new-array            v0, v0, [B
+	22      (00000054) iput-object          v0, v4, Lorg/apache/commons/io/filefilter/MagicNumberFileFilter;->magicNumbers [B
+	23      (00000058) iget-object          v0, v4, Lorg/apache/commons/io/filefilter/MagicNumberFileFilter;->magicNumbers [B
+	24      (0000005c) array-length         v1, v5
+	25      (0000005e) invoke-static        v5, v2, v0, v2, v1, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	26      (00000064) iput-wide            v6, v4, Lorg/apache/commons/io/filefilter/MagicNumberFileFilter;->byteOffset J
+	27      (00000068) return-void          
+

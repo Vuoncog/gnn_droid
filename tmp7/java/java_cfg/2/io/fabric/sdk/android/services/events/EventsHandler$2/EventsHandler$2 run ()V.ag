@@ -1,0 +1,26 @@
+# Lio/fabric/sdk/android/services/events/EventsHandler$2;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x12 ]
+	0       (00000000) iget-object          v0, v3, Lio/fabric/sdk/android/services/events/EventsHandler$2;->this$0 Lio/fabric/sdk/android/services/events/EventsHandler;
+	1       (00000004) iget-object          v0, v0, Lio/fabric/sdk/android/services/events/EventsHandler;->strategy Lio/fabric/sdk/android/services/events/EventsStrategy;
+	2       (00000008) iget-object          v1, v3, Lio/fabric/sdk/android/services/events/EventsHandler$2;->val$event Ljava/lang/Object;
+	3       (0000000c) invoke-interface     v0, v1, Lio/fabric/sdk/android/services/events/EventsStrategy;->recordEvent(Ljava/lang/Object;)V
+	0:11
+	(Ljava/lang/Exception; -> 14 run-BB@0x14)
+
+run-BB@0x12 : 
+	4       (00000012) return-void          
+
+run-BB@0x14 : [ run-BB@0x12 ]
+	5       (00000014) move-exception       v0
+	6       (00000016) iget-object          v1, v3, Lio/fabric/sdk/android/services/events/EventsHandler$2;->this$0 Lio/fabric/sdk/android/services/events/EventsHandler;
+	7       (0000001a) iget-object          v1, v1, Lio/fabric/sdk/android/services/events/EventsHandler;->context Landroid/content/Context;
+	8       (0000001e) const-string         v2, 'Crashlytics failed to record event'
+	9       (00000022) invoke-static        v1, v2, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlledError(Landroid/content/Context; Ljava/lang/String; Ljava/lang/Throwable;)V
+	10      (00000028) goto                 -b
+

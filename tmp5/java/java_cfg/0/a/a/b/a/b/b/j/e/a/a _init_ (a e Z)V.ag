@@ -1,0 +1,47 @@
+# La/a/b/a/b/b/j/e/a;-><init>(La/a/b/a/b/b/h/a; La/a/b/a/b/b/j/l/e; Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:a.a.b.a.b.b.h.a
+# - v3:a.a.b.a.b.b.j.l.e
+# - v4:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xa <init>-BB@0x58 ]
+	0       (00000000) invoke-direct        v1, v2, La/a/b/a/b/b/a;-><init>(La/a/b/a/b/b/h/a;)V
+	1       (00000006) if-eqz               v4, +29
+
+<init>-BB@0xa : [ <init>-BB@0x34 ]
+	2       (0000000a) new-instance         v0, La/a/b/a/i/c/d;
+	3       (0000000e) invoke-direct        v0, La/a/b/a/i/c/d;-><init>()V
+	4       (00000014) iput-object          v0, v1, La/a/b/a/b/b/j/e/a;->s La/a/b/a/i/c/c;
+	5       (00000018) new-instance         v0, La/a/b/a/i/a/b;
+	6       (0000001c) invoke-direct        v0, La/a/b/a/i/a/b;-><init>()V
+	7       (00000022) iput-object          v0, v1, La/a/b/a/b/b/j/e/a;->t La/a/b/a/i/a/a;
+	8       (00000026) new-instance         v0, La/a/b/a/b/b/j/l/a/c;
+	9       (0000002a) invoke-direct        v0, La/a/b/a/b/b/j/l/a/c;-><init>()V
+	10      (00000030) iput-object          v0, v1, La/a/b/a/b/b/j/e/a;->z La/a/b/a/b/b/j/l/a/c;
+
+<init>-BB@0x34 : 
+	11      (00000034) iget-object          v0, v1, La/a/b/a/b/b/j/e/a;->z La/a/b/a/b/b/j/l/a/c;
+	12      (00000038) iput-object          v1, v0, La/a/b/a/b/b/j/l/a/c;->c La/a/b/a/b/b/j/e/a;
+	13      (0000003c) new-instance         v0, La/a/b/a/b/b/j/l/b;
+	14      (00000040) invoke-direct        v0, La/a/b/a/b/b/j/l/b;-><init>()V
+	15      (00000046) iput-object          v0, v1, La/a/b/a/b/b/j/e/a;->v La/a/b/a/i/a;
+	16      (0000004a) invoke-virtual       v1, La/a/b/a/b/b/j/e/a;->x()La/a/b/a/b/a/c/a;
+	17      (00000050) move-result-object   v0
+	18      (00000052) iput-object          v0, v1, La/a/b/a/b/b/j/e/a;->w La/a/b/a/b/a/c/a;
+	19      (00000056) return-void          
+
+<init>-BB@0x58 : [ <init>-BB@0x34 ]
+	20      (00000058) iget-object          v0, v3, La/a/b/a/b/b/j/l/e;->a La/a/b/a/b/b/j/l/a/c;
+	21      (0000005c) iput-object          v0, v1, La/a/b/a/b/b/j/e/a;->z La/a/b/a/b/b/j/l/a/c;
+	22      (00000060) iget-object          v0, v3, La/a/b/a/i/f/a;->c La/a/b/a/i/c/c;
+	23      (00000064) iput-object          v0, v1, La/a/b/a/b/b/j/e/a;->s La/a/b/a/i/c/c;
+	24      (00000068) iget-object          v0, v1, La/a/b/a/b/b/j/e/a;->s La/a/b/a/i/c/c;
+	25      (0000006c) invoke-virtual       v1, v0, La/a/b/a/b/b/j/e/a;->a(La/a/b/a/i/c/c;)La/a/b/a/i/a/a;
+	26      (00000072) move-result-object   v0
+	27      (00000074) iput-object          v0, v1, La/a/b/a/b/b/j/e/a;->t La/a/b/a/i/a/a;
+	28      (00000078) goto                 -22
+

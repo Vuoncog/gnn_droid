@@ -1,0 +1,30 @@
+# Lorg/apache/commons/io/output/DeferredFileOutputStream;-><init>(I Ljava/lang/String; Ljava/lang/String; Ljava/io/File;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:java.lang.String
+# - v9:java.lang.String
+# - v10:java.io.File
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x16 <init>-BB@0x26 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) move-object          v0, v6
+	2       (00000004) move                 v1, v7
+	3       (00000006) move-object          v3, v8
+	4       (00000008) move-object          v4, v9
+	5       (0000000a) move-object          v5, v10
+	6       (0000000c) invoke-direct/range  v0 ... v5, Lorg/apache/commons/io/output/DeferredFileOutputStream;-><init>(I Ljava/io/File; Ljava/lang/String; Ljava/lang/String; Ljava/io/File;)V
+	7       (00000012) if-nez               v8, +a
+
+<init>-BB@0x16 : 
+	8       (00000016) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	9       (0000001a) const-string         v1, 'Temporary file prefix is missing'
+	10      (0000001e) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	11      (00000024) throw                v0
+
+<init>-BB@0x26 : 
+	12      (00000026) return-void          
+

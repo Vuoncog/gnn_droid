@@ -1,0 +1,82 @@
+# Lorg/apache/commons/io/monitor/FileAlterationMonitor;->start()V [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+start-BB@0x0 : [ start-BB@0x2 ]
+	0       (00000000) monitor-enter        v2
+
+start-BB@0x2 : [ start-BB@0xa start-BB@0x20 ]
+	1       (00000002) iget-boolean         v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->running Z
+	2       (00000006) if-eqz               v0, +d
+	2:19
+	(Ljava/lang/Throwable; -> 1a start-BB@0x1a)
+
+start-BB@0xa : 
+	3       (0000000a) new-instance         v0, Ljava/lang/IllegalStateException;
+	4       (0000000e) const-string         v1, 'Monitor is already running'
+	5       (00000012) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	6       (00000018) throw                v0
+	2:19
+	(Ljava/lang/Throwable; -> 1a start-BB@0x1a)
+
+start-BB@0x1a : 
+	7       (0000001a) move-exception       v0
+	8       (0000001c) monitor-exit         v2
+	9       (0000001e) throw                v0
+
+start-BB@0x20 : [ start-BB@0x2c ]
+	10      (00000020) iget-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->observers Ljava/util/List;
+	11      (00000024) invoke-interface     v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	12      (0000002a) move-result-object   v1
+	20:73
+	(Ljava/lang/Throwable; -> 1a start-BB@0x1a)
+
+start-BB@0x2c : [ start-BB@0x38 start-BB@0x4c ]
+	13      (0000002c) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	14      (00000032) move-result          v0
+	15      (00000034) if-eqz               v0, +c
+	20:73
+	(Ljava/lang/Throwable; -> 1a start-BB@0x1a)
+
+start-BB@0x38 : [ start-BB@0x2c ]
+	16      (00000038) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	17      (0000003e) move-result-object   v0
+	18      (00000040) check-cast           v0, Lorg/apache/commons/io/monitor/FileAlterationObserver;
+	19      (00000044) invoke-virtual       v0, Lorg/apache/commons/io/monitor/FileAlterationObserver;->initialize()V
+	20      (0000004a) goto                 -f
+	20:73
+	(Ljava/lang/Throwable; -> 1a start-BB@0x1a)
+
+start-BB@0x4c : [ start-BB@0x5a start-BB@0x78 ]
+	21      (0000004c) const/4              v0, 1
+	22      (0000004e) iput-boolean         v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->running Z
+	23      (00000052) iget-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->threadFactory Ljava/util/concurrent/ThreadFactory;
+	24      (00000056) if-eqz               v0, +11
+	20:73
+	(Ljava/lang/Throwable; -> 1a start-BB@0x1a)
+
+start-BB@0x5a : [ start-BB@0x6a ]
+	25      (0000005a) iget-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->threadFactory Ljava/util/concurrent/ThreadFactory;
+	26      (0000005e) invoke-interface     v0, v2, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+	27      (00000064) move-result-object   v0
+	28      (00000066) iput-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->thread Ljava/lang/Thread;
+	20:73
+	(Ljava/lang/Throwable; -> 1a start-BB@0x1a)
+
+start-BB@0x6a : 
+	29      (0000006a) iget-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->thread Ljava/lang/Thread;
+	30      (0000006e) invoke-virtual       v0, Ljava/lang/Thread;->start()V
+	31      (00000074) monitor-exit         v2
+	32      (00000076) return-void          
+
+start-BB@0x78 : [ start-BB@0x6a ]
+	33      (00000078) new-instance         v0, Ljava/lang/Thread;
+	34      (0000007c) invoke-direct        v0, v2, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+	35      (00000082) iput-object          v0, v2, Lorg/apache/commons/io/monitor/FileAlterationMonitor;->thread Ljava/lang/Thread;
+	36      (00000086) goto                 -e
+	78:85
+	(Ljava/lang/Throwable; -> 1a start-BB@0x1a)
+

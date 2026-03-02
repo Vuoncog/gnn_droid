@@ -1,0 +1,287 @@
+# Lcom/a/a/a/a/c;->a(Landroid/app/Activity; Ljava/lang/String; Lcom/a/a/a/a/d;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.app.Activity
+# - v10:java.lang.String
+# - v11:com.a.a.a.a.d
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x1a a-BB@0x70 ]
+	0       (00000000) const/4              v7, 0
+	1       (00000002) const/4              v1, 0
+	2       (00000004) const-string         v0, 'launchPurchaseFlow'
+	3       (00000008) invoke-direct        v8, v0, Lcom/a/a/a/a/c;->a(Ljava/lang/String;)V
+	4       (0000000e) const-string         v0, 'launchPurchaseFlow'
+	5       (00000012) iget-boolean         v2, v8, Lcom/a/a/a/a/c;->d Z
+	6       (00000016) if-eqz               v2, +2d
+
+a-BB@0x1a : 
+	7       (0000001a) new-instance         v1, Ljava/lang/IllegalStateException;
+	8       (0000001e) new-instance         v2, Ljava/lang/StringBuilder;
+	9       (00000022) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	10      (00000028) const-string         v3, "Can't start async operation ("
+	11      (0000002c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000032) move-result-object   v2
+	13      (00000034) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003a) move-result-object   v0
+	15      (0000003c) const-string         v2, ') because another async operation('
+	16      (00000040) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (00000046) move-result-object   v0
+	18      (00000048) iget-object          v2, v8, Lcom/a/a/a/a/c;->e Ljava/lang/String;
+	19      (0000004c) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000052) move-result-object   v0
+	21      (00000054) const-string         v2, ') is in progress.'
+	22      (00000058) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (0000005e) move-result-object   v0
+	24      (00000060) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	25      (00000066) move-result-object   v0
+	26      (00000068) invoke-direct        v1, v0, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	27      (0000006e) throw                v1
+
+a-BB@0x70 : [ a-BB@0xa6 ]
+	28      (00000070) iput-object          v0, v8, Lcom/a/a/a/a/c;->e Ljava/lang/String;
+	29      (00000074) const/4              v2, 1
+	30      (00000076) iput-boolean         v2, v8, Lcom/a/a/a/a/c;->d Z
+	31      (0000007a) new-instance         v2, Ljava/lang/StringBuilder;
+	32      (0000007e) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	33      (00000084) const-string         v3, 'Starting async operation: '
+	34      (00000088) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	35      (0000008e) move-result-object   v2
+	36      (00000090) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	37      (00000096) move-result-object   v0
+	38      (00000098) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	39      (0000009e) move-result-object   v0
+	40      (000000a0) invoke-direct        v8, v0, Lcom/a/a/a/a/c;->b(Ljava/lang/String;)V
+
+a-BB@0xa6 : [ a-BB@0xf8 a-BB@0x158 ]
+	41      (000000a6) new-instance         v0, Ljava/lang/StringBuilder;
+	42      (000000aa) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	43      (000000b0) const-string         v2, 'Constructing buy intent for '
+	44      (000000b4) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	45      (000000ba) move-result-object   v0
+	46      (000000bc) invoke-virtual       v0, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	47      (000000c2) move-result-object   v0
+	48      (000000c4) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	49      (000000ca) move-result-object   v0
+	50      (000000cc) invoke-direct        v8, v0, Lcom/a/a/a/a/c;->b(Ljava/lang/String;)V
+	51      (000000d2) iget-object          v0, v8, Lcom/a/a/a/a/c;->g Lcom/a/a/a/a;
+	52      (000000d6) iget-object          v2, v8, Lcom/a/a/a/a/c;->f Landroid/content/Context;
+	53      (000000da) invoke-virtual       v2, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	54      (000000e0) invoke-interface     v0, Lcom/a/a/a/a;->a()Landroid/os/Bundle;
+	55      (000000e6) move-result-object   v2
+	56      (000000e8) const-string         v0, 'RESPONSE_CODE'
+	57      (000000ec) invoke-virtual       v2, v0, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+	58      (000000f2) move-result-object   v0
+	59      (000000f4) if-nez               v0, +32
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0xf8 : [ a-BB@0x104 ]
+	60      (000000f8) const-string         v0, 'Bundle with null response code, assuming OK (known issue)'
+	61      (000000fc) invoke-direct        v8, v0, Lcom/a/a/a/a/c;->b(Ljava/lang/String;)V
+	62      (00000102) move                 v0, v1
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x104 : [ a-BB@0x108 a-BB@0x23a ]
+	63      (00000104) if-eqz               v0, +9b
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x108 : [ a-BB@0x14e a-BB@0x156 ]
+	64      (00000108) new-instance         v1, Ljava/lang/StringBuilder;
+	65      (0000010c) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	66      (00000112) const-string         v2, 'Unable to buy item, Error response: '
+	67      (00000116) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	68      (0000011c) move-result-object   v1
+	69      (0000011e) invoke-static        v0, Lcom/a/a/a/a/c;->a(I)Ljava/lang/String;
+	70      (00000124) move-result-object   v2
+	71      (00000126) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	72      (0000012c) move-result-object   v1
+	73      (0000012e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	74      (00000134) move-result-object   v1
+	75      (00000136) invoke-direct        v8, v1, Lcom/a/a/a/a/c;->c(Ljava/lang/String;)V
+	76      (0000013c) new-instance         v1, Lcom/a/a/a/a/f;
+	77      (00000140) const-string         v2, 'Unable to buy item'
+	78      (00000144) invoke-direct        v1, v0, v2, Lcom/a/a/a/a/f;-><init>(I Ljava/lang/String;)V
+	79      (0000014a) if-eqz               v11, +6
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x14e : [ a-BB@0x156 ]
+	80      (0000014e) const/4              v0, 0
+	81      (00000150) invoke-interface     v11, v1, v0, Lcom/a/a/a/a/d;->a(Lcom/a/a/a/a/f; Lcom/a/a/a/a/g;)V
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x156 : 
+	82      (00000156) return-void          
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x158 : [ a-BB@0x160 a-BB@0x16e ]
+	83      (00000158) instance-of          v1, v0, Ljava/lang/Integer;
+	84      (0000015c) if-eqz               v1, +9
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x160 : [ a-BB@0x104 ]
+	85      (00000160) check-cast           v0, Ljava/lang/Integer;
+	86      (00000164) invoke-virtual       v0, Ljava/lang/Integer;->intValue()I
+	87      (0000016a) move-result          v0
+	88      (0000016c) goto                 -34
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x16e : [ a-BB@0x176 a-BB@0x186 ]
+	89      (0000016e) instance-of          v1, v0, Ljava/lang/Long;
+	90      (00000172) if-eqz               v1, +a
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x176 : [ a-BB@0x104 ]
+	91      (00000176) check-cast           v0, Ljava/lang/Long;
+	92      (0000017a) invoke-virtual       v0, Ljava/lang/Long;->longValue()J
+	93      (00000180) move-result-wide     v0
+	94      (00000182) long-to-int          v0, v0
+	95      (00000184) goto                 -40
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x186 : 
+	96      (00000186) const-string         v1, 'Unexpected type for bundle response code.'
+	97      (0000018a) invoke-direct        v8, v1, Lcom/a/a/a/a/c;->c(Ljava/lang/String;)V
+	98      (00000190) invoke-virtual       v0, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	99      (00000196) move-result-object   v1
+	100     (00000198) invoke-virtual       v1, Ljava/lang/Class;->getName()Ljava/lang/String;
+	101     (0000019e) move-result-object   v1
+	102     (000001a0) invoke-direct        v8, v1, Lcom/a/a/a/a/c;->c(Ljava/lang/String;)V
+	103     (000001a6) new-instance         v1, Ljava/lang/RuntimeException;
+	104     (000001aa) new-instance         v2, Ljava/lang/StringBuilder;
+	105     (000001ae) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	106     (000001b4) const-string         v3, 'Unexpected type for bundle response code: '
+	107     (000001b8) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	108     (000001be) move-result-object   v2
+	109     (000001c0) invoke-virtual       v0, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	110     (000001c6) move-result-object   v0
+	111     (000001c8) invoke-virtual       v0, Ljava/lang/Class;->getName()Ljava/lang/String;
+	112     (000001ce) move-result-object   v0
+	113     (000001d0) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	114     (000001d6) move-result-object   v0
+	115     (000001d8) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	116     (000001de) move-result-object   v0
+	117     (000001e0) invoke-direct        v1, v0, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	118     (000001e6) throw                v1
+	a6:1e7
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x1e8 : [ a-BB@0x232 a-BB@0x156 ]
+	119     (000001e8) move-exception       v0
+	120     (000001ea) new-instance         v1, Ljava/lang/StringBuilder;
+	121     (000001ee) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	122     (000001f4) const-string         v2, 'SendIntentException while launching purchase flow for sku '
+	123     (000001f8) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	124     (000001fe) move-result-object   v1
+	125     (00000200) invoke-virtual       v1, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	126     (00000206) move-result-object   v1
+	127     (00000208) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	128     (0000020e) move-result-object   v1
+	129     (00000210) invoke-direct        v8, v1, Lcom/a/a/a/a/c;->c(Ljava/lang/String;)V
+	130     (00000216) invoke-virtual       v0, Landroid/content/IntentSender$SendIntentException;->printStackTrace()V
+	131     (0000021c) new-instance         v0, Lcom/a/a/a/a/f;
+	132     (00000220) const/16             v1, -1004
+	133     (00000224) const-string         v2, 'Failed to send intent.'
+	134     (00000228) invoke-direct        v0, v1, v2, Lcom/a/a/a/a/f;-><init>(I Ljava/lang/String;)V
+	135     (0000022e) if-eqz               v11, -6c
+
+a-BB@0x232 : [ a-BB@0x156 ]
+	136     (00000232) invoke-interface     v11, v0, v7, Lcom/a/a/a/a/d;->a(Lcom/a/a/a/a/f; Lcom/a/a/a/a/g;)V
+	137     (00000238) goto                 -71
+
+a-BB@0x23a : [ a-BB@0x156 ]
+	138     (0000023a) const-string         v0, 'BUY_INTENT'
+	139     (0000023e) invoke-virtual       v2, v0, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+	140     (00000244) move-result-object   v0
+	141     (00000246) check-cast           v0, Landroid/app/PendingIntent;
+	142     (0000024a) new-instance         v1, Ljava/lang/StringBuilder;
+	143     (0000024e) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	144     (00000254) const-string         v2, 'Launching buy intent for '
+	145     (00000258) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	146     (0000025e) move-result-object   v1
+	147     (00000260) invoke-virtual       v1, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	148     (00000266) move-result-object   v1
+	149     (00000268) const-string         v2, '. Request code: '
+	150     (0000026c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	151     (00000272) move-result-object   v1
+	152     (00000274) const/16             v2, 9999
+	153     (00000278) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	154     (0000027e) move-result-object   v1
+	155     (00000280) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	156     (00000286) move-result-object   v1
+	157     (00000288) invoke-direct        v8, v1, Lcom/a/a/a/a/c;->b(Ljava/lang/String;)V
+	158     (0000028e) const/16             v1, 9999
+	159     (00000292) iput                 v1, v8, Lcom/a/a/a/a/c;->h I
+	160     (00000296) iput-object          v11, v8, Lcom/a/a/a/a/c;->j Lcom/a/a/a/a/d;
+	161     (0000029a) invoke-virtual       v0, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
+	162     (000002a0) move-result-object   v1
+	163     (000002a2) const/16             v2, 9999
+	164     (000002a6) new-instance         v3, Landroid/content/Intent;
+	165     (000002aa) invoke-direct        v3, Landroid/content/Intent;-><init>()V
+	166     (000002b0) const/4              v0, 0
+	167     (000002b2) invoke-static        v0, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	168     (000002b8) move-result-object   v0
+	169     (000002ba) invoke-virtual       v0, Ljava/lang/Integer;->intValue()I
+	170     (000002c0) move-result          v4
+	171     (000002c2) const/4              v0, 0
+	172     (000002c4) invoke-static        v0, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	173     (000002ca) move-result-object   v0
+	174     (000002cc) invoke-virtual       v0, Ljava/lang/Integer;->intValue()I
+	175     (000002d2) move-result          v5
+	176     (000002d4) const/4              v0, 0
+	177     (000002d6) invoke-static        v0, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	178     (000002dc) move-result-object   v0
+	179     (000002de) invoke-virtual       v0, Ljava/lang/Integer;->intValue()I
+	180     (000002e4) move-result          v6
+	181     (000002e6) move-object          v0, v9
+	182     (000002e8) invoke-virtual/range v0 ... v6, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender; I Landroid/content/Intent; I I I)V
+	183     (000002ee) goto/16              -cc
+	23a:2ed
+	(Landroid/content/IntentSender$SendIntentException; -> 1e8 a-BB@0x1e8)
+	(Landroid/os/RemoteException; -> 2f2 a-BB@0x2f2)
+
+a-BB@0x2f2 : [ a-BB@0x33c a-BB@0x156 ]
+	184     (000002f2) move-exception       v0
+	185     (000002f4) new-instance         v1, Ljava/lang/StringBuilder;
+	186     (000002f8) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	187     (000002fe) const-string         v2, 'RemoteException while launching purchase flow for sku '
+	188     (00000302) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	189     (00000308) move-result-object   v1
+	190     (0000030a) invoke-virtual       v1, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	191     (00000310) move-result-object   v1
+	192     (00000312) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	193     (00000318) move-result-object   v1
+	194     (0000031a) invoke-direct        v8, v1, Lcom/a/a/a/a/c;->c(Ljava/lang/String;)V
+	195     (00000320) invoke-virtual       v0, Landroid/os/RemoteException;->printStackTrace()V
+	196     (00000326) new-instance         v0, Lcom/a/a/a/a/f;
+	197     (0000032a) const/16             v1, -1001
+	198     (0000032e) const-string         v2, 'Remote exception while starting purchase flow'
+	199     (00000332) invoke-direct        v0, v1, v2, Lcom/a/a/a/a/f;-><init>(I Ljava/lang/String;)V
+	200     (00000338) if-eqz               v11, -f1
+
+a-BB@0x33c : [ a-BB@0x156 ]
+	201     (0000033c) invoke-interface     v11, v0, v7, Lcom/a/a/a/a/d;->a(Lcom/a/a/a/a/f; Lcom/a/a/a/a/g;)V
+	202     (00000342) goto/16              -f6
+

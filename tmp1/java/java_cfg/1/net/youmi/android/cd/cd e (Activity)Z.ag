@@ -1,0 +1,46 @@
+# Lnet/youmi/android/cd;->e(Landroid/app/Activity;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.app.Activity
+#
+# - return:boolean
+
+e-BB@0x0 : [ e-BB@0x6e ]
+	0       (00000000) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	1       (00000006) move-result-wide     v0
+	2       (00000008) const-wide/16        v2, 1000 # [1000.0]
+	3       (0000000c) div-long/2addr       v0, v2
+	4       (0000000e) long-to-int          v0, v0
+	5       (00000010) new-instance         v1, Ljava/util/Properties;
+	6       (00000014) invoke-direct        v1, Ljava/util/Properties;-><init>()V
+	7       (0000001a) sget-object          v2, Lnet/youmi/android/cd;->b Ljava/lang/String;
+	8       (0000001e) new-instance         v3, Ljava/lang/StringBuilder;
+	9       (00000022) invoke-static        v0, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+	10      (00000028) move-result-object   v4
+	11      (0000002a) invoke-direct        v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	12      (00000030) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	13      (00000036) move-result-object   v3
+	14      (00000038) invoke-virtual       v1, v2, v3, Ljava/util/Properties;->setProperty(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/Object;
+	15      (0000003e) sget-object          v2, Lnet/youmi/android/cd;->c Ljava/lang/String;
+	16      (00000042) new-instance         v3, Ljava/lang/StringBuilder;
+	17      (00000046) invoke-static        v0, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+	18      (0000004c) move-result-object   v0
+	19      (0000004e) invoke-direct        v3, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	20      (00000054) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	21      (0000005a) move-result-object   v0
+	22      (0000005c) invoke-virtual       v1, v2, v0, Ljava/util/Properties;->setProperty(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/Object;
+	23      (00000062) sget-object          v0, Lnet/youmi/android/cd;->a Ljava/lang/String;
+	24      (00000066) invoke-static        v5, v1, v0, Lnet/youmi/android/aa;->a(Landroid/content/Context; Ljava/util/Properties; Ljava/lang/String;)Z
+	25      (0000006c) move-result          v0
+	0:6b
+	(Ljava/lang/Exception; -> 70 e-BB@0x70)
+
+e-BB@0x6e : 
+	26      (0000006e) return               v0
+
+e-BB@0x70 : [ e-BB@0x6e ]
+	27      (00000070) move-exception       v0
+	28      (00000072) const/4              v0, 0
+	29      (00000074) goto                 -3
+

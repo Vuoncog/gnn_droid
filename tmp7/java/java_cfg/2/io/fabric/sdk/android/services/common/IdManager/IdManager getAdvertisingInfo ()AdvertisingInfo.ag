@@ -1,0 +1,36 @@
+# Lio/fabric/sdk/android/services/common/IdManager;->getAdvertisingInfo()Lio/fabric/sdk/android/services/common/AdvertisingInfo; [access_flags=synchronized]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:io.fabric.sdk.android.services.common.AdvertisingInfo
+
+getAdvertisingInfo-BB@0x0 : [ getAdvertisingInfo-BB@0x2 ]
+	0       (00000000) monitor-enter        v1
+
+getAdvertisingInfo-BB@0x2 : [ getAdvertisingInfo-BB@0xa getAdvertisingInfo-BB@0x20 ]
+	1       (00000002) iget-boolean         v0, v1, Lio/fabric/sdk/android/services/common/IdManager;->fetchedAdvertisingInfo Z
+	2       (00000006) if-nez               v0, +d
+	2:23
+	(Ljava/lang/Throwable; -> 28 getAdvertisingInfo-BB@0x28)
+
+getAdvertisingInfo-BB@0xa : [ getAdvertisingInfo-BB@0x20 ]
+	3       (0000000a) iget-object          v0, v1, Lio/fabric/sdk/android/services/common/IdManager;->advertisingInfoProvider Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;
+	4       (0000000e) invoke-virtual       v0, Lio/fabric/sdk/android/services/common/AdvertisingInfoProvider;->getAdvertisingInfo()Lio/fabric/sdk/android/services/common/AdvertisingInfo;
+	5       (00000014) move-result-object   v0
+	6       (00000016) iput-object          v0, v1, Lio/fabric/sdk/android/services/common/IdManager;->advertisingInfo Lio/fabric/sdk/android/services/common/AdvertisingInfo;
+	7       (0000001a) const/4              v0, 1
+	8       (0000001c) iput-boolean         v0, v1, Lio/fabric/sdk/android/services/common/IdManager;->fetchedAdvertisingInfo Z
+	2:23
+	(Ljava/lang/Throwable; -> 28 getAdvertisingInfo-BB@0x28)
+
+getAdvertisingInfo-BB@0x20 : 
+	9       (00000020) iget-object          v0, v1, Lio/fabric/sdk/android/services/common/IdManager;->advertisingInfo Lio/fabric/sdk/android/services/common/AdvertisingInfo;
+	10      (00000024) monitor-exit         v1
+	11      (00000026) return-object        v0
+
+getAdvertisingInfo-BB@0x28 : 
+	12      (00000028) move-exception       v0
+	13      (0000002a) monitor-exit         v1
+	14      (0000002c) throw                v0
+

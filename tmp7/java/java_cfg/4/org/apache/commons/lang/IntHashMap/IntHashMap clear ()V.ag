@@ -1,0 +1,42 @@
+# Lorg/apache/commons/lang/IntHashMap;->clear()V [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+clear-BB@0x0 : [ clear-BB@0x2 ]
+	0       (00000000) monitor-enter        v3
+
+clear-BB@0x2 : [ clear-BB@0x8 ]
+	1       (00000002) iget-object          v1, v3, Lorg/apache/commons/lang/IntHashMap;->table [Lorg/apache/commons/lang/IntHashMap$Entry;
+	2       (00000006) array-length         v0, v1
+	2:15
+	(Ljava/lang/Throwable; -> 18 clear-BB@0x18)
+
+clear-BB@0x8 : [ clear-BB@0x10 clear-BB@0x1e ]
+	3       (00000008) add-int/lit8         v0, v0, -1
+	4       (0000000c) if-ltz               v0, +9
+	2:15
+	(Ljava/lang/Throwable; -> 18 clear-BB@0x18)
+
+clear-BB@0x10 : [ clear-BB@0x8 ]
+	5       (00000010) const/4              v2, 0
+	6       (00000012) aput-object          v2, v1, v0
+	7       (00000016) goto                 -7
+
+clear-BB@0x18 : 
+	8       (00000018) move-exception       v0
+	9       (0000001a) monitor-exit         v3
+	10      (0000001c) throw                v0
+
+clear-BB@0x1e : [ clear-BB@0x20 ]
+	11      (0000001e) const/4              v0, 0
+
+clear-BB@0x20 : 
+	12      (00000020) iput                 v0, v3, Lorg/apache/commons/lang/IntHashMap;->count I
+	13      (00000024) monitor-exit         v3
+	14      (00000026) return-void          
+	20:23
+	(Ljava/lang/Throwable; -> 18 clear-BB@0x18)
+

@@ -1,0 +1,17 @@
+# Lcom/a/a/d/a/a;->b(Lcom/a/a/c/b;)Lcom/a/a/d/a/g; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:com.a.a.c.b
+#
+# - return:com.a.a.d.a.g
+
+b-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Lcom/a/a/c/b;->g()I
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-virtual       v2, Lcom/a/a/c/b;->f()I
+	3       (0000000e) move-result          v1
+	4       (00000010) invoke-static        v0, v1, Lcom/a/a/d/a/g;->a(I I)Lcom/a/a/d/a/g;
+	5       (00000016) move-result-object   v0
+	6       (00000018) return-object        v0
+

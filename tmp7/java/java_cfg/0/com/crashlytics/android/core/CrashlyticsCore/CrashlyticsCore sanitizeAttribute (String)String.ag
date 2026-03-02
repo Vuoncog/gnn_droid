@@ -1,0 +1,27 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;->sanitizeAttribute(Ljava/lang/String;)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:java.lang.String
+
+sanitizeAttribute-BB@0x0 : [ sanitizeAttribute-BB@0x8 sanitizeAttribute-BB@0x26 ]
+	0       (00000000) const/16             v1, 1024
+	1       (00000004) if-eqz               v2, +11
+
+sanitizeAttribute-BB@0x8 : [ sanitizeAttribute-BB@0x1c sanitizeAttribute-BB@0x26 ]
+	2       (00000008) invoke-virtual       v2, Ljava/lang/String;->trim()Ljava/lang/String;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-virtual       v2, Ljava/lang/String;->length()I
+	5       (00000016) move-result          v0
+	6       (00000018) if-le                v0, v1, +7
+
+sanitizeAttribute-BB@0x1c : [ sanitizeAttribute-BB@0x26 ]
+	7       (0000001c) const/4              v0, 0
+	8       (0000001e) invoke-virtual       v2, v0, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	9       (00000024) move-result-object   v2
+
+sanitizeAttribute-BB@0x26 : 
+	10      (00000026) return-object        v2
+

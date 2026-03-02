@@ -1,0 +1,95 @@
+# Lcom/unlocker/Util;->a(Landroid/content/Context; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Ljava/net/HttpURLConnection; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.content.Context
+# - v11:java.lang.String
+# - v12:java.lang.String
+# - v13:java.lang.String
+#
+# - return:java.net.HttpURLConnection
+
+a-BB@0x0 : [ a-BB@0x4 ]
+	0       (00000000) const/16             v9, 30000
+
+a-BB@0x4 : [ a-BB@0x1e ]
+	1       (00000004) invoke-virtual       v10, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v10, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	4       (00000012) move-result-object   v1
+	5       (00000014) const/4              v2, 0
+	6       (00000016) invoke-virtual       v0, v1, v2, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String; I)Landroid/content/pm/PackageInfo;
+	7       (0000001c) move-result-object   v8
+	4:1b
+	(Landroid/content/pm/PackageManager$NameNotFoundException; -> 104 a-BB@0x104)
+
+a-BB@0x1e : 
+	8       (0000001e) new-instance         v4, Ljava/net/URI;
+	9       (00000022) invoke-direct        v4, v11, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+	10      (00000028) new-instance         v0, Ljava/net/URI;
+	11      (0000002c) invoke-virtual       v4, Ljava/net/URI;->getScheme()Ljava/lang/String;
+	12      (00000032) move-result-object   v1
+	13      (00000034) const/4              v2, 0
+	14      (00000036) invoke-virtual       v4, Ljava/net/URI;->getHost()Ljava/lang/String;
+	15      (0000003c) move-result-object   v3
+	16      (0000003e) invoke-virtual       v4, Ljava/net/URI;->getPort()I
+	17      (00000044) move-result          v4
+	18      (00000046) new-instance         v5, Ljava/lang/StringBuilder;
+	19      (0000004a) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	20      (00000050) const-string         v6, '/secured'
+	21      (00000054) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (0000005a) move-result-object   v5
+	23      (0000005c) invoke-virtual       v5, v12, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000062) move-result-object   v5
+	25      (00000064) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	26      (0000006a) move-result-object   v5
+	27      (0000006c) const/4              v7, 0
+	28      (0000006e) move-object          v6, v13
+	29      (00000070) invoke-direct/range  v0 ... v7, Ljava/net/URI;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; I Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	30      (00000076) new-instance         v1, Ljava/net/URL;
+	31      (0000007a) invoke-virtual       v0, Ljava/net/URI;->toString()Ljava/lang/String;
+	32      (00000080) move-result-object   v0
+	33      (00000082) invoke-direct        v1, v0, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+	34      (00000088) invoke-virtual       v1, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+	35      (0000008e) move-result-object   v0
+	36      (00000090) check-cast           v0, Ljava/net/HttpURLConnection;
+	37      (00000094) const/4              v1, 1
+	38      (00000096) invoke-virtual       v0, v1, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
+	39      (0000009c) invoke-virtual       v0, v9, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
+	40      (000000a2) invoke-virtual       v0, v9, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
+	41      (000000a8) const-string         v1, 'GET'
+	42      (000000ac) invoke-virtual       v0, v1, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
+	43      (000000b2) const-string         v1, 'X-APPLICATION-NAME'
+	44      (000000b6) iget-object          v2, v8, Landroid/content/pm/PackageInfo;->packageName Ljava/lang/String;
+	45      (000000ba) invoke-virtual       v0, v1, v2, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String; Ljava/lang/String;)V
+	46      (000000c0) const-string         v1, 'X-APPLICATION-VERSION'
+	47      (000000c4) iget                 v2, v8, Landroid/content/pm/PackageInfo;->versionCode I
+	48      (000000c8) invoke-static        v2, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+	49      (000000ce) move-result-object   v2
+	50      (000000d0) invoke-virtual       v0, v1, v2, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String; Ljava/lang/String;)V
+	51      (000000d6) const-string         v1, 'X-INSTALLATION-ID'
+	52      (000000da) invoke-static        v10, Lcom/unlocker/Util;->b(Landroid/content/Context;)Ljava/lang/String;
+	53      (000000e0) move-result-object   v2
+	54      (000000e2) invoke-virtual       v0, v1, v2, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String; Ljava/lang/String;)V
+	55      (000000e8) const-string         v1, 'X-LOCALE'
+	56      (000000ec) invoke-static        Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+	57      (000000f2) move-result-object   v2
+	58      (000000f4) invoke-static        v2, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	59      (000000fa) move-result-object   v2
+	60      (000000fc) invoke-virtual       v0, v1, v2, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String; Ljava/lang/String;)V
+	61      (00000102) return-object        v0
+	1e:75
+	(Ljava/net/URISyntaxException; -> 112 a-BB@0x112)
+
+a-BB@0x104 : 
+	62      (00000104) move-exception       v0
+	63      (00000106) new-instance         v1, Ljava/lang/RuntimeException;
+	64      (0000010a) invoke-direct        v1, v0, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+	65      (00000110) throw                v1
+
+a-BB@0x112 : 
+	66      (00000112) move-exception       v0
+	67      (00000114) new-instance         v1, Ljava/lang/RuntimeException;
+	68      (00000118) invoke-direct        v1, v0, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+	69      (0000011e) throw                v1
+

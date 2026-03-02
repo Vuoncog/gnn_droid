@@ -1,0 +1,33 @@
+# La/a/b/a/a/a/e;->g()Z [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+g-BB@0x0 : [ g-BB@0x8 g-BB@0x32 ]
+	0       (00000000) iget-object          v0, v2, La/a/b/a/a/a/e;->a La/a/b/a/b/a/g;
+	1       (00000004) if-eqz               v0, +17
+
+g-BB@0x8 : [ g-BB@0x2e g-BB@0x32 ]
+	2       (00000008) iget-object          v0, v2, La/a/b/a/a/a/e;->c La/a/b/a/a/a;
+	3       (0000000c) iget-boolean         v1, v0, La/a/b/a/a/a;->i Z
+	4       (00000010) iget-object          v0, v2, La/a/b/a/a/a/e;->a La/a/b/a/b/a/g;
+	5       (00000014) invoke-interface     v0, La/a/b/a/b/a/g;->e()Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, Ljava/lang/Boolean;
+	8       (00000020) invoke-virtual       v0, Ljava/lang/Boolean;->booleanValue()Z
+	9       (00000026) move-result          v0
+	10      (00000028) xor-int/2addr        v0, v1
+	11      (0000002a) if-eqz               v0, +4
+
+g-BB@0x2e : [ g-BB@0x30 ]
+	12      (0000002e) const/4              v0, 1
+
+g-BB@0x30 : 
+	13      (00000030) return               v0
+
+g-BB@0x32 : [ g-BB@0x30 ]
+	14      (00000032) const/4              v0, 0
+	15      (00000034) goto                 -2
+

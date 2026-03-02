@@ -1,0 +1,55 @@
+# Lorg/apache/commons/io/input/BOMInputStream;->read([B I I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:byte[]
+# - v6:int
+# - v7:int
+#
+# - return:int
+
+read-BB@0x0 : [ read-BB@0x4 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) move                 v1, v0
+
+read-BB@0x4 : [ read-BB@0x8 read-BB@0x32 ]
+	2       (00000004) if-lez               v7, +17
+
+read-BB@0x8 : [ read-BB@0xc read-BB@0x32 ]
+	3       (00000008) if-ltz               v1, +15
+
+read-BB@0xc : [ read-BB@0x18 read-BB@0x4 ]
+	4       (0000000c) invoke-direct        v4, Lorg/apache/commons/io/input/BOMInputStream;->readFirstBytes()I
+	5       (00000012) move-result          v1
+	6       (00000014) if-ltz               v1, -8
+
+read-BB@0x18 : [ read-BB@0x4 ]
+	7       (00000018) add-int/lit8         v2, v6, 1
+	8       (0000001c) and-int/lit16        v3, v1, 255
+	9       (00000020) int-to-byte          v3, v3
+	10      (00000022) aput-byte            v3, v5, v6
+	11      (00000026) add-int/lit8         v7, v7, -1
+	12      (0000002a) add-int/lit8         v0, v0, 1
+	13      (0000002e) move                 v6, v2
+	14      (00000030) goto                 -16
+
+read-BB@0x32 : [ read-BB@0x42 read-BB@0x4c ]
+	15      (00000032) iget-object          v1, v4, Lorg/apache/commons/io/input/BOMInputStream;->in Ljava/io/InputStream;
+	16      (00000036) invoke-virtual       v1, v5, v6, v7, Ljava/io/InputStream;->read([B I I)I
+	17      (0000003c) move-result          v1
+	18      (0000003e) if-gez               v1, +7
+
+read-BB@0x42 : [ read-BB@0x46 read-BB@0x48 ]
+	19      (00000042) if-lez               v0, +3
+
+read-BB@0x46 : 
+	20      (00000046) return               v0
+
+read-BB@0x48 : [ read-BB@0x46 ]
+	21      (00000048) const/4              v0, -1
+	22      (0000004a) goto                 -2
+
+read-BB@0x4c : [ read-BB@0x46 ]
+	23      (0000004c) add-int/2addr        v0, v1
+	24      (0000004e) goto                 -4
+

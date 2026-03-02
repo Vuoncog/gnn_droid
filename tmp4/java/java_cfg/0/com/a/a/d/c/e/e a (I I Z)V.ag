@@ -1,0 +1,28 @@
+# Lcom/a/a/d/c/e;->a(I I Z)V [access_flags=final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+# - v6:boolean
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x12 a-BB@0x1a ]
+	0       (00000000) iget-object          v1, v3, Lcom/a/a/d/c/e;->d [B
+	1       (00000004) iget                 v0, v3, Lcom/a/a/d/c/e;->c I
+	2       (00000008) mul-int/2addr        v0, v5
+	3       (0000000a) add-int              v2, v0, v4
+	4       (0000000e) if-eqz               v6, +6
+
+a-BB@0x12 : [ a-BB@0x14 ]
+	5       (00000012) const/4              v0, 1
+
+a-BB@0x14 : 
+	6       (00000014) aput-byte            v0, v1, v2
+	7       (00000018) return-void          
+
+a-BB@0x1a : [ a-BB@0x14 ]
+	8       (0000001a) const/4              v0, 0
+	9       (0000001c) goto                 -4
+

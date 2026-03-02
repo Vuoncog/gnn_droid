@@ -1,0 +1,45 @@
+# Lcom/crashlytics/android/answers/SessionAnalyticsManager;->build(Lio/fabric/sdk/android/Kit; Landroid/content/Context; Lio/fabric/sdk/android/services/common/IdManager; Ljava/lang/String; Ljava/lang/String; J)Lcom/crashlytics/android/answers/SessionAnalyticsManager; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:io.fabric.sdk.android.Kit
+# - v11:android.content.Context
+# - v12:io.fabric.sdk.android.services.common.IdManager
+# - v13:java.lang.String
+# - v14:java.lang.String
+# - v15:long
+#
+# - return:com.crashlytics.android.answers.SessionAnalyticsManager
+
+build-BB@0x0 : 
+	0       (00000000) new-instance         v4, Lcom/crashlytics/android/answers/SessionMetadataCollector;
+	1       (00000004) invoke-direct        v4, v10, v11, v12, v13, Lcom/crashlytics/android/answers/SessionMetadataCollector;-><init>(Landroid/content/Context; Lio/fabric/sdk/android/services/common/IdManager; Ljava/lang/String; Ljava/lang/String;)V
+	2       (0000000a) new-instance         v3, Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;
+	3       (0000000e) new-instance         v0, Lio/fabric/sdk/android/services/persistence/FileStoreImpl;
+	4       (00000012) invoke-direct        v0, v9, Lio/fabric/sdk/android/services/persistence/FileStoreImpl;-><init>(Lio/fabric/sdk/android/Kit;)V
+	5       (00000018) invoke-direct        v3, v10, v0, Lcom/crashlytics/android/answers/AnswersFilesManagerProvider;-><init>(Landroid/content/Context; Lio/fabric/sdk/android/services/persistence/FileStore;)V
+	6       (0000001e) new-instance         v5, Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;
+	7       (00000022) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	8       (00000028) move-result-object   v0
+	9       (0000002a) invoke-direct        v5, v0, Lio/fabric/sdk/android/services/network/DefaultHttpRequestFactory;-><init>(Lio/fabric/sdk/android/Logger;)V
+	10      (00000030) new-instance         v7, Lio/fabric/sdk/android/ActivityLifecycleManager;
+	11      (00000034) invoke-direct        v7, v10, Lio/fabric/sdk/android/ActivityLifecycleManager;-><init>(Landroid/content/Context;)V
+	12      (0000003a) const-string         v0, 'Answers Events Handler'
+	13      (0000003e) invoke-static        v0, Lio/fabric/sdk/android/services/common/ExecutorUtils;->buildSingleThreadScheduledExecutorService(Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
+	14      (00000044) move-result-object   v6
+	15      (00000046) new-instance         v8, Lcom/crashlytics/android/answers/BackgroundManager;
+	16      (0000004a) invoke-direct        v8, v6, Lcom/crashlytics/android/answers/BackgroundManager;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
+	17      (00000050) new-instance         v0, Lcom/crashlytics/android/answers/AnswersEventsHandler;
+	18      (00000054) move-object          v1, v9
+	19      (00000056) move-object          v2, v10
+	20      (00000058) invoke-direct/range  v0 ... v6, Lcom/crashlytics/android/answers/AnswersEventsHandler;-><init>(Lio/fabric/sdk/android/Kit; Landroid/content/Context; Lcom/crashlytics/android/answers/AnswersFilesManagerProvider; Lcom/crashlytics/android/answers/SessionMetadataCollector; Lio/fabric/sdk/android/services/network/HttpRequestFactory; Ljava/util/concurrent/ScheduledExecutorService;)V
+	21      (0000005e) invoke-static        v10, Lcom/crashlytics/android/answers/AnswersPreferenceManager;->build(Landroid/content/Context;)Lcom/crashlytics/android/answers/AnswersPreferenceManager;
+	22      (00000064) move-result-object   v5
+	23      (00000066) new-instance         v1, Lcom/crashlytics/android/answers/SessionAnalyticsManager;
+	24      (0000006a) move-object          v2, v0
+	25      (0000006c) move-object          v3, v7
+	26      (0000006e) move-object          v4, v8
+	27      (00000070) move-wide            v6, v14
+	28      (00000072) invoke-direct/range  v1 ... v7, Lcom/crashlytics/android/answers/SessionAnalyticsManager;-><init>(Lcom/crashlytics/android/answers/AnswersEventsHandler; Lio/fabric/sdk/android/ActivityLifecycleManager; Lcom/crashlytics/android/answers/BackgroundManager; Lcom/crashlytics/android/answers/AnswersPreferenceManager; J)V
+	29      (00000078) return-object        v1
+

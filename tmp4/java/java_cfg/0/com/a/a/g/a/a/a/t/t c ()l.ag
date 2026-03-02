@@ -1,0 +1,109 @@
+# Lcom/a/a/g/a/a/a/t;->c()Lcom/a/a/g/a/a/a/l; [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:com.a.a.g.a.a.a.l
+
+c-BB@0x0 : [ c-BB@0x18 c-BB@0x8e ]
+	0       (00000000) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	1       (00000004) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->a()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) invoke-direct        v3, v0, Lcom/a/a/g/a/a/a/t;->c(I)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +3d
+
+c-BB@0x18 : [ c-BB@0x4a c-BB@0x7a ]
+	6       (00000018) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	7       (0000001c) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->a()I
+	8       (00000022) move-result          v0
+	9       (00000024) invoke-direct        v3, v0, Lcom/a/a/g/a/a/a/t;->d(I)Lcom/a/a/g/a/a/a/o;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) iget-object          v1, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	12      (00000030) invoke-virtual       v0, Lcom/a/a/g/a/a/a/o;->e()I
+	13      (00000036) move-result          v2
+	14      (00000038) invoke-virtual       v1, v2, Lcom/a/a/g/a/a/a/m;->a(I)V
+	15      (0000003e) invoke-virtual       v0, Lcom/a/a/g/a/a/a/o;->b()Z
+	16      (00000044) move-result          v1
+	17      (00000046) if-eqz               v1, +1a
+
+c-BB@0x4a : [ c-BB@0x78 ]
+	18      (0000004a) new-instance         v1, Lcom/a/a/g/a/a/a/p;
+	19      (0000004e) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	20      (00000052) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->a()I
+	21      (00000058) move-result          v0
+	22      (0000005a) iget-object          v2, v3, Lcom/a/a/g/a/a/a/t;->c Ljava/lang/StringBuilder;
+	23      (0000005e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	24      (00000064) move-result-object   v2
+	25      (00000066) invoke-direct        v1, v0, v2, Lcom/a/a/g/a/a/a/p;-><init>(I Ljava/lang/String;)V
+	26      (0000006c) new-instance         v0, Lcom/a/a/g/a/a/a/l;
+	27      (00000070) const/4              v2, 1
+	28      (00000072) invoke-direct        v0, v1, v2, Lcom/a/a/g/a/a/a/l;-><init>(Lcom/a/a/g/a/a/a/p; Z)V
+
+c-BB@0x78 : 
+	29      (00000078) return-object        v0
+
+c-BB@0x7a : [ c-BB@0x0 ]
+	30      (0000007a) iget-object          v1, v3, Lcom/a/a/g/a/a/a/t;->c Ljava/lang/StringBuilder;
+	31      (0000007e) invoke-virtual       v0, Lcom/a/a/g/a/a/a/o;->a()C
+	32      (00000084) move-result          v0
+	33      (00000086) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	34      (0000008c) goto                 -46
+
+c-BB@0x8e : [ c-BB@0xa6 c-BB@0xca ]
+	35      (0000008e) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	36      (00000092) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->a()I
+	37      (00000098) move-result          v0
+	38      (0000009a) invoke-direct        v3, v0, Lcom/a/a/g/a/a/a/t;->h(I)Z
+	39      (000000a0) move-result          v0
+	40      (000000a2) if-eqz               v0, +14
+
+c-BB@0xa6 : [ c-BB@0xbc ]
+	41      (000000a6) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	42      (000000aa) const/4              v1, 3
+	43      (000000ac) invoke-virtual       v0, v1, Lcom/a/a/g/a/a/a/m;->b(I)V
+	44      (000000b2) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	45      (000000b6) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->d()V
+
+c-BB@0xbc : [ c-BB@0x78 ]
+	46      (000000bc) new-instance         v0, Lcom/a/a/g/a/a/a/l;
+	47      (000000c0) const/4              v1, 0
+	48      (000000c2) invoke-direct        v0, v1, Lcom/a/a/g/a/a/a/l;-><init>(Z)V
+	49      (000000c8) goto                 -28
+
+c-BB@0xca : [ c-BB@0xe2 c-BB@0xbc ]
+	50      (000000ca) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	51      (000000ce) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->a()I
+	52      (000000d4) move-result          v0
+	53      (000000d6) invoke-direct        v3, v0, Lcom/a/a/g/a/a/a/t;->g(I)Z
+	54      (000000dc) move-result          v0
+	55      (000000de) if-eqz               v0, -11
+
+c-BB@0xe2 : [ c-BB@0x102 c-BB@0x11a ]
+	56      (000000e2) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	57      (000000e6) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->a()I
+	58      (000000ec) move-result          v0
+	59      (000000ee) add-int/lit8         v0, v0, 5
+	60      (000000f2) iget-object          v1, v3, Lcom/a/a/g/a/a/a/t;->a Lcom/a/a/c/a;
+	61      (000000f6) invoke-virtual       v1, Lcom/a/a/c/a;->a()I
+	62      (000000fc) move-result          v1
+	63      (000000fe) if-ge                v0, v1, +e
+
+c-BB@0x102 : [ c-BB@0x10e ]
+	64      (00000102) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	65      (00000106) const/4              v1, 5
+	66      (00000108) invoke-virtual       v0, v1, Lcom/a/a/g/a/a/a/m;->b(I)V
+
+c-BB@0x10e : [ c-BB@0xbc ]
+	67      (0000010e) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	68      (00000112) invoke-virtual       v0, Lcom/a/a/g/a/a/a/m;->e()V
+	69      (00000118) goto                 -2e
+
+c-BB@0x11a : [ c-BB@0x10e ]
+	70      (0000011a) iget-object          v0, v3, Lcom/a/a/g/a/a/a/t;->b Lcom/a/a/g/a/a/a/m;
+	71      (0000011e) iget-object          v1, v3, Lcom/a/a/g/a/a/a/t;->a Lcom/a/a/c/a;
+	72      (00000122) invoke-virtual       v1, Lcom/a/a/c/a;->a()I
+	73      (00000128) move-result          v1
+	74      (0000012a) invoke-virtual       v0, v1, Lcom/a/a/g/a/a/a/m;->a(I)V
+	75      (00000130) goto                 -11
+

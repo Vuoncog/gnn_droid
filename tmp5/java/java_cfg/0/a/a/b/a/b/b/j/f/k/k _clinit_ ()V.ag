@@ -1,0 +1,22 @@
+# La/a/b/a/b/b/j/f/k;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const-wide           v0, 4643985272004935680 # [300.0]
+	1       (0000000a) invoke-static        v0, v1, Ljava/lang/Math;->log10(D)D
+	2       (00000010) move-result-wide     v0
+	3       (00000012) sput-wide            v0, La/a/b/a/b/b/j/f/k;->a D
+	4       (00000016) const-wide           v0, 4587366580439587226 # [0.05]
+	5       (00000020) invoke-static        v0, v1, Ljava/lang/Math;->log10(D)D
+	6       (00000026) move-result-wide     v0
+	7       (00000028) sput-wide            v0, La/a/b/a/b/b/j/f/k;->b D
+	8       (0000002c) sget-wide            v0, La/a/b/a/b/b/j/f/k;->a D
+	9       (00000030) sget-wide            v2, La/a/b/a/b/b/j/f/k;->b D
+	10      (00000034) sub-double/2addr     v0, v2
+	11      (00000036) sput-wide            v0, La/a/b/a/b/b/j/f/k;->c D
+	12      (0000003a) return-void          
+

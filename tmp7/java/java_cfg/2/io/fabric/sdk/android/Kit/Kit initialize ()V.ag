@@ -1,0 +1,21 @@
+# Lio/fabric/sdk/android/Kit;->initialize()V [access_flags=final]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+initialize-BB@0x0 : 
+	0       (00000000) iget-object          v1, v5, Lio/fabric/sdk/android/Kit;->initializationTask Lio/fabric/sdk/android/InitializationTask;
+	1       (00000004) iget-object          v0, v5, Lio/fabric/sdk/android/Kit;->fabric Lio/fabric/sdk/android/Fabric;
+	2       (00000008) invoke-virtual       v0, Lio/fabric/sdk/android/Fabric;->getExecutorService()Ljava/util/concurrent/ExecutorService;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) const/4              v0, 1
+	5       (00000012) new-array            v3, v0, [Ljava/lang/Void;
+	6       (00000016) const/4              v4, 0
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) check-cast           v0, Ljava/lang/Void;
+	9       (0000001e) aput-object          v0, v3, v4
+	10      (00000022) invoke-virtual       v1, v2, v3, Lio/fabric/sdk/android/InitializationTask;->executeOnExecutor(Ljava/util/concurrent/ExecutorService; [Ljava/lang/Object;)V
+	11      (00000028) return-void          
+

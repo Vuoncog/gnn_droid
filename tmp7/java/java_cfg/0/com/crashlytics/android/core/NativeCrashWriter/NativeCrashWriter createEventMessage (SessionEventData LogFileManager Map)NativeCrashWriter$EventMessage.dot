@@ -1,0 +1,166 @@
+digraph {
+	graph [bb="0,0,2180,1648",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_3d51a38e04c83ba3abaa785aeb5734be {
+		graph [bb="8,8,2172,1640",
+			label="Lcom/crashlytics/android/core/NativeCrashWriter;.createEventMessage->(Lcom/crashlytics/android/core/internal/models/SessionEventData; \
+Lcom/crashlytics/android/core/LogFileManager; Ljava/util/Map;)Lcom/crashlytics/android/core/NativeCrashWriter$EventMessage;\nLocal \
+registers v0 ... v8\nparam v9 = com.crashlytics.android.core.internal.models.SessionEventData\nparam v10 = com.crashlytics.android.core.LogFileManager\nparam \
+v11 = java.util.Map\nreturn = com.crashlytics.android.core.NativeCrashWriter$EventMessage",
+			lheight=1.25,
+			lp="1090,1591",
+			lwidth=24.72
+		];
+		struct_961d4be85128d7ad031f1249ca72e584	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#949444">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/internal/models/SessionEventData;-&gt;signal Lcom/crashlytics/android/core/internal/models/SignalData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x60</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1091,1499.5",
+			width=14.819];
+		struct_4856592c8309f58a256993264ea43fa3	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#949444">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/internal/models/SessionEventData;-&gt;signal Lcom/crashlytics/android/core/internal/models/SignalData;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="552,1394.5",
+			width=14.819];
+		struct_961d4be85128d7ad031f1249ca72e584:tail -> struct_4856592c8309f58a256993264ea43fa3:header	[color=red,
+			pos="e,40,1411.5 568,1473.5 512.16,1473.5 90.063,1470.9 44.064,1420.7"];
+		struct_03ecf5b1a23476c3251a2aed8b2f4671	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/NativeCrashWriter;-&gt;DEFAULT_SIGNAL Lcom/crashlytics/android/core/internal/models/SignalData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5e</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1614,1394.5",
+			width=14.181];
+		struct_961d4be85128d7ad031f1249ca72e584:tail -> struct_03ecf5b1a23476c3251a2aed8b2f4671:header	[color=green,
+			pos="e,1114,1419.5 579,1470.5 579,1413 1039.6,1444.5 1095,1429 1099.5,1427.7 1101.9,1425.4 1104.4,1423.3"];
+		struct_d24260aad352459602ad6a11b22b04cb	[height=7.375,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#909055">v1</FONT>, <FONT color="#0000FF">Lcom/crashlytics/android/core/NativeCrashWriter$SignalMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#909055">v1</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$SignalMessage;-&gt;&lt;init&gt;(Lcom/crashlytics/android/core/internal/models/SignalData;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#949444">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/internal/models/SessionEventData;-&gt;threads [Lcom/crashlytics/android/core/internal/models/ThreadData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter;-&gt;createThreadsMessage([Lcom/crashlytics/android/core/internal/models/ThreadData;)Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#8C8C66">v2</FONT>, <FONT color="#949444">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/internal/models/SessionEventData;-&gt;binaryImages [Lcom/crashlytics/android/core/internal/models/BinaryImageData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#8C8C66">v2</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter;-&gt;createBinaryImagesMessage([Lcom/crashlytics/android/core/internal/models/BinaryImageData;)Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8C8C66">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#888877">v3</FONT>, <FONT color="#0000FF">Lcom/crashlytics/android/core/NativeCrashWriter$ExecutionMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#888877">v3</FONT>, <FONT color="#909055">v1</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$ExecutionMessage;-&gt;&lt;init&gt;(Lcom/crashlytics/android/core/NativeCrashWriter$SignalMessage; Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage; Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#949444">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/internal/models/SessionEventData;-&gt;customAttributes [Lcom/crashlytics/android/core/internal/models/CustomAttributeData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#838388">v11</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter;-&gt;mergeCustomAttributes([Lcom/crashlytics/android/core/internal/models/CustomAttributeData; Ljava/util/Map;)[Lcom/crashlytics/android/core/internal/models/CustomAttributeData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter;-&gt;createCustomAttributesMessage([Lcom/crashlytics/android/core/internal/models/CustomAttributeData;)Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#909055">v1</FONT>, <FONT color="#0000FF">Lcom/crashlytics/android/core/NativeCrashWriter$ApplicationMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">50</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#909055">v1</FONT>, <FONT color="#888877">v3</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$ApplicationMessage;-&gt;&lt;init&gt;(Lcom/crashlytics/android/core/NativeCrashWriter$ExecutionMessage; Lcom/crashlytics/android/core/NativeCrashWriter$RepeatedMessage;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">56</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#949444">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/internal/models/SessionEventData;-&gt;deviceData Lcom/crashlytics/android/core/internal/models/DeviceData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter;-&gt;createDeviceMessage(Lcom/crashlytics/android/core/internal/models/DeviceData;)Lcom/crashlytics/android/core/NativeCrashWriter$DeviceMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">60</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8C8C66">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">62</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v10</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/LogFileManager;-&gt;getByteStringForLog()Lcom/crashlytics/android/core/ByteString;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">68</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#888877">v3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#888877">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xd</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1090,1058.5",
+			width=29.819];
+		struct_4856592c8309f58a256993264ea43fa3:tail -> struct_d24260aad352459602ad6a11b22b04cb:header	[color=blue,
+			pos="e,42,1317.5 40,1376.5 40,1354 41.477,1346 41.892,1327.5"];
+		struct_02326f2cb09726184371f119afa8c00d	[height=2.25,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">74</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">76</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7B7BAA">v4</FONT>, <FONT color="red">'CrashlyticsCore'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7777BB">v5</FONT>, <FONT color="red"><br/>'No log data to include with<br/>this event.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7B7BAA">v4</FONT>, <FONT color="#7777BB">v5</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;d(Ljava/lang/String; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="380,676",
+			width=10.111];
+		struct_d24260aad352459602ad6a11b22b04cb:tail -> struct_02326f2cb09726184371f119afa8c00d:header	[color=red,
+			pos="e,41,751 42,798.5 42,781.18 41.327,774.52 41.085,761.03"];
+		struct_3b73b63a1e115bcc125148bd65c2da4d	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">84</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v10</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/LogFileManager;-&gt;clearLog()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#888877">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x20</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="675,524.5",
+			width=8.2917];
+		struct_d24260aad352459602ad6a11b22b04cb:tail -> struct_3b73b63a1e115bcc125148bd65c2da4d:header	[color=green,
+			pos="e,402,552.5 42,798.5 42,719.37 698.7,814.56 753,757 802.41,704.63 800.75,648.88 753,595 703.33,538.95 429.48,622.51 403.91,562.44"];
+		struct_02326f2cb09726184371f119afa8c00d:tail -> struct_3b73b63a1e115bcc125148bd65c2da4d:header	[color=blue,
+			pos="e,402,552.5 41,601 41,442.75 385.97,702.24 401.46,562.76"];
+		struct_b48336b2fca6e80fa6e722bf0bf55dd0	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Lcom/crashlytics/android/core/NativeCrashWriter$LogMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">92</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v3</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$LogMessage;-&gt;&lt;init&gt;(Lcom/crashlytics/android/core/ByteString;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="503,408.5",
+			width=13.528];
+		struct_3b73b63a1e115bcc125148bd65c2da4d:tail -> struct_b48336b2fca6e80fa6e722bf0bf55dd0:header	[color=red,
+			pos="e,41,436.5 402,495.5 402,336.58 57.035,587.33 41.538,446.82"];
+		struct_f52d081438a9660088986212a92ec1bd	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ca</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Lcom/crashlytics/android/core/NativeCrashWriter$NullMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ce</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$NullMessage;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">d4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-1e</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1346,408.5",
+			width=9.3889];
+		struct_3b73b63a1e115bcc125148bd65c2da4d:tail -> struct_f52d081438a9660088986212a92ec1bd:header	[color=green,
+			pos="e,1018,444.5 402,495.5 402,429.01 934.85,471.51 999,454 1003.6,452.76 1005.9,450.38 1008.4,448.32"];
+		struct_8fb9ac6e5aec604eb01fc2a2c0bad271	[height=4.3194,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">98</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#888877">v3</FONT>, <FONT color="#0000FF">Lcom/crashlytics/android/core/NativeCrashWriter$EventMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">9c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#7B7BAA">v4</FONT>, <FONT color="#949444">v9</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/internal/models/SessionEventData;-&gt;timestamp J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7272CC">v6</FONT>, <FONT color="red">'ndk-crash'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#6E6EDD">v7</FONT>, <FONT color="green">0x3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-array </FONT> <FONT color="#6E6EDD">v7</FONT>, <FONT color="#6E6EDD">v7</FONT>, <FONT color="#0000FF">[Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">aa</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#6A6AEE">v8</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">ac</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aput-object </FONT> <FONT color="#909055">v1</FONT>, <FONT color="#6E6EDD">v7</FONT>, <FONT color="#6A6AEE">v8</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#909055">v1</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aput-object </FONT> <FONT color="#8C8C66">v2</FONT>, <FONT color="#6E6EDD">v7</FONT>, <FONT color="#909055">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#909055">v1</FONT>, <FONT color="green">0x2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">b8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">aput-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#6E6EDD">v7</FONT>, <FONT color="#909055">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">bc</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#888877">v3</FONT>, <FONT color="#7B7BAA">v4</FONT>, <FONT color="#7777BB">v5</FONT>, <FONT color="#7272CC">v6</FONT>, <FONT color="#6E6EDD">v7</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter$EventMessage;-&gt;&lt;init&gt;(J Ljava/lang/String; [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#888877">v3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1090,171.5",
+			width=18.986];
+		struct_b48336b2fca6e80fa6e722bf0bf55dd0:tail -> struct_8fb9ac6e5aec604eb01fc2a2c0bad271:header	[color=blue,
+			pos="e,432,320.5 41,379.5 41,207.36 416.13,484.45 431.51,330.73"];
+		struct_03ecf5b1a23476c3251a2aed8b2f4671:tail -> struct_d24260aad352459602ad6a11b22b04cb:header	[color=blue,
+			pos="e,42,1317.5 1129,1365.5 1129,1248.1 104.76,1427.3 44.744,1327.3"];
+		struct_f52d081438a9660088986212a92ec1bd:tail -> struct_8fb9ac6e5aec604eb01fc2a2c0bad271:header	[color=blue,
+			pos="e,432,320.5 1033,368.5 1033,304.91 491.49,379.15 436.49,329.56"];
+	}
+}

@@ -1,0 +1,113 @@
+# Lorg/apache/commons/lang/builder/EqualsBuilder;->reflectionEquals(Ljava/lang/Object; Ljava/lang/Object; Z Ljava/lang/Class; [Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.Object
+# - v8:java.lang.Object
+# - v9:boolean
+# - v10:java.lang.Class
+# - v11:java.lang.String[]
+#
+# - return:boolean
+
+reflectionEquals-BB@0x0 : [ reflectionEquals-BB@0x6 reflectionEquals-BB@0xa ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) if-ne                v7, v8, +4
+
+reflectionEquals-BB@0x6 : [ reflectionEquals-BB@0x8 ]
+	2       (00000006) const/4              v0, 1
+
+reflectionEquals-BB@0x8 : 
+	3       (00000008) return               v0
+
+reflectionEquals-BB@0xa : [ reflectionEquals-BB@0xe reflectionEquals-BB@0x12 ]
+	4       (0000000a) if-eqz               v7, +4
+
+reflectionEquals-BB@0xe : [ reflectionEquals-BB@0x12 reflectionEquals-BB@0x16 ]
+	5       (0000000e) if-nez               v8, +4
+
+reflectionEquals-BB@0x12 : [ reflectionEquals-BB@0x8 ]
+	6       (00000012) move                 v0, v6
+	7       (00000014) goto                 -6
+
+reflectionEquals-BB@0x16 : [ reflectionEquals-BB@0x32 reflectionEquals-BB@0x84 ]
+	8       (00000016) invoke-virtual       v7, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	9       (0000001c) move-result-object   v0
+	10      (0000001e) invoke-virtual       v8, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	11      (00000024) move-result-object   v2
+	12      (00000026) invoke-virtual       v0, v8, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+	13      (0000002c) move-result          v1
+	14      (0000002e) if-eqz               v1, +2b
+
+reflectionEquals-BB@0x32 : [ reflectionEquals-BB@0x3e reflectionEquals-BB@0xae ]
+	15      (00000032) invoke-virtual       v2, v7, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+	16      (00000038) move-result          v1
+	17      (0000003a) if-nez               v1, +3a
+
+reflectionEquals-BB@0x3e : [ reflectionEquals-BB@0x50 ]
+	18      (0000003e) new-instance         v3, Lorg/apache/commons/lang/builder/EqualsBuilder;
+	19      (00000042) invoke-direct        v3, Lorg/apache/commons/lang/builder/EqualsBuilder;-><init>()V
+	20      (00000048) move-object          v0, v7
+	21      (0000004a) move-object          v1, v8
+	22      (0000004c) move                 v4, v9
+	23      (0000004e) move-object          v5, v11
+
+reflectionEquals-BB@0x50 : [ reflectionEquals-BB@0x56 ]
+	24      (00000050) invoke-static/range  v0 ... v5, Lorg/apache/commons/lang/builder/EqualsBuilder;->reflectionAppend(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Class; Lorg/apache/commons/lang/builder/EqualsBuilder; Z [Ljava/lang/String;)V
+	50:7b
+	(Ljava/lang/IllegalArgumentException; -> 7e reflectionEquals-BB@0x7e)
+
+reflectionEquals-BB@0x56 : [ reflectionEquals-BB@0x62 reflectionEquals-BB@0xa4 ]
+	25      (00000056) invoke-virtual       v2, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+	26      (0000005c) move-result-object   v0
+	27      (0000005e) if-eqz               v0, +23
+	50:7b
+	(Ljava/lang/IllegalArgumentException; -> 7e reflectionEquals-BB@0x7e)
+
+reflectionEquals-BB@0x62 : [ reflectionEquals-BB@0x66 reflectionEquals-BB@0xa4 ]
+	28      (00000062) if-eq                v2, v10, +21
+	50:7b
+	(Ljava/lang/IllegalArgumentException; -> 7e reflectionEquals-BB@0x7e)
+
+reflectionEquals-BB@0x66 : [ reflectionEquals-BB@0x56 ]
+	29      (00000066) invoke-virtual       v2, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+	30      (0000006c) move-result-object   v2
+	31      (0000006e) move-object          v0, v7
+	32      (00000070) move-object          v1, v8
+	33      (00000072) move                 v4, v9
+	34      (00000074) move-object          v5, v11
+	35      (00000076) invoke-static/range  v0 ... v5, Lorg/apache/commons/lang/builder/EqualsBuilder;->reflectionAppend(Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Class; Lorg/apache/commons/lang/builder/EqualsBuilder; Z [Ljava/lang/String;)V
+	36      (0000007c) goto                 -13
+
+reflectionEquals-BB@0x7e : [ reflectionEquals-BB@0x8 ]
+	37      (0000007e) move-exception       v0
+	38      (00000080) move                 v0, v6
+	39      (00000082) goto                 -3d
+
+reflectionEquals-BB@0x84 : [ reflectionEquals-BB@0x90 reflectionEquals-BB@0xa0 ]
+	40      (00000084) invoke-virtual       v2, v7, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+	41      (0000008a) move-result          v1
+	42      (0000008c) if-eqz               v1, +a
+
+reflectionEquals-BB@0x90 : [ reflectionEquals-BB@0x9c reflectionEquals-BB@0x3e ]
+	43      (00000090) invoke-virtual       v0, v8, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+	44      (00000096) move-result          v1
+	45      (00000098) if-nez               v1, -2d
+
+reflectionEquals-BB@0x9c : [ reflectionEquals-BB@0x3e ]
+	46      (0000009c) move-object          v2, v0
+	47      (0000009e) goto                 -30
+
+reflectionEquals-BB@0xa0 : [ reflectionEquals-BB@0x8 ]
+	48      (000000a0) move                 v0, v6
+	49      (000000a2) goto                 -4d
+
+reflectionEquals-BB@0xa4 : [ reflectionEquals-BB@0x8 ]
+	50      (000000a4) invoke-virtual       v3, Lorg/apache/commons/lang/builder/EqualsBuilder;->isEquals()Z
+	51      (000000aa) move-result          v0
+	52      (000000ac) goto                 -52
+
+reflectionEquals-BB@0xae : [ reflectionEquals-BB@0x3e ]
+	53      (000000ae) move-object          v2, v0
+	54      (000000b0) goto                 -39
+

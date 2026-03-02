@@ -1,0 +1,94 @@
+# Lcom/a/a/d/c/f;->a(Ljava/lang/CharSequence; I)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.CharSequence
+# - v9:int
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x16 a-BB@0x26 ]
+	0       (00000000) const/4              v7, 2
+	1       (00000002) const/4              v6, 3
+	2       (00000004) const/4              v0, 0
+	3       (00000006) invoke-interface     v8, Ljava/lang/CharSequence;->length()I
+	4       (0000000c) move-result          v1
+	5       (0000000e) sub-int              v3, v1, v9
+	6       (00000012) if-nez               v3, +a
+
+a-BB@0x16 : 
+	7       (00000016) new-instance         v0, Ljava/lang/IllegalStateException;
+	8       (0000001a) const-string         v1, 'StringBuilder must not be empty'
+	9       (0000001e) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	10      (00000024) throw                v0
+
+a-BB@0x26 : [ a-BB@0x32 a-BB@0xbc ]
+	11      (00000026) invoke-interface     v8, v9, Ljava/lang/CharSequence;->charAt(I)C
+	12      (0000002c) move-result          v4
+	13      (0000002e) if-lt                v3, v7, +47
+
+a-BB@0x32 : [ a-BB@0x40 ]
+	14      (00000032) add-int/lit8         v1, v9, 1
+	15      (00000036) invoke-interface     v8, v1, Ljava/lang/CharSequence;->charAt(I)C
+	16      (0000003c) move-result          v1
+	17      (0000003e) move                 v2, v1
+
+a-BB@0x40 : [ a-BB@0x44 a-BB@0xc0 ]
+	18      (00000040) if-lt                v3, v6, +40
+
+a-BB@0x44 : [ a-BB@0x50 ]
+	19      (00000044) add-int/lit8         v1, v9, 2
+	20      (00000048) invoke-interface     v8, v1, Ljava/lang/CharSequence;->charAt(I)C
+	21      (0000004e) move-result          v1
+
+a-BB@0x50 : [ a-BB@0x56 a-BB@0x62 ]
+	22      (00000050) const/4              v5, 4
+	23      (00000052) if-lt                v3, v5, +8
+
+a-BB@0x56 : [ a-BB@0x62 ]
+	24      (00000056) add-int/lit8         v0, v9, 3
+	25      (0000005a) invoke-interface     v8, v0, Ljava/lang/CharSequence;->charAt(I)C
+	26      (00000060) move-result          v0
+
+a-BB@0x62 : [ a-BB@0xa2 a-BB@0xa8 ]
+	27      (00000062) shl-int/lit8         v4, v4, 18
+	28      (00000066) shl-int/lit8         v2, v2, 12
+	29      (0000006a) add-int/2addr        v2, v4
+	30      (0000006c) shl-int/lit8         v1, v1, 6
+	31      (00000070) add-int/2addr        v1, v2
+	32      (00000072) add-int/2addr        v0, v1
+	33      (00000074) shr-int/lit8         v1, v0, 16
+	34      (00000078) and-int/lit16        v1, v1, 255
+	35      (0000007c) int-to-char          v1, v1
+	36      (0000007e) shr-int/lit8         v2, v0, 8
+	37      (00000082) and-int/lit16        v2, v2, 255
+	38      (00000086) int-to-char          v2, v2
+	39      (00000088) and-int/lit16        v0, v0, 255
+	40      (0000008c) int-to-char          v0, v0
+	41      (0000008e) new-instance         v4, Ljava/lang/StringBuilder;
+	42      (00000092) invoke-direct        v4, v6, Ljava/lang/StringBuilder;-><init>(I)V
+	43      (00000098) invoke-virtual       v4, v1, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	44      (0000009e) if-lt                v3, v7, +5
+
+a-BB@0xa2 : [ a-BB@0xa8 ]
+	45      (000000a2) invoke-virtual       v4, v2, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+a-BB@0xa8 : [ a-BB@0xac a-BB@0xb2 ]
+	46      (000000a8) if-lt                v3, v6, +5
+
+a-BB@0xac : [ a-BB@0xb2 ]
+	47      (000000ac) invoke-virtual       v4, v0, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+a-BB@0xb2 : 
+	48      (000000b2) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	49      (000000b8) move-result-object   v0
+	50      (000000ba) return-object        v0
+
+a-BB@0xbc : [ a-BB@0x40 ]
+	51      (000000bc) move                 v2, v0
+	52      (000000be) goto                 -3f
+
+a-BB@0xc0 : [ a-BB@0x50 ]
+	53      (000000c0) move                 v1, v0
+	54      (000000c2) goto                 -39
+

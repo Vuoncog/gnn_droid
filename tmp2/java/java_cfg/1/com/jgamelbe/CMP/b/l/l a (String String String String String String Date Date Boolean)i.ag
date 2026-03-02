@@ -1,0 +1,81 @@
+# Lcom/jgamelbe/CMP/b/l;->a(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/util/Date; Ljava/util/Date; Ljava/lang/Boolean;)Lcom/jgamelbe/CMP/b/i; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+# - v9:java.lang.String
+# - v10:java.lang.String
+# - v11:java.lang.String
+# - v12:java.lang.String
+# - v13:java.lang.String
+# - v14:java.util.Date
+# - v15:java.util.Date
+# - v16:java.lang.Boolean
+#
+# - return:com.jgamelbe.CMP.b.i
+
+a-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lcom/jgamelbe/CMP/b/l;->b Ljava/lang/String;
+	1       (00000004) const-string         v1, '[MyStackCommitDownloadLog] productId=%s,passwordId=%s,downAppid=%s,downAppidEncode=%s,startTime=%s,endTime=%s'
+	2       (00000008) const/4              v2, 6
+	3       (0000000a) new-array            v2, v2, [Ljava/lang/Object;
+	4       (0000000e) const/4              v3, 0
+	5       (00000010) aput-object          v10, v2, v3
+	6       (00000014) const/4              v3, 1
+	7       (00000016) aput-object          v11, v2, v3
+	8       (0000001a) const/4              v3, 2
+	9       (0000001c) aput-object          v12, v2, v3
+	10      (00000020) const/4              v3, 3
+	11      (00000022) aput-object          v13, v2, v3
+	12      (00000026) const/4              v3, 4
+	13      (00000028) invoke-virtual       v14, Ljava/util/Date;->toLocaleString()Ljava/lang/String;
+	14      (0000002e) move-result-object   v4
+	15      (00000030) aput-object          v4, v2, v3
+	16      (00000034) const/4              v3, 5
+	17      (00000036) invoke-virtual       v15, Ljava/util/Date;->toLocaleString()Ljava/lang/String;
+	18      (0000003c) move-result-object   v4
+	19      (0000003e) aput-object          v4, v2, v3
+	20      (00000042) invoke-static        v1, v2, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	21      (00000048) move-result-object   v1
+	22      (0000004a) invoke-static        v0, v1, Lcom/jgamelbe/CMP/e/g;->c(Ljava/lang/String; Ljava/lang/String;)V
+	23      (00000050) move-object          v0, v9
+	24      (00000052) move-object          v1, v10
+	25      (00000054) move-object          v2, v11
+	26      (00000056) move-object          v3, v14
+	27      (00000058) move-object          v4, v15
+	28      (0000005a) move-object          v5, v12
+	29      (0000005c) move-object          v6, v13
+	30      (0000005e) invoke-static/range  v0 ... v6, Lcom/jgamelbe/CMP/d/b;->a(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/util/Date; Ljava/util/Date; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	31      (00000064) move-result-object   v0
+	32      (00000066) invoke-virtual       v7, v0, Lcom/jgamelbe/CMP/b/l;->a(Ljava/lang/String;)Ljava/util/ArrayList;
+	33      (0000006c) move-result-object   v0
+	34      (0000006e) new-instance         v1, Lorg/apache/http/message/BasicNameValuePair;
+	35      (00000072) const-string         v2, 'stime'
+	36      (00000076) invoke-static        v14, Lcom/jgamelbe/CMP/e/f;->a(Ljava/util/Date;)Ljava/lang/String;
+	37      (0000007c) move-result-object   v3
+	38      (0000007e) invoke-direct        v1, v2, v3, Lorg/apache/http/message/BasicNameValuePair;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	39      (00000084) invoke-virtual       v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	40      (0000008a) new-instance         v1, Lorg/apache/http/message/BasicNameValuePair;
+	41      (0000008e) const-string         v2, 'etime'
+	42      (00000092) invoke-static        v15, Lcom/jgamelbe/CMP/e/f;->a(Ljava/util/Date;)Ljava/lang/String;
+	43      (00000098) move-result-object   v3
+	44      (0000009a) invoke-direct        v1, v2, v3, Lorg/apache/http/message/BasicNameValuePair;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	45      (000000a0) invoke-virtual       v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	46      (000000a6) new-instance         v1, Lorg/apache/http/message/BasicNameValuePair;
+	47      (000000aa) const-string         v2, 'downAppid'
+	48      (000000ae) invoke-direct        v1, v2, v12, Lorg/apache/http/message/BasicNameValuePair;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	49      (000000b4) invoke-virtual       v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	50      (000000ba) new-instance         v1, Lorg/apache/http/message/BasicNameValuePair;
+	51      (000000be) const-string         v2, 'downAppidEncode'
+	52      (000000c2) invoke-direct        v1, v2, v13, Lorg/apache/http/message/BasicNameValuePair;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	53      (000000c8) invoke-virtual       v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	54      (000000ce) new-instance         v1, Lcom/jgamelbe/CMP/b/f;
+	55      (000000d2) invoke-direct        v1, Lcom/jgamelbe/CMP/b/f;-><init>()V
+	56      (000000d8) invoke-static        Lcom/jgamelbe/CMP/b/h;->c()Ljava/lang/String;
+	57      (000000de) move-result-object   v2
+	58      (000000e0) invoke-virtual       v1, v2, v0, Lcom/jgamelbe/CMP/b/f;->a(Ljava/lang/String; Ljava/util/List;)Lorg/json/JSONObject;
+	59      (000000e6) move-result-object   v0
+	60      (000000e8) invoke-virtual       v7, v0, Lcom/jgamelbe/CMP/b/l;->a(Lorg/json/JSONObject;)Lcom/jgamelbe/CMP/b/i;
+	61      (000000ee) move-result-object   v0
+	62      (000000f0) return-object        v0
+

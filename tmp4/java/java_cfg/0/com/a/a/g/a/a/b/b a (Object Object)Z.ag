@@ -1,0 +1,30 @@
+# Lcom/a/a/g/a/a/b;->a(Ljava/lang/Object; Ljava/lang/Object;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+# - v2:java.lang.Object
+#
+# - return:boolean
+
+a-BB@0x0 : [ a-BB@0x4 a-BB@0x10 ]
+	0       (00000000) if-nez               v1, +8
+
+a-BB@0x4 : [ a-BB@0x8 a-BB@0xc ]
+	1       (00000004) if-nez               v2, +4
+
+a-BB@0x8 : [ a-BB@0xa ]
+	2       (00000008) const/4              v0, 1
+
+a-BB@0xa : 
+	3       (0000000a) return               v0
+
+a-BB@0xc : [ a-BB@0xa ]
+	4       (0000000c) const/4              v0, 0
+	5       (0000000e) goto                 -2
+
+a-BB@0x10 : [ a-BB@0xa ]
+	6       (00000010) invoke-virtual       v1, v2, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	7       (00000016) move-result          v0
+	8       (00000018) goto                 -7
+

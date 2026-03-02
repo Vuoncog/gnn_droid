@@ -1,0 +1,19 @@
+# Lio/fabric/sdk/android/services/common/CommonUtils;->calculateFreeRamInBytes(Landroid/content/Context;)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:long
+
+calculateFreeRamInBytes-BB@0x0 : 
+	0       (00000000) new-instance         v1, Landroid/app/ActivityManager$MemoryInfo;
+	1       (00000004) invoke-direct        v1, Landroid/app/ActivityManager$MemoryInfo;-><init>()V
+	2       (0000000a) const-string         v0, 'activity'
+	3       (0000000e) invoke-virtual       v2, v0, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	4       (00000014) move-result-object   v0
+	5       (00000016) check-cast           v0, Landroid/app/ActivityManager;
+	6       (0000001a) invoke-virtual       v0, v1, Landroid/app/ActivityManager;->getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V
+	7       (00000020) iget-wide            v0, v1, Landroid/app/ActivityManager$MemoryInfo;->availMem J
+	8       (00000024) return-wide          v0
+

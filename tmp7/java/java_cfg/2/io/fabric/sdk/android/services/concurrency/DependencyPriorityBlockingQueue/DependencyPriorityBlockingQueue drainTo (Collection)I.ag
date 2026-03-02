@@ -1,0 +1,46 @@
+# Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->drainTo(Ljava/util/Collection;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.util.Collection
+#
+# - return:int
+
+drainTo-BB@0x0 : [ drainTo-BB@0x20 ]
+	0       (00000000) iget-object          v0, v2, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->lock Ljava/util/concurrent/locks/ReentrantLock;
+	1       (00000004) invoke-virtual       v0, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+	2       (0000000a) invoke-super         v2, v3, Ljava/util/concurrent/PriorityBlockingQueue;->drainTo(Ljava/util/Collection;)I
+	3       (00000010) move-result          v0
+	4       (00000012) iget-object          v1, v2, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->blockedQueue Ljava/util/Queue;
+	5       (00000016) invoke-interface     v1, Ljava/util/Queue;->size()I
+	6       (0000001c) move-result          v1
+	7       (0000001e) add-int/2addr        v0, v1
+	0:41
+	(Ljava/lang/Throwable; -> 44 drainTo-BB@0x44)
+
+drainTo-BB@0x20 : [ drainTo-BB@0x30 drainTo-BB@0x52 ]
+	8       (00000020) iget-object          v1, v2, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->blockedQueue Ljava/util/Queue;
+	9       (00000024) invoke-interface     v1, Ljava/util/Queue;->isEmpty()Z
+	10      (0000002a) move-result          v1
+	11      (0000002c) if-nez               v1, +13
+	0:41
+	(Ljava/lang/Throwable; -> 44 drainTo-BB@0x44)
+
+drainTo-BB@0x30 : [ drainTo-BB@0x20 ]
+	12      (00000030) iget-object          v1, v2, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->blockedQueue Ljava/util/Queue;
+	13      (00000034) invoke-interface     v1, Ljava/util/Queue;->poll()Ljava/lang/Object;
+	14      (0000003a) move-result-object   v1
+	15      (0000003c) invoke-interface     v3, v1, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+	16      (00000042) goto                 -11
+
+drainTo-BB@0x44 : 
+	17      (00000044) move-exception       v0
+	18      (00000046) iget-object          v1, v2, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->lock Ljava/util/concurrent/locks/ReentrantLock;
+	19      (0000004a) invoke-virtual       v1, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+	20      (00000050) throw                v0
+
+drainTo-BB@0x52 : 
+	21      (00000052) iget-object          v1, v2, Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;->lock Ljava/util/concurrent/locks/ReentrantLock;
+	22      (00000056) invoke-virtual       v1, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+	23      (0000005c) return               v0
+

@@ -1,0 +1,16 @@
+# Lorg/apache/commons/io/EndianUtils;->readSwappedFloat([B I)F [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:byte[]
+# - v2:int
+#
+# - return:float
+
+readSwappedFloat-BB@0x0 : 
+	0       (00000000) invoke-static        v1, v2, Lorg/apache/commons/io/EndianUtils;->readSwappedInteger([B I)I
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-static        v0, Ljava/lang/Float;->intBitsToFloat(I)F
+	3       (0000000e) move-result          v0
+	4       (00000010) return               v0
+

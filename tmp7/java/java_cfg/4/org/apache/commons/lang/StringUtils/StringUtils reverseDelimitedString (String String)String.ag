@@ -1,0 +1,35 @@
+# Lorg/apache/commons/lang/StringUtils;->reverseDelimitedString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:java.lang.String
+#
+# - return:java.lang.String
+
+reverseDelimitedString-BB@0x0 : [ reverseDelimitedString-BB@0x4 reverseDelimitedString-BB@0x8 ]
+	0       (00000000) if-nez               v2, +4
+
+reverseDelimitedString-BB@0x4 : [ reverseDelimitedString-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+reverseDelimitedString-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+reverseDelimitedString-BB@0x8 : [ reverseDelimitedString-BB@0x1a reverseDelimitedString-BB@0x28 ]
+	3       (00000008) invoke-static        v2, v3, Lorg/apache/commons/lang/StringUtils;->split(Ljava/lang/String; Ljava/lang/String;)[Ljava/lang/String;
+	4       (0000000e) move-result-object   v0
+	5       (00000010) invoke-static        v0, Lorg/apache/commons/lang/ArrayUtils;->reverse([Ljava/lang/Object;)V
+	6       (00000016) if-nez               v3, +9
+
+reverseDelimitedString-BB@0x1a : [ reverseDelimitedString-BB@0x6 ]
+	7       (0000001a) const/16             v1, 32
+	8       (0000001e) invoke-static        v0, v1, Lorg/apache/commons/lang/StringUtils;->join([Ljava/lang/Object; C)Ljava/lang/String;
+	9       (00000024) move-result-object   v0
+	10      (00000026) goto                 -10
+
+reverseDelimitedString-BB@0x28 : [ reverseDelimitedString-BB@0x6 ]
+	11      (00000028) invoke-static        v0, v3, Lorg/apache/commons/lang/StringUtils;->join([Ljava/lang/Object; Ljava/lang/String;)Ljava/lang/String;
+	12      (0000002e) move-result-object   v0
+	13      (00000030) goto                 -15
+

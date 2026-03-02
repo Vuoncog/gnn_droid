@@ -1,0 +1,21 @@
+# La/a/b/a/b/b/j/i/c;->a(La/a/b/a/b/a/h;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:a.a.b.a.b.a.h
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x16 a-BB@0x1c ]
+	0       (00000000) invoke-super         v1, v2, La/a/b/a/b/a/d/b;->a(La/a/b/a/b/a/h;)V
+	1       (00000006) iget-object          v0, v1, La/a/b/a/b/b/j/i/c;->b Ljava/util/List;
+	2       (0000000a) invoke-interface     v0, Ljava/util/List;->size()I
+	3       (00000010) move-result          v0
+	4       (00000012) if-nez               v0, +5
+
+a-BB@0x16 : [ a-BB@0x1c ]
+	5       (00000016) invoke-direct        v1, La/a/b/a/b/b/j/i/c;->c()V
+
+a-BB@0x1c : 
+	6       (0000001c) return-void          
+

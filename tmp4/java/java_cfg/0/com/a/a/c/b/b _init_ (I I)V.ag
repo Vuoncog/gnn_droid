@@ -1,0 +1,35 @@
+# Lcom/a/a/c/b;-><init>(I I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xc <init>-BB@0x10 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	2       (00000008) if-lt                v3, v0, +4
+
+<init>-BB@0xc : [ <init>-BB@0x10 <init>-BB@0x20 ]
+	3       (0000000c) if-ge                v4, v0, +a
+
+<init>-BB@0x10 : 
+	4       (00000010) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	5       (00000014) const-string         v1, 'Both dimensions must be greater than 0'
+	6       (00000018) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	7       (0000001e) throw                v0
+
+<init>-BB@0x20 : 
+	8       (00000020) iput                 v3, v2, Lcom/a/a/c/b;->a I
+	9       (00000024) iput                 v4, v2, Lcom/a/a/c/b;->b I
+	10      (00000028) add-int/lit8         v0, v3, 31
+	11      (0000002c) div-int/lit8         v0, v0, 32
+	12      (00000030) iput                 v0, v2, Lcom/a/a/c/b;->c I
+	13      (00000034) iget                 v0, v2, Lcom/a/a/c/b;->c I
+	14      (00000038) mul-int/2addr        v0, v4
+	15      (0000003a) new-array            v0, v0, [I
+	16      (0000003e) iput-object          v0, v2, Lcom/a/a/c/b;->d [I
+	17      (00000042) return-void          
+

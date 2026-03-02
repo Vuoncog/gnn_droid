@@ -1,0 +1,38 @@
+# Lio/fabric/sdk/android/Fabric;->addToKitMap(Ljava/util/Map; Ljava/util/Collection;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.util.Map
+# - v4:java.util.Collection
+#
+# - return:void
+
+addToKitMap-BB@0x0 : [ addToKitMap-BB@0x8 ]
+	0       (00000000) invoke-interface     v4, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+	1       (00000006) move-result-object   v1
+
+addToKitMap-BB@0x8 : [ addToKitMap-BB@0x14 addToKitMap-BB@0x4a ]
+	2       (00000008) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +1d
+
+addToKitMap-BB@0x14 : [ addToKitMap-BB@0x36 addToKitMap-BB@0x8 ]
+	5       (00000014) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, Lio/fabric/sdk/android/Kit;
+	8       (00000020) invoke-virtual       v0, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	9       (00000026) move-result-object   v2
+	10      (00000028) invoke-interface     v3, v2, v0, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	11      (0000002e) instance-of          v2, v0, Lio/fabric/sdk/android/KitGroup;
+	12      (00000032) if-eqz               v2, -15
+
+addToKitMap-BB@0x36 : [ addToKitMap-BB@0x8 ]
+	13      (00000036) check-cast           v0, Lio/fabric/sdk/android/KitGroup;
+	14      (0000003a) invoke-interface     v0, Lio/fabric/sdk/android/KitGroup;->getKits()Ljava/util/Collection;
+	15      (00000040) move-result-object   v0
+	16      (00000042) invoke-static        v3, v0, Lio/fabric/sdk/android/Fabric;->addToKitMap(Ljava/util/Map; Ljava/util/Collection;)V
+	17      (00000048) goto                 -20
+
+addToKitMap-BB@0x4a : 
+	18      (0000004a) return-void          
+

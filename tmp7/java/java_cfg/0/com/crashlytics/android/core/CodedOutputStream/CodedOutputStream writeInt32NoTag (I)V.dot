@@ -1,0 +1,62 @@
+digraph {
+	graph [bb="0,0,1486,357",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_857a2f24083c23c977772aba67f89419 {
+		graph [bb="8,8,1478,349",
+			label="Lcom/crashlytics/android/core/CodedOutputStream;.writeInt32NoTag->(I)V\nLocal registers v0 ... v2\nparam v3 = int\nreturn = void",
+			lheight=0.83,
+			lp="743,315",
+			lwidth=6.86
+		];
+		struct_38e5c21c307c0e148435b1558d6f044b	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ltz </FONT> <FONT color="#999933">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="450,249.5",
+			width=2];
+		struct_78f430b641c8f474c87b780c4b5f318f	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v2</FONT>, <FONT color="#999933">v3</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeRawVarint32(I)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="367,144.5",
+			width=9.75];
+		struct_38e5c21c307c0e148435b1558d6f044b:tail -> struct_78f430b641c8f474c87b780c4b5f318f:header	[color=red,
+			pos="e,37,161.5 388,234.5 351.12,234.5 81.694,206.07 41.904,170.25"];
+		struct_750c8ecd864104378263a52eb12a98aa	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">int-to-long </FONT> <FONT color="#7F7F99">v0</FONT>, <FONT color="#999933">v3</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8C8C66">v2</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#7272CC">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeRawVarint64(J)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1103,144.5",
+			width=10.194];
+		struct_38e5c21c307c0e148435b1558d6f044b:tail -> struct_750c8ecd864104378263a52eb12a98aa:header	[color=green,
+			pos="e,746,180.5 399,231.5 399,158.03 656.7,211.34 727,190 731.52,188.63 733.91,186.25 736.35,184.22"];
+		struct_7db158f3a29e29ed003e0ef079fafcc2	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="448,39.5",
+			width=1.9444];
+		struct_78f430b641c8f474c87b780c4b5f318f:tail -> struct_7db158f3a29e29ed003e0ef079fafcc2:header	[color=blue,
+			pos="e,388,53.5 37,126.5 37,89.077 311.63,57.541 377.91,53.859"];
+		struct_750c8ecd864104378263a52eb12a98aa:tail -> struct_7db158f3a29e29ed003e0ef079fafcc2:header	[color=blue,
+			pos="e,399,56.5 746,107.5 736.75,107.5 735.9,101.51 727,99 659.71,80.033 423.68,125.19 400.79,66.399"];
+	}
+}

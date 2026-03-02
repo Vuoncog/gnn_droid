@@ -1,0 +1,45 @@
+# Lorg/apache/commons/lang/StringUtils;->isBlank(Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:boolean
+
+isBlank-BB@0x0 : [ isBlank-BB@0x8 isBlank-BB@0x14 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v0, 0
+	2       (00000004) if-eqz               v5, +8
+
+isBlank-BB@0x8 : [ isBlank-BB@0x14 isBlank-BB@0x18 ]
+	3       (00000008) invoke-virtual       v5, Ljava/lang/String;->length()I
+	4       (0000000e) move-result          v3
+	5       (00000010) if-nez               v3, +4
+
+isBlank-BB@0x14 : [ isBlank-BB@0x16 ]
+	6       (00000014) move                 v0, v1
+
+isBlank-BB@0x16 : 
+	7       (00000016) return               v0
+
+isBlank-BB@0x18 : [ isBlank-BB@0x1a ]
+	8       (00000018) move                 v2, v0
+
+isBlank-BB@0x1a : [ isBlank-BB@0x1e isBlank-BB@0x38 ]
+	9       (0000001a) if-ge                v2, v3, +f
+
+isBlank-BB@0x1e : [ isBlank-BB@0x32 isBlank-BB@0x16 ]
+	10      (0000001e) invoke-virtual       v5, v2, Ljava/lang/String;->charAt(I)C
+	11      (00000024) move-result          v4
+	12      (00000026) invoke-static        v4, Ljava/lang/Character;->isWhitespace(C)Z
+	13      (0000002c) move-result          v4
+	14      (0000002e) if-eqz               v4, -c
+
+isBlank-BB@0x32 : [ isBlank-BB@0x1a ]
+	15      (00000032) add-int/lit8         v2, v2, 1
+	16      (00000036) goto                 -e
+
+isBlank-BB@0x38 : [ isBlank-BB@0x16 ]
+	17      (00000038) move                 v0, v1
+	18      (0000003a) goto                 -12
+

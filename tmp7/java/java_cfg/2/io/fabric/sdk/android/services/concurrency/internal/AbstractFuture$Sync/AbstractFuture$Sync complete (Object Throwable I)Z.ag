@@ -1,0 +1,44 @@
+# Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->complete(Ljava/lang/Object; Ljava/lang/Throwable; I)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object
+# - v5:java.lang.Throwable
+# - v6:int
+#
+# - return:boolean
+
+complete-BB@0x0 : [ complete-BB@0x10 complete-BB@0x36 ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v0, 0
+	2       (00000004) invoke-virtual       v3, v0, v2, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->compareAndSetState(I I)Z
+	3       (0000000a) move-result          v0
+	4       (0000000c) if-eqz               v0, +15
+
+complete-BB@0x10 : [ complete-BB@0x1c complete-BB@0x2a ]
+	5       (00000010) iput-object          v4, v3, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->value Ljava/lang/Object;
+	6       (00000014) and-int/lit8         v1, v6, 12
+	7       (00000018) if-eqz               v1, +9
+
+complete-BB@0x1c : [ complete-BB@0x2a ]
+	8       (0000001c) new-instance         v5, Ljava/util/concurrent/CancellationException;
+	9       (00000020) const-string         v1, 'Future.cancel() was called.'
+	10      (00000024) invoke-direct        v5, v1, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+
+complete-BB@0x2a : [ complete-BB@0x34 ]
+	11      (0000002a) iput-object          v5, v3, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->exception Ljava/lang/Throwable;
+	12      (0000002e) invoke-virtual       v3, v6, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->releaseShared(I)Z
+
+complete-BB@0x34 : 
+	13      (00000034) return               v0
+
+complete-BB@0x36 : [ complete-BB@0x42 complete-BB@0x34 ]
+	14      (00000036) invoke-virtual       v3, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->getState()I
+	15      (0000003c) move-result          v1
+	16      (0000003e) if-ne                v1, v2, -5
+
+complete-BB@0x42 : [ complete-BB@0x34 ]
+	17      (00000042) const/4              v1, -1
+	18      (00000044) invoke-virtual       v3, v1, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->acquireShared(I)V
+	19      (0000004a) goto                 -b
+

@@ -1,0 +1,33 @@
+# Lorg/apache/commons/lang/exception/NestableException;->getMessage()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.lang.String
+
+getMessage-BB@0x0 : [ getMessage-BB@0xc getMessage-BB@0x16 ]
+	0       (00000000) invoke-super         v1, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +7
+
+getMessage-BB@0xc : [ getMessage-BB@0x14 ]
+	3       (0000000c) invoke-super         v1, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+	4       (00000012) move-result-object   v0
+
+getMessage-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+getMessage-BB@0x16 : [ getMessage-BB@0x1e getMessage-BB@0x2c ]
+	6       (00000016) iget-object          v0, v1, Lorg/apache/commons/lang/exception/NestableException;->cause Ljava/lang/Throwable;
+	7       (0000001a) if-eqz               v0, +9
+
+getMessage-BB@0x1e : [ getMessage-BB@0x14 ]
+	8       (0000001e) iget-object          v0, v1, Lorg/apache/commons/lang/exception/NestableException;->cause Ljava/lang/Throwable;
+	9       (00000022) invoke-virtual       v0, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+	10      (00000028) move-result-object   v0
+	11      (0000002a) goto                 -b
+
+getMessage-BB@0x2c : [ getMessage-BB@0x14 ]
+	12      (0000002c) const/4              v0, 0
+	13      (0000002e) goto                 -d
+

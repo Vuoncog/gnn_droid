@@ -1,0 +1,44 @@
+# Lcom/a/a/g/m;->b(Lcom/a/a/c/a;)[I [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:com.a.a.c.a
+#
+# - return:int[]
+
+b-BB@0x0 : [ b-BB@0x6 ]
+	0       (00000000) invoke-virtual       v6, Lcom/a/a/c/a;->e()V
+
+b-BB@0x6 : 
+	1       (00000006) invoke-static        v6, Lcom/a/a/g/m;->c(Lcom/a/a/c/a;)I
+	2       (0000000c) move-result          v0
+	3       (0000000e) sget-object          v1, Lcom/a/a/g/m;->e [I
+	4       (00000012) invoke-static        v6, v0, v1, Lcom/a/a/g/m;->c(Lcom/a/a/c/a; I [I)[I
+	5       (00000018) move-result-object   v0
+	6       (0000001a) const/4              v1, 0
+	7       (0000001c) aget                 v1, v0, v1
+	8       (00000020) invoke-direct        v5, v6, v1, Lcom/a/a/g/m;->a(Lcom/a/a/c/a; I)V
+	9       (00000026) const/4              v1, 0
+	10      (00000028) aget                 v1, v0, v1
+	11      (0000002c) const/4              v2, 0
+	12      (0000002e) invoke-virtual       v6, Lcom/a/a/c/a;->a()I
+	13      (00000034) move-result          v3
+	14      (00000036) const/4              v4, 1
+	15      (00000038) aget                 v4, v0, v4
+	16      (0000003c) sub-int/2addr        v3, v4
+	17      (0000003e) aput                 v3, v0, v2
+	18      (00000042) const/4              v2, 1
+	19      (00000044) invoke-virtual       v6, Lcom/a/a/c/a;->a()I
+	20      (0000004a) move-result          v3
+	21      (0000004c) sub-int              v1, v3, v1
+	22      (00000050) aput                 v1, v0, v2
+	23      (00000054) invoke-virtual       v6, Lcom/a/a/c/a;->e()V
+	24      (0000005a) return-object        v0
+	6:53
+	(Ljava/lang/Throwable; -> 5c b-BB@0x5c)
+
+b-BB@0x5c : 
+	25      (0000005c) move-exception       v0
+	26      (0000005e) invoke-virtual       v6, Lcom/a/a/c/a;->e()V
+	27      (00000064) throw                v0
+

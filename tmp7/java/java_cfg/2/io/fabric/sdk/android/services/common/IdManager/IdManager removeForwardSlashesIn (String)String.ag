@@ -1,0 +1,15 @@
+# Lio/fabric/sdk/android/services/common/IdManager;->removeForwardSlashesIn(Ljava/lang/String;)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:java.lang.String
+
+removeForwardSlashesIn-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lio/fabric/sdk/android/services/common/IdManager;->FORWARD_SLASH_REGEX Ljava/lang/String;
+	1       (00000004) const-string         v1, ''
+	2       (00000008) invoke-virtual       v3, v0, v1, Ljava/lang/String;->replaceAll(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) return-object        v0
+

@@ -1,0 +1,65 @@
+# Lorg/apache/commons/io/IOUtils;->skip(Ljava/io/Reader; J)J [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:java.io.Reader
+# - v11:long
+#
+# - return:long
+
+skip-BB@0x0 : [ skip-BB@0xc skip-BB@0x3e ]
+	0       (00000000) const-wide/16        v6, 0 # [0.0]
+	1       (00000004) cmp-long             v0, v10, v6
+	2       (00000008) if-gez               v0, +1b
+
+skip-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	4       (00000010) new-instance         v1, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) const-string         v2, 'Skip count must be non-negative, actual: '
+	7       (0000001e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v1
+	9       (00000026) invoke-virtual       v1, v10, v11, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000034) move-result-object   v1
+	13      (00000036) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	14      (0000003c) throw                v0
+
+skip-BB@0x3e : [ skip-BB@0x46 skip-BB@0x52 ]
+	15      (0000003e) sget-object          v0, Lorg/apache/commons/io/IOUtils;->SKIP_CHAR_BUFFER [C
+	16      (00000042) if-nez               v0, +8
+
+skip-BB@0x46 : [ skip-BB@0x52 ]
+	17      (00000046) const/16             v0, 2048
+	18      (0000004a) new-array            v0, v0, [C
+	19      (0000004e) sput-object          v0, Lorg/apache/commons/io/IOUtils;->SKIP_CHAR_BUFFER [C
+
+skip-BB@0x52 : [ skip-BB@0x54 ]
+	20      (00000052) move-wide            v0, v10
+
+skip-BB@0x54 : [ skip-BB@0x5c skip-BB@0x82 ]
+	21      (00000054) cmp-long             v2, v0, v6
+	22      (00000058) if-lez               v2, +15
+
+skip-BB@0x5c : [ skip-BB@0x82 skip-BB@0x88 ]
+	23      (0000005c) sget-object          v2, Lorg/apache/commons/io/IOUtils;->SKIP_CHAR_BUFFER [C
+	24      (00000060) const/4              v3, 0
+	25      (00000062) const-wide/16        v4, 2048 # [2048.0]
+	26      (00000066) invoke-static        v0, v1, v4, v5, Ljava/lang/Math;->min(J J)J
+	27      (0000006c) move-result-wide     v4
+	28      (0000006e) long-to-int          v4, v4
+	29      (00000070) invoke-virtual       v9, v2, v3, v4, Ljava/io/Reader;->read([C I I)I
+	30      (00000076) move-result          v2
+	31      (00000078) int-to-long          v2, v2
+	32      (0000007a) cmp-long             v4, v2, v6
+	33      (0000007e) if-gez               v4, +5
+
+skip-BB@0x82 : 
+	34      (00000082) sub-long             v0, v10, v0
+	35      (00000086) return-wide          v0
+
+skip-BB@0x88 : [ skip-BB@0x54 ]
+	36      (00000088) sub-long/2addr       v0, v2
+	37      (0000008a) goto                 -1b
+

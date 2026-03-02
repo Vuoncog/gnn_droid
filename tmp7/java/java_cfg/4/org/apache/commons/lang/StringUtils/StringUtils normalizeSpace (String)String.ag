@@ -1,0 +1,72 @@
+# Lorg/apache/commons/lang/StringUtils;->normalizeSpace(Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:java.lang.String
+
+normalizeSpace-BB@0x0 : [ normalizeSpace-BB@0xc normalizeSpace-BB@0x1a ]
+	0       (00000000) invoke-static        v5, Lorg/apache/commons/lang/StringUtils;->strip(Ljava/lang/String;)Ljava/lang/String;
+	1       (00000006) move-result-object   v1
+	2       (00000008) if-eqz               v1, +9
+
+normalizeSpace-BB@0xc : [ normalizeSpace-BB@0x1a normalizeSpace-BB@0x1e ]
+	3       (0000000c) invoke-virtual       v1, Ljava/lang/String;->length()I
+	4       (00000012) move-result          v0
+	5       (00000014) const/4              v2, 2
+	6       (00000016) if-gt                v0, v2, +4
+
+normalizeSpace-BB@0x1a : [ normalizeSpace-BB@0x1c ]
+	7       (0000001a) move-object          v0, v1
+
+normalizeSpace-BB@0x1c : 
+	8       (0000001c) return-object        v0
+
+normalizeSpace-BB@0x1e : [ normalizeSpace-BB@0x32 ]
+	9       (0000001e) new-instance         v2, Lorg/apache/commons/lang/text/StrBuilder;
+	10      (00000022) invoke-virtual       v1, Ljava/lang/String;->length()I
+	11      (00000028) move-result          v0
+	12      (0000002a) invoke-direct        v2, v0, Lorg/apache/commons/lang/text/StrBuilder;-><init>(I)V
+	13      (00000030) const/4              v0, 0
+
+normalizeSpace-BB@0x32 : [ normalizeSpace-BB@0x3e normalizeSpace-BB@0x86 ]
+	14      (00000032) invoke-virtual       v1, Ljava/lang/String;->length()I
+	15      (00000038) move-result          v3
+	16      (0000003a) if-ge                v0, v3, +26
+
+normalizeSpace-BB@0x3e : [ normalizeSpace-BB@0x52 normalizeSpace-BB@0x7e ]
+	17      (0000003e) invoke-virtual       v1, v0, Ljava/lang/String;->charAt(I)C
+	18      (00000044) move-result          v3
+	19      (00000046) invoke-static        v3, Ljava/lang/Character;->isWhitespace(C)Z
+	20      (0000004c) move-result          v4
+	21      (0000004e) if-eqz               v4, +18
+
+normalizeSpace-BB@0x52 : [ normalizeSpace-BB@0x56 normalizeSpace-BB@0x78 ]
+	22      (00000052) if-lez               v0, +13
+
+normalizeSpace-BB@0x56 : [ normalizeSpace-BB@0x6e normalizeSpace-BB@0x78 ]
+	23      (00000056) add-int/lit8         v3, v0, -1
+	24      (0000005a) invoke-virtual       v1, v3, Ljava/lang/String;->charAt(I)C
+	25      (00000060) move-result          v3
+	26      (00000062) invoke-static        v3, Ljava/lang/Character;->isWhitespace(C)Z
+	27      (00000068) move-result          v3
+	28      (0000006a) if-nez               v3, +7
+
+normalizeSpace-BB@0x6e : [ normalizeSpace-BB@0x78 ]
+	29      (0000006e) const/16             v3, 32
+	30      (00000072) invoke-virtual       v2, v3, Lorg/apache/commons/lang/text/StrBuilder;->append(C)Lorg/apache/commons/lang/text/StrBuilder;
+
+normalizeSpace-BB@0x78 : [ normalizeSpace-BB@0x32 ]
+	31      (00000078) add-int/lit8         v0, v0, 1
+	32      (0000007c) goto                 -25
+
+normalizeSpace-BB@0x7e : [ normalizeSpace-BB@0x78 ]
+	33      (0000007e) invoke-virtual       v2, v3, Lorg/apache/commons/lang/text/StrBuilder;->append(C)Lorg/apache/commons/lang/text/StrBuilder;
+	34      (00000084) goto                 -6
+
+normalizeSpace-BB@0x86 : [ normalizeSpace-BB@0x1c ]
+	35      (00000086) invoke-virtual       v2, Lorg/apache/commons/lang/text/StrBuilder;->toString()Ljava/lang/String;
+	36      (0000008c) move-result-object   v0
+	37      (0000008e) goto                 -39
+

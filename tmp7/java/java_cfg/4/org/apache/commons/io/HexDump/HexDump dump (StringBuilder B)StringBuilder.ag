@@ -1,0 +1,31 @@
+# Lorg/apache/commons/io/HexDump;->dump(Ljava/lang/StringBuilder; B)Ljava/lang/StringBuilder; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.StringBuilder
+# - v5:byte
+#
+# - return:java.lang.StringBuilder
+
+dump-BB@0x0 : [ dump-BB@0x2 ]
+	0       (00000000) const/4              v0, 0
+
+dump-BB@0x2 : [ dump-BB@0x8 dump-BB@0x30 ]
+	1       (00000002) const/4              v1, 2
+	2       (00000004) if-ge                v0, v1, +16
+
+dump-BB@0x8 : [ dump-BB@0x2 ]
+	3       (00000008) sget-object          v1, Lorg/apache/commons/io/HexDump;->_hexcodes [C
+	4       (0000000c) sget-object          v2, Lorg/apache/commons/io/HexDump;->_shifts [I
+	5       (00000010) add-int/lit8         v3, v0, 6
+	6       (00000014) aget                 v2, v2, v3
+	7       (00000018) shr-int              v2, v5, v2
+	8       (0000001c) and-int/lit8         v2, v2, 15
+	9       (00000020) aget-char            v1, v1, v2
+	10      (00000024) invoke-virtual       v4, v1, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	11      (0000002a) add-int/lit8         v0, v0, 1
+	12      (0000002e) goto                 -16
+
+dump-BB@0x30 : 
+	13      (00000030) return-object        v4
+

@@ -1,0 +1,50 @@
+# Lcom/a/a/g/v;->a(I Lcom/a/a/c/a; [I)Lcom/a/a/r; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:int
+# - v13:com.a.a.c.a
+# - v14:int[]
+#
+# - return:com.a.a.r
+
+a-BB@0x0 : [ a-BB@0x74 a-BB@0x7a ]
+	0       (00000000) const/4              v10, 1
+	1       (00000002) const/4              v9, 0
+	2       (00000004) iget-object          v0, v11, Lcom/a/a/g/v;->c Ljava/lang/StringBuilder;
+	3       (00000008) invoke-virtual       v0, v9, Ljava/lang/StringBuilder;->setLength(I)V
+	4       (0000000e) invoke-virtual       v11, v13, v14, v0, Lcom/a/a/g/v;->a(Lcom/a/a/c/a; [I Ljava/lang/StringBuilder;)I
+	5       (00000014) move-result          v1
+	6       (00000016) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) invoke-static        v0, Lcom/a/a/g/v;->a(Ljava/lang/String;)Ljava/util/Map;
+	9       (00000024) move-result-object   v2
+	10      (00000026) new-instance         v3, Lcom/a/a/r;
+	11      (0000002a) const/4              v4, 0
+	12      (0000002c) const/4              v5, 2
+	13      (0000002e) new-array            v5, v5, [Lcom/a/a/t;
+	14      (00000032) new-instance         v6, Lcom/a/a/t;
+	15      (00000036) aget                 v7, v14, v9
+	16      (0000003a) aget                 v8, v14, v10
+	17      (0000003e) add-int/2addr        v7, v8
+	18      (00000040) int-to-float         v7, v7
+	19      (00000042) const/high16         v8, 16384 # [2.0]
+	20      (00000046) div-float/2addr      v7, v8
+	21      (00000048) int-to-float         v8, v12
+	22      (0000004a) invoke-direct        v6, v7, v8, Lcom/a/a/t;-><init>(F F)V
+	23      (00000050) aput-object          v6, v5, v9
+	24      (00000054) new-instance         v6, Lcom/a/a/t;
+	25      (00000058) int-to-float         v1, v1
+	26      (0000005a) int-to-float         v7, v12
+	27      (0000005c) invoke-direct        v6, v1, v7, Lcom/a/a/t;-><init>(F F)V
+	28      (00000062) aput-object          v6, v5, v10
+	29      (00000066) sget-object          v1, Lcom/a/a/a;->q Lcom/a/a/a;
+	30      (0000006a) invoke-direct        v3, v0, v4, v5, v1, Lcom/a/a/r;-><init>(Ljava/lang/String; [B [Lcom/a/a/t; Lcom/a/a/a;)V
+	31      (00000070) if-eqz               v2, +5
+
+a-BB@0x74 : [ a-BB@0x7a ]
+	32      (00000074) invoke-virtual       v3, v2, Lcom/a/a/r;->a(Ljava/util/Map;)V
+
+a-BB@0x7a : 
+	33      (0000007a) return-object        v3
+

@@ -1,0 +1,66 @@
+# La/a/b/a/b/a/c/c;->a(La/a/b/a/i/e/a; La/a/b/a/b/a/g;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:a.a.b.a.i.e.a
+# - v4:a.a.b.a.b.a.g
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x10 a-BB@0x50 ]
+	0       (00000000) invoke-interface     v4, La/a/b/a/b/a/g;->e()Ljava/lang/Object;
+	1       (00000006) move-result-object   v0
+	2       (00000008) instance-of          v1, v0, Ljava/lang/Float;
+	3       (0000000c) if-eqz               v1, +22
+
+a-BB@0x10 : [ a-BB@0x1c a-BB@0x2a ]
+	4       (00000010) iget-object          v1, v3, La/a/b/a/i/e/a;->c Ljava/lang/Object;
+	5       (00000014) instance-of          v1, v1, Ljava/lang/Float;
+	6       (00000018) if-eqz               v1, +9
+
+a-BB@0x1c : [ a-BB@0x20 ]
+	7       (0000001c) iget-object          v0, v3, La/a/b/a/i/e/a;->c Ljava/lang/Object;
+
+a-BB@0x20 : 
+	8       (00000020) const/4              v1, 0
+	9       (00000022) invoke-interface     v4, v0, v1, La/a/b/a/b/a/g;->a(Ljava/lang/Object; Ljava/lang/Object;)V
+	10      (00000028) return-void          
+
+a-BB@0x2a : [ a-BB@0x36 a-BB@0x20 ]
+	11      (0000002a) iget-object          v1, v3, La/a/b/a/i/e/a;->c Ljava/lang/Object;
+	12      (0000002e) instance-of          v1, v1, Ljava/lang/Integer;
+	13      (00000032) if-eqz               v1, -9
+
+a-BB@0x36 : [ a-BB@0x20 ]
+	14      (00000036) iget-object          v0, v3, La/a/b/a/i/e/a;->c Ljava/lang/Object;
+	15      (0000003a) check-cast           v0, Ljava/lang/Integer;
+	16      (0000003e) invoke-virtual       v0, Ljava/lang/Integer;->floatValue()F
+	17      (00000044) move-result          v0
+	18      (00000046) invoke-static        v0, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+	19      (0000004c) move-result-object   v0
+	20      (0000004e) goto                 -17
+
+a-BB@0x50 : [ a-BB@0x58 a-BB@0x5e ]
+	21      (00000050) instance-of          v1, v0, Ljava/lang/Boolean;
+	22      (00000054) if-eqz               v1, +5
+
+a-BB@0x58 : [ a-BB@0x20 ]
+	23      (00000058) iget-object          v0, v3, La/a/b/a/i/e/a;->c Ljava/lang/Object;
+	24      (0000005c) goto                 -1e
+
+a-BB@0x5e : [ a-BB@0x66 a-BB@0x6c ]
+	25      (0000005e) instance-of          v1, v0, Ljava/lang/Integer;
+	26      (00000062) if-eqz               v1, +5
+
+a-BB@0x66 : [ a-BB@0x20 ]
+	27      (00000066) iget-object          v0, v3, La/a/b/a/i/e/a;->c Ljava/lang/Object;
+	28      (0000006a) goto                 -25
+
+a-BB@0x6c : [ a-BB@0x74 a-BB@0x20 ]
+	29      (0000006c) instance-of          v1, v0, Ljava/lang/String;
+	30      (00000070) if-eqz               v1, -28
+
+a-BB@0x74 : [ a-BB@0x20 ]
+	31      (00000074) iget-object          v0, v3, La/a/b/a/i/e/a;->c Ljava/lang/Object;
+	32      (00000078) goto                 -2c
+

@@ -1,0 +1,100 @@
+# Lcom/unlocker/purchase/c$5;->a(Lcom/unlocker/billing/b; Lcom/unlocker/billing/d;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:com.unlocker.billing.b
+# - v9:com.unlocker.billing.d
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x14 a-BB@0x3a ]
+	0       (00000000) const/4              v6, 1
+	1       (00000002) const/4              v5, 0
+	2       (00000004) iget-object          v0, v7, Lcom/unlocker/purchase/c$5;->b Lcom/unlocker/purchase/c;
+	3       (00000008) invoke-static        v0, Lcom/unlocker/purchase/c;->c(Lcom/unlocker/purchase/c;)Z
+	4       (0000000e) move-result          v0
+	5       (00000010) if-eqz               v0, +15
+
+a-BB@0x14 : [ a-BB@0x38 ]
+	6       (00000014) iget-object          v0, v7, Lcom/unlocker/purchase/c$5;->b Lcom/unlocker/purchase/c;
+	7       (00000018) const-string         v1, 'beginPurchase.launchPurchaseFlow'
+	8       (0000001c) const-string         v2, 'manager is stopped'
+	9       (00000020) invoke-static        v0, v1, v2, Lcom/unlocker/purchase/c;->a(Lcom/unlocker/purchase/c; Ljava/lang/String; Ljava/lang/String;)V
+	10      (00000026) iget-object          v0, v7, Lcom/unlocker/purchase/c$5;->a Lcom/unlocker/b;
+	11      (0000002a) invoke-static        v5, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	12      (00000030) move-result-object   v1
+	13      (00000032) invoke-interface     v0, v1, v5, Lcom/unlocker/b;->a(Ljava/lang/Object; Z)V
+
+a-BB@0x38 : 
+	14      (00000038) return-void          
+
+a-BB@0x3a : [ a-BB@0x98 a-BB@0x126 ]
+	15      (0000003a) const-string         v0, 'UNLOCKER-PurchManager'
+	16      (0000003e) const-string         v1, 'Purchase successful: %s; message: %s; code: %d'
+	17      (00000042) const/4              v2, 3
+	18      (00000044) new-array            v2, v2, [Ljava/lang/Object;
+	19      (00000048) invoke-virtual       v8, Lcom/unlocker/billing/b;->c()Z
+	20      (0000004e) move-result          v3
+	21      (00000050) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	22      (00000056) move-result-object   v3
+	23      (00000058) aput-object          v3, v2, v5
+	24      (0000005c) invoke-virtual       v8, Lcom/unlocker/billing/b;->b()Ljava/lang/String;
+	25      (00000062) move-result-object   v3
+	26      (00000064) aput-object          v3, v2, v6
+	27      (00000068) const/4              v3, 2
+	28      (0000006a) invoke-virtual       v8, Lcom/unlocker/billing/b;->a()I
+	29      (00000070) move-result          v4
+	30      (00000072) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	31      (00000078) move-result-object   v4
+	32      (0000007a) aput-object          v4, v2, v3
+	33      (0000007e) invoke-static        v1, v2, Ljava/lang/String;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	34      (00000084) move-result-object   v1
+	35      (00000086) invoke-static        v0, v1, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	36      (0000008c) invoke-virtual       v8, Lcom/unlocker/billing/b;->c()Z
+	37      (00000092) move-result          v0
+	38      (00000094) if-nez               v0, +49
+
+a-BB@0x98 : [ a-BB@0xa6 a-BB@0x100 ]
+	39      (00000098) invoke-virtual       v8, Lcom/unlocker/billing/b;->a()I
+	40      (0000009e) move-result          v0
+	41      (000000a0) const/4              v1, 7
+	42      (000000a2) if-ne                v0, v1, +2f
+
+a-BB@0xa6 : [ a-BB@0x38 ]
+	43      (000000a6) const-string         v0, 'UNLOCKER-PurchManager'
+	44      (000000aa) const-string         v1, 'Trying to find already owned purchase...'
+	45      (000000ae) invoke-static        v0, v1, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+	46      (000000b4) iget-object          v0, v7, Lcom/unlocker/purchase/c$5;->b Lcom/unlocker/purchase/c;
+	47      (000000b8) iget-object          v1, v7, Lcom/unlocker/purchase/c$5;->a Lcom/unlocker/b;
+	48      (000000bc) invoke-static        v0, v1, Lcom/unlocker/purchase/c;->a(Lcom/unlocker/purchase/c; Lcom/unlocker/b;)V
+	49      (000000c2) iget-object          v0, v7, Lcom/unlocker/purchase/c$5;->b Lcom/unlocker/purchase/c;
+	50      (000000c6) invoke-static        v0, Lcom/unlocker/purchase/c;->e(Lcom/unlocker/purchase/c;)Lcom/unlocker/billing/a;
+	51      (000000cc) move-result-object   v0
+	52      (000000ce) new-array            v1, v6, [Ljava/lang/String;
+	53      (000000d2) iget-object          v2, v7, Lcom/unlocker/purchase/c$5;->b Lcom/unlocker/purchase/c;
+	54      (000000d6) invoke-static        v2, Lcom/unlocker/purchase/c;->f(Lcom/unlocker/purchase/c;)Lcom/unlocker/purchase/Parameters;
+	55      (000000dc) move-result-object   v2
+	56      (000000de) iget-object          v2, v2, Lcom/unlocker/purchase/Parameters;->sku Ljava/lang/String;
+	57      (000000e2) aput-object          v2, v1, v5
+	58      (000000e6) invoke-static        v1, Lcom/google/common/collect/Lists;->newArrayList([Ljava/lang/Object;)Ljava/util/ArrayList;
+	59      (000000ec) move-result-object   v1
+	60      (000000ee) new-instance         v2, Lcom/unlocker/purchase/c$5$3;
+	61      (000000f2) invoke-direct        v2, v7, Lcom/unlocker/purchase/c$5$3;-><init>(Lcom/unlocker/purchase/c$5;)V
+	62      (000000f8) invoke-virtual       v0, v5, v1, v2, Lcom/unlocker/billing/a;->a(Z Ljava/util/List; Lcom/unlocker/billing/a$e;)V
+	63      (000000fe) goto                 -63
+
+a-BB@0x100 : [ a-BB@0x38 ]
+	64      (00000100) iget-object          v0, v7, Lcom/unlocker/purchase/c$5;->b Lcom/unlocker/purchase/c;
+	65      (00000104) const-string         v1, 'beginPurchase.launchPurchaseFlow'
+	66      (00000108) const-string         v2, 'failed to launch'
+	67      (0000010c) invoke-static        v0, v1, v2, Lcom/unlocker/purchase/c;->a(Lcom/unlocker/purchase/c; Ljava/lang/String; Ljava/lang/String;)V
+	68      (00000112) iget-object          v0, v7, Lcom/unlocker/purchase/c$5;->a Lcom/unlocker/b;
+	69      (00000116) invoke-static        v5, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	70      (0000011c) move-result-object   v1
+	71      (0000011e) invoke-interface     v0, v1, v5, Lcom/unlocker/b;->a(Ljava/lang/Object; Z)V
+	72      (00000124) goto                 -76
+
+a-BB@0x126 : [ a-BB@0x38 ]
+	73      (00000126) invoke-direct        v7, v9, Lcom/unlocker/purchase/c$5;->a(Lcom/unlocker/billing/d;)V
+	74      (0000012c) goto                 -7a
+

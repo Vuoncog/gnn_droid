@@ -1,0 +1,30 @@
+# Lcom/a/a/d/c/h;->c(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+c-BB@0x0 : [ c-BB@0x8 c-BB@0x18 ]
+	0       (00000000) iget-object          v0, v4, Lcom/a/a/d/c/h;->h Lcom/a/a/d/c/k;
+	1       (00000004) if-eqz               v0, +a
+
+c-BB@0x8 : [ c-BB@0x18 c-BB@0x32 ]
+	2       (00000008) iget-object          v0, v4, Lcom/a/a/d/c/h;->h Lcom/a/a/d/c/k;
+	3       (0000000c) invoke-virtual       v0, Lcom/a/a/d/c/k;->h()I
+	4       (00000012) move-result          v0
+	5       (00000014) if-le                v5, v0, +f
+
+c-BB@0x18 : [ c-BB@0x32 ]
+	6       (00000018) iget-object          v0, v4, Lcom/a/a/d/c/h;->c Lcom/a/a/d/c/l;
+	7       (0000001c) iget-object          v1, v4, Lcom/a/a/d/c/h;->d Lcom/a/a/f;
+	8       (00000020) iget-object          v2, v4, Lcom/a/a/d/c/h;->e Lcom/a/a/f;
+	9       (00000024) const/4              v3, 1
+	10      (00000026) invoke-static        v5, v0, v1, v2, v3, Lcom/a/a/d/c/k;->a(I Lcom/a/a/d/c/l; Lcom/a/a/f; Lcom/a/a/f; Z)Lcom/a/a/d/c/k;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) iput-object          v0, v4, Lcom/a/a/d/c/h;->h Lcom/a/a/d/c/k;
+
+c-BB@0x32 : 
+	13      (00000032) return-void          
+

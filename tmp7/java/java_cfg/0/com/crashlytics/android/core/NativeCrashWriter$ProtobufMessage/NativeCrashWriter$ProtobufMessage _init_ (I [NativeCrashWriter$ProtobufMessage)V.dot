@@ -1,0 +1,56 @@
+digraph {
+	graph [bb="0,0,1208,438",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_612ea06d06537b1e8aaa2967aab19cbd {
+		graph [bb="8,8,1200,430",
+			label="Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;.<init>->(I [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;)\
+V\nLocal registers v0 ... v0\nparam v1 = int\nparam v2 = com.crashlytics.android.core.NativeCrashWriter$ProtobufMessage[]\nreturn = \
+void",
+			lheight=1.04,
+			lp="604,388.5",
+			lwidth=13.76
+		];
+		struct_77ec1cf233e44b11acd8496fc37dbc3d	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/lang/Object;-&gt;&lt;init&gt;()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput </FONT> <FONT color="#888877">v1</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-&gt;tag I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7777BB">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="347,293.5",
+			width=8.8472];
+		struct_9fad03d5727864da1cf35fdac70eaf06	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#7777BB">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;-&gt;children [Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="604,50.5",
+			width=16.333];
+		struct_77ec1cf233e44b11acd8496fc37dbc3d:tail -> struct_9fad03d5727864da1cf35fdac70eaf06:header	[color=red,
+			pos="e,41,78.5 39,256.5 -36.717,256.5 34.325,165.93 40.57,88.799"];
+		struct_1db5194d331519581ef5b60f3b0c759f	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lcom/crashlytics/android/core/NativeCrashWriter;-&gt;access$000()[Lcom/crashlytics/android/core/NativeCrashWriter$ProtobufMessage;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7777BB">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="570,166.5",
+			width=14.486];
+		struct_77ec1cf233e44b11acd8496fc37dbc3d:tail -> struct_1db5194d331519581ef5b60f3b0c759f:header	[color=green,
+			pos="e,74,205.5 50,253.5 50,233.56 66.771,230.08 72.274,215.55"];
+		struct_1db5194d331519581ef5b60f3b0c759f:tail -> struct_9fad03d5727864da1cf35fdac70eaf06:header	[color=blue,
+			pos="e,41,78.5 74,126.5 74,104.66 50.507,103.93 43.165,88.689"];
+	}
+}

@@ -1,0 +1,115 @@
+# Lcom/ailock/tszlock/TuyaImageManager;->getHeadImageBitmap(Ljava/lang/String;)Landroid/graphics/Bitmap; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+#
+# - return:android.graphics.Bitmap
+
+getHeadImageBitmap-BB@0x0 : [ getHeadImageBitmap-BB@0x6 ]
+	0       (00000000) sget-object          v6, Lcom/ailock/tszlock/TuyaImageManager;->mHardBitmapCache Ljava/util/HashMap;
+	1       (00000004) monitor-enter        v6
+
+getHeadImageBitmap-BB@0x6 : [ getHeadImageBitmap-BB@0x1a getHeadImageBitmap-BB@0x32 ]
+	2       (00000006) sget-object          v5, Lcom/ailock/tszlock/TuyaImageManager;->mHardBitmapCache Ljava/util/HashMap;
+	3       (0000000a) invoke-virtual       v5, v7, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	4       (00000010) move-result-object   v0
+	5       (00000012) check-cast           v0, Landroid/graphics/Bitmap;
+	6       (00000016) if-eqz               v0, +e
+	6:33
+	(Ljava/lang/Throwable; -> 6e getHeadImageBitmap-BB@0x6e)
+
+getHeadImageBitmap-BB@0x1a : [ getHeadImageBitmap-BB@0x30 ]
+	7       (0000001a) sget-object          v5, Lcom/ailock/tszlock/TuyaImageManager;->mHardBitmapCache Ljava/util/HashMap;
+	8       (0000001e) invoke-virtual       v5, v7, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+	9       (00000024) sget-object          v5, Lcom/ailock/tszlock/TuyaImageManager;->mHardBitmapCache Ljava/util/HashMap;
+	10      (00000028) invoke-virtual       v5, v7, v0, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	11      (0000002e) monitor-exit         v6
+	6:33
+	(Ljava/lang/Throwable; -> 6e getHeadImageBitmap-BB@0x6e)
+
+getHeadImageBitmap-BB@0x30 : 
+	12      (00000030) return-object        v0
+	6:33
+	(Ljava/lang/Throwable; -> 6e getHeadImageBitmap-BB@0x6e)
+
+getHeadImageBitmap-BB@0x32 : [ getHeadImageBitmap-BB@0x48 getHeadImageBitmap-BB@0x74 ]
+	13      (00000032) monitor-exit         v6
+	14      (00000034) sget-object          v5, Lcom/ailock/tszlock/TuyaImageManager;->mSoftBitmapCache Ljava/util/concurrent/ConcurrentHashMap;
+	15      (00000038) invoke-virtual       v5, v7, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	16      (0000003e) move-result-object   v1
+	17      (00000040) check-cast           v1, Ljava/lang/ref/SoftReference;
+	18      (00000044) if-eqz               v1, +18
+
+getHeadImageBitmap-BB@0x48 : [ getHeadImageBitmap-BB@0x62 getHeadImageBitmap-BB@0x74 ]
+	19      (00000048) sget-object          v5, Lcom/ailock/tszlock/TuyaImageManager;->mSoftBitmapCache Ljava/util/concurrent/ConcurrentHashMap;
+	20      (0000004c) invoke-virtual       v5, v7, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+	21      (00000052) invoke-virtual       v1, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
+	22      (00000058) move-result-object   v0
+	23      (0000005a) check-cast           v0, Landroid/graphics/Bitmap;
+	24      (0000005e) if-eqz               v0, +b
+
+getHeadImageBitmap-BB@0x62 : [ getHeadImageBitmap-BB@0x30 ]
+	25      (00000062) sget-object          v5, Lcom/ailock/tszlock/TuyaImageManager;->mHardBitmapCache Ljava/util/HashMap;
+	26      (00000066) invoke-virtual       v5, v7, v0, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	27      (0000006c) goto                 -1e
+
+getHeadImageBitmap-BB@0x6e : [ getHeadImageBitmap-BB@0x70 ]
+	28      (0000006e) move-exception       v5
+
+getHeadImageBitmap-BB@0x70 : 
+	29      (00000070) monitor-exit         v6
+	30      (00000072) throw                v5
+	70:71
+	(Ljava/lang/Throwable; -> 6e getHeadImageBitmap-BB@0x6e)
+
+getHeadImageBitmap-BB@0x74 : [ getHeadImageBitmap-BB@0x86 ]
+	31      (00000074) new-instance         v3, Landroid/graphics/BitmapFactory$Options;
+	32      (00000078) invoke-direct        v3, Landroid/graphics/BitmapFactory$Options;-><init>()V
+	33      (0000007e) const/4              v5, 4
+	34      (00000080) iput                 v5, v3, Landroid/graphics/BitmapFactory$Options;->inSampleSize I
+	35      (00000084) const/4              v0, 0
+
+getHeadImageBitmap-BB@0x86 : [ getHeadImageBitmap-BB@0xc0 ]
+	36      (00000086) new-instance         v5, Ljava/lang/StringBuilder;
+	37      (0000008a) sget-object          v6, Lcom/ailock/tszlock/TuyaImageManager;->TUYA_PATH Ljava/lang/String;
+	38      (0000008e) invoke-static        v6, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	39      (00000094) move-result-object   v6
+	40      (00000096) invoke-direct        v5, v6, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	41      (0000009c) invoke-virtual       v5, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	42      (000000a2) move-result-object   v5
+	43      (000000a4) const-string         v6, '.jpg'
+	44      (000000a8) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	45      (000000ae) move-result-object   v5
+	46      (000000b0) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	47      (000000b6) move-result-object   v4
+	48      (000000b8) invoke-static        v4, v3, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String; Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+	49      (000000be) move-result-object   v0
+	86:bd
+	(Ljava/lang/Exception; -> de getHeadImageBitmap-BB@0xde)
+
+getHeadImageBitmap-BB@0xc0 : [ getHeadImageBitmap-BB@0xc4 getHeadImageBitmap-BB@0x30 ]
+	50      (000000c0) if-eqz               v0, -48
+
+getHeadImageBitmap-BB@0xc4 : [ getHeadImageBitmap-BB@0xca ]
+	51      (000000c4) sget-object          v6, Lcom/ailock/tszlock/TuyaImageManager;->mHardBitmapCache Ljava/util/HashMap;
+	52      (000000c8) monitor-enter        v6
+
+getHeadImageBitmap-BB@0xca : [ getHeadImageBitmap-BB@0x30 ]
+	53      (000000ca) sget-object          v5, Lcom/ailock/tszlock/TuyaImageManager;->mHardBitmapCache Ljava/util/HashMap;
+	54      (000000ce) invoke-virtual       v5, v7, v0, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	55      (000000d4) monitor-exit         v6
+	56      (000000d6) goto                 -53
+	ca:db
+	(Ljava/lang/Throwable; -> d8 getHeadImageBitmap-BB@0xd8)
+
+getHeadImageBitmap-BB@0xd8 : 
+	57      (000000d8) move-exception       v5
+	58      (000000da) monitor-exit         v6
+	59      (000000dc) throw                v5
+
+getHeadImageBitmap-BB@0xde : [ getHeadImageBitmap-BB@0xc0 ]
+	60      (000000de) move-exception       v2
+	61      (000000e0) invoke-virtual       v2, Ljava/lang/Exception;->printStackTrace()V
+	62      (000000e6) goto                 -13
+

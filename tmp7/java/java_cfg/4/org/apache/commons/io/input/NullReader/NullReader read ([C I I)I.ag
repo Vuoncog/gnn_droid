@@ -1,0 +1,56 @@
+# Lorg/apache/commons/io/input/NullReader;->read([C I I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:char[]
+# - v6:int
+# - v7:int
+#
+# - return:int
+
+read-BB@0x0 : [ read-BB@0x8 read-BB@0x18 ]
+	0       (00000000) iget-boolean         v0, v4, Lorg/apache/commons/io/input/NullReader;->eof Z
+	1       (00000004) if-eqz               v0, +a
+
+read-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/io/IOException;
+	3       (0000000c) const-string         v1, 'Read after end of file'
+	4       (00000010) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+read-BB@0x18 : [ read-BB@0x28 read-BB@0x32 ]
+	6       (00000018) iget-wide            v0, v4, Lorg/apache/commons/io/input/NullReader;->position J
+	7       (0000001c) iget-wide            v2, v4, Lorg/apache/commons/io/input/NullReader;->size J
+	8       (00000020) cmp-long             v0, v0, v2
+	9       (00000024) if-nez               v0, +7
+
+read-BB@0x28 : [ read-BB@0x30 ]
+	10      (00000028) invoke-direct        v4, Lorg/apache/commons/io/input/NullReader;->doEndOfFile()I
+	11      (0000002e) move-result          v7
+
+read-BB@0x30 : 
+	12      (00000030) return               v7
+
+read-BB@0x32 : [ read-BB@0x4e read-BB@0x64 ]
+	13      (00000032) iget-wide            v0, v4, Lorg/apache/commons/io/input/NullReader;->position J
+	14      (00000036) int-to-long          v2, v7
+	15      (00000038) add-long/2addr       v0, v2
+	16      (0000003a) iput-wide            v0, v4, Lorg/apache/commons/io/input/NullReader;->position J
+	17      (0000003e) iget-wide            v0, v4, Lorg/apache/commons/io/input/NullReader;->position J
+	18      (00000042) iget-wide            v2, v4, Lorg/apache/commons/io/input/NullReader;->size J
+	19      (00000046) cmp-long             v0, v0, v2
+	20      (0000004a) if-lez               v0, +d
+
+read-BB@0x4e : [ read-BB@0x64 ]
+	21      (0000004e) iget-wide            v0, v4, Lorg/apache/commons/io/input/NullReader;->position J
+	22      (00000052) iget-wide            v2, v4, Lorg/apache/commons/io/input/NullReader;->size J
+	23      (00000056) sub-long/2addr       v0, v2
+	24      (00000058) long-to-int          v0, v0
+	25      (0000005a) sub-int/2addr        v7, v0
+	26      (0000005c) iget-wide            v0, v4, Lorg/apache/commons/io/input/NullReader;->size J
+	27      (00000060) iput-wide            v0, v4, Lorg/apache/commons/io/input/NullReader;->position J
+
+read-BB@0x64 : [ read-BB@0x30 ]
+	28      (00000064) invoke-virtual       v4, v5, v6, v7, Lorg/apache/commons/io/input/NullReader;->processChars([C I I)V
+	29      (0000006a) goto                 -1d
+

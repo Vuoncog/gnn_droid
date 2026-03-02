@@ -1,0 +1,42 @@
+# Lcom/a/a/g/t;->a(Ljava/lang/String; Lcom/a/a/a; I I Ljava/util/Map;)Lcom/a/a/c/b; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+# - v8:com.a.a.a
+# - v9:int
+# - v10:int
+# - v11:java.util.Map
+#
+# - return:com.a.a.c.b
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0x3a ]
+	0       (00000000) sget-object          v0, Lcom/a/a/a;->o Lcom/a/a/a;
+	1       (00000004) if-eq                v8, v0, +1b
+
+a-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	3       (0000000c) new-instance         v1, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) const-string         v2, 'Can only encode UPC-A, but got '
+	6       (0000001a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v1
+	8       (00000022) invoke-virtual       v1, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (00000030) move-result-object   v1
+	12      (00000032) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	13      (00000038) throw                v0
+
+a-BB@0x3a : 
+	14      (0000003a) iget-object          v0, v6, Lcom/a/a/g/t;->a Lcom/a/a/g/i;
+	15      (0000003e) invoke-static        v7, Lcom/a/a/g/t;->a(Ljava/lang/String;)Ljava/lang/String;
+	16      (00000044) move-result-object   v1
+	17      (00000046) sget-object          v2, Lcom/a/a/a;->h Lcom/a/a/a;
+	18      (0000004a) move                 v3, v9
+	19      (0000004c) move                 v4, v10
+	20      (0000004e) move-object          v5, v11
+	21      (00000050) invoke-virtual/range v0 ... v5, Lcom/a/a/g/i;->a(Ljava/lang/String; Lcom/a/a/a; I I Ljava/util/Map;)Lcom/a/a/c/b;
+	22      (00000056) move-result-object   v0
+	23      (00000058) return-object        v0
+

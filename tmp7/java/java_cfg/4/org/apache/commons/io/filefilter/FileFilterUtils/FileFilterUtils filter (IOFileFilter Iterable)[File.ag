@@ -1,0 +1,20 @@
+# Lorg/apache/commons/io/filefilter/FileFilterUtils;->filter(Lorg/apache/commons/io/filefilter/IOFileFilter; Ljava/lang/Iterable;)[Ljava/io/File; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:org.apache.commons.io.filefilter.IOFileFilter
+# - v3:java.lang.Iterable
+#
+# - return:java.io.File[]
+
+filter-BB@0x0 : 
+	0       (00000000) invoke-static        v2, v3, Lorg/apache/commons/io/filefilter/FileFilterUtils;->filterList(Lorg/apache/commons/io/filefilter/IOFileFilter; Ljava/lang/Iterable;)Ljava/util/List;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-interface     v0, Ljava/util/List;->size()I
+	3       (0000000e) move-result          v1
+	4       (00000010) new-array            v1, v1, [Ljava/io/File;
+	5       (00000014) invoke-interface     v0, v1, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, [Ljava/io/File;
+	8       (00000020) return-object        v0
+

@@ -1,0 +1,198 @@
+digraph {
+	graph [bb="0,0,1241.2,1505",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_726df70109ba42bd26ee79380ba1894e {
+		graph [bb="26.156,8,1138.2,1497",
+			label="Lcom/crashlytics/android/core/MetaDataStore;.readUserData->(Ljava/lang/String;)Lcom/crashlytics/android/core/UserMetaData;\nLocal \
+registers v0 ... v5\nparam v6 = java.lang.String\nreturn = com.crashlytics.android.core.UserMetaData",
+			lheight=0.83,
+			lp="582.16,1463",
+			lwidth=11.72
+		];
+		struct_bb8e39420f5f74c95f43396d32100653	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v5</FONT>, <FONT color="#919150">v6</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/MetaDataStore;-&gt;getUserDataFileForSession(Ljava/lang/String;)Ljava/io/File;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8A8A6D">v0</FONT>, <FONT color="#DF3A01">Ljava/io/File;-&gt;exists()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#83838A">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#83838A">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="583.16,1353.5",
+			width=12.694];
+		struct_80a457936d4c5ea060f3d1b0b636b45b	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#8A8A6D">v0</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/UserMetaData;-&gt;EMPTY Lcom/crashlytics/android/core/UserMetaData;</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="455.16,1160.5",
+			width=11.681];
+		struct_bb8e39420f5f74c95f43396d32100653:tail -> struct_80a457936d4c5ea060f3d1b0b636b45b:header	[color=red,
+			pos="e,60.156,1177.5 136.16,1294.5 77.54,1294.5 61.83,1245.4 60.287,1187.6"];
+		struct_01ca4e5297e5d8eb8b5ff8c27cb45169	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7B7BA7">v2</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="632.16,1225.5",
+			width=2.3889];
+		struct_bb8e39420f5f74c95f43396d32100653:tail -> struct_01ca4e5297e5d8eb8b5ff8c27cb45169:header	[color=green,
+			pos="e,556.16,1239.5 151.16,1291.5 151.16,1248.6 472.53,1240.3 546,1239.6"];
+		struct_44daed83ebeceec958d9deeb838e607d	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="123.16,205.5",
+			width=2.4722];
+		struct_80a457936d4c5ea060f3d1b0b636b45b:tail -> struct_44daed83ebeceec958d9deeb838e607d:header	[color=blue,
+			pos="e,44.156,219.5 45.156,1145.5 -8.3621,1145.5 35.156,1079 35.156,1025.5 35.156,1025.5 35.156,1025.5 35.156,428.5 35.156,339.16 -42.386,\
+228.53 34.055,220.02"];
+		struct_91892835f6f164d4c3a7d008da82fa2c	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#0000FF">Ljava/io/FileInputStream;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#8A8A6D">v0</FONT>, <FONT color="#DF3A01">Ljava/io/FileInputStream;-&gt;&lt;init&gt;(Ljava/io/File;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="868.16,1084.5",
+			width=7.2778];
+		struct_01ca4e5297e5d8eb8b5ff8c27cb45169:tail -> struct_91892835f6f164d4c3a7d008da82fa2c:header	[color=blue,
+			pos="e,631.16,1112.5 571.16,1207.5 571.16,1173.4 853.99,1209 877.16,1184 891.35,1168.7 891.18,1152.5 877.16,1137 842.88,1099.1 659.71,\
+1158 634.13,1122.3"];
+		struct_4d189773d57f23d6864f9cb957412f93	[height=2.8611,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;streamToString(Ljava/io/InputStream;)Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#8A8A6D">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/MetaDataStore;-&gt;jsonToUserData(Ljava/lang/String;)Lcom/crashlytics/android/core/UserMetaData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7B7BA7">v2</FONT>, <FONT color="red"><br/>'Failed to close user metadata<br/>file.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#7B7BA7">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">40</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-14</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="572.16,896",
+			width=14.375];
+		struct_91892835f6f164d4c3a7d008da82fa2c:tail -> struct_4d189773d57f23d6864f9cb957412f93:header	[color=blue,
+			pos="e,80.156,993 616.16,1058.5 559.44,1058.5 130.97,1053.6 84.281,1002.4"];
+		struct_ef221a413a683e13c625d6c92b94c14c	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-object </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#7B7BA7">v2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="832.16,740.5",
+			width=2.7083];
+		struct_91892835f6f164d4c3a7d008da82fa2c:tail -> struct_ef221a413a683e13c625d6c92b94c14c:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="892.66,1024.5",
+			pos="e,760.16,768.5 631.16,1055.5 631.16,968.9 736.31,1028.4 822.16,1017 852.73,1012.9 1078.1,1021.5 1099.2,999 1130.5,965.6 1130.3,826.52 \
+1099.2,793 1075.6,767.67 810.75,799.88 766.43,776.44"];
+		struct_c8e59b9ca12a1eeb90c1ee26bd0f4d88	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-object </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#7B7BA7">v2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1032.2,740.5",
+			width=2.7083];
+		struct_91892835f6f164d4c3a7d008da82fa2c:tail -> struct_c8e59b9ca12a1eeb90c1ee26bd0f4d88:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="1168.7,1024.5",
+			pos="e,960.16,768.5 631.16,1055.5 631.16,1037 944.85,1034.6 963.16,1032 1031.6,1022.2 1071.8,1052.8 1115.2,999 1172.6,927.72 1174.6,862.61 \
+1115.2,793 1095,769.39 987.8,796.06 964.59,777.54"];
+		struct_4d189773d57f23d6864f9cb957412f93:tail -> struct_44daed83ebeceec958d9deeb838e607d:header	[color=blue,
+			pos="e,59.156,222.5 65.156,802 34.784,802 56.376,314.94 58.919,232.74"];
+		struct_cdebc12807506ca5310f6504a36747da	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="328.16,205.5",
+			width=2.7083];
+		struct_4d189773d57f23d6864f9cb957412f93:tail -> struct_cdebc12807506ca5310f6504a36747da:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="955.66,593.5",
+			pos="e,256.16,233.5 80.156,799 80.156,762.39 207.4,782.87 243.16,775 532.81,711.24 593.59,650.15 883.16,586 909.48,580.17 985.56,588.43 \
+1003.2,568 1023.2,544.68 1024.1,313.58 1003.2,291 949.03,232.54 314.32,309.56 259.88,243.31"];
+		struct_297d792c81e2ac3c79a22803343d6f00	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">80</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">82</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-1e</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="172.16,653.5",
+			width=2.7083];
+		struct_4d189773d57f23d6864f9cb957412f93:tail -> struct_297d792c81e2ac3c79a22803343d6f00:header	[color=black,
+			label="Ljava/lang/Exception;",
+			lp="168.66,740.5",
+			pos="e,100.16,681.5 80.156,799 80.156,749.54 97.588,736.19 99.903,691.53"];
+		struct_fc0611d1dc4949ade87aa21c5ec97b8f	[height=3.8472,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">46</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#DF3A01">Lio/fabric/sdk/android/Fabric;-&gt;getLogger()Lio/fabric/sdk/android/Logger;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7B7BA7">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7474C4">v3</FONT>, <FONT color="red">'CrashlyticsCore'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">52</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#6D6DE1">v4</FONT>, <FONT color="red"><br/>'Error deserializing user<br/>metadata.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">56</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#7B7BA7">v2</FONT>, <FONT color="#7474C4">v3</FONT>, <FONT color="#6D6DE1">v4</FONT>, <FONT color="#8A8A6D">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/Logger;-&gt;e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#8A8A6D">v0</FONT>, <FONT color="red"><br/>'Failed to close user metadata<br/>file.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">60</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#8A8A6D">v0</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">66</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-object </FONT> <FONT color="#8A8A6D">v0</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/core/UserMetaData;-&gt;EMPTY Lcom/crashlytics/android/core/UserMetaData;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-29</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="534.16,429.5",
+			width=12.764];
+		struct_ef221a413a683e13c625d6c92b94c14c:tail -> struct_fc0611d1dc4949ade87aa21c5ec97b8f:header	[color=blue,
+			pos="e,100.16,561.5 760.16,711.5 760.16,636.15 926.59,640.12 874.16,586 846.03,556.97 187.64,598.83 108.02,568.34"];
+		struct_fc0611d1dc4949ade87aa21c5ec97b8f:tail -> struct_44daed83ebeceec958d9deeb838e607d:header	[color=blue,
+			pos="e,59.156,222.5 85.156,299.5 69.706,299.5 61.663,256.37 59.66,232.59"];
+		struct_fc0611d1dc4949ade87aa21c5ec97b8f:tail -> struct_cdebc12807506ca5310f6504a36747da:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="199.66,265.5",
+			pos="e,241.16,230.5 100.16,296.5 100.16,237.15 167.46,265.29 221.16,240 225.89,237.77 228.46,235.23 231.3,233.34"];
+		struct_257c7c1819f074a7548a9a1a3eae05f9	[height=1.6389,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">70</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7B7BA7">v2</FONT>, <FONT color="red"><br/>'Failed to close user metadata<br/>file.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">74</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#83838A">v1</FONT>, <FONT color="#7B7BA7">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/CommonUtils;-&gt;closeOrLog(Ljava/io/Closeable; Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">7a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#8A8A6D">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="670.16,75",
+			width=12.764];
+		struct_c8e59b9ca12a1eeb90c1ee26bd0f4d88:tail -> struct_257c7c1819f074a7548a9a1a3eae05f9:header	[color=blue,
+			pos="e,236.16,128 960.16,711.5 960.16,650.21 1033.2,655.79 1033.2,594.5 1033.2,594.5 1033.2,594.5 1033.2,204.5 1033.2,119.01 297.21,209.33 \
+239.71,137.58"];
+		struct_cdebc12807506ca5310f6504a36747da:tail -> struct_257c7c1819f074a7548a9a1a3eae05f9:header	[color=blue,
+			pos="e,236.16,128 241.16,179.5 221.48,179.5 231.81,158.64 235.21,138.21"];
+		struct_297d792c81e2ac3c79a22803343d6f00:tail -> struct_fc0611d1dc4949ade87aa21c5ec97b8f:header	[color=blue,
+			pos="e,100.16,561.5 100.16,624.5 100.16,600.22 100.16,591.73 100.16,571.64"];
+	}
+}

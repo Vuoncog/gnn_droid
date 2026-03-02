@@ -1,0 +1,101 @@
+digraph {
+	graph [bb="0,0,822.01,826",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_ac3cf36c1174978a1fd6f1038bd94cd2 {
+		graph [bb="8,8,790,818",
+			label="Lorg/apache/commons/lang/math/DoubleRange;.overlapsRange->(Lorg/apache/commons/lang/math/Range;)Z\nLocal registers v0 ... v4\nparam \
+v5 = org.apache.commons.lang.math.Range\nreturn = boolean",
+			lheight=0.83,
+			lp="399,784",
+			lwidth=10.18
+		];
+		struct_c8a8e368d18c91948a176bdb91e02a21	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#909055">v5</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="144,707.5",
+			width=2.2917];
+		struct_45d24f5c329c7fb528d424fe3466bbb4	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="102,39.5",
+			width=1.7361];
+		struct_c8a8e368d18c91948a176bdb91e02a21:tail -> struct_45d24f5c329c7fb528d424fe3466bbb4:header	[color=red,
+			pos="e,50,53.5 72,681.5 -41.334,681.5 17,545.83 17,432.5 17,432.5 17,432.5 17,270.5 17,223.55 28.545,93.736 43.277,61.048"];
+		struct_0c7383ffc81a703146d1df3df2091946	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#888877">v2</FONT>, <FONT color="#7F7F99">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/math/DoubleRange;-&gt;min D</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#7777BB">v3</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/math/Range;-&gt;containsDouble(D)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#6E6EDD">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#6E6EDD">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x14</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="410,580.5",
+			width=9.1389];
+		struct_c8a8e368d18c91948a176bdb91e02a21:tail -> struct_0c7383ffc81a703146d1df3df2091946:header	[color=green,
+			pos="e,106,630.5 83,678.5 83,658.73 99.072,655 104.35,640.49"];
+		struct_38df294f6f2e4b4859ab82fb136cf831	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#888877">v2</FONT>, <FONT color="#7F7F99">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/lang/math/DoubleRange;-&gt;max D</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#7777BB">v3</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/math/Range;-&gt;containsDouble(D)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#6E6EDD">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#6E6EDD">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xc</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="410,431.5",
+			width=9.1389];
+		struct_0c7383ffc81a703146d1df3df2091946:tail -> struct_38df294f6f2e4b4859ab82fb136cf831:header	[color=red,
+			pos="e,106,481.5 106,529.5 106,512 106,505.27 106,491.64"];
+		struct_e7232292e5a2146d96b0ffc17e919669	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-1c</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="431,133.5",
+			width=2.4028];
+		struct_0c7383ffc81a703146d1df3df2091946:tail -> struct_e7232292e5a2146d96b0ffc17e919669:header	[color=green,
+			pos="e,370,161.5 106,529.5 106,458.02 696.56,537.63 748,488 838.96,400.24 847.44,298.06 763,204 706.84,141.44 398.22,240.15 371.8,171.75"];
+		struct_90dbde45a878a2f86786291b9d22d4e4	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#909055">v5</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/math/Range;-&gt;getMinimumDouble()D</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-wide </FONT> <FONT color="#888877">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v4</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#7777BB">v3</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/lang/math/DoubleRange;-&gt;containsDouble(D)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#6E6EDD">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#6E6EDD">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x-19</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="389,271.5",
+			width=9.8056];
+		struct_38df294f6f2e4b4859ab82fb136cf831:tail -> struct_90dbde45a878a2f86786291b9d22d4e4:header	[color=red,
+			pos="e,61,332.5 106,380.5 106,355.37 72.766,359.58 63.419,342.7"];
+		struct_38df294f6f2e4b4859ab82fb136cf831:tail -> struct_e7232292e5a2146d96b0ffc17e919669:header	[color=green,
+			pos="e,370,161.5 106,380.5 106,308.69 701.88,391.39 751,339 771.52,317.12 771,226.36 751,204 696.64,143.24 397.37,237.88 371.75,171.45"];
+		struct_90dbde45a878a2f86786291b9d22d4e4:tail -> struct_45d24f5c329c7fb528d424fe3466bbb4:header	[color=green,
+			pos="e,61,56.5 61,209.5 61,145.09 61,126.43 61,66.847"];
+		struct_90dbde45a878a2f86786291b9d22d4e4:tail -> struct_e7232292e5a2146d96b0ffc17e919669:header	[color=red,
+			pos="e,370,161.5 61,209.5 61,74.184 353.92,288.61 369.37,171.74"];
+		struct_e7232292e5a2146d96b0ffc17e919669:tail -> struct_45d24f5c329c7fb528d424fe3466bbb4:header	[color=blue,
+			pos="e,61,56.5 355,107.5 324.82,107.5 106.03,92.717 66.962,65.064"];
+	}
+}

@@ -1,0 +1,115 @@
+# Lcom/crashlytics/android/core/SessionProtobufHelper;->writeSessionEvent(Lcom/crashlytics/android/core/CodedOutputStream; J Ljava/lang/String; Ljava/lang/Throwable; Ljava/lang/Thread; [Ljava/lang/StackTraceElement; [Ljava/lang/Thread; Ljava/util/List; Ljava/util/Map; Lcom/crashlytics/android/core/LogFileManager; Landroid/app/ActivityManager$RunningAppProcessInfo; I Ljava/lang/String; Ljava/lang/String; F I Z J J)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v30
+# - v31:com.crashlytics.android.core.CodedOutputStream
+# - v32:long
+# - v33:java.lang.String
+# - v34:java.lang.Throwable
+# - v35:java.lang.Thread
+# - v36:java.lang.StackTraceElement[]
+# - v37:java.lang.Thread[]
+# - v38:java.util.List
+# - v39:java.util.Map
+# - v40:com.crashlytics.android.core.LogFileManager
+# - v41:android.app.ActivityManager$RunningAppProcessInfo
+# - v42:int
+# - v43:java.lang.String
+# - v44:java.lang.String
+# - v45:float
+# - v46:int
+# - v47:boolean
+# - v48:long
+# - v49:long
+#
+# - return:void
+
+writeSessionEvent-BB@0x0 : [ writeSessionEvent-BB@0xc writeSessionEvent-BB@0x11e ]
+	0       (00000000) invoke-static/range  v41, Lcom/crashlytics/android/core/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;
+	1       (00000006) move-result-object   v17
+	2       (00000008) if-nez               v42, +8b
+
+writeSessionEvent-BB@0xc : [ writeSessionEvent-BB@0x10 ]
+	3       (0000000c) const/16             v18, 0
+
+writeSessionEvent-BB@0x10 : [ writeSessionEvent-BB@0x1c writeSessionEvent-BB@0x32 ]
+	4       (00000010) invoke-virtual/range v38, Lcom/crashlytics/android/core/LogFileManager;->getByteStringForLog()Lcom/crashlytics/android/core/ByteString;
+	5       (00000016) move-result-object   v26
+	6       (00000018) if-nez               v26, +d
+
+writeSessionEvent-BB@0x1c : [ writeSessionEvent-BB@0x32 ]
+	7       (0000001c) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	8       (00000022) move-result-object   v4
+	9       (00000024) const-string         v5, 'CrashlyticsCore'
+	10      (00000028) const-string         v6, 'No log data to include with this event.'
+	11      (0000002c) invoke-interface     v4, v5, v6, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+
+writeSessionEvent-BB@0x32 : 
+	12      (00000032) invoke-virtual/range v38, Lcom/crashlytics/android/core/LogFileManager;->clearLog()V
+	13      (00000038) const/16             v4, 10
+	14      (0000003c) const/4              v5, 2
+	15      (0000003e) move-object/from16   v0, v28
+	16      (00000042) invoke-virtual       v0, v4, v5, Lcom/crashlytics/android/core/CodedOutputStream;->writeTag(I I)V
+	17      (00000048) const/16             v13, 8
+	18      (0000004c) move-wide/from16     v5, v29
+	19      (00000050) move-object/from16   v7, v31
+	20      (00000054) move-object/from16   v8, v32
+	21      (00000058) move-object/from16   v9, v33
+	22      (0000005c) move-object/from16   v10, v34
+	23      (00000060) move-object/from16   v11, v35
+	24      (00000064) move-object/from16   v12, v36
+	25      (00000068) move-object/from16   v14, v37
+	26      (0000006c) move-object/from16   v15, v39
+	27      (00000070) move/from16          v16, v40
+	28      (00000074) move/from16          v19, v43
+	29      (00000078) move/from16          v20, v44
+	30      (0000007c) move/from16          v21, v45
+	31      (00000080) move-wide/from16     v22, v46
+	32      (00000084) move-wide/from16     v24, v48
+	33      (00000088) invoke-static/range  v5 ... v26, Lcom/crashlytics/android/core/SessionProtobufHelper;->getSessionEventSize(J Ljava/lang/String; Ljava/lang/Throwable; Ljava/lang/Thread; [Ljava/lang/StackTraceElement; [Ljava/lang/Thread; Ljava/util/List; I Ljava/util/Map; Landroid/app/ActivityManager$RunningAppProcessInfo; I Lcom/crashlytics/android/core/ByteString; Lcom/crashlytics/android/core/ByteString; F I Z J J Lcom/crashlytics/android/core/ByteString;)I
+	34      (0000008e) move-result          v4
+	35      (00000090) move-object/from16   v0, v28
+	36      (00000094) invoke-virtual       v0, v4, Lcom/crashlytics/android/core/CodedOutputStream;->writeRawVarint32(I)V
+	37      (0000009a) const/4              v4, 1
+	38      (0000009c) move-object/from16   v0, v28
+	39      (000000a0) move-wide/from16     v1, v29
+	40      (000000a4) invoke-virtual       v0, v4, v1, v2, Lcom/crashlytics/android/core/CodedOutputStream;->writeUInt64(I J)V
+	41      (000000aa) const/4              v4, 2
+	42      (000000ac) invoke-static/range  v31, Lcom/crashlytics/android/core/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;
+	43      (000000b2) move-result-object   v5
+	44      (000000b4) move-object/from16   v0, v28
+	45      (000000b8) invoke-virtual       v0, v4, v5, Lcom/crashlytics/android/core/CodedOutputStream;->writeBytes(I Lcom/crashlytics/android/core/ByteString;)V
+	46      (000000be) const/16             v16, 8
+	47      (000000c2) move-object/from16   v10, v28
+	48      (000000c6) move-object/from16   v11, v32
+	49      (000000ca) move-object/from16   v12, v33
+	50      (000000ce) move-object/from16   v13, v34
+	51      (000000d2) move-object/from16   v14, v35
+	52      (000000d6) move-object/from16   v15, v36
+	53      (000000da) move-object/from16   v19, v37
+	54      (000000de) move-object/from16   v20, v39
+	55      (000000e2) move/from16          v21, v40
+	56      (000000e6) invoke-static/range  v10 ... v21, Lcom/crashlytics/android/core/SessionProtobufHelper;->writeSessionEventApp(Lcom/crashlytics/android/core/CodedOutputStream; Ljava/lang/Throwable; Ljava/lang/Thread; [Ljava/lang/StackTraceElement; [Ljava/lang/Thread; Ljava/util/List; I Lcom/crashlytics/android/core/ByteString; Lcom/crashlytics/android/core/ByteString; Ljava/util/Map; Landroid/app/ActivityManager$RunningAppProcessInfo; I)V
+	57      (000000ec) move-object/from16   v5, v28
+	58      (000000f0) move/from16          v6, v43
+	59      (000000f4) move/from16          v7, v44
+	60      (000000f8) move/from16          v8, v45
+	61      (000000fc) move/from16          v9, v40
+	62      (00000100) move-wide/from16     v10, v46
+	63      (00000104) move-wide/from16     v12, v48
+	64      (00000108) invoke-static/range  v5 ... v13, Lcom/crashlytics/android/core/SessionProtobufHelper;->writeSessionEventDevice(Lcom/crashlytics/android/core/CodedOutputStream; F I Z I J J)V
+	65      (0000010e) move-object/from16   v0, v28
+	66      (00000112) move-object/from16   v1, v26
+	67      (00000116) invoke-static        v0, v1, Lcom/crashlytics/android/core/SessionProtobufHelper;->writeSessionEventLog(Lcom/crashlytics/android/core/CodedOutputStream; Lcom/crashlytics/android/core/ByteString;)V
+	68      (0000011c) return-void          
+
+writeSessionEvent-BB@0x11e : [ writeSessionEvent-BB@0x10 ]
+	69      (0000011e) const-string         v4, '-'
+	70      (00000122) const-string         v5, ''
+	71      (00000126) move-object/from16   v0, v42
+	72      (0000012a) invoke-virtual       v0, v4, v5, Ljava/lang/String;->replace(Ljava/lang/CharSequence; Ljava/lang/CharSequence;)Ljava/lang/String;
+	73      (00000130) move-result-object   v4
+	74      (00000132) invoke-static        v4, Lcom/crashlytics/android/core/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;
+	75      (00000138) move-result-object   v18
+	76      (0000013a) goto/16              -95
+

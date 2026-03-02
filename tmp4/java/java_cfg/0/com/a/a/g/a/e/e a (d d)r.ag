@@ -1,0 +1,105 @@
+# Lcom/a/a/g/a/e;->a(Lcom/a/a/g/a/d; Lcom/a/a/g/a/d;)Lcom/a/a/r; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:com.a.a.g.a.d
+# - v10:com.a.a.g.a.d
+#
+# - return:com.a.a.r
+
+a-BB@0x0 : [ a-BB@0x44 ]
+	0       (00000000) const/4              v8, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) const-wide/32        v2, 4537077 # [4537077.0]
+	3       (0000000a) invoke-virtual       v9, Lcom/a/a/g/a/d;->a()I
+	4       (00000010) move-result          v0
+	5       (00000012) int-to-long          v4, v0
+	6       (00000014) mul-long/2addr       v2, v4
+	7       (00000016) invoke-virtual       v10, Lcom/a/a/g/a/d;->a()I
+	8       (0000001c) move-result          v0
+	9       (0000001e) int-to-long          v4, v0
+	10      (00000020) add-long/2addr       v2, v4
+	11      (00000022) invoke-static        v2, v3, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+	12      (00000028) move-result-object   v2
+	13      (0000002a) new-instance         v4, Ljava/lang/StringBuilder;
+	14      (0000002e) const/16             v0, 14
+	15      (00000032) invoke-direct        v4, v0, Ljava/lang/StringBuilder;-><init>(I)V
+	16      (00000038) invoke-virtual       v2, Ljava/lang/String;->length()I
+	17      (0000003e) move-result          v0
+	18      (00000040) rsub-int/lit8        v0, v0, 13
+
+a-BB@0x44 : [ a-BB@0x48 a-BB@0x58 ]
+	19      (00000044) if-lez               v0, +a
+
+a-BB@0x48 : [ a-BB@0x44 ]
+	20      (00000048) const/16             v3, 48
+	21      (0000004c) invoke-virtual       v4, v3, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+	22      (00000052) add-int/lit8         v0, v0, -1
+	23      (00000056) goto                 -9
+
+a-BB@0x58 : [ a-BB@0x62 ]
+	24      (00000058) invoke-virtual       v4, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (0000005e) move                 v2, v1
+	26      (00000060) move                 v3, v1
+
+a-BB@0x62 : [ a-BB@0x6a a-BB@0x8c ]
+	27      (00000062) const/16             v0, 13
+	28      (00000066) if-ge                v2, v0, +13
+
+a-BB@0x6a : [ a-BB@0x7e a-BB@0x82 ]
+	29      (0000006a) invoke-virtual       v4, v2, Ljava/lang/StringBuilder;->charAt(I)C
+	30      (00000070) move-result          v0
+	31      (00000072) add-int/lit8         v0, v0, -48
+	32      (00000076) and-int/lit8         v5, v2, 1
+	33      (0000007a) if-nez               v5, +4
+
+a-BB@0x7e : [ a-BB@0x82 ]
+	34      (0000007e) mul-int/lit8         v0, v0, 3
+
+a-BB@0x82 : [ a-BB@0x62 ]
+	35      (00000082) add-int/2addr        v3, v0
+	36      (00000084) add-int/lit8         v0, v2, 1
+	37      (00000088) move                 v2, v0
+	38      (0000008a) goto                 -14
+
+a-BB@0x8c : [ a-BB@0x9c a-BB@0x9e ]
+	39      (0000008c) rem-int/lit8         v0, v3, 10
+	40      (00000090) rsub-int/lit8        v0, v0, 10
+	41      (00000094) const/16             v2, 10
+	42      (00000098) if-ne                v0, v2, +3
+
+a-BB@0x9c : [ a-BB@0x9e ]
+	43      (0000009c) move                 v0, v1
+
+a-BB@0x9e : 
+	44      (0000009e) invoke-virtual       v4, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	45      (000000a4) invoke-virtual       v9, Lcom/a/a/g/a/d;->c()Lcom/a/a/g/a/c;
+	46      (000000aa) move-result-object   v0
+	47      (000000ac) invoke-virtual       v0, Lcom/a/a/g/a/c;->c()[Lcom/a/a/t;
+	48      (000000b2) move-result-object   v0
+	49      (000000b4) invoke-virtual       v10, Lcom/a/a/g/a/d;->c()Lcom/a/a/g/a/c;
+	50      (000000ba) move-result-object   v2
+	51      (000000bc) invoke-virtual       v2, Lcom/a/a/g/a/c;->c()[Lcom/a/a/t;
+	52      (000000c2) move-result-object   v2
+	53      (000000c4) new-instance         v3, Lcom/a/a/r;
+	54      (000000c8) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	55      (000000ce) move-result-object   v4
+	56      (000000d0) invoke-static        v4, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	57      (000000d6) move-result-object   v4
+	58      (000000d8) const/4              v5, 0
+	59      (000000da) const/4              v6, 4
+	60      (000000dc) new-array            v6, v6, [Lcom/a/a/t;
+	61      (000000e0) aget-object          v7, v0, v1
+	62      (000000e4) aput-object          v7, v6, v1
+	63      (000000e8) aget-object          v0, v0, v8
+	64      (000000ec) aput-object          v0, v6, v8
+	65      (000000f0) const/4              v0, 2
+	66      (000000f2) aget-object          v1, v2, v1
+	67      (000000f6) aput-object          v1, v6, v0
+	68      (000000fa) const/4              v0, 3
+	69      (000000fc) aget-object          v1, v2, v8
+	70      (00000100) aput-object          v1, v6, v0
+	71      (00000104) sget-object          v0, Lcom/a/a/a;->m Lcom/a/a/a;
+	72      (00000108) invoke-direct        v3, v4, v5, v6, v0, Lcom/a/a/r;-><init>(Ljava/lang/String; [B [Lcom/a/a/t; Lcom/a/a/a;)V
+	73      (0000010e) return-object        v3
+

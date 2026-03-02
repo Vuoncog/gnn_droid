@@ -1,0 +1,50 @@
+digraph {
+	graph [bb="0,0,663,313",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_2ade5ea82e8f059bec86a60f6005f9a9 {
+		graph [bb="8,8,655,305",
+			label="Lorg/apache/commons/io/LineIterator;.closeQuietly->(Lorg/apache/commons/io/LineIterator;)V\nLocal registers v0 ... v-1\nparam v0 = \
+org.apache.commons.io.LineIterator\nreturn = void",
+			lheight=0.83,
+			lp="331.5,271",
+			lwidth=8.76
+		];
+		struct_2231458bfae1af7e1f44fe54b7b36122	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="331,205.5",
+			width=2.0972];
+		struct_c86865e6f0616956589a318bd5101979	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/LineIterator;-&gt;close()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="267,122.5",
+			width=6.9722];
+		struct_2231458bfae1af7e1f44fe54b7b36122:tail -> struct_c86865e6f0616956589a318bd5101979:header	[color=red,
+			pos="e,37,139.5 277,187.5 277,82.439 53.126,237.01 37.822,149.7"];
+		struct_4e392ccea5b37c6db7697c5e648a421d	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="331,39.5",
+			width=1.9444];
+		struct_2231458bfae1af7e1f44fe54b7b36122:tail -> struct_4e392ccea5b37c6db7697c5e648a421d:header	[color=green,
+			pos="e,282,56.5 277,187.5 277,131.18 490.58,188.96 527,146 540.51,130.07 540.45,114.98 527,99 458.21,17.247 293.43,157.14 282.56,66.657"];
+		struct_c86865e6f0616956589a318bd5101979:tail -> struct_4e392ccea5b37c6db7697c5e648a421d:header	[color=blue,
+			pos="e,282,56.5 37,104.5 37,-2.7748 266,156.22 281.21,66.631"];
+	}
+}

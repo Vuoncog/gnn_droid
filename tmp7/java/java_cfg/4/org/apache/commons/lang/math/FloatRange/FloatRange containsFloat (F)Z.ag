@@ -1,0 +1,28 @@
+# Lorg/apache/commons/lang/math/FloatRange;->containsFloat(F)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:float
+#
+# - return:boolean
+
+containsFloat-BB@0x0 : [ containsFloat-BB@0xc containsFloat-BB@0x1c ]
+	0       (00000000) iget                 v0, v1, Lorg/apache/commons/lang/math/FloatRange;->min F
+	1       (00000004) cmpl-float           v0, v2, v0
+	2       (00000008) if-ltz               v0, +a
+
+containsFloat-BB@0xc : [ containsFloat-BB@0x18 containsFloat-BB@0x1c ]
+	3       (0000000c) iget                 v0, v1, Lorg/apache/commons/lang/math/FloatRange;->max F
+	4       (00000010) cmpg-float           v0, v2, v0
+	5       (00000014) if-gtz               v0, +4
+
+containsFloat-BB@0x18 : [ containsFloat-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+containsFloat-BB@0x1a : 
+	7       (0000001a) return               v0
+
+containsFloat-BB@0x1c : [ containsFloat-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

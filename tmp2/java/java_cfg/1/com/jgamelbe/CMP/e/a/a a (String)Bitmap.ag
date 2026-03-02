@@ -1,0 +1,85 @@
+# Lcom/jgamelbe/CMP/e/a;->a(Ljava/lang/String;)Landroid/graphics/Bitmap; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:android.graphics.Bitmap
+
+a-BB@0x0 : [ a-BB@0x2 ]
+	0       (00000000) const/4              v1, 0
+
+a-BB@0x2 : [ a-BB@0x18 a-BB@0x5a ]
+	1       (00000002) new-instance         v0, Ljava/net/URL;
+	2       (00000006) invoke-direct        v0, v4, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+	3       (0000000c) invoke-static        Lcom/jgamelbe/CMP/b/d;->a()Ljava/net/Proxy;
+	4       (00000012) move-result-object   v2
+	5       (00000014) if-eqz               v2, +23
+	2:4f
+	(Ljava/net/MalformedURLException; -> 64 a-BB@0x64)
+	(Ljava/io/IOException; -> 74 a-BB@0x74)
+
+a-BB@0x18 : [ a-BB@0x20 ]
+	6       (00000018) invoke-virtual       v0, v2, Ljava/net/URL;->openConnection(Ljava/net/Proxy;)Ljava/net/URLConnection;
+	7       (0000001e) move-result-object   v0
+	2:4f
+	(Ljava/net/MalformedURLException; -> 64 a-BB@0x64)
+	(Ljava/io/IOException; -> 74 a-BB@0x74)
+
+a-BB@0x20 : [ a-BB@0x52 ]
+	8       (00000020) const                v2, 180000 # [2.5223372357846707e-40]
+	9       (00000026) invoke-virtual       v0, v2, Ljava/net/URLConnection;->setConnectTimeout(I)V
+	10      (0000002c) const                v2, 180000 # [2.5223372357846707e-40]
+	11      (00000032) invoke-virtual       v0, v2, Ljava/net/URLConnection;->setReadTimeout(I)V
+	12      (00000038) new-instance         v2, Ljava/io/BufferedInputStream;
+	13      (0000003c) invoke-virtual       v0, Ljava/net/URLConnection;->getInputStream()Ljava/io/InputStream;
+	14      (00000042) move-result-object   v0
+	15      (00000044) invoke-direct        v2, v0, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
+	16      (0000004a) invoke-static        v2, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
+	17      (00000050) move-result-object   v0
+
+a-BB@0x52 : [ a-BB@0x58 ]
+	18      (00000052) invoke-virtual       v2, Ljava/io/BufferedInputStream;->close()V
+	52:57
+	(Ljava/net/MalformedURLException; -> 88 a-BB@0x88)
+	(Ljava/io/IOException; -> 84 a-BB@0x84)
+
+a-BB@0x58 : 
+	19      (00000058) return-object        v0
+
+a-BB@0x5a : [ a-BB@0x20 ]
+	20      (0000005a) invoke-virtual       v0, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+	21      (00000060) move-result-object   v0
+	22      (00000062) goto                 -21
+	5a:5f
+	(Ljava/net/MalformedURLException; -> 64 a-BB@0x64)
+	(Ljava/io/IOException; -> 74 a-BB@0x74)
+
+a-BB@0x64 : [ a-BB@0x6c ]
+	23      (00000064) move-exception       v0
+	24      (00000066) move-object          v3, v0
+	25      (00000068) move-object          v0, v1
+	26      (0000006a) move-object          v1, v3
+
+a-BB@0x6c : [ a-BB@0x58 ]
+	27      (0000006c) invoke-virtual       v1, Ljava/net/MalformedURLException;->printStackTrace()V
+	28      (00000072) goto                 -d
+
+a-BB@0x74 : [ a-BB@0x7c ]
+	29      (00000074) move-exception       v0
+	30      (00000076) move-object          v3, v0
+	31      (00000078) move-object          v0, v1
+	32      (0000007a) move-object          v1, v3
+
+a-BB@0x7c : [ a-BB@0x58 ]
+	33      (0000007c) invoke-virtual       v1, Ljava/io/IOException;->printStackTrace()V
+	34      (00000082) goto                 -15
+
+a-BB@0x84 : [ a-BB@0x7c ]
+	35      (00000084) move-exception       v1
+	36      (00000086) goto                 -5
+
+a-BB@0x88 : [ a-BB@0x6c ]
+	37      (00000088) move-exception       v1
+	38      (0000008a) goto                 -f
+

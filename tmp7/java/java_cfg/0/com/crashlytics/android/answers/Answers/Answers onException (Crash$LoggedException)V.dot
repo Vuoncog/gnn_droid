@@ -1,0 +1,54 @@
+digraph {
+	graph [bb="0,0,1074,401",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_076097a0b2921d00a8a7ef31c3be7e43 {
+		graph [bb="8,8,1066,393",
+			label="Lcom/crashlytics/android/answers/Answers;.onException->(Lio/fabric/sdk/android/services/common/Crash$LoggedException;)V\nLocal registers \
+v0 ... v2\nparam v3 = io.fabric.sdk.android.services.common.Crash$LoggedException\nreturn = void",
+			lheight=0.83,
+			lp="537,359",
+			lwidth=11.69
+		];
+		struct_0e36482a3f18a56710f3f242bef80be8	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/Answers;-&gt;analyticsManager Lcom/crashlytics/android/answers/SessionAnalyticsManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xb</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="539,282.5",
+			width=14.083];
+		struct_81b042608dcc3fb99c9ee3d4bf6bf053	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#088A08">Lcom/crashlytics/android/answers/Answers;-&gt;analyticsManager Lcom/crashlytics/android/answers/SessionAnalyticsManager;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v3</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/Crash$LoggedException;-&gt;getSessionId()Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7272CC">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7272CC">v1</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/answers/SessionAnalyticsManager;-&gt;onError(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="527,155.5",
+			width=14.194];
+		struct_0e36482a3f18a56710f3f242bef80be8:tail -> struct_81b042608dcc3fb99c9ee3d4bf6bf053:header	[color=red,
+			pos="e,41,205.5 53,253.5 53,235.46 44.925,229.51 42.023,215.82"];
+		struct_3701e1b54e952df80aa4ba9e6d5fec68	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="537,39.5",
+			width=2.0556];
+		struct_0e36482a3f18a56710f3f242bef80be8:tail -> struct_3701e1b54e952df80aa4ba9e6d5fec68:header	[color=green,
+			pos="e,488,56.5 53,253.5 53,198.23 1008.7,251.89 1047,212 1081.8,175.75 1081.1,135.83 1047,99 1007,55.813 543.09,111.96 492.47,65.612"];
+		struct_81b042608dcc3fb99c9ee3d4bf6bf053:tail -> struct_3701e1b54e952df80aa4ba9e6d5fec68:header	[color=blue,
+			pos="e,488,56.5 41,104.5 41,-91.797 472.42,244.12 487.59,66.532"];
+	}
+}

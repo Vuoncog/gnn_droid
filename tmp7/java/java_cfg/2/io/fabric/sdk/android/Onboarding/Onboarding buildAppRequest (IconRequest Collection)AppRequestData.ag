@@ -1,0 +1,44 @@
+# Lio/fabric/sdk/android/Onboarding;->buildAppRequest(Lio/fabric/sdk/android/services/settings/IconRequest; Ljava/util/Collection;)Lio/fabric/sdk/android/services/settings/AppRequestData; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:io.fabric.sdk.android.services.settings.IconRequest
+# - v14:java.util.Collection
+#
+# - return:io.fabric.sdk.android.services.settings.AppRequestData
+
+buildAppRequest-BB@0x0 : 
+	0       (00000000) invoke-virtual       v12, Lio/fabric/sdk/android/Onboarding;->getContext()Landroid/content/Context;
+	1       (00000006) move-result-object   v0
+	2       (00000008) new-instance         v1, Lio/fabric/sdk/android/services/common/ApiKey;
+	3       (0000000c) invoke-direct        v1, Lio/fabric/sdk/android/services/common/ApiKey;-><init>()V
+	4       (00000012) invoke-virtual       v1, v0, Lio/fabric/sdk/android/services/common/ApiKey;->getValue(Landroid/content/Context;)Ljava/lang/String;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-static        v0, Lio/fabric/sdk/android/services/common/CommonUtils;->resolveBuildId(Landroid/content/Context;)Ljava/lang/String;
+	7       (00000020) move-result-object   v0
+	8       (00000022) const/4              v2, 1
+	9       (00000024) new-array            v2, v2, [Ljava/lang/String;
+	10      (00000028) const/4              v3, 0
+	11      (0000002a) aput-object          v0, v2, v3
+	12      (0000002e) invoke-static        v2, Lio/fabric/sdk/android/services/common/CommonUtils;->createInstanceIdFrom([Ljava/lang/String;)Ljava/lang/String;
+	13      (00000034) move-result-object   v5
+	14      (00000036) iget-object          v0, v12, Lio/fabric/sdk/android/Onboarding;->installerPackageName Ljava/lang/String;
+	15      (0000003a) invoke-static        v0, Lio/fabric/sdk/android/services/common/DeliveryMechanism;->determineFrom(Ljava/lang/String;)Lio/fabric/sdk/android/services/common/DeliveryMechanism;
+	16      (00000040) move-result-object   v0
+	17      (00000042) invoke-virtual       v0, Lio/fabric/sdk/android/services/common/DeliveryMechanism;->getId()I
+	18      (00000048) move-result          v7
+	19      (0000004a) invoke-virtual       v12, Lio/fabric/sdk/android/Onboarding;->getIdManager()Lio/fabric/sdk/android/services/common/IdManager;
+	20      (00000050) move-result-object   v0
+	21      (00000052) invoke-virtual       v0, Lio/fabric/sdk/android/services/common/IdManager;->getAppIdentifier()Ljava/lang/String;
+	22      (00000058) move-result-object   v2
+	23      (0000005a) new-instance         v0, Lio/fabric/sdk/android/services/settings/AppRequestData;
+	24      (0000005e) iget-object          v3, v12, Lio/fabric/sdk/android/Onboarding;->versionName Ljava/lang/String;
+	25      (00000062) iget-object          v4, v12, Lio/fabric/sdk/android/Onboarding;->versionCode Ljava/lang/String;
+	26      (00000066) iget-object          v6, v12, Lio/fabric/sdk/android/Onboarding;->applicationLabel Ljava/lang/String;
+	27      (0000006a) iget-object          v8, v12, Lio/fabric/sdk/android/Onboarding;->targetAndroidSdkVersion Ljava/lang/String;
+	28      (0000006e) const-string         v9, '0'
+	29      (00000072) move-object          v10, v13
+	30      (00000074) move-object          v11, v14
+	31      (00000076) invoke-direct/range  v0 ... v11, Lio/fabric/sdk/android/services/settings/AppRequestData;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; I Ljava/lang/String; Ljava/lang/String; Lio/fabric/sdk/android/services/settings/IconRequest; Ljava/util/Collection;)V
+	32      (0000007c) return-object        v0
+

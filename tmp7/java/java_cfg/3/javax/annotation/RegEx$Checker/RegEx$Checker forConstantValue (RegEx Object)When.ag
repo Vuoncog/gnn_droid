@@ -1,0 +1,32 @@
+# Ljavax/annotation/RegEx$Checker;->forConstantValue(Ljavax/annotation/RegEx; Ljava/lang/Object;)Ljavax/annotation/meta/When; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:javax.annotation.RegEx
+# - v3:java.lang.Object
+#
+# - return:javax.annotation.meta.When
+
+forConstantValue-BB@0x0 : [ forConstantValue-BB@0x8 forConstantValue-BB@0xe ]
+	0       (00000000) instance-of          v0, v3, Ljava/lang/String;
+	1       (00000004) if-nez               v0, +5
+
+forConstantValue-BB@0x8 : [ forConstantValue-BB@0xc ]
+	2       (00000008) sget-object          v0, Ljavax/annotation/meta/When;->NEVER Ljavax/annotation/meta/When;
+
+forConstantValue-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+forConstantValue-BB@0xe : [ forConstantValue-BB@0xc ]
+	4       (0000000e) check-cast           v3, Ljava/lang/String;
+	5       (00000012) invoke-static        v3, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+	6       (00000018) sget-object          v0, Ljavax/annotation/meta/When;->ALWAYS Ljavax/annotation/meta/When;
+	7       (0000001c) goto                 -8
+	e:17
+	(Ljava/util/regex/PatternSyntaxException; -> 1e forConstantValue-BB@0x1e)
+
+forConstantValue-BB@0x1e : [ forConstantValue-BB@0xc ]
+	8       (0000001e) move-exception       v0
+	9       (00000020) sget-object          v0, Ljavax/annotation/meta/When;->NEVER Ljavax/annotation/meta/When;
+	10      (00000024) goto                 -c
+

@@ -1,0 +1,77 @@
+digraph {
+	graph [bb="0,0,996,560",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_748ffaef3eada1e10b68f1622e6c688f {
+		graph [bb="8,8,988,552",
+			label="Lcom/ailock/tszlock/LockService;.onStart->(Landroid/content/Intent; I)V\nLocal registers v0 ... v1\nparam v2 = android.content.Intent\nparam \
+v3 = int\nreturn = void",
+			lheight=1.04,
+			lp="498,510.5",
+			lwidth=6.54
+		];
+		struct_b070d1d76bda87942ea44db1b5ae855f	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-super </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#DF3A01">Landroid/app/Service;-&gt;onStart(Landroid/content/Intent; I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7272CC">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#088A08">Lcom/ailock/tszlock/LockService;-&gt;mMasterResetReciever Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7272CC">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="498,415.5",
+			width=13.389];
+		struct_60ef9b1572e49e23a2d7fa302e4dbbf6	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lcom/ailock/tszlock/LockService;-&gt;lockRegister()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="270,310.5",
+			width=7.0417];
+		struct_b070d1d76bda87942ea44db1b5ae855f:tail -> struct_60ef9b1572e49e23a2d7fa302e4dbbf6:header	[color=red,
+			pos="e,38,327.5 37,375.5 37,358 37.673,351.27 37.915,337.64"];
+		struct_d2e1a4f36bd3f280598c71f095fc0d2c	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sget-boolean </FONT> <FONT color="#7272CC">v0</FONT>, <FONT color="#088A08">Lcom/ailock/tszlock/UnLockActivity;-&gt;isLive Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#7272CC">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="498,216.5",
+			width=6.6944];
+		struct_b070d1d76bda87942ea44db1b5ae855f:tail -> struct_d2e1a4f36bd3f280598c71f095fc0d2c:header	[color=green,
+			pos="e,282,244.5 37,375.5 37,320.2 495.56,374.7 533,334 547.14,318.63 546.48,302.96 533,287 498.91,246.66 309.7,293.91 284.72,254.33"];
+		struct_60ef9b1572e49e23a2d7fa302e4dbbf6:tail -> struct_d2e1a4f36bd3f280598c71f095fc0d2c:header	[color=blue,
+			pos="e,282,244.5 38,292.5 38,185.65 266.07,343.84 281.21,254.59"];
+		struct_4a5ff9ef9e121e52dd7d5bbd964c4420	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Lcom/ailock/tszlock/AlarmReceiver2;-&gt;enableAlert(Landroid/content/Context;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="369,122.5",
+			width=9.8056];
+		struct_d2e1a4f36bd3f280598c71f095fc0d2c:tail -> struct_4a5ff9ef9e121e52dd7d5bbd964c4420:header	[color=red,
+			pos="e,41,139.5 282,187.5 282,81.911 56.738,237.71 41.779,149.47"];
+		struct_c63181db5b822e4ba4deadc8eeb0e792	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="440,39.5",
+			width=2.0694];
+		struct_d2e1a4f36bd3f280598c71f095fc0d2c:tail -> struct_c63181db5b822e4ba4deadc8eeb0e792:header	[color=green,
+			pos="e,391,56.5 282,187.5 282,87.297 663.48,220.04 731,146 745.07,130.56 744.82,114.66 731,99 683.07,44.704 418.71,124.14 393.01,66.497"];
+		struct_4a5ff9ef9e121e52dd7d5bbd964c4420:tail -> struct_c63181db5b822e4ba4deadc8eeb0e792:header	[color=blue,
+			pos="e,376,53.5 41,104.5 41,69.276 301.25,55.322 365.63,53.669"];
+	}
+}

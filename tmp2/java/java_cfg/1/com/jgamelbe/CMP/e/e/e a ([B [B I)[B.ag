@@ -1,0 +1,54 @@
+# Lcom/jgamelbe/CMP/e/e;->a([B [B I)[B [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:byte[]
+# - v5:byte[]
+# - v6:int
+#
+# - return:byte[]
+
+a-BB@0x0 : [ a-BB@0xe a-BB@0x1e ]
+	0       (00000000) const/16             v2, 64
+	1       (00000004) const/16             v1, 8
+	2       (00000008) array-length         v0, v4
+	3       (0000000a) if-ne                v0, v1, +a
+
+a-BB@0xe : [ a-BB@0x14 a-BB@0x1e ]
+	4       (0000000e) array-length         v0, v5
+	5       (00000010) if-ne                v0, v1, +7
+
+a-BB@0x14 : [ a-BB@0x1a a-BB@0x2e ]
+	6       (00000014) const/4              v0, 1
+	7       (00000016) if-eq                v6, v0, +c
+
+a-BB@0x1a : [ a-BB@0x1e a-BB@0x2e ]
+	8       (0000001a) if-eqz               v6, +a
+
+a-BB@0x1e : 
+	9       (0000001e) new-instance         v0, Ljava/lang/RuntimeException;
+	10      (00000022) const-string         v1, 'Data Format Error !'
+	11      (00000026) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	12      (0000002c) throw                v0
+
+a-BB@0x2e : 
+	13      (0000002e) new-array            v0, v2, [I
+	14      (00000032) new-array            v0, v2, [I
+	15      (00000036) new-array            v0, v1, [B
+	16      (0000003a) const/16             v0, 16
+	17      (0000003e) const/16             v1, 48
+	18      (00000042) filled-new-array     v0, v1, [I
+	19      (00000048) move-result-object   v0
+	20      (0000004a) sget-object          v1, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	21      (0000004e) invoke-static        v1, v0, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class; [I)Ljava/lang/Object;
+	22      (00000054) move-result-object   v0
+	23      (00000056) check-cast           v0, [[I
+	24      (0000005a) invoke-direct        v3, v4, Lcom/jgamelbe/CMP/e/e;->a([B)[I
+	25      (00000060) move-result-object   v1
+	26      (00000062) invoke-direct        v3, v5, Lcom/jgamelbe/CMP/e/e;->a([B)[I
+	27      (00000068) move-result-object   v2
+	28      (0000006a) invoke-direct        v3, v1, v0, Lcom/jgamelbe/CMP/e/e;->a([I [[I)V
+	29      (00000070) invoke-direct        v3, v2, v6, v0, Lcom/jgamelbe/CMP/e/e;->a([I I [[I)[B
+	30      (00000076) move-result-object   v0
+	31      (00000078) return-object        v0
+

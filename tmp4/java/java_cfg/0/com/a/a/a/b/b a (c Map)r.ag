@@ -1,0 +1,165 @@
+# Lcom/a/a/a/b;->a(Lcom/a/a/c; Ljava/util/Map;)Lcom/a/a/r; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:com.a.a.c
+# - v10:java.util.Map
+#
+# - return:com.a.a.r
+
+a-BB@0x0 : [ a-BB@0x18 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) const/4              v2, 0
+	2       (00000004) new-instance         v7, Lcom/a/a/a/b/a;
+	3       (00000008) invoke-virtual       v9, Lcom/a/a/c;->c()Lcom/a/a/c/b;
+	4       (0000000e) move-result-object   v0
+	5       (00000010) invoke-direct        v7, v0, Lcom/a/a/a/b/a;-><init>(Lcom/a/a/c/b;)V
+	6       (00000016) const/4              v0, 0
+
+a-BB@0x18 : [ a-BB@0x28 ]
+	7       (00000018) invoke-virtual       v7, v0, Lcom/a/a/a/b/a;->a(Z)Lcom/a/a/a/a;
+	8       (0000001e) move-result-object   v0
+	9       (00000020) invoke-virtual       v0, Lcom/a/a/a/a;->e()[Lcom/a/a/t;
+	10      (00000026) move-result-object   v1
+	18:25
+	(Lcom/a/a/m; -> 9a a-BB@0x9a)
+	(Lcom/a/a/h; -> a6 a-BB@0xa6)
+
+a-BB@0x28 : [ a-BB@0x3e ]
+	11      (00000028) new-instance         v4, Lcom/a/a/a/a/a;
+	12      (0000002c) invoke-direct        v4, Lcom/a/a/a/a/a;-><init>()V
+	13      (00000032) invoke-virtual       v4, v0, Lcom/a/a/a/a/a;->a(Lcom/a/a/a/a;)Lcom/a/a/c/e;
+	14      (00000038) move-result-object   v4
+	15      (0000003a) move-object          v5, v2
+	16      (0000003c) move-object          v6, v2
+	28:37
+	(Lcom/a/a/m; -> 116 a-BB@0x116)
+	(Lcom/a/a/h; -> 112 a-BB@0x112)
+
+a-BB@0x3e : [ a-BB@0x42 a-BB@0x11a ]
+	17      (0000003e) if-nez               v4, +6e
+
+a-BB@0x42 : [ a-BB@0x44 ]
+	18      (00000042) const/4              v0, 1
+
+a-BB@0x44 : [ a-BB@0x6a ]
+	19      (00000044) invoke-virtual       v7, v0, Lcom/a/a/a/b/a;->a(Z)Lcom/a/a/a/a;
+	20      (0000004a) move-result-object   v0
+	21      (0000004c) invoke-virtual       v0, Lcom/a/a/a/a;->e()[Lcom/a/a/t;
+	22      (00000052) move-result-object   v1
+	23      (00000054) new-instance         v2, Lcom/a/a/a/a/a;
+	24      (00000058) invoke-direct        v2, Lcom/a/a/a/a/a;-><init>()V
+	25      (0000005e) invoke-virtual       v2, v0, Lcom/a/a/a/a/a;->a(Lcom/a/a/a/a;)Lcom/a/a/c/e;
+	26      (00000064) move-result-object   v0
+	27      (00000066) move-object          v2, v0
+	28      (00000068) move-object          v5, v1
+	44:63
+	(Lcom/a/a/m; -> 10e a-BB@0x10e)
+	(Lcom/a/a/h; -> b2 a-BB@0xb2)
+
+a-BB@0x6a : [ a-BB@0x6e a-BB@0xc2 ]
+	29      (0000006a) if-eqz               v10, +2c
+
+a-BB@0x6e : [ a-BB@0x82 a-BB@0xc2 ]
+	30      (0000006e) sget-object          v0, Lcom/a/a/e;->j Lcom/a/a/e;
+	31      (00000072) invoke-interface     v10, v0, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	32      (00000078) move-result-object   v0
+	33      (0000007a) check-cast           v0, Lcom/a/a/u;
+	34      (0000007e) if-eqz               v0, +22
+
+a-BB@0x82 : [ a-BB@0x86 ]
+	35      (00000082) array-length         v4, v5
+	36      (00000084) move                 v1, v3
+
+a-BB@0x86 : [ a-BB@0x8a a-BB@0xc2 ]
+	37      (00000086) if-ge                v1, v4, +1e
+
+a-BB@0x8a : [ a-BB@0x86 ]
+	38      (0000008a) aget-object          v3, v5, v1
+	39      (0000008e) invoke-interface     v0, v3, Lcom/a/a/u;->a(Lcom/a/a/t;)V
+	40      (00000094) add-int/lit8         v1, v1, 1
+	41      (00000098) goto                 -9
+
+a-BB@0x9a : [ a-BB@0x9e ]
+	42      (0000009a) move-exception       v0
+	43      (0000009c) move-object          v1, v2
+
+a-BB@0x9e : [ a-BB@0x3e ]
+	44      (0000009e) move-object          v4, v2
+	45      (000000a0) move-object          v5, v2
+	46      (000000a2) move-object          v6, v0
+	47      (000000a4) goto                 -33
+
+a-BB@0xa6 : [ a-BB@0xaa ]
+	48      (000000a6) move-exception       v0
+	49      (000000a8) move-object          v1, v2
+
+a-BB@0xaa : [ a-BB@0x3e ]
+	50      (000000aa) move-object          v4, v2
+	51      (000000ac) move-object          v5, v0
+	52      (000000ae) move-object          v6, v2
+	53      (000000b0) goto                 -39
+
+a-BB@0xb2 : [ a-BB@0xb4 ]
+	54      (000000b2) move-exception       v0
+
+a-BB@0xb4 : [ a-BB@0xb8 a-BB@0xba ]
+	55      (000000b4) if-eqz               v6, +3
+
+a-BB@0xb8 : 
+	56      (000000b8) throw                v6
+
+a-BB@0xba : [ a-BB@0xbe a-BB@0xc0 ]
+	57      (000000ba) if-eqz               v5, +3
+
+a-BB@0xbe : 
+	58      (000000be) throw                v5
+
+a-BB@0xc0 : 
+	59      (000000c0) throw                v0
+
+a-BB@0xc2 : [ a-BB@0xec a-BB@0xf6 ]
+	60      (000000c2) new-instance         v0, Lcom/a/a/r;
+	61      (000000c6) invoke-virtual       v2, Lcom/a/a/c/e;->b()Ljava/lang/String;
+	62      (000000cc) move-result-object   v1
+	63      (000000ce) invoke-virtual       v2, Lcom/a/a/c/e;->a()[B
+	64      (000000d4) move-result-object   v3
+	65      (000000d6) sget-object          v4, Lcom/a/a/a;->a Lcom/a/a/a;
+	66      (000000da) invoke-direct        v0, v1, v3, v5, v4, Lcom/a/a/r;-><init>(Ljava/lang/String; [B [Lcom/a/a/t; Lcom/a/a/a;)V
+	67      (000000e0) invoke-virtual       v2, Lcom/a/a/c/e;->c()Ljava/util/List;
+	68      (000000e6) move-result-object   v1
+	69      (000000e8) if-eqz               v1, +7
+
+a-BB@0xec : [ a-BB@0xf6 ]
+	70      (000000ec) sget-object          v3, Lcom/a/a/s;->c Lcom/a/a/s;
+	71      (000000f0) invoke-virtual       v0, v3, v1, Lcom/a/a/r;->a(Lcom/a/a/s; Ljava/lang/Object;)V
+
+a-BB@0xf6 : [ a-BB@0x102 a-BB@0x10c ]
+	72      (000000f6) invoke-virtual       v2, Lcom/a/a/c/e;->d()Ljava/lang/String;
+	73      (000000fc) move-result-object   v1
+	74      (000000fe) if-eqz               v1, +7
+
+a-BB@0x102 : [ a-BB@0x10c ]
+	75      (00000102) sget-object          v2, Lcom/a/a/s;->d Lcom/a/a/s;
+	76      (00000106) invoke-virtual       v0, v2, v1, Lcom/a/a/r;->a(Lcom/a/a/s; Ljava/lang/Object;)V
+
+a-BB@0x10c : 
+	77      (0000010c) return-object        v0
+
+a-BB@0x10e : [ a-BB@0xb4 ]
+	78      (0000010e) move-exception       v0
+	79      (00000110) goto                 -2e
+
+a-BB@0x112 : [ a-BB@0xaa ]
+	80      (00000112) move-exception       v0
+	81      (00000114) goto                 -35
+
+a-BB@0x116 : [ a-BB@0x9e ]
+	82      (00000116) move-exception       v0
+	83      (00000118) goto                 -3d
+
+a-BB@0x11a : [ a-BB@0x6a ]
+	84      (0000011a) move-object          v2, v4
+	85      (0000011c) move-object          v5, v1
+	86      (0000011e) goto                 -5a
+

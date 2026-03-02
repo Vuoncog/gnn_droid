@@ -1,0 +1,53 @@
+# Lorg/apache/commons/lang/ClassUtils;->convertClassNamesToClasses(Ljava/util/List;)Ljava/util/List; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.List
+#
+# - return:java.util.List
+
+convertClassNamesToClasses-BB@0x0 : [ convertClassNamesToClasses-BB@0x6 convertClassNamesToClasses-BB@0xa ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) if-nez               v4, +4
+
+convertClassNamesToClasses-BB@0x6 : [ convertClassNamesToClasses-BB@0x8 ]
+	2       (00000006) move-object          v0, v1
+
+convertClassNamesToClasses-BB@0x8 : 
+	3       (00000008) return-object        v0
+
+convertClassNamesToClasses-BB@0xa : [ convertClassNamesToClasses-BB@0x24 ]
+	4       (0000000a) new-instance         v2, Ljava/util/ArrayList;
+	5       (0000000e) invoke-interface     v4, Ljava/util/List;->size()I
+	6       (00000014) move-result          v0
+	7       (00000016) invoke-direct        v2, v0, Ljava/util/ArrayList;-><init>(I)V
+	8       (0000001c) invoke-interface     v4, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	9       (00000022) move-result-object   v3
+
+convertClassNamesToClasses-BB@0x24 : [ convertClassNamesToClasses-BB@0x30 convertClassNamesToClasses-BB@0x56 ]
+	10      (00000024) invoke-interface     v3, Ljava/util/Iterator;->hasNext()Z
+	11      (0000002a) move-result          v0
+	12      (0000002c) if-eqz               v0, +15
+
+convertClassNamesToClasses-BB@0x30 : [ convertClassNamesToClasses-BB@0x3c ]
+	13      (00000030) invoke-interface     v3, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	14      (00000036) move-result-object   v0
+	15      (00000038) check-cast           v0, Ljava/lang/String;
+
+convertClassNamesToClasses-BB@0x3c : [ convertClassNamesToClasses-BB@0x24 ]
+	16      (0000003c) invoke-static        v0, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+	17      (00000042) move-result-object   v0
+	18      (00000044) invoke-interface     v2, v0, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	19      (0000004a) goto                 -13
+	3c:49
+	(Ljava/lang/Exception; -> 4c convertClassNamesToClasses-BB@0x4c)
+
+convertClassNamesToClasses-BB@0x4c : [ convertClassNamesToClasses-BB@0x24 ]
+	20      (0000004c) move-exception       v0
+	21      (0000004e) invoke-interface     v2, v1, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	22      (00000054) goto                 -18
+
+convertClassNamesToClasses-BB@0x56 : [ convertClassNamesToClasses-BB@0x8 ]
+	23      (00000056) move-object          v0, v2
+	24      (00000058) goto                 -28
+

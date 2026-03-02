@@ -1,0 +1,23 @@
+# Lorg/apache/commons/io/FileCleaningTracker$Tracker;-><init>(Ljava/lang/String; Lorg/apache/commons/io/FileDeleteStrategy; Ljava/lang/Object; Ljava/lang/ref/ReferenceQueue;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:org.apache.commons.io.FileDeleteStrategy
+# - v3:java.lang.Object
+# - v4:java.lang.ref.ReferenceQueue
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xe <init>-BB@0x12 ]
+	0       (00000000) invoke-direct        v0, v3, v4, Ljava/lang/ref/PhantomReference;-><init>(Ljava/lang/Object; Ljava/lang/ref/ReferenceQueue;)V
+	1       (00000006) iput-object          v1, v0, Lorg/apache/commons/io/FileCleaningTracker$Tracker;->path Ljava/lang/String;
+	2       (0000000a) if-nez               v2, +4
+
+<init>-BB@0xe : [ <init>-BB@0x12 ]
+	3       (0000000e) sget-object          v2, Lorg/apache/commons/io/FileDeleteStrategy;->NORMAL Lorg/apache/commons/io/FileDeleteStrategy;
+
+<init>-BB@0x12 : 
+	4       (00000012) iput-object          v2, v0, Lorg/apache/commons/io/FileCleaningTracker$Tracker;->deleteStrategy Lorg/apache/commons/io/FileDeleteStrategy;
+	5       (00000016) return-void          
+

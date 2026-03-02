@@ -1,0 +1,39 @@
+# Lcom/mangosoft/android/wallpapers/HomeActivity;->checkSdcard()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+checkSdcard-BB@0x0 : [ checkSdcard-BB@0x1a checkSdcard-BB@0x2e ]
+	0       (00000000) new-instance         v0, Ljava/io/File;
+	1       (00000004) const-string         v1, '/sdcard/wp_hourse/downloads/'
+	2       (00000008) invoke-direct        v0, v1, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	3       (0000000e) invoke-virtual       v0, Ljava/io/File;->exists()Z
+	4       (00000014) move-result          v0
+	5       (00000016) if-nez               v0, +c
+
+checkSdcard-BB@0x1a : [ checkSdcard-BB@0x2e ]
+	6       (0000001a) new-instance         v0, Ljava/io/File;
+	7       (0000001e) const-string         v1, '/sdcard/wp_hourse/downloads/'
+	8       (00000022) invoke-direct        v0, v1, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	9       (00000028) invoke-virtual       v0, Ljava/io/File;->mkdirs()Z
+
+checkSdcard-BB@0x2e : [ checkSdcard-BB@0x48 checkSdcard-BB@0x5c ]
+	10      (0000002e) new-instance         v0, Ljava/io/File;
+	11      (00000032) const-string         v1, '/sdcard/wp_hourse/featured/'
+	12      (00000036) invoke-direct        v0, v1, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	13      (0000003c) invoke-virtual       v0, Ljava/io/File;->exists()Z
+	14      (00000042) move-result          v0
+	15      (00000044) if-nez               v0, +c
+
+checkSdcard-BB@0x48 : [ checkSdcard-BB@0x5c ]
+	16      (00000048) new-instance         v0, Ljava/io/File;
+	17      (0000004c) const-string         v1, '/sdcard/wp_hourse/featured/'
+	18      (00000050) invoke-direct        v0, v1, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	19      (00000056) invoke-virtual       v0, Ljava/io/File;->mkdirs()Z
+
+checkSdcard-BB@0x5c : 
+	20      (0000005c) const/4              v0, 1
+	21      (0000005e) return               v0
+

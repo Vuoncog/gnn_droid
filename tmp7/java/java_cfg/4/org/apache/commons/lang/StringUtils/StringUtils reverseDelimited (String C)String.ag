@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/StringUtils;->reverseDelimited(Ljava/lang/String; C)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:char
+#
+# - return:java.lang.String
+
+reverseDelimited-BB@0x0 : [ reverseDelimited-BB@0x4 reverseDelimited-BB@0x8 ]
+	0       (00000000) if-nez               v1, +4
+
+reverseDelimited-BB@0x4 : [ reverseDelimited-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+reverseDelimited-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+reverseDelimited-BB@0x8 : [ reverseDelimited-BB@0x6 ]
+	3       (00000008) invoke-static        v1, v2, Lorg/apache/commons/lang/StringUtils;->split(Ljava/lang/String; C)[Ljava/lang/String;
+	4       (0000000e) move-result-object   v0
+	5       (00000010) invoke-static        v0, Lorg/apache/commons/lang/ArrayUtils;->reverse([Ljava/lang/Object;)V
+	6       (00000016) invoke-static        v0, v2, Lorg/apache/commons/lang/StringUtils;->join([Ljava/lang/Object; C)Ljava/lang/String;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) goto                 -c
+

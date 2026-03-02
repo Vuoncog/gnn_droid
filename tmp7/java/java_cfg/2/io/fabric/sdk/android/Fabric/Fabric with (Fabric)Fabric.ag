@@ -1,0 +1,45 @@
+# Lio/fabric/sdk/android/Fabric;->with(Lio/fabric/sdk/android/Fabric;)Lio/fabric/sdk/android/Fabric; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:io.fabric.sdk.android.Fabric
+#
+# - return:io.fabric.sdk.android.Fabric
+
+with-BB@0x0 : [ with-BB@0x8 with-BB@0x1e ]
+	0       (00000000) sget-object          v0, Lio/fabric/sdk/android/Fabric;->singleton Lio/fabric/sdk/android/Fabric;
+	1       (00000004) if-nez               v0, +d
+
+with-BB@0x8 : [ with-BB@0xe ]
+	2       (00000008) const-class          v1, Lio/fabric/sdk/android/Fabric;
+	3       (0000000c) monitor-enter        v1
+
+with-BB@0xe : [ with-BB@0x16 with-BB@0x1c ]
+	4       (0000000e) sget-object          v0, Lio/fabric/sdk/android/Fabric;->singleton Lio/fabric/sdk/android/Fabric;
+	5       (00000012) if-nez               v0, +5
+	e:1d
+	(Ljava/lang/Throwable; -> 24 with-BB@0x24)
+
+with-BB@0x16 : [ with-BB@0x1c ]
+	6       (00000016) invoke-static        v2, Lio/fabric/sdk/android/Fabric;->setFabric(Lio/fabric/sdk/android/Fabric;)V
+	e:1d
+	(Ljava/lang/Throwable; -> 24 with-BB@0x24)
+
+with-BB@0x1c : [ with-BB@0x1e ]
+	7       (0000001c) monitor-exit         v1
+	e:1d
+	(Ljava/lang/Throwable; -> 24 with-BB@0x24)
+
+with-BB@0x1e : 
+	8       (0000001e) sget-object          v0, Lio/fabric/sdk/android/Fabric;->singleton Lio/fabric/sdk/android/Fabric;
+	9       (00000022) return-object        v0
+
+with-BB@0x24 : [ with-BB@0x26 ]
+	10      (00000024) move-exception       v0
+
+with-BB@0x26 : 
+	11      (00000026) monitor-exit         v1
+	12      (00000028) throw                v0
+	26:27
+	(Ljava/lang/Throwable; -> 24 with-BB@0x24)
+

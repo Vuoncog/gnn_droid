@@ -1,0 +1,31 @@
+# Lorg/apache/commons/lang/exception/ExceptionUtils;->getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Throwable
+#
+# - return:java.lang.Throwable
+
+getRootCause-BB@0x0 : [ getRootCause-BB@0x16 getRootCause-BB@0x1a ]
+	0       (00000000) invoke-static        v3, Lorg/apache/commons/lang/exception/ExceptionUtils;->getThrowableList(Ljava/lang/Throwable;)Ljava/util/List;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-interface     v0, Ljava/util/List;->size()I
+	3       (0000000e) move-result          v1
+	4       (00000010) const/4              v2, 2
+	5       (00000012) if-ge                v1, v2, +4
+
+getRootCause-BB@0x16 : [ getRootCause-BB@0x18 ]
+	6       (00000016) const/4              v0, 0
+
+getRootCause-BB@0x18 : 
+	7       (00000018) return-object        v0
+
+getRootCause-BB@0x1a : [ getRootCause-BB@0x18 ]
+	8       (0000001a) invoke-interface     v0, Ljava/util/List;->size()I
+	9       (00000020) move-result          v1
+	10      (00000022) add-int/lit8         v1, v1, -1
+	11      (00000026) invoke-interface     v0, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	12      (0000002c) move-result-object   v0
+	13      (0000002e) check-cast           v0, Ljava/lang/Throwable;
+	14      (00000032) goto                 -d
+

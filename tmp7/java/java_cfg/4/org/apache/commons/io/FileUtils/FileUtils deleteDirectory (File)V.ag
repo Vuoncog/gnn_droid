@@ -1,0 +1,46 @@
+# Lorg/apache/commons/io/FileUtils;->deleteDirectory(Ljava/io/File;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+#
+# - return:void
+
+deleteDirectory-BB@0x0 : [ deleteDirectory-BB@0xc deleteDirectory-BB@0xe ]
+	0       (00000000) invoke-virtual       v2, Ljava/io/File;->exists()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +3
+
+deleteDirectory-BB@0xc : 
+	3       (0000000c) return-void          
+
+deleteDirectory-BB@0xe : [ deleteDirectory-BB@0x1a deleteDirectory-BB@0x20 ]
+	4       (0000000e) invoke-static        v2, Lorg/apache/commons/io/FileUtils;->isSymlink(Ljava/io/File;)Z
+	5       (00000014) move-result          v0
+	6       (00000016) if-nez               v0, +5
+
+deleteDirectory-BB@0x1a : [ deleteDirectory-BB@0x20 ]
+	7       (0000001a) invoke-static        v2, Lorg/apache/commons/io/FileUtils;->cleanDirectory(Ljava/io/File;)V
+
+deleteDirectory-BB@0x20 : [ deleteDirectory-BB@0x2c deleteDirectory-BB@0xc ]
+	8       (00000020) invoke-virtual       v2, Ljava/io/File;->delete()Z
+	9       (00000026) move-result          v0
+	10      (00000028) if-nez               v0, -e
+
+deleteDirectory-BB@0x2c : 
+	11      (0000002c) new-instance         v0, Ljava/lang/StringBuilder;
+	12      (00000030) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	13      (00000036) const-string         v1, 'Unable to delete directory '
+	14      (0000003a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000040) move-result-object   v0
+	16      (00000042) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) const-string         v1, '.'
+	19      (0000004e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000054) move-result-object   v0
+	21      (00000056) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (0000005c) move-result-object   v0
+	23      (0000005e) new-instance         v1, Ljava/io/IOException;
+	24      (00000062) invoke-direct        v1, v0, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	25      (00000068) throw                v1
+

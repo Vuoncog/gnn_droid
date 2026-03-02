@@ -1,0 +1,79 @@
+# Lcom/a/a/g/a/a/d;->h()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:boolean
+
+h-BB@0x0 : [ h-BB@0x28 h-BB@0x2a ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v5, 0
+	2       (00000004) iget-object          v0, v8, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	3       (00000008) invoke-interface     v0, v5, Ljava/util/List;->get(I)Ljava/lang/Object;
+	4       (0000000e) move-result-object   v0
+	5       (00000010) check-cast           v0, Lcom/a/a/g/a/a/b;
+	6       (00000014) invoke-virtual       v0, Lcom/a/a/g/a/a/b;->a()Lcom/a/a/g/a/b;
+	7       (0000001a) move-result-object   v6
+	8       (0000001c) invoke-virtual       v0, Lcom/a/a/g/a/a/b;->b()Lcom/a/a/g/a/b;
+	9       (00000022) move-result-object   v0
+	10      (00000024) if-nez               v0, +3
+
+h-BB@0x28 : 
+	11      (00000028) return               v5
+
+h-BB@0x2a : [ h-BB@0x38 ]
+	12      (0000002a) invoke-virtual       v0, Lcom/a/a/g/a/b;->b()I
+	13      (00000030) move-result          v4
+	14      (00000032) const/4              v0, 2
+	15      (00000034) move                 v1, v2
+	16      (00000036) move                 v3, v0
+
+h-BB@0x38 : [ h-BB@0x48 h-BB@0x90 ]
+	17      (00000038) iget-object          v0, v8, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	18      (0000003c) invoke-interface     v0, Ljava/util/List;->size()I
+	19      (00000042) move-result          v0
+	20      (00000044) if-ge                v1, v0, +26
+
+h-BB@0x48 : [ h-BB@0x7a h-BB@0x88 ]
+	21      (00000048) iget-object          v0, v8, Lcom/a/a/g/a/a/d;->g Ljava/util/List;
+	22      (0000004c) invoke-interface     v0, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	23      (00000052) move-result-object   v0
+	24      (00000054) check-cast           v0, Lcom/a/a/g/a/a/b;
+	25      (00000058) invoke-virtual       v0, Lcom/a/a/g/a/a/b;->a()Lcom/a/a/g/a/b;
+	26      (0000005e) move-result-object   v7
+	27      (00000060) invoke-virtual       v7, Lcom/a/a/g/a/b;->b()I
+	28      (00000066) move-result          v7
+	29      (00000068) add-int/2addr        v4, v7
+	30      (0000006a) add-int/lit8         v3, v3, 1
+	31      (0000006e) invoke-virtual       v0, Lcom/a/a/g/a/a/b;->b()Lcom/a/a/g/a/b;
+	32      (00000074) move-result-object   v0
+	33      (00000076) if-eqz               v0, +9
+
+h-BB@0x7a : [ h-BB@0x88 ]
+	34      (0000007a) invoke-virtual       v0, Lcom/a/a/g/a/b;->b()I
+	35      (00000080) move-result          v0
+	36      (00000082) add-int/2addr        v4, v0
+	37      (00000084) add-int/lit8         v3, v3, 1
+
+h-BB@0x88 : [ h-BB@0x38 ]
+	38      (00000088) add-int/lit8         v0, v1, 1
+	39      (0000008c) move                 v1, v0
+	40      (0000008e) goto                 -2b
+
+h-BB@0x90 : [ h-BB@0xaa h-BB@0xae ]
+	41      (00000090) rem-int/lit16        v0, v4, 211
+	42      (00000094) add-int/lit8         v1, v3, -4
+	43      (00000098) mul-int/lit16        v1, v1, 211
+	44      (0000009c) add-int/2addr        v0, v1
+	45      (0000009e) invoke-virtual       v6, Lcom/a/a/g/a/b;->a()I
+	46      (000000a4) move-result          v1
+	47      (000000a6) if-ne                v0, v1, +4
+
+h-BB@0xaa : [ h-BB@0x28 ]
+	48      (000000aa) move                 v5, v2
+	49      (000000ac) goto                 -42
+
+h-BB@0xae : [ h-BB@0xaa ]
+	50      (000000ae) move                 v2, v5
+	51      (000000b0) goto                 -3
+

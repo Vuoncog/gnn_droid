@@ -1,0 +1,273 @@
+# Lorg/apache/commons/lang/ClassUtils;->isAssignable(Ljava/lang/Class; Ljava/lang/Class; Z)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Class
+# - v4:java.lang.Class
+# - v5:boolean
+#
+# - return:boolean
+
+isAssignable-BB@0x0 : [ isAssignable-BB@0x8 isAssignable-BB@0xa ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) if-nez               v4, +3
+
+isAssignable-BB@0x8 : 
+	3       (00000008) return               v1
+
+isAssignable-BB@0xa : [ isAssignable-BB@0xe isAssignable-BB@0x22 ]
+	4       (0000000a) if-nez               v3, +c
+
+isAssignable-BB@0xe : [ isAssignable-BB@0x1a isAssignable-BB@0x1e ]
+	5       (0000000e) invoke-virtual       v4, Ljava/lang/Class;->isPrimitive()Z
+	6       (00000014) move-result          v2
+	7       (00000016) if-nez               v2, +4
+
+isAssignable-BB@0x1a : [ isAssignable-BB@0x8 ]
+	8       (0000001a) move                 v1, v0
+	9       (0000001c) goto                 -a
+
+isAssignable-BB@0x1e : [ isAssignable-BB@0x1a ]
+	10      (0000001e) move                 v0, v1
+	11      (00000020) goto                 -3
+
+isAssignable-BB@0x22 : [ isAssignable-BB@0x26 isAssignable-BB@0x6e ]
+	12      (00000022) if-eqz               v5, +26
+
+isAssignable-BB@0x26 : [ isAssignable-BB@0x32 isAssignable-BB@0x4a ]
+	13      (00000026) invoke-virtual       v3, Ljava/lang/Class;->isPrimitive()Z
+	14      (0000002c) move-result          v2
+	15      (0000002e) if-eqz               v2, +e
+
+isAssignable-BB@0x32 : [ isAssignable-BB@0x3e isAssignable-BB@0x4a ]
+	16      (00000032) invoke-virtual       v4, Ljava/lang/Class;->isPrimitive()Z
+	17      (00000038) move-result          v2
+	18      (0000003a) if-nez               v2, +8
+
+isAssignable-BB@0x3e : [ isAssignable-BB@0x4a isAssignable-BB@0x8 ]
+	19      (0000003e) invoke-static        v3, Lorg/apache/commons/lang/ClassUtils;->primitiveToWrapper(Ljava/lang/Class;)Ljava/lang/Class;
+	20      (00000044) move-result-object   v3
+	21      (00000046) if-eqz               v3, -1f
+
+isAssignable-BB@0x4a : [ isAssignable-BB@0x56 isAssignable-BB@0x6e ]
+	22      (0000004a) invoke-virtual       v4, Ljava/lang/Class;->isPrimitive()Z
+	23      (00000050) move-result          v2
+	24      (00000052) if-eqz               v2, +e
+
+isAssignable-BB@0x56 : [ isAssignable-BB@0x62 isAssignable-BB@0x6e ]
+	25      (00000056) invoke-virtual       v3, Ljava/lang/Class;->isPrimitive()Z
+	26      (0000005c) move-result          v2
+	27      (0000005e) if-nez               v2, +8
+
+isAssignable-BB@0x62 : [ isAssignable-BB@0x6e isAssignable-BB@0x8 ]
+	28      (00000062) invoke-static        v3, Lorg/apache/commons/lang/ClassUtils;->wrapperToPrimitive(Ljava/lang/Class;)Ljava/lang/Class;
+	29      (00000068) move-result-object   v3
+	30      (0000006a) if-eqz               v3, -31
+
+isAssignable-BB@0x6e : [ isAssignable-BB@0x7a isAssignable-BB@0x7e ]
+	31      (0000006e) invoke-virtual       v3, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	32      (00000074) move-result          v2
+	33      (00000076) if-eqz               v2, +4
+
+isAssignable-BB@0x7a : [ isAssignable-BB@0x8 ]
+	34      (0000007a) move                 v1, v0
+	35      (0000007c) goto                 -3a
+
+isAssignable-BB@0x7e : [ isAssignable-BB@0x8a isAssignable-BB@0x262 ]
+	36      (0000007e) invoke-virtual       v3, Ljava/lang/Class;->isPrimitive()Z
+	37      (00000084) move-result          v2
+	38      (00000086) if-eqz               v2, +ee
+
+isAssignable-BB@0x8a : [ isAssignable-BB@0x96 isAssignable-BB@0x8 ]
+	39      (0000008a) invoke-virtual       v4, Ljava/lang/Class;->isPrimitive()Z
+	40      (00000090) move-result          v2
+	41      (00000092) if-eqz               v2, -45
+
+isAssignable-BB@0x96 : [ isAssignable-BB@0xa6 isAssignable-BB@0xda ]
+	42      (00000096) sget-object          v2, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	43      (0000009a) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	44      (000000a0) move-result          v2
+	45      (000000a2) if-eqz               v2, +1c
+
+isAssignable-BB@0xa6 : [ isAssignable-BB@0xb6 isAssignable-BB@0xd6 ]
+	46      (000000a6) sget-object          v2, Ljava/lang/Long;->TYPE Ljava/lang/Class;
+	47      (000000aa) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	48      (000000b0) move-result          v2
+	49      (000000b2) if-nez               v2, +12
+
+isAssignable-BB@0xb6 : [ isAssignable-BB@0xc6 isAssignable-BB@0xd6 ]
+	50      (000000b6) sget-object          v2, Ljava/lang/Float;->TYPE Ljava/lang/Class;
+	51      (000000ba) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	52      (000000c0) move-result          v2
+	53      (000000c2) if-nez               v2, +a
+
+isAssignable-BB@0xc6 : [ isAssignable-BB@0xd6 isAssignable-BB@0x8 ]
+	54      (000000c6) sget-object          v2, Ljava/lang/Double;->TYPE Ljava/lang/Class;
+	55      (000000ca) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	56      (000000d0) move-result          v2
+	57      (000000d2) if-eqz               v2, -65
+
+isAssignable-BB@0xd6 : [ isAssignable-BB@0x8 ]
+	58      (000000d6) move                 v1, v0
+	59      (000000d8) goto                 -68
+
+isAssignable-BB@0xda : [ isAssignable-BB@0xea isAssignable-BB@0x110 ]
+	60      (000000da) sget-object          v2, Ljava/lang/Long;->TYPE Ljava/lang/Class;
+	61      (000000de) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	62      (000000e4) move-result          v2
+	63      (000000e6) if-eqz               v2, +15
+
+isAssignable-BB@0xea : [ isAssignable-BB@0xfa isAssignable-BB@0x10a ]
+	64      (000000ea) sget-object          v2, Ljava/lang/Float;->TYPE Ljava/lang/Class;
+	65      (000000ee) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	66      (000000f4) move-result          v2
+	67      (000000f6) if-nez               v2, +a
+
+isAssignable-BB@0xfa : [ isAssignable-BB@0x10a isAssignable-BB@0x8 ]
+	68      (000000fa) sget-object          v2, Ljava/lang/Double;->TYPE Ljava/lang/Class;
+	69      (000000fe) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	70      (00000104) move-result          v2
+	71      (00000106) if-eqz               v2, -7f
+
+isAssignable-BB@0x10a : [ isAssignable-BB@0x8 ]
+	72      (0000010a) move                 v1, v0
+	73      (0000010c) goto/16              -82
+
+isAssignable-BB@0x110 : [ isAssignable-BB@0x120 isAssignable-BB@0x8 ]
+	74      (00000110) sget-object          v2, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	75      (00000114) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	76      (0000011a) move-result          v2
+	77      (0000011c) if-nez               v2, -8a
+
+isAssignable-BB@0x120 : [ isAssignable-BB@0x130 isAssignable-BB@0x8 ]
+	78      (00000120) sget-object          v2, Ljava/lang/Double;->TYPE Ljava/lang/Class;
+	79      (00000124) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	80      (0000012a) move-result          v2
+	81      (0000012c) if-nez               v2, -92
+
+isAssignable-BB@0x130 : [ isAssignable-BB@0x140 isAssignable-BB@0x150 ]
+	82      (00000130) sget-object          v2, Ljava/lang/Float;->TYPE Ljava/lang/Class;
+	83      (00000134) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	84      (0000013a) move-result          v2
+	85      (0000013c) if-eqz               v2, +a
+
+isAssignable-BB@0x140 : [ isAssignable-BB@0x8 ]
+	86      (00000140) sget-object          v0, Ljava/lang/Double;->TYPE Ljava/lang/Class;
+	87      (00000144) invoke-virtual       v0, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	88      (0000014a) move-result          v1
+	89      (0000014c) goto/16              -a2
+
+isAssignable-BB@0x150 : [ isAssignable-BB@0x160 isAssignable-BB@0x1a6 ]
+	90      (00000150) sget-object          v2, Ljava/lang/Character;->TYPE Ljava/lang/Class;
+	91      (00000154) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	92      (0000015a) move-result          v2
+	93      (0000015c) if-eqz               v2, +25
+
+isAssignable-BB@0x160 : [ isAssignable-BB@0x170 isAssignable-BB@0x1a0 ]
+	94      (00000160) sget-object          v2, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	95      (00000164) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	96      (0000016a) move-result          v2
+	97      (0000016c) if-nez               v2, +1a
+
+isAssignable-BB@0x170 : [ isAssignable-BB@0x180 isAssignable-BB@0x1a0 ]
+	98      (00000170) sget-object          v2, Ljava/lang/Long;->TYPE Ljava/lang/Class;
+	99      (00000174) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	100     (0000017a) move-result          v2
+	101     (0000017c) if-nez               v2, +12
+
+isAssignable-BB@0x180 : [ isAssignable-BB@0x190 isAssignable-BB@0x1a0 ]
+	102     (00000180) sget-object          v2, Ljava/lang/Float;->TYPE Ljava/lang/Class;
+	103     (00000184) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	104     (0000018a) move-result          v2
+	105     (0000018c) if-nez               v2, +a
+
+isAssignable-BB@0x190 : [ isAssignable-BB@0x1a0 isAssignable-BB@0x8 ]
+	106     (00000190) sget-object          v2, Ljava/lang/Double;->TYPE Ljava/lang/Class;
+	107     (00000194) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	108     (0000019a) move-result          v2
+	109     (0000019c) if-eqz               v2, -ca
+
+isAssignable-BB@0x1a0 : [ isAssignable-BB@0x8 ]
+	110     (000001a0) move                 v1, v0
+	111     (000001a2) goto/16              -cd
+
+isAssignable-BB@0x1a6 : [ isAssignable-BB@0x1b6 isAssignable-BB@0x1fc ]
+	112     (000001a6) sget-object          v2, Ljava/lang/Short;->TYPE Ljava/lang/Class;
+	113     (000001aa) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	114     (000001b0) move-result          v2
+	115     (000001b2) if-eqz               v2, +25
+
+isAssignable-BB@0x1b6 : [ isAssignable-BB@0x1c6 isAssignable-BB@0x1f6 ]
+	116     (000001b6) sget-object          v2, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	117     (000001ba) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	118     (000001c0) move-result          v2
+	119     (000001c2) if-nez               v2, +1a
+
+isAssignable-BB@0x1c6 : [ isAssignable-BB@0x1d6 isAssignable-BB@0x1f6 ]
+	120     (000001c6) sget-object          v2, Ljava/lang/Long;->TYPE Ljava/lang/Class;
+	121     (000001ca) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	122     (000001d0) move-result          v2
+	123     (000001d2) if-nez               v2, +12
+
+isAssignable-BB@0x1d6 : [ isAssignable-BB@0x1e6 isAssignable-BB@0x1f6 ]
+	124     (000001d6) sget-object          v2, Ljava/lang/Float;->TYPE Ljava/lang/Class;
+	125     (000001da) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	126     (000001e0) move-result          v2
+	127     (000001e2) if-nez               v2, +a
+
+isAssignable-BB@0x1e6 : [ isAssignable-BB@0x1f6 isAssignable-BB@0x8 ]
+	128     (000001e6) sget-object          v2, Ljava/lang/Double;->TYPE Ljava/lang/Class;
+	129     (000001ea) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	130     (000001f0) move-result          v2
+	131     (000001f2) if-eqz               v2, -f5
+
+isAssignable-BB@0x1f6 : [ isAssignable-BB@0x8 ]
+	132     (000001f6) move                 v1, v0
+	133     (000001f8) goto/16              -f8
+
+isAssignable-BB@0x1fc : [ isAssignable-BB@0x20c isAssignable-BB@0x8 ]
+	134     (000001fc) sget-object          v2, Ljava/lang/Byte;->TYPE Ljava/lang/Class;
+	135     (00000200) invoke-virtual       v2, v3, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	136     (00000206) move-result          v2
+	137     (00000208) if-eqz               v2, -100
+
+isAssignable-BB@0x20c : [ isAssignable-BB@0x21c isAssignable-BB@0x25c ]
+	138     (0000020c) sget-object          v2, Ljava/lang/Short;->TYPE Ljava/lang/Class;
+	139     (00000210) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	140     (00000216) move-result          v2
+	141     (00000218) if-nez               v2, +22
+
+isAssignable-BB@0x21c : [ isAssignable-BB@0x22c isAssignable-BB@0x25c ]
+	142     (0000021c) sget-object          v2, Ljava/lang/Integer;->TYPE Ljava/lang/Class;
+	143     (00000220) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	144     (00000226) move-result          v2
+	145     (00000228) if-nez               v2, +1a
+
+isAssignable-BB@0x22c : [ isAssignable-BB@0x23c isAssignable-BB@0x25c ]
+	146     (0000022c) sget-object          v2, Ljava/lang/Long;->TYPE Ljava/lang/Class;
+	147     (00000230) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	148     (00000236) move-result          v2
+	149     (00000238) if-nez               v2, +12
+
+isAssignable-BB@0x23c : [ isAssignable-BB@0x24c isAssignable-BB@0x25c ]
+	150     (0000023c) sget-object          v2, Ljava/lang/Float;->TYPE Ljava/lang/Class;
+	151     (00000240) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	152     (00000246) move-result          v2
+	153     (00000248) if-nez               v2, +a
+
+isAssignable-BB@0x24c : [ isAssignable-BB@0x25c isAssignable-BB@0x8 ]
+	154     (0000024c) sget-object          v2, Ljava/lang/Double;->TYPE Ljava/lang/Class;
+	155     (00000250) invoke-virtual       v2, v4, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+	156     (00000256) move-result          v2
+	157     (00000258) if-eqz               v2, -128
+
+isAssignable-BB@0x25c : [ isAssignable-BB@0x8 ]
+	158     (0000025c) move                 v1, v0
+	159     (0000025e) goto/16              -12b
+
+isAssignable-BB@0x262 : [ isAssignable-BB@0x8 ]
+	160     (00000262) invoke-virtual       v4, v3, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+	161     (00000268) move-result          v1
+	162     (0000026a) goto/16              -131
+

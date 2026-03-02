@@ -1,0 +1,34 @@
+# Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler$AnySessionPartFileFilter;->accept(Ljava/io/File; Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+# - v3:java.lang.String
+#
+# - return:boolean
+
+accept-BB@0x0 : [ accept-BB@0x10 accept-BB@0x30 ]
+	0       (00000000) sget-object          v0, Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->SESSION_FILE_FILTER Ljava/io/FilenameFilter;
+	1       (00000004) invoke-interface     v0, v2, v3, Ljava/io/FilenameFilter;->accept(Ljava/io/File; Ljava/lang/String;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +12
+
+accept-BB@0x10 : [ accept-BB@0x2c accept-BB@0x30 ]
+	4       (00000010) invoke-static        Lcom/crashlytics/android/core/CrashlyticsUncaughtExceptionHandler;->access$000()Ljava/util/regex/Pattern;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-virtual       v0, v3, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) invoke-virtual       v0, Ljava/util/regex/Matcher;->matches()Z
+	9       (00000026) move-result          v0
+	10      (00000028) if-eqz               v0, +4
+
+accept-BB@0x2c : [ accept-BB@0x2e ]
+	11      (0000002c) const/4              v0, 1
+
+accept-BB@0x2e : 
+	12      (0000002e) return               v0
+
+accept-BB@0x30 : [ accept-BB@0x2e ]
+	13      (00000030) const/4              v0, 0
+	14      (00000032) goto                 -2
+

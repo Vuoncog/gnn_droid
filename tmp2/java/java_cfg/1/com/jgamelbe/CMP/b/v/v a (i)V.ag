@@ -1,0 +1,98 @@
+# Lcom/jgamelbe/CMP/b/v;->a(Lcom/jgamelbe/CMP/b/i;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:com.jgamelbe.CMP.b.i
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xa a-BB@0xc ]
+	0       (00000000) invoke-super         v5, v6, Lcom/jgamelbe/CMP/b/r;->a(Lcom/jgamelbe/CMP/b/i;)V
+	1       (00000006) if-nez               v6, +3
+
+a-BB@0xa : 
+	2       (0000000a) return-void          
+
+a-BB@0xc : [ a-BB@0x18 a-BB@0xa ]
+	3       (0000000c) iget-object          v0, v6, Lcom/jgamelbe/CMP/b/i;->c Ljava/lang/Object;
+	4       (00000010) check-cast           v0, Ljava/util/ArrayList;
+	5       (00000014) if-eqz               v0, -5
+
+a-BB@0x18 : [ a-BB@0x24 a-BB@0xa ]
+	6       (00000018) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	7       (0000001e) move-result          v1
+	8       (00000020) if-lez               v1, -b
+
+a-BB@0x24 : [ a-BB@0x2c ]
+	9       (00000024) invoke-virtual       v0, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+	10      (0000002a) move-result-object   v1
+
+a-BB@0x2c : [ a-BB@0x38 a-BB@0x4e ]
+	11      (0000002c) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	12      (00000032) move-result          v0
+	13      (00000034) if-nez               v0, +d
+
+a-BB@0x38 : [ a-BB@0x42 a-BB@0xa ]
+	14      (00000038) iget                 v0, v5, Lcom/jgamelbe/CMP/b/v;->g I
+	15      (0000003c) const/4              v1, 1
+	16      (0000003e) if-ne                v0, v1, -1a
+
+a-BB@0x42 : [ a-BB@0xa ]
+	17      (00000042) iget-object          v0, v5, Lcom/jgamelbe/CMP/b/v;->d Landroid/content/Context;
+	18      (00000046) invoke-static        v0, Lcom/jgamelbe/CMP/b/e;->b(Landroid/content/Context;)V
+	19      (0000004c) goto                 -21
+
+a-BB@0x4e : [ a-BB@0x5a ]
+	20      (0000004e) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	21      (00000054) move-result-object   v0
+	22      (00000056) check-cast           v0, Lcom/jgamelbe/CMP/c/f;
+
+a-BB@0x5a : [ a-BB@0xa6 a-BB@0xba ]
+	23      (0000005a) sget-object          v2, Lcom/jgamelbe/CMP/b/v;->f Ljava/lang/String;
+	24      (0000005e) new-instance         v3, Ljava/lang/StringBuilder;
+	25      (00000062) const-string         v4, '[MyTaskGetPushAds]doGetPushAds()begin PushAdCommand adkey:'
+	26      (00000066) invoke-direct        v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	27      (0000006c) iget-object          v4, v0, Lcom/jgamelbe/CMP/c/f;->a Ljava/lang/String;
+	28      (00000070) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	29      (00000076) move-result-object   v3
+	30      (00000078) const-string         v4, ' title:'
+	31      (0000007c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	32      (00000082) move-result-object   v3
+	33      (00000084) iget-object          v4, v0, Lcom/jgamelbe/CMP/c/f;->b Ljava/lang/String;
+	34      (00000088) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	35      (0000008e) move-result-object   v3
+	36      (00000090) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	37      (00000096) move-result-object   v3
+	38      (00000098) invoke-static        v2, v3, Lcom/jgamelbe/CMP/e/g;->c(Ljava/lang/String; Ljava/lang/String;)V
+	39      (0000009e) iget-object          v2, v0, Lcom/jgamelbe/CMP/c/f;->g Ljava/lang/String;
+	40      (000000a2) if-eqz               v2, +c
+	5a:c3
+	(Ljava/lang/Exception; -> c6 a-BB@0xc6)
+
+a-BB@0xa6 : [ a-BB@0xba a-BB@0x2c ]
+	41      (000000a6) iget-object          v2, v5, Lcom/jgamelbe/CMP/b/v;->d Landroid/content/Context;
+	42      (000000aa) iget-object          v3, v0, Lcom/jgamelbe/CMP/c/f;->g Ljava/lang/String;
+	43      (000000ae) invoke-static        v2, v3, Lcom/jgamelbe/CMP/b/e;->a(Landroid/content/Context; Ljava/lang/String;)Z
+	44      (000000b4) move-result          v2
+	45      (000000b6) if-nez               v2, -45
+	5a:c3
+	(Ljava/lang/Exception; -> c6 a-BB@0xc6)
+
+a-BB@0xba : [ a-BB@0x2c ]
+	46      (000000ba) iget-object          v2, v5, Lcom/jgamelbe/CMP/b/v;->d Landroid/content/Context;
+	47      (000000be) invoke-static        v2, v0, Lcom/jgamelbe/CMP/e/s;->a(Landroid/content/Context; Lcom/jgamelbe/CMP/c/f;)Ljava/lang/Void;
+	48      (000000c4) goto                 -4c
+
+a-BB@0xc6 : [ a-BB@0x2c ]
+	49      (000000c6) move-exception       v0
+	50      (000000c8) sget-object          v2, Lcom/jgamelbe/CMP/b/v;->f Ljava/lang/String;
+	51      (000000cc) new-instance         v3, Ljava/lang/StringBuilder;
+	52      (000000d0) const-string         v4, '[MyTaskGetPushAds]doGetPushAds(),PushAdCommand:execute error '
+	53      (000000d4) invoke-direct        v3, v4, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	54      (000000da) invoke-virtual       v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	55      (000000e0) move-result-object   v0
+	56      (000000e2) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	57      (000000e8) move-result-object   v0
+	58      (000000ea) invoke-static        v2, v0, Lcom/jgamelbe/CMP/e/g;->a(Ljava/lang/String; Ljava/lang/String;)V
+	59      (000000f0) goto                 -62
+

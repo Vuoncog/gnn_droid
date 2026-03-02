@@ -1,0 +1,19 @@
+# Lcom/unlocker/purchase/c$3;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v0, v4, Lcom/unlocker/purchase/c$3;->b Lcom/unlocker/purchase/c;
+	2       (00000006) const-string         v1, 'progressDialog'
+	3       (0000000a) const-string         v2, 'canceled'
+	4       (0000000e) invoke-static        v0, v1, v2, Lcom/unlocker/purchase/c;->a(Lcom/unlocker/purchase/c; Ljava/lang/String; Ljava/lang/String;)V
+	5       (00000014) iget-object          v0, v4, Lcom/unlocker/purchase/c$3;->a Lcom/unlocker/b;
+	6       (00000018) invoke-static        v3, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) invoke-interface     v0, v1, v3, Lcom/unlocker/b;->a(Ljava/lang/Object; Z)V
+	9       (00000026) return-void          
+

@@ -1,0 +1,39 @@
+# La/a/b/a/a/d/a;->g()Z [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+g-BB@0x0 : [ g-BB@0x8 ]
+	0       (00000000) invoke-virtual       v3, La/a/b/a/a/d/a;->iterator()Ljava/util/Iterator;
+	1       (00000006) move-result-object   v1
+
+g-BB@0x8 : [ g-BB@0x14 g-BB@0x3c ]
+	2       (00000008) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +16
+
+g-BB@0x14 : [ g-BB@0x2c g-BB@0x8 ]
+	5       (00000014) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, La/a/b/a/a/a;
+	8       (00000020) invoke-virtual       v0, La/a/b/a/a/a;->m()Z
+	9       (00000026) move-result          v2
+	10      (00000028) if-eqz               v2, -10
+
+g-BB@0x2c : [ g-BB@0x38 g-BB@0x8 ]
+	11      (0000002c) invoke-virtual       v0, La/a/b/a/a/a;->g()Z
+	12      (00000032) move-result          v0
+	13      (00000034) if-nez               v0, -16
+
+g-BB@0x38 : [ g-BB@0x3a ]
+	14      (00000038) const/4              v0, 0
+
+g-BB@0x3a : 
+	15      (0000003a) return               v0
+
+g-BB@0x3c : [ g-BB@0x3a ]
+	16      (0000003c) const/4              v0, 1
+	17      (0000003e) goto                 -2
+

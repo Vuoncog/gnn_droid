@@ -1,0 +1,101 @@
+digraph {
+	graph [bb="0,0,1392,662",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_2c9b3f931ba507650729a35b765151d8 {
+		graph [bb="8,8,1377,654",
+			label="Lio/fabric/sdk/android/services/common/QueueFile;.peek->()[B\nLocal registers v0 ... v4\nreturn = byte[]",
+			lheight=0.62,
+			lp="692.5,627.5",
+			lwidth=5.78
+		];
+		struct_3ee2c8255c4647dd75249bc4e84e57f3	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-enter </FONT> <FONT color="#999933">v4</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="292,569.5",
+			width=2.4583];
+		struct_5d86551ac0093eeb519ca85622144519	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;isEmpty()Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#8E8E5B">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8E8E5B">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="507,463.5",
+			width=8.4306];
+		struct_3ee2c8255c4647dd75249bc4e84e57f3:tail -> struct_5d86551ac0093eeb519ca85622144519:header	[color=blue,
+			pos="e,225,502.5 225,551.5 225,533.64 225,526.76 225,512.85"];
+		struct_3d8f57532b0c94fad734b03d6131a269	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#8E8E5B">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="99,269.5",
+			width=2.2917];
+		struct_5d86551ac0093eeb519ca85622144519:tail -> struct_3d8f57532b0c94fad734b03d6131a269:header	[color=red,
+			pos="e,38,286.5 214,426.5 117.46,426.5 43.227,389.14 38.264,296.54"];
+		struct_18a216293488881bd16d7d97d08521f4	[height=3.0972,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#8E8E5B">v0</FONT>, <FONT color="#999933">v4</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;first Lio/fabric/sdk/android/services/common/QueueFile$Element;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#848484">v1</FONT>, <FONT color="#8E8E5B">v0</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile$Element;-&gt;length I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-array </FONT> <FONT color="#8E8E5B">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#0000FF">[B</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="#999933">v4</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;first Lio/fabric/sdk/android/services/common/QueueFile$Element;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/common/QueueFile$Element;-&gt;position I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-int/lit8 </FONT> <FONT color="#7A7AAD">v2</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="green">0x4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7070D6">v3</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v4</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#8E8E5B">v0</FONT>, <FONT color="#7070D6">v3</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/common/QueueFile;-&gt;ringRead(I [B I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-12</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="694,269.5",
+			width=13.722];
+		struct_5d86551ac0093eeb519ca85622144519:tail -> struct_18a216293488881bd16d7d97d08521f4:header	[color=green,
+			pos="e,225,374.5 225,423.5 225,405.64 225,398.76 225,384.85"];
+		struct_fa511af130da24d760510f522423d6e1	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#8E8E5B">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#8E8E5B">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="811,61.5",
+			width=2.7083];
+		struct_5d86551ac0093eeb519ca85622144519:tail -> struct_fa511af130da24d760510f522423d6e1:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="1319.5,269.5",
+			pos="e,739,100.5 225,423.5 225,315.4 1122.2,459.09 1197,381 1265.5,309.4 1262.6,232.32 1197,158 1131.5,83.786 766.03,194.74 740.42,110.5"];
+		struct_b61957851e1ef37c9f1b74e0ccf1a79a	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">monitor-exit </FONT> <FONT color="#999933">v4</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#8E8E5B">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="197,61.5",
+			width=2.4722];
+		struct_3d8f57532b0c94fad734b03d6131a269:tail -> struct_b61957851e1ef37c9f1b74e0ccf1a79a:header	[color=blue,
+			pos="e,118,86.5 38,251.5 38,173.5 36.628,93.672 107.95,86.956"];
+		struct_18a216293488881bd16d7d97d08521f4:tail -> struct_b61957851e1ef37c9f1b74e0ccf1a79a:header	[color=blue,
+			pos="e,133,89.5 210,166.5 199.79,166.5 151.99,120.3 137.3,98.59"];
+		struct_18a216293488881bd16d7d97d08521f4:tail -> struct_fa511af130da24d760510f522423d6e1:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="382.5,132.5",
+			pos="e,724,97.5 225,163.5 225,110.14 628.33,98.521 713.93,97.567"];
+	}
+}

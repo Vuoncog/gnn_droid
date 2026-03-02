@@ -1,0 +1,62 @@
+# Lcom/jgamelbe/CMP/c/b;->b()Lcom/jgamelbe/CMP/c/c; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:com.jgamelbe.CMP.c.c
+
+b-BB@0x0 : [ b-BB@0x8 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v2, v5, Lcom/jgamelbe/CMP/c/b;->c Ljava/lang/Object;
+	2       (00000006) monitor-enter        v2
+
+b-BB@0x8 : [ b-BB@0x18 b-BB@0x1e ]
+	3       (00000008) iget-object          v0, v5, Lcom/jgamelbe/CMP/c/b;->b Ljava/util/ArrayList;
+	4       (0000000c) invoke-virtual       v0, Ljava/util/ArrayList;->isEmpty()Z
+	5       (00000012) move-result          v0
+	6       (00000014) if-eqz               v0, +5
+	8:19
+	(Ljava/lang/Throwable; -> 40 b-BB@0x40)
+
+b-BB@0x18 : [ b-BB@0x1c ]
+	7       (00000018) monitor-exit         v2
+	8       (0000001a) move-object          v0, v1
+
+b-BB@0x1c : 
+	9       (0000001c) return-object        v0
+
+b-BB@0x1e : [ b-BB@0x3c ]
+	10      (0000001e) iget-object          v0, v5, Lcom/jgamelbe/CMP/c/b;->b Ljava/util/ArrayList;
+	11      (00000022) const/4              v3, 0
+	12      (00000024) invoke-virtual       v0, v3, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	13      (0000002a) move-result-object   v0
+	14      (0000002c) check-cast           v0, Lcom/jgamelbe/CMP/c/c;
+	15      (00000030) iget-object          v3, v5, Lcom/jgamelbe/CMP/c/b;->b Ljava/util/ArrayList;
+	16      (00000034) const/4              v4, 0
+	17      (00000036) invoke-virtual       v3, v4, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+	1e:3b
+	(Ljava/lang/Throwable; -> 40 b-BB@0x40)
+	(Ljava/lang/Exception; -> 46 b-BB@0x46)
+
+b-BB@0x3c : [ b-BB@0x1c ]
+	18      (0000003c) monitor-exit         v2
+	19      (0000003e) goto                 -11
+	3c:43
+	(Ljava/lang/Throwable; -> 40 b-BB@0x40)
+
+b-BB@0x40 : 
+	20      (00000040) move-exception       v0
+	21      (00000042) monitor-exit         v2
+	22      (00000044) throw                v0
+
+b-BB@0x46 : [ b-BB@0x48 ]
+	23      (00000046) move-exception       v0
+
+b-BB@0x48 : [ b-BB@0x1c ]
+	24      (00000048) invoke-virtual       v0, Ljava/lang/Exception;->printStackTrace()V
+	25      (0000004e) monitor-exit         v2
+	26      (00000050) move-object          v0, v1
+	27      (00000052) goto                 -1b
+	48:4f
+	(Ljava/lang/Throwable; -> 40 b-BB@0x40)
+

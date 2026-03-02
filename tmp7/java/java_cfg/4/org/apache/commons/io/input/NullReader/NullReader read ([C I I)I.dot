@@ -1,0 +1,129 @@
+digraph {
+	graph [bb="0,0,1219.7,988",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_0b7aa807d7d18be839da2c5497ce7654 {
+		graph [bb="8,8,1198,980",
+			label="Lorg/apache/commons/io/input/NullReader;.read->([C I I)I\nLocal registers v0 ... v4\nparam v5 = char[]\nparam v6 = int\nparam v7 = \
+int\nreturn = int",
+			lheight=1.25,
+			lp="603,931",
+			lwidth=5.32
+		];
+		struct_1421ee7051671ba7fbd1ada30ed77d18	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-boolean </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;eof Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="590,839.5",
+			width=7.4722];
+		struct_6bd309cfa1623d93e91454c668cccef8	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/io/IOException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#8A8A6D">v1</FONT>, <FONT color="red">'Read after end of file'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8A8A6D">v1</FONT>, <FONT color="#DF3A01">Ljava/io/IOException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="308,712.5",
+			width=7.3889];
+		struct_1421ee7051671ba7fbd1ada30ed77d18:tail -> struct_6bd309cfa1623d93e91454c668cccef8:header	[color=red,
+			pos="e,67,762.5 331,813.5 303.93,813.5 109.1,796.15 72.812,770.66"];
+		struct_5aa6b76833447cdfa372ce6ec2bc91c8	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;position J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#83838A">v2</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;size J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">cmp-long </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#83838A">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="868,712.5",
+			width=7.6528];
+		struct_1421ee7051671ba7fbd1ada30ed77d18:tail -> struct_5aa6b76833447cdfa372ce6ec2bc91c8:header	[color=green,
+			pos="e,603,759.5 342,810.5 342,756.16 531.2,785.42 583,769 587.98,767.42 590.54,764.84 593.32,762.76"];
+		struct_4bafcca641efa32dc7be09416c7bd399	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#919150">v4</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/input/NullReader;-&gt;doEndOfFile()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7B7BA7">v7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="308,293.5",
+			width=8.1111];
+		struct_5aa6b76833447cdfa372ce6ec2bc91c8:tail -> struct_4bafcca641efa32dc7be09416c7bd399:header	[color=red,
+			pos="e,41,321.5 603,664.5 585.93,664.5 110.89,381.48 47.88,329.01"];
+		struct_2c36b2eb584d1546806a00866b2841f3	[height=2.7917,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;position J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">int-to-long </FONT> <FONT color="#83838A">v2</FONT>, <FONT color="#7B7BA7">v7</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">add-long/2addr </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#83838A">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-wide </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;position J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;position J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#83838A">v2</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;size J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">46</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">cmp-long </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#83838A">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-lez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xd</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="894,519.5",
+			width=7.6667];
+		struct_5aa6b76833447cdfa372ce6ec2bc91c8:tail -> struct_2c36b2eb584d1546806a00866b2841f3:header	[color=green,
+			pos="e,643,613.5 618,661.5 618,641.39 635.47,638.17 641.2,623.6"];
+		struct_511a050ce037bf6e2432decd70612ff7	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">30</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#7B7BA7">v7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="318,39.5",
+			width=1.8472];
+		struct_4bafcca641efa32dc7be09416c7bd399:tail -> struct_511a050ce037bf6e2432decd70612ff7:header	[color=blue,
+			pos="e,262,53.5 41,264.5 41,132.15 121.93,57.358 251.75,53.645"];
+		struct_50e7a8de2de5f3a8b566f8f50dc7eb58	[height=2.4861,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;position J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">52</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#83838A">v2</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;size J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">56</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sub-long/2addr </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#83838A">v2</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">58</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">long-to-int </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">sub-int/2addr </FONT> <FONT color="#7B7BA7">v7</FONT>, <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">5c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-wide </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;size J</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">60</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-wide </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#919150">v4</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/NullReader;-&gt;position J</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="894,293.5",
+			width=7.6667];
+		struct_2c36b2eb584d1546806a00866b2841f3:tail -> struct_50e7a8de2de5f3a8b566f8f50dc7eb58:header	[color=red,
+			pos="e,643,376.5 643,424.5 643,407 643,400.27 643,386.64"];
+		struct_d58cbc357cf4085a564f6c4a65944f65	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">64</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#919150">v4</FONT>, <FONT color="#7474C4">v5</FONT>, <FONT color="#6D6DE1">v6</FONT>, <FONT color="#7B7BA7">v7</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/input/NullReader;-&gt;processChars([C I I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-1d</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="839,133.5",
+			width=9.75];
+		struct_2c36b2eb584d1546806a00866b2841f3:tail -> struct_d58cbc357cf4085a564f6c4a65944f65:header	[color=green,
+			pos="e,513,161.5 643,424.5 643,364.77 1138.4,426.84 1179,383 1233,324.61 1233.4,262.02 1179,204 1130.6,152.46 569.44,227.92 516.93,170.9"];
+		struct_50e7a8de2de5f3a8b566f8f50dc7eb58:tail -> struct_d58cbc357cf4085a564f6c4a65944f65:header	[color=blue,
+			pos="e,513,161.5 643,209.5 643,151.76 528.74,214.23 514.46,171.51"];
+		struct_d58cbc357cf4085a564f6c4a65944f65:tail -> struct_511a050ce037bf6e2432decd70612ff7:header	[color=blue,
+			pos="e,277,56.5 498,107.5 451.14,107.5 300.4,106.98 279.43,66.41"];
+	}
+}

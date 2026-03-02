@@ -1,0 +1,45 @@
+# Lcom/isnowstudio/common/c/f;->a(Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:java.lang.String
+
+a-BB@0x0 : [ a-BB@0x14 a-BB@0x1c ]
+	0       (00000000) const-string         v0, ''
+	1       (00000004) const-string         v1, '.'
+	2       (00000008) invoke-virtual       v3, v1, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+	3       (0000000e) move-result          v1
+	4       (00000010) if-ltz               v1, +6
+
+a-BB@0x14 : [ a-BB@0x1c ]
+	5       (00000014) invoke-virtual       v3, v1, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	6       (0000001a) move-result-object   v0
+
+a-BB@0x1c : [ a-BB@0x28 a-BB@0x2a ]
+	7       (0000001c) invoke-static        v3, Lcom/isnowstudio/common/c/f;->c(Ljava/lang/String;)Ljava/lang/String;
+	8       (00000022) move-result-object   v1
+	9       (00000024) if-nez               v1, +3
+
+a-BB@0x28 : [ a-BB@0x2a ]
+	10      (00000028) move-object          v1, v0
+
+a-BB@0x2a : [ a-BB@0x3a a-BB@0x4c ]
+	11      (0000002a) const-string         v2, '.apk'
+	12      (0000002e) invoke-virtual       v2, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	13      (00000034) move-result          v2
+	14      (00000036) if-eqz               v2, +b
+
+a-BB@0x3a : [ a-BB@0x4a a-BB@0x4c ]
+	15      (0000003a) const-string         v2, '.zip'
+	16      (0000003e) invoke-virtual       v2, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	17      (00000044) move-result          v2
+	18      (00000046) if-eqz               v2, +3
+
+a-BB@0x4a : [ a-BB@0x4c ]
+	19      (0000004a) move-object          v1, v0
+
+a-BB@0x4c : 
+	20      (0000004c) return-object        v1
+

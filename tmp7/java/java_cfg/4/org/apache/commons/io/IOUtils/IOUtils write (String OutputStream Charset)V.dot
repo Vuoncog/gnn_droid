@@ -1,0 +1,54 @@
+digraph {
+	graph [bb="0,0,911.4,431",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_781abd8a1c6a08c0381735e424f91672 {
+		graph [bb="8,8,900,423",
+			label="Lorg/apache/commons/io/IOUtils;.write->(Ljava/lang/String; Ljava/io/OutputStream; Ljava/nio/charset/Charset;)V\nLocal registers \
+v0 ... v0\nparam v1 = java.lang.String\nparam v2 = java.io.OutputStream\nparam v3 = java.nio.charset.Charset\nreturn = void",
+			lheight=1.25,
+			lp="454,374",
+			lwidth=10.35
+		];
+		struct_cef5151e1cef7f4fd5f856648d1fba92	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xd</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="455,293.5",
+			width=2.0972];
+		struct_ef5348dbf2da0de9e8ed2e57c5e56b33	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-static </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/Charsets;-&gt;toCharset(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Ljava/lang/String;-&gt;getBytes(Ljava/nio/charset/Charset;)[B</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result-object </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7272CC">v2</FONT>, <FONT color="#7F7F99">v0</FONT>, <FONT color="#DF3A01">Ljava/io/OutputStream;-&gt;write([B)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="444,166.5",
+			width=11.889];
+		struct_cef5151e1cef7f4fd5f856648d1fba92:tail -> struct_ef5348dbf2da0de9e8ed2e57c5e56b33:header	[color=red,
+			pos="e,41,227.5 401,275.5 401,117.71 56.99,376.79 41.537,237.73"];
+		struct_8982515a22551c770c11e32068f083f7	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="454,39.5",
+			width=2.0556];
+		struct_cef5151e1cef7f4fd5f856648d1fba92:tail -> struct_8982515a22551c770c11e32068f083f7:header	[color=green,
+			pos="e,405,56.5 401,275.5 401,168.44 808.63,312.9 881,234 921.56,189.78 921.5,143.27 881,99 811.77,23.317 432.25,153.24 406.39,66.538"];
+		struct_ef5348dbf2da0de9e8ed2e57c5e56b33:tail -> struct_8982515a22551c770c11e32068f083f7:header	[color=blue,
+			pos="e,405,56.5 41,104.5 41,-55.013 388.83,207.4 404.46,66.837"];
+	}
+}

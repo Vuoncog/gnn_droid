@@ -1,0 +1,36 @@
+# Lcom/mangosoft/android/wallpapers/HomeActivity$4;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x10 run-BB@0x2a ]
+	0       (00000000) iget-object          v0, v3, Lcom/mangosoft/android/wallpapers/HomeActivity$4;->this$0 Lcom/mangosoft/android/wallpapers/HomeActivity;
+	1       (00000004) invoke-static        v0, Lcom/mangosoft/android/wallpapers/HomeActivity;->access$5(Lcom/mangosoft/android/wallpapers/HomeActivity;)Landroid/view/animation/Animation;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-nez               v0, +f
+
+run-BB@0x10 : [ run-BB@0x2a ]
+	4       (00000010) iget-object          v0, v3, Lcom/mangosoft/android/wallpapers/HomeActivity$4;->this$0 Lcom/mangosoft/android/wallpapers/HomeActivity;
+	5       (00000014) iget-object          v1, v3, Lcom/mangosoft/android/wallpapers/HomeActivity$4;->this$0 Lcom/mangosoft/android/wallpapers/HomeActivity;
+	6       (00000018) const/high16         v2, 32516 # [1.754580954436089e+38]
+	7       (0000001c) invoke-static        v1, v2, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context; I)Landroid/view/animation/Animation;
+	8       (00000022) move-result-object   v1
+	9       (00000024) invoke-static        v0, v1, Lcom/mangosoft/android/wallpapers/HomeActivity;->access$6(Lcom/mangosoft/android/wallpapers/HomeActivity; Landroid/view/animation/Animation;)V
+
+run-BB@0x2a : 
+	10      (0000002a) iget-object          v0, v3, Lcom/mangosoft/android/wallpapers/HomeActivity$4;->this$0 Lcom/mangosoft/android/wallpapers/HomeActivity;
+	11      (0000002e) invoke-static        v0, Lcom/mangosoft/android/wallpapers/HomeActivity;->access$3(Lcom/mangosoft/android/wallpapers/HomeActivity;)Landroid/widget/Gallery;
+	12      (00000034) move-result-object   v0
+	13      (00000036) const/4              v1, 0
+	14      (00000038) invoke-virtual       v0, v1, Landroid/widget/Gallery;->setVisibility(I)V
+	15      (0000003e) iget-object          v0, v3, Lcom/mangosoft/android/wallpapers/HomeActivity$4;->this$0 Lcom/mangosoft/android/wallpapers/HomeActivity;
+	16      (00000042) invoke-static        v0, Lcom/mangosoft/android/wallpapers/HomeActivity;->access$3(Lcom/mangosoft/android/wallpapers/HomeActivity;)Landroid/widget/Gallery;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) iget-object          v1, v3, Lcom/mangosoft/android/wallpapers/HomeActivity$4;->this$0 Lcom/mangosoft/android/wallpapers/HomeActivity;
+	19      (0000004e) invoke-static        v1, Lcom/mangosoft/android/wallpapers/HomeActivity;->access$5(Lcom/mangosoft/android/wallpapers/HomeActivity;)Landroid/view/animation/Animation;
+	20      (00000054) move-result-object   v1
+	21      (00000056) invoke-virtual       v0, v1, Landroid/widget/Gallery;->startAnimation(Landroid/view/animation/Animation;)V
+	22      (0000005c) return-void          
+

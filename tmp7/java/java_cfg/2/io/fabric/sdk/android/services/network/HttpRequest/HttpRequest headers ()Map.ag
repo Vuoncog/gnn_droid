@@ -1,0 +1,15 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->headers()Ljava/util/Map; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.util.Map
+
+headers-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Lio/fabric/sdk/android/services/network/HttpRequest;->closeOutputQuietly()Lio/fabric/sdk/android/services/network/HttpRequest;
+	1       (00000006) invoke-virtual       v1, Lio/fabric/sdk/android/services/network/HttpRequest;->getConnection()Ljava/net/HttpURLConnection;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) invoke-virtual       v0, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
+	4       (00000014) move-result-object   v0
+	5       (00000016) return-object        v0
+

@@ -1,0 +1,59 @@
+# La/a/a/a;->a(Ljava/io/OutputStream; La/a/a/a/b; Ljava/lang/String;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.io.OutputStream
+# - v6:a.a.a.a.b
+# - v7:java.lang.String
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0xe a-BB@0x2e ]
+	0       (00000000) const/16             v3, 10
+	1       (00000004) invoke-virtual       v6, v5, La/a/a/a/b;->a(Ljava/io/OutputStream;)V
+	2       (0000000a) if-eqz               v7, +12
+
+a-BB@0xe : [ a-BB@0x2e ]
+	3       (0000000e) invoke-static        v7, La/a/a/a/c;->b(Ljava/lang/String;)Ljava/lang/String;
+	4       (00000014) move-result-object   v0
+	5       (00000016) invoke-virtual       v0, Ljava/lang/String;->getBytes()[B
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write([B)V
+	8       (00000024) const/16             v0, 32
+	9       (00000028) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+
+a-BB@0x2e : [ a-BB@0x58 ]
+	10      (0000002e) const/16             v0, 123
+	11      (00000032) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	12      (00000038) invoke-virtual       v5, v3, Ljava/io/OutputStream;->write(I)V
+	13      (0000003e) invoke-virtual       v6, La/a/a/a/b;->a()V
+	14      (00000044) iget-object          v0, v4, La/a/a/a;->a Ljava/util/HashMap;
+	15      (00000048) invoke-virtual       v0, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+	16      (0000004e) move-result-object   v0
+	17      (00000050) invoke-interface     v0, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	18      (00000056) move-result-object   v2
+
+a-BB@0x58 : [ a-BB@0x64 a-BB@0x88 ]
+	19      (00000058) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	20      (0000005e) move-result          v0
+	21      (00000060) if-eqz               v0, +14
+
+a-BB@0x64 : [ a-BB@0x58 ]
+	22      (00000064) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	23      (0000006a) move-result-object   v0
+	24      (0000006c) check-cast           v0, Ljava/lang/String;
+	25      (00000070) iget-object          v1, v4, La/a/a/a;->a Ljava/util/HashMap;
+	26      (00000074) invoke-virtual       v1, v0, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	27      (0000007a) move-result-object   v1
+	28      (0000007c) check-cast           v1, La/a/a/c;
+	29      (00000080) invoke-interface     v1, v5, v6, v0, La/a/a/c;->a(Ljava/io/OutputStream; La/a/a/a/b; Ljava/lang/String;)V
+	30      (00000086) goto                 -17
+
+a-BB@0x88 : 
+	31      (00000088) invoke-virtual       v6, La/a/a/a/b;->b()V
+	32      (0000008e) invoke-virtual       v6, v5, La/a/a/a/b;->a(Ljava/io/OutputStream;)V
+	33      (00000094) const/16             v0, 125
+	34      (00000098) invoke-virtual       v5, v0, Ljava/io/OutputStream;->write(I)V
+	35      (0000009e) invoke-virtual       v5, v3, Ljava/io/OutputStream;->write(I)V
+	36      (000000a4) return-void          
+

@@ -1,0 +1,22 @@
+# Lorg/apache/commons/io/input/TeeInputStream;->read([B)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:byte[]
+#
+# - return:int
+
+read-BB@0x0 : [ read-BB@0xe read-BB@0x1a ]
+	0       (00000000) invoke-super         v3, v4, Lorg/apache/commons/io/input/ProxyInputStream;->read([B)I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, -1
+	3       (0000000a) if-eq                v0, v1, +8
+
+read-BB@0xe : [ read-BB@0x1a ]
+	4       (0000000e) iget-object          v1, v3, Lorg/apache/commons/io/input/TeeInputStream;->branch Ljava/io/OutputStream;
+	5       (00000012) const/4              v2, 0
+	6       (00000014) invoke-virtual       v1, v4, v2, v0, Ljava/io/OutputStream;->write([B I I)V
+
+read-BB@0x1a : 
+	7       (0000001a) return               v0
+

@@ -1,0 +1,63 @@
+# Lorg/apache/commons/io/FileUtils;->directoryContains(Ljava/io/File; Ljava/io/File;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.File
+# - v4:java.io.File
+#
+# - return:boolean
+
+directoryContains-BB@0x0 : [ directoryContains-BB@0x6 directoryContains-BB@0x16 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-nez               v3, +a
+
+directoryContains-BB@0x6 : 
+	2       (00000006) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	3       (0000000a) const-string         v1, 'Directory must not be null'
+	4       (0000000e) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	5       (00000014) throw                v0
+
+directoryContains-BB@0x16 : [ directoryContains-BB@0x22 directoryContains-BB@0x54 ]
+	6       (00000016) invoke-virtual       v3, Ljava/io/File;->isDirectory()Z
+	7       (0000001c) move-result          v1
+	8       (0000001e) if-nez               v1, +1b
+
+directoryContains-BB@0x22 : 
+	9       (00000022) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	10      (00000026) new-instance         v1, Ljava/lang/StringBuilder;
+	11      (0000002a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	12      (00000030) const-string         v2, 'Not a directory: '
+	13      (00000034) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003a) move-result-object   v1
+	15      (0000003c) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	16      (00000042) move-result-object   v1
+	17      (00000044) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	18      (0000004a) move-result-object   v1
+	19      (0000004c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	20      (00000052) throw                v0
+
+directoryContains-BB@0x54 : [ directoryContains-BB@0x58 directoryContains-BB@0x5a ]
+	21      (00000054) if-nez               v4, +3
+
+directoryContains-BB@0x58 : 
+	22      (00000058) return               v0
+
+directoryContains-BB@0x5a : [ directoryContains-BB@0x66 directoryContains-BB@0x58 ]
+	23      (0000005a) invoke-virtual       v3, Ljava/io/File;->exists()Z
+	24      (00000060) move-result          v1
+	25      (00000062) if-eqz               v1, -5
+
+directoryContains-BB@0x66 : [ directoryContains-BB@0x72 directoryContains-BB@0x58 ]
+	26      (00000066) invoke-virtual       v4, Ljava/io/File;->exists()Z
+	27      (0000006c) move-result          v1
+	28      (0000006e) if-eqz               v1, -b
+
+directoryContains-BB@0x72 : [ directoryContains-BB@0x58 ]
+	29      (00000072) invoke-virtual       v3, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
+	30      (00000078) move-result-object   v0
+	31      (0000007a) invoke-virtual       v4, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
+	32      (00000080) move-result-object   v1
+	33      (00000082) invoke-static        v0, v1, Lorg/apache/commons/io/FilenameUtils;->directoryContains(Ljava/lang/String; Ljava/lang/String;)Z
+	34      (00000088) move-result          v0
+	35      (0000008a) goto                 -19
+

@@ -1,0 +1,25 @@
+# Lnet/youmi/android/ad;->b(Landroid/app/Activity; Ljava/lang/String;)V [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.app.Activity
+# - v3:java.lang.String
+#
+# - return:void
+
+b-BB@0x0 : [ b-BB@0x1a ]
+	0       (00000000) new-instance         v0, Landroid/content/Intent;
+	1       (00000004) const-class          v1, Lnet/youmi/android/AdActivity;
+	2       (00000008) invoke-direct        v0, v2, v1, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	3       (0000000e) invoke-static        v0, v3, Lnet/youmi/android/AdActivity;->a(Landroid/content/Intent; Ljava/lang/String;)V
+	4       (00000014) invoke-virtual       v2, v0, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+	0:19
+	(Ljava/lang/Exception; -> 1c b-BB@0x1c)
+
+b-BB@0x1a : 
+	5       (0000001a) return-void          
+
+b-BB@0x1c : [ b-BB@0x1a ]
+	6       (0000001c) move-exception       v0
+	7       (0000001e) goto                 -2
+

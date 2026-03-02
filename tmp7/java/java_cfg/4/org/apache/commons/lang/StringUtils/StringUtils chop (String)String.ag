@@ -1,0 +1,50 @@
+# Lorg/apache/commons/lang/StringUtils;->chop(Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:java.lang.String
+
+chop-BB@0x0 : [ chop-BB@0x6 chop-BB@0xa ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) if-nez               v5, +4
+
+chop-BB@0x6 : [ chop-BB@0x8 ]
+	2       (00000006) const/4              v0, 0
+
+chop-BB@0x8 : 
+	3       (00000008) return-object        v0
+
+chop-BB@0xa : [ chop-BB@0x18 chop-BB@0x1e ]
+	4       (0000000a) invoke-virtual       v5, Ljava/lang/String;->length()I
+	5       (00000010) move-result          v0
+	6       (00000012) const/4              v1, 2
+	7       (00000014) if-ge                v0, v1, +5
+
+chop-BB@0x18 : [ chop-BB@0x8 ]
+	8       (00000018) const-string         v0, ''
+	9       (0000001c) goto                 -a
+
+chop-BB@0x1e : [ chop-BB@0x3a chop-BB@0x8 ]
+	10      (0000001e) add-int/lit8         v1, v0, -1
+	11      (00000022) invoke-virtual       v5, v4, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	12      (00000028) move-result-object   v0
+	13      (0000002a) invoke-virtual       v5, v1, Ljava/lang/String;->charAt(I)C
+	14      (00000030) move-result          v2
+	15      (00000032) const/16             v3, 10
+	16      (00000036) if-ne                v2, v3, -17
+
+chop-BB@0x3a : [ chop-BB@0x4e chop-BB@0x8 ]
+	17      (0000003a) add-int/lit8         v2, v1, -1
+	18      (0000003e) invoke-virtual       v0, v2, Ljava/lang/String;->charAt(I)C
+	19      (00000044) move-result          v2
+	20      (00000046) const/16             v3, 13
+	21      (0000004a) if-ne                v2, v3, -21
+
+chop-BB@0x4e : [ chop-BB@0x8 ]
+	22      (0000004e) add-int/lit8         v1, v1, -1
+	23      (00000052) invoke-virtual       v0, v4, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	24      (00000058) move-result-object   v0
+	25      (0000005a) goto                 -29
+

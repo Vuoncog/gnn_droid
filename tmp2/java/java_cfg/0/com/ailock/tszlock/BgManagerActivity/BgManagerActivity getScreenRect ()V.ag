@@ -1,0 +1,20 @@
+# Lcom/ailock/tszlock/BgManagerActivity;->getScreenRect()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+getScreenRect-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Lcom/ailock/tszlock/BgManagerActivity;->getWindowManager()Landroid/view/WindowManager;
+	1       (00000006) move-result-object   v1
+	2       (00000008) invoke-interface     v1, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-virtual       v0, Landroid/view/Display;->getWidth()I
+	5       (00000016) move-result          v1
+	6       (00000018) iput                 v1, v2, Lcom/ailock/tszlock/BgManagerActivity;->screenWidth I
+	7       (0000001c) invoke-virtual       v0, Landroid/view/Display;->getHeight()I
+	8       (00000022) move-result          v1
+	9       (00000024) iput                 v1, v2, Lcom/ailock/tszlock/BgManagerActivity;->screenHeight I
+	10      (00000028) return-void          
+

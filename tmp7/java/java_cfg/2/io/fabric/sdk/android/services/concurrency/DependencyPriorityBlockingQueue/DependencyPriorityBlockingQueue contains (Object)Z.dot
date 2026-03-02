@@ -1,0 +1,100 @@
+digraph {
+	graph [bb="0,0,2080,633",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_ef85d137033b9a2a070ff21541d2fa97 {
+		graph [bb="8,8,2072,625",
+			label="Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;.contains->(Ljava/lang/Object;)Z\nLocal registers v0 \
+... v2\nparam v3 = java.lang.Object\nreturn = boolean",
+			lheight=0.83,
+			lp="1040,591",
+			lwidth=10.35
+		];
+		struct_4e31928f81e1df733b15b74bfd0dc320	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;-&gt;lock Ljava/util/concurrent/locks/ReentrantLock;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/locks/ReentrantLock;-&gt;lock()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-super </FONT> <FONT color="#8C8C66">v2</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/PriorityBlockingQueue;-&gt;contains(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1493,481.5",
+			width=14.639];
+		struct_0d0b1c7a548ef39473ec85ce96a1d897	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;-&gt;blockedQueue Ljava/util/Queue;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#7F7F99">v3</FONT>, <FONT color="#DF3A01">Ljava/util/Queue;-&gt;contains(Ljava/lang/Object;)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x9</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="494,306.5",
+			width=13.278];
+		struct_4e31928f81e1df733b15b74bfd0dc320:tail -> struct_0d0b1c7a548ef39473ec85ce96a1d897:header	[color=red,
+			pos="e,41,356.5 976,422.5 926.57,422.5 128.53,409.95 47.606,364.14"];
+		struct_ae6f89db20208aa1690b76afc55ed7c6	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">26</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="294,178.5",
+			width=2.4028];
+		struct_4e31928f81e1df733b15b74bfd0dc320:tail -> struct_ae6f89db20208aa1690b76afc55ed7c6:header	[color=green,
+			pos="e,233,195.5 991,419.5 991,381.77 1007.5,276.86 981,250 924.88,193.1 288.5,271.85 236.39,204.91"];
+		struct_eaf59aeb7a1cf8db4191a55e7a76bf99	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">38</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;-&gt;lock Ljava/util/concurrent/locks/ReentrantLock;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/locks/ReentrantLock;-&gt;unlock()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1537,306.5",
+			width=14.639];
+		struct_4e31928f81e1df733b15b74bfd0dc320:tail -> struct_eaf59aeb7a1cf8db4191a55e7a76bf99:header	[color=black,
+			label="Ljava/lang/Throwable;",
+			lp="1093.5,388.5",
+			pos="e,1035,356.5 991,419.5 991,389.08 1025.9,389.96 1033.5,366.39"];
+		struct_0d0b1c7a548ef39473ec85ce96a1d897:tail -> struct_ae6f89db20208aa1690b76afc55ed7c6:header	[color=red,
+			pos="e,218,192.5 41,255.5 41,182.78 136.74,250.58 199,213 205.48,209.09 206.51,202.33 209.13,197.65"];
+		struct_c06461dc57d1211ac729ade0c380584f	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-7</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="103,178.5",
+			width=2.4028];
+		struct_0d0b1c7a548ef39473ec85ce96a1d897:tail -> struct_c06461dc57d1211ac729ade0c380584f:header	[color=green,
+			pos="e,42,206.5 41,255.5 41,237.63 41.673,230.76 41.915,216.85"];
+		struct_10d88935eb11b2fedbaab4ac8bc69373	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#8C8C66">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/concurrency/DependencyPriorityBlockingQueue;-&gt;lock Ljava/util/concurrent/locks/ReentrantLock;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/locks/ReentrantLock;-&gt;unlock()V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">32</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="640,61.5",
+			width=14.639];
+		struct_ae6f89db20208aa1690b76afc55ed7c6:tail -> struct_10d88935eb11b2fedbaab4ac8bc69373:header	[color=blue,
+			pos="e,138,100.5 218,163.5 205.9,163.5 208.18,151.88 199,144 176.69,124.86 146.23,131.56 139.4,110.49"];
+		struct_c06461dc57d1211ac729ade0c380584f:tail -> struct_10d88935eb11b2fedbaab4ac8bc69373:header	[color=blue,
+			pos="e,123,97.5 42,149.5 42,110.23 74.207,99.238 112.58,97.7"];
+	}
+}

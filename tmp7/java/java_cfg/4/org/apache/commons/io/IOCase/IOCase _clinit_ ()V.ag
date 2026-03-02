@@ -1,0 +1,33 @@
+# Lorg/apache/commons/io/IOCase;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x3c <clinit>-BB@0x48 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) new-instance         v2, Lorg/apache/commons/io/IOCase;
+	3       (00000008) const-string         v3, 'Sensitive'
+	4       (0000000c) invoke-direct        v2, v3, v0, Lorg/apache/commons/io/IOCase;-><init>(Ljava/lang/String; Z)V
+	5       (00000012) sput-object          v2, Lorg/apache/commons/io/IOCase;->SENSITIVE Lorg/apache/commons/io/IOCase;
+	6       (00000016) new-instance         v2, Lorg/apache/commons/io/IOCase;
+	7       (0000001a) const-string         v3, 'Insensitive'
+	8       (0000001e) invoke-direct        v2, v3, v1, Lorg/apache/commons/io/IOCase;-><init>(Ljava/lang/String; Z)V
+	9       (00000024) sput-object          v2, Lorg/apache/commons/io/IOCase;->INSENSITIVE Lorg/apache/commons/io/IOCase;
+	10      (00000028) new-instance         v2, Lorg/apache/commons/io/IOCase;
+	11      (0000002c) const-string         v3, 'System'
+	12      (00000030) invoke-static        Lorg/apache/commons/io/FilenameUtils;->isSystemWindows()Z
+	13      (00000036) move-result          v4
+	14      (00000038) if-nez               v4, +8
+
+<clinit>-BB@0x3c : 
+	15      (0000003c) invoke-direct        v2, v3, v0, Lorg/apache/commons/io/IOCase;-><init>(Ljava/lang/String; Z)V
+	16      (00000042) sput-object          v2, Lorg/apache/commons/io/IOCase;->SYSTEM Lorg/apache/commons/io/IOCase;
+	17      (00000046) return-void          
+
+<clinit>-BB@0x48 : [ <clinit>-BB@0x3c ]
+	18      (00000048) move                 v0, v1
+	19      (0000004a) goto                 -7
+

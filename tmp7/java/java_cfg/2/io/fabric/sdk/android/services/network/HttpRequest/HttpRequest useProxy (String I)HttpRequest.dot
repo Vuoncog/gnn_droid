@@ -1,0 +1,54 @@
+digraph {
+	graph [bb="0,0,1436,388",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_b1515606ef31da368872f2faf412e618 {
+		graph [bb="8,8,1428,380",
+			label="Lio/fabric/sdk/android/services/network/HttpRequest;.useProxy->(Ljava/lang/String; I)Lio/fabric/sdk/android/services/network/HttpRequest;\nLocal \
+registers v0 ... v2\nparam v3 = java.lang.String\nparam v4 = int\nreturn = io.fabric.sdk.android.services.network.HttpRequest",
+			lheight=1.04,
+			lp="718,338.5",
+			lwidth=12.85
+		];
+		struct_4edd8542cec3bde56d26503be5a293c4	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;connection Ljava/net/HttpURLConnection;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0xa</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="719,254.5",
+			width=11.597];
+		struct_31c43b0ca3df86921a057a4c701946b7	[height=2.3333,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#0000FF">Ljava/lang/IllegalStateException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#848484">v1</FONT>, <FONT color="red"><br/>'The connection has already been<br/>created. This method must be<br/>called before reading or writing<br/>to the request.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#848484">v1</FONT>, <FONT color="#DF3A01">Ljava/lang/IllegalStateException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">16</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">throw </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="319,100",
+			width=8.4167];
+		struct_4edd8542cec3bde56d26503be5a293c4:tail -> struct_31c43b0ca3df86921a057a4c701946b7:header	[color=red,
+			pos="e,41,178 323,225.5 323,102 56.746,293.66 41.666,188.01"];
+		struct_14ea61d4b9b72bfb4d436cadf5aef2f7	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#7A7AAD">v3</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;httpProxyHost Ljava/lang/String;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput </FONT> <FONT color="#7070D6">v4</FONT>, <FONT color="#8E8E5B">v2</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/network/HttpRequest;-&gt;httpProxyPort I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-object </FONT> <FONT color="#8E8E5B">v2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1030,100",
+			width=10.819];
+		struct_4edd8542cec3bde56d26503be5a293c4:tail -> struct_14ea61d4b9b72bfb4d436cadf5aef2f7:header	[color=green,
+			pos="e,666,139 323,225.5 323,156.44 571.13,218.43 631,184 649.7,173.24 661.93,166.55 665.15,149.15"];
+	}
+}

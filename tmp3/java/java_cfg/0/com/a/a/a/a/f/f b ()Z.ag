@@ -1,0 +1,30 @@
+# Lcom/a/a/a/a/f;->b()Z [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+b-BB@0x0 : [ b-BB@0xc b-BB@0x14 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) iget                 v2, v3, Lcom/a/a/a/a/f;->a I
+	3       (00000008) if-nez               v2, +6
+
+b-BB@0xc : [ b-BB@0xe ]
+	4       (0000000c) move                 v2, v0
+
+b-BB@0xe : [ b-BB@0x12 b-BB@0x18 ]
+	5       (0000000e) if-nez               v2, +5
+
+b-BB@0x12 : 
+	6       (00000012) return               v0
+
+b-BB@0x14 : [ b-BB@0xe ]
+	7       (00000014) move                 v2, v1
+	8       (00000016) goto                 -4
+
+b-BB@0x18 : [ b-BB@0x12 ]
+	9       (00000018) move                 v0, v1
+	10      (0000001a) goto                 -4
+

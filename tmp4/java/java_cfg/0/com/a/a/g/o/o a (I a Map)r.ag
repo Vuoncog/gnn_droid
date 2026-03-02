@@ -1,0 +1,38 @@
+# Lcom/a/a/g/o;->a(I Lcom/a/a/c/a; Ljava/util/Map;)Lcom/a/a/r; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:com.a.a.c.a
+# - v7:java.util.Map
+#
+# - return:com.a.a.r
+
+a-BB@0x0 : [ a-BB@0x8 ]
+	0       (00000000) iget-object          v1, v4, Lcom/a/a/g/o;->a [Lcom/a/a/g/q;
+	1       (00000004) array-length         v2, v1
+	2       (00000006) const/4              v0, 0
+
+a-BB@0x8 : [ a-BB@0xc a-BB@0x22 ]
+	3       (00000008) if-ge                v0, v2, +d
+
+a-BB@0xc : [ a-BB@0x10 ]
+	4       (0000000c) aget-object          v3, v1, v0
+
+a-BB@0x10 : 
+	5       (00000010) invoke-virtual       v3, v5, v6, v7, Lcom/a/a/g/q;->a(I Lcom/a/a/c/a; Ljava/util/Map;)Lcom/a/a/r;
+	6       (00000016) move-result-object   v0
+	7       (00000018) return-object        v0
+	10:15
+	(Lcom/a/a/q; -> 1a a-BB@0x1a)
+
+a-BB@0x1a : [ a-BB@0x8 ]
+	8       (0000001a) move-exception       v3
+	9       (0000001c) add-int/lit8         v0, v0, 1
+	10      (00000020) goto                 -c
+
+a-BB@0x22 : 
+	11      (00000022) invoke-static        Lcom/a/a/m;->a()Lcom/a/a/m;
+	12      (00000028) move-result-object   v0
+	13      (0000002a) throw                v0
+

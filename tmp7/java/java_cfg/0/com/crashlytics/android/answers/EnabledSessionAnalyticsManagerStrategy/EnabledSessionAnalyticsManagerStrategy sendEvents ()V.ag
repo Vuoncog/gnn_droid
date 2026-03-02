@@ -1,0 +1,118 @@
+# Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->sendEvents()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:void
+
+sendEvents-BB@0x0 : [ sendEvents-BB@0xa sendEvents-BB@0x1a ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iget-object          v0, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesSender Lio/fabric/sdk/android/services/events/FilesSender;
+	2       (00000006) if-nez               v0, +a
+
+sendEvents-BB@0xa : [ sendEvents-BB@0x18 ]
+	3       (0000000a) iget-object          v0, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context Landroid/content/Context;
+	4       (0000000e) const-string         v1, "skipping files send because we don't yet know the target endpoint"
+	5       (00000012) invoke-static        v0, v1, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlled(Landroid/content/Context; Ljava/lang/String;)V
+
+sendEvents-BB@0x18 : 
+	6       (00000018) return-void          
+
+sendEvents-BB@0x1a : [ sendEvents-BB@0x38 ]
+	7       (0000001a) iget-object          v0, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context Landroid/content/Context;
+	8       (0000001e) const-string         v2, 'Sending all files'
+	9       (00000022) invoke-static        v0, v2, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlled(Landroid/content/Context; Ljava/lang/String;)V
+	10      (00000028) iget-object          v0, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;
+	11      (0000002c) invoke-virtual       v0, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->getBatchOfFilesToSend()Ljava/util/List;
+	12      (00000032) move-result-object   v0
+	13      (00000034) move-object          v2, v0
+	14      (00000036) move                 v0, v1
+
+sendEvents-BB@0x38 : [ sendEvents-BB@0x44 sendEvents-BB@0xa4 ]
+	15      (00000038) invoke-interface     v2, Ljava/util/List;->size()I
+	16      (0000003e) move-result          v1
+	17      (00000040) if-lez               v1, +32
+	38:8f
+	(Ljava/lang/Exception; -> c4 sendEvents-BB@0xc4)
+
+sendEvents-BB@0x44 : [ sendEvents-BB@0x8a sendEvents-BB@0xa0 ]
+	18      (00000044) iget-object          v1, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context Landroid/content/Context;
+	19      (00000048) sget-object          v3, Ljava/util/Locale;->US Ljava/util/Locale;
+	20      (0000004c) const-string         v4, 'attempt to send batch of %d files'
+	21      (00000050) const/4              v5, 1
+	22      (00000052) new-array            v5, v5, [Ljava/lang/Object;
+	23      (00000056) const/4              v6, 0
+	24      (00000058) invoke-interface     v2, Ljava/util/List;->size()I
+	25      (0000005e) move-result          v7
+	26      (00000060) invoke-static        v7, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	27      (00000066) move-result-object   v7
+	28      (00000068) aput-object          v7, v5, v6
+	29      (0000006c) invoke-static        v3, v4, v5, Ljava/lang/String;->format(Ljava/util/Locale; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	30      (00000072) move-result-object   v3
+	31      (00000074) invoke-static        v1, v3, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlled(Landroid/content/Context; Ljava/lang/String;)V
+	32      (0000007a) iget-object          v1, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesSender Lio/fabric/sdk/android/services/events/FilesSender;
+	33      (0000007e) invoke-interface     v1, v2, Lio/fabric/sdk/android/services/events/FilesSender;->send(Ljava/util/List;)Z
+	34      (00000084) move-result          v3
+	35      (00000086) if-eqz               v3, +d
+	38:8f
+	(Ljava/lang/Exception; -> c4 sendEvents-BB@0xc4)
+
+sendEvents-BB@0x8a : [ sendEvents-BB@0x94 ]
+	36      (0000008a) invoke-interface     v2, Ljava/util/List;->size()I
+	37      (00000090) move-result          v1
+	38      (00000092) add-int/2addr        v1, v0
+
+sendEvents-BB@0x94 : [ sendEvents-BB@0xa0 ]
+	39      (00000094) iget-object          v0, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;
+	40      (00000098) invoke-virtual       v0, v2, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->deleteSentFiles(Ljava/util/List;)V
+	41      (0000009e) move                 v0, v1
+	94:9d
+	(Ljava/lang/Exception; -> 108 sendEvents-BB@0x108)
+
+sendEvents-BB@0xa0 : [ sendEvents-BB@0xa4 sendEvents-BB@0xb4 ]
+	42      (000000a0) if-nez               v3, +a
+
+sendEvents-BB@0xa4 : [ sendEvents-BB@0xa8 sendEvents-BB@0x18 ]
+	43      (000000a4) if-nez               v0, -46
+
+sendEvents-BB@0xa8 : [ sendEvents-BB@0x18 ]
+	44      (000000a8) iget-object          v0, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;
+	45      (000000ac) invoke-virtual       v0, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->deleteOldestInRollOverIfOverMax()V
+	46      (000000b2) goto                 -4d
+
+sendEvents-BB@0xb4 : [ sendEvents-BB@0x38 ]
+	47      (000000b4) iget-object          v1, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->filesManager Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;
+	48      (000000b8) invoke-virtual       v1, Lcom/crashlytics/android/answers/SessionAnalyticsFilesManager;->getBatchOfFilesToSend()Ljava/util/List;
+	49      (000000be) move-result-object   v1
+	50      (000000c0) move-object          v2, v1
+	51      (000000c2) goto                 -45
+	b4:bd
+	(Ljava/lang/Exception; -> c4 sendEvents-BB@0xc4)
+
+sendEvents-BB@0xc4 : [ sendEvents-BB@0xcc ]
+	52      (000000c4) move-exception       v1
+	53      (000000c6) move-object          v8, v1
+	54      (000000c8) move                 v1, v0
+	55      (000000ca) move-object          v0, v8
+
+sendEvents-BB@0xcc : [ sendEvents-BB@0xa4 ]
+	56      (000000cc) iget-object          v2, v9, Lcom/crashlytics/android/answers/EnabledSessionAnalyticsManagerStrategy;->context Landroid/content/Context;
+	57      (000000d0) new-instance         v3, Ljava/lang/StringBuilder;
+	58      (000000d4) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	59      (000000da) const-string         v4, 'Failed to send batch of analytics files to server: '
+	60      (000000de) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	61      (000000e4) move-result-object   v3
+	62      (000000e6) invoke-virtual       v0, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+	63      (000000ec) move-result-object   v4
+	64      (000000ee) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	65      (000000f4) move-result-object   v3
+	66      (000000f6) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	67      (000000fc) move-result-object   v3
+	68      (000000fe) invoke-static        v2, v3, v0, Lio/fabric/sdk/android/services/common/CommonUtils;->logControlledError(Landroid/content/Context; Ljava/lang/String; Ljava/lang/Throwable;)V
+	69      (00000104) move                 v0, v1
+	70      (00000106) goto                 -31
+
+sendEvents-BB@0x108 : [ sendEvents-BB@0xcc ]
+	71      (00000108) move-exception       v0
+	72      (0000010a) goto                 -1f
+

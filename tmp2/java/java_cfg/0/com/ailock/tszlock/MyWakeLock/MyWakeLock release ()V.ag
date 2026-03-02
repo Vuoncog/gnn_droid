@@ -1,0 +1,20 @@
+# Lcom/ailock/tszlock/MyWakeLock;->release()V [access_flags=static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+release-BB@0x0 : [ release-BB@0x8 release-BB@0x18 ]
+	0       (00000000) sget-object          v0, Lcom/ailock/tszlock/MyWakeLock;->sWakeLock Landroid/os/PowerManager$WakeLock;
+	1       (00000004) if-eqz               v0, +a
+
+release-BB@0x8 : [ release-BB@0x18 ]
+	2       (00000008) sget-object          v0, Lcom/ailock/tszlock/MyWakeLock;->sWakeLock Landroid/os/PowerManager$WakeLock;
+	3       (0000000c) invoke-virtual       v0, Landroid/os/PowerManager$WakeLock;->release()V
+	4       (00000012) const/4              v0, 0
+	5       (00000014) sput-object          v0, Lcom/ailock/tszlock/MyWakeLock;->sWakeLock Landroid/os/PowerManager$WakeLock;
+
+release-BB@0x18 : 
+	6       (00000018) return-void          
+

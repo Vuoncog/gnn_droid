@@ -1,0 +1,46 @@
+# Lorg/apache/commons/lang/StringUtils;->containsIgnoreCase(Ljava/lang/String; Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+# - v8:java.lang.String
+#
+# - return:boolean
+
+containsIgnoreCase-BB@0x0 : [ containsIgnoreCase-BB@0x8 containsIgnoreCase-BB@0xc ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v4, 0
+	2       (00000004) if-eqz               v7, +4
+
+containsIgnoreCase-BB@0x8 : [ containsIgnoreCase-BB@0xc containsIgnoreCase-BB@0xe ]
+	3       (00000008) if-nez               v8, +3
+
+containsIgnoreCase-BB@0xc : 
+	4       (0000000c) return               v4
+
+containsIgnoreCase-BB@0xe : [ containsIgnoreCase-BB@0x24 ]
+	5       (0000000e) invoke-virtual       v8, Ljava/lang/String;->length()I
+	6       (00000014) move-result          v5
+	7       (00000016) invoke-virtual       v7, Ljava/lang/String;->length()I
+	8       (0000001c) move-result          v0
+	9       (0000001e) sub-int              v6, v0, v5
+	10      (00000022) move                 v2, v4
+
+containsIgnoreCase-BB@0x24 : [ containsIgnoreCase-BB@0x28 containsIgnoreCase-BB@0xc ]
+	11      (00000024) if-gt                v2, v6, -c
+
+containsIgnoreCase-BB@0x28 : [ containsIgnoreCase-BB@0x38 containsIgnoreCase-BB@0x3c ]
+	12      (00000028) move-object          v0, v7
+	13      (0000002a) move-object          v3, v8
+	14      (0000002c) invoke-virtual/range v0 ... v5, Ljava/lang/String;->regionMatches(Z I Ljava/lang/String; I I)Z
+	15      (00000032) move-result          v0
+	16      (00000034) if-eqz               v0, +4
+
+containsIgnoreCase-BB@0x38 : [ containsIgnoreCase-BB@0xc ]
+	17      (00000038) move                 v4, v1
+	18      (0000003a) goto                 -17
+
+containsIgnoreCase-BB@0x3c : [ containsIgnoreCase-BB@0x24 ]
+	19      (0000003c) add-int/lit8         v2, v2, 1
+	20      (00000040) goto                 -e
+

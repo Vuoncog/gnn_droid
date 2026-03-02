@@ -1,0 +1,31 @@
+# Lorg/apache/commons/lang/ArrayUtils;->reverse([Ljava/lang/Object;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object[]
+#
+# - return:void
+
+reverse-BB@0x0 : [ reverse-BB@0x4 reverse-BB@0x6 ]
+	0       (00000000) if-nez               v4, +3
+
+reverse-BB@0x4 : 
+	1       (00000004) return-void          
+
+reverse-BB@0x6 : [ reverse-BB@0xe ]
+	2       (00000006) const/4              v1, 0
+	3       (00000008) array-length         v0, v4
+	4       (0000000a) add-int/lit8         v0, v0, -1
+
+reverse-BB@0xe : [ reverse-BB@0x12 reverse-BB@0x4 ]
+	5       (0000000e) if-le                v0, v1, -5
+
+reverse-BB@0x12 : [ reverse-BB@0xe ]
+	6       (00000012) aget-object          v2, v4, v0
+	7       (00000016) aget-object          v3, v4, v1
+	8       (0000001a) aput-object          v3, v4, v0
+	9       (0000001e) aput-object          v2, v4, v1
+	10      (00000022) add-int/lit8         v0, v0, -1
+	11      (00000026) add-int/lit8         v1, v1, 1
+	12      (0000002a) goto                 -e
+

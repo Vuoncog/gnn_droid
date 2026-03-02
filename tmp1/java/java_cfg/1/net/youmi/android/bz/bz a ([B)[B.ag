@@ -1,0 +1,30 @@
+# Lnet/youmi/android/bz;->a([B)[B [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:byte[]
+#
+# - return:byte[]
+
+a-BB@0x0 : [ a-BB@0x10 ]
+	0       (00000000) invoke-direct        v4, v5, Lnet/youmi/android/bz;->b([B)I
+	1       (00000006) const/16             v0, 20
+	2       (0000000a) new-array            v0, v0, [B
+	3       (0000000e) const/4              v1, 0
+
+a-BB@0x10 : [ a-BB@0x1a a-BB@0x1c ]
+	4       (00000010) iget-object          v2, v4, Lnet/youmi/android/bz;->b [I
+	5       (00000014) array-length         v2, v2
+	6       (00000016) if-lt                v1, v2, +3
+
+a-BB@0x1a : 
+	7       (0000001a) return-object        v0
+
+a-BB@0x1c : [ a-BB@0x10 ]
+	8       (0000001c) iget-object          v2, v4, Lnet/youmi/android/bz;->b [I
+	9       (00000020) aget                 v2, v2, v1
+	10      (00000024) mul-int/lit8         v3, v1, 4
+	11      (00000028) invoke-direct        v4, v2, v0, v3, Lnet/youmi/android/bz;->a(I [B I)V
+	12      (0000002e) add-int/lit8         v1, v1, 1
+	13      (00000032) goto                 -11
+

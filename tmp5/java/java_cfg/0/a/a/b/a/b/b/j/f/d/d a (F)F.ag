@@ -1,0 +1,19 @@
+# La/a/b/a/b/b/j/f/d;->a(F)F [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:float
+#
+# - return:float
+
+a-BB@0x0 : 
+	0       (00000000) const                v0, -1090135198 # [-0.5228787660598755]
+	1       (00000006) sub-float            v0, v3, v0
+	2       (0000000a) const/high16         v1, 16448 # [3.0]
+	3       (0000000e) div-float/2addr      v0, v1
+	4       (00000010) float-to-double      v0, v0
+	5       (00000012) invoke-static        v0, v1, Ljava/lang/Math;->log10(D)D
+	6       (00000018) move-result-wide     v0
+	7       (0000001a) double-to-float      v0, v0
+	8       (0000001c) return               v0
+

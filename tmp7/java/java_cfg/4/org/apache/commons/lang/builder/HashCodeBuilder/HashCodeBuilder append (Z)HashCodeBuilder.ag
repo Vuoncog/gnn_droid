@@ -1,0 +1,26 @@
+# Lorg/apache/commons/lang/builder/HashCodeBuilder;->append(Z)Lorg/apache/commons/lang/builder/HashCodeBuilder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:org.apache.commons.lang.builder.HashCodeBuilder
+
+append-BB@0x0 : [ append-BB@0xe append-BB@0x18 ]
+	0       (00000000) iget                 v0, v2, Lorg/apache/commons/lang/builder/HashCodeBuilder;->iTotal I
+	1       (00000004) iget                 v1, v2, Lorg/apache/commons/lang/builder/HashCodeBuilder;->iConstant I
+	2       (00000008) mul-int/2addr        v1, v0
+	3       (0000000a) if-eqz               v3, +7
+
+append-BB@0xe : [ append-BB@0x10 ]
+	4       (0000000e) const/4              v0, 0
+
+append-BB@0x10 : 
+	5       (00000010) add-int/2addr        v0, v1
+	6       (00000012) iput                 v0, v2, Lorg/apache/commons/lang/builder/HashCodeBuilder;->iTotal I
+	7       (00000016) return-object        v2
+
+append-BB@0x18 : [ append-BB@0x10 ]
+	8       (00000018) const/4              v0, 1
+	9       (0000001a) goto                 -5
+

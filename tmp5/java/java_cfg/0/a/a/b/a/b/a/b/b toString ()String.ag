@@ -1,0 +1,18 @@
+# La/a/b/a/b/a/b;->toString()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : [ toString-BB@0x8 toString-BB@0x10 ]
+	0       (00000000) iget-object          v0, v1, La/a/b/a/b/a/b;->d Ljava/lang/String;
+	1       (00000004) if-nez               v0, +6
+
+toString-BB@0x8 : [ toString-BB@0x10 ]
+	2       (00000008) invoke-super         v1, Ljava/lang/Object;->toString()Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+
+toString-BB@0x10 : 
+	4       (00000010) return-object        v0
+

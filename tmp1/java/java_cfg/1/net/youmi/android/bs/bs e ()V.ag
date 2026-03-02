@@ -1,0 +1,35 @@
+# Lnet/youmi/android/bs;->e()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+e-BB@0x0 : [ e-BB@0xc e-BB@0xe ]
+	0       (00000000) invoke-virtual       v3, Lnet/youmi/android/bs;->b()Landroid/widget/TextView;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-nez               v0, +3
+
+e-BB@0xc : 
+	3       (0000000c) return-void          
+
+e-BB@0xe : [ e-BB@0x16 e-BB@0x32 ]
+	4       (0000000e) iget-object          v1, v3, Lnet/youmi/android/bs;->c Landroid/widget/TextView;
+	5       (00000012) if-eqz               v1, +10
+
+e-BB@0x16 : [ e-BB@0x32 ]
+	6       (00000016) iget-object          v1, v3, Lnet/youmi/android/bs;->c Landroid/widget/TextView;
+	7       (0000001a) iget-object          v2, v3, Lnet/youmi/android/bs;->e Landroid/view/animation/Animation;
+	8       (0000001e) invoke-virtual       v1, v2, Landroid/widget/TextView;->startAnimation(Landroid/view/animation/Animation;)V
+	9       (00000024) iget-object          v1, v3, Lnet/youmi/android/bs;->c Landroid/widget/TextView;
+	10      (00000028) const/16             v2, 8
+	11      (0000002c) invoke-virtual       v1, v2, Landroid/widget/TextView;->setVisibility(I)V
+
+e-BB@0x32 : [ e-BB@0xc ]
+	12      (00000032) const/4              v1, 0
+	13      (00000034) invoke-virtual       v0, v1, Landroid/widget/TextView;->setVisibility(I)V
+	14      (0000003a) iget-object          v1, v3, Lnet/youmi/android/bs;->d Landroid/view/animation/Animation;
+	15      (0000003e) invoke-virtual       v0, v1, Landroid/widget/TextView;->startAnimation(Landroid/view/animation/Animation;)V
+	16      (00000044) iput-object          v0, v3, Lnet/youmi/android/bs;->c Landroid/widget/TextView;
+	17      (00000048) goto                 -1e
+

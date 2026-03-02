@@ -1,0 +1,85 @@
+digraph {
+	graph [bb="0,0,868,629",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_69859c36ac334e898e24afaab1bb013d {
+		graph [bb="8,8,860,621",
+			label="Lorg/apache/commons/io/output/ProxyWriter;.write->([C)V\nLocal registers v0 ... v2\nparam v3 = char[]\nreturn = void",
+			lheight=0.83,
+			lp="434,587",
+			lwidth=5.42
+		];
+		struct_011cfc24199f718329765b3198d1c980	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#8C8C66">v3</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="240,510.5",
+			width=2.2917];
+		struct_24981ccc52c08a5d0fd7366f06ecbc0f	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">array-length </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#8C8C66">v3</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="114,415.5",
+			width=2.6111];
+		struct_011cfc24199f718329765b3198d1c980:tail -> struct_24981ccc52c08a5d0fd7366f06ecbc0f:header	[color=red,
+			pos="e,41,432.5 168,484.5 140.84,484.5 61.321,467.44 44.251,442.17"];
+		struct_b65a3107ad89138760331297afc7a2a0	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/output/ProxyWriter;-&gt;beforeWrite(I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#7F7F99">v2</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/output/ProxyWriter;-&gt;out Ljava/io/Writer;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7272CC">v1</FONT>, <FONT color="#8C8C66">v3</FONT>, <FONT color="#DF3A01">Ljava/io/Writer;-&gt;write([C)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/output/ProxyWriter;-&gt;afterWrite(I)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="521,298.5",
+			width=8.9028];
+		struct_011cfc24199f718329765b3198d1c980:tail -> struct_b65a3107ad89138760331297afc7a2a0:header	[color=green,
+			pos="e,226,348.5 179,481.5 179,456.16 206.8,462.19 217,439 231.81,405.32 227.12,391.46 226.15,358.77"];
+		struct_24981ccc52c08a5d0fd7366f06ecbc0f:tail -> struct_b65a3107ad89138760331297afc7a2a0:header	[color=blue,
+			pos="e,211,345.5 41,397.5 41,330.77 121.63,375.91 185,355 192.48,352.53 196,349.33 200.8,347.34"];
+		struct_2e66a9c71f9de74988351b1208d248df	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#999933">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7F7F99">v2</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/output/ProxyWriter;-&gt;handleIOException(Ljava/io/IOException;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">28</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="424,145.5",
+			width=11.333];
+		struct_24981ccc52c08a5d0fd7366f06ecbc0f:tail -> struct_2e66a9c71f9de74988351b1208d248df:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="111,298.5",
+			pos="e,41,184.5 41,397.5 41,306.35 41,281.02 41,194.75"];
+		struct_e938993b30194315565b1d28383c191a	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="434,39.5",
+			width=2.0694];
+		struct_b65a3107ad89138760331297afc7a2a0:tail -> struct_e938993b30194315565b1d28383c191a:header	[color=blue,
+			pos="e,385,56.5 226,247.5 226,213.19 817.88,216.35 841,191 868.26,161.12 868.21,129.93 841,100 775,27.403 412.59,148.91 386.48,66.633"];
+		struct_b65a3107ad89138760331297afc7a2a0:tail -> struct_2e66a9c71f9de74988351b1208d248df:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="204,216.5",
+			pos="e,41,184.5 211,250.5 206.65,250.5 84.226,205.5 49.882,189.63"];
+		struct_2e66a9c71f9de74988351b1208d248df:tail -> struct_e938993b30194315565b1d28383c191a:header	[color=blue,
+			pos="e,370,53.5 41,105.5 41,70.876 296.56,55.524 359.81,53.689"];
+	}
+}

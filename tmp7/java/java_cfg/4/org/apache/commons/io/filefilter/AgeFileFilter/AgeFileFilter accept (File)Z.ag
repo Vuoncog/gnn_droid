@@ -1,0 +1,28 @@
+# Lorg/apache/commons/io/filefilter/AgeFileFilter;->accept(Ljava/io/File;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.File
+#
+# - return:boolean
+
+accept-BB@0x0 : [ accept-BB@0x14 accept-BB@0x1a ]
+	0       (00000000) iget-wide            v0, v2, Lorg/apache/commons/io/filefilter/AgeFileFilter;->cutoff J
+	1       (00000004) invoke-static        v3, v0, v1, Lorg/apache/commons/io/FileUtils;->isFileNewer(Ljava/io/File; J)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) iget-boolean         v1, v2, Lorg/apache/commons/io/filefilter/AgeFileFilter;->acceptOlder Z
+	4       (00000010) if-eqz               v1, +5
+
+accept-BB@0x14 : [ accept-BB@0x18 accept-BB@0x1c ]
+	5       (00000014) if-nez               v0, +4
+
+accept-BB@0x18 : [ accept-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+accept-BB@0x1a : 
+	7       (0000001a) return               v0
+
+accept-BB@0x1c : [ accept-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

@@ -1,0 +1,29 @@
+# Lorg/apache/commons/io/output/WriterOutputStream;->flushOutput()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+flushOutput-BB@0x0 : [ flushOutput-BB@0x10 flushOutput-BB@0x3e ]
+	0       (00000000) iget-object          v0, v4, Lorg/apache/commons/io/output/WriterOutputStream;->decoderOut Ljava/nio/CharBuffer;
+	1       (00000004) invoke-virtual       v0, Ljava/nio/CharBuffer;->position()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-lez               v0, +19
+
+flushOutput-BB@0x10 : [ flushOutput-BB@0x3e ]
+	4       (00000010) iget-object          v0, v4, Lorg/apache/commons/io/output/WriterOutputStream;->writer Ljava/io/Writer;
+	5       (00000014) iget-object          v1, v4, Lorg/apache/commons/io/output/WriterOutputStream;->decoderOut Ljava/nio/CharBuffer;
+	6       (00000018) invoke-virtual       v1, Ljava/nio/CharBuffer;->array()[C
+	7       (0000001e) move-result-object   v1
+	8       (00000020) const/4              v2, 0
+	9       (00000022) iget-object          v3, v4, Lorg/apache/commons/io/output/WriterOutputStream;->decoderOut Ljava/nio/CharBuffer;
+	10      (00000026) invoke-virtual       v3, Ljava/nio/CharBuffer;->position()I
+	11      (0000002c) move-result          v3
+	12      (0000002e) invoke-virtual       v0, v1, v2, v3, Ljava/io/Writer;->write([C I I)V
+	13      (00000034) iget-object          v0, v4, Lorg/apache/commons/io/output/WriterOutputStream;->decoderOut Ljava/nio/CharBuffer;
+	14      (00000038) invoke-virtual       v0, Ljava/nio/CharBuffer;->rewind()Ljava/nio/Buffer;
+
+flushOutput-BB@0x3e : 
+	15      (0000003e) return-void          
+

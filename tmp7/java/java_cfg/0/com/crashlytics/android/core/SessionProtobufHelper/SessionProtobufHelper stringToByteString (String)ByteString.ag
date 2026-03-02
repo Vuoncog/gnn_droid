@@ -1,0 +1,22 @@
+# Lcom/crashlytics/android/core/SessionProtobufHelper;->stringToByteString(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+#
+# - return:com.crashlytics.android.core.ByteString
+
+stringToByteString-BB@0x0 : [ stringToByteString-BB@0x4 stringToByteString-BB@0x8 ]
+	0       (00000000) if-nez               v1, +4
+
+stringToByteString-BB@0x4 : [ stringToByteString-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+stringToByteString-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+stringToByteString-BB@0x8 : [ stringToByteString-BB@0x6 ]
+	3       (00000008) invoke-static        v1, Lcom/crashlytics/android/core/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/crashlytics/android/core/ByteString;
+	4       (0000000e) move-result-object   v0
+	5       (00000010) goto                 -5
+

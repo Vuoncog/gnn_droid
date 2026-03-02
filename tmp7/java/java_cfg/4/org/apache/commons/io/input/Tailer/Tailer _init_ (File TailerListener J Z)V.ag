@@ -1,0 +1,21 @@
+# Lorg/apache/commons/io/input/Tailer;-><init>(Ljava/io/File; Lorg/apache/commons/io/input/TailerListener; J Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:java.io.File
+# - v12:org.apache.commons.io.input.TailerListener
+# - v13:long
+# - v14:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/16             v7, 4096
+	1       (00000004) move-object          v1, v9
+	2       (00000006) move-object          v2, v10
+	3       (00000008) move-object          v3, v11
+	4       (0000000a) move-wide            v4, v12
+	5       (0000000c) move                 v6, v14
+	6       (0000000e) invoke-direct/range  v1 ... v7, Lorg/apache/commons/io/input/Tailer;-><init>(Ljava/io/File; Lorg/apache/commons/io/input/TailerListener; J Z I)V
+	7       (00000014) return-void          
+

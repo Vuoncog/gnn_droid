@@ -1,0 +1,50 @@
+# Lorg/apache/commons/lang/math/Fraction;->invert()Lorg/apache/commons/lang/math/Fraction; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:org.apache.commons.lang.math.Fraction
+
+invert-BB@0x0 : [ invert-BB@0x8 invert-BB@0x18 ]
+	0       (00000000) iget                 v0, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	1       (00000004) if-nez               v0, +a
+
+invert-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/ArithmeticException;
+	3       (0000000c) const-string         v1, 'Unable to invert zero.'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+invert-BB@0x18 : [ invert-BB@0x24 invert-BB@0x34 ]
+	6       (00000018) iget                 v0, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	7       (0000001c) const/high16         v1, -32768 # [-0.0]
+	8       (00000020) if-ne                v0, v1, +a
+
+invert-BB@0x24 : 
+	9       (00000024) new-instance         v0, Ljava/lang/ArithmeticException;
+	10      (00000028) const-string         v1, "overflow: can't negate numerator"
+	11      (0000002c) invoke-direct        v0, v1, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+	12      (00000032) throw                v0
+
+invert-BB@0x34 : [ invert-BB@0x3c invert-BB@0x54 ]
+	13      (00000034) iget                 v0, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	14      (00000038) if-gez               v0, +e
+
+invert-BB@0x3c : [ invert-BB@0x52 ]
+	15      (0000003c) new-instance         v0, Lorg/apache/commons/lang/math/Fraction;
+	16      (00000040) iget                 v1, v3, Lorg/apache/commons/lang/math/Fraction;->denominator I
+	17      (00000044) neg-int              v1, v1
+	18      (00000046) iget                 v2, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	19      (0000004a) neg-int              v2, v2
+	20      (0000004c) invoke-direct        v0, v1, v2, Lorg/apache/commons/lang/math/Fraction;-><init>(I I)V
+
+invert-BB@0x52 : 
+	21      (00000052) return-object        v0
+
+invert-BB@0x54 : [ invert-BB@0x52 ]
+	22      (00000054) new-instance         v0, Lorg/apache/commons/lang/math/Fraction;
+	23      (00000058) iget                 v1, v3, Lorg/apache/commons/lang/math/Fraction;->denominator I
+	24      (0000005c) iget                 v2, v3, Lorg/apache/commons/lang/math/Fraction;->numerator I
+	25      (00000060) invoke-direct        v0, v1, v2, Lorg/apache/commons/lang/math/Fraction;-><init>(I I)V
+	26      (00000066) goto                 -a
+

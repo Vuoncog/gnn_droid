@@ -1,0 +1,25 @@
+# Lorg/apache/commons/io/IOUtils;->toByteArray(Ljava/net/URL;)[B [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.net.URL
+#
+# - return:byte[]
+
+toByteArray-BB@0x0 : [ toByteArray-BB@0x8 ]
+	0       (00000000) invoke-virtual       v2, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+	1       (00000006) move-result-object   v0
+
+toByteArray-BB@0x8 : 
+	2       (00000008) invoke-static        v0, Lorg/apache/commons/io/IOUtils;->toByteArray(Ljava/net/URLConnection;)[B
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-static        v0, Lorg/apache/commons/io/IOUtils;->close(Ljava/net/URLConnection;)V
+	5       (00000016) return-object        v1
+	8:d
+	(Ljava/lang/Throwable; -> 18 toByteArray-BB@0x18)
+
+toByteArray-BB@0x18 : 
+	6       (00000018) move-exception       v1
+	7       (0000001a) invoke-static        v0, Lorg/apache/commons/io/IOUtils;->close(Ljava/net/URLConnection;)V
+	8       (00000020) throw                v1
+

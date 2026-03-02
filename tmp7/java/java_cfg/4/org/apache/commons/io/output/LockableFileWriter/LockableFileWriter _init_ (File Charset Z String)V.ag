@@ -1,0 +1,68 @@
+# Lorg/apache/commons/io/output/LockableFileWriter;-><init>(Ljava/io/File; Ljava/nio/charset/Charset; Z Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.io.File
+# - v7:java.nio.charset.Charset
+# - v8:boolean
+# - v9:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x1a <init>-BB@0x28 ]
+	0       (00000000) invoke-direct        v5, Ljava/io/Writer;-><init>()V
+	1       (00000006) invoke-virtual       v6, Ljava/io/File;->getAbsoluteFile()Ljava/io/File;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) invoke-virtual       v0, Ljava/io/File;->getParentFile()Ljava/io/File;
+	4       (00000014) move-result-object   v1
+	5       (00000016) if-eqz               v1, +9
+
+<init>-BB@0x1a : [ <init>-BB@0x28 ]
+	6       (0000001a) invoke-virtual       v0, Ljava/io/File;->getParentFile()Ljava/io/File;
+	7       (00000020) move-result-object   v1
+	8       (00000022) invoke-static        v1, Lorg/apache/commons/io/FileUtils;->forceMkdir(Ljava/io/File;)V
+
+<init>-BB@0x28 : [ <init>-BB@0x34 <init>-BB@0x44 ]
+	9       (00000028) invoke-virtual       v0, Ljava/io/File;->isDirectory()Z
+	10      (0000002e) move-result          v1
+	11      (00000030) if-eqz               v1, +a
+
+<init>-BB@0x34 : 
+	12      (00000034) new-instance         v0, Ljava/io/IOException;
+	13      (00000038) const-string         v1, 'File specified is a directory'
+	14      (0000003c) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	15      (00000042) throw                v0
+
+<init>-BB@0x44 : [ <init>-BB@0x48 <init>-BB@0x54 ]
+	16      (00000044) if-nez               v9, +8
+
+<init>-BB@0x48 : [ <init>-BB@0x54 ]
+	17      (00000048) const-string         v1, 'java.io.tmpdir'
+	18      (0000004c) invoke-static        v1, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+	19      (00000052) move-result-object   v9
+
+<init>-BB@0x54 : 
+	20      (00000054) new-instance         v1, Ljava/io/File;
+	21      (00000058) invoke-direct        v1, v9, Ljava/io/File;-><init>(Ljava/lang/String;)V
+	22      (0000005e) invoke-static        v1, Lorg/apache/commons/io/FileUtils;->forceMkdir(Ljava/io/File;)V
+	23      (00000064) invoke-direct        v5, v1, Lorg/apache/commons/io/output/LockableFileWriter;->testLockDir(Ljava/io/File;)V
+	24      (0000006a) new-instance         v2, Ljava/io/File;
+	25      (0000006e) new-instance         v3, Ljava/lang/StringBuilder;
+	26      (00000072) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	27      (00000078) invoke-virtual       v0, Ljava/io/File;->getName()Ljava/lang/String;
+	28      (0000007e) move-result-object   v4
+	29      (00000080) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (00000086) move-result-object   v3
+	31      (00000088) const-string         v4, '.lck'
+	32      (0000008c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	33      (00000092) move-result-object   v3
+	34      (00000094) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	35      (0000009a) move-result-object   v3
+	36      (0000009c) invoke-direct        v2, v1, v3, Ljava/io/File;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	37      (000000a2) iput-object          v2, v5, Lorg/apache/commons/io/output/LockableFileWriter;->lockFile Ljava/io/File;
+	38      (000000a6) invoke-direct        v5, Lorg/apache/commons/io/output/LockableFileWriter;->createLock()V
+	39      (000000ac) invoke-direct        v5, v0, v7, v8, Lorg/apache/commons/io/output/LockableFileWriter;->initWriter(Ljava/io/File; Ljava/nio/charset/Charset; Z)Ljava/io/Writer;
+	40      (000000b2) move-result-object   v0
+	41      (000000b4) iput-object          v0, v5, Lorg/apache/commons/io/output/LockableFileWriter;->out Ljava/io/Writer;
+	42      (000000b8) return-void          
+

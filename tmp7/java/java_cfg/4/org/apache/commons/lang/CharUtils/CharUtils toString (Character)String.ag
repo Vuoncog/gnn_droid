@@ -1,0 +1,24 @@
+# Lorg/apache/commons/lang/CharUtils;->toString(Ljava/lang/Character;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Character
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : [ toString-BB@0x4 toString-BB@0x8 ]
+	0       (00000000) if-nez               v1, +4
+
+toString-BB@0x4 : [ toString-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+toString-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+toString-BB@0x8 : [ toString-BB@0x6 ]
+	3       (00000008) invoke-virtual       v1, Ljava/lang/Character;->charValue()C
+	4       (0000000e) move-result          v0
+	5       (00000010) invoke-static        v0, Lorg/apache/commons/lang/CharUtils;->toString(C)Ljava/lang/String;
+	6       (00000016) move-result-object   v0
+	7       (00000018) goto                 -9
+

@@ -1,0 +1,55 @@
+# Lorg/apache/commons/lang/ArrayUtils;->indexOf([D D I D)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:double[]
+# - v11:double
+# - v12:int
+# - v13:double
+#
+# - return:int
+
+indexOf-BB@0x0 : [ indexOf-BB@0xe indexOf-BB@0x12 ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) invoke-static        v8, Lorg/apache/commons/lang/ArrayUtils;->isEmpty([D)Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-eqz               v1, +4
+
+indexOf-BB@0xe : [ indexOf-BB@0x10 ]
+	4       (0000000e) move                 v11, v0
+
+indexOf-BB@0x10 : 
+	5       (00000010) return               v11
+
+indexOf-BB@0x12 : [ indexOf-BB@0x16 indexOf-BB@0x18 ]
+	6       (00000012) if-gez               v11, +3
+
+indexOf-BB@0x16 : [ indexOf-BB@0x18 ]
+	7       (00000016) const/4              v11, 0
+
+indexOf-BB@0x18 : [ indexOf-BB@0x20 ]
+	8       (00000018) sub-double           v2, v9, v12
+	9       (0000001c) add-double           v4, v9, v12
+
+indexOf-BB@0x20 : [ indexOf-BB@0x26 indexOf-BB@0x44 ]
+	10      (00000020) array-length         v1, v8
+	11      (00000022) if-ge                v11, v1, +11
+
+indexOf-BB@0x26 : [ indexOf-BB@0x32 indexOf-BB@0x3e ]
+	12      (00000026) aget-wide            v6, v8, v11
+	13      (0000002a) cmpl-double          v1, v6, v2
+	14      (0000002e) if-ltz               v1, +8
+
+indexOf-BB@0x32 : [ indexOf-BB@0x3e indexOf-BB@0x10 ]
+	15      (00000032) aget-wide            v6, v8, v11
+	16      (00000036) cmpg-double          v1, v6, v4
+	17      (0000003a) if-lez               v1, -15
+
+indexOf-BB@0x3e : [ indexOf-BB@0x20 ]
+	18      (0000003e) add-int/lit8         v11, v11, 1
+	19      (00000042) goto                 -11
+
+indexOf-BB@0x44 : [ indexOf-BB@0x10 ]
+	20      (00000044) move                 v11, v0
+	21      (00000046) goto                 -1b
+

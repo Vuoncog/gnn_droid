@@ -1,0 +1,63 @@
+# Lorg/apache/commons/io/FilenameUtils;->equals(Ljava/lang/String; Ljava/lang/String; Z Lorg/apache/commons/io/IOCase;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:java.lang.String
+# - v4:boolean
+# - v5:org.apache.commons.io.IOCase
+#
+# - return:boolean
+
+equals-BB@0x0 : [ equals-BB@0x4 equals-BB@0x8 ]
+	0       (00000000) if-eqz               v2, +4
+
+equals-BB@0x4 : [ equals-BB@0x8 equals-BB@0x18 ]
+	1       (00000004) if-nez               v3, +a
+
+equals-BB@0x8 : [ equals-BB@0xc equals-BB@0x14 ]
+	2       (00000008) if-nez               v2, +6
+
+equals-BB@0xc : [ equals-BB@0x10 equals-BB@0x14 ]
+	3       (0000000c) if-nez               v3, +4
+
+equals-BB@0x10 : [ equals-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+equals-BB@0x12 : 
+	5       (00000012) return               v0
+
+equals-BB@0x14 : [ equals-BB@0x12 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -2
+
+equals-BB@0x18 : [ equals-BB@0x1c equals-BB@0x44 ]
+	8       (00000018) if-eqz               v4, +16
+
+equals-BB@0x1c : [ equals-BB@0x30 equals-BB@0x34 ]
+	9       (0000001c) invoke-static        v2, Lorg/apache/commons/io/FilenameUtils;->normalize(Ljava/lang/String;)Ljava/lang/String;
+	10      (00000022) move-result-object   v2
+	11      (00000024) invoke-static        v3, Lorg/apache/commons/io/FilenameUtils;->normalize(Ljava/lang/String;)Ljava/lang/String;
+	12      (0000002a) move-result-object   v3
+	13      (0000002c) if-eqz               v2, +4
+
+equals-BB@0x30 : [ equals-BB@0x34 equals-BB@0x44 ]
+	14      (00000030) if-nez               v3, +a
+
+equals-BB@0x34 : 
+	15      (00000034) new-instance         v0, Ljava/lang/NullPointerException;
+	16      (00000038) const-string         v1, 'Error normalizing one or both of the file names'
+	17      (0000003c) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	18      (00000042) throw                v0
+
+equals-BB@0x44 : [ equals-BB@0x48 equals-BB@0x4c ]
+	19      (00000044) if-nez               v5, +4
+
+equals-BB@0x48 : [ equals-BB@0x4c ]
+	20      (00000048) sget-object          v5, Lorg/apache/commons/io/IOCase;->SENSITIVE Lorg/apache/commons/io/IOCase;
+
+equals-BB@0x4c : [ equals-BB@0x12 ]
+	21      (0000004c) invoke-virtual       v5, v2, v3, Lorg/apache/commons/io/IOCase;->checkEquals(Ljava/lang/String; Ljava/lang/String;)Z
+	22      (00000052) move-result          v0
+	23      (00000054) goto                 -21
+

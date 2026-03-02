@@ -1,0 +1,75 @@
+# Lorg/apache/commons/lang/StringEscapeUtils;->unescapeCsv(Ljava/io/Writer; Ljava/lang/String;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.Writer
+# - v4:java.lang.String
+#
+# - return:void
+
+unescapeCsv-BB@0x0 : [ unescapeCsv-BB@0x8 unescapeCsv-BB@0xa ]
+	0       (00000000) const/16             v2, 34
+	1       (00000004) if-nez               v4, +3
+
+unescapeCsv-BB@0x8 : 
+	2       (00000008) return-void          
+
+unescapeCsv-BB@0xa : [ unescapeCsv-BB@0x18 unescapeCsv-BB@0x20 ]
+	3       (0000000a) invoke-virtual       v4, Ljava/lang/String;->length()I
+	4       (00000010) move-result          v0
+	5       (00000012) const/4              v1, 2
+	6       (00000014) if-ge                v0, v1, +6
+
+unescapeCsv-BB@0x18 : [ unescapeCsv-BB@0x8 ]
+	7       (00000018) invoke-virtual       v3, v4, Ljava/io/Writer;->write(Ljava/lang/String;)V
+	8       (0000001e) goto                 -b
+
+unescapeCsv-BB@0x20 : [ unescapeCsv-BB@0x2e unescapeCsv-BB@0x46 ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) invoke-virtual       v4, v0, Ljava/lang/String;->charAt(I)C
+	11      (00000028) move-result          v0
+	12      (0000002a) if-ne                v0, v2, +e
+
+unescapeCsv-BB@0x2e : [ unescapeCsv-BB@0x46 unescapeCsv-BB@0x4e ]
+	13      (0000002e) invoke-virtual       v4, Ljava/lang/String;->length()I
+	14      (00000034) move-result          v0
+	15      (00000036) add-int/lit8         v0, v0, -1
+	16      (0000003a) invoke-virtual       v4, v0, Ljava/lang/String;->charAt(I)C
+	17      (00000040) move-result          v0
+	18      (00000042) if-eq                v0, v2, +6
+
+unescapeCsv-BB@0x46 : [ unescapeCsv-BB@0x8 ]
+	19      (00000046) invoke-virtual       v3, v4, Ljava/io/Writer;->write(Ljava/lang/String;)V
+	20      (0000004c) goto                 -22
+
+unescapeCsv-BB@0x4e : [ unescapeCsv-BB@0x74 unescapeCsv-BB@0xaa ]
+	21      (0000004e) const/4              v0, 1
+	22      (00000050) invoke-virtual       v4, Ljava/lang/String;->length()I
+	23      (00000056) move-result          v1
+	24      (00000058) add-int/lit8         v1, v1, -1
+	25      (0000005c) invoke-virtual       v4, v0, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	26      (00000062) move-result-object   v0
+	27      (00000064) sget-object          v1, Lorg/apache/commons/lang/StringEscapeUtils;->CSV_SEARCH_CHARS [C
+	28      (00000068) invoke-static        v0, v1, Lorg/apache/commons/lang/StringUtils;->containsAny(Ljava/lang/String; [C)Z
+	29      (0000006e) move-result          v1
+	30      (00000070) if-eqz               v1, +1d
+
+unescapeCsv-BB@0x74 : [ unescapeCsv-BB@0xaa ]
+	31      (00000074) new-instance         v1, Ljava/lang/StringBuffer;
+	32      (00000078) invoke-direct        v1, Ljava/lang/StringBuffer;-><init>()V
+	33      (0000007e) sget-object          v2, Lorg/apache/commons/lang/StringEscapeUtils;->CSV_QUOTE_STR Ljava/lang/String;
+	34      (00000082) invoke-virtual       v1, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	35      (00000088) move-result-object   v1
+	36      (0000008a) sget-object          v2, Lorg/apache/commons/lang/StringEscapeUtils;->CSV_QUOTE_STR Ljava/lang/String;
+	37      (0000008e) invoke-virtual       v1, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+	38      (00000094) move-result-object   v1
+	39      (00000096) invoke-virtual       v1, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+	40      (0000009c) move-result-object   v1
+	41      (0000009e) sget-object          v2, Lorg/apache/commons/lang/StringEscapeUtils;->CSV_QUOTE_STR Ljava/lang/String;
+	42      (000000a2) invoke-static        v0, v1, v2, Lorg/apache/commons/lang/StringUtils;->replace(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	43      (000000a8) move-result-object   v4
+
+unescapeCsv-BB@0xaa : [ unescapeCsv-BB@0x8 ]
+	44      (000000aa) invoke-virtual       v3, v4, Ljava/io/Writer;->write(Ljava/lang/String;)V
+	45      (000000b0) goto                 -54
+

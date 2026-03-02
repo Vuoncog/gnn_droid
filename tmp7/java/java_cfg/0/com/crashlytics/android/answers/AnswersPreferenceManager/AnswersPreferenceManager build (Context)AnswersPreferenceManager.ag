@@ -1,0 +1,16 @@
+# Lcom/crashlytics/android/answers/AnswersPreferenceManager;->build(Landroid/content/Context;)Lcom/crashlytics/android/answers/AnswersPreferenceManager; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:com.crashlytics.android.answers.AnswersPreferenceManager
+
+build-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lio/fabric/sdk/android/services/persistence/PreferenceStoreImpl;
+	1       (00000004) const-string         v1, 'settings'
+	2       (00000008) invoke-direct        v0, v2, v1, Lio/fabric/sdk/android/services/persistence/PreferenceStoreImpl;-><init>(Landroid/content/Context; Ljava/lang/String;)V
+	3       (0000000e) new-instance         v1, Lcom/crashlytics/android/answers/AnswersPreferenceManager;
+	4       (00000012) invoke-direct        v1, v0, Lcom/crashlytics/android/answers/AnswersPreferenceManager;-><init>(Lio/fabric/sdk/android/services/persistence/PreferenceStore;)V
+	5       (00000018) return-object        v1
+

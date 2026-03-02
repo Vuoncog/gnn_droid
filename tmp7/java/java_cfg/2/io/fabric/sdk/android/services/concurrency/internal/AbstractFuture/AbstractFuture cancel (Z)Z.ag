@@ -1,0 +1,30 @@
+# Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture;->cancel(Z)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:boolean
+
+cancel-BB@0x0 : [ cancel-BB@0x10 cancel-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture;->sync Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;
+	1       (00000004) invoke-virtual       v0, v2, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;->cancel(Z)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +4
+
+cancel-BB@0x10 : [ cancel-BB@0x12 ]
+	4       (00000010) const/4              v0, 0
+
+cancel-BB@0x12 : 
+	5       (00000012) return               v0
+
+cancel-BB@0x14 : [ cancel-BB@0x18 cancel-BB@0x1e ]
+	6       (00000014) if-eqz               v2, +5
+
+cancel-BB@0x18 : [ cancel-BB@0x1e ]
+	7       (00000018) invoke-virtual       v1, Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture;->interruptTask()V
+
+cancel-BB@0x1e : [ cancel-BB@0x12 ]
+	8       (0000001e) const/4              v0, 1
+	9       (00000020) goto                 -7
+

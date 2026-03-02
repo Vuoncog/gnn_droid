@@ -1,0 +1,14 @@
+# Lcom/crashlytics/android/core/CrashlyticsCore;->getInstance()Lcom/crashlytics/android/core/CrashlyticsCore; [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:com.crashlytics.android.core.CrashlyticsCore
+
+getInstance-BB@0x0 : 
+	0       (00000000) const-class          v0, Lcom/crashlytics/android/core/CrashlyticsCore;
+	1       (00000004) invoke-static        v0, Lio/fabric/sdk/android/Fabric;->getKit(Ljava/lang/Class;)Lio/fabric/sdk/android/Kit;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Lcom/crashlytics/android/core/CrashlyticsCore;
+	4       (00000010) return-object        v0
+

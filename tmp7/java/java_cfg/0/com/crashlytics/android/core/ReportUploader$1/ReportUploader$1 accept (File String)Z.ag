@@ -1,0 +1,31 @@
+# Lcom/crashlytics/android/core/ReportUploader$1;->accept(Ljava/io/File; Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.io.File
+# - v3:java.lang.String
+#
+# - return:boolean
+
+accept-BB@0x0 : [ accept-BB@0x10 accept-BB@0x24 ]
+	0       (00000000) const-string         v0, '.cls'
+	1       (00000004) invoke-virtual       v3, v0, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +c
+
+accept-BB@0x10 : [ accept-BB@0x20 accept-BB@0x24 ]
+	4       (00000010) const-string         v0, 'Session'
+	5       (00000014) invoke-virtual       v3, v0, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-nez               v0, +4
+
+accept-BB@0x20 : [ accept-BB@0x22 ]
+	8       (00000020) const/4              v0, 1
+
+accept-BB@0x22 : 
+	9       (00000022) return               v0
+
+accept-BB@0x24 : [ accept-BB@0x22 ]
+	10      (00000024) const/4              v0, 0
+	11      (00000026) goto                 -2
+

@@ -1,0 +1,227 @@
+# Lorg/apache/commons/io/input/XmlStreamReader;->calculateHttpEncoding(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Z)Ljava/lang/String; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:java.lang.String
+# - v11:java.lang.String
+# - v12:java.lang.String
+# - v13:java.lang.String
+# - v14:boolean
+#
+# - return:java.lang.String
+
+calculateHttpEncoding-BB@0x0 : [ calculateHttpEncoding-BB@0xe calculateHttpEncoding-BB@0x16 ]
+	0       (00000000) const/4              v8, 4
+	1       (00000002) const/4              v7, 3
+	2       (00000004) const/4              v6, 2
+	3       (00000006) const/4              v5, 1
+	4       (00000008) const/4              v4, 0
+	5       (0000000a) if-eqz               v14, +6
+
+calculateHttpEncoding-BB@0xe : [ calculateHttpEncoding-BB@0x12 calculateHttpEncoding-BB@0x16 ]
+	6       (0000000e) if-eqz               v13, +4
+
+calculateHttpEncoding-BB@0x12 : [ calculateHttpEncoding-BB@0x14 ]
+	7       (00000012) move-object          v3, v13
+
+calculateHttpEncoding-BB@0x14 : 
+	8       (00000014) return-object        v3
+
+calculateHttpEncoding-BB@0x16 : [ calculateHttpEncoding-BB@0x3a calculateHttpEncoding-BB@0x76 ]
+	9       (00000016) invoke-static        v10, Lorg/apache/commons/io/input/XmlStreamReader;->getContentTypeMime(Ljava/lang/String;)Ljava/lang/String;
+	10      (0000001c) move-result-object   v2
+	11      (0000001e) invoke-static        v10, Lorg/apache/commons/io/input/XmlStreamReader;->getContentTypeEncoding(Ljava/lang/String;)Ljava/lang/String;
+	12      (00000024) move-result-object   v3
+	13      (00000026) invoke-static        v2, Lorg/apache/commons/io/input/XmlStreamReader;->isAppXml(Ljava/lang/String;)Z
+	14      (0000002c) move-result          v0
+	15      (0000002e) invoke-static        v2, Lorg/apache/commons/io/input/XmlStreamReader;->isTextXml(Ljava/lang/String;)Z
+	16      (00000034) move-result          v1
+	17      (00000036) if-nez               v0, +20
+
+calculateHttpEncoding-BB@0x3a : [ calculateHttpEncoding-BB@0x3e calculateHttpEncoding-BB@0x76 ]
+	18      (0000003a) if-nez               v1, +1e
+
+calculateHttpEncoding-BB@0x3e : 
+	19      (0000003e) const-string         v0, 'Invalid encoding, CT-MIME [{0}] CT-Enc [{1}] BOM [{2}] XML guess [{3}] XML prolog [{4}], Invalid MIME'
+	20      (00000042) const/4              v1, 5
+	21      (00000044) new-array            v1, v1, [Ljava/lang/Object;
+	22      (00000048) aput-object          v2, v1, v4
+	23      (0000004c) aput-object          v3, v1, v5
+	24      (00000050) aput-object          v11, v1, v6
+	25      (00000054) aput-object          v12, v1, v7
+	26      (00000058) aput-object          v13, v1, v8
+	27      (0000005c) invoke-static        v0, v1, Ljava/text/MessageFormat;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	28      (00000062) move-result-object   v1
+	29      (00000064) new-instance         v0, Lorg/apache/commons/io/input/XmlStreamReaderException;
+	30      (00000068) move-object          v4, v11
+	31      (0000006a) move-object          v5, v12
+	32      (0000006c) move-object          v6, v13
+	33      (0000006e) invoke-direct/range  v0 ... v6, Lorg/apache/commons/io/input/XmlStreamReaderException;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	34      (00000074) throw                v0
+
+calculateHttpEncoding-BB@0x76 : [ calculateHttpEncoding-BB@0x7a calculateHttpEncoding-BB@0x9e ]
+	35      (00000076) if-nez               v3, +14
+
+calculateHttpEncoding-BB@0x7a : [ calculateHttpEncoding-BB@0x7e calculateHttpEncoding-BB@0x88 ]
+	36      (0000007a) if-eqz               v0, +7
+
+calculateHttpEncoding-BB@0x7e : [ calculateHttpEncoding-BB@0x14 ]
+	37      (0000007e) invoke-virtual       v9, v11, v12, v13, Lorg/apache/commons/io/input/XmlStreamReader;->calculateRawEncoding(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	38      (00000084) move-result-object   v3
+	39      (00000086) goto                 -39
+
+calculateHttpEncoding-BB@0x88 : [ calculateHttpEncoding-BB@0x90 calculateHttpEncoding-BB@0x98 ]
+	40      (00000088) iget-object          v0, v9, Lorg/apache/commons/io/input/XmlStreamReader;->defaultEncoding Ljava/lang/String;
+	41      (0000008c) if-nez               v0, +6
+
+calculateHttpEncoding-BB@0x90 : [ calculateHttpEncoding-BB@0x94 ]
+	42      (00000090) const-string         v0, 'US-ASCII'
+
+calculateHttpEncoding-BB@0x94 : [ calculateHttpEncoding-BB@0x14 ]
+	43      (00000094) move-object          v3, v0
+	44      (00000096) goto                 -41
+
+calculateHttpEncoding-BB@0x98 : [ calculateHttpEncoding-BB@0x94 ]
+	45      (00000098) iget-object          v0, v9, Lorg/apache/commons/io/input/XmlStreamReader;->defaultEncoding Ljava/lang/String;
+	46      (0000009c) goto                 -4
+
+calculateHttpEncoding-BB@0x9e : [ calculateHttpEncoding-BB@0xae calculateHttpEncoding-BB@0xbe ]
+	47      (0000009e) const-string         v0, 'UTF-16BE'
+	48      (000000a2) invoke-virtual       v3, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	49      (000000a8) move-result          v0
+	50      (000000aa) if-nez               v0, +a
+
+calculateHttpEncoding-BB@0xae : [ calculateHttpEncoding-BB@0xbe calculateHttpEncoding-BB@0xfa ]
+	51      (000000ae) const-string         v0, 'UTF-16LE'
+	52      (000000b2) invoke-virtual       v3, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	53      (000000b8) move-result          v0
+	54      (000000ba) if-eqz               v0, +20
+
+calculateHttpEncoding-BB@0xbe : [ calculateHttpEncoding-BB@0xc2 calculateHttpEncoding-BB@0x14 ]
+	55      (000000be) if-eqz               v11, -55
+
+calculateHttpEncoding-BB@0xc2 : 
+	56      (000000c2) const-string         v0, 'Invalid encoding, CT-MIME [{0}] CT-Enc [{1}] BOM [{2}] XML guess [{3}] XML prolog [{4}], BOM must be NULL'
+	57      (000000c6) const/4              v1, 5
+	58      (000000c8) new-array            v1, v1, [Ljava/lang/Object;
+	59      (000000cc) aput-object          v2, v1, v4
+	60      (000000d0) aput-object          v3, v1, v5
+	61      (000000d4) aput-object          v11, v1, v6
+	62      (000000d8) aput-object          v12, v1, v7
+	63      (000000dc) aput-object          v13, v1, v8
+	64      (000000e0) invoke-static        v0, v1, Ljava/text/MessageFormat;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	65      (000000e6) move-result-object   v1
+	66      (000000e8) new-instance         v0, Lorg/apache/commons/io/input/XmlStreamReaderException;
+	67      (000000ec) move-object          v4, v11
+	68      (000000ee) move-object          v5, v12
+	69      (000000f0) move-object          v6, v13
+	70      (000000f2) invoke-direct/range  v0 ... v6, Lorg/apache/commons/io/input/XmlStreamReaderException;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	71      (000000f8) throw                v0
+
+calculateHttpEncoding-BB@0xfa : [ calculateHttpEncoding-BB@0x10a calculateHttpEncoding-BB@0x15c ]
+	72      (000000fa) const-string         v0, 'UTF-16'
+	73      (000000fe) invoke-virtual       v3, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	74      (00000104) move-result          v0
+	75      (00000106) if-eqz               v0, +2b
+
+calculateHttpEncoding-BB@0x10a : [ calculateHttpEncoding-BB@0x10e calculateHttpEncoding-BB@0x124 ]
+	76      (0000010a) if-eqz               v11, +d
+
+calculateHttpEncoding-BB@0x10e : [ calculateHttpEncoding-BB@0x11e calculateHttpEncoding-BB@0x124 ]
+	77      (0000010e) const-string         v0, 'UTF-16'
+	78      (00000112) invoke-virtual       v11, v0, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+	79      (00000118) move-result          v0
+	80      (0000011a) if-eqz               v0, +5
+
+calculateHttpEncoding-BB@0x11e : [ calculateHttpEncoding-BB@0x14 ]
+	81      (0000011e) move-object          v3, v11
+	82      (00000120) goto/16              -86
+
+calculateHttpEncoding-BB@0x124 : 
+	83      (00000124) const-string         v0, 'Invalid encoding, CT-MIME [{0}] CT-Enc [{1}] BOM [{2}] XML guess [{3}] XML prolog [{4}], encoding mismatch'
+	84      (00000128) const/4              v1, 5
+	85      (0000012a) new-array            v1, v1, [Ljava/lang/Object;
+	86      (0000012e) aput-object          v2, v1, v4
+	87      (00000132) aput-object          v3, v1, v5
+	88      (00000136) aput-object          v11, v1, v6
+	89      (0000013a) aput-object          v12, v1, v7
+	90      (0000013e) aput-object          v13, v1, v8
+	91      (00000142) invoke-static        v0, v1, Ljava/text/MessageFormat;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	92      (00000148) move-result-object   v1
+	93      (0000014a) new-instance         v0, Lorg/apache/commons/io/input/XmlStreamReaderException;
+	94      (0000014e) move-object          v4, v11
+	95      (00000150) move-object          v5, v12
+	96      (00000152) move-object          v6, v13
+	97      (00000154) invoke-direct/range  v0 ... v6, Lorg/apache/commons/io/input/XmlStreamReaderException;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	98      (0000015a) throw                v0
+
+calculateHttpEncoding-BB@0x15c : [ calculateHttpEncoding-BB@0x16c calculateHttpEncoding-BB@0x17c ]
+	99      (0000015c) const-string         v0, 'UTF-32BE'
+	100     (00000160) invoke-virtual       v3, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	101     (00000166) move-result          v0
+	102     (00000168) if-nez               v0, +a
+
+calculateHttpEncoding-BB@0x16c : [ calculateHttpEncoding-BB@0x17c calculateHttpEncoding-BB@0x1b8 ]
+	103     (0000016c) const-string         v0, 'UTF-32LE'
+	104     (00000170) invoke-virtual       v3, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	105     (00000176) move-result          v0
+	106     (00000178) if-eqz               v0, +20
+
+calculateHttpEncoding-BB@0x17c : [ calculateHttpEncoding-BB@0x180 calculateHttpEncoding-BB@0x14 ]
+	107     (0000017c) if-eqz               v11, -b4
+
+calculateHttpEncoding-BB@0x180 : 
+	108     (00000180) const-string         v0, 'Invalid encoding, CT-MIME [{0}] CT-Enc [{1}] BOM [{2}] XML guess [{3}] XML prolog [{4}], BOM must be NULL'
+	109     (00000184) const/4              v1, 5
+	110     (00000186) new-array            v1, v1, [Ljava/lang/Object;
+	111     (0000018a) aput-object          v2, v1, v4
+	112     (0000018e) aput-object          v3, v1, v5
+	113     (00000192) aput-object          v11, v1, v6
+	114     (00000196) aput-object          v12, v1, v7
+	115     (0000019a) aput-object          v13, v1, v8
+	116     (0000019e) invoke-static        v0, v1, Ljava/text/MessageFormat;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	117     (000001a4) move-result-object   v1
+	118     (000001a6) new-instance         v0, Lorg/apache/commons/io/input/XmlStreamReaderException;
+	119     (000001aa) move-object          v4, v11
+	120     (000001ac) move-object          v5, v12
+	121     (000001ae) move-object          v6, v13
+	122     (000001b0) invoke-direct/range  v0 ... v6, Lorg/apache/commons/io/input/XmlStreamReaderException;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	123     (000001b6) throw                v0
+
+calculateHttpEncoding-BB@0x1b8 : [ calculateHttpEncoding-BB@0x1c8 calculateHttpEncoding-BB@0x14 ]
+	124     (000001b8) const-string         v0, 'UTF-32'
+	125     (000001bc) invoke-virtual       v3, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	126     (000001c2) move-result          v0
+	127     (000001c4) if-eqz               v0, -d8
+
+calculateHttpEncoding-BB@0x1c8 : [ calculateHttpEncoding-BB@0x1cc calculateHttpEncoding-BB@0x1e2 ]
+	128     (000001c8) if-eqz               v11, +d
+
+calculateHttpEncoding-BB@0x1cc : [ calculateHttpEncoding-BB@0x1dc calculateHttpEncoding-BB@0x1e2 ]
+	129     (000001cc) const-string         v0, 'UTF-32'
+	130     (000001d0) invoke-virtual       v11, v0, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+	131     (000001d6) move-result          v0
+	132     (000001d8) if-eqz               v0, +5
+
+calculateHttpEncoding-BB@0x1dc : [ calculateHttpEncoding-BB@0x14 ]
+	133     (000001dc) move-object          v3, v11
+	134     (000001de) goto/16              -e5
+
+calculateHttpEncoding-BB@0x1e2 : 
+	135     (000001e2) const-string         v0, 'Invalid encoding, CT-MIME [{0}] CT-Enc [{1}] BOM [{2}] XML guess [{3}] XML prolog [{4}], encoding mismatch'
+	136     (000001e6) const/4              v1, 5
+	137     (000001e8) new-array            v1, v1, [Ljava/lang/Object;
+	138     (000001ec) aput-object          v2, v1, v4
+	139     (000001f0) aput-object          v3, v1, v5
+	140     (000001f4) aput-object          v11, v1, v6
+	141     (000001f8) aput-object          v12, v1, v7
+	142     (000001fc) aput-object          v13, v1, v8
+	143     (00000200) invoke-static        v0, v1, Ljava/text/MessageFormat;->format(Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	144     (00000206) move-result-object   v1
+	145     (00000208) new-instance         v0, Lorg/apache/commons/io/input/XmlStreamReaderException;
+	146     (0000020c) move-object          v4, v11
+	147     (0000020e) move-object          v5, v12
+	148     (00000210) move-object          v6, v13
+	149     (00000212) invoke-direct/range  v0 ... v6, Lorg/apache/commons/io/input/XmlStreamReaderException;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	150     (00000218) throw                v0
+

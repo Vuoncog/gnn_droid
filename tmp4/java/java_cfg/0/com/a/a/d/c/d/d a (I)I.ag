@@ -1,0 +1,22 @@
+# Lcom/a/a/d/c/d;->a(I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:int
+
+a-BB@0x0 : [ a-BB@0x8 a-BB@0xe ]
+	0       (00000000) const/16             v0, 8
+	1       (00000004) if-gt                v2, v0, +5
+
+a-BB@0x8 : [ a-BB@0xc ]
+	2       (00000008) const/16             v0, 156
+
+a-BB@0xc : 
+	3       (0000000c) return               v0
+
+a-BB@0xe : [ a-BB@0xc ]
+	4       (0000000e) const/16             v0, 155
+	5       (00000012) goto                 -3
+

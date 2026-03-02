@@ -1,0 +1,111 @@
+digraph {
+	graph [bb="0,0,1824,729",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_93e43761adead6ead07a1a37a6179562 {
+		graph [bb="8,8,1816,721",
+			label="Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;.complete->(Ljava/lang/Object; Ljava/lang/Throwable; I)\
+Z\nLocal registers v0 ... v3\nparam v4 = java.lang.Object\nparam v5 = java.lang.Throwable\nparam v6 = int\nreturn = boolean",
+			lheight=1.25,
+			lp="912,672",
+			lwidth=12.04
+		];
+		struct_4035c5e2df1dececd2e5a10839d4face	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#999933">v2</FONT>, <FONT color="green">0x1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#919150">v0</FONT>, <FONT color="green">0x0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8A8A6D">v3</FONT>, <FONT color="#919150">v0</FONT>, <FONT color="#999933">v2</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;-&gt;compareAndSetState(I I)Z</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#919150">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x15</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="952,547.5",
+			width=12.556];
+		struct_68dc61605228fa99655162ea06957c87	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#83838A">v4</FONT>, <FONT color="#8A8A6D">v3</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;-&gt;value Ljava/lang/Object;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">and-int/lit8 </FONT> <FONT color="#7B7BA7">v1</FONT>, <FONT color="#7474C4">v6</FONT>, <FONT color="green">0xc</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#7B7BA7">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x9</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="523,398.5",
+			width=11.958];
+		struct_4035c5e2df1dececd2e5a10839d4face:tail -> struct_68dc61605228fa99655162ea06957c87:header	[color=red,
+			pos="e,118,437.5 521,485.5 521,308.65 133.59,605.85 118.46,447.51"];
+		struct_1f6962268a22ab94208499cc3a3d50af	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">36</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8A8A6D">v3</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;-&gt;getState()I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#7B7BA7">v1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">3e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-ne </FONT> <FONT color="#7B7BA7">v1</FONT>, <FONT color="#999933">v2</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x-5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1330,271.5",
+			width=10.625];
+		struct_4035c5e2df1dececd2e5a10839d4face:tail -> struct_1f6962268a22ab94208499cc3a3d50af:header	[color=green,
+			pos="e,973,310.5 521,485.5 521,386.85 893.9,514.41 963,444 1002.2,404.02 976.46,373.73 973.31,320.68"];
+		struct_da5424c0cee3e9ce378e6b14efee85ae	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">new-instance </FONT> <FONT color="#6D6DE1">v5</FONT>, <FONT color="#0000FF">Ljava/util/concurrent/CancellationException;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">20</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const-string </FONT> <FONT color="#7B7BA7">v1</FONT>, <FONT color="red">'Future.cancel() was called.'</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-direct </FONT> <FONT color="#6D6DE1">v5</FONT>, <FONT color="#7B7BA7">v1</FONT>, <FONT color="#DF3A01">Ljava/util/concurrent/CancellationException;-&gt;&lt;init&gt;(Ljava/lang/String;)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="360,271.5",
+			width=9.5278];
+		struct_68dc61605228fa99655162ea06957c87:tail -> struct_da5424c0cee3e9ce378e6b14efee85ae:header	[color=red,
+			pos="e,42,310.5 118,358.5 118,322.61 56.654,344.71 44.193,320.6"];
+		struct_ca73fb86f168f6067c60f364161d11f9	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iput-object </FONT> <FONT color="#6D6DE1">v5</FONT>, <FONT color="#8A8A6D">v3</FONT>, <FONT color="#088A08">Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;-&gt;exception Ljava/lang/Throwable;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">2e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8A8A6D">v3</FONT>, <FONT color="#7474C4">v6</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;-&gt;releaseShared(I)Z</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="474,144.5",
+			width=12.708];
+		struct_68dc61605228fa99655162ea06957c87:tail -> struct_ca73fb86f168f6067c60f364161d11f9:header	[color=green,
+			pos="e,42,172.5 118,358.5 118,292.34 666.88,365.39 712,317 739.58,287.42 739.44,255.71 712,226 663.71,173.7 98.813,240.34 45.96,182.04"];
+		struct_da5424c0cee3e9ce378e6b14efee85ae:tail -> struct_ca73fb86f168f6067c60f364161d11f9:header	[color=blue,
+			pos="e,42,172.5 42,231.5 42,208.97 42,200.95 42,182.51"];
+		struct_ed0700d5d49986772811683fabad4a39	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">34</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#919150">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="992,39.5",
+			width=1.8472];
+		struct_ca73fb86f168f6067c60f364161d11f9:tail -> struct_ed0700d5d49986772811683fabad4a39:header	[color=blue,
+			pos="e,936,53.5 42,115.5 42,67.756 818.38,54.565 925.98,53.563"];
+		struct_1f6962268a22ab94208499cc3a3d50af:tail -> struct_ed0700d5d49986772811683fabad4a39:header	[color=green,
+			pos="e,951,56.5 958,234.5 940.22,234.5 948.74,106.8 950.65,66.503"];
+		struct_2d4dfd3525cb6fbeb59f0b8584f6bef8	[height=1.2639,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">42</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#7B7BA7">v1</FONT>, <FONT color="green">0x-1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">44</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#8A8A6D">v3</FONT>, <FONT color="#7B7BA7">v1</FONT>, <FONT color="#DF3A01">Lio/fabric/sdk/android/services/concurrency/internal/AbstractFuture$Sync;-&gt;acquireShared(I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-b</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1389,144.5",
+			width=11.625];
+		struct_1f6962268a22ab94208499cc3a3d50af:tail -> struct_2d4dfd3525cb6fbeb59f0b8584f6bef8:header	[color=red,
+			pos="e,996,183.5 973,231.5 973,211.73 989.07,208 994.35,193.49"];
+		struct_2d4dfd3525cb6fbeb59f0b8584f6bef8:tail -> struct_ed0700d5d49986772811683fabad4a39:header	[color=blue,
+			pos="e,951,56.5 996,104.5 996,79.37 962.77,83.579 953.42,66.701"];
+	}
+}

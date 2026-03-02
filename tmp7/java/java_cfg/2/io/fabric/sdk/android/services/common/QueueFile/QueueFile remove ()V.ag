@@ -1,0 +1,78 @@
+# Lio/fabric/sdk/android/services/common/QueueFile;->remove()V [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+remove-BB@0x0 : [ remove-BB@0x2 ]
+	0       (00000000) monitor-enter        v5
+
+remove-BB@0x2 : [ remove-BB@0xe remove-BB@0x20 ]
+	1       (00000002) invoke-virtual       v5, Lio/fabric/sdk/android/services/common/QueueFile;->isEmpty()Z
+	2       (00000008) move-result          v0
+	3       (0000000a) if-eqz               v0, +b
+	2:19
+	(Ljava/lang/Throwable; -> 1a remove-BB@0x1a)
+
+remove-BB@0xe : 
+	4       (0000000e) new-instance         v0, Ljava/util/NoSuchElementException;
+	5       (00000012) invoke-direct        v0, Ljava/util/NoSuchElementException;-><init>()V
+	6       (00000018) throw                v0
+	2:19
+	(Ljava/lang/Throwable; -> 1a remove-BB@0x1a)
+
+remove-BB@0x1a : 
+	7       (0000001a) move-exception       v0
+	8       (0000001c) monitor-exit         v5
+	9       (0000001e) throw                v0
+
+remove-BB@0x20 : [ remove-BB@0x2a remove-BB@0x34 ]
+	10      (00000020) iget                 v0, v5, Lio/fabric/sdk/android/services/common/QueueFile;->elementCount I
+	11      (00000024) const/4              v1, 1
+	12      (00000026) if-ne                v0, v1, +7
+	20:2f
+	(Ljava/lang/Throwable; -> 1a remove-BB@0x1a)
+
+remove-BB@0x2a : [ remove-BB@0x30 ]
+	13      (0000002a) invoke-virtual       v5, Lio/fabric/sdk/android/services/common/QueueFile;->clear()V
+	20:2f
+	(Ljava/lang/Throwable; -> 1a remove-BB@0x1a)
+
+remove-BB@0x30 : 
+	14      (00000030) monitor-exit         v5
+	15      (00000032) return-void          
+
+remove-BB@0x34 : [ remove-BB@0x30 ]
+	16      (00000034) iget-object          v0, v5, Lio/fabric/sdk/android/services/common/QueueFile;->first Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	17      (00000038) iget                 v0, v0, Lio/fabric/sdk/android/services/common/QueueFile$Element;->position I
+	18      (0000003c) add-int/lit8         v0, v0, 4
+	19      (00000040) iget-object          v1, v5, Lio/fabric/sdk/android/services/common/QueueFile;->first Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	20      (00000044) iget                 v1, v1, Lio/fabric/sdk/android/services/common/QueueFile$Element;->length I
+	21      (00000048) add-int/2addr        v0, v1
+	22      (0000004a) invoke-direct        v5, v0, Lio/fabric/sdk/android/services/common/QueueFile;->wrapPosition(I)I
+	23      (00000050) move-result          v0
+	24      (00000052) iget-object          v1, v5, Lio/fabric/sdk/android/services/common/QueueFile;->buffer [B
+	25      (00000056) const/4              v2, 0
+	26      (00000058) const/4              v3, 4
+	27      (0000005a) invoke-direct        v5, v0, v1, v2, v3, Lio/fabric/sdk/android/services/common/QueueFile;->ringRead(I [B I I)V
+	28      (00000060) iget-object          v1, v5, Lio/fabric/sdk/android/services/common/QueueFile;->buffer [B
+	29      (00000064) const/4              v2, 0
+	30      (00000066) invoke-static        v1, v2, Lio/fabric/sdk/android/services/common/QueueFile;->readInt([B I)I
+	31      (0000006c) move-result          v1
+	32      (0000006e) iget                 v2, v5, Lio/fabric/sdk/android/services/common/QueueFile;->fileLength I
+	33      (00000072) iget                 v3, v5, Lio/fabric/sdk/android/services/common/QueueFile;->elementCount I
+	34      (00000076) add-int/lit8         v3, v3, -1
+	35      (0000007a) iget-object          v4, v5, Lio/fabric/sdk/android/services/common/QueueFile;->last Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	36      (0000007e) iget                 v4, v4, Lio/fabric/sdk/android/services/common/QueueFile$Element;->position I
+	37      (00000082) invoke-direct        v5, v2, v3, v0, v4, Lio/fabric/sdk/android/services/common/QueueFile;->writeHeader(I I I I)V
+	38      (00000088) iget                 v2, v5, Lio/fabric/sdk/android/services/common/QueueFile;->elementCount I
+	39      (0000008c) add-int/lit8         v2, v2, -1
+	40      (00000090) iput                 v2, v5, Lio/fabric/sdk/android/services/common/QueueFile;->elementCount I
+	41      (00000094) new-instance         v2, Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	42      (00000098) invoke-direct        v2, v0, v1, Lio/fabric/sdk/android/services/common/QueueFile$Element;-><init>(I I)V
+	43      (0000009e) iput-object          v2, v5, Lio/fabric/sdk/android/services/common/QueueFile;->first Lio/fabric/sdk/android/services/common/QueueFile$Element;
+	44      (000000a2) goto                 -39
+	34:a1
+	(Ljava/lang/Throwable; -> 1a remove-BB@0x1a)
+

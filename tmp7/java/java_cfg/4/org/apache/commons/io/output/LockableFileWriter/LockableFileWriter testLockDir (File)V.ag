@@ -1,0 +1,53 @@
+# Lorg/apache/commons/io/output/LockableFileWriter;->testLockDir(Ljava/io/File;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.File
+#
+# - return:void
+
+testLockDir-BB@0x0 : [ testLockDir-BB@0xc testLockDir-BB@0x46 ]
+	0       (00000000) invoke-virtual       v4, Ljava/io/File;->exists()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +1f
+
+testLockDir-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/io/IOException;
+	4       (00000010) new-instance         v1, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) const-string         v2, 'Could not find lockDir: '
+	7       (0000001e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v1
+	9       (00000026) invoke-virtual       v4, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v1
+	13      (00000036) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	16      (00000044) throw                v0
+
+testLockDir-BB@0x46 : [ testLockDir-BB@0x52 testLockDir-BB@0x8c ]
+	17      (00000046) invoke-virtual       v4, Ljava/io/File;->canWrite()Z
+	18      (0000004c) move-result          v0
+	19      (0000004e) if-nez               v0, +1f
+
+testLockDir-BB@0x52 : 
+	20      (00000052) new-instance         v0, Ljava/io/IOException;
+	21      (00000056) new-instance         v1, Ljava/lang/StringBuilder;
+	22      (0000005a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	23      (00000060) const-string         v2, 'Could not write to lockDir: '
+	24      (00000064) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (0000006a) move-result-object   v1
+	26      (0000006c) invoke-virtual       v4, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	27      (00000072) move-result-object   v2
+	28      (00000074) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	29      (0000007a) move-result-object   v1
+	30      (0000007c) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	31      (00000082) move-result-object   v1
+	32      (00000084) invoke-direct        v0, v1, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+	33      (0000008a) throw                v0
+
+testLockDir-BB@0x8c : 
+	34      (0000008c) return-void          
+

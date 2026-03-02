@@ -1,0 +1,32 @@
+# Lorg/apache/commons/lang/math/Range;->containsDouble(D)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:double
+#
+# - return:boolean
+
+containsDouble-BB@0x0 : [ containsDouble-BB@0x24 containsDouble-BB@0x2c ]
+	0       (00000000) invoke-virtual       v5, Lorg/apache/commons/lang/math/Range;->getMinimumDouble()D
+	1       (00000006) move-result-wide     v0
+	2       (00000008) invoke-static        v0, v1, v6, v7, Lorg/apache/commons/lang/math/NumberUtils;->compare(D D)I
+	3       (0000000e) move-result          v0
+	4       (00000010) invoke-virtual       v5, Lorg/apache/commons/lang/math/Range;->getMaximumDouble()D
+	5       (00000016) move-result-wide     v2
+	6       (00000018) invoke-static        v2, v3, v6, v7, Lorg/apache/commons/lang/math/NumberUtils;->compare(D D)I
+	7       (0000001e) move-result          v1
+	8       (00000020) if-gtz               v0, +6
+
+containsDouble-BB@0x24 : [ containsDouble-BB@0x28 containsDouble-BB@0x2c ]
+	9       (00000024) if-ltz               v1, +4
+
+containsDouble-BB@0x28 : [ containsDouble-BB@0x2a ]
+	10      (00000028) const/4              v0, 1
+
+containsDouble-BB@0x2a : 
+	11      (0000002a) return               v0
+
+containsDouble-BB@0x2c : [ containsDouble-BB@0x2a ]
+	12      (0000002c) const/4              v0, 0
+	13      (0000002e) goto                 -2
+

@@ -1,0 +1,22 @@
+# Lio/fabric/sdk/android/services/network/HttpRequest;->send(Ljava/io/InputStream;)Lio/fabric/sdk/android/services/network/HttpRequest; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.io.InputStream
+#
+# - return:io.fabric.sdk.android.services.network.HttpRequest
+
+send-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Lio/fabric/sdk/android/services/network/HttpRequest;->openOutput()Lio/fabric/sdk/android/services/network/HttpRequest;
+	1       (00000006) iget-object          v0, v2, Lio/fabric/sdk/android/services/network/HttpRequest;->output Lio/fabric/sdk/android/services/network/HttpRequest$RequestOutputStream;
+	2       (0000000a) invoke-virtual       v2, v3, v0, Lio/fabric/sdk/android/services/network/HttpRequest;->copy(Ljava/io/InputStream; Ljava/io/OutputStream;)Lio/fabric/sdk/android/services/network/HttpRequest;
+	3       (00000010) return-object        v2
+	0:f
+	(Ljava/io/IOException; -> 12 send-BB@0x12)
+
+send-BB@0x12 : 
+	4       (00000012) move-exception       v0
+	5       (00000014) new-instance         v1, Lio/fabric/sdk/android/services/network/HttpRequest$HttpRequestException;
+	6       (00000018) invoke-direct        v1, v0, Lio/fabric/sdk/android/services/network/HttpRequest$HttpRequestException;-><init>(Ljava/io/IOException;)V
+	7       (0000001e) throw                v1
+

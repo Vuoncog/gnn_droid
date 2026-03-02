@@ -1,0 +1,49 @@
+# Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x58 ]
+	0       (00000000) iget-object          v1, v5, Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;->this$0 Lcom/mangosoft/android/wallpapers/ContactsListActivity;
+	1       (00000004) iget-object          v2, v5, Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;->this$0 Lcom/mangosoft/android/wallpapers/ContactsListActivity;
+	2       (00000008) invoke-static        v2, Lcom/mangosoft/android/wallpapers/ContactsListActivity;->access$4(Lcom/mangosoft/android/wallpapers/ContactsListActivity;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-static        v2, Lcom/mangosoft/android/wallpapers/util/SiteUtils;->getBitmapFromUrl(Ljava/lang/String;)Landroid/graphics/Bitmap;
+	5       (00000016) move-result-object   v2
+	6       (00000018) invoke-static        v1, v2, Lcom/mangosoft/android/wallpapers/ContactsListActivity;->access$5(Lcom/mangosoft/android/wallpapers/ContactsListActivity; Landroid/graphics/Bitmap;)V
+	7       (0000001e) iget-object          v1, v5, Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;->this$0 Lcom/mangosoft/android/wallpapers/ContactsListActivity;
+	8       (00000022) new-instance         v2, Ljava/io/ByteArrayOutputStream;
+	9       (00000026) invoke-direct        v2, Ljava/io/ByteArrayOutputStream;-><init>()V
+	10      (0000002c) invoke-static        v1, v2, Lcom/mangosoft/android/wallpapers/ContactsListActivity;->access$6(Lcom/mangosoft/android/wallpapers/ContactsListActivity; Ljava/io/ByteArrayOutputStream;)V
+	11      (00000032) iget-object          v1, v5, Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;->this$0 Lcom/mangosoft/android/wallpapers/ContactsListActivity;
+	12      (00000036) invoke-static        v1, Lcom/mangosoft/android/wallpapers/ContactsListActivity;->access$7(Lcom/mangosoft/android/wallpapers/ContactsListActivity;)Landroid/graphics/Bitmap;
+	13      (0000003c) move-result-object   v1
+	14      (0000003e) sget-object          v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG Landroid/graphics/Bitmap$CompressFormat;
+	15      (00000042) const/16             v3, 75
+	16      (00000046) iget-object          v4, v5, Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;->this$0 Lcom/mangosoft/android/wallpapers/ContactsListActivity;
+	17      (0000004a) invoke-static        v4, Lcom/mangosoft/android/wallpapers/ContactsListActivity;->access$8(Lcom/mangosoft/android/wallpapers/ContactsListActivity;)Ljava/io/ByteArrayOutputStream;
+	18      (00000050) move-result-object   v4
+	19      (00000052) invoke-virtual       v1, v2, v3, v4, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat; I Ljava/io/OutputStream;)Z
+	0:57
+	(Ljava/lang/Exception; -> 6c run-BB@0x6c)
+
+run-BB@0x58 : 
+	20      (00000058) iget-object          v1, v5, Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;->this$0 Lcom/mangosoft/android/wallpapers/ContactsListActivity;
+	21      (0000005c) invoke-static        v1, Lcom/mangosoft/android/wallpapers/ContactsListActivity;->access$3(Lcom/mangosoft/android/wallpapers/ContactsListActivity;)Landroid/app/ProgressDialog;
+	22      (00000062) move-result-object   v1
+	23      (00000064) invoke-virtual       v1, Landroid/app/ProgressDialog;->dismiss()V
+	24      (0000006a) return-void          
+
+run-BB@0x6c : [ run-BB@0x58 ]
+	25      (0000006c) move-exception       v1
+	26      (0000006e) move-object          v0, v1
+	27      (00000070) iget-object          v1, v5, Lcom/mangosoft/android/wallpapers/ContactsListActivity$3;->this$0 Lcom/mangosoft/android/wallpapers/ContactsListActivity;
+	28      (00000074) const-string         v2, '唉，出错啦'
+	29      (00000078) const/4              v3, 0
+	30      (0000007a) invoke-static        v1, v2, v3, Landroid/widget/Toast;->makeText(Landroid/content/Context; Ljava/lang/CharSequence; I)Landroid/widget/Toast;
+	31      (00000080) move-result-object   v1
+	32      (00000082) invoke-virtual       v1, Landroid/widget/Toast;->show()V
+	33      (00000088) goto                 -18
+

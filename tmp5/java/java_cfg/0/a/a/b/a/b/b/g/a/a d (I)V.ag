@@ -1,0 +1,38 @@
+# La/a/b/a/b/b/g/a;->d(I)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+d-BB@0x0 : [ d-BB@0x4 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) move                 v1, v0
+
+d-BB@0x4 : [ d-BB@0x14 d-BB@0x3e ]
+	2       (00000004) iget-object          v0, v2, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	3       (00000008) invoke-interface     v0, Ljava/util/List;->size()I
+	4       (0000000e) move-result          v0
+	5       (00000010) if-ge                v1, v0, +17
+
+d-BB@0x14 : [ d-BB@0x2c d-BB@0x36 ]
+	6       (00000014) iget-object          v0, v2, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	7       (00000018) invoke-interface     v0, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	8       (0000001e) move-result-object   v0
+	9       (00000020) check-cast           v0, La/a/b/a/b/b/g/a/b;
+	10      (00000024) iget                 v0, v0, La/a/b/a/b/b/g/a/b;->b I
+	11      (00000028) if-ne                v0, v3, +7
+
+d-BB@0x2c : [ d-BB@0x36 ]
+	12      (0000002c) iget-object          v0, v2, La/a/b/a/b/b/g/a;->c Ljava/util/List;
+	13      (00000030) invoke-interface     v0, v1, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+d-BB@0x36 : [ d-BB@0x4 ]
+	14      (00000036) add-int/lit8         v0, v1, 1
+	15      (0000003a) move                 v1, v0
+	16      (0000003c) goto                 -1c
+
+d-BB@0x3e : 
+	17      (0000003e) return-void          
+

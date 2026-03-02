@@ -1,0 +1,65 @@
+# Lio/fabric/sdk/android/Onboarding;->doInBackground()Ljava/lang/Boolean; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:java.lang.Boolean
+
+doInBackground-BB@0x0 : [ doInBackground-BB@0x1e doInBackground-BB@0x84 ]
+	0       (00000000) invoke-virtual       v5, Lio/fabric/sdk/android/Onboarding;->getContext()Landroid/content/Context;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-static        v0, Lio/fabric/sdk/android/services/common/CommonUtils;->getAppIconHashOrNull(Landroid/content/Context;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) const/4              v1, 0
+	5       (00000012) invoke-direct        v5, Lio/fabric/sdk/android/Onboarding;->retrieveSettingsData()Lio/fabric/sdk/android/services/settings/SettingsData;
+	6       (00000018) move-result-object   v3
+	7       (0000001a) if-eqz               v3, +35
+
+doInBackground-BB@0x1e : [ doInBackground-BB@0x26 doInBackground-BB@0x60 ]
+	8       (0000001e) iget-object          v0, v5, Lio/fabric/sdk/android/Onboarding;->kitsFinder Ljava/util/concurrent/Future;
+	9       (00000022) if-eqz               v0, +1f
+	1e:53
+	(Ljava/lang/Exception; -> 6c doInBackground-BB@0x6c)
+
+doInBackground-BB@0x26 : [ doInBackground-BB@0x36 ]
+	10      (00000026) iget-object          v0, v5, Lio/fabric/sdk/android/Onboarding;->kitsFinder Ljava/util/concurrent/Future;
+	11      (0000002a) invoke-interface     v0, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+	12      (00000030) move-result-object   v0
+	13      (00000032) check-cast           v0, Ljava/util/Map;
+	1e:53
+	(Ljava/lang/Exception; -> 6c doInBackground-BB@0x6c)
+
+doInBackground-BB@0x36 : [ doInBackground-BB@0x56 ]
+	14      (00000036) iget-object          v4, v5, Lio/fabric/sdk/android/Onboarding;->providedKits Ljava/util/Collection;
+	15      (0000003a) invoke-virtual       v5, v0, v4, Lio/fabric/sdk/android/Onboarding;->mergeKits(Ljava/util/Map; Ljava/util/Collection;)Ljava/util/Map;
+	16      (00000040) move-result-object   v0
+	17      (00000042) iget-object          v3, v3, Lio/fabric/sdk/android/services/settings/SettingsData;->appData Lio/fabric/sdk/android/services/settings/AppSettingsData;
+	18      (00000046) invoke-interface     v0, Ljava/util/Map;->values()Ljava/util/Collection;
+	19      (0000004c) move-result-object   v0
+	20      (0000004e) invoke-direct        v5, v2, v3, v0, Lio/fabric/sdk/android/Onboarding;->performAutoConfigure(Ljava/lang/String; Lio/fabric/sdk/android/services/settings/AppSettingsData; Ljava/util/Collection;)Z
+	21      (00000054) move-result          v0
+
+doInBackground-BB@0x56 : 
+	22      (00000056) invoke-static        v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	23      (0000005c) move-result-object   v0
+	24      (0000005e) return-object        v0
+
+doInBackground-BB@0x60 : [ doInBackground-BB@0x36 ]
+	25      (00000060) new-instance         v0, Ljava/util/HashMap;
+	26      (00000064) invoke-direct        v0, Ljava/util/HashMap;-><init>()V
+	27      (0000006a) goto                 -1a
+	60:69
+	(Ljava/lang/Exception; -> 6c doInBackground-BB@0x6c)
+
+doInBackground-BB@0x6c : [ doInBackground-BB@0x84 ]
+	28      (0000006c) move-exception       v0
+	29      (0000006e) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	30      (00000074) move-result-object   v2
+	31      (00000076) const-string         v3, 'Fabric'
+	32      (0000007a) const-string         v4, 'Error performing auto configuration.'
+	33      (0000007e) invoke-interface     v2, v3, v4, v0, Lio/fabric/sdk/android/Logger;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+
+doInBackground-BB@0x84 : [ doInBackground-BB@0x56 ]
+	34      (00000084) move                 v0, v1
+	35      (00000086) goto                 -18
+

@@ -1,0 +1,54 @@
+# Lorg/apache/commons/lang/ClassUtils;->toClass([Ljava/lang/Object;)[Ljava/lang/Class; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object[]
+#
+# - return:java.lang.Class[]
+
+toClass-BB@0x0 : [ toClass-BB@0x6 toClass-BB@0x8 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) if-nez               v4, +3
+
+toClass-BB@0x6 : 
+	2       (00000006) return-object        v2
+
+toClass-BB@0x8 : [ toClass-BB@0xe toClass-BB@0x14 ]
+	3       (00000008) array-length         v0, v4
+	4       (0000000a) if-nez               v0, +5
+
+toClass-BB@0xe : [ toClass-BB@0x6 ]
+	5       (0000000e) sget-object          v2, Lorg/apache/commons/lang/ArrayUtils;->EMPTY_CLASS_ARRAY [Ljava/lang/Class;
+	6       (00000012) goto                 -6
+
+toClass-BB@0x14 : [ toClass-BB@0x1c ]
+	7       (00000014) array-length         v0, v4
+	8       (00000016) new-array            v3, v0, [Ljava/lang/Class;
+	9       (0000001a) const/4              v0, 0
+
+toClass-BB@0x1c : [ toClass-BB@0x22 toClass-BB@0x44 ]
+	10      (0000001c) array-length         v1, v4
+	11      (0000001e) if-ge                v0, v1, +13
+
+toClass-BB@0x22 : [ toClass-BB@0x2a toClass-BB@0x36 ]
+	12      (00000022) aget-object          v1, v4, v0
+	13      (00000026) if-nez               v1, +8
+
+toClass-BB@0x2a : [ toClass-BB@0x2c ]
+	14      (0000002a) move-object          v1, v2
+
+toClass-BB@0x2c : [ toClass-BB@0x1c ]
+	15      (0000002c) aput-object          v1, v3, v0
+	16      (00000030) add-int/lit8         v0, v0, 1
+	17      (00000034) goto                 -c
+
+toClass-BB@0x36 : [ toClass-BB@0x2c ]
+	18      (00000036) aget-object          v1, v4, v0
+	19      (0000003a) invoke-virtual       v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	20      (00000040) move-result-object   v1
+	21      (00000042) goto                 -b
+
+toClass-BB@0x44 : [ toClass-BB@0x6 ]
+	22      (00000044) move-object          v2, v3
+	23      (00000046) goto                 -20
+

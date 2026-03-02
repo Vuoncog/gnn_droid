@@ -1,0 +1,59 @@
+digraph {
+	graph [bb="0,0,900.8,513",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_1222be63f6b8b119bb37fa5423212ffb {
+		graph [bb="44.796,8,892.8,505",
+			label="Lorg/apache/commons/io/input/ProxyReader;.read->([C I I)I\nLocal registers v0 ... v1\nparam v2 = char[]\nparam v3 = int\nparam v4 = \
+int\nreturn = int",
+			lheight=1.25,
+			lp="468.8,456",
+			lwidth=5.46
+		];
+		struct_382d2f020dd1e83ebd8912be5a693690	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/input/ProxyReader;-&gt;beforeRead(I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">6</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">iget-object </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#999933">v1</FONT>, <FONT color="#088A08">Lorg/apache/commons/io/input/ProxyReader;-&gt;in Ljava/io/Reader;</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#848484">v0</FONT>, <FONT color="#7A7AAD">v2</FONT>, <FONT color="#7070D6">v3</FONT>, <FONT color="#8E8E5B">v4</FONT>, <FONT color="#DF3A01">Ljava/io/Reader;-&gt;read([C I I)I</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-result </FONT> <FONT color="#848484">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">12</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#848484">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/input/ProxyReader;-&gt;afterRead(I)V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="378.8,331.5",
+			width=8.7778];
+		struct_c2894a7b5abf0d7738f10c3ac8b49657	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return </FONT> <FONT color="#848484">v0</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="129.8,39.5",
+			width=1.8472];
+		struct_382d2f020dd1e83ebd8912be5a693690:tail -> struct_c2894a7b5abf0d7738f10c3ac8b49657:header	[color=blue,
+			pos="e,73.796,53.5 72.796,272.5 -21.021,272.5 -23.482,69.04 63.623,54.337"];
+		struct_294d5a8d9a804053bb45a05c04e43ffb	[height=1.5694,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#848484">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#848484">v0</FONT>, <FONT color="#DF3A01">Lorg/apache/commons/io/input/ProxyReader;-&gt;handleIOException(Ljava/io/IOException;)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">const/4 </FONT> <FONT color="#848484">v0</FONT>, <FONT color="green">0x-1</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">24</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="478.8,156.5",
+			width=11.264];
+		struct_382d2f020dd1e83ebd8912be5a693690:tail -> struct_294d5a8d9a804053bb45a05c04e43ffb:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="164.8,238.5",
+			pos="e,98.796,206.5 87.796,269.5 87.796,244.85 96.068,236.95 98.266,216.75"];
+		struct_294d5a8d9a804053bb45a05c04e43ffb:tail -> struct_c2894a7b5abf0d7738f10c3ac8b49657:header	[color=blue,
+			pos="e,88.796,56.5 98.796,105.5 98.796,87.094 91.938,80.812 89.581,66.573"];
+	}
+}

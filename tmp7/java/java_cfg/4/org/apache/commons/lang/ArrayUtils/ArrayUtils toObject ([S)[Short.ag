@@ -1,0 +1,46 @@
+# Lorg/apache/commons/lang/ArrayUtils;->toObject([S)[Ljava/lang/Short; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:short[]
+#
+# - return:java.lang.Short[]
+
+toObject-BB@0x0 : [ toObject-BB@0x4 toObject-BB@0x8 ]
+	0       (00000000) if-nez               v4, +4
+
+toObject-BB@0x4 : [ toObject-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+toObject-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+toObject-BB@0x8 : [ toObject-BB@0xe toObject-BB@0x14 ]
+	3       (00000008) array-length         v0, v4
+	4       (0000000a) if-nez               v0, +5
+
+toObject-BB@0xe : [ toObject-BB@0x6 ]
+	5       (0000000e) sget-object          v0, Lorg/apache/commons/lang/ArrayUtils;->EMPTY_SHORT_OBJECT_ARRAY [Ljava/lang/Short;
+	6       (00000012) goto                 -6
+
+toObject-BB@0x14 : [ toObject-BB@0x1c ]
+	7       (00000014) array-length         v0, v4
+	8       (00000016) new-array            v1, v0, [Ljava/lang/Short;
+	9       (0000001a) const/4              v0, 0
+
+toObject-BB@0x1c : [ toObject-BB@0x22 toObject-BB@0x3a ]
+	10      (0000001c) array-length         v2, v4
+	11      (0000001e) if-ge                v0, v2, +e
+
+toObject-BB@0x22 : [ toObject-BB@0x1c ]
+	12      (00000022) new-instance         v2, Ljava/lang/Short;
+	13      (00000026) aget-short           v3, v4, v0
+	14      (0000002a) invoke-direct        v2, v3, Ljava/lang/Short;-><init>(S)V
+	15      (00000030) aput-object          v2, v1, v0
+	16      (00000034) add-int/lit8         v0, v0, 1
+	17      (00000038) goto                 -e
+
+toObject-BB@0x3a : [ toObject-BB@0x6 ]
+	18      (0000003a) move-object          v0, v1
+	19      (0000003c) goto                 -1b
+

@@ -1,0 +1,32 @@
+# Lcom/jgamelbe/CMP/AdPushActivity;->onKeyDown(I Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:android.view.KeyEvent
+#
+# - return:boolean
+
+onKeyDown-BB@0x0 : [ onKeyDown-BB@0x6 onKeyDown-BB@0x24 ]
+	0       (00000000) const/4              v0, 4
+	1       (00000002) if-ne                v2, v0, +11
+
+onKeyDown-BB@0x6 : [ onKeyDown-BB@0x16 onKeyDown-BB@0x24 ]
+	2       (00000006) iget-object          v0, v1, Lcom/jgamelbe/CMP/AdPushActivity;->b Landroid/webkit/WebView;
+	3       (0000000a) invoke-virtual       v0, Landroid/webkit/WebView;->canGoBack()Z
+	4       (00000010) move-result          v0
+	5       (00000012) if-eqz               v0, +9
+
+onKeyDown-BB@0x16 : [ onKeyDown-BB@0x22 ]
+	6       (00000016) iget-object          v0, v1, Lcom/jgamelbe/CMP/AdPushActivity;->b Landroid/webkit/WebView;
+	7       (0000001a) invoke-virtual       v0, Landroid/webkit/WebView;->goBack()V
+	8       (00000020) const/4              v0, 1
+
+onKeyDown-BB@0x22 : 
+	9       (00000022) return               v0
+
+onKeyDown-BB@0x24 : [ onKeyDown-BB@0x22 ]
+	10      (00000024) invoke-super         v1, v2, v3, Landroid/app/Activity;->onKeyDown(I Landroid/view/KeyEvent;)Z
+	11      (0000002a) move-result          v0
+	12      (0000002c) goto                 -5
+

@@ -1,0 +1,99 @@
+# Lio/fabric/sdk/android/Fabric$Builder;->build()Lio/fabric/sdk/android/Fabric; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:io.fabric.sdk.android.Fabric
+
+build-BB@0x0 : [ build-BB@0x8 build-BB@0x14 ]
+	0       (00000000) iget-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->threadPoolExecutor Lio/fabric/sdk/android/services/concurrency/PriorityThreadPoolExecutor;
+	1       (00000004) if-nez               v0, +8
+
+build-BB@0x8 : [ build-BB@0x14 ]
+	2       (00000008) invoke-static        Lio/fabric/sdk/android/services/concurrency/PriorityThreadPoolExecutor;->create()Lio/fabric/sdk/android/services/concurrency/PriorityThreadPoolExecutor;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) iput-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->threadPoolExecutor Lio/fabric/sdk/android/services/concurrency/PriorityThreadPoolExecutor;
+
+build-BB@0x14 : [ build-BB@0x1c build-BB@0x32 ]
+	5       (00000014) iget-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->handler Landroid/os/Handler;
+	6       (00000018) if-nez               v0, +d
+
+build-BB@0x1c : [ build-BB@0x32 ]
+	7       (0000001c) new-instance         v0, Landroid/os/Handler;
+	8       (00000020) invoke-static        Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+	9       (00000026) move-result-object   v1
+	10      (00000028) invoke-direct        v0, v1, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+	11      (0000002e) iput-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->handler Landroid/os/Handler;
+
+build-BB@0x32 : [ build-BB@0x3a build-BB@0x52 ]
+	12      (00000032) iget-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->logger Lio/fabric/sdk/android/Logger;
+	13      (00000036) if-nez               v0, +e
+
+build-BB@0x3a : [ build-BB@0x42 build-BB@0xce ]
+	14      (0000003a) iget-boolean         v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->debuggable Z
+	15      (0000003e) if-eqz               v0, +48
+
+build-BB@0x42 : [ build-BB@0x52 ]
+	16      (00000042) new-instance         v0, Lio/fabric/sdk/android/DefaultLogger;
+	17      (00000046) const/4              v1, 3
+	18      (00000048) invoke-direct        v0, v1, Lio/fabric/sdk/android/DefaultLogger;-><init>(I)V
+	19      (0000004e) iput-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->logger Lio/fabric/sdk/android/Logger;
+
+build-BB@0x52 : [ build-BB@0x5a build-BB@0x6a ]
+	20      (00000052) iget-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->appIdentifier Ljava/lang/String;
+	21      (00000056) if-nez               v0, +a
+
+build-BB@0x5a : [ build-BB@0x6a ]
+	22      (0000005a) iget-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->context Landroid/content/Context;
+	23      (0000005e) invoke-virtual       v0, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	24      (00000064) move-result-object   v0
+	25      (00000066) iput-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->appIdentifier Ljava/lang/String;
+
+build-BB@0x6a : [ build-BB@0x72 build-BB@0x7a ]
+	26      (0000006a) iget-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->initializationCallback Lio/fabric/sdk/android/InitializationCallback;
+	27      (0000006e) if-nez               v0, +6
+
+build-BB@0x72 : [ build-BB@0x7a ]
+	28      (00000072) sget-object          v0, Lio/fabric/sdk/android/InitializationCallback;->EMPTY Lio/fabric/sdk/android/InitializationCallback;
+	29      (00000076) iput-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->initializationCallback Lio/fabric/sdk/android/InitializationCallback;
+
+build-BB@0x7a : [ build-BB@0x82 build-BB@0xde ]
+	30      (0000007a) iget-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->kits [Lio/fabric/sdk/android/Kit;
+	31      (0000007e) if-nez               v0, +30
+
+build-BB@0x82 : [ build-BB@0x8c ]
+	32      (00000082) new-instance         v2, Ljava/util/HashMap;
+	33      (00000086) invoke-direct        v2, Ljava/util/HashMap;-><init>()V
+
+build-BB@0x8c : 
+	34      (0000008c) new-instance         v8, Lio/fabric/sdk/android/services/common/IdManager;
+	35      (00000090) iget-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->context Landroid/content/Context;
+	36      (00000094) iget-object          v1, v9, Lio/fabric/sdk/android/Fabric$Builder;->appIdentifier Ljava/lang/String;
+	37      (00000098) iget-object          v3, v9, Lio/fabric/sdk/android/Fabric$Builder;->appInstallIdentifier Ljava/lang/String;
+	38      (0000009c) invoke-interface     v2, Ljava/util/Map;->values()Ljava/util/Collection;
+	39      (000000a2) move-result-object   v4
+	40      (000000a4) invoke-direct        v8, v0, v1, v3, v4, Lio/fabric/sdk/android/services/common/IdManager;-><init>(Landroid/content/Context; Ljava/lang/String; Ljava/lang/String; Ljava/util/Collection;)V
+	41      (000000aa) new-instance         v0, Lio/fabric/sdk/android/Fabric;
+	42      (000000ae) iget-object          v1, v9, Lio/fabric/sdk/android/Fabric$Builder;->context Landroid/content/Context;
+	43      (000000b2) iget-object          v3, v9, Lio/fabric/sdk/android/Fabric$Builder;->threadPoolExecutor Lio/fabric/sdk/android/services/concurrency/PriorityThreadPoolExecutor;
+	44      (000000b6) iget-object          v4, v9, Lio/fabric/sdk/android/Fabric$Builder;->handler Landroid/os/Handler;
+	45      (000000ba) iget-object          v5, v9, Lio/fabric/sdk/android/Fabric$Builder;->logger Lio/fabric/sdk/android/Logger;
+	46      (000000be) iget-boolean         v6, v9, Lio/fabric/sdk/android/Fabric$Builder;->debuggable Z
+	47      (000000c2) iget-object          v7, v9, Lio/fabric/sdk/android/Fabric$Builder;->initializationCallback Lio/fabric/sdk/android/InitializationCallback;
+	48      (000000c6) invoke-direct/range  v0 ... v8, Lio/fabric/sdk/android/Fabric;-><init>(Landroid/content/Context; Ljava/util/Map; Lio/fabric/sdk/android/services/concurrency/PriorityThreadPoolExecutor; Landroid/os/Handler; Lio/fabric/sdk/android/Logger; Z Lio/fabric/sdk/android/InitializationCallback; Lio/fabric/sdk/android/services/common/IdManager;)V
+	49      (000000cc) return-object        v0
+
+build-BB@0xce : [ build-BB@0x52 ]
+	50      (000000ce) new-instance         v0, Lio/fabric/sdk/android/DefaultLogger;
+	51      (000000d2) invoke-direct        v0, Lio/fabric/sdk/android/DefaultLogger;-><init>()V
+	52      (000000d8) iput-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->logger Lio/fabric/sdk/android/Logger;
+	53      (000000dc) goto                 -45
+
+build-BB@0xde : [ build-BB@0x8c ]
+	54      (000000de) iget-object          v0, v9, Lio/fabric/sdk/android/Fabric$Builder;->kits [Lio/fabric/sdk/android/Kit;
+	55      (000000e2) invoke-static        v0, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	56      (000000e8) move-result-object   v0
+	57      (000000ea) invoke-static        v0, Lio/fabric/sdk/android/Fabric;->access$000(Ljava/util/Collection;)Ljava/util/Map;
+	58      (000000f0) move-result-object   v2
+	59      (000000f2) goto                 -33
+

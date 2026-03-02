@@ -1,0 +1,27 @@
+# Lcom/ailock/tszlock/LockService;->onStart(Landroid/content/Intent; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Intent
+# - v3:int
+#
+# - return:void
+
+onStart-BB@0x0 : [ onStart-BB@0xe onStart-BB@0x14 ]
+	0       (00000000) invoke-super         v1, v2, v3, Landroid/app/Service;->onStart(Landroid/content/Intent; I)V
+	1       (00000006) iget-object          v0, v1, Lcom/ailock/tszlock/LockService;->mMasterResetReciever Lcom/ailock/tszlock/LockService$MyLockBroadcastReceiver;
+	2       (0000000a) if-nez               v0, +5
+
+onStart-BB@0xe : [ onStart-BB@0x14 ]
+	3       (0000000e) invoke-virtual       v1, Lcom/ailock/tszlock/LockService;->lockRegister()V
+
+onStart-BB@0x14 : [ onStart-BB@0x1c onStart-BB@0x22 ]
+	4       (00000014) sget-boolean         v0, Lcom/ailock/tszlock/UnLockActivity;->isLive Z
+	5       (00000018) if-nez               v0, +5
+
+onStart-BB@0x1c : [ onStart-BB@0x22 ]
+	6       (0000001c) invoke-static        v1, Lcom/ailock/tszlock/AlarmReceiver2;->enableAlert(Landroid/content/Context;)V
+
+onStart-BB@0x22 : 
+	7       (00000022) return-void          
+

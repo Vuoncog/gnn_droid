@@ -1,0 +1,56 @@
+digraph {
+	graph [bb="0,0,1410,340",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_e4c240460d564d3d9666988ebc47c5b0 {
+		graph [bb="8,8,1402,332",
+			label="Lcom/crashlytics/android/core/CodedOutputStream;.writeRawVarint32->(I)V\nLocal registers v0 ... v1\nparam v2 = int\nreturn = void",
+			lheight=0.83,
+			lp="705,298",
+			lwidth=6.97
+		];
+		struct_108b9535185292748bf3d3ccb645530a	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">and-int/lit8 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="green">0x-80</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-nez </FONT> <FONT color="#999933">v0</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x6</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="826,221.5",
+			width=3.125];
+		struct_6cf975505b5ab93ae0706234f7ee6d21	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">8</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeRawByte(I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="354,83.5",
+			width=9.3889];
+		struct_108b9535185292748bf3d3ccb645530a:tail -> struct_6cf975505b5ab93ae0706234f7ee6d21:header	[color=red,
+			pos="e,37,111.5 724,195.5 650.4,195.5 88.446,189 40.289,121.03"];
+		struct_a5dab3da642adc78da85a48617eff4bd	[height=1.875,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">10</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">and-int/lit8 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="green">0x7f</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">14</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">or-int/lit16 </FONT> <FONT color="#999933">v0</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="green">0x80</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">18</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-virtual </FONT> <FONT color="#7777BB">v1</FONT>, <FONT color="#999933">v0</FONT>, <FONT color="#DF3A01">Lcom/crashlytics/android/core/CodedOutputStream;-&gt;writeRawByte(I)V</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">1e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">ushr-int/lit8 </FONT> <FONT color="#888877">v2</FONT>, <FONT color="#888877">v2</FONT>, <FONT color="green">0x7</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">22</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-11</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="1052,83.5",
+			width=9.5];
+		struct_108b9535185292748bf3d3ccb645530a:tail -> struct_a5dab3da642adc78da85a48617eff4bd:header	[color=green,
+			pos="e,735,144.5 735,192.5 735,175 735,168.27 735,154.64"];
+		struct_a5dab3da642adc78da85a48617eff4bd:tail -> struct_108b9535185292748bf3d3ccb645530a:header	[color=blue,
+			pos="e,735,249.5 735,21.5 735,10.38 717.7,14.481 710,22.5 690.22,43.091 709.49,122.45 710,151 710.78,194.35 683,217.68 713.5,248.5 716.76,\
+251.79 721.91,254.38 726.35,255.08"];
+	}
+}

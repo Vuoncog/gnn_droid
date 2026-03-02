@@ -1,0 +1,28 @@
+# Lorg/apache/commons/lang/CharEncoding;->isSupported(Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:boolean
+
+isSupported-BB@0x0 : [ isSupported-BB@0x6 isSupported-BB@0x8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-nez               v3, +3
+
+isSupported-BB@0x6 : 
+	2       (00000006) return               v0
+
+isSupported-BB@0x8 : [ isSupported-BB@0x6 ]
+	3       (00000008) new-instance         v1, Ljava/lang/String;
+	4       (0000000c) sget-object          v2, Lorg/apache/commons/lang/ArrayUtils;->EMPTY_BYTE_ARRAY [B
+	5       (00000010) invoke-direct        v1, v2, v3, Ljava/lang/String;-><init>([B Ljava/lang/String;)V
+	6       (00000016) const/4              v0, 1
+	7       (00000018) goto                 -9
+	8:15
+	(Ljava/io/UnsupportedEncodingException; -> 1a isSupported-BB@0x1a)
+
+isSupported-BB@0x1a : [ isSupported-BB@0x6 ]
+	8       (0000001a) move-exception       v1
+	9       (0000001c) goto                 -b
+

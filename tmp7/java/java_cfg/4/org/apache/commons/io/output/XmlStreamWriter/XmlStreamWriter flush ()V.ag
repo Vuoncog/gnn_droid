@@ -1,0 +1,18 @@
+# Lorg/apache/commons/io/output/XmlStreamWriter;->flush()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+flush-BB@0x0 : [ flush-BB@0x8 flush-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Lorg/apache/commons/io/output/XmlStreamWriter;->writer Ljava/io/Writer;
+	1       (00000004) if-eqz               v0, +7
+
+flush-BB@0x8 : [ flush-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Lorg/apache/commons/io/output/XmlStreamWriter;->writer Ljava/io/Writer;
+	3       (0000000c) invoke-virtual       v0, Ljava/io/Writer;->flush()V
+
+flush-BB@0x12 : 
+	4       (00000012) return-void          
+

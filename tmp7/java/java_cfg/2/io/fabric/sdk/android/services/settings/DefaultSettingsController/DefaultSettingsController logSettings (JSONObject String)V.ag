@@ -1,0 +1,26 @@
+# Lio/fabric/sdk/android/services/settings/DefaultSettingsController;->logSettings(Lorg/json/JSONObject; Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:org.json.JSONObject
+# - v6:java.lang.String
+#
+# - return:void
+
+logSettings-BB@0x0 : 
+	0       (00000000) invoke-static        Lio/fabric/sdk/android/Fabric;->getLogger()Lio/fabric/sdk/android/Logger;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'Fabric'
+	3       (0000000c) new-instance         v2, Ljava/lang/StringBuilder;
+	4       (00000010) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000016) invoke-virtual       v2, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001c) move-result-object   v2
+	7       (0000001e) invoke-virtual       v5, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+	8       (00000024) move-result-object   v3
+	9       (00000026) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-interface     v0, v1, v2, Lio/fabric/sdk/android/Logger;->d(Ljava/lang/String; Ljava/lang/String;)V
+	14      (0000003c) return-void          
+

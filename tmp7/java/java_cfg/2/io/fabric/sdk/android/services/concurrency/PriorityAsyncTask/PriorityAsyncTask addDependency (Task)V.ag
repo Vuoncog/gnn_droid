@@ -1,0 +1,28 @@
+# Lio/fabric/sdk/android/services/concurrency/PriorityAsyncTask;->addDependency(Lio/fabric/sdk/android/services/concurrency/Task;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:io.fabric.sdk.android.services.concurrency.Task
+#
+# - return:void
+
+addDependency-BB@0x0 : [ addDependency-BB@0x10 addDependency-BB@0x20 ]
+	0       (00000000) invoke-virtual       v2, Lio/fabric/sdk/android/services/concurrency/PriorityAsyncTask;->getStatus()Lio/fabric/sdk/android/services/concurrency/AsyncTask$Status;
+	1       (00000006) move-result-object   v0
+	2       (00000008) sget-object          v1, Lio/fabric/sdk/android/services/concurrency/AsyncTask$Status;->PENDING Lio/fabric/sdk/android/services/concurrency/AsyncTask$Status;
+	3       (0000000c) if-eq                v0, v1, +a
+
+addDependency-BB@0x10 : 
+	4       (00000010) new-instance         v0, Ljava/lang/IllegalStateException;
+	5       (00000014) const-string         v1, 'Must not add Dependency after task is running'
+	6       (00000018) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	7       (0000001e) throw                v0
+
+addDependency-BB@0x20 : 
+	8       (00000020) invoke-virtual       v2, Lio/fabric/sdk/android/services/concurrency/PriorityAsyncTask;->getDelegate()Lio/fabric/sdk/android/services/concurrency/Dependency;
+	9       (00000026) move-result-object   v0
+	10      (00000028) check-cast           v0, Lio/fabric/sdk/android/services/concurrency/PriorityProvider;
+	11      (0000002c) check-cast           v0, Lio/fabric/sdk/android/services/concurrency/Dependency;
+	12      (00000030) invoke-interface     v0, v3, Lio/fabric/sdk/android/services/concurrency/Dependency;->addDependency(Ljava/lang/Object;)V
+	13      (00000036) return-void          
+

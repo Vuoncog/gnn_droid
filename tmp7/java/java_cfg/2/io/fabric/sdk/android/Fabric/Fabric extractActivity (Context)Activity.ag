@@ -1,0 +1,22 @@
+# Lio/fabric/sdk/android/Fabric;->extractActivity(Landroid/content/Context;)Landroid/app/Activity; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:android.app.Activity
+
+extractActivity-BB@0x0 : [ extractActivity-BB@0x8 extractActivity-BB@0xe ]
+	0       (00000000) instance-of          v0, v2, Landroid/app/Activity;
+	1       (00000004) if-eqz               v0, +5
+
+extractActivity-BB@0x8 : [ extractActivity-BB@0xc ]
+	2       (00000008) check-cast           v2, Landroid/app/Activity;
+
+extractActivity-BB@0xc : 
+	3       (0000000c) return-object        v2
+
+extractActivity-BB@0xe : [ extractActivity-BB@0xc ]
+	4       (0000000e) const/4              v2, 0
+	5       (00000010) goto                 -2
+

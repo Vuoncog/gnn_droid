@@ -1,0 +1,33 @@
+# Lorg/apache/commons/io/output/ByteArrayOutputStream;->reset()V [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+reset-BB@0x0 : [ reset-BB@0x4 ]
+	0       (00000000) monitor-enter        v2
+	1       (00000002) const/4              v0, 0
+
+reset-BB@0x4 : 
+	2       (00000004) iput                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->count I
+	3       (00000008) const/4              v0, 0
+	4       (0000000a) iput                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum I
+	5       (0000000e) const/4              v0, 0
+	6       (00000010) iput                 v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex I
+	7       (00000014) iget-object          v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->buffers Ljava/util/List;
+	8       (00000018) iget                 v1, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex I
+	9       (0000001c) invoke-interface     v0, v1, Ljava/util/List;->get(I)Ljava/lang/Object;
+	10      (00000022) move-result-object   v0
+	11      (00000024) check-cast           v0, [B
+	12      (00000028) iput-object          v0, v2, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer [B
+	13      (0000002c) monitor-exit         v2
+	14      (0000002e) return-void          
+	4:2b
+	(Ljava/lang/Throwable; -> 30 reset-BB@0x30)
+
+reset-BB@0x30 : 
+	15      (00000030) move-exception       v0
+	16      (00000032) monitor-exit         v2
+	17      (00000034) throw                v0
+

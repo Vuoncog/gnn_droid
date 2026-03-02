@@ -1,0 +1,125 @@
+# Lio/fabric/sdk/android/services/settings/Settings;->initialize(Lio/fabric/sdk/android/Kit; Lio/fabric/sdk/android/services/common/IdManager; Lio/fabric/sdk/android/services/network/HttpRequestFactory; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Lio/fabric/sdk/android/services/settings/Settings; [access_flags=public synchronized]
+#
+# Parameters:
+# - local registers: v0...v21
+# - v22:io.fabric.sdk.android.Kit
+# - v23:io.fabric.sdk.android.services.common.IdManager
+# - v24:io.fabric.sdk.android.services.network.HttpRequestFactory
+# - v25:java.lang.String
+# - v26:java.lang.String
+# - v27:java.lang.String
+#
+# - return:io.fabric.sdk.android.services.settings.Settings
+
+initialize-BB@0x0 : [ initialize-BB@0x2 ]
+	0       (00000000) monitor-enter        v21
+
+initialize-BB@0x2 : [ initialize-BB@0xe initialize-BB@0x16 ]
+	1       (00000002) move-object/from16   v0, v21
+	2       (00000006) iget-boolean         v4, v0, Lio/fabric/sdk/android/services/settings/Settings;->initialized Z
+	3       (0000000a) if-eqz               v4, +6
+	2:9
+	(Ljava/lang/Throwable; -> 158 initialize-BB@0x158)
+
+initialize-BB@0xe : [ initialize-BB@0x12 ]
+	4       (0000000e) move-object/from16   v4, v21
+
+initialize-BB@0x12 : 
+	5       (00000012) monitor-exit         v21
+	6       (00000014) return-object        v4
+
+initialize-BB@0x16 : [ initialize-BB@0x22 initialize-BB@0x146 ]
+	7       (00000016) move-object/from16   v0, v21
+	8       (0000001a) iget-object          v4, v0, Lio/fabric/sdk/android/services/settings/Settings;->settingsController Lio/fabric/sdk/android/services/settings/SettingsController;
+	9       (0000001e) if-nez               v4, +94
+	16:14f
+	(Ljava/lang/Throwable; -> 158 initialize-BB@0x158)
+
+initialize-BB@0x22 : [ initialize-BB@0x146 ]
+	10      (00000022) invoke-virtual/range v22, Lio/fabric/sdk/android/Kit;->getContext()Landroid/content/Context;
+	11      (00000028) move-result-object   v4
+	12      (0000002a) invoke-virtual/range v23, Lio/fabric/sdk/android/services/common/IdManager;->getAppIdentifier()Ljava/lang/String;
+	13      (00000030) move-result-object   v6
+	14      (00000032) new-instance         v5, Lio/fabric/sdk/android/services/common/ApiKey;
+	15      (00000036) invoke-direct        v5, Lio/fabric/sdk/android/services/common/ApiKey;-><init>()V
+	16      (0000003c) invoke-virtual       v5, v4, Lio/fabric/sdk/android/services/common/ApiKey;->getValue(Landroid/content/Context;)Ljava/lang/String;
+	17      (00000042) move-result-object   v5
+	18      (00000044) invoke-virtual/range v23, Lio/fabric/sdk/android/services/common/IdManager;->getInstallerPackageName()Ljava/lang/String;
+	19      (0000004a) move-result-object   v13
+	20      (0000004c) new-instance         v17, Lio/fabric/sdk/android/services/common/SystemCurrentTimeProvider;
+	21      (00000050) invoke-direct/range  v17, Lio/fabric/sdk/android/services/common/SystemCurrentTimeProvider;-><init>()V
+	22      (00000056) new-instance         v18, Lio/fabric/sdk/android/services/settings/DefaultSettingsJsonTransform;
+	23      (0000005a) invoke-direct/range  v18, Lio/fabric/sdk/android/services/settings/DefaultSettingsJsonTransform;-><init>()V
+	24      (00000060) new-instance         v19, Lio/fabric/sdk/android/services/settings/DefaultCachedSettingsIo;
+	25      (00000064) move-object/from16   v0, v19
+	26      (00000068) move-object/from16   v1, v22
+	27      (0000006c) invoke-direct        v0, v1, Lio/fabric/sdk/android/services/settings/DefaultCachedSettingsIo;-><init>(Lio/fabric/sdk/android/Kit;)V
+	28      (00000072) invoke-static        v4, Lio/fabric/sdk/android/services/common/CommonUtils;->getAppIconHashOrNull(Landroid/content/Context;)Ljava/lang/String;
+	29      (00000078) move-result-object   v16
+	30      (0000007a) sget-object          v7, Ljava/util/Locale;->US Ljava/util/Locale;
+	31      (0000007e) const-string         v8, 'https://settings.crashlytics.com/spi/v2/platforms/android/apps/%s/settings'
+	32      (00000082) const/4              v9, 1
+	33      (00000084) new-array            v9, v9, [Ljava/lang/Object;
+	34      (00000088) const/4              v10, 0
+	35      (0000008a) aput-object          v6, v9, v10
+	36      (0000008e) invoke-static        v7, v8, v9, Ljava/lang/String;->format(Ljava/util/Locale; Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/String;
+	37      (00000094) move-result-object   v6
+	38      (00000096) new-instance         v20, Lio/fabric/sdk/android/services/settings/DefaultSettingsSpiCall;
+	39      (0000009a) move-object/from16   v0, v20
+	40      (0000009e) move-object/from16   v1, v22
+	41      (000000a2) move-object/from16   v2, v27
+	42      (000000a6) move-object/from16   v3, v24
+	43      (000000aa) invoke-direct        v0, v1, v2, v6, v3, Lio/fabric/sdk/android/services/settings/DefaultSettingsSpiCall;-><init>(Lio/fabric/sdk/android/Kit; Ljava/lang/String; Ljava/lang/String; Lio/fabric/sdk/android/services/network/HttpRequestFactory;)V
+	44      (000000b0) invoke-virtual/range v23, Lio/fabric/sdk/android/services/common/IdManager;->getModelName()Ljava/lang/String;
+	45      (000000b6) move-result-object   v6
+	46      (000000b8) invoke-virtual/range v23, Lio/fabric/sdk/android/services/common/IdManager;->getOsBuildVersionString()Ljava/lang/String;
+	47      (000000be) move-result-object   v7
+	48      (000000c0) invoke-virtual/range v23, Lio/fabric/sdk/android/services/common/IdManager;->getOsDisplayVersionString()Ljava/lang/String;
+	49      (000000c6) move-result-object   v8
+	50      (000000c8) invoke-virtual/range v23, Lio/fabric/sdk/android/services/common/IdManager;->getAdvertisingId()Ljava/lang/String;
+	51      (000000ce) move-result-object   v9
+	52      (000000d0) invoke-virtual/range v23, Lio/fabric/sdk/android/services/common/IdManager;->getAppInstallIdentifier()Ljava/lang/String;
+	53      (000000d6) move-result-object   v10
+	54      (000000d8) invoke-virtual/range v23, Lio/fabric/sdk/android/services/common/IdManager;->getAndroidId()Ljava/lang/String;
+	55      (000000de) move-result-object   v11
+	56      (000000e0) const/4              v12, 1
+	57      (000000e2) new-array            v12, v12, [Ljava/lang/String;
+	58      (000000e6) const/4              v14, 0
+	59      (000000e8) invoke-static        v4, Lio/fabric/sdk/android/services/common/CommonUtils;->resolveBuildId(Landroid/content/Context;)Ljava/lang/String;
+	60      (000000ee) move-result-object   v4
+	61      (000000f0) aput-object          v4, v12, v14
+	62      (000000f4) invoke-static        v12, Lio/fabric/sdk/android/services/common/CommonUtils;->createInstanceIdFrom([Ljava/lang/String;)Ljava/lang/String;
+	63      (000000fa) move-result-object   v12
+	64      (000000fc) invoke-static        v13, Lio/fabric/sdk/android/services/common/DeliveryMechanism;->determineFrom(Ljava/lang/String;)Lio/fabric/sdk/android/services/common/DeliveryMechanism;
+	65      (00000102) move-result-object   v4
+	66      (00000104) invoke-virtual       v4, Lio/fabric/sdk/android/services/common/DeliveryMechanism;->getId()I
+	67      (0000010a) move-result          v15
+	68      (0000010c) new-instance         v4, Lio/fabric/sdk/android/services/settings/SettingsRequest;
+	69      (00000110) move-object/from16   v13, v26
+	70      (00000114) move-object/from16   v14, v25
+	71      (00000118) invoke-direct/range  v4 ... v16, Lio/fabric/sdk/android/services/settings/SettingsRequest;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; I Ljava/lang/String;)V
+	72      (0000011e) new-instance         v5, Lio/fabric/sdk/android/services/settings/DefaultSettingsController;
+	73      (00000122) move-object/from16   v6, v22
+	74      (00000126) move-object          v7, v4
+	75      (00000128) move-object/from16   v8, v17
+	76      (0000012c) move-object/from16   v9, v18
+	77      (00000130) move-object/from16   v10, v19
+	78      (00000134) move-object/from16   v11, v20
+	79      (00000138) invoke-direct/range  v5 ... v11, Lio/fabric/sdk/android/services/settings/DefaultSettingsController;-><init>(Lio/fabric/sdk/android/Kit; Lio/fabric/sdk/android/services/settings/SettingsRequest; Lio/fabric/sdk/android/services/common/CurrentTimeProvider; Lio/fabric/sdk/android/services/settings/SettingsJsonTransform; Lio/fabric/sdk/android/services/settings/CachedSettingsIo; Lio/fabric/sdk/android/services/settings/SettingsSpiCall;)V
+	80      (0000013e) move-object/from16   v0, v21
+	81      (00000142) iput-object          v5, v0, Lio/fabric/sdk/android/services/settings/Settings;->settingsController Lio/fabric/sdk/android/services/settings/SettingsController;
+	16:14f
+	(Ljava/lang/Throwable; -> 158 initialize-BB@0x158)
+
+initialize-BB@0x146 : [ initialize-BB@0x12 ]
+	82      (00000146) const/4              v4, 1
+	83      (00000148) move-object/from16   v0, v21
+	84      (0000014c) iput-boolean         v4, v0, Lio/fabric/sdk/android/services/settings/Settings;->initialized Z
+	85      (00000150) move-object/from16   v4, v21
+	86      (00000154) goto/16              -a1
+
+initialize-BB@0x158 : 
+	87      (00000158) move-exception       v4
+	88      (0000015a) monitor-exit         v21
+	89      (0000015c) throw                v4
+

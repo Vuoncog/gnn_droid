@@ -1,0 +1,100 @@
+# Lcom/a/a/g/n;->a(Ljava/lang/String;)[Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v13
+# - v14:java.lang.String
+#
+# - return:boolean[]
+
+a-BB@0x0 : [ a-BB@0x18 a-BB@0x28 ]
+	0       (00000000) const/16             v12, 10
+	1       (00000004) const/4              v11, 1
+	2       (00000006) const/4              v1, 0
+	3       (00000008) invoke-virtual       v14, Ljava/lang/String;->length()I
+	4       (0000000e) move-result          v4
+	5       (00000010) rem-int/lit8         v0, v4, 2
+	6       (00000014) if-eqz               v0, +a
+
+a-BB@0x18 : 
+	7       (00000018) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	8       (0000001c) const-string         v1, 'The lenght of the input should be even'
+	9       (00000020) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	10      (00000026) throw                v0
+
+a-BB@0x28 : [ a-BB@0x30 a-BB@0x62 ]
+	11      (00000028) const/16             v0, 80
+	12      (0000002c) if-le                v4, v0, +1b
+
+a-BB@0x30 : 
+	13      (00000030) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	14      (00000034) new-instance         v1, Ljava/lang/StringBuilder;
+	15      (00000038) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	16      (0000003e) const-string         v2, 'Requested contents should be less than 80 digits long, but got '
+	17      (00000042) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (00000048) move-result-object   v1
+	19      (0000004a) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	20      (00000050) move-result-object   v1
+	21      (00000052) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (00000058) move-result-object   v1
+	23      (0000005a) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	24      (00000060) throw                v0
+
+a-BB@0x62 : [ a-BB@0x7e ]
+	25      (00000062) mul-int/lit8         v0, v4, 9
+	26      (00000066) add-int/lit8         v0, v0, 9
+	27      (0000006a) new-array            v5, v0, [Z
+	28      (0000006e) sget-object          v0, Lcom/a/a/g/n;->a [I
+	29      (00000072) invoke-static        v5, v1, v0, v11, Lcom/a/a/g/n;->a([Z I [I Z)I
+	30      (00000078) move-result          v0
+	31      (0000007a) move                 v2, v1
+	32      (0000007c) move                 v3, v0
+
+a-BB@0x7e : [ a-BB@0x82 a-BB@0xfa ]
+	33      (0000007e) if-ge                v2, v4, +3e
+
+a-BB@0x82 : [ a-BB@0xb0 ]
+	34      (00000082) invoke-virtual       v14, v2, Ljava/lang/String;->charAt(I)C
+	35      (00000088) move-result          v0
+	36      (0000008a) invoke-static        v0, v12, Ljava/lang/Character;->digit(C I)I
+	37      (00000090) move-result          v6
+	38      (00000092) add-int/lit8         v0, v2, 1
+	39      (00000096) invoke-virtual       v14, v0, Ljava/lang/String;->charAt(I)C
+	40      (0000009c) move-result          v0
+	41      (0000009e) invoke-static        v0, v12, Ljava/lang/Character;->digit(C I)I
+	42      (000000a4) move-result          v7
+	43      (000000a6) const/16             v0, 18
+	44      (000000aa) new-array            v8, v0, [I
+	45      (000000ae) move                 v0, v1
+
+a-BB@0xb0 : [ a-BB@0xb6 a-BB@0xe8 ]
+	46      (000000b0) const/4              v9, 5
+	47      (000000b2) if-ge                v0, v9, +1b
+
+a-BB@0xb6 : [ a-BB@0xb0 ]
+	48      (000000b6) mul-int/lit8         v9, v0, 2
+	49      (000000ba) sget-object          v10, Lcom/a/a/g/m;->a [[I
+	50      (000000be) aget-object          v10, v10, v6
+	51      (000000c2) aget                 v10, v10, v0
+	52      (000000c6) aput                 v10, v8, v9
+	53      (000000ca) mul-int/lit8         v9, v0, 2
+	54      (000000ce) add-int/lit8         v9, v9, 1
+	55      (000000d2) sget-object          v10, Lcom/a/a/g/m;->a [[I
+	56      (000000d6) aget-object          v10, v10, v7
+	57      (000000da) aget                 v10, v10, v0
+	58      (000000de) aput                 v10, v8, v9
+	59      (000000e2) add-int/lit8         v0, v0, 1
+	60      (000000e6) goto                 -1b
+
+a-BB@0xe8 : [ a-BB@0x7e ]
+	61      (000000e8) invoke-static        v5, v3, v8, v11, Lcom/a/a/g/n;->a([Z I [I Z)I
+	62      (000000ee) move-result          v0
+	63      (000000f0) add-int/2addr        v3, v0
+	64      (000000f2) add-int/lit8         v0, v2, 2
+	65      (000000f6) move                 v2, v0
+	66      (000000f8) goto                 -3d
+
+a-BB@0xfa : 
+	67      (000000fa) sget-object          v0, Lcom/a/a/g/n;->b [I
+	68      (000000fe) invoke-static        v5, v3, v0, v11, Lcom/a/a/g/n;->a([Z I [I Z)I
+	69      (00000104) return-object        v5
+

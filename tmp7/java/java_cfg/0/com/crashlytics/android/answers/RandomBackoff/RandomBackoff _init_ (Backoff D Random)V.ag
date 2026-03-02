@@ -1,0 +1,51 @@
+# Lcom/crashlytics/android/answers/RandomBackoff;-><init>(Lio/fabric/sdk/android/services/concurrency/internal/Backoff; D Ljava/util/Random;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:io.fabric.sdk.android.services.concurrency.internal.Backoff
+# - v5:double
+# - v6:java.util.Random
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x12 <init>-BB@0x1e ]
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) const-wide/16        v0, 0 # [0.0]
+	2       (0000000a) cmpg-double          v0, v4, v0
+	3       (0000000e) if-ltz               v0, +8
+
+<init>-BB@0x12 : [ <init>-BB@0x1e <init>-BB@0x2e ]
+	4       (00000012) const-wide/high16    v0, 16368 # [1.0]
+	5       (00000016) cmpl-double          v0, v4, v0
+	6       (0000001a) if-lez               v0, +a
+
+<init>-BB@0x1e : 
+	7       (0000001e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	8       (00000022) const-string         v1, 'jitterPercent must be between 0.0 and 1.0'
+	9       (00000026) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	10      (0000002c) throw                v0
+
+<init>-BB@0x2e : [ <init>-BB@0x32 <init>-BB@0x42 ]
+	11      (0000002e) if-nez               v3, +a
+
+<init>-BB@0x32 : 
+	12      (00000032) new-instance         v0, Ljava/lang/NullPointerException;
+	13      (00000036) const-string         v1, 'backoff must not be null'
+	14      (0000003a) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	15      (00000040) throw                v0
+
+<init>-BB@0x42 : [ <init>-BB@0x46 <init>-BB@0x56 ]
+	16      (00000042) if-nez               v6, +a
+
+<init>-BB@0x46 : 
+	17      (00000046) new-instance         v0, Ljava/lang/NullPointerException;
+	18      (0000004a) const-string         v1, 'random must not be null'
+	19      (0000004e) invoke-direct        v0, v1, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+	20      (00000054) throw                v0
+
+<init>-BB@0x56 : 
+	21      (00000056) iput-object          v3, v2, Lcom/crashlytics/android/answers/RandomBackoff;->backoff Lio/fabric/sdk/android/services/concurrency/internal/Backoff;
+	22      (0000005a) iput-wide            v4, v2, Lcom/crashlytics/android/answers/RandomBackoff;->jitterPercent D
+	23      (0000005e) iput-object          v6, v2, Lcom/crashlytics/android/answers/RandomBackoff;->random Ljava/util/Random;
+	24      (00000062) return-void          
+

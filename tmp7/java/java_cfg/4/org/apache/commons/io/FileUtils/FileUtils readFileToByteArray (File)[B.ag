@@ -1,0 +1,28 @@
+# Lorg/apache/commons/io/FileUtils;->readFileToByteArray(Ljava/io/File;)[B [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.io.File
+#
+# - return:byte[]
+
+readFileToByteArray-BB@0x0 : [ readFileToByteArray-BB@0x2 ]
+	0       (00000000) const/4              v1, 0
+
+readFileToByteArray-BB@0x2 : 
+	1       (00000002) invoke-static        v4, Lorg/apache/commons/io/FileUtils;->openInputStream(Ljava/io/File;)Ljava/io/FileInputStream;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) invoke-virtual       v4, Ljava/io/File;->length()J
+	4       (00000010) move-result-wide     v2
+	5       (00000012) invoke-static        v1, v2, v3, Lorg/apache/commons/io/IOUtils;->toByteArray(Ljava/io/InputStream; J)[B
+	6       (00000018) move-result-object   v0
+	7       (0000001a) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
+	8       (00000020) return-object        v0
+	2:17
+	(Ljava/lang/Throwable; -> 22 readFileToByteArray-BB@0x22)
+
+readFileToByteArray-BB@0x22 : 
+	9       (00000022) move-exception       v0
+	10      (00000024) invoke-static        v1, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
+	11      (0000002a) throw                v0
+

@@ -1,0 +1,18 @@
+# Lnet/youmi/android/bz;->c(I I I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+# - v5:int
+#
+# - return:int
+
+c-BB@0x0 : 
+	0       (00000000) and-int              v0, v3, v4
+	1       (00000004) and-int              v1, v3, v5
+	2       (00000008) or-int/2addr         v0, v1
+	3       (0000000a) and-int              v1, v4, v5
+	4       (0000000e) or-int/2addr         v0, v1
+	5       (00000010) return               v0
+

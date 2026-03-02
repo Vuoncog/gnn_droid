@@ -1,0 +1,19 @@
+# Lcom/a/a/c/b/b;->c()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+c-BB@0x0 : [ c-BB@0xe c-BB@0x10 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-object          v1, v2, Lcom/a/a/c/b/b;->b [I
+	2       (00000006) aget                 v1, v1, v0
+	3       (0000000a) if-nez               v1, +3
+
+c-BB@0xe : [ c-BB@0x10 ]
+	4       (0000000e) const/4              v0, 1
+
+c-BB@0x10 : 
+	5       (00000010) return               v0
+

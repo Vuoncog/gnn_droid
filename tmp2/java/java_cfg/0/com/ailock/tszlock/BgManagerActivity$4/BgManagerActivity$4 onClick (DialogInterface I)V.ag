@@ -1,0 +1,80 @@
+# Lcom/ailock/tszlock/BgManagerActivity$4;->onClick(Landroid/content/DialogInterface; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.content.DialogInterface
+# - v7:int
+#
+# - return:void
+
+onClick-BB@0x0 : [ D:onClick-BB@0x6 0:onClick-BB@0x8 1:onClick-BB@0x5c 2:onClick-BB@0xbe ]
+	0       (00000000) packed-switch        v7, +6c (0xd8)
+
+onClick-BB@0x6 : 
+	1       (00000006) return-void          
+
+onClick-BB@0x8 : [ onClick-BB@0x2c onClick-BB@0x6 ]
+	2       (00000008) iget-object          v3, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	3       (0000000c) invoke-static        v3, Lcom/ailock/tszlock/BgManagerActivity;->access$0(Lcom/ailock/tszlock/BgManagerActivity;)Lcom/ailock/tszlock/BgManagerActivity$ImageListAdapter;
+	4       (00000012) move-result-object   v3
+	5       (00000014) iget-object          v4, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	6       (00000018) iget                 v4, v4, Lcom/ailock/tszlock/BgManagerActivity;->chooseIndex I
+	7       (0000001c) invoke-virtual       v3, v4, Lcom/ailock/tszlock/BgManagerActivity$ImageListAdapter;->getItem(I)Ljava/lang/Object;
+	8       (00000022) move-result-object   v0
+	9       (00000024) check-cast           v0, Lcom/ailock/tszlock/BgManagerActivity$Image;
+	10      (00000028) if-eqz               v0, -11
+
+onClick-BB@0x2c : [ onClick-BB@0x6 ]
+	11      (0000002c) iget-object          v3, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	12      (00000030) iget-object          v4, v0, Lcom/ailock/tszlock/BgManagerActivity$Image;->name Ljava/lang/String;
+	13      (00000034) invoke-virtual       v3, v4, Lcom/ailock/tszlock/BgManagerActivity;->saveSetData(Ljava/lang/String;)V
+	14      (0000003a) iget-object          v3, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	15      (0000003e) const-string         v4, '设置成功'
+	16      (00000042) invoke-virtual       v3, v4, Lcom/ailock/tszlock/BgManagerActivity;->showToast(Ljava/lang/String;)V
+	17      (00000048) iget-object          v3, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	18      (0000004c) invoke-static        v3, Lcom/ailock/tszlock/BgManagerActivity;->access$0(Lcom/ailock/tszlock/BgManagerActivity;)Lcom/ailock/tszlock/BgManagerActivity$ImageListAdapter;
+	19      (00000052) move-result-object   v3
+	20      (00000054) invoke-virtual       v3, Lcom/ailock/tszlock/BgManagerActivity$ImageListAdapter;->notifyDataSetChanged()V
+	21      (0000005a) goto                 -2a
+
+onClick-BB@0x5c : [ onClick-BB@0x80 onClick-BB@0x6 ]
+	22      (0000005c) iget-object          v3, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	23      (00000060) invoke-static        v3, Lcom/ailock/tszlock/BgManagerActivity;->access$0(Lcom/ailock/tszlock/BgManagerActivity;)Lcom/ailock/tszlock/BgManagerActivity$ImageListAdapter;
+	24      (00000066) move-result-object   v3
+	25      (00000068) iget-object          v4, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	26      (0000006c) iget                 v4, v4, Lcom/ailock/tszlock/BgManagerActivity;->chooseIndex I
+	27      (00000070) invoke-virtual       v3, v4, Lcom/ailock/tszlock/BgManagerActivity$ImageListAdapter;->getItem(I)Ljava/lang/Object;
+	28      (00000076) move-result-object   v1
+	29      (00000078) check-cast           v1, Lcom/ailock/tszlock/BgManagerActivity$Image;
+	30      (0000007c) if-eqz               v1, -3b
+
+onClick-BB@0x80 : [ onClick-BB@0x6 ]
+	31      (00000080) new-instance         v2, Landroid/content/Intent;
+	32      (00000084) iget-object          v3, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	33      (00000088) invoke-virtual       v3, Lcom/ailock/tszlock/BgManagerActivity;->getApplicationContext()Landroid/content/Context;
+	34      (0000008e) move-result-object   v3
+	35      (00000090) const-class          v4, Lcom/ailock/tszlock/UnLockActivity;
+	36      (00000094) invoke-direct        v2, v3, v4, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	37      (0000009a) const/high16         v3, 4096 # [2.524354896707238e-29]
+	38      (0000009e) invoke-virtual       v2, v3, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+	39      (000000a4) const-string         v3, 'previewFile'
+	40      (000000a8) iget-object          v4, v1, Lcom/ailock/tszlock/BgManagerActivity$Image;->name Ljava/lang/String;
+	41      (000000ac) invoke-virtual       v2, v3, v4, Landroid/content/Intent;->putExtra(Ljava/lang/String; Ljava/lang/String;)Landroid/content/Intent;
+	42      (000000b2) iget-object          v3, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	43      (000000b6) invoke-virtual       v3, v2, Lcom/ailock/tszlock/BgManagerActivity;->startActivity(Landroid/content/Intent;)V
+	44      (000000bc) goto                 -5b
+
+onClick-BB@0xbe : [ onClick-BB@0xca onClick-BB@0x6 ]
+	45      (000000be) iget-object          v3, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	46      (000000c2) iget                 v3, v3, Lcom/ailock/tszlock/BgManagerActivity;->chooseIndex I
+	47      (000000c6) if-lez               v3, -60
+
+onClick-BB@0xca : [ onClick-BB@0x6 ]
+	48      (000000ca) iget-object          v3, v5, Lcom/ailock/tszlock/BgManagerActivity$4;->this$0 Lcom/ailock/tszlock/BgManagerActivity;
+	49      (000000ce) invoke-virtual       v3, Lcom/ailock/tszlock/BgManagerActivity;->showDeleteNoteDialog()V
+	50      (000000d4) goto                 -67
+
+onClick-BB@0xd6 : 
+	51      (000000d6) nop                  
+	52      (000000d8) packed-switch-payload 0 1 2
+

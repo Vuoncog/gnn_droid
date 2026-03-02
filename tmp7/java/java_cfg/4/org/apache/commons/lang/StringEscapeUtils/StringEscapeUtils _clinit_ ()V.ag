@@ -1,0 +1,22 @@
+# Lorg/apache/commons/lang/StringEscapeUtils;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/16             v0, 34
+	1       (00000004) invoke-static        v0, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) sput-object          v0, Lorg/apache/commons/lang/StringEscapeUtils;->CSV_QUOTE_STR Ljava/lang/String;
+	4       (00000010) const/4              v0, 4
+	5       (00000012) new-array            v0, v0, [C
+	6       (00000016) fill-array-data      v0, +7 (0x24)
+	7       (0000001c) sput-object          v0, Lorg/apache/commons/lang/StringEscapeUtils;->CSV_SEARCH_CHARS [C
+	8       (00000020) return-void          
+
+<clinit>-BB@0x22 : 
+	9       (00000022) nop                  
+	10      (00000024) fill-array-data-payload bytearray(b',\x00"\x00\r\x00\n\x00') | \x2c\x00\x22\x00\x0d\x00\x0a\x00
+

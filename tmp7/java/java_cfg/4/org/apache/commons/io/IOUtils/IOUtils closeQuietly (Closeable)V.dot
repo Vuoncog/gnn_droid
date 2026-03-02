@@ -1,0 +1,67 @@
+digraph {
+	graph [bb="0,0,496,435",
+		rankdir=TB
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	subgraph cluster_6ef0002d3ca4d3746512f07572624bd2 {
+		graph [bb="8,8,488,427",
+			label="Lorg/apache/commons/io/IOUtils;.closeQuietly->(Ljava/io/Closeable;)V\nLocal registers v0 ... v0\nparam v1 = java.io.Closeable\nreturn = \
+void",
+			lheight=0.83,
+			lp="248,393",
+			lwidth=6.44
+		];
+		struct_1bdc7184837c9743fcc16d864296ea3c	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="yellow"> <FONT FACE="Times-Bold" color="blue">0</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">if-eqz </FONT> <FONT color="#999933">v1</FONT>, <FONT FACE="Times-Italic" color="#4000FF">0x5</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="248,327.5",
+			width=2.0972];
+		struct_91247d48ee9945f207537cd3f87c48ea	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">4</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">invoke-interface </FONT> <FONT color="#999933">v1</FONT>, <FONT color="#DF3A01">Ljava/io/Closeable;-&gt;close()V</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="238,243.5",
+			width=5.3472];
+		struct_1bdc7184837c9743fcc16d864296ea3c:tail -> struct_91247d48ee9945f207537cd3f87c48ea:header	[color=red,
+			pos="e,67,260.5 183,312.5 158.06,312.5 86.749,293.99 70.378,270.22"];
+		struct_dc044948ba939fb8a385a3b14e6a250c	[height=0.65278,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">a</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">return-void </FONT>  </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="157,39.5",
+			width=1.9444];
+		struct_1bdc7184837c9743fcc16d864296ea3c:tail -> struct_dc044948ba939fb8a385a3b14e6a250c:header	[color=green,
+			pos="e,108,56.5 194,309.5 194,198.55 368.53,351.87 440,267 453.45,251.02 449.26,238.73 440,220 401.08,141.27 362.15,138.05 283,100 214.15,\
+66.903 117.57,130.19 108.66,66.798"];
+		struct_91247d48ee9945f207537cd3f87c48ea:tail -> struct_dc044948ba939fb8a385a3b14e6a250c:header	[color=blue,
+			pos="e,97,53.5 67,225.5 67,151.54 23.759,62.313 86.895,54.111"];
+		struct_4d2eddc4390375e129629f4e92524ab6	[height=0.95833,
+			label=<
+<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="3">
+<TR><TD PORT="header"></TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">c</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">move-exception </FONT> <FONT color="#7F7F99">v0</FONT> </TD></TR>
+<TR><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="blue">e</FONT> </TD><TD ALIGN="LEFT" BGCOLOR="lightgray"> <FONT FACE="Times-Bold" color="black">goto </FONT> <FONT FACE="Times-Italic" color="#4000FF">0x-2</FONT> </TD></TR>
+<TR><TD PORT="tail"></TD></TR>
+</TABLE>>,
+			pos="180,134.5",
+			width=2.5972];
+		struct_91247d48ee9945f207537cd3f87c48ea:tail -> struct_4d2eddc4390375e129629f4e92524ab6:header	[color=black,
+			label="Ljava/io/IOException;",
+			lp="165,194.5",
+			pos="e,108,162.5 67,225.5 67,195.88 99.237,195.52 106.54,172.53"];
+		struct_4d2eddc4390375e129629f4e92524ab6:tail -> struct_dc044948ba939fb8a385a3b14e6a250c:header	[color=blue,
+			pos="e,108,56.5 108,105.5 108,87.635 108,80.762 108,66.847"];
+	}
+}
